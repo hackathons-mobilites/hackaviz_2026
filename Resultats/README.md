@@ -37,6 +37,7 @@ defi-X_nom-equipe/
 ├── production/
 ├── pitch/                 ← support de présentation pour le jury
 └── docs/                  ← toute documentation complémentaire
+```
 
 ### Format de la production selon le type de visualisation
 
