@@ -39,6 +39,6 @@ Ce projet a été développé dans le cadre du Hackaviz Mobilités 2026 spécial
 
 
 ## La licence
-> Ici, il faut décrire la ou les licences du projet. Vous pouvez utiliser la licence [MIT](LICENSE), qui est très permissive. Si on souhaite s'assurer que les dérivés du projet restent Open-Source, vous pouvez utiliser la licence [GPLv3](https://github.com/Illumina/licenses/blob/master/gpl-3.0.txt).
+> Ici, il faut décrire la ou les licences du projet. Vous pouvez utiliser la licence [MIT](Docs/License.md), qui est très permissive. Si on souhaite s'assurer que les dérivés du projet restent Open-Source, vous pouvez utiliser la licence [GPLv3](https://github.com/Illumina/licenses/blob/master/gpl-3.0.txt).
 
-Le code et la documentation de ce projet sont sous licence [MIT](LICENSE).
+Le code et la documentation de ce projet sont sous licence [MIT](Docs/License.md).
