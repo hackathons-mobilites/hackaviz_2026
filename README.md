@@ -1,8 +1,8 @@
-# hackaviz_2026
+![Logo du Hackathon Mobilités](Images/logo rectangle.png)
 
 # Guide des participant·e·s au Hackaviz / Dataviz Challenge 2026
 
-Bienvenue dans le...... organisé par Île-de-France Mobilités.
+Bienvenue dans le Hackaviz Mobilités 2026 spécial dataviz organisé par Île-de-France Mobilités.
 
 ## _XXXXXXXX_
 
