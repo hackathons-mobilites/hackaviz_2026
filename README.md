@@ -83,9 +83,10 @@ Comme d'habitude, lisez les documentations en ligne des services utilisés, idem
 Vos projets viendront alimenter la communauté Data IA et mobilités. **Les réalisations seront publiées sous licences libres** (type MIT) et publiées sur **un répertoire de code public** (Github ou Gitlab). 
 
 Concrètement, vous allez réaliser :
-- un [support de présentation](https://docs.google.com/presentation/d/1jPF5iI2PCAjEqkCNwgHqRqyUQyygMstc/edit?slide=id.h2a68faa4a0867e5_0_230#slide=id.h2a68faa4a0867e5_0_230)) pour le pitch ;
-- le projet dans le répertoire de code public : des notebooks, applications, templates, jeux de données …. Le [modèle de README](xxxxxx) doit vous servir à documenter votre projet ;
+- le projet dans le répertoire de code public : des notebooks, applications, templates, jeux de données …. Le [modèle de README](https://github.com/hackathons-mobilites/hackaviz_2026/blob/main/Docs/Template%20README%202026.md) doit vous servir à documenter votre projet ;
 - tout autre forme qui pourra valoriser votre projet
+
+_Vous pouvez également joindre une courte vidéo de démonstration de votre datavisualisation, en particulier si celle-ci est dynamique ou interactive, afin d'en montrer les différentes fonctionnalités/interactions possibles_
 
 **Les équipes sélectionnées présenteront leur projet au jury à l’oral le 26 novembre**, dans un temps limité. Vous aurez 4 minutes pour pitcher votre projet, suivies de 2 minutes de questions-réponses.
 
