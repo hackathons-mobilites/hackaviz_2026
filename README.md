@@ -94,16 +94,16 @@ Rappel :
 - Ajoutez le topic *hackathonmobilites2025* à la description de votre répertoire (voir image ci-dessous)
 - **Ajoutez le lien de votre répertoire** dans vos diapositives de pitch + vos canal slack en message épinglé
 
+### L'accessibilité des datavisualisations
+
+Vous trouverez des recommandations et éléments de réflexion, ainsi que de nombreuses ressources précieuses pour vous aider à soigner l'accessibilité de vos datavisualisations dans cette <a href="https://github.com/hackathons-mobilites/hackaviz_2026/blob/main/Docs/accessibilite.md">page dédiée</a>
+
 ### Les prix
 
 - **🏆Premier Prix**
 - 🏆Deuxième Prix
 - 🏆Troisième Prix
 - 🎉Prix spécial du jury
-
-### L'accessibilité des datavisualisations
-
-
 
 Voici la grille qui sera remise au jury technique (à titre indicatif, le jury est souverain dans ses choix !)
 
