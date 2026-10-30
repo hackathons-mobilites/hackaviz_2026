@@ -1,35 +1,96 @@
-## Comment déposer vos résultats, code et présentations ?
+# Comment déposer votre production ?
 
-[Github commands cheat sheet](https://git-scm.com/cheat-sheet)
+## Rappel des défis
 
-- Cloner le repository Hackaviz Mobilités 2026 avec la commande suivante :
+- **Défi 1** - Les mobilités et l’adaptation climatique 
+- **Défi 2** - Les mobilités et l’emploi 
+- **Défi 3** - Les mobilités et leurs impacts sur le territoire 
+- **Défi 4** - Les mobilités et les inégalités (de genres, de revenus, de territoires)
 
-``` shell
-git clone https://github.com/hackathons-mobilites/hackathon_mobilites_2025.git
+## Structure du dépôt
+
+Dans le dossier approprié, chaque équipe créera son propre répertoire, nommé selon le format suivant :
+
+```
+defi-[1|2|3|4]_nom-equipe/
 ```
 
-- Créer une nouvelle branche avec le nom de votre équipe :
+Exemple : `defi-1_nomsupercool/`
 
-``` shell
-git checkout equipe-{numéro de votre équipe}
+---
+
+## Déposer votre production
+
+### Ce que vous devez inclure *(obligatoire)*
+
+```
+defi-X_nom-equipe/
+├── README.md              ← présentation du projet (voir template ci-dessous)
+└── production/            ← votre dataviz (fichier, lien, code...)
 ```
 
-- Se déplacer dans le sous-dossier /resultats/repository :
+### Ce que vous pouvez inclure *(optionnel)*
 
-``` shell
-cd resultats/repository
+```
+defi-X_nom-equipe/
+├── README.md
+├── production/
+├── pitch/                 ← support de présentation pour le jury
+└── docs/                  ← toute documentation complémentaire
+
+### Format de la production selon le type de visualisation
+
+| Type | Format attendu |
+|---|---|
+| Visualisation statique | Fichier PDF ou image (300 dpi minimum) |
+| Visualisation interactive | Lien URL accessible en ligne + code source |
+| Visualisation physique | Photos ou vidéo de présentation + description écrite |
+
+---
+
+## Template README.md à compléter pour votre dépôt
+
+Copiez ce template dans le `README.md` de votre dossier équipe et complétez-le :
+
+```markdown
+# [Titre de votre visualisation]
+
+**Équipe :** [Noms du ou des membres]
+**Mail(s) de contact:** [Au moins une adresse mail]
+**Défi :** [Défi 1 — Les mobilités et l’adaptation climatique | Défi 2 — Les mobilités et l’emploi  | Défi 3 — Les mobilités et leurs impacts sur le territoire | Défi 4 - Les mobilités et les inégalités ]
+
+## Notre question
+
+[La question à laquelle répond votre visualisation]
+
+## Notre visualisation
+
+[Lien vers la visualisation en ligne, ou description du fichier déposé]
+
+## Les données utilisées
+
+| Source | Jeu de données | Lien |
+|---|---|---|
+| IDFM | [nom du jeu de données] | [lien] |
+| [autre source] | [nom] | [lien] |
+
+## Les outils employés
+
+[Liste des outils, bibliothèques ou logiciels utilisés]
+
+## Licence
+
+Ce projet est publié sous licence [MIT / CC-BY 4.0 / Licence Ouverte 2.0 — choisir selon le type de production].
 ```
 
-- Développer votre solution et ajouter les tous les fichiers nécessaires
-- Ajouter votre présentation dans le dossier resultats/presentation
-- Pour déposer la version finale de votre projet ou bien simplement sauvegarder une version de votre code intermédiaire :
+---
 
-``` shell
-git add .
-git commit -m "{votre message de commit}"
-git push
-```
+## Licences
 
-## Les pépites du Hackathon IA Mobilités 2024
+Toutes les productions déposées sur ce dépôt doivent être publiées sous licences libres :
 
-Retrouvez aussi les meilleurs projets de l'année dernière en suivant ce [lien](https://github.com/hackathons-mobilites/hackathon_ia_mobilites_2024/blob/main/resultats/Readme.md).
+| Type de contenu | Licence |
+|---|---|
+| Code source | Licence MIT (ou équivalente : GPL, Apache 2.0) |
+| Données | Licence Ouverte 2.0 (ou équivalente : CC-BY, ODbL) |
+| Contenus textuels et visuels | Creative Commons CC-BY 4.0 (ou plus permissive) |
