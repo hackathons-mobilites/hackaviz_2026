@@ -95,3 +95,10 @@ Toutes les productions déposées sur ce dépôt doivent être publiées sous li
 | Code source | Licence MIT (ou équivalente : GPL, Apache 2.0) |
 | Données | Licence Ouverte 2.0 (ou équivalente : CC-BY, ODbL) |
 | Contenus textuels et visuels | Creative Commons CC-BY 4.0 (ou plus permissive) |
+
+## Contact
+
+Pour toute question, privilégiez Slack. En cas de problème de connexion, vous pouvez solliciter : 
+
+- [laurane@datactivist.coop](mailto:laurane@datactivist.coop)
+- - [maelle@datactivist.coop](mailto:maelle@datactivist.coop)
