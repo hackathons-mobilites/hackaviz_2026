@@ -1,4 +1,4 @@
-#  RÈGLEMENT DU HACKATHON MOBILITÉS 2025
+#  RÈGLEMENT DU HACKATHON MOBILITÉS 2026
 
 1 \- Définitions, objectifs et défis  
 2 \- Modalités d’inscription  
@@ -10,7 +10,7 @@
 
 *L’inscription au Hackathon vaut acceptation de ce règlement*
 
-## 1\. DÉFINITIONS, OBJECTIFS ET DÉFIS DU HACKATHON MOBILITÉS 2025
+## 1\. DÉFINITIONS, OBJECTIFS ET DÉFIS DU HACKATHON MOBILITÉS 2026
 
 ### **1.1 Définitions**
 
