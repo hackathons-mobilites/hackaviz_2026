@@ -2,7 +2,7 @@
 
 [Github commands cheat sheet](https://git-scm.com/cheat-sheet)
 
-- Cloner le repository Hackathon Mobilités 2025 avec la commande suivante :
+- Cloner le repository Hackaviz Mobilités 2026 avec la commande suivante :
 
 ``` shell
 git clone https://github.com/hackathons-mobilites/hackathon_mobilites_2025.git
