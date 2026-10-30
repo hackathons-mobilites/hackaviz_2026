@@ -1,4 +1,4 @@
-![Logo du Hackathon Mobilités](Images/logo rectangle.png)
+![Logo du Hackathon Mobilités](Images/logo_rectangle.png)
 
 # Guide des participant·e·s au Hackaviz / Dataviz Challenge 2026
 
