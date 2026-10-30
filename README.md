@@ -126,7 +126,7 @@ Les données ouvertes spécifiquement pour le Hackaviz ne sont pas encore à un 
 <details>
 <summary>3. Peut-on participer au Hackaviz si on ne peut pas être physiquement présent·e à la présentation finale à Paris en cas de sélection ?</summary>
 </br>
-Non, il n’est pas possible de participer au hackaviz si vous ne pouvez pas physiquement être présent·e avec votre équipe à Paris le 26 novembre. Il nous paraît important d’être ensemble pendant cet événement, et de favoriser des échanges interpersonnels physiques. De notre point de vue, quand on participe à un hackaviz, c’est aussi pour les rencontres qu’on peut y faire.
+Non, il n’est pas possible de participer au hackaviz si vous ne pouvez pas physiquement être présent·e avec votre équipe à Paris le 26 novembre en cas de sélection. Il nous paraît important d’être ensemble pendant cet événement, et de favoriser des échanges interpersonnels physiques. De notre point de vue, quand on participe à un hackaviz, c’est aussi pour les rencontres qu’on peut y faire.
 </details></br>
 <details>
 <summary>4. Comment puis-je trouver une équipe ?</summary>
