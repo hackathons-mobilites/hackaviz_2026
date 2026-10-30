@@ -83,14 +83,14 @@ Comme d'habitude, lisez les documentations en ligne des services utilisés, idem
 Vos projets viendront alimenter la communauté Data IA et mobilités. **Les réalisations seront publiées sous licences libres** (type MIT) et publiées sur **un répertoire de code public** (Github ou Gitlab). 
 
 Concrètement, vous allez réaliser :
-- un [support de présentation](xxxxx) pour le pitch ;
+- un [support de présentation](https://docs.google.com/presentation/d/1jPF5iI2PCAjEqkCNwgHqRqyUQyygMstc/edit?slide=id.h2a68faa4a0867e5_0_230#slide=id.h2a68faa4a0867e5_0_230)) pour le pitch ;
 - le projet dans le répertoire de code public : des notebooks, applications, templates, jeux de données …. Le [modèle de README](xxxxxx) doit vous servir à documenter votre projet ;
 - tout autre forme qui pourra valoriser votre projet
 
 **Les équipes sélectionnées présenteront leur projet au jury à l’oral le 26 novembre**, dans un temps limité. Vous aurez 4 minutes pour pitcher votre projet, suivies de 2 minutes de questions-réponses.
 
 Rappel : 
-- **Pour le README, veuillez [utiliser ce modèle](xxxxx)** (il vous servira pour l'envoi de votre projet à la fin du Hackathon).
+- **Pour le README, veuillez [utiliser ce modèle](Docs/Template README 2026.md)** (il vous servira pour l'envoi de votre projet à la fin du Hackaviz.
 - Ajoutez le topic *hackathonmobilites2025* à la description de votre répertoire (voir image ci-dessous)
 - **Ajoutez le lien de votre répertoire** dans vos diapositives de pitch + vos canal slack en message épinglé
 
