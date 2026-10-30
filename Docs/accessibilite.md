@@ -21,7 +21,7 @@ Associer plusieurs moyens de compréhension, avec par exemple des libellés, des
 
 ## Quelques situations concrètes
 
-!([Images/tableau_accessibilite.png](https://github.com/hackathons-mobilites/hackaviz_2026/blob/main/Images/tableau_accessibilite.png))
+![Images/tableau_accessibilite.png](https://github.com/hackathons-mobilites/hackaviz_2026/blob/main/Images/tableau_accessibilite.png)
 
 ## Ce que nous attendons des participants
 L’accessibilité doit être prise en compte dès la conception de la solution, et non vérifiée uniquement à la fin. Les propositions seront appréciées selon deux dimensions complémentaires :
