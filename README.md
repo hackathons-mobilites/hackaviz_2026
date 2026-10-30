@@ -101,6 +101,10 @@ Rappel :
 - 🏆Troisième Prix
 - 🎉Prix spécial du jury
 
+### L'accessibilité des datavisualisations
+
+
+
 Voici la grille qui sera remise au jury technique (à titre indicatif, le jury est souverain dans ses choix !)
 
 ![Grille évaluation technique](Images/grille_eval_technique.png)
