@@ -1,3 +1,5 @@
+![Logo du Hackathon Mobilités](Images/logo_rectangle.png)
+
 #  RÈGLEMENT DU HACKATHON MOBILITÉS 2026
 
 1 \- Définitions, objectifs et défis  
