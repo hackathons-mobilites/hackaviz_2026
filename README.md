@@ -35,7 +35,7 @@ Ce guide des participant.e.s vous aidera tout au long de ce Hackaviz et dans sa 
 
 ## Les défis
 
-Au cours de ces deux semaines de Hackaviz, vous relevez un défi en équipe. L'objectif est de proposer un projet qui répondre à un des 4 défis proposés. [Les défis sont présentés dans ce document]( xxxxxx ). 
+Au cours de ces deux semaines de Hackaviz, vous relevez un défi en équipe. L'objectif est de proposer un projet qui répondre à un des 4 défis proposés. [Les défis sont présentés dans ce document](Docs/Présentation_des_défis). 
 
 - **Défi 1** - Les mobilités et l’**adaptation climatique** 
 - **Défi 2** - Les mobilités et l’**emploi** 
