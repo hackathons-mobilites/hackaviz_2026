@@ -1,6 +1,5 @@
 ![Logo du Hackathon Mobilités](Images/logo_rectangle.png)
 
-
 # Présentation des défis du Hackaviz Mobilités 2026
 
 Cette page décrit les 4 défis du Hackaviz Mobilités 2026. Lien vers [le guide du participant](README.md).
