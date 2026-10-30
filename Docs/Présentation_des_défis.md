@@ -12,8 +12,8 @@ Les Franciliens sont-ils plus restés chez eux ? Ont-ils davantage pris leur voi
 Au-delà de ces exemples de questions ce défi est aussi l’occasion d’imaginer comment la visualisation des données peut aider à créer des outils pour les usagers et les acteurs des mobilités.
 
 ### Inspirations
-→ "Pédalez au frais : SHADE calcule votre itinéraire vélo en fonction de l’ombre https://weelz.ouest-france.fr/pedalez-au-frais-shade-calcule-votre-itineraire-velo-en-fonction-de-lombre/  
-→ CartovIz IPR « Chaleur en ville » : Identifier les zones à effet d'ICU et sensibiliser les acteurs de l'aménagement et de l'urbanisme à la chaleur urbaine https://cartoviz2.institutparisregion.fr/?id_appli=icu&map=@2.306440553400172,48.85121830617714,5z 
+→ "Pédalez au frais : SHADE calcule votre itinéraire vélo en fonction de l’ombre [projet à découvrir ici](https://weelz.ouest-france.fr/pedalez-au-frais-shade-calcule-votre-itineraire-velo-en-fonction-de-lombre/)  
+→ CartovIz IPR « Chaleur en ville » : Identifier les zones à effet d'ICU et sensibiliser les acteurs de l'aménagement et de l'urbanisme à la chaleur urbaine [projet à découvrir ici](https://cartoviz2.institutparisregion.fr/?id_appli=icu&map=@2.306440553400172,48.85121830617714,5z) 
 
 ### Exemple de ressources à disposition
 - Référentiel des arrêts et lignes de bus et de métro en Île-de-France (dont référentiel des lignes climatisées)
@@ -29,8 +29,8 @@ _Les données publiées [sont accessibles ici](https://airtable.com/appdkuZ71MaQ
 De quelles manières les réseaux de transport public permettent-ils d'atteindre les lieux où l'emploi se crée et se concentre ? Comment identifier les territoires pour lesquels des solutions complémentaires (pistes cyclables, transport à la demande, covoiturage, intermodalité) pourraient élargir le périmètre de recherche d'emploi en Île-de-France ou réduire l’utilisation de la voiture ?
 
 ### Inspirations
-→ La mobilité est un frein à l’emploi chez les 18-25 ans. Comment y remédier ? https://www.mobilimel.fr/mobilite-frein-emploi/ 
-→ Simulateur Mobiville, de France Emploi https://candidat.francetravail.fr/mobiville/ 
+→ La mobilité est un frein à l’emploi chez les 18-25 ans. Comment y remédier ? [projet à découvrir ici](https://www.mobilimel.fr/mobilite-frein-emploi/) 
+→ Simulateur Mobiville, de France Emploi [projet à découvrir ici](https://candidat.francetravail.fr/mobiville/) 
 
 ### Exemple de ressources à disposition
 - Fichiers INSEE sur les flux domicile-travail : dénombrement des déplacements domicile-lieu de travail, par commune, désagrégés par mode de transport (recensement de la population, exploitation complémentaire)
@@ -48,8 +48,8 @@ _Les données publiées [sont accessibles ici](https://airtable.com/appdkuZ71MaQ
 Comment les territoires se transforment par ces nouvelles offres ? Quel a été l'impact sur les déplacements en bus dans ces territoires ? Y a-t-il eu des améliorations, des détériorations ? Ces pistes ont à explorer autant pour les territoires qui attendent les nouvelles lignes et arrêts, que ceux qui en ont bénéficié ces dernières années.
 
 ### Inspirations
-→ Observatoire des quartiers de gare du grand paris express sur le site de l’APUR https://www.apur.org/dataviz/observatoire-qg-gpe/  
-→ Visualisation du tracé de la future ligne 15 "Grand Paris Express" sur data.gouv https://www.data.gouv.fr/reuses/visualisation-du-trace-de-la-future-ligne-15-grand-paris-express 
+→ Observatoire des quartiers de gare du grand paris express sur le site de l’APUR [projet à découvrir ici](https://www.apur.org/dataviz/observatoire-qg-gpe/)  
+→ Visualisation du tracé de la future ligne 15 "Grand Paris Express" sur data.gouv [projet à découvrir ici](https://www.data.gouv.fr/reuses/visualisation-du-trace-de-la-future-ligne-15-grand-paris-express) 
 
 ### Exemple de ressources à disposition
 - Lignes de transport en projet en Ile-de-France : couche géographique décrivant les tracés des projets de transport en commun en Île-de-France. 
@@ -66,7 +66,7 @@ _Les données publiées [sont accessibles ici](https://airtable.com/appdkuZ71MaQ
 Les mobilités du quotidien sont-elles conçues pour répondre à la diversité des parcours de vie ? Ce défi propose d'explorer comment le genre influence les pratiques de déplacement, l'accès aux services et équipements et les contraintes de mobilité, afin d'imaginer des réseaux plus inclusifs et plus équitables.
 
 ### Inspirations
-→ Association Femmes en Mouvement femvt.fr  : expertise sur les freins à la mobilité des femmes
+→ Association Femmes en Mouvement [femvt](https://www.femvt.fr/) : expertise sur les freins à la mobilité des femmes
 → Programme ANR Fair Mobility : « Repenser la ville ensemble, au prisme du genre, de l'égalité et de la diversité sociale »
 → Développer le réseau de transports en commun bénéficie‑t‑il vraiment aux plus pauvres ? (article The Conversation)
 
