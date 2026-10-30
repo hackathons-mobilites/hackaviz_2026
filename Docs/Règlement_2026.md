@@ -51,10 +51,10 @@ L'objectif général est de faire émerger des idées et des prototypes pour exp
 
 Cette année Île-de-France Mobilités propose 4 défis :
 
-**Défi 1 - Les mobilités et l’adaptation climatique**
-**Défi 2 - Les mobilités et l’emploi**
-**Défi 3 - Les mobilités et leurs impacts sur le territoire**
-**Défi 4 - Les mobilités et les inégalités (de genres, de revenus, de territoires)**
+- **Défi 1 - Les mobilités et l’adaptation climatique**
+- **Défi 2 - Les mobilités et l’emploi**
+- **Défi 3 - Les mobilités et leurs impacts sur le territoire**
+- **Défi 4 - Les mobilités et les inégalités (de genres, de revenus, de territoires)**
 
 Les participantes et participants choisissent un défi principal, mais il est possible de faire des ponts entre les défis et/ou de croiser certaines thématiques si l’équipe le souhaite. 
 
