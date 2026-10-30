@@ -61,7 +61,7 @@ Les équipes se composeront librement, mais les organisateurs se réservent les 
 Chaque équipe aura son propre **répertoire de code public** (Github ou Gitlab) pour développer son projet. Vous pouvez cloner votre répertoire pour travailler dessus.
 
 Deux choses : 
-- Pour le README, veuillez [utiliser ce modèle]( xxxxxx ) (il vous servira pour l'envoi de votre projet à la fin du Hackaviz).
+- Pour le README, veuillez [utiliser ce modèle](https://github.com/hackathons-mobilites/hackaviz_2026/blob/main/Docs/Template%20README%202026.md) (il vous servira pour l'envoi de votre projet à la fin du Hackaviz).
 - Ajoutez le topic *hackathonmobilités2026* à la description de votre répertoire
 
 ##### Les données et documents
