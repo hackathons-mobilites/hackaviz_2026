@@ -1,4 +1,4 @@
-![Logo du Hackaviz Mobilités](Images/logo_rectangle.png)
+![Logo du Hackathon Mobilités](Images/logo_rectangle.png)
 
 
 # Présentation des défis du Hackaviz Mobilités 2026
