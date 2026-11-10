@@ -151,4 +151,4 @@ Pour rejoindre le slack, il suffit de suivre ce <a href="https://join.slack.com/
 <summary>6. Où puis-je trouver les infos pratiques, les ressources et les liens du hackathon ? </summary>
 </br>
 Vous trouverez le guide des participant·e·s sur notre <a href="xxxxxxx">GitHub</a>. Il contient les informations pratiques, la description des défis proposés… Bref, toutes les ressources dont vous aurez besoin !
-</details>
+</details> 
