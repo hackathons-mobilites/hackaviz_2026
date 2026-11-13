@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travailler sans voiture en Île-de-France : où, pour qui, à quelle heure ?</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<!--__UI__-->
+<style>
+  :root {
+    --surface: #fcfcfb; --card: #ffffff; --ink: #0b0b0b; --ink-2: #4a4946; --ink-3: #6b6a66;
+    --line: #dedcd6; --blue: #2a78d6; --orange: #eb6834; --aqua: #1baf7a; --none: #e9e8e4; --focus: #0b0b0b;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--ink);
+         font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  a { color: #1c5cab; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--card); padding: 8px 12px; border: 1px solid var(--line); }
+  .skip:focus { left: 8px; z-index: 10; }
+  .hero { max-width: 1120px; margin: 0 auto; padding: 52px 20px 20px; }
+  .kicker { color: #b8461a; font-weight: 600; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+  h1 { font-size: clamp(28px, 4.4vw, 46px); line-height: 1.1; margin: 10px 0 14px; letter-spacing: -0.02em; max-width: 900px; }
+  .lede { font-size: 18px; color: var(--ink-2); max-width: 760px; margin: 0; }
+  .team { font-size: 14px; color: var(--ink-3); margin-top: 12px; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  nav.toc a { font-size: 14px; text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; color: var(--ink); background: var(--card); }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 24px; }
+  .kpi { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .kpi .v { font-size: 30px; font-weight: 650; letter-spacing: -0.02em; }
+  .kpi .l { color: var(--ink-2); font-size: 13px; line-height: 1.4; }
+  .chapter { max-width: 1120px; margin: 0 auto; padding: 40px 20px 0; border-top: 2px solid var(--ink); }
+  .chapter .tag { font-size: 13px; font-weight: 700; color: #b8461a; letter-spacing: .05em; text-transform: uppercase; }
+  .chapter h2 { font-size: 30px; margin: 4px 0 2px; letter-spacing: -0.01em; }
+  .chapter .by { font-size: 13px; color: var(--ink-3); }
+  section.step { max-width: 1120px; margin: 0 auto; padding: 30px 20px; display: grid;
+                 grid-template-columns: minmax(260px, 380px) 1fr; gap: 36px; align-items: start; }
+  @media (max-width: 880px) { section.step { grid-template-columns: 1fr; gap: 16px; } }
+  .step h3 { font-size: 22px; line-height: 1.25; margin: 0 0 10px; }
+  .step p { margin: 0 0 12px; color: var(--ink-2); }
+  .step p strong { color: var(--ink); }
+  .viz { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; position: relative; min-width: 0; }
+  .viz h4 { font-size: 14px; margin: 0 0 8px; font-weight: 600; }
+  .note { font-size: 12px; color: var(--ink-3); margin: 8px 0 0; }
+  .legend { display: flex; flex-wrap: wrap; margin-top: 6px; font-size: 12px; color: var(--ink-2); gap: 0; }
+  .legend .sw { display: flex; flex-direction: column; width: 74px; }
+  .legend .sw i { display: block; width: 72px; height: 10px; }
+  .legend.cat { gap: 14px; }
+  .legend.cat .sw { flex-direction: row; align-items: center; gap: 6px; width: auto; }
+  .legend.cat .sw svg { flex: none; }
+  .seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin: 0 8px 10px 0; }
+  .seg button { border: 0; background: transparent; padding: 6px 12px; font: inherit; font-size: 14px; color: var(--ink-2); cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--blue); color: #fff; }
+  .find { display: flex; gap: 8px; align-items: center; margin: 4px 0 8px; flex-wrap: wrap; font-size: 14px; }
+  .find input { font: inherit; font-size: 14px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; min-width: 220px; }
+  .townbar { position: sticky; top: 0; z-index: 20; background: rgba(252, 252, 251, .96); backdrop-filter: blur(6px);
+             border-bottom: 1px solid var(--line); }
+  .townbar .inner { max-width: 1120px; margin: 0 auto; padding: 10px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .townbar .townsum { font-size: 14px; flex: 1 1 320px; }
+  .townbar .townsum:empty { display: none; }
+  .townbar .hint { font-size: 12px; color: var(--ink-3); flex: 1 1 240px; }
+  .pickhost { flex: 1 1 280px; max-width: 420px; display: flex; }
+  .readout:empty { display: none; }
+  .readout { border: 1px solid #dbe5f3; background: #f4f6fa !important; font-size: 14px !important; margin-bottom: 8px; }
+  .readout { font-size: 13px; color: var(--ink); background: #f4f3ef; border-radius: 8px; padding: 6px 10px; min-height: 1.6em; }
+  .tip { position: absolute; pointer-events: none; background: var(--card); border: 1px solid var(--line);
+         border-radius: 8px; padding: 8px 10px; font-size: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.08);
+         opacity: 0; max-width: 280px; z-index: 5; }
+  .tip b { display: block; font-size: 13px; margin-bottom: 2px; }
+  .tip .row { display: flex; justify-content: space-between; gap: 14px; color: var(--ink-2); }
+  .tip .row span:last-child { color: var(--ink); font-variant-numeric: tabular-nums; }
+  svg text { fill: var(--ink-2); font-size: 11px; }
+  .grid line { stroke: var(--line); } .grid .domain { display: none; }
+  .axis path, .axis line { stroke: var(--line); }
+  .bar:focus { outline: none; } .bar:focus rect.hit { stroke: var(--focus); stroke-width: 2; }
+  details.data { margin-top: 10px; font-size: 13px; }
+  details.data summary { cursor: pointer; color: #1c5cab; }
+  details.data .wrap { max-height: 320px; overflow: auto; margin-top: 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); }
+  th { color: var(--ink-2); font-weight: 600; position: sticky; top: 0; background: var(--card); }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+  .end { max-width: 1120px; margin: 0 auto; padding: 40px 20px 70px; border-top: 2px solid var(--ink); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 12px; }
+  .cards .c { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .cards .c h4 { margin: 0 0 6px; font-size: 15px; }
+  .cards .c p { margin: 0; color: var(--ink-2); font-size: 14px; }
+  .herotop { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  .method { margin-top: 26px; font-size: 13px; color: var(--ink-2); max-width: 860px; }
+  /* map reading aids: Paris zoom preset, reference towns, bivariate legend */
+  .zoombar button.txt { width: auto; padding: 0 8px; font: inherit; font-size: 12px; font-weight: 600; }
+  .maplab { fill: var(--ink); font-weight: 600; paint-order: stroke; stroke: rgba(255, 255, 255, .85);
+            stroke-linejoin: round; pointer-events: none; }
+  .legend .bivnote, .legend .sizenote { font-size: 12px; color: var(--ink-2); align-self: center; margin-left: 10px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#ch-ou"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
+
+<header class="hero">
+  <div class="herotop">
+    <div class="kicker"><span lang="fr">Hackaviz 2026, Défi 2 « Les mobilités et l'emploi »</span><span lang="en">Hackaviz 2026, Challenge 2 "Mobility and employment"</span></div>
+    <span id="lang-host"></span>
+  </div>
+  <h1><span lang="fr">Travailler sans voiture en Île-de-France&nbsp;: où, pour qui, à quelle heure&nbsp;?</span><span lang="en">Working without a car in Île-de-France: where, for whom, at what time?</span></h1>
+  <p class="lede"><span lang="fr">Nous avons calculé les temps de trajet en transports en commun entre les 1&nbsp;285 communes et
+    arrondissements franciliens, à partir des horaires d'Île-de-France Mobilités, à plusieurs heures de la journée.
+    Trois questions, une même mesure&nbsp;: combien d'emplois peut-on atteindre&nbsp;?</span><span lang="en">We computed public transport
+    travel times between the region's 1,285 towns and Paris arrondissements, from the Île-de-France Mobilités timetables,
+    at several times of day. Three questions, one measure: how many jobs can you reach?</span></p>
+  <p class="team"><span lang="fr">Équipe Les Isochrones&nbsp;: Sokheng DIN, Hok Seng, Veasna RA, Menghor Thuo</span><span lang="en">Team Les Isochrones: Sokheng DIN, Hok Seng, Veasna RA, Menghor Thuo</span></p>
+  <nav class="toc" aria-label="Chapitres">
+    <a href="#ch-ou"><span lang="fr">1. Où sont les emplois</span><span lang="en">1. Where the jobs are</span></a><a href="#ch-qui"><span lang="fr">2. Pour qui</span><span lang="en">2. For whom</span></a><a href="#ch-quand"><span lang="fr">3. À quelle heure</span><span lang="en">3. At what time</span></a>
+    <a href="#ch-voiture"><span lang="fr">4. La voiture</span><span lang="en">4. The car</span></a><a href="#ch-solutions"><span lang="fr">5. Que faire</span><span lang="en">5. What to do</span></a>
+    <a href="/explorer" data-keep-lang><span lang="fr">Explorateur interactif</span><span lang="en">Interactive explorer</span></a>
+  </nav>
+  <div class="kpis" id="kpis"></div>
+</header>
+
+<div class="townbar" id="townbar">
+  <div class="inner">
+    <span class="cbx-label" id="town-label"></span>
+    <div id="story-town" class="pickhost"></div>
+    <span class="townsum" id="town-sum" aria-live="polite"></span>
+    <span class="hint" id="town-hint"><span lang="fr">Votre commune est mise en évidence sur toutes les cartes. Vous pouvez aussi cliquer sur une commune.</span><span lang="en">Your town is highlighted on every map. You can also click a town.</span></span>
+  </div>
+</div>
+
+<!-- 1. OÙ -->
+<div class="chapter" id="ch-ou"><div class="tag"><span lang="fr">Chapitre 1</span><span lang="en">Chapter 1</span></div><h2><span lang="fr">Les pôles d'emploi sont-ils accessibles&nbsp;?</span><span lang="en">Can people reach the job hubs?</span></h2></div>
+<section class="step" id="s-hubs">
+  <div>
+    <h3><span lang="fr">La moitié des emplois tient dans 28 pôles</span><span lang="en">Half of all jobs sit in 28 hubs</span></h3>
+    <p lang="fr">Un <strong>pôle d'emploi</strong> est une commune (ou un arrondissement) d'au moins 15&nbsp;000 emplois, avec
+      nettement plus d'emplois que d'actifs résidents. Les grands sites d'un seul tenant (La Défense, Roissy,
+      Orly-Rungis, Paris-Saclay…) sont regroupés.</p>
+    <p lang="en">A <strong>job hub</strong> is a town (or arrondissement) with at least 15,000 jobs and clearly more jobs
+      than employed residents. Large single sites (La Défense, Roissy, Orly-Rungis, Paris-Saclay…) are grouped.</p>
+    <p><span lang="fr">Ensemble&nbsp;: </span><span lang="en">Together: </span><strong data-k="hubjobs"></strong><span lang="fr"> d'emplois, à Paris et dans l'ouest proche, mais aussi des
+      pôles éloignés comme Roissy-CDG, Saint-Quentin-en-Yvelines ou Paris-Saclay.</span><span lang="en"> jobs, in Paris and the inner west,
+      but also in distant hubs such as Roissy-CDG, Saint-Quentin-en-Yvelines or Paris-Saclay.</span></p>
+  </div>
+  <div class="viz"><h4 id="t-hubs"><span lang="fr">Pôles d'emploi, surface proportionnelle au nombre d'emplois</span><span lang="en">Job hubs, area proportional to the number of jobs</span></h4>
+    <div id="map-hubs"></div>
+    <p class="note"><span lang="fr">Source&nbsp;: INSEE, recensement 2022 (flux domicile-travail).</span><span lang="en">Source: INSEE, 2022 census (home-to-work flows).</span></p>
+    <details class="data"><summary><span lang="fr">Voir les données en tableau</span><span lang="en">Show the data as a table</span></summary><div class="wrap" id="tab-hubs"></div></details></div>
+</section>
+<section class="step" id="s-catch">
+  <div>
+    <h3><span lang="fr">Paris et La Défense sont à portée. Les pôles périphériques sont des îles.</span><span lang="en">Paris and La Défense are within reach. Outer hubs are islands.</span></h3>
+    <p lang="fr">Environ <strong>la moitié des actifs</strong> rejoignent les pôles parisiens ou La Défense en moins de 45&nbsp;minutes.
+      Pour Roissy-CDG, Saint-Quentin-en-Yvelines, Paris-Saclay, Val d'Europe ou Melun, c'est <strong>moins de 5&nbsp;%</strong>.</p>
+    <p lang="en">About <strong>half of all workers</strong> reach the Paris hubs or La Défense within 45 minutes.
+      For Roissy-CDG, Saint-Quentin-en-Yvelines, Paris-Saclay, Val d'Europe or Melun, it is <strong>under 5%</strong>.</p>
+    <p><span lang="fr">À Roissy, </span><span lang="en">At Roissy, </span><strong data-k="cdg60"></strong><span lang="fr"> des personnes qui y travaillent ont plus d'une heure de trajet en
+      transports en commun, même à l'heure de pointe.</span><span lang="en"> of the people who work there have a public transport trip
+      of over an hour, even at peak time.</span></p>
+  </div>
+  <div class="viz"><h4 id="t-catch"><span lang="fr">Part des actifs franciliens qui atteignent le pôle en 45 min (foncé) et 60 min (clair)</span><span lang="en">Share of the region's workers who reach the hub within 45 min (dark) and 60 min (light)</span></h4>
+    <div id="bars-hubs"></div>
+    <details class="data"><summary><span lang="fr">Voir les données en tableau</span><span lang="en">Show the data as a table</span></summary><div class="wrap" id="tab-catch"></div></details></div>
+</section>
+
+<!-- 2. QUI -->
+<div class="chapter" id="ch-qui"><div class="tag"><span lang="fr">Chapitre 2</span><span lang="en">Chapter 2</span></div><h2><span lang="fr">Tout le monde a-t-il accès au même nombre d'emplois&nbsp;?</span><span lang="en">Does everyone reach the same number of jobs?</span></h2></div>
+<section class="step" id="s-jobs">
+  <div>
+    <h3><span lang="fr">Un écart de 1 à 40</span><span lang="en">A gap of 1 to 40</span></h3>
+    <p><span lang="fr">En 45&nbsp;minutes, un actif francilien atteint en moyenne </span><span lang="en">Within 45 minutes, the average worker reaches </span><strong data-k="avg45"></strong><span lang="fr"> emplois (tous emplois
+      confondus). Mais les 10&nbsp;% les moins bien desservis en atteignent moins de </span><span lang="en"> jobs (all jobs).
+      But the 10% worst served reach fewer than </span><strong data-k="p10"></strong><span lang="fr">,
+      quand l'actif médian en atteint </span><span lang="en">, while the median worker reaches </span><strong data-k="p50"></strong>.</p>
+    <p><span lang="fr">Choisissez le temps de trajet accepté, ou cherchez votre commune.</span><span lang="en">Pick an acceptable travel time, or look up your town.</span></p>
+  </div>
+  <div class="viz">
+    <h4 id="t-jobs"></h4>
+    <div class="seg" role="group" aria-label="Temps de trajet" id="seg-jobs">
+      <button data-t="30" aria-pressed="false">30 min</button><button data-t="45" aria-pressed="true">45 min</button><button data-t="60" aria-pressed="false">60 min</button></div>
+    <div class="seg" role="group" aria-label="Vue de la carte" id="seg-jobsview"></div>
+    <div class="readout" id="out-jobs" aria-live="polite"></div>
+    <div id="map-jobs"></div><div class="legend" id="leg-jobs"></div>
+    <details class="data"><summary><span lang="fr">Voir les données en tableau (communes de plus de 5&nbsp;000 actifs)</span><span lang="en">Show the data as a table (towns with over 5,000 workers)</span></summary><div class="wrap" id="tab-jobs"></div></details>
+  </div>
+</section>
+<section class="step" id="s-income">
+  <div>
+    <h3><span lang="fr">Ni les plus pauvres, ni les plus riches&nbsp;: la classe moyenne périurbaine est la moins bien servie</span><span lang="en">Neither the poorest nor the richest: the outer-suburban middle class is the worst served</span></h3>
+    <p lang="fr">Classons les actifs selon le revenu médian de leur commune. Les communes les plus modestes, souvent en
+      Seine-Saint-Denis près de Paris, accèdent à plus d'emplois que les communes de revenu intermédiaire,
+      plus éloignées. Les plus aisées (Paris ouest, Hauts-de-Seine) restent les mieux desservies.</p>
+    <p lang="en">Rank workers by the median income of their town. The poorest towns, often in Seine-Saint-Denis close to Paris,
+      reach more jobs than middle-income towns further out. The richest (west Paris, Hauts-de-Seine) remain the best served.</p>
+    <p><span lang="fr"><strong>Élargir sa recherche de 15&nbsp;minutes</strong> (de 45 à 60&nbsp;min) multiplie les emplois accessibles par </span><span lang="en"><strong>Widening the search by 15 minutes</strong> (from 45 to 60 min) multiplies reachable jobs by </span><strong data-k="mult_outer"></strong><span lang="fr"> en grande couronne, contre </span><span lang="en"> in the outer ring, against </span><span data-k="mult_paris"></span><span lang="fr"> à Paris&nbsp;:
+      c'est là que chaque minute compte le plus.</span><span lang="en"> in Paris: that is where every minute counts most.</span></p>
+    <details class="data"><summary><span lang="fr">Méthode et vérifications</span><span lang="en">Method and checks</span></summary>
+      <p lang="fr">Ces résultats ont été contrôlés par un calcul indépendant, avec un autre calculateur (r5py) et d'autres
+        hypothèses&nbsp;: départ depuis la gare principale de chaque commune, Paris découpé en arrondissements, 25<sup>e</sup>
+        centile des départs sur une heure. Sur 15 trajets de gare à gare comparés à un calculateur d'itinéraires, 14 tombent
+        dans la fourchette attendue et aucun n'est anormalement rapide.</p>
+      <p lang="fr">Ce contrôle a montré que le point de départ compte&nbsp;: un centre géométrique place Versailles dans le parc
+        du château et allonge les trajets de 20 à 30&nbsp;min, et une gare mal reliée au réseau piéton (Paris 17<sup>e</sup>,
+        Chessy) n'atteint plus rien tant qu'elle n'est pas remplacée par l'arrêt utilisable le plus proche.
+        Limites&nbsp;: un seul point de départ par commune et des horaires prévus, sans retards.</p>
+      <p lang="en">These results were cross-checked with an independent computation using another router (r5py) and other
+        assumptions: routing from each town's busiest station, Paris split into arrondissements, 25th percentile of departures
+        over one hour. Of 15 station-to-station trips compared with a journey planner, 14 fall in the expected range and none
+        is implausibly fast.</p>
+      <p lang="en">The check showed that the starting point matters: a geometric centre puts Versailles in the château park and
+        adds 20 to 30 min to its trips, and a station poorly linked to the walking network (Paris 17th, Chessy) reaches nothing
+        until it is replaced by the nearest usable stop. Limits: one starting point per town and planned timetables, without delays.</p>
+    </details>
+  </div>
+  <div class="viz"><h4 id="t-income"><span lang="fr">Emplois accessibles selon le revenu de la commune (quintiles d'actifs)</span><span lang="en">Reachable jobs by town income (worker quintiles)</span></h4>
+    <div id="bars-income"></div>
+    <p class="note"><span lang="fr">Revenu disponible médian par unité de consommation, INSEE Filosofi 2021.</span><span lang="en">Median disposable income per consumption unit, INSEE Filosofi 2021.</span></p>
+    <details class="data"><summary><span lang="fr">Voir les données en tableau</span><span lang="en">Show the data as a table</span></summary><div class="wrap" id="tab-income"></div></details></div>
+</section>
+
+<!-- 3. QUAND -->
+<div class="chapter" id="ch-quand"><div class="tag"><span lang="fr">Chapitre 3</span><span lang="en">Chapter 3</span></div><h2><span lang="fr">Et en dehors des heures de pointe&nbsp;?</span><span lang="en">And outside peak hours?</span></h2></div>
+<section class="step" id="s-service">
+  <div>
+    <h3><span lang="fr">L'offre suit les horaires de bureau, pas ceux de tous les emplois</span><span lang="en">Service follows office hours, not everyone's working hours</span></h3>
+    <p><span lang="fr">Avant 6&nbsp;h ou après 22&nbsp;h, un mardi, on ne compte que </span><span lang="en">Before 06:00 or after 22:00 on a Tuesday, the region only gets </span><strong data-k="sv_off_all"></strong><span lang="fr"> des passages de la région.
+      Autour de Roissy, c'est </span><span lang="en"> of its daily stop departures. Around Roissy it is </span><strong data-k="sv_off_cdg"></strong><span lang="fr">, autour d'Orly </span><span lang="en">, around Orly </span><strong data-k="sv_off_orly"></strong><span lang="fr">&nbsp;:
+      l'offre de nuit existe, mais reste mince face aux prises de poste à 4&nbsp;h.</span><span lang="en">: night service exists, but stays thin
+      against shifts that start at 04:00.</span></p>
+    <p><span lang="fr">Le dimanche, l'offre tombe à </span><span lang="en">On Sunday, service falls to </span><strong data-k="sv_sun_all"></strong><span lang="fr"> de celle du mardi dans la région (</span><span lang="en"> of Tuesday's across the region (</span><span data-k="sv_sun_cdg"></span><span lang="fr"> autour de Roissy).</span><span lang="en"> around Roissy).</span></p>
+  </div>
+  <div class="viz"><h4 id="t-service"><span lang="fr">Passages aux arrêts par heure (mardi, samedi, dimanche)</span><span lang="en">Stop departures per hour (Tuesday, Saturday, Sunday)</span></h4>
+    <div class="seg" role="group" aria-label="Zone" id="seg-service"></div>
+    <div id="chart-service"></div>
+    <p class="note"><span lang="fr">Source&nbsp;: IDFM / PRIM, offre de transport théorique par arrêt et par heure (Licence Ouverte).
+      Les heures au-delà de 24 désignent la nuit suivante.</span><span lang="en">Source: IDFM / PRIM, scheduled service per stop and hour (Licence Ouverte).
+      Hours past 24 mean the following night.</span></p>
+    <details class="data"><summary><span lang="fr">Voir les données en tableau</span><span lang="en">Show the data as a table</span></summary><div class="wrap" id="tab-service"></div></details></div>
+</section>
+<section class="step" id="s-slot">
+  <div>
+    <h3><span lang="fr">Tôt le matin, tard le soir, le dimanche&nbsp;: les pôles rétrécissent</span><span lang="en">Early morning, late evening, Sunday: the hubs shrink</span></h3>
+    <p><span lang="fr">Part moyenne des emplois des pôles accessible en moins d'une heure&nbsp;: </span><span lang="en">Average share of hub jobs reachable within an hour: </span><strong data-k="s_peak"></strong><span lang="fr"> à l'heure
+      de pointe, </span><span lang="en"> at peak time, </span><strong data-k="s_early"></strong><span lang="fr"> en partant entre 4&nbsp;h&nbsp;30 et 6&nbsp;h, </span><span lang="en"> leaving between 04:30 and 06:00, </span><strong data-k="s_sunday"></strong><span lang="fr">
+      le dimanche matin, et </span><span lang="en"> on Sunday morning, and </span><strong data-k="s_late"></strong><span lang="fr"> pour rentrer chez soi entre 22&nbsp;h et 0&nbsp;h&nbsp;30.</span><span lang="en"> to get home between 22:00 and 00:30.</span></p>
+    <p><span lang="fr">Le retour compte autant que l'aller&nbsp;: on choisit un emploi seulement si l'on peut aussi rentrer.</span><span lang="en">The trip home matters as much as the trip in: people only take a job if they can also get back.</span></p>
+  </div>
+  <div class="viz">
+    <h4 id="t-slot"></h4>
+    <div class="seg" role="group" aria-label="Créneau" id="seg-slot"></div>
+    <div class="readout" id="out-slot" aria-live="polite"></div>
+    <div id="map-slot"></div><div class="legend" id="leg-slot"></div>
+  </div>
+</section>
+<section class="step" id="s-air">
+  <div>
+    <h3><span lang="fr">Les aéroports, cas d'école</span><span lang="en">Airports, a case in point</span></h3>
+    <p><span lang="fr">Roissy et Orly emploient beaucoup de personnes en horaires décalés. Après une fin de service tardive, le trajet
+      médian d'un salarié de Roissy pour rentrer chez lui est de </span><span lang="en">Roissy and Orly employ many people on off-peak shifts. After a late shift,
+      the median trip home for a Roissy worker is </span><strong data-k="cdg_late"></strong><span lang="fr">&nbsp;minutes
+      (contre </span><span lang="en"> minutes (against </span><span data-k="cdg_peak"></span><span lang="fr"> à l'heure de pointe), et </span><span lang="en"> at peak time), and </span><strong data-k="cdg_late60"></strong><span lang="fr"> d'entre eux
+      ont plus d'une heure de trajet.</span><span lang="en"> of them have a trip of over an hour.</span></p>
+  </div>
+  <div class="viz"><h4 id="t-air"><span lang="fr">Salariés des aéroports dont le trajet dépasse une heure, selon le créneau</span><span lang="en">Airport workers whose trip exceeds an hour, by time slot</span></h4>
+    <div id="bars-air"></div>
+    <details class="data"><summary><span lang="fr">Voir les données en tableau</span><span lang="en">Show the data as a table</span></summary><div class="wrap" id="tab-air"></div></details></div>
+</section>
+
+<!-- 4. VOITURE -->
+<div class="chapter" id="ch-voiture"><div class="tag"><span lang="fr">Chapitre 4</span><span lang="en">Chapter 4</span></div><h2><span lang="fr">Captifs de la voiture</span><span lang="en">Tied to the car</span></h2></div>
+<section class="step" id="s-car">
+  <div>
+    <h3><span lang="fr">Là où les pôles sont hors d'atteinte, on prend la voiture</span><span lang="en">Where the hubs are out of reach, people drive</span></h3>
+    <p><span lang="fr">Parmi les actifs qui travaillent hors de leur commune, </span><span lang="en">Among workers employed outside their own town, </span><strong data-k="car0"></strong><span lang="fr"> utilisent la voiture là
+      où presque aucun emploi des pôles n'est accessible en une heure, contre </span><span lang="en"> drive where almost no hub job is reachable within an hour,
+      against </span><strong data-k="car1"></strong><span lang="fr"> là où presque
+      tous le sont.</span><span lang="en"> where almost all of them are.</span></p>
+    <p><span lang="fr">C'est une corrélation, pas une preuve de cause&nbsp;: densité et revenus jouent aussi. </span><span lang="en">This is a correlation, not proof of cause: density and income play a part too. </span><strong data-k="captive"></strong><span lang="fr">
+      vivent dans une commune «&nbsp;captive&nbsp;» (plus de 70&nbsp;% de voiture, moins de 10&nbsp;% des emplois des pôles en une heure).</span><span lang="en">
+      live in a "captive" town (over 70% car use, under 10% of hub jobs within an hour).</span></p>
+  </div>
+  <div class="viz"><h4 id="t-car"><span lang="fr">Mode principal des actifs travaillant hors de leur commune</span><span lang="en">Main mode of workers employed outside their town</span></h4>
+    <div id="car"></div>
+    <p class="note"><span lang="fr">Modes&nbsp;: INSEE, recensement 2023 (API Melodi).</span><span lang="en">Modes: INSEE, 2023 census (Melodi API).</span></p>
+    <details class="data"><summary><span lang="fr">Voir les données en tableau</span><span lang="en">Show the data as a table</span></summary><div class="wrap" id="tab-car"></div></details></div>
+</section>
+
+<!-- 5. SOLUTIONS -->
+<div class="chapter" id="ch-solutions"><div class="tag"><span lang="fr">Chapitre 5</span><span lang="en">Chapter 5</span></div><h2><span lang="fr">Que faire&nbsp;?</span><span lang="en">What can be done?</span></h2></div>
+<section class="step" id="s-sol">
+  <div>
+    <h3><span lang="fr">Des solutions complémentaires, là où elles servent</span><span lang="en">Complementary options, where they help</span></h3>
+    <p lang="fr">Nous ne proposons de solution que là où les transports en commun atteignent moins de 30&nbsp;% des emplois des
+      pôles en 45&nbsp;minutes.</p>
+    <p lang="en">We only suggest an option where public transport reaches less than 30% of hub jobs within 45 minutes.</p>
+    <p lang="fr"><strong>Vélo direct</strong>&nbsp;: un pôle est à moins de 30&nbsp;minutes à vélo, mais à plus de 40&nbsp;minutes en
+      transports en commun.</p>
+    <p lang="en"><strong>Direct cycling</strong>: a hub is under 30 minutes away by bike, but over 40 minutes by public transport.</p>
+    <p><span lang="fr"><strong>Vélo + train</strong>&nbsp;: rejoindre à vélo une gare à moins de 4&nbsp;km ajoute au moins 5&nbsp;points
+      d'emplois des pôles en 45&nbsp;minutes. En grande couronne, la part passe de </span><span lang="en"><strong>Bike + train</strong>: cycling
+      to a station under 4 km away adds at least 5 points of hub jobs within 45 minutes. In the outer ring, the share rises from </span><strong data-k="br_outer0"></strong><span lang="fr"> à </span><span lang="en"> to </span><strong data-k="br_outer1"></strong>.</p>
+    <p><span lang="fr">Mais le vélo suppose des aménagements&nbsp;: </span><span lang="en">But cycling needs infrastructure: </span><strong data-k="cy_below"></strong><span lang="fr"> des communes où nous proposons le vélo ont moins d'aménagements cyclables dédiés que la médiane régionale
+      (</span><span lang="en"> of the towns where we suggest cycling have less dedicated cycling infrastructure than the regional median (</span><span data-k="cy_median"></span><span lang="fr">), soit </span><span lang="en">), home to </span><strong data-k="cy_workers"></strong><span lang="fr"> actifs.</span><span lang="en"> workers.</span></p>
+    <p lang="fr"><strong>Transport à la demande / bus express</strong>&nbsp;: communes captives de la voiture sans solution vélo.</p>
+    <p lang="en"><strong>On-demand transport / express bus</strong>: car-captive towns with no cycling option.</p>
+  </div>
+  <div class="viz"><h4 id="t-sol"><span lang="fr">Où des solutions complémentaires élargiraient l'accès à l'emploi sans voiture</span><span lang="en">Where complementary options would widen car-free access to jobs</span></h4>
+    <div class="readout" id="out-sol" aria-live="polite"></div>
+    <div id="map-sol"></div><div class="legend cat" id="leg-sol"></div>
+    <p class="note"><span lang="fr">Aménagements cyclables&nbsp;: OpenStreetMap via PRIM (ODbL), pistes, bandes, voies vertes et double-sens.</span><span lang="en">Cycling infrastructure: OpenStreetMap via PRIM (ODbL), tracks, lanes, greenways and contraflow lanes.</span></p>
+    <details class="data"><summary><span lang="fr">Voir les données en tableau</span><span lang="en">Show the data as a table</span></summary><div class="wrap" id="tab-sol"></div></details></div>
+</section>
+<section class="step" id="s-gpe">
+  <div>
+    <h3><span lang="fr">Le Grand Paris Express aide surtout la petite couronne</span><span lang="en">The Grand Paris Express mostly helps the inner ring</span></h3>
+    <p><span lang="fr">Avec les lignes 15, 16, 17 et 18 (horaires simulés), les emplois accessibles en 45&nbsp;minutes progressent de
+      <strong>+9&nbsp;% en petite couronne</strong> et de <strong>+5&nbsp;% en grande couronne</strong>, sur une base six fois
+      plus faible. Roissy-CDG devient accessible en une heure à </span><span lang="en">With lines 15, 16, 17 and 18 (simulated timetables),
+      jobs reachable within 45 minutes rise by <strong>+9% in the inner ring</strong> and <strong>+5% in the outer ring</strong>,
+      from a base six times lower. Roissy-CDG becomes reachable within an hour for </span><strong data-k="cdg_gpe"></strong><span lang="fr"> des actifs (contre
+      </span><span lang="en"> of workers (against </span><span data-k="cdg_now"></span><span lang="fr">), Paris-Saclay à </span><span lang="en">), Paris-Saclay for </span><strong data-k="sac_gpe"></strong><span lang="fr"> (contre </span><span lang="en"> (against </span><span data-k="sac_now"></span>).</p>
+  </div>
+  <div class="viz">
+    <h4 id="t-gpe"></h4>
+    <div class="seg" role="group" aria-label="Vue" id="seg-gpe">
+      <button data-v="gain" aria-pressed="true"><span lang="fr">Gain</span><span lang="en">Gain</span></button><button data-v="today" aria-pressed="false"><span lang="fr">Aujourd'hui</span><span lang="en">Today</span></button><button data-v="gpe" aria-pressed="false"><span lang="fr">Avec le GPE</span><span lang="en">With the GPE</span></button></div>
+    <div class="readout" id="out-gpe" aria-live="polite"></div>
+    <div id="map-gpe"></div><div class="legend" id="leg-gpe"></div>
+  </div>
+</section>
+
+<section class="end" id="conclusion">
+  <h2><span lang="fr">En résumé</span><span lang="en">In short</span></h2>
+  <div class="cards">
+    <div class="c"><h4><span lang="fr">Un réseau radial</span><span lang="en">A radial network</span></h4><p><span lang="fr">Excellent pour entrer dans Paris, faible entre banlieues&nbsp;: les pôles
+      périphériques (Roissy, Saclay, Saint-Quentin) restent des îles.</span><span lang="en">Excellent for getting into Paris, weak between suburbs:
+      the outer hubs (Roissy, Saclay, Saint-Quentin) remain islands.</span></p></div>
+    <div class="c"><h4><span lang="fr">Une inégalité géographique d'abord</span><span lang="en">Geography first</span></h4><p><span lang="fr">La grande couronne de revenu intermédiaire est la moins
+      bien servie, et chaque quart d'heure de trajet en plus y compte davantage.</span><span lang="en">The middle-income outer ring is the worst served,
+      and every extra quarter hour of travel counts more there.</span></p></div>
+    <div class="c"><h4><span lang="fr">Les horaires décalés aggravent tout</span><span lang="en">Off-peak hours make it worse</span></h4><p><span lang="fr">Hors pointe, l'offre et l'accès reculent fortement, surtout pour
+      rentrer tard des aéroports.</span><span lang="en">Off-peak, service and access drop sharply, above all for late trips home from the airports.</span></p></div>
+    <div class="c"><h4><span lang="fr">Des réponses ciblées</span><span lang="en">Targeted answers</span></h4><p><span lang="fr">Vélo vers les pôles proches (avec des aménagements), vélo + train en grande couronne,
+      transport à la demande pour les communes captives, et le GPE pour la petite couronne.</span><span lang="en">Cycling to nearby hubs (with proper infrastructure),
+      bike + train in the outer ring, on-demand transport for captive towns, and the GPE for the inner ring.</span></p></div>
+  </div>
+  <p class="method" lang="fr"><strong>Méthode.</strong> 1&nbsp;285 zones (communes et arrondissements parisiens), un point par zone
+    (la mairie, ou un point manuel pour 11 grands sites d'emploi). Calculateur d'itinéraires développé par l'équipe
+    (algorithme CSA) sur les horaires GTFS d'IDFM&nbsp;: mardi 17 et dimanche 22 novembre 2026, médiane des départs toutes
+    les 5&nbsp;minutes sur chaque créneau, marche jusqu'à 1,6&nbsp;km vers un arrêt. Vélo&nbsp;: 16&nbsp;km/h, détour ×1,25.
+    Scénario GPE&nbsp;: gares de la Société des grands projets, vitesses (55-65&nbsp;km/h) et fréquences (3-6&nbsp;min) supposées.
+    Limites&nbsp;: marche et vélo à vol d'oiseau, un point par commune, flux 2022 face aux horaires 2026.
+    Données&nbsp;: IDFM et PRIM (ODbL, Licence Ouverte), OpenStreetMap (ODbL), INSEE (recensement, Filosofi), IGN, Société des grands projets.
+    Code&nbsp;: licence MIT, <a href="https://github.com/SokhengDin/idf-dataviz-2026">dépôt GitHub</a>.
+    <a href="/explorer" data-keep-lang>Explorer toutes les données</a>.</p>
+  <p class="method" lang="en"><strong>Method.</strong> 1,285 zones (towns and Paris arrondissements), one point per zone
+    (the town hall, or a manual point for 11 large job sites). Journey planner built by the team (CSA algorithm) on the IDFM GTFS
+    timetables: Tuesday 17 and Sunday 22 November 2026, median over departures every 5 minutes in each slot, walking up to 1.6 km
+    to a stop. Cycling: 16 km/h, detour ×1.25. GPE scenario: Société des grands projets stations, assumed speeds (55-65 km/h)
+    and headways (3-6 min). Limits: straight-line walking and cycling, one point per town, 2022 flows against 2026 timetables.
+    Data: IDFM and PRIM (ODbL, Licence Ouverte), OpenStreetMap (ODbL), INSEE (census, Filosofi), IGN, Société des grands projets.
+    Code: MIT licence, <a href="https://github.com/SokhengDin/idf-dataviz-2026">GitHub repository</a>.
+    <a href="/explorer" data-keep-lang>Explore all the data</a>.</p>
+</section>
+
+<script>
+const D = /*__DATA__*/null;
+const SEQ  = ["#0d366b", "#184f95", "#256abf", "#3987e5", "#6da7ec", "#9ec5f4", "#cde2fb"];
+const SEQL = SEQ.slice().reverse();
+const GAIN = ["#e9e8e4", "#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95"];
+const DEPS = { "75": "Paris", "92": "Hauts-de-Seine", "93": "Seine-Saint-Denis", "94": "Val-de-Marne",
+               "77": "Seine-et-Marne", "78": "Yvelines", "91": "Essonne", "95": "Val-d'Oise" };
+const HUBN = { "Roissy-CDG airport": ["Aéroport Roissy-CDG", "Roissy-CDG airport"], "Paris centre-ouest (QCA)": ["Paris centre-ouest (QCA)", "Paris centre-west (CBD)"],
+               "Paris centre-est": ["Paris centre-est", "Paris centre-east"], "Paris rive gauche": ["Paris rive gauche", "Paris Left Bank"] };
+const hubFr = h => HUBN[h] ? T(...HUBN[h]) : h;
+const pct   = v => NF().format(".0%")(v), intf = v => NF().format(",.0f")(v), p0 = v => NF().format(".0f")(v) + T("\u202f%", "%");
+const eur   = v => T(intf(v) + "\u202f€", "€" + intf(v));
+const mill  = v => v >= 1e6 ? NF().format(".1f")(v / 1e6) + T(" million" + (v >= 2e6 ? "s" : ""), " million") : intf(Math.round(v / 1e3) * 1e3);
+const PRIM  = D.prim;
+const cyc   = {}; PRIM.cycling.forEach(z => cyc[z.code] = z);
+const zones = D.zones.features;
+const byCode = {};  zones.forEach(f => byCode[f.properties.c] = f.properties);
+const byName = {};  zones.forEach(f => byName[f.properties.n.toLowerCase()] = f.properties);
+const ea  = {}; D.equal.zones.forEach(z => ea[z.code] = z);
+const sg  = {}; D.stag.zones.forEach(z => sg[z.code] = z);
+const so  = {}; D.sol.zones.forEach(z => so[z.code] = z);
+const sc  = {}; D.scenario.zones.forEach(z => sc[z.code] = z);
+const hubsBy = {}; D.hubs.forEach(h => hubsBy[h.hub] = h);
+const sgHub  = {}; D.stag.hubs.forEach(h => sgHub[h.hub] = h);
+const scHub  = {}; D.scenario.hubs.forEach(h => scHub[h.hub] = h);
+const W = d3.sum(zones, f => f.properties.r);
+
+const setK = (k, v) => d3.selectAll(`[data-k="${k}"]`).text(v);
+
+function table(el, cols, rows) {
+  const t = d3.select(el).html("").append("table");
+  t.append("thead").append("tr").selectAll("th").data(cols).join("th").attr("class", c => c.n ? "n" : null).attr("scope", "col").text(c => c.h);
+  t.append("tbody").selectAll("tr").data(rows).join("tr").selectAll("td").data(r => cols.map(c => [c, r]))
+    .join("td").attr("class", ([c]) => c.n ? "n" : null).text(([c, r]) => c.f(r));
+}
+function tipOn(box, ev, title, rows) {
+  const t = d3.select(box).select(".tip"), b = box.getBoundingClientRect();
+  t.html(""); t.append("b").text(title);
+  rows.forEach(([k, v]) => { const r = t.append("div").attr("class", "row"); r.append("span").text(k); r.append("span").text(v); });
+  let x, y;
+  if (ev.clientX != null && ev.type.startsWith("mouse")) { x = ev.clientX - b.left + 14; y = ev.clientY - b.top + 14; }
+  else { const r = ev.target.getBoundingClientRect(); x = r.left - b.left + 20; y = r.bottom - b.top + 4; }
+  if (x > b.width - 290) x = b.width - 290;
+  t.style("left", x + "px").style("top", y + "px").style("opacity", 1);
+}
+const tipOff = box => d3.select(box).select(".tip").style("opacity", 0);
+function legend(id, labels, colors) {
+  const L = d3.select(id).html("");
+  labels.forEach((l, i) => { const s = L.append("div").attr("class", "sw"); s.append("i").style("background", colors[i]); s.append("span").text(l); });
+}
+function seg(id, items, current, onPick) {
+  const g = d3.select(id);
+  if (items) g.selectAll("button").data(items).join("button").attr("data-v", d => d[0]).text(d => d[1]);
+  g.selectAll("button").attr("aria-pressed", function () { return String((this.dataset.v || this.dataset.t) === String(current())); })
+    .on("click", function () { onPick(this.dataset.v || this.dataset.t);
+      g.selectAll("button").attr("aria-pressed", function () { return String((this.dataset.v || this.dataset.t) === String(current())); }); });
+}
+const MAPS = [];
+let town = null, townBox, townMoved = false;
+const townFeature = () => town ? zones.find(f => f.properties.c === town.c) : null;
+function baseMap(el, labelId) {
+  const w = el.clientWidth, h = Math.min(500, Math.max(300, w * 0.72));
+  const proj = d3.geoMercator().fitSize([w, h], D.zones);
+  const svg = d3.select(el).html("").append("svg").attr("width", w).attr("height", h).attr("role", "img").attr("aria-labelledby", labelId);
+  const root = svg.append("g").attr("class", "zroot");
+  d3.select(el).style("position", "relative").append("div").attr("class", "tip");
+  const path = d3.geoPath(proj);
+  const zoom = attachZoom(el, svg, root, path, w, h, { current: townFeature });
+  return { svg, root, path, proj, zoom };
+}
+/* reference towns labelled on every map (codes checked against the data) */
+const REF_TOWNS  = ["95127", "78361", "78646", "78517", "91228", "91223", "77288", "77186", "77284", "95527", "77379"];
+const PARIS_RING = { type: "FeatureCollection", features: zones.filter(f => ["75", "92", "93", "94"].includes(f.properties.d)) };
+const PARIS_ONLY = { type: "FeatureCollection", features: zones.filter(f => f.properties.d === "75") };
+const NS         = "non-scaling-stroke";
+
+function choro(elId, labelId, fill, tipRows) {
+  const el = document.getElementById(elId);
+  const { svg, root, path, zoom } = baseMap(el, labelId);
+
+  // communes: thin uniform lines that keep their width when zooming
+  const sel = root.append("g").selectAll("path").data(zones).join("path").attr("class", "zone").attr("d", path)
+    .attr("stroke", "rgba(255, 255, 255, .55)").attr("stroke-width", 0.4).attr("vector-effect", NS)
+    .on("mousemove", (ev, f) => tipOn(el, ev, f.properties.n, tipRows(f.properties))).on("mouseleave", () => tipOff(el))
+    .on("click", (ev, f) => setTown(f.properties));
+
+  const over = root.append("g");   // overlays drawn by a chapter (e.g. circles), under the lines and labels
+
+  root.append("g").selectAll("path").data(zones.filter(f => f.properties.h)).join("path").attr("d", path)
+    .attr("fill", "none").attr("stroke", "#c2410c").attr("stroke-width", 0.9).attr("pointer-events", "none");
+
+  // department borders
+  if (D.depLines) root.append("path").datum(D.depLines).attr("d", path).attr("fill", "none")
+    .attr("stroke", "#3c3b38").attr("stroke-width", 1.1).attr("stroke-opacity", .8).attr("vector-effect", NS).attr("pointer-events", "none");
+
+  const mark = root.append("path").attr("fill", "none").attr("stroke", "#0b0b0b").attr("stroke-width", 2.5).attr("pointer-events", "none");
+
+  // reference town labels, kept at a constant size on screen
+  const labs = [{ n: "Paris", f: PARIS_ONLY }].concat(REF_TOWNS.filter(c => byCode[c]).map(c => ({ n: byCode[c].n, f: zones.find(z => z.properties.c === c) })));
+  const lab  = root.append("g").selectAll("text").data(labs).join("text").attr("class", "maplab").attr("text-anchor", "middle")
+    .attr("transform", d => `translate(${path.centroid(d.f)})`).text(d => d.n);
+
+  // zoom hook: anything registered here is re-sized with the current zoom factor k
+  const onZoom = [k => lab.style("font-size", (10 / k) + "px").style("stroke-width", (3 / k) + "px")];
+  const resize = () => { const k = d3.zoomTransform(svg.node()).k; onZoom.forEach(fn => fn(k)); };
+  new MutationObserver(resize).observe(root.node(), { attributes: true, attributeFilter: ["transform"] });
+  resize();
+
+  // "Paris & petite couronne" zoom preset, next to the zoom buttons
+  d3.select(el).select(".zoombar").append("button").attr("type", "button").attr("class", "txt")
+    .attr("aria-label", T("Zoomer sur Paris et la petite couronne", "Zoom to Paris and the inner ring"))
+    .attr("title", T("Paris et petite couronne", "Paris and inner ring")).text("Paris")
+    .on("click", () => zoom.zoomTo(PARIS_RING, 6));
+
+  const paint = () => sel.attr("fill", f => fill(f.properties));
+  paint();
+  return { paint, zoom, el, svg, root, path, over, onZoom: fn => { onZoom.push(fn); resize(); }, highlight: p => focusTown(zoom, mark, path, p) };
+}
+function focusTown(zoom, mark, path, p, autoZoom = true) {
+  const f = p ? zones.find(z => z.properties.c === p.c) : null;
+  mark.attr("d", f ? path(f) : null);
+  zoom.setLocateEnabled(!!f);
+  if (f && townMoved && autoZoom) zoom.zoomTo(f, 3);
+}
+/* every map registers here; the sticky "Ma commune" bar drives them all */
+function finder(_unused, outId, map, describe) {
+  const refresh = () => { map.highlight(town); d3.select("#" + outId).text(town ? describe(town) : ""); };
+  MAPS.push(refresh); refresh();
+  return refresh;
+}
+function townSummary() {
+  const el = d3.select("#town-sum");
+  d3.select("#town-hint").style("display", town ? "none" : null);
+  if (!town) { el.text(""); return; }
+  const e = ea[town.c] || {}, g = sg[town.c] || {};
+  el.text(T(`${town.n} : ${intf(e.jobs45 || 0)} emplois en 45 min, ${pct(g.s60_peak || 0)} des emplois des pôles en 1 h à l'heure de pointe, ${pct(g.s60_late || 0)} pour rentrer tard. Cartes centrées sur votre commune.`,
+            `${town.n}: ${intf(e.jobs45 || 0)} jobs within 45 min, ${pct(g.s60_peak || 0)} of hub jobs within 1 h at peak time, ${pct(g.s60_late || 0)} for a late trip home. Maps zoomed to your town.`));
+}
+function setTown(p) {
+  town = p || null;
+  if (townBox) townBox.set(town ? town.c : null);
+  townMoved = true;
+  MAPS.forEach(r => r());
+  townMoved = false;
+  townSummary();
+}
+function hbars(elId, labelId, rows, opt) {
+  const el = document.getElementById(elId);
+  const w = el.clientWidth, rowH = opt.rowH || 21, left = Math.min(opt.left || 230, w * 0.44), H = rows.length * rowH + 26;
+  const x = d3.scaleLinear().domain([0, opt.max]).range([left, w - 76]);
+  const svg = d3.select(el).html("").append("svg").attr("width", w).attr("height", H).attr("role", "img").attr("aria-labelledby", labelId);
+  d3.select(el).style("position", "relative").append("div").attr("class", "tip");
+  svg.append("g").attr("class", "grid").attr("transform", `translate(0,${H - 20})`).call(d3.axisBottom(x).ticks(4).tickFormat(opt.tick).tickSize(-(H - 24)));
+  const g = svg.selectAll("g.bar").data(rows).join("g").attr("class", "bar").attr("tabindex", 0)
+    .attr("aria-label", r => opt.aria(r)).attr("transform", (r, i) => `translate(0,${i * rowH + 2})`)
+    .on("mousemove focus", (ev, r) => tipOn(el, ev, opt.title(r), opt.tip(r))).on("mouseleave blur", () => tipOff(el));
+  g.append("rect").attr("class", "hit").attr("width", w - 4).attr("x", 2).attr("height", rowH).attr("fill", "transparent").attr("rx", 3);
+  if (opt.b) g.append("rect").attr("x", left).attr("y", 4).attr("height", rowH - 8).attr("rx", 3).attr("width", r => Math.max(0, x(opt.b(r)) - left)).attr("fill", opt.color || "#2a78d6").attr("opacity", .32);
+  g.append("rect").attr("x", left).attr("y", 4).attr("height", rowH - 8).attr("rx", 3).attr("width", r => Math.max(1, x(opt.a(r)) - left)).attr("fill", opt.color || "#2a78d6");
+  g.append("text").attr("x", left - 8).attr("y", rowH / 2 + 4).attr("text-anchor", "end").text(opt.label);
+  g.append("text").attr("x", r => x(opt.b ? opt.b(r) : opt.a(r)) + 6).attr("y", rowH / 2 + 4).text(opt.value);
+}
+
+// KPI + text numbers
+function texts() {
+  const totJ = d3.sum(D.hubs, d => d.jobs);
+  const dep = {}; D.deps.forEach(d => dep[d.dep] = d);
+  const car = D.car, st = D.stag, eq = D.equal;
+  const avg = k => d3.sum(zones, f => f.properties.r * ((sg[f.properties.c] || {})[k] || 0)) / W;
+  setK("hubjobs", mill(totJ)); setK("cdg60", pct(hubsBy["Roissy-CDG airport"].share_over_60));
+  setK("avg45", intf(d3.sum(zones, f => f.properties.r * (ea[f.properties.c] || {}).jobs45) / W));
+  const wz = zones.map(f => [ (ea[f.properties.c] || {}).jobs45 || 0, f.properties.r ]).sort((a, b) => a[0] - b[0]);
+  let cum = 0; const qv = q => { cum = 0; for (const [v, w] of wz) { cum += w; if (cum >= q * W) return v; } };
+  setK("p10", intf(Math.round(qv(.1) / 1000) * 1000)); setK("p50", mill(qv(.5)));
+  const ring = codes => { const z = zones.filter(f => codes.includes(f.properties.d));
+    const r = d3.sum(z, f => f.properties.r); const a = d3.sum(z, f => f.properties.r * (ea[f.properties.c] || {}).jobs45) / r;
+    const b = d3.sum(z, f => f.properties.r * (ea[f.properties.c] || {}).jobs60) / r; return b / a; };
+  setK("mult_outer", NF().format(".1f")(ring(["77", "78", "91", "95"]))); setK("mult_paris", NF().format(".1f")(ring(["75"])));
+  ["peak", "early", "sunday", "late"].forEach(k => setK("s_" + k, pct(avg("s60_" + k))));
+  const cdg = sgHub["Roissy-CDG airport"];
+  setK("cdg_late", Math.round(cdg.median_late)); setK("cdg_peak", Math.round(cdg.median_peak)); setK("cdg_late60", pct(cdg.over60_late));
+  setK("car0", p0(car[0].car)); setK("car1", p0(car[car.length - 1].car));
+  const cap = d3.sum(zones.filter(f => (so[f.properties.c] || {}).car_out >= .7 && (f.properties.s60 || 0) < .1), f => f.properties.r);
+  setK("captive", T(mill(cap) + " d'actifs", mill(cap) + " workers"));
+  // PRIM service (Veasna RA)
+  const svc = PRIM.service, offShare = a => d3.sum(a.filter(r => r.hour < 6 || r.hour >= 22), r => r.mardi) / d3.sum(a, r => r.mardi);
+  const sunRatio = a => d3.sum(a, r => r.dimanche) / d3.sum(a, r => r.mardi);
+  setK("sv_off_all", pct(offShare(svc.all))); setK("sv_off_cdg", pct(offShare(svc.cdg))); setK("sv_off_orly", pct(offShare(svc.orly)));
+  setK("sv_sun_all", pct(sunRatio(svc.all))); setK("sv_sun_cdg", pct(sunRatio(svc.cdg)));
+  // cycling infrastructure in the towns where cycling is suggested
+  const bikeTowns = zones.filter(f => ["bike_direct", "bike_rail"].includes((so[f.properties.c] || {}).solution) && cyc[f.properties.c]);
+  const below = bikeTowns.filter(f => cyc[f.properties.c].cycle_dens < PRIM.cycleMedian);
+  setK("cy_below", pct(below.length / bikeTowns.length)); setK("cy_workers", intf(d3.sum(below, f => f.properties.r)));
+  setK("cy_median", NF().format(".1f")(PRIM.cycleMedian) + T(" km d'aménagements par km²", " km of cycling infrastructure per km²"));
+  const outer = zones.filter(f => ["77", "78", "91", "95"].includes(f.properties.d)), wo = d3.sum(outer, f => f.properties.r);
+  setK("br_outer0", pct(d3.sum(outer, f => f.properties.r * (so[f.properties.c] || {}).hub45_pt) / wo));
+  setK("br_outer1", pct(d3.sum(outer, f => f.properties.r * (so[f.properties.c] || {}).hub45_bikept) / wo));
+  const c = scHub["Roissy-CDG airport"], s = scHub["Paris-Saclay"];
+  setK("cdg_gpe", pct(c.catch_60_gpe)); setK("cdg_now", pct(c.catch_60_today)); setK("sac_gpe", pct(s.catch_60_gpe)); setK("sac_now", pct(s.catch_60_today));
+  const items = [
+    [NF().format(".1f")(totJ / 1e6) + "\u202fM", T(`d'emplois dans 28 pôles, soit ${pct(totJ / D.equal.totalJobs)} des emplois de la région`, `jobs in 28 hubs, ${pct(totJ / D.equal.totalJobs)} of the region's jobs`)],
+    [`${p0(dep["75"].s45)} / ${p0(dep["77"].s45)}`, T("des emplois des pôles accessibles en 45 min depuis Paris, puis depuis la Seine-et-Marne", "of hub jobs reachable within 45 min from Paris, then from Seine-et-Marne")],
+    [T(`${pct(avg("s60_peak"))} puis ${pct(avg("s60_late"))}`, `${pct(avg("s60_peak"))} then ${pct(avg("s60_late"))}`), T("des emplois des pôles accessibles en 1 h, à l'heure de pointe puis pour rentrer tard le soir", "of hub jobs reachable within 1 h, at peak time then for a late trip home")],
+    [T(`de ${p0(car[0].car)} à ${p0(car[car.length - 1].car)}`, `${p0(car[0].car)} to ${p0(car[car.length - 1].car)}`), T("de voiture, des communes les moins aux mieux reliées aux pôles", "car share, from the least to the best connected towns")],
+  ];
+  d3.select("#kpis").html("").selectAll(".kpi").data(items).join("div").attr("class", "kpi").each(function (d) {
+    d3.select(this).append("div").attr("class", "v").text(d[0]); d3.select(this).append("div").attr("class", "l").text(d[1]); });
+}
+texts();
+
+// 1a bubbles
+function drawHubs() {
+  const el = document.getElementById("map-hubs");
+  const { root: svg, path, proj, zoom } = baseMap(el, "t-hubs");
+  svg.append("g").selectAll("path").data(zones).join("path").attr("class", "zone").attr("d", path).on("click", (ev, f) => setTown(f.properties)).attr("fill", f => f.properties.h ? "#f7c9b5" : "#efeeea").attr("stroke", "#fcfcfb").attr("stroke-width", .3);
+  const r = d3.scaleSqrt().domain([0, d3.max(D.hubPoints, d => d.jobs)]).range([0, Math.max(22, el.clientWidth / 18)]);
+  const pts = D.hubPoints.slice().sort((a, b) => b.jobs - a.jobs);
+  svg.append("g").selectAll("circle").data(pts).join("circle").attr("tabindex", 0).attr("aria-label", d => T(`${hubFr(d.hub)} : ${intf(d.jobs)} emplois`, `${hubFr(d.hub)}: ${intf(d.jobs)} jobs`))
+    .attr("cx", d => proj([d.lon, d.lat])[0]).attr("cy", d => proj([d.lon, d.lat])[1]).attr("r", d => r(d.jobs))
+    .attr("fill", "#eb6834").attr("fill-opacity", .78).attr("stroke", "#fff").attr("stroke-width", 1.2)
+    .on("mousemove focus", (ev, d) => tipOn(el, ev, hubFr(d.hub), [[T("Emplois", "Jobs"), intf(d.jobs)]])).on("mouseleave blur", () => tipOff(el));
+  const lab = { "Roissy-CDG airport": 1, "Paris-Saclay": -1, "Saint-Quentin-en-Yvelines": -1, "Melun": 1, "Val d'Europe (Marne-la-Vallée)": 1 };
+  svg.append("g").selectAll("text").data(pts.filter(d => d.hub in lab)).join("text")
+    .attr("x", d => proj([d.lon, d.lat])[0] + lab[d.hub] * (r(d.jobs) + 4)).attr("y", d => proj([d.lon, d.lat])[1] + 4)
+    .attr("text-anchor", d => lab[d.hub] > 0 ? "start" : "end").style("fill", "#0b0b0b").style("font-size", "12px")
+    .text(d => hubFr(d.hub).replace(" (Marne-la-Vallée)", "").replace("Aéroport ", "").replace("Saint-Quentin-en-Yvelines", "St-Quentin-en-Y."));
+  const mark = svg.append("path").attr("fill", "none").attr("stroke", "#0b0b0b").attr("stroke-width", 2.5).attr("pointer-events", "none");
+  finder(null, "out-hubs", { highlight: p => focusTown(zoom, mark, path, p, false) }, () => "");
+  table("#tab-hubs", [{ h: T("Pôle", "Hub"), f: r => hubFr(r.hub) }, { h: T("Emplois", "Jobs"), n: 1, f: r => intf(r.jobs) }], D.hubs);
+}
+// 1b catchment
+function drawCatch() {
+  const rows = D.hubs.slice().sort((a, b) => b.catch_45 - a.catch_45);
+  hbars("bars-hubs", "t-catch", rows, { max: 1, tick: pct, a: r => r.catch_45, b: r => r.catch_60, label: r => hubFr(r.hub),
+    value: r => `${pct(r.catch_45)} / ${pct(r.catch_60)}`, title: r => hubFr(r.hub),
+    aria: r => T(`${hubFr(r.hub)} : ${pct(r.catch_45)} des actifs en 45 minutes, ${pct(r.catch_60)} en 60 minutes`, `${hubFr(r.hub)}: ${pct(r.catch_45)} of workers within 45 minutes, ${pct(r.catch_60)} within 60 minutes`),
+    tip: r => [[T("Emplois", "Jobs"), intf(r.jobs)], [T("Actifs à moins de 45 min", "Workers within 45 min"), pct(r.catch_45)], [T("À moins de 60 min", "Within 60 min"), pct(r.catch_60)], [T("Trajet médian de ses salariés", "Median trip of its workers"), Math.round(r.median_pt_min) + " min"]] });
+  table("#tab-catch", [{ h: T("Pôle", "Hub"), f: r => hubFr(r.hub) }, { h: T("Emplois", "Jobs"), n: 1, f: r => intf(r.jobs) }, { h: T("Actifs à 45 min", "Workers within 45 min"), n: 1, f: r => pct(r.catch_45) },
+    { h: T("Actifs à 60 min", "Workers within 60 min"), n: 1, f: r => pct(r.catch_60) }, { h: T("Trajet médian (min)", "Median trip (min)"), n: 1, f: r => Math.round(r.median_pt_min) }], rows);
+}
+// 2a jobs map
+let jobsT = 45, jobsView = "map", jobsMap, findJobs, jobsDots;
+const jobsCol = d3.scaleThreshold().domain([10e3, 50e3, 200e3, 500e3, 1e6, 2e6]).range(SEQL);
+const JOBS_LAB = { fr: ["< 10 k", "10-50 k", "50-200 k", "200-500 k", "0,5-1 M", "1-2 M", "2 M +"].map(s => s.replace(/ (?=[kM])/g, " ")),
+                   en: ["< 10k", "10-50k", "50-200k", "200-500k", "0.5-1 M", "1-2 M", "2 M+"] };
+
+/* bivariate view: worker-weighted terciles of town income (rows) x jobs reachable (columns) */
+const BLUE3 = ["#f1f0ec", "#9ec5f4", "#256abf"];   // jobs: few -> many
+const ORNG3 = ["#f1f0ec", "#f5b48f", "#c2410c"];   // income: low -> high
+const mult  = (a, b) => { const x = d3.rgb(a), y = d3.rgb(b); return d3.rgb(x.r * y.r / 255, x.g * y.g / 255, x.b * y.b / 255).formatHex(); };
+const BIV   = [0, 1, 2].map(i => [0, 1, 2].map(j => mult(ORNG3[i], BLUE3[j])));
+function wTerciles(get) {
+  const a = zones.map(f => [get(f.properties), f.properties.r]).filter(d => d[0] != null && d[1] > 0).sort((x, y) => x[0] - y[0]);
+  const tot = d3.sum(a, d => d[1]), cut = [];
+  let c = 0;
+  for (const [v, w] of a) { c += w; if (cut.length === 0 && c >= tot / 3) cut.push(v); if (cut.length === 1 && c >= 2 * tot / 3) { cut.push(v); break; } }
+  return cut;
+}
+const tcls = (v, cut) => v <= cut[0] ? 0 : v <= cut[1] ? 1 : 2;
+let incCut = null, jobCut = null;
+function bivCuts() {
+  incCut = wTerciles(p => (ea[p.c] || {}).income || null);
+  jobCut = wTerciles(p => ea[p.c] ? ea[p.c]["jobs" + jobsT] : null);
+}
+function bivFill(p) {
+  const e = ea[p.c];
+  if (!e || !e.income) return "var(--none)";
+  if (!incCut || !jobCut) bivCuts();
+  return BIV[tcls(e.income, incCut)][tcls(e["jobs" + jobsT], jobCut)];
+}
+function bivLegend() {
+  const L = d3.select("#leg-jobs").html(""), s = 16;
+  const svg = L.append("svg").attr("width", 3 * s + 70).attr("height", 3 * s + 30).attr("role", "img")
+    .attr("aria-label", T("Légende : revenu de la commune en lignes, emplois accessibles en colonnes, par tiers d'actifs",
+                          "Legend: town income in rows, reachable jobs in columns, by thirds of workers"));
+  const g = svg.append("g").attr("transform", "translate(56,4)");
+  [0, 1, 2].forEach(i => [0, 1, 2].forEach(j => g.append("rect").attr("x", j * s).attr("y", (2 - i) * s).attr("width", s - 1).attr("height", s - 1).attr("fill", BIV[i][j])));
+  g.append("text").attr("x", 1.5 * s).attr("y", 3 * s + 12).attr("text-anchor", "middle").text(T("emplois →", "jobs →"));
+  g.append("text").attr("x", -6).attr("y", 1.5 * s).attr("text-anchor", "end").attr("dominant-baseline", "middle").text(T("revenu →", "income →"));
+  L.append("span").attr("class", "bivnote").text(T("Tiers d'actifs : revenu médian de la commune et emplois accessibles dans le temps choisi. En haut à gauche : communes aisées mais mal reliées ; au milieu à gauche : revenu intermédiaire et peu d'emplois.",
+    "Thirds of workers: town median income and jobs reachable within the chosen time. Top left: well-off but poorly connected towns; middle left: middle income and few jobs."));
+}
+function jobsLegend() {
+  if (jobsView === "biv") { bivLegend(); return; }
+  legend("#leg-jobs", T(JOBS_LAB.fr, JOBS_LAB.en), SEQL);
+  if (jobsView === "dots") d3.select("#leg-jobs").append("span").attr("class", "sizenote").text(T("Taille des cercles : actifs résidents", "Circle size: employed residents"));
+}
+function jobsTitle() {
+  d3.select("#t-jobs").text(jobsView === "biv"
+    ? T(`Revenu de la commune et emplois accessibles en ${jobsT} min`, `Town income and jobs reachable within ${jobsT} min`)
+    : T(`Emplois accessibles en ${jobsT} min en transports en commun`, `Jobs reachable within ${jobsT} min by public transport`));
+}
+function jobsRepaint() {
+  if (jobsView === "biv") bivCuts();
+  jobsMap.paint();
+  jobsDots.attr("display", jobsView === "dots" ? null : "none")
+    .attr("fill", f => { const e = ea[f.properties.c]; return e ? jobsCol(e["jobs" + jobsT]) : "var(--none)"; });
+  jobsLegend();
+  jobsTitle();
+}
+function drawJobs() {
+  const tip = p => { const e = ea[p.c] || {}; return [[T(`Emplois en ${jobsT} min`, `Jobs within ${jobsT} min`), intf(e["jobs" + jobsT] || 0)], [T("Revenu médian", "Median income"), e.income ? eur(e.income) : T("n.d.", "n/a")], [T("Actifs résidents", "Employed residents"), intf(p.r)]]; };
+  jobsMap = choro("map-jobs", "t-jobs", p => {
+    if (jobsView === "biv")  return bivFill(p);
+    if (jobsView === "dots") return "#ecebe7";
+    const e = ea[p.c]; return e ? jobsCol(e["jobs" + jobsT]) : "var(--none)"; }, tip);
+
+  // circles sized by employed residents (largest first so small towns stay on top)
+  const rad = d3.scaleSqrt().domain([0, d3.max(zones, f => f.properties.r)]).range([0, Math.max(9, jobsMap.el.clientWidth * 0.026)]);
+  jobsDots  = jobsMap.over.selectAll("circle").data(zones.filter(f => f.properties.r > 0).sort((a, b) => b.properties.r - a.properties.r)).join("circle")
+    .attr("transform", f => `translate(${jobsMap.path.centroid(f)})`).attr("stroke", "#fff").attr("stroke-width", 0.6).attr("vector-effect", NS).attr("fill-opacity", .92)
+    .on("mousemove", (ev, f) => tipOn(jobsMap.el, ev, f.properties.n, tip(f.properties))).on("mouseleave", () => tipOff(jobsMap.el))
+    .on("click", (ev, f) => setTown(f.properties));
+  jobsMap.onZoom(k => jobsDots.attr("r", f => rad(f.properties.r) / Math.sqrt(k)));
+
+  seg("#seg-jobsview", [["map", T("Carte", "Map")], ["dots", T("Actifs", "Workers")], ["biv", T("Revenu × emplois", "Income × jobs")]],
+      () => jobsView, v => { jobsView = v; jobsRepaint(); });
+  findJobs = finder("find-jobs", "out-jobs", jobsMap, p => { const e = ea[p.c] || {};
+    return T(`${p.n} : ${intf(e.jobs30)} emplois en 30 min, ${intf(e.jobs45)} en 45 min, ${intf(e.jobs60)} en 60 min.`,
+             `${p.n}: ${intf(e.jobs30)} jobs within 30 min, ${intf(e.jobs45)} within 45 min, ${intf(e.jobs60)} within 60 min.`); });
+  const rows = zones.map(f => f.properties).filter(p => p.r >= 5000).sort((a, b) => (ea[a.c] || {}).jobs45 - (ea[b.c] || {}).jobs45);
+  table("#tab-jobs", [{ h: T("Commune", "Town"), f: p => p.n }, { h: T("Département", "Department"), f: p => DEPS[p.d] }, { h: "30 min", n: 1, f: p => intf(ea[p.c].jobs30) },
+    { h: "45 min", n: 1, f: p => intf(ea[p.c].jobs45) }, { h: "60 min", n: 1, f: p => intf(ea[p.c].jobs60) }], rows);
+  jobsRepaint();
+}
+seg("#seg-jobs", null, () => jobsT, v => { jobsT = +v; jobsRepaint(); findJobs(); });
+// 2b income
+function drawIncome() {
+  const el = document.getElementById("bars-income"), q = D.equal.quintiles;
+  const w = el.clientWidth, H = 260, m = { l: 46, r: 58, t: 10, b: 46 };
+  const x0 = d3.scaleBand().domain(q.map(r => r.quintile)).range([m.l, w - m.r]).padding(.22);
+  const y = d3.scaleLinear().domain([0, d3.max(q, r => r.jobs60)]).nice().range([H - m.b, m.t]);
+  const svg = d3.select(el).html("").append("svg").attr("width", w).attr("height", H).attr("role", "img").attr("aria-labelledby", "t-income");
+  d3.select(el).style("position", "relative").append("div").attr("class", "tip");
+  svg.append("g").attr("class", "grid").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat(v => NF().format(".1f")(v / 1e6) + "\u202fM").tickSize(-(w - m.l - m.r)));
+  // connected dots: one line per travel time across income quintiles, shades of the page blue
+  const COL = { 30: "#6da7ec", 45: "#256abf", 60: "#0d366b" };
+  const cx  = r => x0(r.quintile) + x0.bandwidth() / 2;
+  const series = [30, 45, 60].map(t => ({ t, pts: q.map(r => ({ t, v: r["jobs" + t], r })) }));
+  const line = d3.line().x(d => cx(d.r)).y(d => y(d.v));
+  const s = svg.selectAll("g.ser").data(series).join("g").attr("class", "ser");
+  s.append("path").attr("d", d => line(d.pts)).attr("fill", "none").attr("stroke", d => COL[d.t]).attr("stroke-width", 2.5);
+  s.selectAll("circle").data(d => d.pts).join("circle").attr("tabindex", 0)
+    .attr("aria-label", d => T(`Quintile ${d.r.quintile} : ${intf(d.v)} emplois en ${d.t} minutes`, `Quintile ${d.r.quintile}: ${intf(d.v)} jobs within ${d.t} minutes`))
+    .attr("cx", d => cx(d.r)).attr("cy", d => y(d.v)).attr("r", 5).attr("fill", d => COL[d.t]).attr("stroke", "#fff").attr("stroke-width", 1.5)
+    .on("mousemove focus", (ev, d) => tipOn(el, ev, `Quintile ${d.r.quintile} (${eur(d.r.income_min)} - ${eur(d.r.income_max)})`, [[T(`Emplois en ${d.t} min`, `Jobs within ${d.t} min`), intf(d.v)]]))
+    .on("mouseleave blur", () => tipOff(el));
+  // direct labels at the end of each line instead of a legend
+  s.append("text").attr("x", d => cx(d.pts[d.pts.length - 1].r) + 10).attr("y", d => y(d.pts[d.pts.length - 1].v)).attr("dominant-baseline", "middle")
+    .attr("fill", d => COL[d.t]).style("fill", d => COL[d.t]).style("font-weight", 600).text(d => `${d.t} min`);
+  svg.append("g").selectAll("text").data(q).join("text").attr("x", r => x0(r.quintile) + x0.bandwidth() / 2).attr("y", H - m.b + 16).attr("text-anchor", "middle")
+    .text(r => `Q${r.quintile}`);
+  svg.append("g").selectAll("text").data(q).join("text").attr("x", r => x0(r.quintile) + x0.bandwidth() / 2).attr("y", H - m.b + 30).attr("text-anchor", "middle")
+    .text(r => T(`${Math.round(r.income_min / 1000)}-${Math.round(r.income_max / 1000)}\u202fk€`, `€${Math.round(r.income_min / 1000)}-${Math.round(r.income_max / 1000)}k`));
+  table("#tab-income", [{ h: "Quintile", f: r => "Q" + r.quintile }, { h: T("Revenu médian (€)", "Median income (€)"), f: r => `${intf(r.income_min)} - ${intf(r.income_max)}` },
+    { h: T("Emplois 30 min", "Jobs 30 min"), n: 1, f: r => intf(r.jobs30) }, { h: "45 min", n: 1, f: r => intf(r.jobs45) }, { h: "60 min", n: 1, f: r => intf(r.jobs60) }], q);
+}
+// 3a time-slot map
+const slotsFor = () => T([["peak", "Pointe 7-9 h"], ["early", "Tôt 4 h 30-6 h"], ["sunday", "Dimanche 7-9 h"], ["evening", "Retour 17-19 h"], ["late", "Retour 22 h-0 h 30"]],
+                         [["peak", "Peak 07-09"], ["early", "Early 04:30-06"], ["sunday", "Sunday 07-09"], ["evening", "Home 17-19"], ["late", "Home 22-00:30"]]);
+let SLOTS = slotsFor();
+const slotTitle = () => T(`Part des emplois des pôles accessible en 60 min : ${SLOTS.find(s => s[0] === slot)[1]}`, `Share of hub jobs reachable within 60 min: ${SLOTS.find(s => s[0] === slot)[1]}`);
+let slot = "early", slotMap, findSlot;
+const shareCol = d3.scaleThreshold().domain([.05, .15, .3, .5, .7, .85]).range(SEQL);
+function drawSlot() {
+  slotMap = choro("map-slot", "t-slot", p => { const s = sg[p.c]; return s ? shareCol(s["s60_" + slot]) : "var(--none)"; },
+    p => { const s = sg[p.c] || {}; return SLOTS.map(([k, l]) => [l, pct(s["s60_" + k] || 0)]); });
+  legend("#leg-slot", SHARE_LAB(), SEQL);
+  findSlot = finder("find-slot", "out-slot", slotMap, p => { const s = sg[p.c] || {};
+    return p.n + T(" : ", ": ") + SLOTS.map(([k, l]) => `${l} ${pct(s["s60_" + k] || 0)}`).join(T(" ; ", "; ")); });
+  seg("#seg-slot", SLOTS, () => slot, v => { slot = v; d3.select("#t-slot").text(slotTitle()); slotMap.paint(); });
+  d3.select("#t-slot").text(slotTitle());
+}
+const SHARE_LAB = () => T(["0-5 %", "5-15 %", "15-30 %", "30-50 %", "50-70 %", "70-85 %", "85 % +"], ["0-5%", "5-15%", "15-30%", "30-50%", "50-70%", "70-85%", "85%+"]);
+// 3b airports
+function drawAir() {
+  const rows = [];
+  ["Roissy-CDG airport", "Orly / Rungis"].forEach(h => SLOTS.forEach(([k, l]) => rows.push({ h, k, l, v: sgHub[h]["over60_" + k], m: sgHub[h]["median_" + k] })));
+  hbars("bars-air", "t-air", rows, { max: 1, tick: pct, rowH: 22, left: 250, a: r => r.v, label: r => `${hubFr(r.h).replace("Aéroport ", "")}, ${r.l}`,
+    value: r => pct(r.v), title: r => `${hubFr(r.h)}, ${r.l}`,
+    aria: r => T(`${hubFr(r.h)}, ${r.l} : ${pct(r.v)} des salariés à plus d'une heure, trajet médian ${Math.round(r.m)} minutes`, `${hubFr(r.h)}, ${r.l}: ${pct(r.v)} of workers over an hour, median trip ${Math.round(r.m)} minutes`),
+    tip: r => [[T("Plus d'une heure", "Over an hour"), pct(r.v)], [T("Trajet médian", "Median trip"), Math.round(r.m) + " min"]], color: "#eb6834" });
+  table("#tab-air", [{ h: T("Pôle", "Hub"), f: r => hubFr(r.h) }, { h: T("Créneau", "Time slot"), f: r => r.l }, { h: T("Plus d'1 h", "Over 1 h"), n: 1, f: r => pct(r.v) }, { h: T("Trajet médian (min)", "Median trip (min)"), n: 1, f: r => Math.round(r.m) }], rows);
+}
+// 3c PRIM service by hour (Veasna RA)
+let svcArea = "all";
+const SVC_AREAS = () => [["all", T("Région", "Region")], ["cdg", T("Autour de Roissy", "Around Roissy")], ["orly", T("Autour d'Orly", "Around Orly")]];
+const SVC_DAYS  = () => [["mardi", T("Mardi", "Tuesday"), "#2a78d6", null, d3.symbolCircle], ["samedi", T("Samedi", "Saturday"), "#1baf7a", "2 3", d3.symbolTriangle], ["dimanche", T("Dimanche", "Sunday"), "#eb6834", "7 4", d3.symbolSquare]];
+const hourLab = h => T(`${h % 24} h`, String(h % 24).padStart(2, "0") + ":00");
+function drawService() {
+  const el = document.getElementById("chart-service"), d = PRIM.service[svcArea], days = SVC_DAYS();
+  const w = el.clientWidth, H = 300, m = { l: 52, r: 16, t: 34, b: 34 };
+  const x = d3.scaleLinear().domain(d3.extent(d, r => r.hour)).range([m.l, w - m.r]);
+  const y = d3.scaleLinear().domain([0, d3.max(d, r => Math.max(r.mardi, r.samedi, r.dimanche))]).nice().range([H - m.b, m.t]);
+  const svg = d3.select(el).html("").append("svg").attr("width", w).attr("height", H).attr("role", "img").attr("aria-labelledby", "t-service");
+  d3.select(el).style("position", "relative").append("div").attr("class", "tip");
+  svg.append("rect").attr("x", m.l).attr("width", x(6) - m.l).attr("y", m.t).attr("height", H - m.b - m.t).attr("fill", "#efeeea");
+  svg.append("rect").attr("x", x(22)).attr("width", w - m.r - x(22)).attr("y", m.t).attr("height", H - m.b - m.t).attr("fill", "#efeeea");
+  svg.append("g").attr("class", "grid").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat(v => v >= 1e6 ? NF().format(".1f")(v / 1e6) + "\u202fM" : NF().format(",.0f")(v / 1e3) + "\u202fk").tickSize(-(w - m.l - m.r)));
+  svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(Math.min(12, w / 60)).tickFormat(hourLab));
+  days.forEach(([k, , c, dash, sym]) => {
+    svg.append("path").datum(d).attr("fill", "none").attr("stroke", c).attr("stroke-width", 2).attr("stroke-dasharray", dash).attr("d", d3.line().x(r => x(r.hour)).y(r => y(r[k])));
+    svg.selectAll(null).data(d.filter((r, i) => i % 3 === 0)).join("path").attr("d", d3.symbol(sym, 40)).attr("transform", r => `translate(${x(r.hour)},${y(r[k])})`).attr("fill", c).attr("stroke", "#fff");
+  });
+  const L = svg.append("g").attr("transform", `translate(${m.l},4)`);
+  days.forEach(([, lab, c, dash], i) => { L.append("line").attr("x1", i * 100).attr("x2", i * 100 + 18).attr("y1", 6).attr("y2", 6).attr("stroke", c).attr("stroke-width", 2).attr("stroke-dasharray", dash);
+    L.append("text").attr("x", i * 100 + 22).attr("y", 10).text(lab); });
+  svg.append("text").attr("x", m.l + 4).attr("y", m.t + 14).style("font-size", "11px").text(T("avant 6 h", "before 06:00"));
+  svg.append("text").attr("x", w - m.r - 4).attr("y", m.t + 14).attr("text-anchor", "end").style("font-size", "11px").text(T("après 22 h", "after 22:00"));
+  const cross = svg.append("line").attr("y1", m.t).attr("y2", H - m.b).attr("stroke", "#0b0b0b").attr("stroke-width", 1).attr("opacity", 0);
+  svg.append("rect").attr("x", m.l).attr("y", m.t).attr("width", w - m.l - m.r).attr("height", H - m.b - m.t).attr("fill", "transparent")
+    .on("mousemove", ev => { const hx = Math.round(x.invert(d3.pointer(ev)[0])), r = d.find(q => q.hour === hx); if (!r) return;
+      cross.attr("x1", x(hx)).attr("x2", x(hx)).attr("opacity", .4);
+      tipOn(el, ev, hourLab(hx), days.map(([k, lab]) => [lab, intf(r[k])])); })
+    .on("mouseleave", () => { cross.attr("opacity", 0); tipOff(el); });
+  table("#tab-service", [{ h: T("Heure", "Hour"), f: r => hourLab(r.hour) }].concat(days.map(([k, lab]) => ({ h: lab, n: 1, f: r => intf(r[k]) }))), d);
+  seg("#seg-service", SVC_AREAS(), () => svcArea, v => { svcArea = v; drawService(); });
+}
+// 4 car chart
+function drawCar() {
+  const el = document.getElementById("car");
+  const d = D.car.map(r => { const m = r.bin.match(/[\d.]+/g).map(Number); return { x: (m[0] + Math.min(m[1], 100)) / 2, car: r.car, pt: r.pt, bin: r.bin }; });
+  const w = el.clientWidth, H = 280, m = { l: 42, r: 16, t: 12, b: 38 };
+  const x = d3.scaleLinear().domain([0, 100]).range([m.l, w - m.r]), y = d3.scaleLinear().domain([0, 100]).range([H - m.b, m.t]);
+  const svg = d3.select(el).html("").append("svg").attr("width", w).attr("height", H).attr("role", "img").attr("aria-labelledby", "t-car");
+  svg.append("g").attr("class", "grid").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickFormat(v => p0(v)).tickSize(-(w - m.l - m.r)));
+  svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(5).tickFormat(v => p0(v)));
+  svg.append("text").attr("x", w - m.r).attr("y", H - 4).attr("text-anchor", "end").text(T("emplois des pôles accessibles en 60 min depuis la commune", "hub jobs reachable within 60 min from the town"));
+  [["car", "#eb6834", T("voiture", "car"), "8 4"], ["pt", "#2a78d6", T("transports en commun", "public transport"), null]].forEach(([k, c, lab, dash]) => {
+    svg.append("path").datum(d).attr("fill", "none").attr("stroke", c).attr("stroke-width", 2).attr("stroke-dasharray", dash).attr("d", d3.line().x(r => x(r.x)).y(r => y(r[k])));
+    const mk = k === "car" ? d3.symbolSquare : d3.symbolCircle;
+    svg.selectAll(null).data(d).join("path").attr("d", d3.symbol(mk, 50)).attr("transform", r => `translate(${x(r.x)},${y(r[k])})`).attr("fill", c).attr("stroke", "#fff");
+    const last = d[d.length - 1];
+    svg.append("text").attr("x", x(last.x) - 4).attr("y", y(last[k]) + (k === "car" ? 18 : -10)).attr("text-anchor", "end").style("fill", "#0b0b0b").text(`${lab} ${p0(last[k])}`);
+    svg.append("text").attr("x", x(d[0].x) + 8).attr("y", y(d[0][k]) + (k === "car" ? -10 : 18)).style("fill", "#0b0b0b").text(`${lab} ${p0(d[0][k])}`);
+  });
+  table("#tab-car", [{ h: T("Emplois des pôles en 60 min", "Hub jobs within 60 min"), f: r => r.bin.replace("[", "").replace(")", "").replace(", ", T(" à ", " to ")) + T(" %", "%") },
+    { h: T("Voiture", "Car"), n: 1, f: r => p0(r.car) }, { h: T("Transports en commun", "Public transport"), n: 1, f: r => p0(r.pt) }], d);
+}
+// 5a solutions map (colour + pattern)
+const solFor = () => ({ bike_direct: [T("Vélo direct vers un pôle", "Direct cycling to a hub"), "#2a78d6", null], bike_rail: [T("Vélo + train", "Bike + train"), "#1baf7a", "hatch"],
+                        on_demand: [T("Transport à la demande / bus express", "On-demand transport / express bus"), "#eb6834", "dots"] });
+let SOL = solFor();
+let solMap;
+function drawSol() {
+  const el = document.getElementById("map-sol");
+  const { svg, root, path, zoom } = baseMap(el, "t-sol");
+  const defs = svg.append("defs");
+  const hp = defs.append("pattern").attr("id", "p-hatch").attr("patternUnits", "userSpaceOnUse").attr("width", 6).attr("height", 6).attr("patternTransform", "rotate(45)");
+  hp.append("rect").attr("width", 6).attr("height", 6).attr("fill", SOL.bike_rail[1]); hp.append("line").attr("x1", 0).attr("y1", 0).attr("x2", 0).attr("y2", 6).attr("stroke", "#fff").attr("stroke-width", 2);
+  const dp = defs.append("pattern").attr("id", "p-dots").attr("patternUnits", "userSpaceOnUse").attr("width", 6).attr("height", 6);
+  dp.append("rect").attr("width", 6).attr("height", 6).attr("fill", SOL.on_demand[1]); dp.append("circle").attr("cx", 3).attr("cy", 3).attr("r", 1.3).attr("fill", "#fff");
+  const fill = s => !s || s === "none" ? "#efeeea" : SOL[s][2] ? `url(#p-${SOL[s][2]})` : SOL[s][1];
+  const sel = root.append("g").selectAll("path").data(zones).join("path").attr("class", "zone").attr("d", path).attr("stroke", "#fcfcfb").attr("stroke-width", .3)
+    .attr("fill", f => fill((so[f.properties.c] || {}).solution))
+    .on("mousemove", (ev, f) => tipOn(el, ev, f.properties.n, solRows(f.properties))).on("mouseleave", () => tipOff(el))
+    .on("click", (ev, f) => setTown(f.properties));
+  root.append("g").selectAll("path").data(zones.filter(f => f.properties.h)).join("path").attr("d", path).attr("fill", "none").attr("stroke", "#0b0b0b").attr("stroke-width", .7).attr("pointer-events", "none");
+  const mark = root.append("path").attr("fill", "none").attr("stroke", "#0b0b0b").attr("stroke-width", 2.5).attr("pointer-events", "none");
+  solMap = { highlight: p => focusTown(zoom, mark, path, p) };
+  const L = d3.select("#leg-sol").html("");
+  Object.entries(SOL).forEach(([k, [l, c, pat]]) => { const s = L.append("div").attr("class", "sw");
+    const sv = s.append("svg").attr("width", 18).attr("height", 14).attr("aria-hidden", "true");
+    sv.append("rect").attr("width", 18).attr("height", 14).attr("rx", 2).attr("fill", pat ? `url(#p-${pat})` : c); s.append("span").text(l); });
+  L.append("div").attr("class", "sw").call(s => { s.append("svg").attr("width", 18).attr("height", 14).append("rect").attr("width", 18).attr("height", 14).attr("rx", 2).attr("fill", "none").attr("stroke", "#0b0b0b"); s.append("span").text(T("Pôle d'emploi", "Job hub")); });
+  finder("find-sol", "out-sol", solMap, p => p.n + T(" : ", ": ") + solRows(p).map(([k, v]) => `${k} ${v}`).join(T(" ; ", "; ")));
+  const rows = zones.map(f => ({ p: f.properties, s: so[f.properties.c] || {} })).filter(r => r.s.solution && r.s.solution !== "none")
+    .sort((a, b) => b.p.r - a.p.r);
+  table("#tab-sol", [{ h: T("Commune", "Town"), f: r => r.p.n }, { h: T("Solution", "Option"), f: r => SOL[r.s.solution][0] }, { h: T("Actifs", "Workers"), n: 1, f: r => intf(r.p.r) },
+    { h: T("Voiture (hors commune)", "Car (out-commuters)"), n: 1, f: r => r.s.car_out == null ? "" : pct(r.s.car_out) }, { h: T("Pôle à vélo", "Hub by bike"), f: r => r.s.bike_hub ? hubFr(r.s.bike_hub) : "" },
+    { h: T("Aménagements cyclables (km/km²)", "Cycling infrastructure (km/km²)"), n: 1, f: r => cyc[r.p.c] ? NF().format(".1f")(cyc[r.p.c].cycle_dens) : "" }], rows);
+}
+function solRows(p) { const s = so[p.c] || {};
+  const cy = cyc[p.c];
+  return [[T("Solution", "Option"), s.solution && s.solution !== "none" ? SOL[s.solution][0] : T("aucune proposée", "none suggested")], [T("Voiture (hors commune)", "Car (out-commuters)"), s.car_out == null ? T("n.d.", "n/a") : pct(s.car_out)],
+          [T("Emplois des pôles en 45 min (TC)", "Hub jobs within 45 min (PT)"), pct(s.hub45_pt || 0)], [T("Avec vélo + train", "With bike + train"), pct(s.hub45_bikept || 0)],
+          [T("Pôle à moins de 30 min à vélo", "Hub under 30 min by bike"), s.bike_hub ? hubFr(s.bike_hub) : T("aucun", "none")],
+          [T("Aménagements cyclables", "Cycling infrastructure"), cy ? T(`${NF().format(".1f")(cy.cycle_km)} km (${NF().format(".1f")(cy.cycle_dens)} km/km²)`, `${NF().format(".1f")(cy.cycle_km)} km (${NF().format(".1f")(cy.cycle_dens)} km/km²)`) : T("n.d.", "n/a")]]; }
+// 5b GPE
+let gpeV = "gain", gpeMap, findGpe;
+const gainCol = d3.scaleThreshold().domain([.01, .05, .1, .2, .3, .45]).range(GAIN);
+function drawGpe() {
+  gpeMap = choro("map-gpe", "t-gpe", p => { const s = sc[p.c]; if (!s) return "var(--none)";
+      return gpeV === "gain" ? gainCol(s.s45_gpe - s.s45_today) : shareCol(gpeV === "gpe" ? s.s45_gpe : s.s45_today); },
+    p => { const s = sc[p.c] || {}; return [[T("Aujourd'hui (45 min)", "Today (45 min)"), pct(s.s45_today || 0)], [T("Avec le GPE (45 min)", "With the GPE (45 min)"), pct(s.s45_gpe || 0)]]; });
+  findGpe = finder("find-gpe", "out-gpe", gpeMap, p => { const s = sc[p.c] || {};
+    return T(`${p.n} : ${pct(s.s45_today || 0)} des emplois des pôles en 45 min aujourd'hui, ${pct(s.s45_gpe || 0)} avec le Grand Paris Express.`,
+             `${p.n}: ${pct(s.s45_today || 0)} of hub jobs within 45 min today, ${pct(s.s45_gpe || 0)} with the Grand Paris Express.`); });
+  paintGpeLegend();
+}
+function paintGpeLegend() {
+  if (gpeV === "gain") legend("#leg-gpe", [T("aucun", "none"), "+1", "+5", "+10", "+20", "+30", "+45"], GAIN);
+  else legend("#leg-gpe", SHARE_LAB(), SEQL);
+  d3.select("#t-gpe").text(gpeV === "gain" ? T("Gain en emplois des pôles accessibles en 45 min (points de pourcentage)", "Gain in hub jobs reachable within 45 min (percentage points)")
+    : gpeV === "gpe" ? T("Avec le Grand Paris Express : part des emplois des pôles en 45 min", "With the Grand Paris Express: share of hub jobs within 45 min")
+    : T("Aujourd'hui : part des emplois des pôles en 45 min", "Today: share of hub jobs within 45 min"));
+}
+seg("#seg-gpe", null, () => gpeV, v => { gpeV = v; gpeMap.paint(); paintGpeLegend(); });
+
+const townLabel = () => d3.select("#town-label").html(icon("pin")).append("span").text(T("Ma commune", "My town"));
+const townTexts = () => ({ placeholder: T("Tapez votre commune, ex. Meaux, Saint-Ouen", "Type your town, e.g. Meaux, Saint-Ouen"), label: T("Ma commune", "My town"),
+                           clearLabel: T("Effacer", "Clear"), emptyText: T("Aucune commune trouvée", "No town found") });
+townLabel();
+townBox = Combobox("#story-town",
+  zones.map(f => ({ id: f.properties.c, label: f.properties.n, sub: `${DEPS[f.properties.d]} (${f.properties.d})`, keys: f.properties.c })),
+  Object.assign(townTexts(), { icon: "search", onSelect: it => setTown(it ? byCode[it.id] : null) }));
+function drawAll() { MAPS.length = 0; drawHubs(); drawCatch(); drawJobs(); drawIncome(); drawService(); drawSlot(); drawAir(); drawCar(); drawSol(); drawGpe(); }
+drawAll();
+const docTitle = () => { document.title = T("Travailler sans voiture en Île-de-France : où, pour qui, à quelle heure ?", "Working without a car in Île-de-France: where, for whom, at what time?"); };
+docTitle();
+langToggle("#lang-host");
+onLang(() => { SLOTS = slotsFor(); SOL = solFor(); docTitle(); texts(); townLabel(); townBox.relabel(townTexts()); drawAll(); townSummary(); });
+let rt, lastW = window.innerWidth;
+window.addEventListener("resize", () => { if (window.innerWidth === lastW) return; lastW = window.innerWidth; clearTimeout(rt); rt = setTimeout(drawAll, 150); });
+</script>
+</body>
+</html>

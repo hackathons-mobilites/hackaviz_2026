@@ -1,0 +1,27 @@
+data/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.env
+.DS_Store
+
+# Local environment and Python/Jupyter caches
+*.py[cod]
+
+
+# Original downloads: retain locally and document sources instead of committing large files
+/FD_MOBPRO_2023.csv
+/varmod_mobpro_2023.csv
+/emplacement-des-gares-idf.csv
+/referentiel-des-lignes.csv
+/offre_hebdomadaire_moyenne_hors_vacances.csv
+/amenagements-velo-en-ile-de-france.csv
+/RP2023_mobpro.zip
+/RP2023_mobpro/
+
+# Isochrones pipeline (isochrones/): keep only the small processed JSON, rebuild the rest
+!isochrones/data/
+isochrones/data/raw/
+isochrones/data/processed/*
+!isochrones/data/processed/*.json
+outputs/

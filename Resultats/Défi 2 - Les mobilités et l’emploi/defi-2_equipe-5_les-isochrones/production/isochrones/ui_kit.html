@@ -1,0 +1,219 @@
+<style>
+  /* ---- shared UI kit: language, icons, combobox, map zoom controls ---- */
+  html[data-lang="fr"] [lang="en"], html[data-lang="en"] [lang="fr"] { display: none !important; }
+  .langsw { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #cfcdc6; border-radius: 999px; padding: 3px 4px 3px 10px;
+            background: #fff; font-size: 13px; color: #4a4946; }
+  .langsw button { border: 0; background: transparent; border-radius: 999px; padding: 4px 10px; font: inherit; font-weight: 600; color: #4a4946; cursor: pointer; }
+  .langsw button[aria-pressed="true"] { background: #2a78d6; color: #fff; }
+  .ico { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  .cbx { position: relative; min-width: 240px; max-width: 420px; flex: 1 1 260px; }
+  .cbx .field { display: flex; align-items: center; gap: 8px; border: 1px solid #cfcdc6; border-radius: 10px; background: #fff;
+                padding: 0 8px 0 10px; height: 40px; transition: border-color .12s, box-shadow .12s; }
+  .cbx .field:focus-within { border-color: #2a78d6; box-shadow: 0 0 0 3px rgba(42, 120, 214, .18); }
+  .cbx .field .ico { color: #6b6a66; }
+  .cbx input { border: 0; outline: 0; font: inherit; font-size: 15px; flex: 1; min-width: 0; background: transparent; color: #0b0b0b; height: 100%; }
+  .cbx input::placeholder { color: #8a8984; }
+  .cbx .clear, .cbx .toggle { border: 0; background: transparent; padding: 4px; border-radius: 6px; cursor: pointer; color: #6b6a66; display: flex; }
+  .cbx .clear:hover, .cbx .toggle:hover { background: #f1f0ec; color: #0b0b0b; }
+  .cbx .clear[hidden] { display: none; }
+  .cbx ul { position: absolute; z-index: 30; left: 0; right: 0; top: 44px; margin: 0; padding: 4px; list-style: none; background: #fff;
+            border: 1px solid #dedcd6; border-radius: 10px; box-shadow: 0 10px 28px rgba(0, 0, 0, .12); max-height: 300px; overflow: auto; }
+  .cbx ul[hidden] { display: none; }
+  .cbx li { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; padding: 8px 10px; border-radius: 7px; cursor: pointer; font-size: 14px; }
+  .cbx li .sub { color: #6b6a66; font-size: 12px; white-space: nowrap; }
+  .cbx li[aria-selected="true"], .cbx li:hover { background: #eaf2fc; }
+  .cbx li mark { background: none; color: #1c5cab; font-weight: 700; }
+  .cbx li.empty { color: #6b6a66; cursor: default; background: none; }
+  .cbx-label { font-size: 13px; font-weight: 600; color: #4a4946; display: flex; align-items: center; gap: 6px; }
+  .zoombar { position: absolute; right: 8px; top: 8px; display: flex; flex-direction: column; gap: 4px; z-index: 6; }
+  .zoombar button { width: 34px; height: 34px; border-radius: 8px; border: 1px solid #dedcd6; background: rgba(255, 255, 255, .95);
+                    color: #3c3b38; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .zoombar button:hover { background: #fff; color: #0b0b0b; border-color: #b9b7b0; }
+  .zoombar button:disabled { opacity: .35; cursor: default; }
+  .zoomhint { position: absolute; left: 8px; bottom: 8px; font-size: 11px; color: #6b6a66; background: rgba(255, 255, 255, .85); padding: 2px 6px; border-radius: 6px; pointer-events: none; }
+  svg .zroot path { vector-effect: non-scaling-stroke; }
+  svg .zroot path.zone { cursor: pointer; }
+  .towncard { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; background: #f4f6fa; border: 1px solid #dbe5f3;
+              border-radius: 10px; padding: 10px 12px; margin: 0 0 10px; font-size: 14px; }
+  .towncard[hidden] { display: none; }
+  .towncard .name { font-weight: 650; display: flex; align-items: center; gap: 6px; }
+  .towncard .stat { display: flex; flex-direction: column; line-height: 1.25; }
+  .towncard .stat b { font-size: 16px; font-variant-numeric: tabular-nums; }
+  .towncard .stat span { font-size: 12px; color: #4a4946; }
+  .towncard .act { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #cfcdc6; background: #fff; border-radius: 8px; padding: 6px 10px;
+         font: inherit; font-size: 13px; cursor: pointer; color: #0b0b0b; }
+  .btn:hover { border-color: #2a78d6; color: #1c5cab; }
+</style>
+<script>
+/* ---- language: French by default, ?lang=en or a saved choice switches to English ---- */
+const LANG = (() => {
+  let cur = new URLSearchParams(location.search).get("lang");
+  if (!cur) { try { cur = localStorage.getItem("isochrones-lang"); } catch (e) { cur = null; } }
+  cur = cur === "en" ? "en" : "fr";
+  document.documentElement.lang = cur; document.documentElement.dataset.lang = cur;
+  return { cur, subs: [] };
+})();
+const T = (fr, en) => LANG.cur === "en" ? en : fr;
+const onLang = fn => LANG.subs.push(fn);
+const LOCALES = {
+  fr: d3.formatLocale({ decimal: ",", thousands: "\u202f", grouping: [3], currency: ["", "\u202f€"], percent: "\u202f%" }),
+  en: d3.formatLocale({ decimal: ".", thousands: ",", grouping: [3], currency: ["€", ""] }),
+};
+const NF = () => LOCALES[LANG.cur];
+function setLang(l) {
+  if (l === LANG.cur) return;
+  LANG.cur = l;
+  document.documentElement.lang = l; document.documentElement.dataset.lang = l;
+  try { localStorage.setItem("isochrones-lang", l); } catch (e) { /* storage may be unavailable */ }
+  try { const u = new URL(location.href); u.searchParams.set("lang", l); history.replaceState(null, "", u); } catch (e) { /* ignore */ }
+  d3.selectAll(".langsw button").attr("aria-pressed", function () { return String(this.dataset.l === l); });
+  d3.selectAll("a[data-keep-lang]").each(function () { const u = new URL(this.getAttribute("href"), location.href); u.searchParams.set("lang", l); this.href = u.href; });
+  LANG.subs.forEach(fn => fn());
+}
+function langToggle(host) {
+  const w = d3.select(host).append("div").attr("class", "langsw").attr("role", "group").attr("aria-label", "Langue / Language");
+  w.append("span").html(icon("languages"));
+  [["fr", "FR", "Français"], ["en", "EN", "English"]].forEach(([l, short, full]) =>
+    w.append("button").attr("type", "button").attr("data-l", l).attr("lang", null).attr("aria-label", full).attr("title", full)
+      .attr("aria-pressed", String(LANG.cur === l)).text(short).on("click", () => setLang(l)));
+}
+document.addEventListener("DOMContentLoaded", () =>
+  d3.selectAll("a[data-keep-lang]").each(function () { const u = new URL(this.getAttribute("href"), location.href); u.searchParams.set("lang", LANG.cur); this.href = u.href; }));
+
+/* Icons: Lucide (https://lucide.dev), ISC licence, inlined as SVG paths */
+const ICONS = {
+  search:   '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+  x:        '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+  chevron:  '<path d="m6 9 6 6 6-6"/>',
+  pin:      '<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
+  plus:     '<path d="M5 12h14"/><path d="M12 5v14"/>',
+  minus:    '<path d="M5 12h14"/>',
+  reset:    '<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>',
+  locate:   '<line x1="2" x2="5" y1="12" y2="12"/><line x1="19" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="5"/><line x1="12" x2="12" y1="19" y2="22"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/>',
+  building: '<rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/>',
+  languages:'<path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/>',
+  route:    '<circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/>',
+};
+function icon(name, size) {
+  const s = size || 16;
+  return `<svg class="ico" viewBox="0 0 24 24" width="${s}" height="${s}" aria-hidden="true" focusable="false">${ICONS[name]}</svg>`;
+}
+
+const norm = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
+  .replace(/\bsaint\b/g, "st").replace(/\bsainte\b/g, "ste").replace(/[-'’\s.]+/g, " ").trim();
+
+/* Accessible combobox with type-ahead.
+   items: [{id, label, sub, keys?}]; opts: {placeholder, label, icon, onSelect(item|null), showAllOnFocus, maxItems} */
+function Combobox(host, items, opts) {
+  const uid = "cbx" + Math.random().toString(36).slice(2, 8);
+  const max = opts.maxItems || 8;
+  items.forEach(it => { it._k = norm(it.label + " " + (it.keys || "")); it._w = it._k.split(" "); });
+  const root = d3.select(host).append("div").attr("class", "cbx");
+  const field = root.append("div").attr("class", "field");
+  field.append("span").html(icon(opts.icon || "search"));
+  const input = field.append("input").attr("id", uid + "-in").attr("type", "text").attr("autocomplete", "off").attr("spellcheck", "false")
+    .attr("role", "combobox").attr("aria-autocomplete", "list").attr("aria-expanded", "false").attr("aria-controls", uid + "-list")
+    .attr("placeholder", opts.placeholder || "").attr("aria-label", opts.label || opts.placeholder || "");
+  const clear = field.append("button").attr("type", "button").attr("class", "clear").attr("aria-label", opts.clearLabel || "Effacer").attr("hidden", true).html(icon("x"));
+  if (opts.showAllOnFocus) field.append("button").attr("type", "button").attr("class", "toggle").attr("tabindex", -1).attr("aria-label", "Liste").html(icon("chevron"))
+    .on("mousedown", ev => { ev.preventDefault(); input.node().focus(); open(""); });
+  const list = root.append("ul").attr("id", uid + "-list").attr("role", "listbox").attr("hidden", true);
+  let shown = [], active = -1, current = null;
+
+  function rank(q) {
+    if (!q) return opts.showAllOnFocus ? items.slice() : [];
+    const out = [];
+    for (const it of items) {
+      let s = -1;
+      if (it._k.startsWith(q)) s = 0;
+      else if (it._w.some(w => w.startsWith(q))) s = 1;
+      else if (it._k.includes(q)) s = 2;
+      if (s >= 0) out.push([s, it.label.length, it]);
+    }
+    return out.sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(x => x[2]);
+  }
+  function hl(label, q) {
+    const n = norm(label); const i = q ? n.indexOf(q) : -1;
+    if (i < 0 || n.length !== label.length) return null;
+    return [label.slice(0, i), label.slice(i, i + q.length), label.slice(i + q.length)];
+  }
+  function open(raw) {
+    const q = norm(raw);
+    shown = rank(q).slice(0, opts.showAllOnFocus && !q ? 200 : max); active = shown.length ? 0 : -1;
+    list.html("");
+    if (!shown.length) {
+      if (q) list.append("li").attr("class", "empty").text(opts.emptyText || T("Aucun résultat", "No result"));
+      else { close(); return; }
+    }
+    shown.forEach((it, i) => {
+      const li = list.append("li").attr("role", "option").attr("id", `${uid}-o${i}`).attr("aria-selected", i === active ? "true" : "false")
+        .on("mousedown", ev => { ev.preventDefault(); pick(it); });
+      const lab = li.append("span"); const parts = hl(it.label, q);
+      if (parts) { lab.append("span").text(parts[0]); lab.append("mark").text(parts[1]); lab.append("span").text(parts[2]); } else lab.text(it.label);
+      if (it.sub) li.append("span").attr("class", "sub").text(it.sub);
+    });
+    list.attr("hidden", null); input.attr("aria-expanded", "true").attr("aria-activedescendant", active >= 0 ? `${uid}-o${active}` : null);
+  }
+  function close() { list.attr("hidden", true); input.attr("aria-expanded", "false").attr("aria-activedescendant", null); }
+  function move(d) {
+    if (!shown.length) return;
+    active = (active + d + shown.length) % shown.length;
+    list.selectAll("li[role=option]").attr("aria-selected", (x, i) => i === active ? "true" : "false");
+    input.attr("aria-activedescendant", `${uid}-o${active}`);
+    const el = document.getElementById(`${uid}-o${active}`); if (el) el.scrollIntoView({ block: "nearest" });
+  }
+  function pick(it, silent) {
+    current = it; input.property("value", it ? it.label : ""); clear.attr("hidden", it ? null : true); close();
+    if (!silent && opts.onSelect) opts.onSelect(it);
+  }
+  input.on("input", function () { clear.attr("hidden", this.value ? null : true); open(this.value); })
+    .on("focus", function () { if (opts.showAllOnFocus) { this.select(); open(""); } })
+    .on("blur", () => setTimeout(() => { close(); if (current) input.property("value", current.label); }, 120))
+    .on("keydown", ev => {
+      if (ev.key === "ArrowDown") { ev.preventDefault(); if (list.attr("hidden") !== null) open(input.property("value")); else move(1); }
+      else if (ev.key === "ArrowUp") { ev.preventDefault(); move(-1); }
+      else if (ev.key === "Enter") { if (active >= 0 && shown[active]) { ev.preventDefault(); pick(shown[active]); } }
+      else if (ev.key === "Escape") { close(); }
+    });
+  clear.on("click", () => { pick(null); input.node().focus(); });
+  return {
+    set: (id, silent) => pick(items.find(x => x.id === id) || null, silent !== false), get: () => current,
+    focus: () => input.node().focus(), input: input.node(),
+    relabel: (o, subFn) => {
+      Object.assign(opts, o);
+      input.attr("placeholder", opts.placeholder || "").attr("aria-label", opts.label || opts.placeholder || "");
+      clear.attr("aria-label", opts.clearLabel || "Effacer");
+      if (subFn) items.forEach(it => { it.sub = subFn(it); });
+      if (current) input.property("value", current.label);
+    },
+    relabelItems: labelFn => { items.forEach(it => { it.label = labelFn(it); it._k = norm(it.label + " " + (it.keys || "")); it._w = it._k.split(" "); });
+                               if (current) input.property("value", current.label); },
+  };
+}
+
+/* Zoomable map: wraps a <g class="zroot"> in d3.zoom with buttons. Wheel zooms only with Ctrl/Cmd. */
+function attachZoom(box, svg, root, path, w, h, opts) {
+  const zoom = d3.zoom().scaleExtent([1, 14]).translateExtent([[-w * 0.2, -h * 0.2], [w * 1.2, h * 1.2]])
+    .filter(ev => (ev.type === "wheel" ? (ev.ctrlKey || ev.metaKey) : !ev.button) && ev.type !== "dblclick")
+    .on("zoom", ev => root.attr("transform", ev.transform));
+  svg.call(zoom).on("dblclick.zoom", null);
+  d3.select(box).selectAll(".zoombar, .zoomhint").remove();
+  const bar = d3.select(box).append("div").attr("class", "zoombar");
+  const L = LANG.cur === "en";
+  const b = (ic, label, fn) => bar.append("button").attr("type", "button").attr("aria-label", label).attr("title", label).html(icon(ic)).on("click", fn);
+  b("plus", L ? "Zoom in" : "Zoomer", () => svg.transition().duration(250).call(zoom.scaleBy, 1.8));
+  b("minus", L ? "Zoom out" : "Dézoomer", () => svg.transition().duration(250).call(zoom.scaleBy, 1 / 1.8));
+  b("reset", L ? "Reset view" : "Vue d'ensemble", () => svg.transition().duration(350).call(zoom.transform, d3.zoomIdentity));
+  const loc = b("locate", L ? "Zoom to the selected town" : "Zoomer sur ma commune", () => opts && opts.current && zoomTo(opts.current()));
+  d3.select(box).append("div").attr("class", "zoomhint").text(L ? "Ctrl + wheel or buttons to zoom, drag to pan" : "Ctrl + molette ou boutons pour zoomer, glisser pour déplacer");
+  function zoomTo(f, kMax = 9) {
+    if (!f) return;
+    const [[x0, y0], [x1, y1]] = path.bounds(f);
+    const k = Math.min(kMax, 0.5 / Math.max((x1 - x0) / w, (y1 - y0) / h));
+    const t = d3.zoomIdentity.translate(w / 2, h / 2).scale(Math.max(1, k)).translate(-(x0 + x1) / 2, -(y0 + y1) / 2);
+    svg.transition().duration(600).call(zoom.transform, t);
+  }
+  return { zoomTo, setLocateEnabled: on => loc.property("disabled", !on) };
+}
+</script>

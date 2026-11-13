@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accès aux pôles d'emploi en transports en commun | Access to job hubs by public transport</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<!--__UI__-->
+<style>
+  :root {
+    --surface:   #fcfcfb;
+    --card:      #ffffff;
+    --ink:       #0b0b0b;
+    --ink-2:     #52514e;
+    --ink-3:     #8a8984;
+    --line:      #e4e3df;
+    --blue:      #2a78d6;
+    --orange:    #eb6834;
+    --none:      #e9e8e4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--ink);
+         font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 60px; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  h2 { font-size: 17px; margin: 0 0 4px; }
+  .lede { color: var(--ink-2); margin: 0 0 22px; max-width: 760px; }
+  .sub  { color: var(--ink-2); font-size: 13px; margin: 0 0 12px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 18px; }
+  .kpi  { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .kpi .v { font-size: 28px; font-weight: 650; letter-spacing: -0.02em; }
+  .kpi .l { color: var(--ink-2); font-size: 13px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 8px 0 12px; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .seg button { border: 0; background: transparent; padding: 6px 12px; font: inherit; color: var(--ink-2); cursor: pointer; }
+  .seg button.on { background: var(--blue); color: #fff; }
+  select { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+  .mapbox { position: relative; }
+  .legend { display: flex; flex-wrap: wrap; gap: 0; margin-top: 8px; font-size: 12px; color: var(--ink-2); }
+  .legend .sw { display: flex; flex-direction: column; align-items: flex-start; width: 84px; }
+  .legend .sw i { display: block; width: 82px; height: 10px; }
+  .tip { position: absolute; pointer-events: none; background: var(--card); border: 1px solid var(--line);
+         border-radius: 8px; padding: 8px 10px; font-size: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.08);
+         opacity: 0; transition: opacity .08s; max-width: 260px; z-index: 5; }
+  .tip b { display: block; font-size: 13px; margin-bottom: 2px; }
+  .tip .row { display: flex; justify-content: space-between; gap: 14px; color: var(--ink-2); }
+  .tip .row span:last-child { color: var(--ink); font-variant-numeric: tabular-nums; }
+  svg text { fill: var(--ink-2); font-size: 11px; }
+  .axis path, .axis line { stroke: var(--line); }
+  .grid line { stroke: var(--line); }
+  .bar-label { font-size: 11px; fill: var(--ink-2); }
+  .hubbar { cursor: pointer; }
+  .hubbar:hover rect.main { fill: #1c5cab; }
+  .hubbar.sel text.name { fill: var(--ink); font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); }
+  th { color: var(--ink-2); font-weight: 500; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .src { color: var(--ink-3); font-size: 12px; margin-top: 10px; }
+  :focus-visible { outline: 3px solid #0b0b0b; outline-offset: 2px; border-radius: 4px; }
+  .hubbar:focus { outline: none; } .hubbar:focus rect:first-child { stroke: #0b0b0b; stroke-width: 2; }
+  .find { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 13px; margin: 0 0 8px; }
+  .find input { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; min-width: 220px; }
+  .readout:empty { display: none; }
+  .readout { font-size: 13px; background: #f4f3ef; border-radius: 8px; padding: 6px 10px; margin-bottom: 8px; }
+  details.data { margin-top: 10px; font-size: 13px; } details.data summary { cursor: pointer; color: #1c5cab; }
+  details.data .wrap { max-height: 320px; overflow: auto; margin-top: 6px; }
+  .findrow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 10px; }
+  .pickhost { flex: 1 1 280px; max-width: 440px; display: flex; }
+  .hubpick { flex: 1 1 280px; max-width: 380px; display: flex; }
+  .controls { align-items: center; }
+  .seg button { height: 40px; }
+  .toplink { font-size: 13px; color: var(--ink-2); margin: 0 0 10px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: space-between; }
+  .toplink a { color: #1c5cab; font-weight: 600; }
+  .pill { display: inline-block; height: 8px; border-radius: 4px; background: var(--blue); vertical-align: middle; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="toplink">
+    <a href="/" data-keep-lang><span lang="fr">Lire le récit guidé</span><span lang="en">Read the guided story</span></a>
+    <span id="lang-host"></span>
+  </div>
+  <h1><span lang="fr">Les pôles d'emploi sont-ils accessibles en transports en commun&nbsp;?</span><span lang="en">Are the job hubs reachable by public transport?</span></h1>
+  <p class="lede"><span lang="fr">Île-de-France, heure de pointe du matin en semaine. Temps de trajet depuis chaque commune (et arrondissement
+    parisien) vers les 28 pôles où se concentrent les emplois, calculés à partir des horaires IDFM&nbsp;: marche, trajet, correspondance,
+    marche, médiane des départs toutes les 5 minutes entre 7&nbsp;h et 9&nbsp;h.</span><span lang="en">Île-de-France, weekday morning peak. Travel times from every commune (and Paris arrondissement)
+    to the 28 places where jobs concentrate, computed from the IDFM timetables: walk, ride, transfer, walk,
+    median over departures every 5 minutes between 07:00 and 09:00.</span></p>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="card" id="map-card">
+    <h2 id="map-title"></h2>
+    <p class="sub" id="map-sub"></p>
+    <div class="controls">
+      <div class="seg" id="mode-seg">
+        <button data-mode="share" class="on"><span lang="fr">Emplois des pôles accessibles</span><span lang="en">Hub jobs reachable</span></button>
+        <button data-mode="time"><span lang="fr">Temps de trajet vers un pôle</span><span lang="en">Travel time to one hub</span></button>
+      </div>
+      <div class="seg" id="t-seg">
+        <button data-t="30">30 min</button>
+        <button data-t="45" class="on">45 min</button>
+        <button data-t="60">60 min</button>
+      </div>
+      <div id="hub-pick" class="hubpick" style="display:none"></div>
+    </div>
+    <div class="findrow"><span class="cbx-label" id="town-label"></span><div id="town-pick" class="pickhost"></div></div>
+    <div class="towncard" id="towncard" hidden aria-live="polite"></div>
+    <div class="mapbox" id="mapbox"><svg id="map" role="img" aria-labelledby="map-title"></svg><div class="tip" id="tip"></div></div>
+    <div class="legend" id="legend"></div>
+    <p class="src"><span lang="fr">Sources&nbsp;: GTFS IDFM (nov. 2026, ODbL), flux domicile-travail INSEE RP 2022, contours IGN. Calculateur d'itinéraires de l'équipe.</span><span lang="en">Sources: IDFM GTFS (Nov 2026, ODbL), INSEE RP 2022 home-work flows, IGN boundaries. Own routing.</span></p>
+  </div>
+
+  <div class="card" id="hubs-card">
+    <h2><span lang="fr">Bassin d'accès de chaque pôle</span><span lang="en">Catchment of each hub</span></h2>
+    <p class="sub"><span lang="fr">Part des actifs de la région qui atteignent le pôle en 45&nbsp;min (foncé) et 60&nbsp;min (clair). Cliquez sur un pôle pour le cartographier.</span><span lang="en">Share of the region's employed residents who can reach the hub within 45 min (dark) and 60 min (light). Click a hub to map it.</span></p>
+    <div id="hubchart"></div>
+    <details class="data"><summary><span lang="fr">Voir en tableau</span><span lang="en">Show as a table</span></summary><div class="wrap" id="hubtable"></div></details>
+  </div>
+
+  <div class="grid2">
+    <div class="card" id="dep-card">
+      <h2><span lang="fr">Par département de résidence</span><span lang="en">By department of residence</span></h2>
+      <p class="sub"><span lang="fr">Part moyenne des emplois des pôles accessibles, pondérée par les actifs résidents.</span><span lang="en">Average share of hub jobs reachable, weighted by employed residents.</span></p>
+      <div id="depchart"></div>
+    </div>
+    <div class="card" id="car-card">
+      <h2><span lang="fr">Là où les pôles sont hors d'atteinte, on prend la voiture</span><span lang="en">Where the hubs are out of reach, people drive</span></h2>
+      <p class="sub"><span lang="fr">Mode principal des actifs travaillant hors de leur commune, selon la part des emplois des pôles que leur commune atteint en 60&nbsp;min.</span><span lang="en">Main mode of people working outside their own commune, by how much of the hub jobs their commune reaches within 60 min.</span></p>
+      <div id="carchart"></div>
+      <p class="src"><span lang="fr">Modes&nbsp;: INSEE RP 2023 (API Melodi). Moyenne pondérée par classe.</span><span lang="en">Mode: INSEE RP 2023 (Melodi API). Commuter-weighted average per bin.</span></p>
+    </div>
+  </div>
+
+  <div class="card" id="towns-card">
+    <h2><span lang="fr">Grandes communes résidentielles les plus éloignées des pôles</span><span lang="en">Large residential towns furthest from the hubs</span></h2>
+    <p class="sub"><span lang="fr">Communes d'au moins 10&nbsp;000 actifs résidents, avec plus d'actifs que d'emplois, triées par emplois des pôles accessibles en 45&nbsp;min.</span><span lang="en">Towns with at least 10,000 employed residents and more workers than jobs, sorted by hub jobs reachable within 45 min.</span></p>
+    <div id="towns"></div>
+  </div>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const SEQ  = ["#0d366b", "#184f95", "#256abf", "#3987e5", "#6da7ec", "#9ec5f4", "#cde2fb"];
+const DEPS = { "75": "Paris", "92": "Hauts-de-Seine", "93": "Seine-Saint-Denis", "94": "Val-de-Marne",
+               "77": "Seine-et-Marne", "78": "Yvelines", "91": "Essonne", "95": "Val-d'Oise" };
+const fmtPct = v => NF().format(".0%")(v);
+const fmtInt = v => NF().format(",")(Math.round(v));
+const fmtK   = v => v >= 1e6 ? NF().format(".1f")(v / 1e6) + "\u202fM" : NF().format(",.0f")(v / 1e3) + "\u202fk";
+const pctN   = v => NF().format(".0f")(v) + T("\u202f%", "%");
+const HUB_NAMES = {
+  "Roissy-CDG airport":       ["Aéroport Roissy-CDG", "Roissy-CDG airport"],
+  "Paris centre-ouest (QCA)": ["Paris centre-ouest (QCA)", "Paris centre-west (CBD)"],
+  "Paris centre-est":         ["Paris centre-est", "Paris centre-east"],
+  "Paris rive gauche":        ["Paris rive gauche", "Paris Left Bank"],
+};
+const hubName = h => HUB_NAMES[h] ? T(...HUB_NAMES[h]) : h;
+const minTxt  = m => m > 120 ? T("plus de 2 h", "over 2 h") : m + " min";
+
+const state = { mode: "share", t: 45, hub: 0 };
+const zones = DATA.zones.features;
+zones.forEach((f, i) => f.properties.i = i);
+
+// KPI tiles
+function kpis() {
+  const hubs   = DATA.hubs;
+  const totJ   = d3.sum(hubs, d => d.jobs);
+  const w      = d3.sum(zones, f => f.properties.r);
+  const avg45  = d3.sum(zones, f => f.properties.r * (f.properties.s45 || 0)) / w;
+  const outer  = hubs.filter(h => h.catch_45 < 0.05);
+  const car    = DATA.car;
+  const items = [
+    [fmtK(totJ), T(`emplois dans les 28 pôles, soit ${fmtPct(totJ / 5994480)} des emplois de la région`,
+                   `jobs in the 28 hubs, ${fmtPct(totJ / 5994480)} of all jobs in the region`)],
+    [fmtPct(avg45), T("des emplois des pôles accessibles en 45 min pour un actif moyen", "of hub jobs reachable within 45 min, for the average worker")],
+    [String(outer.length), T("pôles que moins de 5 % des actifs atteignent en 45 min (Roissy, Saclay, Saint-Quentin…)",
+                             "hubs that fewer than 5% of workers reach within 45 min (CDG, Saclay, SQY…)")],
+    [T(`de ${pctN(car[0].car)} à ${pctN(car[car.length - 1].car)}`, `${pctN(car[0].car)} to ${pctN(car[car.length - 1].car)}`),
+     T("de voiture chez les actifs travaillant hors de leur commune, des communes les moins aux mieux reliées",
+       "car share of out-of-town commuters, from the least to the best connected towns")],
+  ];
+  d3.select("#kpis").html("").selectAll(".kpi").data(items).join("div").attr("class", "kpi")
+    .each(function (d) {
+      const s = d3.select(this);
+      s.append("div").attr("class", "v").text(d[0]);
+      s.append("div").attr("class", "l").text(d[1]);
+    });
+}
+kpis();
+
+// Map
+const tip = d3.select("#tip");
+function showTip(ev, rows, title) {
+  const box = document.getElementById("mapbox").getBoundingClientRect();
+  tip.html("");
+  tip.append("b").text(title);
+  rows.forEach(([k, v]) => { const r = tip.append("div").attr("class", "row"); r.append("span").text(k); r.append("span").text(v); });
+  let x = ev.clientX - box.left + 14, y = ev.clientY - box.top + 14;
+  if (x > box.width - 270) x -= 290;
+  tip.style("left", x + "px").style("top", y + "px").style("opacity", 1);
+}
+const hideTip = () => tip.style("opacity", 0);
+
+const shareBins = [0.05, 0.15, 0.3, 0.5, 0.7, 0.85];
+const shareCol  = d3.scaleThreshold().domain(shareBins).range(SEQ.slice().reverse());
+const timeBins  = [15, 30, 45, 60, 75, 90];
+const timeCol   = d3.scaleThreshold().domain(timeBins).range(SEQ);
+
+let path, mapSel, mapRoot, mapZoom, selected = null;
+function drawMap() {
+  const el = document.getElementById("mapbox");
+  const W  = el.clientWidth, H = Math.min(640, Math.max(360, W * 0.72));
+  const proj = d3.geoMercator().fitSize([W, H], DATA.zones);
+  path = d3.geoPath(proj);
+  const svg = d3.select("#map").attr("width", W).attr("height", H);
+  svg.selectAll("*").remove();
+  mapRoot = svg.append("g").attr("class", "zroot");
+  mapSel = mapRoot.append("g").selectAll("path").data(zones).join("path").attr("class", "zone")
+    .attr("d", path).attr("stroke", "#fcfcfb").attr("stroke-width", 0.3)
+    .on("mousemove", (ev, f) => {
+      const p = f.properties;
+      const rows = [[T("Actifs résidents", "Employed residents"), fmtInt(p.r)], [T("Emplois", "Jobs"), fmtInt(p.j)]];
+      if (state.mode === "share") {
+        rows.unshift([T(`Emplois des pôles en ${state.t} min`, `Hub jobs within ${state.t} min`), fmtPct(p["s" + state.t] || 0)]);
+        rows.push([T("Pôle le plus proche", "Nearest hub"), `${hubName(p.nh)} (${p.nm} min)`]);
+      } else {
+        const m = DATA.toHub[p.i][state.hub];
+        rows.unshift([T(`Vers ${hubName(DATA.hubNames[state.hub])}`, `To ${hubName(DATA.hubNames[state.hub])}`), minTxt(m)]);
+      }
+      if (p.car != null) rows.push([T("Voiture (hors commune)", "Car share (out-commuters)"), fmtPct(p.car)]);
+      rows.push(["", T("Cliquer pour sélectionner", "Click to select")]);
+      showTip(ev, rows, p.n + (p.h ? T(`  (pôle : ${hubName(p.h)})`, `  (hub: ${hubName(p.h)})`) : ""));
+    })
+    .on("mouseleave", hideTip)
+    .on("click", (ev, f) => { selectTown(f, true); });
+  mapRoot.append("g").selectAll("path").data(zones.filter(f => f.properties.h)).join("path")
+    .attr("d", path).attr("fill", "none").attr("stroke", "#eb6834").attr("stroke-width", 1)
+    .attr("pointer-events", "none").attr("class", "hubline");
+  mapRoot.append("path").attr("class", "mark").attr("fill", "none").attr("stroke", "#0b0b0b").attr("stroke-width", 2.5).attr("pointer-events", "none");
+  mapZoom = attachZoom(el, svg, mapRoot, path, W, H, { current: () => selected });
+  mapZoom.setLocateEnabled(!!selected);
+  if (selected) { mapRoot.select("path.mark").attr("d", path(selected)); mapZoom.zoomTo(selected); }
+  paint();
+}
+
+function paint() {
+  if (state.mode === "share") {
+    const k = "s" + state.t;
+    mapSel.attr("fill", f => f.properties[k] == null ? "var(--none)" : shareCol(f.properties[k]));
+    d3.select("#map-title").text(T(`Part des emplois des pôles accessible en ${state.t} min`, `Share of hub jobs reachable within ${state.t} min`));
+    d3.select("#map-sub").text(T("Pour chaque commune : part des 3,0 millions d'emplois des 28 pôles accessible en transports en commun. Contours orange : pôles.",
+                                 "Each commune: what share of the 3.0 M jobs in the 28 hubs can be reached by public transport. Orange outlines: hubs."));
+    legend(T(["0-5 %", "5-15 %", "15-30 %", "30-50 %", "50-70 %", "70-85 %", "85 % +"], ["0-5%", "5-15%", "15-30%", "30-50%", "50-70%", "70-85%", "85%+"]), SEQ.slice().reverse());
+  } else {
+    const h = state.hub;
+    mapSel.attr("fill", f => { const m = DATA.toHub[f.properties.i][h]; return m > 120 ? "var(--none)" : timeCol(m); });
+    d3.select("#map-title").text(T(`Temps de trajet vers ${hubName(DATA.hubNames[h])}`, `Travel time to ${hubName(DATA.hubNames[h])}`));
+    const hb = DATA.hubs[h];
+    d3.select("#map-sub").text(T(
+      `${fmtK(hb.jobs)} emplois. ${fmtPct(hb.catch_45)} des actifs de la région à moins de 45 min, ${fmtPct(hb.catch_60)} à moins de 60 min. ` +
+      `Trajet médian des personnes qui y travaillent : ${Math.round(hb.median_pt_min)} min.`,
+      `${fmtK(hb.jobs)} jobs. ${fmtPct(hb.catch_45)} of the region's workers within 45 min, ${fmtPct(hb.catch_60)} within 60 min. ` +
+      `Median trip of people who work there: ${Math.round(hb.median_pt_min)} min.`));
+    legend(T(["moins de 15 min", "15-30", "30-45", "45-60", "60-75", "75-90", "90-120", "plus de 2 h"],
+             ["under 15 min", "15-30", "30-45", "45-60", "60-75", "75-90", "90-120", "over 2 h"]), SEQ.concat(["#e9e8e4"]));
+  }
+  renderCard();
+  d3.selectAll(".hubbar").classed("sel", d => state.mode === "time" && DATA.hubNames.indexOf(d.hub) === state.hub);
+}
+
+function legend(labels, colors, unit = "") {
+  const L = d3.select("#legend").html("");
+  labels.forEach((l, i) => {
+    const s = L.append("div").attr("class", "sw");
+    s.append("i").style("background", colors[i]);
+    s.append("span").text(l + (i === labels.length - 1 ? "" : unit));
+  });
+}
+
+function syncControls() {
+  d3.selectAll("#mode-seg button").classed("on", function () { return this.dataset.mode === state.mode; })
+    .attr("aria-pressed", function () { return String(this.dataset.mode === state.mode); });
+  d3.select("#t-seg").style("display", state.mode === "share" ? null : "none");
+  d3.select("#hub-pick").style("display", state.mode === "time" ? null : "none");
+  hubBox.set(state.hub);
+  d3.selectAll("#t-seg button").classed("on", function () { return +this.dataset.t === state.t; })
+    .attr("aria-pressed", function () { return String(+this.dataset.t === state.t); });
+}
+const hubTexts = () => ({ placeholder: T("Choisir un pôle d'emploi", "Choose a job hub"), label: T("Pôle d'emploi", "Job hub"),
+                          clearLabel: T("Effacer", "Clear"), emptyText: T("Aucun pôle trouvé", "No hub found") });
+const hubBox = Combobox("#hub-pick",
+  DATA.hubNames.map((h, i) => ({ id: i, label: hubName(h), sub: fmtK(DATA.hubs[i].jobs) + " " + T("emplois", "jobs") })),
+  Object.assign(hubTexts(), { icon: "building", showAllOnFocus: true, onSelect: it => { if (it) { state.hub = it.id; paint(); } } }));
+d3.selectAll("#mode-seg button").on("click", function () { state.mode = this.dataset.mode; syncControls(); paint();
+  if (state.mode === "time") setTimeout(() => hubBox.focus(), 0); });
+d3.selectAll("#t-seg button").on("click", function () { state.t = +this.dataset.t; syncControls(); paint(); });
+
+// Hub catchment bars
+function drawHubs() {
+  const el = document.getElementById("hubchart");
+  const d  = DATA.hubs.slice().sort((a, b) => b.catch_45 - a.catch_45);
+  const W  = el.clientWidth, rowH = 22, left = Math.min(260, W * 0.42), H = d.length * rowH + 30;
+  const x  = d3.scaleLinear().domain([0, 1]).range([left, W - 46]);
+  const svg = d3.select(el).html("").append("svg").attr("width", W).attr("height", H);
+  svg.append("g").attr("class", "grid").attr("transform", `translate(0,${H - 22})`)
+    .call(d3.axisBottom(x).ticks(5).tickFormat(fmtPct).tickSize(-(H - 26))).call(g => g.select(".domain").remove());
+  const g = svg.selectAll(".hubbar").data(d).join("g").attr("class", "hubbar").attr("tabindex", 0).attr("role", "button")
+    .attr("aria-label", r => T(`${hubName(r.hub)} : ${fmtPct(r.catch_45)} des actifs en 45 min, ${fmtPct(r.catch_60)} en 60 min. Entrée pour le cartographier.`,
+                               `${hubName(r.hub)}: ${fmtPct(r.catch_45)} of workers within 45 min, ${fmtPct(r.catch_60)} within 60 min. Press Enter to map it.`))
+    .on("keydown", (ev, r) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); state.mode = "time"; state.hub = DATA.hubNames.indexOf(r.hub); syncControls(); paint();
+                                 document.getElementById("map-card").scrollIntoView({ behavior: "smooth" }); } })
+    .attr("transform", (r, i) => `translate(0,${i * rowH + 2})`)
+    .on("click", (ev, r) => { state.mode = "time"; state.hub = DATA.hubNames.indexOf(r.hub); syncControls(); paint();
+                              document.getElementById("map-card").scrollIntoView({ behavior: "smooth" }); })
+    .on("mousemove", (ev, r) => {
+      const t = d3.select("#hubtip");
+      const box = el.getBoundingClientRect();
+      t.html("");
+      t.append("b").text(hubName(r.hub));
+      [[T("Emplois", "Jobs"), fmtK(r.jobs)], [T("Actifs à moins de 45 min", "Workers within 45 min"), fmtPct(r.catch_45)],
+       [T("Actifs à moins de 60 min", "Workers within 60 min"), fmtPct(r.catch_60)],
+       [T("Trajet médian de ses salariés", "Median trip of its workers"), Math.round(r.median_pt_min) + " min"],
+       [T("Ses salariés à plus d'1 h", "Its workers with a trip over 60 min"), fmtPct(r.share_over_60)]]
+        .forEach(([k, v]) => { const row = t.append("div").attr("class", "row"); row.append("span").text(k); row.append("span").text(v); });
+      t.style("left", Math.min(ev.clientX - box.left + 14, W - 280) + "px").style("top", (ev.clientY - box.top + 14) + "px").style("opacity", 1);
+    })
+    .on("mouseleave", () => d3.select("#hubtip").style("opacity", 0));
+  g.append("rect").attr("x", 0).attr("width", W).attr("height", rowH).attr("fill", "transparent");
+  g.append("rect").attr("x", left).attr("y", 4).attr("height", rowH - 8).attr("rx", 3)
+    .attr("width", r => x(r.catch_60) - left).attr("fill", "#2a78d6").attr("opacity", 0.3);
+  g.append("rect").attr("class", "main").attr("x", left).attr("y", 4).attr("height", rowH - 8).attr("rx", 3)
+    .attr("width", r => Math.max(1, x(r.catch_45) - left)).attr("fill", "#2a78d6");
+  g.append("text").attr("class", "name").attr("x", left - 8).attr("y", rowH / 2 + 4).attr("text-anchor", "end")
+    .text(r => `${hubName(r.hub)}  ${fmtK(r.jobs)}`);
+  g.append("text").attr("class", "bar-label").attr("x", r => x(r.catch_60) + 6).attr("y", rowH / 2 + 4)
+    .text(r => `${fmtPct(r.catch_45)} / ${fmtPct(r.catch_60)}`);
+  d3.select(el).style("position", "relative").append("div").attr("class", "tip").attr("id", "hubtip");
+  g.on("focus", function (ev, r) { const b = this.getBoundingClientRect(), box = el.getBoundingClientRect(); const t = d3.select("#hubtip"); t.html("");
+      t.append("b").text(hubName(r.hub)); t.append("div").attr("class", "row").call(x => { x.append("span").text(T("En 45 / 60 min", "Within 45 / 60 min")); x.append("span").text(`${fmtPct(r.catch_45)} / ${fmtPct(r.catch_60)}`); });
+      t.style("left", "20px").style("top", (b.bottom - box.top + 4) + "px").style("opacity", 1); })
+   .on("blur", () => d3.select("#hubtip").style("opacity", 0));
+  const tb = d3.select("#hubtable").html("").append("table");
+  tb.append("thead").append("tr").selectAll("th")
+    .data(T(["Pôle", "Emplois", "Actifs à 45 min", "à 60 min", "Trajet médian de ses salariés"], ["Hub", "Jobs", "Workers within 45 min", "within 60 min", "Median trip of its workers"]))
+    .join("th").attr("scope", "col").text(x => x);
+  tb.append("tbody").selectAll("tr").data(d).join("tr").selectAll("td")
+    .data(r => [hubName(r.hub), fmtInt(r.jobs), fmtPct(r.catch_45), fmtPct(r.catch_60), Math.round(r.median_pt_min) + " min"]).join("td").text(x => x);
+  paint();
+}
+
+// Department bars
+function drawDeps() {
+  const el = document.getElementById("depchart");
+  const d  = DATA.deps.slice().sort((a, b) => b.s45 - a.s45);
+  const W  = el.clientWidth, rowH = 26, left = 128, H = d.length * rowH + 26;
+  const x  = d3.scaleLinear().domain([0, 100]).range([left, W - 70]);
+  const svg = d3.select(el).html("").append("svg").attr("width", W).attr("height", H);
+  svg.append("g").attr("class", "grid").attr("transform", `translate(0,${H - 20})`)
+    .call(d3.axisBottom(x).ticks(4).tickFormat(v => pctN(v)).tickSize(-(H - 24))).call(g => g.select(".domain").remove());
+  const g = svg.selectAll("g.dep").data(d).join("g").attr("class", "dep").attr("transform", (r, i) => `translate(0,${i * rowH + 2})`);
+  g.append("rect").attr("x", left).attr("y", 5).attr("height", rowH - 10).attr("rx", 3).attr("width", r => x(r.s60) - left).attr("fill", "#2a78d6").attr("opacity", 0.3);
+  g.append("rect").attr("x", left).attr("y", 5).attr("height", rowH - 10).attr("rx", 3).attr("width", r => Math.max(1, x(r.s45) - left)).attr("fill", "#2a78d6");
+  g.append("text").attr("x", left - 8).attr("y", rowH / 2 + 4).attr("text-anchor", "end").text(r => DEPS[r.dep] || r.dep);
+  g.append("text").attr("class", "bar-label").attr("x", r => x(r.s60) + 6).attr("y", rowH / 2 + 4)
+    .text(r => `${pctN(r.s45)} / ${pctN(r.s60)}`);
+}
+
+// Car vs access line chart
+function drawCar() {
+  const el = document.getElementById("carchart");
+  const d  = DATA.car.map(r => {
+    const m = r.bin.match(/[\d.]+/g).map(Number);
+    return { x: (m[0] + Math.min(m[1], 100)) / 2, car: r.car, pt: r.pt };
+  });
+  const W = el.clientWidth, H = 260, m = { l: 40, r: 16, t: 10, b: 36 };
+  const x = d3.scaleLinear().domain([0, 100]).range([m.l, W - m.r]);
+  const y = d3.scaleLinear().domain([0, 100]).range([H - m.b, m.t]);
+  const svg = d3.select(el).html("").append("svg").attr("width", W).attr("height", H);
+  svg.append("g").attr("class", "grid").attr("transform", `translate(${m.l},0)`)
+    .call(d3.axisLeft(y).ticks(5).tickFormat(v => pctN(v)).tickSize(-(W - m.l - m.r))).call(g => g.select(".domain").remove());
+  svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`)
+    .call(d3.axisBottom(x).ticks(5).tickFormat(v => pctN(v)));
+  svg.append("text").attr("x", W - m.r).attr("y", H - 4).attr("text-anchor", "end").text(T("emplois des pôles accessibles en 60 min", "hub jobs reachable within 60 min"));
+  [["car", "#eb6834", T("voiture", "car")], ["pt", "#2a78d6", T("transports en commun", "public transport")]].forEach(([k, c, label]) => {
+    svg.append("path").datum(d).attr("fill", "none").attr("stroke", c).attr("stroke-width", 2)
+      .attr("d", d3.line().x(r => x(r.x)).y(r => y(r[k])));
+    svg.selectAll(null).data(d).join("circle").attr("cx", r => x(r.x)).attr("cy", r => y(r[k])).attr("r", 4)
+      .attr("fill", c).attr("stroke", "#fff").attr("stroke-width", 1.5);
+    const last = d[d.length - 1];
+    svg.append("text").attr("x", x(last.x) - 4).attr("y", y(last[k]) + (k === "car" ? 18 : -10)).attr("text-anchor", "end")
+      .style("fill", "#0b0b0b").text(`${label} ${pctN(last[k])}`);
+    svg.append("text").attr("x", x(d[0].x) + 6).attr("y", y(d[0][k]) + (k === "car" ? -10 : 18))
+      .style("fill", "#0b0b0b").text(pctN(d[0][k]));
+  });
+}
+
+// Towns table
+function drawTowns() {
+  const rows = zones.map(f => f.properties)
+    .filter(p => p.r >= 10000 && p.j < p.r)
+    .sort((a, b) => (a.s45 - b.s45) || (a.s60 - b.s60)).slice(0, 15);
+  const t = d3.select("#towns").html("").append("table");
+  const head = T(["Commune", "Département", "Actifs résidents", "Emplois des pôles en 45 min", "en 60 min", "Pôle le plus proche", "Voiture"],
+                 ["Town", "Department", "Employed residents", "Hub jobs within 45 min", "within 60 min", "Nearest hub", "Car share"]);
+  t.append("thead").append("tr").selectAll("th").data(head).join("th").attr("class", (d, i) => i >= 2 && i !== 5 ? "num" : null).text(d => d);
+  const tr = t.append("tbody").selectAll("tr").data(rows).join("tr");
+  tr.append("td").text(p => p.n);
+  tr.append("td").text(p => DEPS[p.d]);
+  tr.append("td").attr("class", "num").text(p => fmtInt(p.r));
+  tr.append("td").attr("class", "num").text(p => fmtPct(p.s45));
+  tr.append("td").attr("class", "num").each(function (p) {
+    const c = d3.select(this);
+    c.append("span").attr("class", "pill").style("width", Math.round(p.s60 * 60) + "px").style("margin-right", "6px");
+    c.append("span").text(fmtPct(p.s60));
+  });
+  tr.append("td").text(p => `${hubName(p.nh)} (${p.nm} min)`);
+  tr.append("td").attr("class", "num").text(p => p.car == null ? "" : fmtPct(p.car));
+}
+
+const DEPN = { "75": "Paris", "92": "Hauts-de-Seine", "93": "Seine-Saint-Denis", "94": "Val-de-Marne",
+               "77": "Seine-et-Marne", "78": "Yvelines", "91": "Essonne", "95": "Val-d'Oise" };
+const townTexts = () => ({ placeholder: T("Tapez une commune, ex. Meaux ou Saint-Ouen", "Type a town, e.g. Meaux or Saint-Ouen"),
+                           label: T("Chercher une commune", "Find a town"), clearLabel: T("Effacer", "Clear"),
+                           emptyText: T("Aucune commune trouvée", "No town found") });
+const townLabel = () => d3.select("#town-label").html(icon("pin")).append("span").text(T("Chercher une commune", "Find a town"));
+townLabel();
+const townBox = Combobox("#town-pick",
+  zones.map(f => ({ id: f.properties.c, label: f.properties.n, sub: DEPN[f.properties.d] + " (" + f.properties.d + ")", keys: f.properties.c })),
+  Object.assign(townTexts(), { icon: "search", onSelect: it => selectTown(it ? zones.find(z => z.properties.c === it.id) : null, true) }));
+
+function selectTown(f, zoomIt) {
+  selected = f;
+  townBox.set(f ? f.properties.c : null);
+  mapRoot.select("path.mark").attr("d", f ? path(f) : null);
+  mapZoom.setLocateEnabled(!!f);
+  if (f && zoomIt) mapZoom.zoomTo(f);
+  renderCard();
+}
+function renderCard() {
+  const card = d3.select("#towncard");
+  if (!selected) { card.attr("hidden", true).html(""); return; }
+  const p = selected.properties;
+  card.attr("hidden", null).html("");
+  card.append("div").attr("class", "name").html(icon("pin")).append("span").text(p.n);
+  const stat = (v, l) => { const s = card.append("div").attr("class", "stat"); s.append("b").text(v); s.append("span").text(l); };
+  if (state.mode === "share") {
+    stat(fmtPct(p["s" + state.t] || 0), T(`des emplois des pôles en ${state.t} min`, `of hub jobs within ${state.t} min`));
+    stat(`${p.nm} min`, T(`jusqu'au pôle le plus proche (${hubName(p.nh)})`, `to nearest hub (${hubName(p.nh)})`));
+  } else {
+    const m = DATA.toHub[p.i][state.hub];
+    stat(minTxt(m), T(`vers ${hubName(DATA.hubNames[state.hub])}`, `to ${hubName(DATA.hubNames[state.hub])}`));
+    stat(fmtPct(p["s45"] || 0), T("des emplois des pôles en 45 min", "of hub jobs within 45 min"));
+  }
+  stat(fmtInt(p.r), T("actifs résidents", "employed residents"));
+  if (p.car != null) stat(fmtPct(p.car), T("en voiture (hors commune)", "drive (out-commuters)"));
+  const act = card.append("div").attr("class", "act");
+  const btn = (ic, text, fn) => { const b = act.append("button").attr("class", "btn").attr("type", "button").html(icon(ic)).on("click", fn);
+                                  b.append("span").text(text); };
+  const target = p.h || p.nh;
+  if (state.mode === "share" || DATA.hubNames[state.hub] !== target)
+    btn("route", p.h ? T("Temps de trajet vers ce pôle", "Travel times to this hub") : T("Temps de trajet vers son pôle le plus proche", "Travel times to its nearest hub"),
+        () => { state.mode = "time"; state.hub = DATA.hubNames.indexOf(target); syncControls(); paint(); });
+  btn("x", T("Effacer", "Clear"), () => selectTown(null));
+}
+
+function fromHash() {
+  const m = location.hash.match(/^#hub-(\d+)$/);
+  if (m && +m[1] < DATA.hubNames.length) { state.mode = "time"; state.hub = +m[1]; }
+}
+fromHash();
+window.addEventListener("hashchange", () => { fromHash(); syncControls(); paint(); });
+
+function drawAll() { drawMap(); drawHubs(); drawDeps(); drawCar(); drawTowns(); syncControls(); }
+drawAll();
+langToggle("#lang-host");
+onLang(() => {
+  document.title = T("Accès aux pôles d'emploi en transports en commun", "Access to job hubs by public transport");
+  kpis(); townLabel();
+  hubBox.relabelItems(it => hubName(DATA.hubNames[it.id]));
+  hubBox.relabel(hubTexts(), it => fmtK(DATA.hubs[it.id].jobs) + " " + T("emplois", "jobs"));
+  townBox.relabel(townTexts());
+  drawAll();
+});
+document.title = T("Accès aux pôles d'emploi en transports en commun", "Access to job hubs by public transport");
+let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(drawAll, 150); });
+</script>
+</body>
+</html>

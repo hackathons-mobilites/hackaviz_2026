@@ -1,0 +1,17 @@
+[project]
+name = "hackathon-dataviz"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "duckdb>=2.0.0",
+    "geopandas>=1.2.0",
+    "pandas>=3.1.1",
+    "plotly>=7.1.0",
+    "pyarrow>=26.0.1",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "nbformat>=5.11.1",
+]

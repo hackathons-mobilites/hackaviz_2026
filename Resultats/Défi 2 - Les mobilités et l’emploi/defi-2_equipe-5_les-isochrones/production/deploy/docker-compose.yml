@@ -1,0 +1,23 @@
+# Usage (from the repo root):  docker compose -f deploy/docker-compose.yml up -d --build
+# The container publishes no host port: your reverse proxy on proxy_network forwards to http://isochrones:8000
+services:
+  isochrones:
+    build:
+      context:    ..
+      dockerfile: deploy/Dockerfile
+    image:          isochrones-dataviz:latest
+    container_name: isochrones
+    restart:        unless-stopped
+    networks:
+      - proxy_network
+    # Traefik users: uncomment and set your domain / entrypoint / resolver
+    # labels:
+    #   - traefik.enable=true
+    #   - traefik.http.routers.isochrones.rule=Host(`isochrones.example.com`)
+    #   - traefik.http.routers.isochrones.entrypoints=websecure
+    #   - traefik.http.routers.isochrones.tls.certresolver=letsencrypt
+    #   - traefik.http.services.isochrones.loadbalancer.server.port=8000
+
+networks:
+  proxy_network:
+    external: true
