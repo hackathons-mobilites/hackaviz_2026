@@ -1,0 +1,29 @@
+From e0c007b6293d688cca059564618d4625b78e264e Mon Sep 17 00:00:00 2001
+From: STARWAY data <starway@invalid>
+Date: Tue, 3 Nov 2026 12:01:49 +0000
+Subject: [PATCH] =?UTF-8?q?STARWAY:=20WALK=5FDISTANCE=5FLIMIT=5FMETERS=20?=
+ =?UTF-8?q?=3D=201000=20(D-024,=20choix=20de=20l'=C3=A9quipe)?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ src/main/java/com/conveyal/r5/transit/TransitLayer.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/main/java/com/conveyal/r5/transit/TransitLayer.java b/src/main/java/com/conveyal/r5/transit/TransitLayer.java
+index dcc2a032..e01b1397 100644
+--- a/src/main/java/com/conveyal/r5/transit/TransitLayer.java
++++ b/src/main/java/com/conveyal/r5/transit/TransitLayer.java
+@@ -67,7 +67,7 @@ import static com.conveyal.r5.transit.TransitLayer.EntityRepresentation.NAME_ONL
+ public class TransitLayer implements Serializable, Cloneable {
+ 
+     /** Maximum distance to record in distance tables, in meters. */
+-    public static final int WALK_DISTANCE_LIMIT_METERS = 2000;
++    public static final int WALK_DISTANCE_LIMIT_METERS = 1000;
+ 
+     /**
+      * Distance limit for transfers, meters. Set to 1km which is slightly above OTP's 600m (which was specified as
+-- 
+2.43.0
+

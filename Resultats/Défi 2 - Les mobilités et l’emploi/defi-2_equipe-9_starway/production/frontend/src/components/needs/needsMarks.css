@@ -1,0 +1,40 @@
+/* Marque « Ce qu'il me faut sur mon trajet » : valeurs de theme/tokens.ts (needsMark), recopiées ici en CSS. V0. */
+.needs-marks {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.needs-mark-halo {
+  fill: none;
+  stroke: #080e20; /* needsMark.halo */
+  stroke-width: 3; /* needsMark.haloWidth */
+  stroke-linejoin: round;
+}
+
+.needs-mark-shape {
+  fill: none;
+  stroke: #e6ecf8; /* needsMark.color */
+  stroke-width: 1.5; /* needsMark.width */
+  stroke-linejoin: round;
+}
+
+.legend-needs {
+  align-items: flex-start;
+}
+
+.legend-needs-note {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text-dim);
+}
+
+.legend-needs .pf-needs-recall {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-dim);
+}

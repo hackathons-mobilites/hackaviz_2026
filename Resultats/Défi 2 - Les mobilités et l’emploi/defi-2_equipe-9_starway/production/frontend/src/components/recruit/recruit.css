@@ -1,0 +1,98 @@
+/* Bloc « Projets de recrutement du bassin » (D-035) : mêmes couleurs que le reste du panneau ; ni cyan ni or
+   (le cyan est réservé à l'accessibilité, l'or au gain démontré : une tendance de recrutement n'est ni l'un ni l'autre). */
+.pf-recruit {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pf-recruit-bassin {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.pf-recruit-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 0 8px;
+  font-size: 12px;
+}
+
+.pf-recruit-filter select {
+  max-width: 100%;
+  min-height: var(--target-min);
+  padding: 5px 8px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.pf-recruit-filter select:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.pf-recruit-filter option {
+  color: #f4f6ff;
+  background: #101b35;
+}
+
+.pf-recruit-detail {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.pf-recruit-trend {
+  margin-top: 8px;
+}
+
+.pf-recruit-list {
+  margin: 10px 0 4px;
+  padding: 0;
+  list-style: none;
+}
+
+.pf-recruit-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 8px;
+  align-items: baseline;
+  padding: 3px 0;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.pf-recruit-list li.is-selected {
+  color: var(--text);
+}
+
+.pf-recruit-value {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.pf-recruit-list .pf-minibar {
+  grid-column: 1 / -1;
+  margin: 2px 0 0;
+}
+
+.pf-recruit-limits ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
+
+/* Visite (proofFocus: 'recruit') : même soulignement que la section des flux (accent, sans animation, jamais cyan ni or) */
+.pf-recruit[data-tour-focus] {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}

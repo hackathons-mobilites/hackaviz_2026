@@ -1,0 +1,76 @@
+{
+  "id": "lea-video",
+  "title": "Le ciel de Léa (vidéo du dépôt)",
+  "voice": "fr-FR-Marc:MAI-Voice-2",
+  "processing_version": "0.1.0",
+  "dataset_id": "2026-11-17_dc97ca710c6c",
+  "generated_at": "2026-11-12T22:35:44.972Z",
+  "steps": [
+    {
+      "id": "prologue",
+      "act": "prologue",
+      "text": "Voici Maisons-Laffitte. C’est ici que vit Léa, une habitante imaginaire. Elle cherche un emploi : sans voiture, avec un vélo pour plus tard. D’abord, seulement les transports en commun : quels emplois peut-elle rejoindre ? Et qu’est-ce qui pourrait élargir son horizon ?",
+      "minDurationMs": 3000,
+      "durationMs": 16271
+    },
+    {
+      "id": "acte1-ciel",
+      "act": "acte1",
+      "text": "Léa se donne 60 minutes de transports en commun, à l’aller comme au retour. Chaque étoile qui s’allume est un bassin d’emploi ou un arrondissement, accessible par Léa selon ses conditions. 24 étoiles s’allument, en partie ou en entier. Au compteur, les postes salariés recensés par l’INSEE : près de 2,6 millions.",
+      "minDurationMs": 3000,
+      "durationMs": 19749
+    },
+    {
+      "id": "acte1-preuve",
+      "act": "acte1",
+      "text": "Dans le panneau de droite, la fiche de Paris 8e. Voici un exemple de trajet : l’aller prend 45 minutes. À la fin de sa journée de travail, le retour en prend 43, attente comprise. D’après les flux domicile-travail du recensement, plus de 550 habitants de Maisons-Laffitte y travaillent déjà.",
+      "minDurationMs": 3000,
+      "focusPole": "BE_1107_75108",
+      "durationMs": 19997
+    },
+    {
+      "id": "acte3-horizons",
+      "act": "acte3",
+      "text": "L’écran se partage en deux : à droite, le ciel de sa voisine, Montesson, avec les mêmes réglages : on y voit s’allumer seulement une étoile. Le même ciel, mais pas les mêmes étoiles : voilà une inégalité entre territoires.",
+      "minDurationMs": 3000,
+      "durationMs": 13005
+    },
+    {
+      "id": "acte2-eclipse",
+      "act": "acte2",
+      "text": "Passons au soir : un poste de 14 heures à 22 heures. Les transports répondent-ils aux besoins du monde du travail ? Même point de départ, même temps de trajet : le ciel est recalculé, aller et retour.",
+      "minDurationMs": 3000,
+      "focusPole": "BE_1125",
+      "durationMs": 11077
+    },
+    {
+      "id": "acte2-pole",
+      "act": "acte2",
+      "text": "Dans le panneau de droite, la fiche de Seine-Aval. Dans la liste, Poissy : l’aller prend 38 minutes. Le retour en prend 50, attente comprise. Poissy reste à sa portée, même le soir.",
+      "minDurationMs": 3000,
+      "focusPole": "BE_1125",
+      "durationMs": 12174
+    },
+    {
+      "id": "acte4-voiture",
+      "act": "acte4",
+      "text": "Et si Léa avait une voiture ? Avec le trafic moyen estimé à l’aller, 29 étoiles s’allumeraient. Plus de 4,2 millions de postes seraient à sa portée. Mais Léa n’a pas de voiture.",
+      "minDurationMs": 3000,
+      "durationMs": 11972
+    },
+    {
+      "id": "acte4-velo",
+      "act": "acte4",
+      "text": "Alors, une solution complémentaire : son vélo jusqu’à la gare, puis les transports en commun. Sans compter le temps pour le garer, son périmètre de recherche d’emploi s’élargit, sans prendre la voiture.",
+      "minDurationMs": 3000,
+      "durationMs": 12278
+    },
+    {
+      "id": "epilogue",
+      "act": "epilogue",
+      "text": "Léa est imaginaire, mais ses chiffres sont réels. À vous d’explorer : votre commune, votre heure, votre temps de trajet. Nous vivons tous sous le même ciel. À vous, maintenant, de découvrir vos étoiles.",
+      "minDurationMs": 3000,
+      "durationMs": 14204
+    }
+  ]
+}

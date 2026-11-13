@@ -1,0 +1,49 @@
+/* Logo animé de l'écran titre (motion-spec, « Le logo se verrouille ») : mêmes dimensions que le logo fixe. */
+/* En ligne, comme l'image du logo fixe : le bloc titre garde exactement la même hauteur et le logo la même place */
+.logo-reveal {
+  display: inline-block;
+  vertical-align: baseline;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/*
+ * Le SVG reçoit la caméra (transform écrit à chaque image). Il ne capte aucun pointeur : la zone cliquable reste
+ * la place définitive du logo, et la scène, même grande, ne bloque ni les boutons ni les outils.
+ */
+.logo-reveal svg {
+  display: block;
+  height: clamp(54px, 7vw, 92px);
+  width: auto;
+  aspect-ratio: 1978 / 420;
+  overflow: visible;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+
+.lr-ripple,
+.lr-shock,
+.lr-reticle {
+  fill: none;
+}
+
+.lr-reticle {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Rejeu : le titre et le texte s'effacent le temps que le symbole repasse en grand (pas au-dessus du texte) */
+.title-block .title,
+.title-block .title-lede-fade {
+  transition: opacity 400ms ease-out;
+}
+
+.title-block.is-logo-scene .title,
+.title-block.is-logo-scene .title-lede-fade {
+  opacity: 0;
+  transition-duration: 200ms;
+}

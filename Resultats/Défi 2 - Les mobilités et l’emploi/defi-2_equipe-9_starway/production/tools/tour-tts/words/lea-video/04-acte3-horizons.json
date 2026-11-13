@@ -1,0 +1,195 @@
+{
+ "tour": "lea-video",
+ "stem": "04-acte3-horizons",
+ "mp3Sha256": "ed53e6068f009086901591ae636ad027c5ace912d3ca0c766467546b1da17119",
+ "text": "L’écran se partage en deux : à droite, le ciel de sa voisine, Montesson, avec les mêmes réglages : on y voit s’allumer seulement une étoile. Le même ciel, mais pas les mêmes étoiles : voilà une inégalité entre territoires.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "L'écran se partage en 2 à droite, le ciel de sa voisine montesson avec les mêmes réglages, on y voit s'allumer seulement une étoile. Le même ciel, mais pas les mêmes étoiles, voilà une inégalité entre territoires.",
+ "words": [
+  {
+   "word": "l'écran",
+   "startMs": 70,
+   "endMs": 430
+  },
+  {
+   "word": "se",
+   "startMs": 430,
+   "endMs": 550
+  },
+  {
+   "word": "partage",
+   "startMs": 550,
+   "endMs": 950
+  },
+  {
+   "word": "en",
+   "startMs": 950,
+   "endMs": 1030
+  },
+  {
+   "word": "deux",
+   "startMs": 1030,
+   "endMs": 1350
+  },
+  {
+   "word": "à",
+   "startMs": 1630,
+   "endMs": 1790
+  },
+  {
+   "word": "droite",
+   "startMs": 1790,
+   "endMs": 2270
+  },
+  {
+   "word": "le",
+   "startMs": 2270,
+   "endMs": 2470
+  },
+  {
+   "word": "ciel",
+   "startMs": 2470,
+   "endMs": 2710
+  },
+  {
+   "word": "de",
+   "startMs": 2710,
+   "endMs": 2790
+  },
+  {
+   "word": "sa",
+   "startMs": 2790,
+   "endMs": 2950
+  },
+  {
+   "word": "voisine",
+   "startMs": 2950,
+   "endMs": 3470
+  },
+  {
+   "word": "montesson",
+   "startMs": 3470,
+   "endMs": 4190
+  },
+  {
+   "word": "avec",
+   "startMs": 4310,
+   "endMs": 4710
+  },
+  {
+   "word": "les",
+   "startMs": 4710,
+   "endMs": 4830
+  },
+  {
+   "word": "mêmes",
+   "startMs": 4830,
+   "endMs": 4990
+  },
+  {
+   "word": "réglages",
+   "startMs": 4990,
+   "endMs": 5270
+  },
+  {
+   "word": "on",
+   "startMs": 5270,
+   "endMs": 6030
+  },
+  {
+   "word": "y",
+   "startMs": 6030,
+   "endMs": 6230
+  },
+  {
+   "word": "voit",
+   "startMs": 6230,
+   "endMs": 6350
+  },
+  {
+   "word": "s'allumer",
+   "startMs": 6350,
+   "endMs": 6630
+  },
+  {
+   "word": "seulement",
+   "startMs": 6630,
+   "endMs": 7070
+  },
+  {
+   "word": "une",
+   "startMs": 7070,
+   "endMs": 7230
+  },
+  {
+   "word": "étoile",
+   "startMs": 7230,
+   "endMs": 7750
+  },
+  {
+   "word": "le",
+   "startMs": 8470,
+   "endMs": 8630
+  },
+  {
+   "word": "même",
+   "startMs": 8630,
+   "endMs": 8830
+  },
+  {
+   "word": "ciel",
+   "startMs": 8830,
+   "endMs": 9350
+  },
+  {
+   "word": "mais",
+   "startMs": 9430,
+   "endMs": 9670
+  },
+  {
+   "word": "pas",
+   "startMs": 9670,
+   "endMs": 9830
+  },
+  {
+   "word": "les",
+   "startMs": 9830,
+   "endMs": 9910
+  },
+  {
+   "word": "mêmes",
+   "startMs": 9910,
+   "endMs": 10110
+  },
+  {
+   "word": "étoiles",
+   "startMs": 10110,
+   "endMs": 10670
+  },
+  {
+   "word": "voilà",
+   "startMs": 10670,
+   "endMs": 11030
+  },
+  {
+   "word": "une",
+   "startMs": 11030,
+   "endMs": 11150
+  },
+  {
+   "word": "inégalité",
+   "startMs": 11150,
+   "endMs": 11870
+  },
+  {
+   "word": "entre",
+   "startMs": 11950,
+   "endMs": 12270
+  },
+  {
+   "word": "territoires",
+   "startMs": 12270,
+   "endMs": 12990
+  }
+ ]
+}

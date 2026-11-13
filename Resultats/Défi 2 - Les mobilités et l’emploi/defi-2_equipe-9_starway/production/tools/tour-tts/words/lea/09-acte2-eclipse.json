@@ -1,0 +1,385 @@
+{
+ "tour": "lea",
+ "stem": "09-acte2-eclipse",
+ "mp3Sha256": "1ac9f085e08a17aa212719d100b2efe001eeea7b9c37a3123cf80f23a5231d17",
+ "text": "Passons au soir : un poste de 14 heures à 22 heures. Un restaurant le propose à Léa, comme aide de cuisine. Les transports répondent-ils aux besoins du monde du travail, même avec des horaires décalés ? Même point de départ, même temps de trajet. Le ciel est recalculé : l’aller doit arriver avant 14 heures, et le retour compte à partir de la fin du poste. Une journée-type est un scénario, pas un horaire réel.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Passons au soir un poste de 14h00 à 22h01 restaurant le propose à Lea commettre de cuisine. Les transports répondent ils aux besoins du monde du travail, même avec des horaires décalés ? Même point de départ, même temps de trajet. Le ciel est recalculé, l'Allée doit arriver avant 14 h et le retour compte à partir de la fin du poste. Une journée type est un scénario, pas un horaire réel.",
+ "words": [
+  {
+   "word": "passons",
+   "startMs": 70,
+   "endMs": 390
+  },
+  {
+   "word": "au",
+   "startMs": 390,
+   "endMs": 510
+  },
+  {
+   "word": "soir",
+   "startMs": 510,
+   "endMs": 1030
+  },
+  {
+   "word": "un",
+   "startMs": 1310,
+   "endMs": 1510
+  },
+  {
+   "word": "poste",
+   "startMs": 1510,
+   "endMs": 1950
+  },
+  {
+   "word": "de",
+   "startMs": 1950,
+   "endMs": 2030
+  },
+  {
+   "word": "quatorze",
+   "startMs": 2030,
+   "endMs": 2510
+  },
+  {
+   "word": "heures",
+   "startMs": 2510,
+   "endMs": 2910
+  },
+  {
+   "word": "à",
+   "startMs": 2910,
+   "endMs": 3070
+  },
+  {
+   "word": "vingt",
+   "startMs": 3070,
+   "endMs": 3230
+  },
+  {
+   "word": "deux",
+   "startMs": 3230,
+   "endMs": 3430
+  },
+  {
+   "word": "heures",
+   "startMs": 3510,
+   "endMs": 3910
+  },
+  {
+   "word": "un",
+   "startMs": 4110,
+   "endMs": 4350
+  },
+  {
+   "word": "restaurant",
+   "startMs": 4350,
+   "endMs": 4830
+  },
+  {
+   "word": "le",
+   "startMs": 4830,
+   "endMs": 4950
+  },
+  {
+   "word": "propose",
+   "startMs": 4950,
+   "endMs": 5390
+  },
+  {
+   "word": "à",
+   "startMs": 5390,
+   "endMs": 5470
+  },
+  {
+   "word": "lea",
+   "startMs": 5470,
+   "endMs": 5870
+  },
+  {
+   "word": "commettre",
+   "startMs": 5990,
+   "endMs": 6430
+  },
+  {
+   "word": "de",
+   "startMs": 6430,
+   "endMs": 6510
+  },
+  {
+   "word": "cuisine",
+   "startMs": 6510,
+   "endMs": 7070
+  },
+  {
+   "word": "les",
+   "startMs": 7950,
+   "endMs": 8150
+  },
+  {
+   "word": "transports",
+   "startMs": 8150,
+   "endMs": 8670
+  },
+  {
+   "word": "répondent",
+   "startMs": 8670,
+   "endMs": 9230
+  },
+  {
+   "word": "ils",
+   "startMs": 9230,
+   "endMs": 9430
+  },
+  {
+   "word": "aux",
+   "startMs": 9430,
+   "endMs": 9470
+  },
+  {
+   "word": "besoins",
+   "startMs": 9470,
+   "endMs": 9830
+  },
+  {
+   "word": "du",
+   "startMs": 9830,
+   "endMs": 9950
+  },
+  {
+   "word": "monde",
+   "startMs": 9950,
+   "endMs": 10110
+  },
+  {
+   "word": "du",
+   "startMs": 10110,
+   "endMs": 10230
+  },
+  {
+   "word": "travail",
+   "startMs": 10230,
+   "endMs": 10790
+  },
+  {
+   "word": "même",
+   "startMs": 11070,
+   "endMs": 11510
+  },
+  {
+   "word": "avec",
+   "startMs": 11510,
+   "endMs": 11750
+  },
+  {
+   "word": "des",
+   "startMs": 11750,
+   "endMs": 11870
+  },
+  {
+   "word": "horaires",
+   "startMs": 11910,
+   "endMs": 12150
+  },
+  {
+   "word": "décalés",
+   "startMs": 12150,
+   "endMs": 12630
+  },
+  {
+   "word": "même",
+   "startMs": 13470,
+   "endMs": 13830
+  },
+  {
+   "word": "point",
+   "startMs": 13830,
+   "endMs": 13990
+  },
+  {
+   "word": "de",
+   "startMs": 13990,
+   "endMs": 14030
+  },
+  {
+   "word": "départ",
+   "startMs": 14030,
+   "endMs": 14670
+  },
+  {
+   "word": "même",
+   "startMs": 14870,
+   "endMs": 15230
+  },
+  {
+   "word": "temps",
+   "startMs": 15230,
+   "endMs": 15430
+  },
+  {
+   "word": "de",
+   "startMs": 15430,
+   "endMs": 15470
+  },
+  {
+   "word": "trajet",
+   "startMs": 15470,
+   "endMs": 15990
+  },
+  {
+   "word": "le",
+   "startMs": 16790,
+   "endMs": 17070
+  },
+  {
+   "word": "ciel",
+   "startMs": 17070,
+   "endMs": 17350
+  },
+  {
+   "word": "est",
+   "startMs": 17350,
+   "endMs": 17390
+  },
+  {
+   "word": "recalculé",
+   "startMs": 17390,
+   "endMs": 18110
+  },
+  {
+   "word": "l'allée",
+   "startMs": 18310,
+   "endMs": 18710
+  },
+  {
+   "word": "doit",
+   "startMs": 18710,
+   "endMs": 18830
+  },
+  {
+   "word": "arriver",
+   "startMs": 18830,
+   "endMs": 19230
+  },
+  {
+   "word": "avant",
+   "startMs": 19230,
+   "endMs": 19430
+  },
+  {
+   "word": "quatorze",
+   "startMs": 19430,
+   "endMs": 19830
+  },
+  {
+   "word": "heures",
+   "startMs": 19830,
+   "endMs": 20190
+  },
+  {
+   "word": "et",
+   "startMs": 20270,
+   "endMs": 20470
+  },
+  {
+   "word": "le",
+   "startMs": 20470,
+   "endMs": 20550
+  },
+  {
+   "word": "retour",
+   "startMs": 20550,
+   "endMs": 20950
+  },
+  {
+   "word": "compte",
+   "startMs": 20950,
+   "endMs": 21350
+  },
+  {
+   "word": "à",
+   "startMs": 21350,
+   "endMs": 21510
+  },
+  {
+   "word": "partir",
+   "startMs": 21510,
+   "endMs": 21830
+  },
+  {
+   "word": "de",
+   "startMs": 21830,
+   "endMs": 21870
+  },
+  {
+   "word": "la",
+   "startMs": 21870,
+   "endMs": 22030
+  },
+  {
+   "word": "fin",
+   "startMs": 22030,
+   "endMs": 22150
+  },
+  {
+   "word": "du",
+   "startMs": 22150,
+   "endMs": 22310
+  },
+  {
+   "word": "poste",
+   "startMs": 22310,
+   "endMs": 22750
+  },
+  {
+   "word": "une",
+   "startMs": 23510,
+   "endMs": 23790
+  },
+  {
+   "word": "journée",
+   "startMs": 23790,
+   "endMs": 24070
+  },
+  {
+   "word": "type",
+   "startMs": 24070,
+   "endMs": 24470
+  },
+  {
+   "word": "est",
+   "startMs": 24510,
+   "endMs": 24750
+  },
+  {
+   "word": "un",
+   "startMs": 24750,
+   "endMs": 24870
+  },
+  {
+   "word": "scénario",
+   "startMs": 24870,
+   "endMs": 25510
+  },
+  {
+   "word": "pas",
+   "startMs": 25750,
+   "endMs": 26030
+  },
+  {
+   "word": "un",
+   "startMs": 26030,
+   "endMs": 26150
+  },
+  {
+   "word": "horaire",
+   "startMs": 26150,
+   "endMs": 26430
+  },
+  {
+   "word": "réel",
+   "startMs": 26430,
+   "endMs": 26950
+  }
+ ]
+}

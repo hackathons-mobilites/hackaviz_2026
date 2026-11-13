@@ -1,0 +1,24 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:02.150
+Et si Léa avait une voiture ?
+
+2
+00:00:02.150 --> 00:00:04.330
+Avec le trafic moyen estimé à l’aller,
+
+3
+00:00:04.330 --> 00:00:06.349
+29 étoiles s’allumeraient.
+
+4
+00:00:06.349 --> 00:00:10.323
+Plus de 4,2 millions de postes seraient à
+sa portée.
+
+5
+00:00:10.323 --> 00:00:11.950
+Mais Léa n’a pas de voiture.

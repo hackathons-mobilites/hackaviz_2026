@@ -1,0 +1,185 @@
+{
+ "tour": "lea-video",
+ "stem": "07-acte4-voiture",
+ "mp3Sha256": "d10fccd605e9fbf6bafef931feafbda7d3b982acbeef7f3aa16d35822da89f70",
+ "text": "Et si Léa avait une voiture ? Avec le trafic moyen estimé à l’aller, 29 étoiles s’allumeraient. Plus de 4,2 millions de postes seraient à sa portée. Mais Léa n’a pas de voiture.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Et si Lea avait une voiture ? Avec le trafic moyen estimé à l'aller 29 étoiles s'allumeraient, plus de 4,2 1000000 de postes seraient à sa portée. Mais Léa n'a pas de voiture.",
+ "words": [
+  {
+   "word": "et",
+   "startMs": 70,
+   "endMs": 190
+  },
+  {
+   "word": "si",
+   "startMs": 190,
+   "endMs": 350
+  },
+  {
+   "word": "lea",
+   "startMs": 350,
+   "endMs": 550
+  },
+  {
+   "word": "avait",
+   "startMs": 550,
+   "endMs": 750
+  },
+  {
+   "word": "une",
+   "startMs": 750,
+   "endMs": 870
+  },
+  {
+   "word": "voiture",
+   "startMs": 870,
+   "endMs": 1510
+  },
+  {
+   "word": "avec",
+   "startMs": 2190,
+   "endMs": 2550
+  },
+  {
+   "word": "le",
+   "startMs": 2550,
+   "endMs": 2630
+  },
+  {
+   "word": "trafic",
+   "startMs": 2630,
+   "endMs": 3030
+  },
+  {
+   "word": "moyen",
+   "startMs": 3030,
+   "endMs": 3350
+  },
+  {
+   "word": "estimé",
+   "startMs": 3350,
+   "endMs": 3790
+  },
+  {
+   "word": "à",
+   "startMs": 3790,
+   "endMs": 3870
+  },
+  {
+   "word": "l'aller",
+   "startMs": 3870,
+   "endMs": 4310
+  },
+  {
+   "word": "vingt",
+   "startMs": 4550,
+   "endMs": 4950
+  },
+  {
+   "word": "neuf",
+   "startMs": 4950,
+   "endMs": 5190
+  },
+  {
+   "word": "étoiles",
+   "startMs": 5190,
+   "endMs": 5590
+  },
+  {
+   "word": "s'allumeraient",
+   "startMs": 5590,
+   "endMs": 6150
+  },
+  {
+   "word": "plus",
+   "startMs": 6630,
+   "endMs": 6910
+  },
+  {
+   "word": "de",
+   "startMs": 6910,
+   "endMs": 6950
+  },
+  {
+   "word": "quatre",
+   "startMs": 6950,
+   "endMs": 7230
+  },
+  {
+   "word": "virgule",
+   "startMs": 7230,
+   "endMs": 7590
+  },
+  {
+   "word": "deux",
+   "startMs": 7590,
+   "endMs": 7790
+  },
+  {
+   "word": "millions",
+   "startMs": 7790,
+   "endMs": 8070
+  },
+  {
+   "word": "de",
+   "startMs": 8070,
+   "endMs": 8150
+  },
+  {
+   "word": "postes",
+   "startMs": 8190,
+   "endMs": 8550
+  },
+  {
+   "word": "seraient",
+   "startMs": 8550,
+   "endMs": 8870
+  },
+  {
+   "word": "à",
+   "startMs": 8870,
+   "endMs": 8950
+  },
+  {
+   "word": "sa",
+   "startMs": 8950,
+   "endMs": 9110
+  },
+  {
+   "word": "portée",
+   "startMs": 9110,
+   "endMs": 9550
+  },
+  {
+   "word": "mais",
+   "startMs": 10270,
+   "endMs": 10510
+  },
+  {
+   "word": "léa",
+   "startMs": 10510,
+   "endMs": 10910
+  },
+  {
+   "word": "n'a",
+   "startMs": 10950,
+   "endMs": 11190
+  },
+  {
+   "word": "pas",
+   "startMs": 11190,
+   "endMs": 11310
+  },
+  {
+   "word": "de",
+   "startMs": 11310,
+   "endMs": 11350
+  },
+  {
+   "word": "voiture",
+   "startMs": 11350,
+   "endMs": 11950
+  }
+ ]
+}

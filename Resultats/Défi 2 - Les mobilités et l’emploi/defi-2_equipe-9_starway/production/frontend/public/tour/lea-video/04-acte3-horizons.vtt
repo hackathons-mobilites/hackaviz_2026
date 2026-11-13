@@ -1,0 +1,39 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:01.670
+L’écran se partage en deux :
+
+2
+00:00:01.670 --> 00:00:02.301
+à droite,
+
+3
+00:00:02.301 --> 00:00:03.507
+le ciel de sa voisine,
+
+4
+00:00:03.507 --> 00:00:04.270
+Montesson,
+
+5
+00:00:04.270 --> 00:00:05.270
+avec les mêmes réglages :
+
+6
+00:00:05.270 --> 00:00:08.476
+on y voit s’allumer seulement une étoile.
+
+7
+00:00:08.476 --> 00:00:09.390
+Le même ciel,
+
+8
+00:00:09.390 --> 00:00:10.670
+mais pas les mêmes étoiles :
+
+9
+00:00:10.670 --> 00:00:12.990
+voilà une inégalité entre territoires.

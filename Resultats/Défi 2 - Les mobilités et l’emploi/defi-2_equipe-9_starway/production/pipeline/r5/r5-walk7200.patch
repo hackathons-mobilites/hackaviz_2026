@@ -1,0 +1,26 @@
+From 07eb46b9d83038cbfb0f916b8a847d291650b320 Mon Sep 17 00:00:00 2001
+From: STARWAY data <starway@invalid>
+Date: Tue, 3 Nov 2026 10:51:30 +0000
+Subject: [PATCH] STARWAY: WALK_DISTANCE_LIMIT_METERS = 7200 (MAX_TRIP_MIN 120
+ x SPEED_WALKING_KMH 3.6)
+
+---
+ src/main/java/com/conveyal/r5/transit/TransitLayer.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/main/java/com/conveyal/r5/transit/TransitLayer.java b/src/main/java/com/conveyal/r5/transit/TransitLayer.java
+index dcc2a032..6544d4a6 100644
+--- a/src/main/java/com/conveyal/r5/transit/TransitLayer.java
++++ b/src/main/java/com/conveyal/r5/transit/TransitLayer.java
+@@ -67,7 +67,7 @@ import static com.conveyal.r5.transit.TransitLayer.EntityRepresentation.NAME_ONL
+ public class TransitLayer implements Serializable, Cloneable {
+ 
+     /** Maximum distance to record in distance tables, in meters. */
+-    public static final int WALK_DISTANCE_LIMIT_METERS = 2000;
++    public static final int WALK_DISTANCE_LIMIT_METERS = 7200;
+ 
+     /**
+      * Distance limit for transfers, meters. Set to 1km which is slightly above OTP's 600m (which was specified as
+-- 
+2.43.0
+

@@ -1,0 +1,7 @@
+node_modules/
+# Fichiers de travail d'un enregistrement (WebM brut, timeline, logs)
+.work/
+# Fichiers générés par npm run sample:audio (fixtures FICTIVES reproductibles)
+samples/fictif/*.mp3
+samples/fictif/work/
+samples/out/

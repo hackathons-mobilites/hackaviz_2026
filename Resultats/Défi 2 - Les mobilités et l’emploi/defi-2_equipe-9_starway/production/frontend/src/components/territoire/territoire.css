@@ -1,0 +1,187 @@
+/* Repères de territoire (D-048) : onglet « Chômage », polarité, temps de travail. Uniquement des variables de styles.css ; ni cyan ni or. */
+
+/* ---------- Onglet « Chômage » ---------- */
+.halo-visual.terr-chomage {
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+}
+
+.terr-val {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.terr-val b {
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.terr-rows {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.terr-rows .terr-val {
+  color: var(--text-dim);
+}
+
+.terr-sentence {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* Ligne de survol d'un point : la place est réservée (la bande ne saute pas) */
+.terr-active {
+  margin: 0;
+  min-height: 1.4em;
+  font-size: 13px;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.terr-strip {
+  margin: 0;
+}
+
+.terr-trend {
+  margin: 0;
+}
+
+.terr-trend figcaption,
+.terr-note {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.terr-trend svg {
+  display: block;
+  margin-top: 4px;
+  overflow: visible;
+}
+
+.terr-list li {
+  min-height: var(--target-min);
+  align-items: center;
+}
+
+.terr-list li:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-radius: 4px;
+}
+
+.terr-list li.is-mark .halo-label,
+.terr-list li.is-mark .halo-value {
+  color: var(--guide);
+}
+
+/* Notes toujours visibles : texte secondaire, jamais replié */
+.terr-notes {
+  display: grid;
+  gap: 4px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--text-dim);
+}
+
+.terr-notes p {
+  margin: 0;
+}
+
+/* ---------- Onglets du halo : quatre onglets (D-048) ne tiennent pas sur une ligne dans le panneau de 340 px : ils passent à la ligne, jamais en débordement ---------- */
+.halo-panel .halo-tabs {
+  flex-wrap: wrap;
+}
+
+/* ---------- Polarité SDRIF-E ---------- */
+.terr-polarity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 4px;
+  margin: -6px 0 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-dim);
+}
+
+.terr-polarity span.terr-polarity-text {
+  color: var(--text);
+}
+
+.terr-polarity-block {
+  margin: 0;
+}
+
+.terr-polarity-tags {
+  display: grid;
+  gap: 4px;
+  margin: 8px 0 0;
+}
+
+.terr-polarity-tags .terr-polarity {
+  margin: 0;
+}
+
+.terr-polarity-list {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--text-dim);
+}
+
+/* ---------- Temps de travail (bulle de la journée-type, pli « Méthode et sources ») ---------- */
+.worktime-line {
+  display: block;
+}
+
+.worktime-text {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  max-width: 34ch;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.worktime-fold {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--text-dim);
+}
+
+/* Journée-type : le segment et sa bulle « i » sur une ligne (la barre garde sa hauteur) */
+.day-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.day-row .day-field {
+  flex: 1 1 auto;
+  min-width: 0;
+}

@@ -1,0 +1,385 @@
+{
+ "tour": "lea",
+ "stem": "04-acte1-preuve",
+ "mp3Sha256": "3e044c0987154e133f75a7283b7ebba574c5f22b723acf4b9ecf4c6345d332da",
+ "text": "Dans le panneau de droite, la fiche de Paris 8e. Voici un exemple de trajet : pour arriver avant le début de sa journée de travail, l’aller prend 45 minutes. À la fin de sa journée de travail, le retour prend 43 minutes, attente comprise. D’après les flux domicile-travail du recensement, plus de 550 habitants de Maisons-Laffitte y travaillent déjà. Ce sont des déplacements réellement constatés, pas des trajets calculés par STARWAY.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Dans le panneau de droite, La fiche de Paris 8e. Voici un exemple de trajet pour arriver avant le début de sa journée de travail, l'Allée prend 45 Min. À la fin de sa journée de travail, le retour prend 43 Min, attendre comprise. D'après les flux domicile-travail du recensement, plus de 550 habitants de Maisons-Laffitte y travaillent déjà. Ce sont des déplacements réellement constatés, pas des trajets calculés par starway.",
+ "words": [
+  {
+   "word": "dans",
+   "startMs": 70,
+   "endMs": 230
+  },
+  {
+   "word": "le",
+   "startMs": 230,
+   "endMs": 310
+  },
+  {
+   "word": "panneau",
+   "startMs": 310,
+   "endMs": 550
+  },
+  {
+   "word": "de",
+   "startMs": 550,
+   "endMs": 590
+  },
+  {
+   "word": "droite",
+   "startMs": 590,
+   "endMs": 1070
+  },
+  {
+   "word": "la",
+   "startMs": 1070,
+   "endMs": 1310
+  },
+  {
+   "word": "fiche",
+   "startMs": 1310,
+   "endMs": 1630
+  },
+  {
+   "word": "de",
+   "startMs": 1630,
+   "endMs": 1710
+  },
+  {
+   "word": "paris",
+   "startMs": 1750,
+   "endMs": 2030
+  },
+  {
+   "word": "huitième",
+   "startMs": 2030,
+   "endMs": 2590
+  },
+  {
+   "word": "voici",
+   "startMs": 2950,
+   "endMs": 3470
+  },
+  {
+   "word": "un",
+   "startMs": 3470,
+   "endMs": 3590
+  },
+  {
+   "word": "exemple",
+   "startMs": 3590,
+   "endMs": 3830
+  },
+  {
+   "word": "de",
+   "startMs": 3830,
+   "endMs": 3870
+  },
+  {
+   "word": "trajet",
+   "startMs": 3870,
+   "endMs": 4350
+  },
+  {
+   "word": "pour",
+   "startMs": 4670,
+   "endMs": 4950
+  },
+  {
+   "word": "arriver",
+   "startMs": 4950,
+   "endMs": 5310
+  },
+  {
+   "word": "avant",
+   "startMs": 5310,
+   "endMs": 5510
+  },
+  {
+   "word": "le",
+   "startMs": 5510,
+   "endMs": 5630
+  },
+  {
+   "word": "début",
+   "startMs": 5630,
+   "endMs": 5910
+  },
+  {
+   "word": "de",
+   "startMs": 5910,
+   "endMs": 5950
+  },
+  {
+   "word": "sa",
+   "startMs": 5950,
+   "endMs": 6030
+  },
+  {
+   "word": "journée",
+   "startMs": 6030,
+   "endMs": 6270
+  },
+  {
+   "word": "de",
+   "startMs": 6270,
+   "endMs": 6350
+  },
+  {
+   "word": "travail",
+   "startMs": 6350,
+   "endMs": 6910
+  },
+  {
+   "word": "l'allée",
+   "startMs": 6950,
+   "endMs": 7350
+  },
+  {
+   "word": "prend",
+   "startMs": 7350,
+   "endMs": 7590
+  },
+  {
+   "word": "quarante",
+   "startMs": 7590,
+   "endMs": 7990
+  },
+  {
+   "word": "cinq",
+   "startMs": 7990,
+   "endMs": 8110
+  },
+  {
+   "word": "minutes",
+   "startMs": 8110,
+   "endMs": 8590
+  },
+  {
+   "word": "à",
+   "startMs": 8750,
+   "endMs": 8910
+  },
+  {
+   "word": "la",
+   "startMs": 8910,
+   "endMs": 9110
+  },
+  {
+   "word": "fin",
+   "startMs": 9110,
+   "endMs": 9270
+  },
+  {
+   "word": "de",
+   "startMs": 9270,
+   "endMs": 9310
+  },
+  {
+   "word": "sa",
+   "startMs": 9310,
+   "endMs": 9430
+  },
+  {
+   "word": "journée",
+   "startMs": 9430,
+   "endMs": 9670
+  },
+  {
+   "word": "de",
+   "startMs": 9670,
+   "endMs": 9750
+  },
+  {
+   "word": "travail",
+   "startMs": 9750,
+   "endMs": 10270
+  },
+  {
+   "word": "le",
+   "startMs": 10310,
+   "endMs": 10470
+  },
+  {
+   "word": "retour",
+   "startMs": 10470,
+   "endMs": 10830
+  },
+  {
+   "word": "prend",
+   "startMs": 10830,
+   "endMs": 11030
+  },
+  {
+   "word": "quarante",
+   "startMs": 11030,
+   "endMs": 11470
+  },
+  {
+   "word": "trois",
+   "startMs": 11470,
+   "endMs": 11630
+  },
+  {
+   "word": "minutes",
+   "startMs": 11630,
+   "endMs": 11990
+  },
+  {
+   "word": "attendre",
+   "startMs": 11990,
+   "endMs": 12350
+  },
+  {
+   "word": "comprise",
+   "startMs": 12350,
+   "endMs": 12870
+  },
+  {
+   "word": "d'après",
+   "startMs": 13150,
+   "endMs": 13510
+  },
+  {
+   "word": "les",
+   "startMs": 13510,
+   "endMs": 13630
+  },
+  {
+   "word": "flux",
+   "startMs": 13630,
+   "endMs": 13910
+  },
+  {
+   "word": "domicile-travail",
+   "startMs": 13910,
+   "endMs": 14550
+  },
+  {
+   "word": "du",
+   "startMs": 14550,
+   "endMs": 14670
+  },
+  {
+   "word": "recensement",
+   "startMs": 14670,
+   "endMs": 15350
+  },
+  {
+   "word": "plus",
+   "startMs": 15710,
+   "endMs": 15950
+  },
+  {
+   "word": "de",
+   "startMs": 15950,
+   "endMs": 16030
+  },
+  {
+   "word": "cinq",
+   "startMs": 16030,
+   "endMs": 16310
+  },
+  {
+   "word": "cent",
+   "startMs": 16310,
+   "endMs": 16470
+  },
+  {
+   "word": "cinquante",
+   "startMs": 16470,
+   "endMs": 16830
+  },
+  {
+   "word": "habitants",
+   "startMs": 16830,
+   "endMs": 17150
+  },
+  {
+   "word": "de",
+   "startMs": 17150,
+   "endMs": 17190
+  },
+  {
+   "word": "maisons-laffitte",
+   "startMs": 17190,
+   "endMs": 17790
+  },
+  {
+   "word": "y",
+   "startMs": 17790,
+   "endMs": 17990
+  },
+  {
+   "word": "travaillent",
+   "startMs": 17990,
+   "endMs": 18310
+  },
+  {
+   "word": "déjà",
+   "startMs": 18310,
+   "endMs": 18710
+  },
+  {
+   "word": "ce",
+   "startMs": 18910,
+   "endMs": 18950
+  },
+  {
+   "word": "sont",
+   "startMs": 18950,
+   "endMs": 19270
+  },
+  {
+   "word": "des",
+   "startMs": 19270,
+   "endMs": 19350
+  },
+  {
+   "word": "déplacements",
+   "startMs": 19350,
+   "endMs": 19910
+  },
+  {
+   "word": "réellement",
+   "startMs": 19910,
+   "endMs": 20390
+  },
+  {
+   "word": "constatés",
+   "startMs": 20390,
+   "endMs": 21070
+  },
+  {
+   "word": "pas",
+   "startMs": 21150,
+   "endMs": 21350
+  },
+  {
+   "word": "des",
+   "startMs": 21350,
+   "endMs": 21470
+  },
+  {
+   "word": "trajets",
+   "startMs": 21470,
+   "endMs": 21790
+  },
+  {
+   "word": "calculés",
+   "startMs": 21790,
+   "endMs": 22230
+  },
+  {
+   "word": "par",
+   "startMs": 22230,
+   "endMs": 22390
+  },
+  {
+   "word": "starway",
+   "startMs": 22390,
+   "endMs": 22830
+  }
+ ]
+}

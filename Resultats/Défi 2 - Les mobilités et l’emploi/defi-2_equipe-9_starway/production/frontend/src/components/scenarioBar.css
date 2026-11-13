@@ -1,0 +1,842 @@
+/*
+ * Barre de scénario compacte (chantier C, lot 2, D-049).
+ *
+ * UNE ligne sur ordinateur (à partir de 1280 px) : commune, journée-type, temps de trajet par sens avec sa durée,
+ * mode et sa note, compteur, flèche. Le tiroir (horaires libres, marche ou véhicule, comparer, lien, distance équivalente,
+ * phrase complète du compteur) s'ouvre PAR-DESSUS le ciel, hors du flux : la hauteur de la barre (`--bar-h`, mesurée
+ * par ScenarioBar.tsx) ne change ni à l'ouverture, ni selon le scénario, ni selon le mode (D-021 : le ciel n'est
+ * jamais recadré). Dimensions : jetons `scenarioBar` de theme/tokens.ts, miroirs `--bar-*` de styles.css.
+ * Ce fichier passe après les règles historiques de la barre (styles.css) : les sélecteurs `section.scenario-bar`
+ * l'emportent sans dépendre de l'ordre de chargement.
+ */
+
+section.scenario-bar {
+  display: block;
+  left: 24px;
+  right: 24px;
+  bottom: 16px;
+  max-height: none;
+  overflow: visible;
+  padding: var(--bar-pad-y) 16px;
+  border-radius: 18px;
+}
+
+section.scenario-bar .bar-row {
+  display: grid;
+  /* le compteur garde toujours de quoi tenir sa légende ; la note du mode (jusqu'à trois lignes, le reste dans le tiroir) cède la première */
+  grid-template-columns: minmax(140px, 230px) auto auto minmax(0, 1fr) minmax(250px, 1.2fr) auto;
+  grid-template-areas: 'origin day budget mode counter toggle';
+  align-items: center;
+  column-gap: 14px;
+  height: var(--bar-row-h);
+}
+
+section.scenario-bar .bar-group {
+  align-self: center;
+  margin-top: 0;
+  gap: 0;
+  min-width: 0;
+}
+
+/* Les libellés restent lus par les lecteurs d'écran, sans prendre de place (comme au téléphone depuis L-04) */
+section.scenario-bar .field-label,
+.bar-drawer .bar-day .field-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.bar-drawer .drawer-cell > .field-label {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  display: block;
+}
+
+section.scenario-bar .commune-search {
+  gap: 0;
+}
+
+section.scenario-bar .combo input,
+section.scenario-bar .select {
+  height: var(--bar-control-h);
+  min-height: var(--bar-control-h);
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 14px;
+}
+
+section.scenario-bar .seg {
+  height: var(--bar-control-h);
+  padding: 2px;
+  align-items: stretch;
+}
+
+section.scenario-bar .seg label {
+  display: flex;
+}
+
+section.scenario-bar .seg span {
+  display: flex;
+  align-items: center;
+  padding: 0 9px;
+  font-size: 13px;
+}
+
+/* Horaires libres choisis : une pastille dans le segment (accent, jamais cyan ni or), la barre dit toujours les horaires joués */
+section.scenario-bar .seg .seg-free {
+  --shift-toggle-icon: 14px;
+  /* fond de l'accent (#B39BFF), alpha = tokens.ts shiftToggle.fillAlpha */
+  background: rgba(179, 155, 255, 0.14);
+  box-shadow: inset 0 0 0 1px var(--accent);
+  /* en ligne, pas en flex : le texte de la page garde « Horaires libres : 8h-16h » d'un seul tenant */
+  display: block;
+  line-height: calc(var(--bar-control-h) - 6px);
+  padding: 0 10px 0 7px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.seg-free .shift-toggle-icon {
+  display: inline-block;
+  width: var(--shift-toggle-icon);
+  height: var(--shift-toggle-icon);
+  margin-right: 5px;
+  vertical-align: -2px;
+  color: var(--accent);
+}
+
+/* Texte lu par les lecteurs d'écran, sans place à l'écran, et qui reste en ligne dans le texte de la page :
+   un `.sr-only` (position absolue) coupe la phrase en deux lignes dans le texte de la page ; ici, « Horaires libres : 8h-16h » reste d'un seul tenant */
+section.scenario-bar .seg .seg-free .free-prefix {
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  margin-right: -1px;
+  padding: 0;
+  overflow: hidden;
+  vertical-align: bottom;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+section.scenario-bar .budget-control {
+  height: var(--bar-row-h);
+  gap: 8px;
+}
+
+/* De 1280 à 1439 px, la place manque pour tout garder dans la ligne : le réglage de marche des transports en commun
+   (un réglage, pas une note qui change le sens d'un temps) passe dans le tiroir, où le sélecteur « Marche » le dit en entier */
+/* Sous 1600 px, la place manque pour tout garder dans la ligne (horaires libres choisis, jauge, compteur) : le réglage de marche
+   des transports en commun (un réglage, pas une note qui change le sens d'un temps) est lu dans le tiroir, où le sélecteur
+   « Marche » le dit en entier */
+@media (min-width: 1280px) and (max-width: 1599px) {
+  section.scenario-bar .mode-note.is-walk {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  section.scenario-bar .bar-row {
+    column-gap: 10px;
+    /* la commune est limitée à 170 px à ces largeurs (styles.css) : les 60 px de sa colonne restés vides vont au compteur,
+       pour que sa légende tienne en trois lignes (10/11). 11/11 : 262 px au lieu de 280 et 10 px d'écart au lieu de 12, pour que
+       « Transports en commun » (menu des modes en mots simples) tienne en entier à 1280 px */
+    grid-template-columns: minmax(140px, 170px) auto auto minmax(0, 1fr) minmax(262px, 1.2fr) auto;
+  }
+  section.scenario-bar .bar-mode .select {
+    font-size: 13px;
+    padding-left: 10px;
+  }
+  section.scenario-bar .seg span {
+    padding: 0 7px;
+  }
+  /* largeur de base de la jauge (styles.css), plus étroite que les 184 px qu'une règle plus bas lui donnait : de la place pour le compteur */
+  section.scenario-bar .budget-range {
+    width: 168px;
+  }
+}
+
+.bar-origin .combo-list {
+  max-height: 320px;
+}
+
+/* Mode : le choix et sa note, sur une ligne */
+.bar-mode .mode-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.bar-mode .select {
+  flex: none;
+  min-width: 0;
+  width: auto;
+}
+
+/* Menu des modes en mots simples (retour de Cyril, 11/11) : « Transports en commun », « Voiture, trafic moyen (estimation) ».
+   Le sélecteur prend la largeur du libellé choisi (field-sizing, Chromium ; ailleurs, celle du plus long), sans plafond fixe
+   (140 à 220 px avant, faits pour « TC + marche ») : il cède seulement à la place de la cellule, avec des points de suspension. */
+section.scenario-bar .bar-mode .select {
+  field-sizing: content;
+  flex: 0 1 auto;
+  max-width: 100%;
+  min-width: 0;
+  text-overflow: ellipsis;
+}
+
+section.scenario-bar .mode-note {
+  flex: 1 1 0;
+  min-width: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  max-width: 220px;
+  font-size: var(--type-label);
+  line-height: 1.2;
+  color: var(--text-dim);
+}
+
+section.scenario-bar .mode-note.velib-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  overflow: visible;
+}
+
+section.scenario-bar .mode-note.velib-hint strong {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+/* Compteur : le nombre à gauche, sa légende à droite (trois lignes de 12 px au plus), le filet de part dessous */
+section.scenario-bar .bar-counter {
+  grid-area: counter;
+  align-items: stretch;
+  justify-self: end;
+  text-align: left;
+  max-height: var(--bar-row-h);
+}
+
+section.scenario-bar .counter-block {
+  display: grid;
+  /* Plancher de la légende : serrée (visite, 1280 px), elle ne descend jamais à une lettre par ligne */
+  grid-template-columns: auto minmax(8ch, 1fr);
+  grid-template-areas:
+    'num caption'
+    'gauge caption';
+  column-gap: 10px;
+  row-gap: 2px;
+  align-items: center;
+  width: 100%;
+  margin-left: 0;
+  text-align: left;
+}
+
+section.scenario-bar .counter-top {
+  grid-area: num;
+  justify-content: flex-start;
+}
+
+section.scenario-bar .counter-gauge-row {
+  grid-area: gauge;
+  align-self: start;
+  margin-top: 0;
+}
+
+section.scenario-bar .counter-caption {
+  grid-area: caption;
+  display: block;
+  max-width: none;
+  font-size: var(--type-label);
+  line-height: 1.2;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+/* Tout le compteur DANS la ligne de la barre, hors téléphone (constat de Nicolas sur le site en ligne, 11/11) : la pastille
+   de variation flottait au-dessus du bord haut de la barre, le filet de part et son « i » descendaient sous le nombre, hors de
+   la barre (nombre de 41 à 52 px + filet et « i » de 12 px, dans une ligne de 44 px). Désormais :
+   - colonne 1 : le nombre, plafonné à la hauteur de la ligne moins le filet et son écart (44 - 3 - 3 = 38 px), le filet dessous ;
+   - colonne 2 : la légende (trois lignes au plus à partir de 1280 px) ; la pastille de variation prend sa place trois secondes
+     (même case, fond du panneau), la légende reste dans la page pour les lecteurs d'écran et revient ensuite ;
+   - colonne 3 : le « i » du filet, en fin de légende.
+   Rien ne dépasse la ligne : la hauteur de la barre ne change pas (D-049, D-021). */
+@media (min-width: 761px) and (min-height: 481px), (min-width: 1024px) {
+  section.scenario-bar .counter-block {
+    grid-template-columns: auto minmax(8ch, 1fr) auto;
+    grid-template-areas:
+      'num caption tip'
+      'gauge caption tip';
+    column-gap: 10px;
+    row-gap: 3px;
+    align-content: center;
+  }
+  section.scenario-bar .counter-top,
+  section.scenario-bar .counter-gauge-row {
+    display: contents;
+  }
+  /* 6 px = filet de 3 px (.counter-gauge de styles.css) + écart de 3 px : le nombre et son filet tiennent dans la ligne */
+  section.scenario-bar .counter-value {
+    grid-area: num;
+    font-size: min(var(--type-stat), calc(var(--bar-row-h) - 6px));
+  }
+  section.scenario-bar .counter-gauge {
+    grid-area: gauge;
+    align-self: start;
+    width: 100%;
+  }
+  section.scenario-bar .counter-gauge-tip {
+    grid-area: tip;
+    align-self: center;
+    margin-left: -6px;
+  }
+  /* Deux lignes au plus, jamais coupées (12/11, relevé par le test de fumée sous Linux : le texte libre passait sur quatre lignes à
+     1280 px et dépassait la barre de 4 px). Un écart par ligne (`BadgeParts`) : la hauteur est connue (2 x 12 px x 1,2 + bordure =
+     31 px dans la ligne de 44 px). La pastille a au moins la largeur de la légende ; si un écart est plus large, elle déborde à
+     gauche, dans l'écart entre le nombre et la légende, jamais vers le « i ». */
+  section.scenario-bar .counter-badge {
+    grid-area: caption;
+    z-index: 1;
+    align-self: center;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 100%;
+    width: max-content;
+    padding: 0 6px;
+    border-radius: 10px;
+    font-size: var(--type-label);
+    line-height: 1.2;
+    white-space: nowrap;
+    text-align: center;
+    background: var(--panel);
+  }
+}
+
+/* De 1280 à 1599 px, la légende n'a qu'une centaine de pixels : la pastille passe à 11 px, marges serrées, pour que
+   « +2 580 329 postes » tienne sur sa ligne sans toucher le nombre */
+@media (min-width: 1280px) and (max-width: 1599px) {
+  section.scenario-bar .counter-badge {
+    padding: 0 3px;
+    font-size: 11px;
+  }
+}
+
+/* Le séparateur « · » reste dans le texte de la page, les écarts sont l'un sous l'autre */
+section.scenario-bar .counter-badge-part {
+  display: block;
+}
+
+section.scenario-bar .counter-badge-sep {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* De 1280 à 1440 px, le nombre garde ses 34 px d'avant (styles.css) : le plafond de 38 px ci-dessus l'élargirait, la place va à la légende */
+@media (min-width: 1280px) and (max-width: 1440px) {
+  section.scenario-bar .counter-value {
+    font-size: 34px;
+  }
+}
+
+/* Ligne unique (1280 px et plus) */
+@media (min-width: 1280px) {
+  /* Trois lignes au plus (3 x 12 px x 1,2 = 43,2 px, dans les 44 px de la ligne), points de suspension au-delà. La phrase
+     entière reste dans la page (lecteur d'écran, relevé des phrases) et au « i » du compteur, dans le tiroir. Sans cette
+     limite, une colonne serrée (pastille de variation de la visite, 1280 à 1440 px) empilait la légende sur cinq ou six
+     lignes, coupées sous la barre (la virgule de « 40,2 % » coupée par le bord se lisait comme un point). Sous 1280 px, la
+     barre passe sur deux rangées et la cellule du compteur grandit avec sa légende (max-height: none) : pas de limite. */
+  section.scenario-bar .counter-caption {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    max-height: calc(3 * 1.2 * var(--type-label));
+    line-height: 1.2;
+    overflow-wrap: break-word;
+  }
+}
+
+section.scenario-bar .counter-msg {
+  display: block;
+  max-width: 340px;
+  font-size: var(--type-label);
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* Flèche du tiroir */
+section.scenario-bar .bar-toggle {
+  grid-area: toggle;
+  display: inline-grid;
+  place-items: center;
+  justify-self: end;
+  width: var(--bar-control-h);
+  height: var(--bar-control-h);
+}
+
+section.scenario-bar .bar-toggle svg {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--ui) var(--ease-ui);
+}
+
+section.scenario-bar.is-expanded .bar-toggle svg {
+  transform: rotate(180deg);
+}
+
+/* ---------- Tiroir : par-dessus le ciel, hors du flux ---------- */
+.bar-drawer {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + var(--space-2));
+  z-index: 2;
+  width: min(var(--bar-drawer-max-w), 100%);
+  padding: 14px 16px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  animation: bar-drawer-in var(--ui) var(--ease-ui) both;
+}
+
+.bar-drawer[hidden] {
+  display: none;
+}
+
+/* Croix de fermeture en haut à droite (10/11) : sur la ligne des intitulés de section, au-dessus des champs */
+.bar-drawer .drawer-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  z-index: 1;
+}
+
+@keyframes bar-drawer-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reduced-motion .bar-drawer,
+.reduced-motion section.scenario-bar .bar-toggle svg {
+  animation: none;
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar-drawer,
+  section.scenario-bar .bar-toggle svg {
+    animation: none;
+    transition: none;
+  }
+}
+
+.drawer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px 24px;
+  align-items: start;
+}
+
+.drawer-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+/* Lot 6 : la phrase est au « i », le libellé et le bouton tiennent sur une ligne */
+.drawer-counter {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.drawer-mode {
+  grid-column: span 2;
+}
+
+.bar-drawer .field-label {
+  font-size: var(--type-label);
+}
+
+.bar-drawer .bar-line2 {
+  height: auto;
+  width: auto;
+  min-width: 0;
+  white-space: normal;
+  overflow: visible;
+}
+
+.bar-drawer .walk-setting {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.bar-drawer .walk-label {
+  position: static;
+  flex: 0 0 100%;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  font-size: var(--type-label);
+  color: var(--text-dim);
+}
+
+.bar-drawer .walk-select {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  width: auto;
+}
+
+.drawer-note,
+.shift-line .shift-note {
+  margin: 0;
+  max-width: none;
+  white-space: normal;
+  font-size: var(--type-label);
+  line-height: 1.3;
+  color: var(--text-dim);
+}
+
+/* Horaires libres : le réglage s'ouvre sous la pastille, dans le tiroir (plus au-dessus de la barre) */
+.bar-drawer .shift-free {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.bar-drawer .shift-line {
+  display: inline-flex;
+  max-width: 100%;
+}
+
+.bar-drawer .shift-pop {
+  /* dans le flux du tiroir ; repère du « i » placé dans son coin (.shift-pop-tip) */
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(8, 14, 32, 0.6);
+  box-shadow: none;
+}
+
+/* Dans le tiroir, la cellule est plus étroite que le panneau d'origine : le libellé et l'heure sur une ligne, la jauge dessous, le texte dessous */
+.bar-drawer .shift-picker {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.bar-drawer .shift-row {
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'label value'
+    'range range'
+    'hint hint';
+}
+
+.bar-drawer .compare-search {
+  width: min(260px, 100%);
+}
+
+.bar-drawer .chip-action,
+.bar-drawer .chip-compare {
+  align-self: flex-start;
+  min-height: var(--bar-control-h);
+  display: inline-flex;
+  align-items: center;
+}
+
+.bar-drawer .chip-x {
+  width: var(--target-min);
+  height: var(--target-min);
+}
+
+.drawer-ref-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  font-size: var(--type-small);
+  color: var(--text-dim);
+}
+
+.drawer-ref-line .bar-distance {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  justify-content: flex-start;
+}
+
+/* Mode enregistrement vidéo : pas de bouton de lien (comme l'ancien .bar-actions de la barre) */
+.record-mode .drawer-link {
+  display: none !important;
+}
+
+.drawer-copy {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: var(--bar-control-h);
+}
+
+.drawer-copy svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.drawer-counter .counter-detail {
+  margin: 0;
+  max-width: none;
+  font-size: var(--type-small);
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* ---------- 761 à 1279 px : deux rangées (la ligne unique ne tient pas), toujours la même hauteur ---------- */
+@media (max-width: 1279px) {
+  section.scenario-bar .bar-row {
+    height: auto;
+    grid-template-columns: minmax(150px, 1fr) auto auto auto;
+    grid-template-areas:
+      'origin day budget toggle'
+      'mode mode counter counter';
+    row-gap: var(--space-2);
+  }
+  section.scenario-bar .bar-mode {
+    grid-area: mode;
+  }
+  section.scenario-bar .bar-counter {
+    max-height: none;
+    min-height: var(--bar-row-h);
+    justify-content: center;
+  }
+}
+
+/* Deux rangées hors téléphone (V9, 10/11) : à 768-820 px, la première rangée ne tenait pas. La flèche du tiroir prenait
+   110 px (sa colonne grandissait avec le compteur de la rangée du dessous, qui couvre aussi la colonne du temps), et le
+   segment des journées-types et la jauge rétrécissaient sous leur contenu : « 14h-22h » passait sous son « i » et les
+   repères 30, 45, 60 se touchaient. La flèche a sa taille, le segment et la jauge gardent la leur ; la commune cède. */
+@media (min-width: 761px) and (max-width: 1279px) and (min-height: 481px), (min-width: 1024px) and (max-width: 1279px) {
+  section.scenario-bar .bar-row {
+    grid-template-columns: minmax(120px, 1fr) auto auto var(--bar-control-h);
+    column-gap: 10px;
+  }
+  section.scenario-bar .day-row .day-field,
+  section.scenario-bar .budget-range {
+    flex: none;
+  }
+  /* La légende du compteur (rangée du bas) n'élargit plus la colonne du temps : la place libre va à la commune */
+  section.scenario-bar .bar-counter {
+    contain: inline-size;
+    justify-self: stretch;
+  }
+}
+
+/* ---------- Téléphone : trois rangées, la journée-type et le choix du mode sont dans le tiroir ---------- */
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  /* les règles historiques masquaient journée, temps et mode barre repliée : ici, le temps et la note du mode restent dans la ligne */
+  section.scenario-bar.is-collapsed .bar-budget,
+  section.scenario-bar.is-collapsed .bar-mode {
+    display: flex;
+  }
+  section.scenario-bar {
+    left: 8px;
+    right: 8px;
+    bottom: 0;
+    max-width: calc(100vw - 16px);
+    padding: var(--bar-pad-y) 12px calc(var(--bar-pad-y) + env(safe-area-inset-bottom));
+    border-radius: 20px 20px 0 0;
+    overflow: visible;
+  }
+  section.scenario-bar .bar-row {
+    height: auto;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) var(--bar-row-h);
+    grid-template-areas:
+        'origin origin toggle'
+        'budget budget budget'
+        'mode counter counter';
+      /* trois rangées de hauteur fixe : la barre ne change de hauteur ni avec le mode, ni avec la longueur de la note */
+      grid-template-rows: var(--bar-row-h) var(--bar-row-h) calc(var(--bar-row-h) + var(--space-3));
+      row-gap: var(--space-2);
+      column-gap: var(--space-2);
+    }
+    section.scenario-bar .bar-origin .commune-search,
+    section.scenario-bar .bar-origin .combo {
+      width: 100%;
+    }
+  section.scenario-bar .combo input,
+  section.scenario-bar .select {
+    height: var(--bar-row-h);
+    min-height: var(--bar-row-h);
+  }
+  section.scenario-bar .bar-toggle {
+    width: var(--bar-row-h);
+    height: var(--bar-row-h);
+  }
+  section.scenario-bar .bar-mode .mode-line {
+    align-items: flex-start;
+  }
+  section.scenario-bar .mode-note {
+    max-width: none;
+  }
+  section.scenario-bar .bar-counter {
+    max-height: none;
+    min-height: var(--bar-row-h);
+    justify-content: center;
+  }
+  /* Le filet de part et son « i » à gauche du nombre (10/11) : sous la légende, ils sortaient de l'écran à 390 px
+     (la rangée du compteur a une hauteur fixe) ; à côté du nombre, ils ne prennent aucune hauteur */
+  section.scenario-bar .counter-block {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'gauge num'
+      'caption caption';
+    column-gap: var(--space-2);
+    justify-items: end;
+    text-align: right;
+  }
+  section.scenario-bar .counter-gauge-row {
+    justify-self: stretch;
+    align-self: center;
+  }
+  /* La pastille de variation prend trois secondes la place de la légende (même case, fond du panneau), comme sur ordinateur :
+     à côté du nombre, elle le poussait hors de la rangée (11/11) */
+  section.scenario-bar .counter-top {
+    display: contents;
+  }
+  section.scenario-bar .counter-value {
+    grid-area: num;
+  }
+  section.scenario-bar .counter-badge {
+    grid-area: caption;
+    z-index: 1;
+    align-self: start;
+    justify-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    min-width: 0;
+    padding: 0 8px;
+    border-radius: 10px;
+    font-size: var(--type-label);
+    line-height: 1.2;
+    white-space: nowrap;
+    text-align: right;
+    background: var(--panel);
+  }
+  section.scenario-bar .counter-caption {
+    text-align: right;
+  }
+
+  /* Le tiroir : toute la largeur, au-dessus de la barre, défilement interne ; en haut, la place de la croix de fermeture */
+  .bar-drawer {
+    left: 0;
+    right: 0;
+    width: auto;
+    padding-top: calc(var(--bar-row-h) + var(--space-2));
+    max-height: calc(100vh - var(--banner-h) - var(--bar-h, 160px) - 72px);
+    overflow-y: auto;
+    border-radius: 16px 16px 0 0;
+    bottom: 100%;
+  }
+  .drawer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .drawer-mode {
+    grid-column: auto;
+  }
+  .bar-drawer .combo-list {
+    position: static;
+    margin-top: 6px;
+    max-height: 40vh;
+  }
+  .bar-drawer .seg {
+    display: flex;
+    width: 100%;
+  }
+  .bar-drawer .day-field,
+  .bar-drawer .bar-day {
+    width: 100%;
+  }
+  .bar-drawer .seg label {
+    flex: 1;
+  }
+  .bar-drawer .select,
+  .bar-drawer .combo input,
+  .bar-drawer .chip,
+  .bar-drawer .btn {
+    min-height: var(--bar-row-h);
+  }
+  .bar-drawer .chip-x {
+    width: var(--bar-row-h);
+    height: var(--bar-row-h);
+  }
+  .bar-drawer .drawer-close {
+    width: var(--bar-row-h);
+    height: var(--bar-row-h);
+  }
+}
+
+/* Feuille du bas ouverte (mise en page téléphone = isPhoneLayout) : la barre et la légende s'effacent. Motion pose
+   `opacity` et `visibility` en ligne sur la barre (entrée de l'acte 0) et l'emporte sur la règle de features.css :
+   sans !important, la barre passait PAR-DESSUS le panneau ouvert. */
+@media (max-width: 430px), (max-width: 1023px) and (max-height: 480px) {
+  html.sheet-open section.scenario-bar,
+  html.sheet-open .legend {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Fenêtre basse (zoom à 200 %, téléphone à l'horizontale) : deux rangées au lieu de trois, pour laisser le ciel respirer (audit du 09/11) */
+@media (max-width: 1023px) and (max-height: 480px) {
+  section.scenario-bar .bar-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr) var(--bar-row-h);
+    grid-template-areas:
+      'origin budget toggle'
+      'mode counter counter';
+    grid-template-rows: var(--bar-row-h) calc(var(--bar-row-h) + var(--space-3));
+  }
+}

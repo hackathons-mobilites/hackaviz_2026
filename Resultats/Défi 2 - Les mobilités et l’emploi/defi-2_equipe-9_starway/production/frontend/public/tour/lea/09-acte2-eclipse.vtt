@@ -1,0 +1,57 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:01.270
+Passons au soir :
+
+2
+00:00:01.270 --> 00:00:04.070
+un poste de 14 heures à 22 heures.
+
+3
+00:00:04.070 --> 00:00:06.093
+Un restaurant le propose à Léa,
+
+4
+00:00:06.093 --> 00:00:08.020
+comme aide de cuisine.
+
+5
+00:00:08.020 --> 00:00:11.144
+Les transports répondent-ils aux besoins
+du monde du travail,
+
+6
+00:00:11.144 --> 00:00:13.430
+même avec des horaires décalés ?
+
+7
+00:00:13.430 --> 00:00:14.830
+Même point de départ,
+
+8
+00:00:14.830 --> 00:00:16.750
+même temps de trajet.
+
+9
+00:00:16.750 --> 00:00:18.315
+Le ciel est recalculé :
+
+10
+00:00:18.315 --> 00:00:20.230
+l’aller doit arriver avant 14 heures,
+
+11
+00:00:20.230 --> 00:00:23.586
+et le retour compte à partir de la fin du
+poste.
+
+12
+00:00:23.586 --> 00:00:25.710
+Une journée-type est un scénario,
+
+13
+00:00:25.710 --> 00:00:26.950
+pas un horaire réel.

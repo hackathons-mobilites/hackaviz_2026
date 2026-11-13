@@ -1,0 +1,105 @@
+{
+ "processing_version": "0.1.0",
+ "generated_at": "2026-11-05T11:40:25+00:00",
+ "inputs_sha256": {
+  "data/raw/TOLL01/portiques-free-flow-03-11-2026.csv": "e59032121e97123ff855646a204760c213fd1dac83dcca6ba2151795aa9261d4",
+  "data/raw/TOLL02/aprr-tarifs-2026-02.csv": "29557dd814525a36313c5794b8cdc2a60ac3b894f3929912553a81d74054a4fe",
+  "data/raw/TOLL02/TARIFS_APRR-2026-02.pdf": "f05dfa58cb4ffba8b940b95319186fbf60f86d3791dce6a9df0919946b635d14",
+  "data/raw/TOLL02/aprr-systemes-ouverts-2026.pdf": "bb8b8bf52e0a4383df659453db80c187c60a76738fffbce316618d5af7768e9b",
+  "data/raw/TOLL03/jorf_TRAT2600882A/JORFARTI000053417658.xml": "3aa28274ce9200a20047341f0c20893e00d5ba5981ddf144d2a5132f0b3df808",
+  "data/raw/TOLL03/jorf_TRAT2600882A/JORFARTI000053417659.xml": "7be20138b6f34e266df5aa82fd680515fe3ac7586e6ca085b9527876b5b0a218",
+  "data/raw/TOLL04/Tarifs_A86.txt": "5fc381b5392c17afc205deb1c49812491113c81a829b90584c66c2cff48c1ab6",
+  "data/raw/TOLL04/Tarifs_Cofiroute_Arcour.txt": "4bb7c667e5c99218931cf6b81f3ebc13d9ee477543772cf251229ff32bad646c",
+  "data/raw/TOLL05/gares-peage-2025.csv": "e70ebf3d57c550eb8e0b9583aba697273b6089d72bdfd2515a595248e18937ec",
+  "data/raw/TOLL03/2026_02-Grille-Sanef.pdf": "373b55bd4f4ff77d995f8ff26c543807478252fc13d79cb9f73b024fbd17bc66",
+  "data/raw/TOLL03/2026_02-Grille-SAPN.pdf": "f8a7468306f5c9979040c40c04db3ce6f910d4e7cb0c79311b447465c08a58d4",
+  "data/raw/TOLL03/grille-modulee-01022026.pdf": "5cf0e4221c149a441f530e108c006b24d002f24ec83b244c27560221b49bd87c",
+  "data/processed/osm_toll_points.json": "1e40cae15550e0deef525b2dfa6059a77e76472db31ac67f3476746c8dcf5fdf"
+ },
+ "osm_pbf_sha256": "61589cc928ff1f76ebec76f5123bd5e9466cf226b99cbde78988779209c12557",
+ "classes": [
+  1,
+  5
+ ],
+ "service_date_day_types": {
+  "DUPLEX_A86": "mardi",
+  "SAPN_A14": "mardi",
+  "APRR": "tous"
+ },
+ "holidays_2026": [
+  "2026-01-01",
+  "2026-04-06",
+  "2026-05-01",
+  "2026-05-08",
+  "2026-05-14",
+  "2026-05-25",
+  "2026-07-14",
+  "2026-08-15",
+  "2026-11-01",
+  "2026-11-11",
+  "2026-12-25"
+ ],
+ "aprr_pdf_crosscheck": {
+  "tool": "pdftotext -table (xpdf)",
+  "pairs_pdf": 77,
+  "pairs_csv": 68,
+  "pairs_with_different_values": [],
+  "pairs_only_in_pdf": [
+   [
+    "LES EPRUNES",
+    "ST-GERMAIN-LAXIS"
+   ],
+   [
+    "LES EPRUNES",
+    "URY"
+   ],
+   [
+    "VAL DE LOING-BARRIERE",
+    "FLEURY-EN-BIERE"
+   ],
+   [
+    "VAL DE LOING-BARRIERE",
+    "FONTAINEBLEAU"
+   ],
+   [
+    "VAL DE LOING-BARRIERE",
+    "NEMOURS"
+   ],
+   [
+    "VAL DE LOING-BARRIERE",
+    "URY"
+   ],
+   [
+    "VAL DE LOING-SOUPPES",
+    "FLEURY-EN-BIERE"
+   ],
+   [
+    "VAL DE LOING-SOUPPES",
+    "FONTAINEBLEAU"
+   ],
+   [
+    "VAL DE LOING-SOUPPES",
+    "NEMOURS"
+   ]
+  ],
+  "pairs_only_in_csv": []
+ },
+ "osm_nodes_on_motorway_not_registered": [],
+ "counts": {
+  "points": 27,
+  "point_rows": 49,
+  "tariff_rows": 4112,
+  "tariff_rows_ok": 4100,
+  "by_systeme": {
+   "APRR": 154,
+   "APRR_DORDIVES": 2,
+   "COFIROUTE": 8,
+   "COFIROUTE_DOURDAN": 4,
+   "DUPLEX_A86": 3870,
+   "SANEF_A1": 2,
+   "SANEF_A4": 8,
+   "SAPN_A13": 4,
+   "SAPN_A14": 60
+  }
+ }
+}

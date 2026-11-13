@@ -1,0 +1,41 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:01.230
+Dans le panneau de droite,
+
+2
+00:00:01.230 --> 00:00:04.143
+la fiche de Paris 8e.
+
+3
+00:00:04.143 --> 00:00:06.243
+Voici un exemple de trajet :
+
+4
+00:00:06.243 --> 00:00:08.550
+l’aller prend 45 minutes.
+
+5
+00:00:08.550 --> 00:00:10.150
+À la fin de sa journée de travail,
+
+6
+00:00:10.150 --> 00:00:11.199
+le retour en prend 43,
+
+7
+00:00:11.199 --> 00:00:13.757
+attente comprise.
+
+8
+00:00:13.757 --> 00:00:16.617
+D’après les flux domicile-travail du
+recensement,
+
+9
+00:00:16.617 --> 00:00:19.910
+plus de 550 habitants de Maisons-Laffitte
+y travaillent déjà.

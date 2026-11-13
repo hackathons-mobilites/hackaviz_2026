@@ -1,0 +1,61 @@
+rank,insee,name,jobs,pole_id
+1,75108,Paris 8e Arrondissement,263144,P_PARIS_QCA
+2,75115,Paris 15e Arrondissement,157149,P_PARIS_RG
+3,75109,Paris 9e Arrondissement,155507,P_PARIS_QCA
+4,75113,Paris 13e Arrondissement,135464,P_PARIS_RG
+5,75112,Paris 12e Arrondissement,132086,P_PARIS_EST
+6,92026,Courbevoie,132066,P_DEFENSE
+7,75116,Paris 16e Arrondissement,122941,P_PARIS_QCA
+8,75117,Paris 17e Arrondissement,119736,P_PARIS_QCA
+9,92062,Puteaux,116210,P_DEFENSE
+10,92050,Nanterre,116067,P_DEFENSE
+11,92012,Boulogne-Billancourt,111705,P_BOULOGNE
+12,93066,Saint-Denis,110290,P_PLAINE
+13,75101,Paris 1er Arrondissement,88594,P_PARIS_QCA
+14,75107,Paris 7e Arrondissement,86868,P_PARIS_RG
+15,75110,Paris 10e Arrondissement,86074,P_PARIS_EST
+16,75114,Paris 14e Arrondissement,85771,P_PARIS_RG
+17,75102,Paris 2e Arrondissement,85208,P_PARIS_QCA
+18,75119,Paris 19e Arrondissement,83803,P_PARIS_EST
+19,92040,Issy-les-Moulineaux,80982,P_BOULOGNE
+20,92044,Levallois-Perret,78396,
+21,75111,Paris 11e Arrondissement,76527,P_PARIS_EST
+22,94028,Créteil,72360,P_CRETEIL
+23,75104,Paris 4e Arrondissement,64085,P_PARIS_EST
+24,93073,Tremblay-en-France,63952,P_ROISSY
+25,92051,Neuilly-sur-Seine,63521,
+26,75118,Paris 18e Arrondissement,61134,P_PARIS_EST
+27,75120,Paris 20e Arrondissement,59837,P_PARIS_EST
+28,75106,Paris 6e Arrondissement,59765,P_PARIS_RG
+29,75105,Paris 5e Arrondissement,58642,P_PARIS_RG
+30,93048,Montreuil,57938,
+31,78646,Versailles,55589,P_VERSAILLES
+32,91228,Évry-Courcouronnes,52699,P_EVRY
+33,92063,Rueil-Malmaison,48821,
+34,92036,Gennevilliers,48153,
+35,78297,Guyancourt,47764,P_SQY
+36,93070,Saint-Ouen-sur-Seine,46578,P_PLAINE
+37,95527,Roissy-en-France,44303,P_ROISSY
+38,93008,Bobigny,44303,
+39,92024,Clichy,42550,
+40,93001,Aubervilliers,39876,P_PLAINE
+41,95127,Cergy,37990,P_CERGY
+42,94041,Ivry-sur-Seine,36874,
+43,78640,Vélizy-Villacoublay,36861,P_VERSAILLES
+44,91377,Massy,36567,P_SACLAY
+45,75103,Paris 3e Arrondissement,34637,P_PARIS_EST
+46,93055,Pantin,32434,
+47,92049,Montrouge,32233,
+48,92025,Colombes,31105,
+49,77288,Melun,30637,
+50,94033,Fontenay-sous-Bois,30538,
+51,95018,Argenteuil,30248,
+52,93051,Noisy-le-Grand,29511,P_MARNE
+53,93005,Aulnay-sous-Bois,28868,
+54,94081,Vitry-sur-Seine,28232,
+55,92004,Asnières-sur-Seine,28095,
+56,94065,Rungis,26994,P_ORLY
+57,92073,Suresnes,26069,
+58,78423,Montigny-le-Bretonneux,25064,P_SQY
+59,77111,Chessy,24456,
+60,77284,Meaux,24342,

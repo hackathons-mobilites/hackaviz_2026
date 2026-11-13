@@ -1,0 +1,79 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:01.790
+L’écran se partage en deux.
+
+2
+00:00:01.790 --> 00:00:02.590
+À droite,
+
+3
+00:00:02.590 --> 00:00:03.804
+celui de sa voisine,
+
+4
+00:00:03.804 --> 00:00:04.550
+Montesson,
+
+5
+00:00:04.550 --> 00:00:06.184
+avec les mêmes réglages :
+
+6
+00:00:06.184 --> 00:00:07.169
+même journée,
+
+7
+00:00:07.169 --> 00:00:08.409
+même temps de trajet,
+
+8
+00:00:08.409 --> 00:00:10.270
+mêmes transports en commun.
+
+9
+00:00:10.270 --> 00:00:11.190
+À gauche,
+
+10
+00:00:11.190 --> 00:00:12.170
+Maisons-Laffitte :
+
+11
+00:00:12.170 --> 00:00:14.160
+24 étoiles.
+
+12
+00:00:14.160 --> 00:00:14.830
+À droite,
+
+13
+00:00:14.830 --> 00:00:16.613
+seulement une étoile.
+
+14
+00:00:16.613 --> 00:00:18.228
+En haut de son ciel :
+
+15
+00:00:18.228 --> 00:00:21.190
+plus de 87 000 postes à sa portée.
+
+16
+00:00:21.190 --> 00:00:22.493
+Deux voisines,
+
+17
+00:00:22.493 --> 00:00:23.510
+le même ciel,
+
+18
+00:00:23.510 --> 00:00:25.316
+mais pas les mêmes étoiles :
+
+19
+00:00:25.316 --> 00:00:27.310
+voilà une inégalité entre territoires.

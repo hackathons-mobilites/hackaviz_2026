@@ -1,0 +1,4259 @@
+/* STARWAY - styles. Couleurs : miroir de src/theme/tokens.ts (variables CSS). */
+:root {
+  --bg: #080e20;
+  --panel: #101b35;
+  --panel-glass: rgba(16, 27, 53, 0.72);
+  --text: #f4f6ff;
+  --text-dim: #a8b7d1;
+  --accessible: #9ceaff;
+  --dim: #50617f;
+  --gain: #f5b86d;
+  --accent: #b39bff;
+  --guide: #ffe6c7;
+  --demo: #e5484d;
+  --line: rgba(168, 183, 209, 0.16);
+  --sans: 'Jost Variable', 'Jost', system-ui, sans-serif;
+  --mono: var(--sans);
+  /* Échelles (miroir de tokens.ts : type, space) */
+  --type-display: clamp(40px, 5.2vw, 84px);
+  --type-stat: clamp(34px, 3.2vw, 52px);
+  --type-h2: 22px;
+  --type-body: 15px;
+  --type-small: 13px;
+  --type-label: 12px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  /* Taille minimale d'une cible à la souris, WCAG 2.5.8 (miroir de tokens.ts : targetSize.minPx) */
+  --target-min: 24px;
+  /* Barre de scénario compacte, une ligne (miroir de tokens.ts : scenarioBar, D-049) */
+  --bar-row-h: 44px;
+  --bar-pad-y: 8px;
+  --bar-control-h: 36px;
+  --bar-drawer-max-w: 780px;
+  --ui: 280ms;
+  --ease-ui: cubic-bezier(0.25, 1, 0.5, 1);
+  --banner-h: 0px;
+  --sky-panel-top: max(calc(var(--banner-h) + 94px), calc(var(--legend-bottom, 0px) + 12px));
+  color-scheme: dark;
+}
+
+/* Couleurs adaptées au daltonisme (bouton de l'en-tête, motion-spec « Mode daltonien ») : seul l'or du
+   gain change (ambre, miroir de tokens.ts colorCv) ; les territoires de la carte : features.css */
+:root[data-cv='1'] {
+  --gain: #e8923a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  font-variant-numeric: tabular-nums;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mono {
+  font-family: var(--sans);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+.app {
+  position: fixed;
+  inset: 0;
+}
+
+.app.has-demo-banner {
+  --banner-h: 34px;
+}
+
+/* ---------- Ciel ---------- */
+.sky-host {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.sky-host canvas {
+  display: block;
+}
+
+.sky-fallback {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 45% at 30% 70%, rgba(59, 44, 122, 0.35), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 70% 30%, rgba(15, 59, 92, 0.35), transparent 70%),
+    var(--bg);
+}
+
+/* ---------- Bandeau démo ---------- */
+.demo-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--banner-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 16px;
+  background: var(--demo);
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 18px rgba(229, 72, 77, 0.45);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.demo-banner strong {
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  .demo-banner span {
+    display: none;
+  }
+}
+
+.demo-note {
+  color: #ffd0d1;
+  border-left: 3px solid var(--demo);
+  padding-left: 10px;
+}
+
+/* ---------- Barre du haut ---------- */
+.top-bar {
+  position: fixed;
+  top: calc(var(--banner-h) + 14px);
+  left: 20px;
+  right: 20px;
+  z-index: 20;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  pointer-events: none;
+}
+
+.top-bar > * {
+  pointer-events: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: none;
+  border: 0;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.brand-tagline {
+  color: var(--text-dim);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Le slogan ne doit jamais chevaucher la légende : seulement sur grand écran */
+@media (max-width: 1440px) {
+  .brand-tagline {
+    display: none;
+  }
+}
+
+.top-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.top-actions .btn {
+  height: 40px;
+  justify-content: center;
+}
+
+.logo-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-full {
+  height: clamp(54px, 7vw, 92px);
+  width: auto;
+  display: block;
+}
+
+.logo-wrap-small .logo-full {
+  height: 34px;
+}
+
+.logo-symbol {
+  display: none;
+  height: 30px;
+  width: auto;
+}
+
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  .logo-wrap-small .logo-full {
+    display: none;
+  }
+  .logo-wrap-small .logo-symbol {
+    display: block;
+  }
+}
+
+.btn-label-short {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .btn-label-long {
+    display: none;
+  }
+  .btn-label-short {
+    display: inline;
+  }
+}
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  background: var(--panel-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  font-size: 14px;
+  transition:
+    background var(--ui) var(--ease-ui),
+    border-color var(--ui) var(--ease-ui),
+    transform var(--ui) var(--ease-ui);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  border-color: rgba(179, 155, 255, 0.55);
+  background: rgba(30, 40, 78, 0.85);
+}
+
+.btn[aria-pressed='true'] {
+  border-color: var(--accent);
+  color: #e3dbff;
+}
+
+.btn-primary {
+  background: var(--text);
+  color: var(--bg);
+  border: 0;
+  font-weight: 500;
+  padding: 13px 26px;
+  font-size: 16px;
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  padding: 13px 22px;
+  font-size: 16px;
+}
+
+.btn-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.is-soon {
+  opacity: 0.8;
+  cursor: help;
+}
+
+.soon-badge {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 1px 7px;
+  color: var(--text-dim);
+}
+
+.tour-soon {
+  position: relative;
+  display: inline-flex;
+}
+
+.soon-hint {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--ui) var(--ease-ui);
+}
+
+.soon-hint.is-visible,
+.tour-soon:hover .soon-hint {
+  opacity: 1;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(8, 14, 32, 0.5);
+  cursor: pointer;
+  flex: none;
+}
+
+.icon-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-btn:hover {
+  border-color: var(--accent);
+}
+
+.link-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: rgba(255, 230, 199, 0.06);
+  color: var(--guide);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--guide);
+}
+
+/* ---------- Écran-titre ---------- */
+.title-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--banner-h) + 24px) 24px 24px;
+  background: radial-gradient(ellipse 55% 45% at 50% 48%, rgba(8, 14, 32, 0.72), rgba(8, 14, 32, 0.35) 75%);
+}
+
+/* Bloc du titre (logo, titre, intro, boutons) : il sort d'un seul tenant (Acte 0, temps A) */
+.title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Interrupteur « Réduire les animations » sur l'écran titre (même composant que la barre du haut) */
+.title-tools {
+  position: absolute;
+  top: calc(var(--banner-h) + 16px);
+  right: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.title-logo {
+  margin-bottom: 28px;
+}
+
+.title {
+  margin: 0;
+  font-weight: 300;
+  font-size: var(--type-display);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.title-line {
+  display: block;
+}
+
+.title-line + .title-line {
+  color: var(--text);
+}
+
+.title-word {
+  display: inline-block;
+  margin: 0 0.14em;
+}
+
+.title-body {
+  max-width: 620px;
+  margin-top: 28px;
+}
+
+.title-lede {
+  color: var(--text-dim);
+  font-size: clamp(15px, 1.6vw, 18px);
+  margin: 0 0 28px;
+}
+
+.title-lede strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.title-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.title-demo {
+  margin-top: 18px;
+  color: #ffb3b5;
+  font-size: 13px;
+}
+
+/* ---------- Couche DOM des astres ---------- */
+.explorer {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.pole-layer {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pole-hit {
+  position: absolute;
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  padding: 0;
+}
+
+.pole-hit:focus-visible {
+  outline-offset: -4px;
+  border-radius: 50%;
+}
+
+/* Étiquette au survol / focus (et pôle sélectionné) */
+.pole-tip {
+  position: absolute;
+  transform: translateX(-50%);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(8, 14, 32, 0.96);
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  line-height: 1.3;
+  white-space: nowrap;
+  z-index: 6;
+}
+
+.pole-tip strong {
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.pole-tip .tip-jobs {
+  font-family: var(--mono);
+  color: var(--text-dim);
+}
+
+.pole-tip .tip-status {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.pole-tip.status-accessible .tip-status {
+  color: var(--accessible);
+}
+
+.pole-tip.is-pinned {
+  padding: 3px 8px;
+  border-color: rgba(179, 155, 255, 0.5);
+}
+
+/* Zoom sémantique : noms courts sans chevauchement */
+.pole-short {
+  position: absolute;
+  pointer-events: none;
+  text-align: center;
+  font-size: clamp(12px, 0.75vw, 15px);
+  line-height: 1.3;
+  font-weight: 400;
+  color: var(--text-dim);
+  white-space: nowrap;
+  /* Détourage couleur fond (pas une lueur) : exception documentée, réservée aux étiquettes du ciel */
+  text-shadow:
+    0 0 3px rgba(8, 14, 32, 0.9),
+    0 0 1px rgba(8, 14, 32, 0.9);
+}
+
+.pole-short.is-on {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.label-leaders {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.label-leaders line {
+  stroke-width: 1;
+}
+
+.label-leaders .leader-pole {
+  stroke: rgba(168, 183, 209, 0.45);
+}
+
+/* Nom de l'étoile-guide posé à distance (repli ultime, L-02) : trait de 1,5 px et point de 2 px côté étoile */
+.label-leaders .leader-guide line {
+  stroke: rgba(255, 230, 199, 0.8);
+  stroke-width: 1.5;
+}
+
+.label-leaders .leader-guide circle {
+  fill: rgba(255, 230, 199, 0.8);
+}
+
+.guide-hit {
+  position: absolute;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.guide-hit-marker {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.guide-hit.is-inert > * {
+  pointer-events: none;
+}
+
+.guide-hit:focus-visible {
+  outline: none;
+}
+
+.guide-hit:focus-visible .guide-reticle-line {
+  stroke: var(--accent);
+}
+
+.guide-hit:focus-visible .guide-name {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.guide-reticle {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.guide-reticle path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.guide-reticle-contrast {
+  stroke: rgba(8, 14, 32, 0.96);
+  stroke-width: 4;
+}
+
+.guide-reticle-line {
+  stroke: var(--guide);
+  stroke-width: 1.75;
+}
+
+.guide-info-icon {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.guide-tip {
+  position: absolute;
+  transform: translate(22px, -50%);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: rgba(8, 14, 32, 0.96);
+  border: 1px solid rgba(255, 230, 199, 0.35);
+  color: var(--guide);
+  white-space: nowrap;
+  text-shadow:
+    0 0 3px rgba(8, 14, 32, 0.9),
+    0 0 1px rgba(8, 14, 32, 0.9);
+}
+
+.guide-tip span {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.guide-tip strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.sky-host {
+  touch-action: none;
+  cursor: grab;
+}
+
+.sky-host.is-dragging {
+  cursor: grabbing;
+}
+
+/* ---------- Zoom ---------- */
+.zoom-controls {
+  position: fixed;
+  right: 24px;
+  bottom: calc(var(--bar-h, 110px) + 32px);
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 999px;
+  background: rgba(8, 14, 32, 0.6);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.zoom-controls .icon-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.zoom-level {
+  font-size: 12px;
+  color: var(--text-dim);
+  min-width: 3.2em;
+  text-align: center;
+}
+
+/* ---------- Légende ---------- */
+.legend {
+  position: fixed;
+  top: calc(var(--banner-h) + 64px);
+  left: 20px;
+  right: 20px;
+  z-index: 15;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  color: var(--text-dim);
+  pointer-events: auto;
+}
+
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.legend svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.legend em {
+  color: var(--text);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* ---------- Explication à la demande (InfoTip) : bouton « i », au clavier et visible ---------- */
+.info-tip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.info-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin: -4px 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+.info-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Au doigt (L-15) : zone de frappe de 44 px par pseudo-élément, cercle visible de 24 px inchangé
+   (la mise en page ne bouge pas) */
+@media (pointer: coarse) {
+  .info-btn {
+    position: relative;
+  }
+  .info-btn::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+}
+
+.info-btn:hover,
+.info-btn[aria-expanded='true'] {
+  color: var(--text);
+}
+
+/* L'encadré est dans la couche supérieure du navigateur (popover) : position écran fixée par InfoTip.tsx, jamais coupé
+   par le défilement ni par le flou d'un panneau. L'enveloppe est transparente ; le « pont » (::before) recouvre
+   l'espace entre le bouton et l'encadré pour que la souris puisse passer de l'un à l'autre sans quitter le survol (WCAG 1.4.13). */
+.info-pop {
+  position: fixed;
+  inset: auto;
+  left: 0;
+  top: 0;
+  z-index: 60;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  overflow: visible;
+  width: max-content;
+  max-width: min(320px, 80vw);
+}
+
+.info-pop::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+
+.info-pop[data-side='below']::before {
+  top: -8px;
+}
+
+.info-pop[data-side='above']::before {
+  bottom: -8px;
+}
+
+.info-pop-body {
+  display: block;
+  max-height: 66.66vh;
+  overflow-y: auto;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.45;
+  white-space: normal;
+  text-align: left;
+}
+
+/* Sans l'API popover : masqué par l'attribut hidden */
+.info-pop[hidden] {
+  display: none;
+}
+
+/* « Comment lire ce graphique » (demande de Nicolas du 10/11) : le « i » d'un graphique, une phrase par ligne, puis le cas précis.
+   Le pictogramme garde sa taille quel que soit le graphique qui l'entoure (les règles « .x svg » des graphiques ne le touchent pas). */
+.chart-read .info-btn svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+/* Bulle un peu plus large que les autres : un cas précis tient en moins de lignes, donc dans la fenêtre */
+.chart-read .info-pop {
+  max-width: min(380px, calc(100vw - 16px));
+}
+
+.chart-read-head {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.chart-read-case {
+  margin-top: 8px;
+}
+
+/* Ce que mesure le graphique (compteur : ce que sont les postes, 11/11), avant « Comment lire ce graphique » */
+.chart-read-intro + .chart-read-head {
+  margin-top: 8px;
+}
+
+.chart-read-line {
+  display: block;
+}
+
+.chart-read-line + .chart-read-line {
+  margin-top: 4px;
+}
+
+/* Titre d'un graphique et son « i » sur une même ligne */
+.chart-read-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.chart-read-row.is-end {
+  justify-content: flex-end;
+}
+
+.chart-read-row .dot-key {
+  flex: 1;
+  margin: 0;
+}
+
+.income-strip figcaption .chart-read {
+  margin-left: -6px;
+}
+
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  .legend {
+    display: none;
+  }
+}
+
+/* ---------- Barre de scénario ---------- */
+/* Une seule ligne dès 1200 px : d'où, quand, combien, comment, comparer ... résultat */
+.scenario-bar {
+  position: fixed;
+  left: 24px;
+  right: 24px;
+  bottom: 16px;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) auto auto auto auto minmax(0, 1fr) auto;
+  grid-template-areas: 'origin day budget mode compare counter actions';
+  align-items: end;
+  gap: 10px 16px;
+  padding: 12px 20px;
+  background: var(--panel-glass);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.bar-origin {
+  grid-area: origin;
+}
+.bar-day {
+  grid-area: day;
+}
+.bar-budget {
+  grid-area: budget;
+}
+.bar-mode {
+  grid-area: mode;
+}
+.bar-compare {
+  grid-area: compare;
+}
+.bar-counter {
+  grid-area: counter;
+}
+.bar-actions {
+  grid-area: actions;
+}
+
+.bar-toggle,
+.bar-summary {
+  display: none;
+}
+
+.counter-caption {
+  max-width: 300px;
+  text-align: inherit;
+}
+
+/* Barre sur une ligne entre 1200 et 1440 px : segments compacts */
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .scenario-bar {
+    gap: 10px 12px;
+    padding: 10px 14px;
+  }
+  .seg span {
+    padding: 7px 8px;
+    font-size: 13px;
+  }
+  .select {
+    min-width: 0;
+    padding-right: 28px;
+  }
+  .bar-compare .chip-action {
+    padding: 0 10px;
+  }
+  .counter-caption {
+    font-size: 12px;
+    max-width: 280px;
+    text-align: right;
+  }
+  .counter-value {
+    font-size: 34px;
+  }
+  .counter-sub {
+    font-size: 12px;
+  }
+}
+
+.bar-compare .chip-action {
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.bar-compare .compare-search {
+  width: 220px;
+}
+
+.combo-section {
+  padding: 6px 10px 4px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  cursor: default;
+}
+
+@media (min-width: 1600px) {
+  .scenario-bar {
+    left: 32px;
+    right: 32px;
+  }
+}
+
+/* 761-1279 px : deux rangées, le compteur à droite sur les deux */
+@media (max-width: 1279px) {
+  .scenario-bar {
+    grid-template-columns: minmax(200px, 1fr) auto auto auto;
+    grid-template-areas:
+      'origin day budget counter'
+      'compare mode actions counter';
+  }
+  .bar-counter {
+    align-self: center;
+  }
+}
+
+/* Mobile : ciel en haut, barre repliable, cibles tactiles de 44 px, aucun défilement horizontal */
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  .scenario-bar {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    gap: 8px;
+    padding: 10px 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'origin origin'
+      'day day'
+      'budget mode'
+      'compare compare'
+      'counter actions';
+    max-width: calc(100vw - 16px);
+  }
+  .scenario-bar.is-collapsed .bar-day,
+  .scenario-bar.is-collapsed .bar-budget,
+  .scenario-bar.is-collapsed .bar-mode,
+  .scenario-bar.is-collapsed .bar-compare {
+    display: none;
+  }
+  .bar-origin {
+    flex-direction: row !important;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  .bar-origin .commune-search {
+    flex: 1;
+    min-width: 0;
+  }
+  .bar-toggle {
+    display: inline-grid;
+    width: 44px;
+    height: 44px;
+  }
+  /* libellés visuellement masqués mais lus par les lecteurs d'écran */
+  .scenario-bar .field-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .seg {
+    width: 100%;
+  }
+  .seg label {
+    flex: 1;
+  }
+  .seg span {
+    min-height: 44px;
+    display: grid !important;
+    place-items: center;
+    padding: 0 6px !important;
+    font-size: 13px !important;
+  }
+  .select {
+    min-height: 44px;
+    min-width: 0;
+    width: 100%;
+  }
+  .combo input {
+    min-height: 44px;
+  }
+  .icon-btn,
+  .icon-btn-lg,
+  .chip,
+  .btn {
+    min-height: 44px;
+  }
+  .icon-btn {
+    width: 44px;
+  }
+  .bar-compare .compare-search {
+    width: 100%;
+  }
+  .counter-value {
+    font-size: 30px !important;
+  }
+  .counter-sub {
+    font-size: 12px;
+  }
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.field-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  padding: 0;
+}
+
+.bar-origin {
+  position: relative;
+  min-width: 0;
+}
+
+.commune-search {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.combo {
+  position: relative;
+}
+
+.combo-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translateY(-50%);
+  color: var(--guide);
+}
+
+.combo input {
+  width: 100%;
+  padding: 10px 14px 10px 34px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(8, 14, 32, 0.6);
+  font-size: 15px;
+}
+
+.combo input:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(179, 155, 255, 0.25);
+}
+
+.combo-list {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.45);
+  max-height: 320px;
+  overflow: auto;
+  z-index: 30;
+}
+
+.combo-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.combo-list li.is-active {
+  background: rgba(179, 155, 255, 0.16);
+}
+
+.combo-list small {
+  color: var(--text-dim);
+  font-family: var(--mono);
+}
+
+.combo-empty {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  margin: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.seg {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 12px;
+  background: rgba(8, 14, 32, 0.6);
+  border: 1px solid var(--line);
+}
+
+.seg label {
+  position: relative;
+  cursor: pointer;
+}
+
+.seg input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.seg span {
+  display: block;
+  padding: 7px 12px;
+  border-radius: 9px;
+  font-size: 14px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  transition:
+    background var(--ui) var(--ease-ui),
+    color var(--ui) var(--ease-ui);
+}
+
+.seg label.is-on span {
+  background: rgba(156, 234, 255, 0.14);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px rgba(156, 234, 255, 0.45);
+}
+
+.seg input:focus-visible + span {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* Jauge du budget par sens (D-018) : même hauteur que les segments voisins, la barre ne grandit pas.
+   Blanc lunaire comme le trait du budget du panneau de preuve : le cyan reste réservé à « accessible ». */
+.budget-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+}
+
+.budget-range {
+  --thumb: 18px;
+  --track: 4px;
+  position: relative;
+  width: 168px;
+  min-width: 0;
+  height: 100%;
+}
+
+.budget-range input {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: pan-y;
+}
+
+.budget-range input:focus {
+  outline: none;
+}
+
+/* Partie remplie = de la borne basse au budget choisi (--p ∈ [0, 1], centre du curseur) */
+.budget-range input::-webkit-slider-runnable-track {
+  height: var(--track);
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(244, 246, 255, 0.7) 0 calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--p)),
+    rgba(168, 183, 209, 0.22) 0
+  );
+}
+
+.budget-range input::-moz-range-track {
+  height: var(--track);
+  border-radius: 2px;
+  background: rgba(168, 183, 209, 0.22);
+}
+
+.budget-range input::-moz-range-progress {
+  height: var(--track);
+  border-radius: 2px;
+  background: rgba(244, 246, 255, 0.7);
+}
+
+.budget-range input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--thumb);
+  height: var(--thumb);
+  margin-top: calc((var(--track) - var(--thumb)) / 2);
+  border-radius: 50%;
+  background: var(--text);
+  border: 3px solid var(--panel);
+  box-shadow: 0 0 0 1px rgba(244, 246, 255, 0.55);
+  transition: box-shadow var(--ui) var(--ease-ui);
+}
+
+.budget-range input::-moz-range-thumb {
+  width: var(--thumb);
+  height: var(--thumb);
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: var(--text);
+  border: 3px solid var(--panel);
+  box-shadow: 0 0 0 1px rgba(244, 246, 255, 0.55);
+  transition: box-shadow var(--ui) var(--ease-ui);
+}
+
+.budget-range input:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px var(--accent), 0 0 0 5px rgba(179, 155, 255, 0.25);
+}
+
+.budget-range input:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 2px var(--accent), 0 0 0 5px rgba(179, 155, 255, 0.25);
+}
+
+/* Repères = budgets des découvertes (meta.budgets), sous la piste, jamais des seuils */
+.budget-ticks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.budget-ticks span {
+  position: absolute;
+  top: calc(50% + 4px);
+  left: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--t));
+  transform: translateX(-50%);
+  padding-top: 10px;
+  font-size: var(--type-label);
+  line-height: 1;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.budget-ticks span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 3px;
+  background: rgba(168, 183, 209, 0.55);
+}
+
+.budget-ticks span.is-on {
+  color: var(--text);
+}
+
+.budget-value {
+  font-size: 14px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.budget-value b {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+  text-align: right;
+}
+
+.select {
+  appearance: none;
+  padding: 9px 34px 9px 12px;
+  min-width: 130px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' stroke='%23A8B7D1' stroke-width='2' fill='none'/%3E%3C/svg%3E")
+      right 10px center / 14px no-repeat,
+    rgba(8, 14, 32, 0.6);
+  max-width: 100%;
+  font-size: 14px;
+}
+
+.select option {
+  background: var(--panel);
+}
+
+.bar-counter {
+  align-items: flex-end;
+  text-align: right;
+  min-width: 0;
+}
+
+.counter-msg {
+  font-size: 13px;
+  color: var(--text-dim);
+  max-width: 260px;
+}
+
+.icon-btn-lg {
+  width: 42px;
+  height: 42px;
+}
+
+.counter-line {
+  line-height: 1;
+}
+
+.counter-value {
+  font-family: var(--sans);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+  font-size: var(--type-stat);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--accessible);
+}
+
+.counter-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  width: max-content;
+  max-width: 100%;
+  margin-left: auto;
+  text-align: right;
+}
+
+.counter-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.counter-badge {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 10px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-gauge {
+  width: 100%;
+  max-width: none;
+  height: 3px;
+  background: rgba(168, 183, 209, 0.18);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.counter-gauge span {
+  display: block;
+  height: 100%;
+  background: var(--accessible);
+  transform-origin: left;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Le filet de part et son « i » « Comment lire ce graphique » sur une ligne (10/11). La ligne garde 12 px de haut :
+   la cible du « i » reste de 24 px (--target-min), ses marges négatives rendent à la mise en page sa hauteur d'avant
+   (la barre ne grandit pas). */
+.counter-gauge-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  min-width: 0;
+}
+
+.counter-gauge-row .counter-gauge {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.counter-gauge-tip .info-btn {
+  width: var(--target-min);
+  height: var(--target-min);
+  margin: calc((12px - var(--target-min)) / 2) -4px calc((12px - var(--target-min)) / 2) 0;
+}
+
+.counter-caption {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.counter-value.is-empty {
+  color: var(--text-dim);
+}
+
+.counter-sub {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.counter-sub em {
+  color: var(--text);
+}
+
+.bar-actions {
+  align-self: end;
+}
+
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  .top-actions .btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  .counter-value {
+    font-size: 24px !important;
+  }
+}
+
+/* ---------- Panneau de preuve ---------- */
+.proof-panel {
+  position: fixed;
+  top: var(--sky-panel-top);
+  right: 20px;
+  z-index: 25;
+  width: min(360px, calc(100vw - 40px));
+  max-height: calc(100vh - var(--sky-panel-top) - var(--bar-h, 110px) - 36px);
+  overflow: auto;
+  padding: 18px 20px;
+  background: rgba(16, 27, 53, 0.88);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.45);
+}
+
+.proof-panel header {
+  position: relative;
+  padding-right: 44px;
+}
+
+.proof-panel header .icon-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+}
+
+.proof-panel h2 {
+  margin: 4px 0 12px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.proof-panel h2:focus {
+  outline: none;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0;
+}
+
+.proof-grid > div:first-child {
+  grid-column: 1 / -1;
+}
+
+.proof-grid dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+.proof-grid dd {
+  margin: 2px 0 0;
+  font-size: 22px;
+}
+
+.proof-grid small {
+  display: block;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.verdict {
+  margin: 16px 0 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px dashed var(--dim);
+  color: var(--text-dim);
+  font-size: 14px;
+}
+
+.verdict strong {
+  color: var(--text);
+}
+
+.verdict-accessible {
+  border: 1px solid var(--accessible);
+  background: rgba(156, 234, 255, 0.08);
+}
+
+.verdict-accessible strong {
+  color: var(--accessible);
+}
+
+.reason {
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.proof-sources {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.proof-sources p {
+  margin: 0 0 6px;
+}
+
+/* ---------- Tiroir Sources & limites ---------- */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(4, 7, 18, 0.55);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawer {
+  width: min(560px, 100vw);
+  height: 100%;
+  background: var(--panel);
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--banner-h);
+}
+
+/* À 390 px : tiroir fullscreen pour éviter de passer sous la barre de scénario */
+@media (max-width: 390px) {
+  .drawer {
+    width: 100vw;
+    border-left: 0;
+  }
+}
+
+/* « Retour en haut » de Sources & limites (retour du testeur KBS, 10/11) : discret, en bas à droite du tiroir,
+   texte secondaire sur panneau (jetons existants), ni cyan ni or */
+.sources-drawer {
+  position: relative;
+}
+
+.sources-drawer .to-top {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  min-height: 44px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--text-dim);
+  background: var(--panel);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.sources-drawer .to-top:hover {
+  color: var(--text);
+}
+
+.sources-drawer .to-top svg {
+  width: 16px;
+  height: 16px;
+}
+
+.drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.drawer-head h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.drawer-body {
+  overflow: auto;
+  padding: 8px 24px 40px;
+  color: var(--text-dim);
+}
+
+.drawer-body h3 {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  margin: 30px 0 10px;
+}
+
+/* Sommaire ancré (L-22) : liens en puces, la section visée prend le focus */
+.drawer-toc ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  margin: 8px 0 4px;
+  padding: 0;
+  list-style: none;
+}
+
+.drawer-toc a {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.drawer-toc a:hover {
+  border-color: rgba(179, 155, 255, 0.55);
+}
+
+.drawer-body section {
+  scroll-margin-top: 12px;
+}
+
+.drawer-body section:focus {
+  outline: none;
+}
+
+.drawer-body section:focus-visible > h3 {
+  color: #e3dbff;
+}
+
+.drawer-body strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.drawer-body ul {
+  padding-left: 18px;
+}
+
+.drawer-body li {
+  margin-bottom: 8px;
+}
+
+.sources-list {
+  list-style: none;
+  padding: 0 !important;
+}
+
+.sources-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.sources-list a {
+  color: var(--accent);
+  word-break: break-all;
+  font-size: 12px;
+}
+
+.meta-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 16px;
+  margin: 0;
+}
+
+.meta-list dd {
+  margin: 0;
+  color: var(--text);
+}
+
+/* ---------- Visite ---------- */
+.tour-overlay {
+  position: fixed;
+  /* centrage sans transform : Motion anime déjà la transformation (y) */
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  bottom: calc(var(--bar-h, 110px) + 30px);
+  /* 31 : placée avant les panneaux dans le DOM (ordre de Tab), elle reste devant les feuilles du bas (30) */
+  z-index: 31;
+  width: min(880px, calc(100vw - 40px));
+  text-align: center;
+  padding: 14px 22px 12px;
+  background: rgba(8, 14, 32, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.tour-act {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+.tour-subtitle {
+  margin: 8px 0 10px;
+  /* Taille : jeton `tourSubtitle` (theme/tokens.ts) publié par TourOverlay ; repli = valeurs d'avant le jeton */
+  font-size: var(--tour-sub-font, clamp(18px, 1.6vw, 24px));
+  font-weight: 400;
+  line-height: 1.35;
+  /* lignes au plus (jeton `maxLines`, 2 : garde-fou, les repères font déjà moins de deux lignes) */
+  min-height: calc(var(--tour-sub-lines, 2) * 1.35em);
+  display: -webkit-box;
+  -webkit-line-clamp: var(--tour-sub-lines, 2);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tour-progress {
+  height: 2px;
+  background: var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.tour-progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accessible), var(--accent));
+  transform-origin: left;
+  transition: transform 600ms var(--ease-ui);
+}
+
+.tour-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tour-step {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-left: 8px;
+}
+
+.tour-disclaimer {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* ---------- Divers ---------- */
+.fps-meter {
+  position: fixed;
+  top: calc(var(--banner-h) + 64px);
+  left: 20px;
+  z-index: 90;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: #9ceaff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.fatal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  transition-duration: 150ms !important;
+  animation-duration: 150ms !important;
+}
+
+/* ---------- Diptyque (acte 3) ---------- */
+.sky-host.is-split.sky-host-A {
+  right: 50%;
+}
+
+.sky-host.is-split.sky-host-B {
+  left: 50%;
+}
+
+.split-divider {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  z-index: 4;
+  transform-origin: top;
+  background: linear-gradient(180deg, transparent, rgba(179, 155, 255, 0.55) 15%, rgba(179, 155, 255, 0.55) 85%, transparent);
+  pointer-events: none;
+}
+
+.pane-head {
+  position: fixed;
+  top: calc(var(--banner-h) + 76px);
+  z-index: 6;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: rgba(8, 14, 32, 0.7);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  pointer-events: none;
+  max-width: calc(50vw - 40px);
+  flex-wrap: wrap;
+}
+
+.pane-head-A {
+  left: 20px;
+}
+
+.pane-head-B {
+  left: calc(50% + 20px);
+}
+
+.pane-tag {
+  font-family: var(--mono);
+  color: var(--accent);
+}
+
+/* Ciel B (retours du testeur KBS, 10/11) : sélecteur de la commune B et « Quitter la comparaison ». L'en-tête laisse
+   passer le pointeur vers le ciel ; ces deux commandes, elles, se cliquent. La liste des communes s'ouvre vers le bas. */
+.pane-head.has-controls {
+  align-items: center;
+  padding: 6px 6px 6px 12px;
+}
+
+.pane-compare-pick {
+  width: 230px;
+  max-width: 100%;
+  pointer-events: auto;
+}
+
+.pane-compare-pick .combo-list,
+.pane-compare-pick .combo-empty {
+  top: calc(100% + 8px);
+  bottom: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+
+.pane-quit {
+  pointer-events: auto;
+  min-height: 44px;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.pane-quit:hover {
+  color: var(--text);
+}
+
+.pane-quit svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
+.pane-stat {
+  color: var(--accessible);
+}
+
+.pane-msg {
+  color: var(--text-dim);
+}
+
+.split-delta {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--bar-h, 110px) + 30px);
+  transform: translateX(-50%);
+  z-index: 15;
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(16, 27, 53, 0.85);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.split-delta-text {
+  margin: 0;
+}
+
+/* L'explorateur laisse passer le pointeur vers le ciel ; le « i » des deux ciels, lui, se clique */
+.split-delta .chart-read {
+  pointer-events: auto;
+}
+
+.split-delta strong {
+  color: var(--text);
+}
+
+.compare-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 26px;
+}
+
+.compare-search {
+  flex: 1;
+}
+
+.compare-search .field-label {
+  display: none;
+}
+
+.chip-action {
+  background: rgba(179, 155, 255, 0.08);
+  color: #e3dbff;
+}
+
+.chip-compare {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #e3dbff;
+  background: rgba(179, 155, 255, 0.12);
+}
+
+.chip-x {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.chip-x svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ---------- Halo « Derrière notre étoile » ---------- */
+.halo-panel {
+  position: fixed;
+  top: var(--sky-panel-top);
+  left: 20px;
+  z-index: 24;
+  width: min(340px, calc(100vw - 40px));
+  max-height: calc(100vh - var(--sky-panel-top) - var(--bar-h, 110px) - 36px);
+  overflow: auto;
+  padding: 16px 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.45);
+}
+
+.halo-panel header {
+  position: relative;
+  padding-right: 44px;
+}
+
+.halo-panel header .icon-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.halo-panel h2 {
+  margin: 4px 0 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.halo-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.halo-tabs [role='tab'] {
+  border: 1px solid var(--line);
+  background: rgba(8, 14, 32, 0.5);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+.halo-tabs [role='tab'].is-on {
+  color: var(--text);
+  border-color: var(--accent);
+  background: rgba(179, 155, 255, 0.14);
+}
+
+.halo-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 5px;
+}
+
+.halo-legend li {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: 8px;
+  row-gap: 2px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+/* Colonnes fixes (retour de Nicolas du 03/11 : libellés et valeurs se chevauchaient quand la pastille
+   manquait, onglet des modes) : pastille | libellé (peut passer à la ligne) | valeur alignée à droite */
+.halo-legend .swatch {
+  grid-column: 1;
+  align-self: center;
+}
+
+.halo-legend .halo-label {
+  grid-column: 2;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.halo-legend .halo-value {
+  grid-column: 3;
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sans pastille (modes domicile-travail) : libellé | valeur */
+.halo-legend.no-swatch li {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.halo-legend.no-swatch .halo-label {
+  grid-column: 1;
+}
+
+.halo-legend.no-swatch .halo-value {
+  grid-column: 2;
+}
+
+.halo-legend.no-swatch .halo-imprecise {
+  grid-column: 1 / -1;
+}
+
+.halo-group {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+.swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.halo-value {
+  color: var(--text);
+}
+
+.halo-hidden {
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.halo-note,
+.halo-source {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* ---------- Découvertes ---------- */
+.insights {
+  position: relative;
+}
+
+.insights-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 40;
+  width: min(360px, calc(100vw - 40px));
+  max-height: 60vh;
+  overflow: auto;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+
+.insights-list button {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  cursor: pointer;
+}
+
+.insights-list button:hover,
+.insights-list button:focus-visible {
+  background: rgba(179, 155, 255, 0.12);
+}
+
+.ins-kind {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.ins-meta {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* Écart d'une découverte : texte neutre (le cyan est réservé aux pôles accessibles, l'écart est souvent une perte) */
+.ins-metric {
+  font-size: 12.5px;
+  color: var(--text);
+}
+
+.ins-metric.is-text {
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.proof-note {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--text-dim);
+  border-left: 2px solid var(--accent);
+  padding-left: 8px;
+}
+
+.mode-hint {
+  font-size: 12px;
+  color: var(--text-dim);
+  max-width: 170px;
+}
+
+.halo-margin {
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+.halo-legend li.is-imprecise .halo-label,
+.halo-legend li.is-imprecise .halo-value {
+  color: var(--text-dim);
+}
+
+.halo-legend li.is-imprecise .swatch {
+  opacity: 0.4;
+}
+
+.halo-imprecise {
+  grid-column: 2 / -1;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--text-dim);
+  margin-top: -3px;
+}
+
+/* Nom permanent de l'étoile-guide */
+.guide-name {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  pointer-events: auto;
+  cursor: pointer;
+  padding: 2px 6px;
+  border: 1px solid rgba(255, 230, 199, 0.48);
+  border-radius: 4px;
+  background: rgba(8, 14, 32, 0.92);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--guide);
+  white-space: nowrap;
+  text-shadow:
+    0 0 3px rgba(8, 14, 32, 0.9),
+    0 0 1px rgba(8, 14, 32, 0.9);
+}
+
+
+/* Carte d'information au centre du ciel (aucun résultat à afficher) */
+.sky-notice {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: min(440px, calc(100vw - 24px));
+  max-height: min(340px, calc(100vh - var(--bar-h, 110px) - 140px));
+  overflow-y: auto;
+  padding: 20px 24px;
+  border-radius: 16px;
+  background: rgba(8, 14, 32, 0.82);
+  border: 1px solid rgba(168, 183, 209, 0.18);
+  pointer-events: auto;
+  text-align: center;
+}
+
+.sky-notice-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.sky-notice-body {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-dim);
+}
+
+.sky-notice-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+@media (max-width: 430px), (max-width: 1023px) and (max-height: 480px) {
+  .title {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+  .title-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .title-actions .btn {
+    min-height: 48px;
+    width: min(320px, 100%);
+    justify-content: center;
+  }
+}
+
+.icon-btn-top {
+  width: 36px;
+  height: 36px;
+  background: var(--panel-glass);
+}
+
+.icon-btn-top[aria-pressed='true'] {
+  border-color: var(--accent);
+  color: #e3dbff;
+}
+
+/* Rubriques des panneaux (comme la slide) */
+.eyebrow {
+  color: var(--accent);
+  letter-spacing: 0.16em;
+}
+
+/* ---------- Mobile 360-430 px (critique v0.4, spec e) ---------- */
+.top-more {
+  display: contents;
+}
+
+.top-menu-btn {
+  display: none;
+}
+
+@media (max-width: 430px), (max-width: 1023px) and (max-height: 480px) {
+  .top-bar {
+    top: calc(var(--banner-h) + 4px);
+    left: 12px;
+    right: 12px;
+    height: 52px;
+  }
+  .top-menu-btn {
+    display: inline-grid;
+    width: 44px;
+    height: 44px;
+  }
+  .top-more {
+    display: none;
+  }
+  .top-more.is-open {
+    position: absolute;
+    top: 52px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 14px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+    z-index: 40;
+  }
+  .top-actions {
+    flex-wrap: nowrap;
+    position: relative;
+  }
+  .top-actions .btn {
+    height: 44px;
+  }
+  .top-actions .btn-tour {
+    min-height: 40px;
+  }
+  .legend {
+    display: flex !important;
+    top: auto;
+    bottom: calc(var(--bar-h, 132px) + 22px);
+    left: 12px;
+    right: 12px;
+    gap: 4px 12px;
+    font-size: 12px;
+  }
+  .legend li:nth-child(n + 3):not(:last-child) {
+    display: none;
+  }
+  .tour-overlay {
+    width: calc(100vw - 24px);
+  }
+  .tour-subtitle {
+    font-size: var(--tour-sub-font-mobile, 17px);
+  }
+}
+
+@media (max-width: 374px) {
+  .logo-wrap-small .logo-full {
+    display: none;
+  }
+}
+
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  .scenario-bar {
+    grid-template-areas:
+      'origin origin'
+      'day day'
+      'budget mode'
+      'compare compare'
+      'summary summary'
+      'counter actions';
+    border-radius: 20px 20px 0 0;
+    bottom: 0;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  .bar-summary {
+    display: inline-flex;
+    grid-area: summary;
+    justify-self: start;
+    min-height: 44px;
+    align-items: center;
+  }
+  .scenario-bar.is-expanded .bar-summary {
+    display: none;
+  }
+}
+
+/* ---------- Le ciel en liste (alternative textuelle) ---------- */
+/* ---------- « Lire le ciel en liste » : panneau non modal, même codage que les astres ---------- */
+.sky-list-panel {
+  position: fixed;
+  top: calc(var(--banner-h) + 74px);
+  right: 20px;
+  bottom: calc(var(--bar-h, 110px) + 16px);
+  /* sous la barre du haut et la barre de scénario (20) : leurs menus déroulants passent devant la liste */
+  z-index: 19;
+  width: min(620px, calc(100vw - 40px));
+  display: flex;
+  flex-direction: column;
+  padding: 16px 18px 8px;
+  background: rgba(16, 27, 53, 0.94);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.45);
+}
+
+.sky-list-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sky-list-head h2 {
+  margin: 0;
+  font-size: var(--fs-h2, 22px);
+  font-weight: 400;
+}
+
+.sky-list-scenario {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.sky-list-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.sky-list-counts li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sky-list-counts strong {
+  font-weight: 500;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.sky-list-body {
+  flex: 1;
+  min-height: 0;
+  margin-top: 10px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.sky-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.sky-table th,
+.sky-table td {
+  text-align: left;
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.sky-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--panel);
+}
+
+.sky-table thead th button {
+  background: none;
+  border: 0;
+  padding: 4px 0;
+  color: var(--text-dim);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  min-height: 32px;
+}
+
+.sky-table .col-num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.sky-table thead .col-num button {
+  margin-left: auto;
+}
+
+.sky-table .col-state {
+  width: 28px;
+  padding-right: 0;
+}
+
+.sky-table td.col-state svg {
+  display: block;
+  margin-top: 1px;
+}
+
+.sky-table tbody th {
+  font-weight: 400;
+}
+
+.sky-table .link-btn {
+  color: var(--text);
+  text-align: left;
+}
+
+.sky-row-state {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* Accessible : la seule ligne marquée de cyan (filet à gauche), comme le seul astre allumé */
+.sky-row.row-accessible td.col-state {
+  box-shadow: inset 2px 0 0 var(--accessible);
+}
+
+.sky-row.row-accessible .sky-row-state {
+  color: var(--text);
+}
+
+.sky-row:not(.row-accessible) .link-btn {
+  color: var(--text-dim);
+}
+
+.sky-table td.is-over {
+  color: var(--text-dim);
+}
+
+.sky-row:hover,
+.sky-row:focus-within {
+  background: rgba(179, 155, 255, 0.08);
+}
+
+.sky-row:hover .link-btn,
+.sky-row:focus-within .link-btn {
+  color: var(--text);
+}
+
+@media (max-width: 430px), (max-width: 1023px) and (max-height: 480px) {
+  .sky-list-panel {
+    left: 8px;
+    right: 8px;
+    width: auto;
+    top: calc(var(--banner-h) + 60px);
+    bottom: calc(var(--bar-h, 110px) + 8px);
+    padding: 12px 12px 4px;
+  }
+  .sky-table {
+    font-size: 13px;
+  }
+  .sky-table th,
+  .sky-table td {
+    padding: 8px 4px;
+  }
+}
+
+/* ---------- Mode enregistrement vidéo (?record=1&tour=<id>) ---------- */
+.record-mode,
+.record-mode * {
+  cursor: none !important;
+}
+
+.record-mode .tour-controls,
+.record-mode .zoom-controls,
+.record-mode .top-actions,
+.record-mode .fps-meter,
+.record-mode .bar-actions {
+  display: none !important;
+}
+
+.record-mode .tour-subtitle {
+  font-size: var(--tour-sub-font-record, clamp(22px, 1.9vw, 30px));
+}
+
+/* subs=0 : sous-titres incrustés par ffmpeg dans la variante dédiée */
+.no-subs .tour-subtitle {
+  visibility: hidden;
+}
+
+.end-credits {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 24px;
+  background: rgba(8, 14, 32, 0.86);
+  color: var(--text);
+}
+
+.credits-title {
+  margin: 0;
+  font-size: 44px;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  margin-right: -0.35em;
+}
+
+.credits-small {
+  margin: 0;
+  max-width: 720px;
+  font-size: 15px;
+  color: var(--text-dim);
+}
+
+/* ---------- Diptyque empilé (mobile ≤ 760 px) : A en haut, B en bas, au-dessus de la barre ---------- */
+.sky-host.is-split.is-stacked.sky-host-A {
+  right: 0;
+  bottom: calc(50% + var(--bar-h, 132px) / 2);
+}
+
+.sky-host.is-split.is-stacked.sky-host-B {
+  left: 0;
+  top: calc(50% - var(--bar-h, 132px) / 2);
+  bottom: var(--bar-h, 132px);
+}
+
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  .split-divider {
+    left: 0;
+    right: 0;
+    top: calc(50% - var(--bar-h, 132px) / 2);
+    bottom: auto;
+    width: auto;
+    height: 1px;
+    transform-origin: left;
+    background: linear-gradient(90deg, transparent, rgba(179, 155, 255, 0.55) 15%, rgba(179, 155, 255, 0.55) 85%, transparent);
+  }
+  .pane-head {
+    max-width: calc(100vw - 24px);
+    font-size: 13px;
+  }
+  .pane-head-A {
+    left: 12px;
+    top: calc(var(--banner-h) + 60px);
+  }
+  .pane-head-B {
+    left: 12px;
+    top: calc(50% - var(--bar-h, 132px) / 2 + 6px);
+  }
+  .split-delta {
+    bottom: auto;
+    top: calc(50% - var(--bar-h, 132px) / 2 - 16px);
+    font-size: 12px;
+    white-space: normal;
+    max-width: calc(100vw - 24px);
+    text-align: center;
+  }
+}
+
+/* Repère de bord : étoile-guide hors champ */
+.guide-edge {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 230, 199, 0.35);
+  background: rgba(8, 14, 32, 0.82);
+  color: var(--guide);
+  font-size: 12px;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 6;
+}
+
+.guide-edge svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Découvertes : liste et état vide honnête */
+.insights-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ins-pending {
+  padding: 10px 12px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.ins-pending li {
+  margin: 4px 0;
+}
+
+/* Le contraste du jour */
+.contrast-card {
+  position: fixed;
+  top: calc(var(--banner-h) + 96px);
+  left: 20px;
+  z-index: 16;
+  width: min(360px, calc(100vw - 40px));
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(8, 14, 32, 0.82);
+  border: 1px solid var(--line);
+}
+
+.contrast-text {
+  margin: 4px 0 8px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.contrast-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sky-notice-search {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  min-height: 32px;
+}
+
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  /* Mobile : la carte se centre sur l'écran (pas sur le cadre) et tient dans la largeur */
+  .sky-notice {
+    left: 50% !important;
+    top: calc(64px + (100vh - 64px - var(--bar-h, 132px)) / 2) !important;
+    padding: 14px 16px;
+  }
+  .sky-notice-title {
+    font-size: 16px;
+  }
+  .sky-notice-body {
+    font-size: 14px;
+  }
+}
+
+/* ---------- Barre compacte (cible ~ 86-96 px) : compteur en grille, nombre à gauche ---------- */
+.bar-mode .select {
+  width: auto;
+  max-width: 220px;
+}
+
+.counter-msg {
+  max-width: 280px;
+  text-align: right;
+  line-height: 1.3;
+}
+
+@media (min-width: 1280px) {
+  .counter-block {
+    display: grid;
+    grid-template-columns: auto 210px;
+    grid-template-areas:
+      'num caption'
+      'gauge sub';
+    column-gap: 12px;
+    row-gap: 3px;
+    align-items: center;
+    width: auto;
+  }
+  .counter-top {
+    grid-area: num;
+    justify-content: flex-end;
+  }
+  .counter-gauge-row {
+    grid-area: gauge;
+    align-self: start;
+  }
+  .counter-caption {
+    grid-area: caption;
+    max-width: none;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+  .counter-sub {
+    grid-area: sub;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+  .counter-badge {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1599px) {
+  .counter-value {
+    font-size: 30px !important;
+  }
+  .bar-origin {
+    max-width: 230px;
+  }
+  .scenario-bar {
+    grid-template-columns: minmax(160px, 230px) auto auto auto auto minmax(0, 1fr) auto;
+  }
+}
+
+@media (min-width: 1600px) {
+  .counter-block {
+    grid-template-columns: auto 260px;
+  }
+}
+
+/* ---------- Mobile : le zoom quitte la zone basse (le pincement reste la commande principale) ---------- */
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  .zoom-controls {
+    top: calc(var(--banner-h) + 64px);
+    right: 12px;
+    bottom: auto;
+    flex-direction: column;
+    padding: 4px;
+  }
+  .zoom-controls .icon-btn {
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+  }
+}
+
+/* Sources & limites : dates, couverture, méthode */
+.source-dates {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.source-more summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--accent);
+  min-height: 24px;
+}
+
+.source-more p {
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+.coverage-list {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+/* Visite : changement de journée sans bascule */
+.tour-silence {
+  margin: 0 auto 8px;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* ---------- Compteur : libellé toujours entier dans la barre (1280 / 1440 / 1600 / 1920) ----------
+   La colonne de texte peut rétrécir et passer à la ligne ; elle ne déborde jamais. */
+@media (min-width: 1280px) {
+  .bar-counter {
+    min-width: 0;
+  }
+  .counter-block {
+    max-width: 100%;
+    grid-template-columns: auto minmax(120px, 260px);
+  }
+  .counter-caption,
+  .counter-sub {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .scenario-bar {
+    grid-template-columns: minmax(150px, 170px) auto auto auto auto minmax(0, 1fr) auto;
+  }
+  .bar-origin {
+    max-width: 170px;
+  }
+  .seg span {
+    padding: 6px 7px;
+  }
+  .bar-mode .select {
+    max-width: 140px;
+  }
+  .budget-range {
+    width: 132px;
+  }
+  .budget-control {
+    gap: 8px;
+  }
+  .bar-compare .chip-action {
+    padding: 0 8px;
+  }
+  .counter-value {
+    font-size: 28px !important;
+  }
+  .counter-block {
+    grid-template-columns: auto minmax(110px, 190px);
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .scenario-bar {
+    grid-template-columns: minmax(170px, 240px) auto auto auto auto minmax(0, 1fr) auto;
+  }
+  .bar-origin {
+    max-width: 240px;
+  }
+  .bar-mode .select {
+    max-width: 170px;
+  }
+  .counter-value {
+    font-size: 34px !important;
+  }
+  .counter-block {
+    grid-template-columns: auto minmax(120px, 200px);
+  }
+}
+
+/* Mobile (feuille du bas) : la jauge prend toute la largeur de sa colonne, cible tactile de 44 px.
+   En fin de fichier pour passer après les règles de base de la jauge. */
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  .budget-control {
+    height: 44px;
+  }
+  .budget-range {
+    flex: 1;
+    width: auto;
+  }
+}
+
+/* ---------- Acte 0 : révélation du ciel (motion-spec, D-021) ---------- */
+/* Noms des pôles : fondu de 280 ms qui finit avec le dernier astre posé (temps B) */
+.pole-short.labels-pose,
+.label-leaders.labels-pose {
+  animation: labels-in var(--labels-fade, 280ms) var(--labels-delay, 880ms) both ease-out;
+}
+
+/* Nom de l'étoile-guide : fondu de 280 ms, 300 ms après sa naissance (temps C) */
+.guide-name.labels-origin,
+.guide-reticle.labels-origin {
+  animation: labels-in 280ms 300ms both ease-out;
+}
+
+@keyframes labels-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mouvement réduit : noms en fondu de 150 ms, sans attente (tout le reste l'est déjà) */
+.reduced-motion .pole-short.labels-pose,
+.reduced-motion .label-leaders.labels-pose,
+.reduced-motion .guide-name.labels-origin,
+.reduced-motion .guide-reticle.labels-origin {
+  animation-delay: 0ms !important;
+}
+
+/* Visite lancée depuis le titre : sous-titres montés invisibles (hauteur réservée avant la pose) */
+.tour-overlay.is-reserving {
+  visibility: hidden;
+}
+
+/* Barre de scénario montée dès le titre, invisible jusqu'au temps C (Motion pose visibility) */
+.scenario-bar[inert] {
+  pointer-events: none;
+}
+
+/* Paragraphe de « Sources & limites » ouvert par un renvoi (ex. « Marche limitée à 2 km ») */
+.drawer-body li[id^='limite-']:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================================
+ * Refonte DA v0.6 (D-026, docs/critique-visuelle-v0.6.md) : découvertes, contraste du jour,
+ * puce de découverte. Blanc lunaire et lavande seulement : jamais le cyan ni l'or.
+ * ========================================================================================== */
+
+/* Icône du type de découverte (L-03) */
+.ins-icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -3px;
+}
+
+.ins-icon .is-fill {
+  fill: var(--text);
+  stroke: none;
+}
+
+.ins-kind {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ins-kind .ins-icon {
+  stroke: var(--accent);
+}
+
+.ins-kind .ins-icon .is-fill {
+  fill: var(--accent);
+}
+
+/* Verbe de la découverte : ce que le clic va ouvrir */
+.ins-verb {
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #e3dbff;
+}
+
+.ins-verb::after {
+  content: ' \2192';
+}
+
+.ins-verb-sub {
+  font-weight: 400;
+  color: var(--text-dim);
+}
+
+.chip-action .ins-icon {
+  margin-right: 6px;
+  stroke: #e3dbff;
+}
+
+.chip-action .ins-icon .is-fill {
+  fill: #e3dbff;
+}
+
+/* Contraste du jour : du côté opposé à l'étoile-guide, ou replié en puce (L-02, L-14) */
+.contrast-card.is-right {
+  left: auto;
+  right: 20px;
+}
+
+.contrast-card.is-chip {
+  width: auto;
+  max-width: calc(100vw - 40px);
+  padding: 6px 8px 6px 10px;
+}
+
+.contrast-card.is-chip .chip-action {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Puce de la découverte ouverte (L-03) : en haut du ciel, sous la légende */
+.insight-chip {
+  position: fixed;
+  top: calc(var(--banner-h) + 96px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 17;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 6px 4px 12px;
+  border-radius: 999px;
+  background: rgba(8, 14, 32, 0.82);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.insight-chip strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.insight-chip-btn {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #e3dbff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.insight-chip-btn:hover,
+.insight-chip-btn:focus-visible {
+  background: rgba(179, 155, 255, 0.12);
+}
+
+html.mirror-on .insight-chip {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (max-width: 430px), (max-width: 1023px) and (max-height: 480px) {
+  .insight-chip {
+    top: calc(var(--banner-h) + 60px);
+    max-width: calc(100vw - 24px);
+  }
+  /* Le titre passe sur deux lignes au lieu d'être coupé (« Gain vélo + transports en commun », retour de Cyril du 11/11) */
+  .insight-chip {
+    border-radius: 18px;
+  }
+  .insight-chip-text {
+    min-width: 0;
+    white-space: normal;
+    line-height: 1.25;
+  }
+}
+
+/* ---------- Jauge du temps de trajet : poignée « comète » (L-05) ----------
+   Input natif conservé (clavier, lecteur d'écran) ; son curseur devient transparent mais garde sa
+   zone de frappe (18 px, 44 px au doigt). La comète SVG est posée par-dessus, sans pointeur.
+   Partie parcourue = traînée de la filante ; aucun cyan, aucun or. */
+.budget-range {
+  --thumb: 18px;
+  --track: 3px;
+  width: 184px;
+}
+
+@media (min-width: 1440px) {
+  .budget-range {
+    width: 220px;
+  }
+}
+
+/* Mobile (feuille du bas) : toute la largeur de la colonne, moins la valeur */
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  .budget-range {
+    flex: 1;
+    width: auto;
+  }
+}
+
+@media (pointer: coarse) {
+  .budget-range {
+    --thumb: 44px;
+  }
+}
+
+.budget-range input::-webkit-slider-runnable-track {
+  height: var(--track);
+  background: linear-gradient(
+    to right,
+    rgba(244, 246, 255, 0) 0,
+    rgba(244, 246, 255, 0.55) calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--p)),
+    rgba(168, 183, 209, 0.22) 0
+  );
+}
+
+.budget-range input::-moz-range-track {
+  height: var(--track);
+  background: rgba(168, 183, 209, 0.22);
+}
+
+.budget-range input::-moz-range-progress {
+  height: var(--track);
+  background: linear-gradient(to right, rgba(244, 246, 255, 0), rgba(244, 246, 255, 0.55));
+}
+
+.budget-range input::-webkit-slider-thumb {
+  width: var(--thumb);
+  height: var(--thumb);
+  margin-top: calc((var(--track) - var(--thumb)) / 2);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  opacity: 0;
+}
+
+.budget-range input::-moz-range-thumb {
+  width: var(--thumb);
+  height: var(--thumb);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  opacity: 0;
+}
+
+/* Graduations fines tous les bigStep (1 x 3 px), sous la piste */
+.budget-grads {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.budget-grads span {
+  position: absolute;
+  top: calc(50% + 4px);
+  left: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--t));
+  width: 1px;
+  height: 3px;
+  background: rgba(168, 183, 209, 0.45);
+}
+
+.budget-comet {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--p));
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.budget-comet svg {
+  position: absolute;
+  left: -26px;
+  top: -12px;
+  overflow: visible;
+}
+
+.budget-comet .comet-tail {
+  transform-box: view-box;
+  transform-origin: 0 0;
+  transition: transform var(--ui) var(--ease-ui);
+}
+
+.budget-comet .comet-glow {
+  opacity: 0.35;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    transform 120ms var(--ease-ui),
+    opacity 120ms var(--ease-ui);
+}
+
+/* Tête « étoile qui vieillit » (IMG-20) : six sprites superposés, fondu additif dans un groupe isolé */
+.budget-comet .comet-star,
+.budget-comet .comet-occluder {
+  position: absolute;
+  left: calc(var(--star-box) / -2);
+  top: calc(var(--star-box) / -2);
+  width: var(--star-box);
+  height: var(--star-box);
+  isolation: isolate;
+}
+
+.budget-comet .comet-star img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: plus-lighter;
+  user-select: none;
+}
+
+/* Silhouette couleur panneau de chaque stade (même alpha que le sprite) */
+.budget-comet .comet-occluder span {
+  position: absolute;
+  inset: 0;
+  background: var(--panel);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+}
+
+/* Cœur lunaire de 3 px : visible en continu avec la braise, pour que la poignée ne disparaisse jamais */
+.budget-comet .comet-core {
+  position: absolute;
+  left: calc(50% - var(--star-core) / 2);
+  top: calc(50% - var(--star-core) / 2);
+  width: var(--star-core);
+  height: var(--star-core);
+  border-radius: 50%;
+  background: var(--text);
+}
+
+.budget-comet .comet-focus-svg {
+  position: absolute;
+  left: -26px;
+  top: -12px;
+  overflow: visible;
+}
+
+.budget-comet .comet-focus {
+  fill: none;
+  stroke: none;
+}
+
+/* Survol : lueur r 8 → 10, alpha 0,35 → 0,5 */
+.budget-range:hover .comet-glow {
+  transform: scale(1.25);
+  opacity: 0.5;
+}
+
+/* Glisser : lueur r 11, queue étirée x 1,25 (la tête ne change jamais de taille) */
+.budget-comet.is-dragging .comet-glow {
+  transform: scale(1.375);
+  opacity: 0.5;
+}
+
+.budget-comet.is-dragging .comet-tail {
+  transform: scaleX(1.25);
+}
+
+/* Focus clavier : même anneau lavande que le reste de l'interface */
+.budget-range input:focus-visible ~ .budget-comet .comet-focus {
+  stroke: var(--accent);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 3px rgba(179, 155, 255, 0.6));
+}
+
+/* Bulle de valeur au-dessus de la tête pendant le glisser (le doigt cache la tête) */
+.budget-bubble {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  transform: translateX(-50%);
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--text);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Doigt : tête r 6, lueur r 12 */
+@media (pointer: coarse) {
+  .budget-comet svg {
+    transform: scale(1.333);
+    transform-origin: 26px 12px;
+  }
+  .budget-comet .comet-star,
+  .budget-comet .comet-occluder {
+    --star-box: var(--star-box-touch);
+  }
+  .budget-bubble {
+    bottom: 22px;
+  }
+}
+
+/* Mouvement réduit : pas d'étirement, aucun changement animé ; la bulle reste */
+.reduced-motion .budget-comet .comet-tail,
+.reduced-motion .budget-comet .comet-glow {
+  transition: none;
+}
+
+.reduced-motion .budget-comet.is-dragging .comet-tail {
+  transform: none;
+}
+
+/* ---------- Barre de scénario alignée (L-04) ----------
+   Une rangée d'étiquettes commune (14 px), une rangée de contrôles de 42 px, et une deuxième ligne de
+   24 px réservée dans la cellule « Mode » pour tous les modes (note du mode, réglage de marche D-024) :
+   la hauteur de la barre ne dépend jamais du mode, donc le cadre du ciel non plus. */
+@media (min-width: 761px) and (min-height: 481px), (min-width: 1024px) {
+  .scenario-bar {
+    align-items: start;
+  }
+  .scenario-bar .field-label {
+    display: block;
+    height: 14px;
+    line-height: 14px;
+    white-space: nowrap;
+  }
+  .scenario-bar .seg {
+    height: 42px;
+    align-items: stretch;
+  }
+  .scenario-bar .seg label {
+    display: flex;
+  }
+  .scenario-bar .seg span {
+    display: flex;
+    align-items: center;
+  }
+  .scenario-bar .combo input,
+  .scenario-bar .select {
+    height: 42px;
+  }
+  .bar-compare .chip-action,
+  .bar-compare .chip-compare {
+    height: 42px;
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .bar-compare .compare-search .field-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  /* Bouton de lien : sous la rangée d'étiquettes (14 px + 6 px), aligné sur les contrôles */
+  .bar-actions {
+    align-self: start;
+    margin-top: 20px;
+  }
+  .bar-counter {
+    align-self: start;
+  }
+}
+
+/* Deuxième ligne fixe : elle peut déborder à droite sur la zone vide sous la cellule voisine,
+   jamais changer la largeur de sa colonne ni la hauteur de la barre */
+.bar-line2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  width: 0;
+  min-width: 100%;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--text-dim);
+  white-space: nowrap;
+  max-width: none;
+}
+
+.bar-distance {
+  justify-content: flex-end;
+}
+
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  .bar-line2 {
+    width: auto;
+    height: auto;
+    min-height: 24px;
+    white-space: normal;
+  }
+  .bar-line2:empty {
+    display: none;
+  }
+}
+
+/* Compteur sur deux lignes : le nombre, puis sa légende (le détail est au « i ») ; filet de part dessous */
+@media (min-width: 761px) and (min-height: 481px), (min-width: 1024px) {
+  .counter-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    width: auto;
+  }
+  .counter-top {
+    justify-content: flex-end;
+  }
+  .counter-caption {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 1.25;
+    white-space: normal;
+    text-align: right;
+  }
+  .counter-gauge {
+    width: 100%;
+    margin-top: 2px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1599px) and (min-height: 481px), (min-width: 1024px) and (max-width: 1599px) {
+  .counter-value {
+    font-size: 28px !important;
+  }
+}
+
+/* « i » du compteur : cercle visible de 20 px, boîte de la cible portée à la taille minimale (--target-min, WCAG 2.5.8).
+   Les marges négatives rendent à la mise en page l'encombrement d'origine (20 px de large, 12 px de haut) */
+.counter-info .info-btn {
+  width: var(--target-min);
+  height: var(--target-min);
+  margin: calc((20px - var(--target-min)) / 2 - 4px) calc((20px - var(--target-min)) / 2);
+}
+
+/* ---------- Halo v2 « l'astrolabe » (L-08 à L-12) ---------- */
+/* Côté opposé à l'étoile-guide (le panneau ne cache jamais l'étoile dont il parle) */
+.halo-panel.is-right:not(.is-sheet) {
+  left: auto;
+  right: 20px;
+}
+
+.halo-tabs {
+  flex-wrap: nowrap;
+}
+
+.halo-tabs [role='tab'] {
+  white-space: nowrap;
+}
+
+.halo-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4px 0 10px;
+}
+
+.halo-visual svg {
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.halo-ab {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.halo-ab figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.halo-ab figcaption,
+.halo-side {
+  margin: 6px 0 2px;
+  font-size: 12px;
+  color: var(--text-dim);
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.halo-side {
+  align-self: flex-start;
+  max-width: none;
+}
+
+.astro-tick {
+  stroke: rgba(168, 183, 209, 0.45);
+  stroke-width: 1;
+}
+
+.astro-tick.is-major {
+  stroke: rgba(168, 183, 209, 0.7);
+}
+
+.astro-label {
+  opacity: 0;
+  transition: opacity 120ms linear;
+}
+
+.astro-label.is-on {
+  opacity: 1;
+}
+
+.halo-astrolabe.is-reduced {
+  animation: halo-fade 150ms linear both;
+}
+
+@keyframes halo-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.astro-name {
+  font-size: 12px;
+  fill: var(--text-dim);
+}
+
+.astro-value {
+  font-size: 15px;
+  fill: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.astro-leader {
+  stroke: rgba(168, 183, 209, 0.45);
+  stroke-width: 1;
+}
+
+.halo-sexline {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.halo-details {
+  margin: 4px 0 0;
+}
+
+.halo-details summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: #e3dbff;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.halo-details summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.halo-details .halo-legend {
+  margin-top: 6px;
+}
+
+/* Constellation en lignes : forme (plein / anneau), jamais la couleur, pour distinguer femmes et hommes */
+.dot-axis {
+  stroke: rgba(168, 183, 209, 0.3);
+  stroke-width: 1;
+}
+
+.dot-label,
+.dot-scale {
+  font-size: 12px;
+  fill: var(--text-dim);
+}
+
+.dot-mover {
+  transition: transform 600ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.halo-dots.is-reduced .dot-mover {
+  transition: none;
+}
+
+.dot-margin {
+  stroke: rgba(244, 246, 255, 0.25);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.dot-f {
+  fill: var(--text);
+  stroke: var(--text);
+  stroke-width: 1.5;
+}
+
+.dot-h {
+  fill: var(--panel);
+  stroke: var(--text);
+  stroke-width: 1.5;
+}
+
+.dot-mover.is-imprecise {
+  opacity: 0.5;
+}
+
+.dot-mover.is-imprecise circle {
+  stroke-dasharray: 2 2;
+}
+
+.dot-mover.is-imprecise .dot-f {
+  fill: none;
+}
+
+.dot-key {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: var(--text);
+  align-self: flex-start;
+}
+
+.dot-key svg {
+  overflow: visible;
+}
+
+/* ---------- Barre du haut hiérarchisée (L-13) ----------
+   Visite = seul bouton plein ; Découvertes en bouton texte ; liste, carte, affiche en un groupe
+   d'icônes libellées (libellé masqué sous 1 440 px) ; Sources & limites en lien. */
+.top-actions {
+  align-items: center;
+}
+
+.view-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.view-group .btn {
+  border: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 7px 12px;
+  min-height: 34px;
+}
+
+.view-group .btn:hover:not([disabled]) {
+  background: rgba(30, 40, 78, 0.85);
+}
+
+.view-group .btn[aria-pressed='true'],
+.view-group .btn[aria-expanded='true'] {
+  background: rgba(179, 155, 255, 0.14);
+  color: #e3dbff;
+}
+
+/* Sous 1 440 px : icônes seules (nom complet par aria-label, infobulle au survol et au focus) */
+@media (min-width: 431px) and (max-width: 1439px) and (min-height: 481px), (min-width: 1024px) and (max-width: 1439px) {
+  .view-group .view-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .view-group .btn {
+    width: 34px;
+    padding: 0;
+    justify-content: center;
+  }
+  /* Carte ouverte (retour du testeur KBS, 10/11) : « Revenir au ciel » reste écrit, c'est la sortie de la carte */
+  .view-group .map-toggle.is-back {
+    width: auto;
+    padding: 0 12px;
+  }
+  .view-group .map-toggle.is-back .view-label {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+.top-sources {
+  color: var(--text-dim);
+  font-size: 14px;
+  padding: 8px 6px;
+  text-decoration-color: rgba(168, 183, 209, 0.45);
+  white-space: nowrap;
+}
+
+.top-sources:hover {
+  color: var(--text);
+  text-decoration-color: currentColor;
+}
+
+/* Infobulle visible au survol et au focus clavier, sans animation (rien à réduire) ; le nom
+   accessible reste l'aria-label du bouton. Sous le bouton ; `.tip-end` : alignée à droite. */
+[data-tip] {
+  position: relative;
+}
+
+[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 45;
+  width: max-content;
+  max-width: 340px;
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-align: left;
+  white-space: normal;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+[data-tip]:hover::after,
+[data-tip]:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tip-end[data-tip]::after {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+/* Au-dessus du bouton (barre de la visite, en bas de l'écran) */
+.tip-up[data-tip]::after {
+  top: auto;
+  bottom: calc(100% + 8px);
+}
+
+/* Menu ouvert, une infobulle ne doit pas recouvrir les entrées voisines ; pas d'infobulle au doigt */
+.top-more.is-open [data-tip]::after,
+.poster-menu:has(.poster-list) [data-tip]::after {
+  display: none;
+}
+
+@media (hover: none) {
+  [data-tip]:hover:not(:focus-visible)::after {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Mobile (≤ 430 px) : dans le menu, les vues reprennent leur libellé, en colonne */
+@media (max-width: 430px), (max-width: 1023px) and (max-height: 480px) {
+  .top-more.is-open .view-group {
+    flex-direction: column;
+    align-items: stretch;
+    border: 0;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    gap: 6px;
+  }
+  .top-more.is-open .view-group .btn,
+  .top-more.is-open .poster-menu .btn {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid var(--line);
+    padding: 6px 14px;
+  }
+  .top-more.is-open .top-sources {
+    min-height: 44px;
+    text-align: left;
+    padding: 6px 14px;
+  }
+}
+
+/* Clé de taille dans l'explication de la légende (L-17) : à l'échelle du ciel affiché */
+.size-key {
+  display: block;
+  margin-top: 8px;
+}
+
+.size-key svg {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+/* Compteur à zéro (L-18) : la phrase passe sur deux lignes, sans déborder sur « Comparer » */
+@media (min-width: 761px) and (min-height: 481px), (min-width: 1024px) {
+  .counter-caption.is-none {
+    display: block;
+    max-width: 250px;
+    white-space: normal;
+    text-align: right;
+    line-height: 1.3;
+  }
+}
+
+/* Halo, niveau de vie (retour du 03/11) : la commune parmi les communes d'Île-de-France, en bandes de points */
+.income-ranks {
+  display: grid;
+  gap: 14px;
+}
+
+.income-strip {
+  margin: 0;
+}
+
+.income-strip figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2px 10px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.income-strip-title {
+  color: var(--text-dim);
+}
+
+.income-strip-value {
+  margin-left: auto;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.income-strip-value + .income-strip-value {
+  margin-left: 10px;
+}
+
+.income-tag {
+  margin-right: 4px;
+  color: var(--guide);
+  font-size: 12px;
+}
+
+.income-strip svg {
+  display: block;
+  margin-top: 4px;
+  overflow: visible;
+}
+
+.income-strip-axis,
+.income-strip-tag {
+  font-size: 11px;
+  fill: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.income-strip-tag {
+  fill: var(--guide);
+}
+
+.income-strip-sentence {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* Réglage de marche des TC (D-024, L-07) sur la deuxième ligne de la cellule « Mode » (24 px, réservée) :
+   libellés publiés tels quels ; Vélib' (D-027) : première phrase de l'avertissement, texte entier au « i » */
+.walk-setting {
+  gap: 6px;
+}
+.walk-label {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.bar-mode .walk-select {
+  height: 24px;
+  min-height: 24px;
+  padding: 0 24px 0 8px;
+  font-size: 12px;
+  line-height: 22px;
+  border-radius: 8px;
+  max-width: none;
+  width: auto;
+  background-position: right 6px center;
+  background-size: 12px, auto;
+  flex: none;
+  min-width: 0;
+}
+.velib-hint strong {
+  color: var(--text);
+  font-weight: 500;
+}
+.velib-tip .velib-warning {
+  margin: 0;
+  white-space: normal;
+}
+.sky-list-velib {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
+@media (max-width: 760px), (max-width: 1023px) and (max-height: 480px) {
+  /* Téléphone : la cellule « Mode » ne doit pas élargir sa colonne (la jauge garde sa place) ; le
+     réglage complet reste lisible dans le résumé de la barre et au « i » */
+  .bar-mode .bar-line2.walk-setting {
+    flex-wrap: nowrap;
+    width: 0;
+    min-width: 100%;
+  }
+  .walk-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .bar-mode .walk-select {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Fenêtre basse (zoom à 200 %) : commandes de zoom en ligne, pour ne pas passer sous la barre de scénario */
+@media (max-width: 1023px) and (max-height: 480px) {
+  .zoom-controls {
+    flex-direction: row;
+  }
+}

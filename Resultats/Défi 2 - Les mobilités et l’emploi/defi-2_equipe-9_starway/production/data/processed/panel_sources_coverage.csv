@@ -1,0 +1,134 @@
+item,measure,scope,value
+gtfs,courses actives,2026-11-17,139563
+fauteuil_gtfs_stops,n,location_type=0,35493
+fauteuil_gtfs_stops,filled,location_type=0,34172
+fauteuil_gtfs_stops,share_filled,location_type=0,0.9627813935142141
+fauteuil_gtfs_stops,value_0,location_type=0,1321
+fauteuil_gtfs_stops,value_1,location_type=0,19964
+fauteuil_gtfs_stops,value_2,location_type=0,14208
+fauteuil_gtfs_stops,n,location_type=1,15404
+fauteuil_gtfs_stops,filled,location_type=1,0
+fauteuil_gtfs_stops,share_filled,location_type=1,0.0
+fauteuil_gtfs_stops,value_0,location_type=1,15404
+fauteuil_gtfs_stops,n,location_type=2,2515
+fauteuil_gtfs_stops,filled,location_type=2,0
+fauteuil_gtfs_stops,share_filled,location_type=2,0.0
+fauteuil_gtfs_stops,value_0,location_type=2,2515
+fauteuil_gtfs_trips,n,route_type=0 (tram),6329
+fauteuil_gtfs_trips,filled,route_type=0 (tram),6329
+fauteuil_gtfs_trips,share_filled,route_type=0 (tram),1.0
+fauteuil_gtfs_trips,value_1,route_type=0 (tram),6282
+fauteuil_gtfs_trips,value_2,route_type=0 (tram),47
+fauteuil_gtfs_trips,n,route_type=1 (metro),11818
+fauteuil_gtfs_trips,filled,route_type=1 (metro),11818
+fauteuil_gtfs_trips,share_filled,route_type=1 (metro),1.0
+fauteuil_gtfs_trips,value_1,route_type=1 (metro),863
+fauteuil_gtfs_trips,value_2,route_type=1 (metro),10955
+fauteuil_gtfs_trips,n,route_type=2 (train),5280
+fauteuil_gtfs_trips,filled,route_type=2 (train),4954
+fauteuil_gtfs_trips,share_filled,route_type=2 (train),0.9382575757575757
+fauteuil_gtfs_trips,value_0,route_type=2 (train),326
+fauteuil_gtfs_trips,value_1,route_type=2 (train),4954
+fauteuil_gtfs_trips,n,route_type=3 (bus),112854
+fauteuil_gtfs_trips,filled,route_type=3 (bus),82735
+fauteuil_gtfs_trips,share_filled,route_type=3 (bus),0.7331153525794389
+fauteuil_gtfs_trips,value_0,route_type=3 (bus),30119
+fauteuil_gtfs_trips,value_1,route_type=3 (bus),67695
+fauteuil_gtfs_trips,value_2,route_type=3 (bus),15040
+fauteuil_gtfs_trips,n,route_type=6 (telepherique),2172
+fauteuil_gtfs_trips,filled,route_type=6 (telepherique),2172
+fauteuil_gtfs_trips,share_filled,route_type=6 (telepherique),1.0
+fauteuil_gtfs_trips,value_1,route_type=6 (telepherique),2172
+fauteuil_gtfs_trips,n,route_type=7 (funiculaire),1110
+fauteuil_gtfs_trips,filled,route_type=7 (funiculaire),1110
+fauteuil_gtfs_trips,share_filled,route_type=7 (funiculaire),1.0
+fauteuil_gtfs_trips,value_1,route_type=7 (funiculaire),1110
+referentiel_lignes,routes actives,route_type=0 (tram),17
+referentiel_lignes,routes retrouvées (ID_Line),route_type=0 (tram),17
+referentiel_air_conditioning,n,route_type=0 (tram),17
+referentiel_air_conditioning,filled,route_type=0 (tram),15
+referentiel_air_conditioning,share_filled,route_type=0 (tram),0.8823529411764706
+referentiel_air_conditioning,value_true,route_type=0 (tram),15
+referentiel_air_conditioning,value_unknown,route_type=0 (tram),2
+referentiel_accessibility,n,route_type=0 (tram),17
+referentiel_accessibility,filled,route_type=0 (tram),17
+referentiel_accessibility,share_filled,route_type=0 (tram),1.0
+referentiel_accessibility,value_false,route_type=0 (tram),1
+referentiel_accessibility,value_true,route_type=0 (tram),16
+referentiel_lignes,routes actives,route_type=1 (metro),16
+referentiel_lignes,routes retrouvées (ID_Line),route_type=1 (metro),16
+referentiel_air_conditioning,n,route_type=1 (metro),16
+referentiel_air_conditioning,filled,route_type=1 (metro),16
+referentiel_air_conditioning,share_filled,route_type=1 (metro),1.0
+referentiel_air_conditioning,value_false,route_type=1 (metro),9
+referentiel_air_conditioning,value_partial,route_type=1 (metro),1
+referentiel_air_conditioning,value_true,route_type=1 (metro),6
+referentiel_accessibility,n,route_type=1 (metro),16
+referentiel_accessibility,filled,route_type=1 (metro),16
+referentiel_accessibility,share_filled,route_type=1 (metro),1.0
+referentiel_accessibility,value_false,route_type=1 (metro),15
+referentiel_accessibility,value_true,route_type=1 (metro),1
+referentiel_lignes,routes actives,route_type=2 (train),24
+referentiel_lignes,routes retrouvées (ID_Line),route_type=2 (train),24
+referentiel_air_conditioning,n,route_type=2 (train),24
+referentiel_air_conditioning,filled,route_type=2 (train),24
+referentiel_air_conditioning,share_filled,route_type=2 (train),1.0
+referentiel_air_conditioning,value_false,route_type=2 (train),1
+referentiel_air_conditioning,value_partial,route_type=2 (train),7
+referentiel_air_conditioning,value_true,route_type=2 (train),16
+referentiel_accessibility,n,route_type=2 (train),24
+referentiel_accessibility,filled,route_type=2 (train),13
+referentiel_accessibility,share_filled,route_type=2 (train),0.5416666666666666
+referentiel_accessibility,value_false,route_type=2 (train),13
+referentiel_accessibility,value_unknown,route_type=2 (train),11
+referentiel_lignes,routes actives,route_type=3 (bus),1907
+referentiel_lignes,routes retrouvées (ID_Line),route_type=3 (bus),1907
+referentiel_air_conditioning,n,route_type=3 (bus),1907
+referentiel_air_conditioning,filled,route_type=3 (bus),1596
+referentiel_air_conditioning,share_filled,route_type=3 (bus),0.8369166229680126
+referentiel_air_conditioning,value_false,route_type=3 (bus),399
+referentiel_air_conditioning,value_partial,route_type=3 (bus),932
+referentiel_air_conditioning,value_true,route_type=3 (bus),265
+referentiel_air_conditioning,value_unknown,route_type=3 (bus),311
+referentiel_accessibility,n,route_type=3 (bus),1907
+referentiel_accessibility,filled,route_type=3 (bus),916
+referentiel_accessibility,share_filled,route_type=3 (bus),0.48033560566334554
+referentiel_accessibility,value_false,route_type=3 (bus),451
+referentiel_accessibility,value_true,route_type=3 (bus),465
+referentiel_accessibility,value_unknown,route_type=3 (bus),991
+referentiel_lignes,routes actives,route_type=6 (telepherique),1
+referentiel_lignes,routes retrouvées (ID_Line),route_type=6 (telepherique),1
+referentiel_air_conditioning,n,route_type=6 (telepherique),1
+referentiel_air_conditioning,filled,route_type=6 (telepherique),1
+referentiel_air_conditioning,share_filled,route_type=6 (telepherique),1.0
+referentiel_air_conditioning,value_false,route_type=6 (telepherique),1
+referentiel_accessibility,n,route_type=6 (telepherique),1
+referentiel_accessibility,filled,route_type=6 (telepherique),1
+referentiel_accessibility,share_filled,route_type=6 (telepherique),1.0
+referentiel_accessibility,value_true,route_type=6 (telepherique),1
+referentiel_lignes,routes actives,route_type=7 (funiculaire),1
+referentiel_lignes,routes retrouvées (ID_Line),route_type=7 (funiculaire),1
+referentiel_air_conditioning,n,route_type=7 (funiculaire),1
+referentiel_air_conditioning,filled,route_type=7 (funiculaire),0
+referentiel_air_conditioning,share_filled,route_type=7 (funiculaire),0.0
+referentiel_air_conditioning,value_unknown,route_type=7 (funiculaire),1
+referentiel_accessibility,n,route_type=7 (funiculaire),1
+referentiel_accessibility,filled,route_type=7 (funiculaire),1
+referentiel_accessibility,share_filled,route_type=7 (funiculaire),1.0
+referentiel_accessibility,value_true,route_type=7 (funiculaire),1
+accessibilite_gare,gares du jeu,IDFM,459
+accessibilite_gare,gares retrouvées dans le GTFS (stop_id),IDFM,455
+accessibilite_gare,niveau 1 x wheelchair_boarding 0,gares,209
+accessibilite_gare,niveau 1 x wheelchair_boarding absent,gares,4
+accessibilite_gare,niveau 3 x wheelchair_boarding 0,gares,8
+accessibilite_gare,niveau 3 x wheelchair_boarding 1,gares,166
+accessibilite_gare,niveau 4 x wheelchair_boarding 1,gares,58
+accessibilite_gare,niveau 6 x wheelchair_boarding 0,gares,2
+accessibilite_gare,niveau 6 x wheelchair_boarding 1,gares,12
+co2_ligne,routes guidées actives,tram/métro/train/câble,59
+co2_ligne,routes guidées avec facteur par ligne,tram/métro/train/câble,54
+co2_ligne,routes guidées sans facteur par ligne,tram/métro/train/câble,C1 FUN T12 T14 V
+ponctualite,lignes publiées,SNCF Voyageurs,A B C D E H J K L N P R U
+ponctualite,dernier mois,SNCF Voyageurs,2026-09
+ponctualite,routes train actives couvertes,route_type=2,13/24
+ponctualite,routes train actives non couvertes,route_type=2,TER TER TER TER TER TER TER TER TER TER V

@@ -1,0 +1,53 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Répartition au prorata. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:00.510
+À droite,
+
+2
+00:00:00.510 --> 00:00:00.980
+plus bas :
+
+3
+00:00:00.980 --> 00:00:02.251
+les projets de recrutement.
+
+4
+00:00:02.251 --> 00:00:04.350
+Léa vise un poste d’aide de cuisine.
+
+5
+00:00:04.350 --> 00:00:05.710
+Dans le bassin d’emploi T1 Paris,
+
+6
+00:00:05.710 --> 00:00:06.870
+qui couvre tout Paris,
+
+7
+00:00:06.870 --> 00:00:10.590
+les employeurs en prévoient au moins
+47 000 dans sa famille de métiers :
+
+8
+00:00:10.590 --> 00:00:12.510
+les fonctions liées à la vente,
+
+9
+00:00:12.510 --> 00:00:13.790
+au tourisme et aux services.
+
+10
+00:00:13.790 --> 00:00:16.830
+Ce sont les recrutements prévus pour 2026,
+
+11
+00:00:16.830 --> 00:00:19.275
+d’après l’enquête BMO de France Travail.
+
+12
+00:00:19.275 --> 00:00:21.430
+Ces projets sont déclarés par les
+employeurs.

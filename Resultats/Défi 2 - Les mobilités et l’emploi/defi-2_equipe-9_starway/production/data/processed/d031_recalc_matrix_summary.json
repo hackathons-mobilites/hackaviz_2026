@@ -1,0 +1,226 @@
+{
+ "walk3000": {
+  "communes": 1285,
+  "pairs": 57825,
+  "out": {
+   "n": 57825,
+   "both": 20430,
+   "changed": 11637,
+   "longer": 9284,
+   "shorter": 2353,
+   "lost": 1203,
+   "gained": 321,
+   "delta_median_min": 4.0,
+   "delta_p90_min": 11.0,
+   "delta_max_min": 45.0,
+   "delta_min_min": -33.0
+  },
+  "ret": {
+   "n": 57825,
+   "both": 21799,
+   "changed": 7032,
+   "longer": 5894,
+   "shorter": 1138,
+   "lost": 1400,
+   "gained": 391,
+   "delta_median_min": 5.0,
+   "delta_p90_min": 15.0,
+   "delta_max_min": 65.0,
+   "delta_min_min": -40.0
+  },
+  "verdicts": {
+   "d06": {
+    "30": {
+     "lit_before": 118,
+     "lit_after": 115,
+     "lost": 8,
+     "gained": 5
+    },
+    "45": {
+     "lit_before": 424,
+     "lit_after": 383,
+     "lost": 48,
+     "gained": 7
+    },
+    "60": {
+     "lit_before": 983,
+     "lit_after": 898,
+     "lost": 107,
+     "gained": 22
+    }
+   },
+   "d09": {
+    "30": {
+     "lit_before": 167,
+     "lit_after": 148,
+     "lost": 19,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 618,
+     "lit_after": 554,
+     "lost": 67,
+     "gained": 3
+    },
+    "60": {
+     "lit_before": 1507,
+     "lit_after": 1370,
+     "lost": 159,
+     "gained": 22
+    }
+   },
+   "d14": {
+    "30": {
+     "lit_before": 112,
+     "lit_after": 100,
+     "lost": 12,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 412,
+     "lit_after": 381,
+     "lost": 32,
+     "gained": 1
+    },
+    "60": {
+     "lit_before": 1001,
+     "lit_after": 922,
+     "lost": 90,
+     "gained": 11
+    }
+   },
+   "all": {
+    "30": {
+     "lit_before": 397,
+     "lit_after": 363,
+     "lost": 39,
+     "gained": 5
+    },
+    "45": {
+     "lit_before": 1454,
+     "lit_after": 1318,
+     "lost": 147,
+     "gained": 11
+    },
+    "60": {
+     "lit_before": 3491,
+     "lit_after": 3190,
+     "lost": 356,
+     "gained": 55
+    }
+   }
+  }
+ },
+ "walk1000": {
+  "communes": 1285,
+  "pairs": 57825,
+  "out": {
+   "n": 57825,
+   "both": 18446,
+   "changed": 10731,
+   "longer": 8592,
+   "shorter": 2139,
+   "lost": 1079,
+   "gained": 288,
+   "delta_median_min": 4.0,
+   "delta_p90_min": 11.0,
+   "delta_max_min": 42.0,
+   "delta_min_min": -33.0
+  },
+  "ret": {
+   "n": 57825,
+   "both": 20118,
+   "changed": 6564,
+   "longer": 5537,
+   "shorter": 1027,
+   "lost": 1333,
+   "gained": 382,
+   "delta_median_min": 6.0,
+   "delta_p90_min": 16.0,
+   "delta_max_min": 65.0,
+   "delta_min_min": -40.0
+  },
+  "verdicts": {
+   "d06": {
+    "30": {
+     "lit_before": 118,
+     "lit_after": 115,
+     "lost": 8,
+     "gained": 5
+    },
+    "45": {
+     "lit_before": 414,
+     "lit_after": 375,
+     "lost": 46,
+     "gained": 7
+    },
+    "60": {
+     "lit_before": 875,
+     "lit_after": 797,
+     "lost": 99,
+     "gained": 21
+    }
+   },
+   "d09": {
+    "30": {
+     "lit_before": 167,
+     "lit_after": 148,
+     "lost": 19,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 609,
+     "lit_after": 545,
+     "lost": 67,
+     "gained": 3
+    },
+    "60": {
+     "lit_before": 1489,
+     "lit_after": 1338,
+     "lost": 170,
+     "gained": 19
+    }
+   },
+   "d14": {
+    "30": {
+     "lit_before": 111,
+     "lit_after": 99,
+     "lost": 12,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 408,
+     "lit_after": 376,
+     "lost": 33,
+     "gained": 1
+    },
+    "60": {
+     "lit_before": 959,
+     "lit_after": 879,
+     "lost": 91,
+     "gained": 11
+    }
+   },
+   "all": {
+    "30": {
+     "lit_before": 396,
+     "lit_after": 362,
+     "lost": 39,
+     "gained": 5
+    },
+    "45": {
+     "lit_before": 1431,
+     "lit_after": 1296,
+     "lost": 146,
+     "gained": 11
+    },
+    "60": {
+     "lit_before": 3323,
+     "lit_after": 3014,
+     "lost": 360,
+     "gained": 51
+    }
+   }
+  }
+ }
+}

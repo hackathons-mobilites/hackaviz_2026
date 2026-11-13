@@ -1,0 +1,56 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:01.402
+Léa est imaginaire,
+
+2
+00:00:01.402 --> 00:00:03.319
+mais ses chiffres sont réels.
+
+3
+00:00:03.319 --> 00:00:05.790
+Ils sont calculés avec des données
+ouvertes,
+
+4
+00:00:05.790 --> 00:00:07.968
+pour chaque commune d’Île-de-France.
+
+5
+00:00:07.968 --> 00:00:10.550
+Chaque chiffre renvoie à sa source.
+
+6
+00:00:10.550 --> 00:00:11.790
+À vous d’explorer :
+
+7
+00:00:11.790 --> 00:00:12.830
+votre commune,
+
+8
+00:00:12.830 --> 00:00:13.950
+votre heure,
+
+9
+00:00:13.950 --> 00:00:15.791
+votre temps de trajet.
+
+10
+00:00:15.791 --> 00:00:17.861
+Nous vivons tous sous le même ciel.
+
+11
+00:00:17.861 --> 00:00:18.616
+À vous,
+
+12
+00:00:18.616 --> 00:00:19.550
+maintenant,
+
+13
+00:00:19.550 --> 00:00:21.030
+de découvrir vos étoiles.

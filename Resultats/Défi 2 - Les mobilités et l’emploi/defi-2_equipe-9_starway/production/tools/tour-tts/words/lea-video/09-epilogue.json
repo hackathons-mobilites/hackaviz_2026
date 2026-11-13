@@ -1,0 +1,175 @@
+{
+ "tour": "lea-video",
+ "stem": "09-epilogue",
+ "mp3Sha256": "1f9024e4a9065f35d530a1b1e8cee0b3ce5d685f6675f4210a6c412a05fc4403",
+ "text": "Léa est imaginaire, mais ses chiffres sont réels. À vous d’explorer : votre commune, votre heure, votre temps de trajet. Nous vivons tous sous le même ciel. À vous, maintenant, de découvrir vos étoiles.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Lea est imaginaire, mais ces chiffres sont réels. À vous d'explorer votre commune, votre heure, votre temps de trajet. Nous vivons tous sous le même ciel. À vous maintenant de découvrir vos étoiles.",
+ "words": [
+  {
+   "word": "lea",
+   "startMs": 70,
+   "endMs": 350
+  },
+  {
+   "word": "est",
+   "startMs": 350,
+   "endMs": 390
+  },
+  {
+   "word": "imaginaire",
+   "startMs": 390,
+   "endMs": 1270
+  },
+  {
+   "word": "mais",
+   "startMs": 1510,
+   "endMs": 1790
+  },
+  {
+   "word": "ces",
+   "startMs": 1790,
+   "endMs": 1950
+  },
+  {
+   "word": "chiffres",
+   "startMs": 1950,
+   "endMs": 2350
+  },
+  {
+   "word": "sont",
+   "startMs": 2350,
+   "endMs": 2510
+  },
+  {
+   "word": "réels",
+   "startMs": 2510,
+   "endMs": 3070
+  },
+  {
+   "word": "à",
+   "startMs": 3310,
+   "endMs": 3510
+  },
+  {
+   "word": "vous",
+   "startMs": 3510,
+   "endMs": 3710
+  },
+  {
+   "word": "d'explorer",
+   "startMs": 3710,
+   "endMs": 4390
+  },
+  {
+   "word": "votre",
+   "startMs": 4390,
+   "endMs": 4790
+  },
+  {
+   "word": "commune",
+   "startMs": 4790,
+   "endMs": 5390
+  },
+  {
+   "word": "votre",
+   "startMs": 5470,
+   "endMs": 5870
+  },
+  {
+   "word": "heure",
+   "startMs": 5870,
+   "endMs": 6310
+  },
+  {
+   "word": "votre",
+   "startMs": 6430,
+   "endMs": 6870
+  },
+  {
+   "word": "temps",
+   "startMs": 6870,
+   "endMs": 6990
+  },
+  {
+   "word": "de",
+   "startMs": 6990,
+   "endMs": 7030
+  },
+  {
+   "word": "trajet",
+   "startMs": 7030,
+   "endMs": 7470
+  },
+  {
+   "word": "nous",
+   "startMs": 8230,
+   "endMs": 8390
+  },
+  {
+   "word": "vivons",
+   "startMs": 8390,
+   "endMs": 8670
+  },
+  {
+   "word": "tous",
+   "startMs": 8670,
+   "endMs": 8910
+  },
+  {
+   "word": "sous",
+   "startMs": 8910,
+   "endMs": 9270
+  },
+  {
+   "word": "le",
+   "startMs": 9270,
+   "endMs": 9350
+  },
+  {
+   "word": "même",
+   "startMs": 9350,
+   "endMs": 9550
+  },
+  {
+   "word": "ciel",
+   "startMs": 9550,
+   "endMs": 10030
+  },
+  {
+   "word": "à",
+   "startMs": 10670,
+   "endMs": 10870
+  },
+  {
+   "word": "vous",
+   "startMs": 10870,
+   "endMs": 11230
+  },
+  {
+   "word": "maintenant",
+   "startMs": 11510,
+   "endMs": 12230
+  },
+  {
+   "word": "de",
+   "startMs": 12590,
+   "endMs": 12630
+  },
+  {
+   "word": "découvrir",
+   "startMs": 12630,
+   "endMs": 13390
+  },
+  {
+   "word": "vos",
+   "startMs": 13390,
+   "endMs": 13510
+  },
+  {
+   "word": "étoiles",
+   "startMs": 13510,
+   "endMs": 14070
+  }
+ ]
+}

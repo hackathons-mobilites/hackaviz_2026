@@ -1,0 +1,275 @@
+{
+ "tour": "lea-video",
+ "stem": "03-acte1-preuve",
+ "mp3Sha256": "f2c02fd14dc0eba1429c88a47a32cd51030f6c570ef6f2cf77e868025cc283ae",
+ "text": "Dans le panneau de droite, la fiche de Paris 8e. Voici un exemple de trajet : l’aller prend 45 minutes. À la fin de sa journée de travail, le retour en prend 43, attente comprise. D’après les flux domicile-travail du recensement, plus de 550 habitants de Maisons-Laffitte y travaillent déjà.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Dans le panneau de droite, La fiche de Paris 8e. Voici un exemple de trajet, l'Allée prend 45 Min à la fin de sa journée de travail, le retour en prend 43 attentes comprises. D'après les flux domicile-travail du recensement, plus de 550 habitants de Maisons-Laffitte y travaillent déjà.",
+ "words": [
+  {
+   "word": "dans",
+   "startMs": 70,
+   "endMs": 230
+  },
+  {
+   "word": "le",
+   "startMs": 230,
+   "endMs": 310
+  },
+  {
+   "word": "panneau",
+   "startMs": 310,
+   "endMs": 510
+  },
+  {
+   "word": "de",
+   "startMs": 510,
+   "endMs": 550
+  },
+  {
+   "word": "droite",
+   "startMs": 550,
+   "endMs": 1150
+  },
+  {
+   "word": "la",
+   "startMs": 1270,
+   "endMs": 1550
+  },
+  {
+   "word": "fiche",
+   "startMs": 1550,
+   "endMs": 1790
+  },
+  {
+   "word": "de",
+   "startMs": 1790,
+   "endMs": 1910
+  },
+  {
+   "word": "paris",
+   "startMs": 1910,
+   "endMs": 2350
+  },
+  {
+   "word": "huitième",
+   "startMs": 2350,
+   "endMs": 3110
+  },
+  {
+   "word": "voici",
+   "startMs": 4070,
+   "endMs": 4510
+  },
+  {
+   "word": "un",
+   "startMs": 4510,
+   "endMs": 4630
+  },
+  {
+   "word": "exemple",
+   "startMs": 4630,
+   "endMs": 4990
+  },
+  {
+   "word": "de",
+   "startMs": 4990,
+   "endMs": 5070
+  },
+  {
+   "word": "trajet",
+   "startMs": 5070,
+   "endMs": 5590
+  },
+  {
+   "word": "l'allée",
+   "startMs": 6150,
+   "endMs": 6790
+  },
+  {
+   "word": "prend",
+   "startMs": 6790,
+   "endMs": 7110
+  },
+  {
+   "word": "quarante",
+   "startMs": 7110,
+   "endMs": 7590
+  },
+  {
+   "word": "cinq",
+   "startMs": 7590,
+   "endMs": 7750
+  },
+  {
+   "word": "minutes",
+   "startMs": 7750,
+   "endMs": 8270
+  },
+  {
+   "word": "à",
+   "startMs": 8590,
+   "endMs": 8830
+  },
+  {
+   "word": "la",
+   "startMs": 8830,
+   "endMs": 8990
+  },
+  {
+   "word": "fin",
+   "startMs": 8990,
+   "endMs": 9150
+  },
+  {
+   "word": "de",
+   "startMs": 9150,
+   "endMs": 9190
+  },
+  {
+   "word": "sa",
+   "startMs": 9190,
+   "endMs": 9350
+  },
+  {
+   "word": "journée",
+   "startMs": 9350,
+   "endMs": 9590
+  },
+  {
+   "word": "de",
+   "startMs": 9590,
+   "endMs": 9630
+  },
+  {
+   "word": "travail",
+   "startMs": 9630,
+   "endMs": 10150
+  },
+  {
+   "word": "le",
+   "startMs": 10150,
+   "endMs": 10350
+  },
+  {
+   "word": "retour",
+   "startMs": 10350,
+   "endMs": 10750
+  },
+  {
+   "word": "en",
+   "startMs": 10750,
+   "endMs": 10790
+  },
+  {
+   "word": "prend",
+   "startMs": 10790,
+   "endMs": 11150
+  },
+  {
+   "word": "quarante",
+   "startMs": 11150,
+   "endMs": 11510
+  },
+  {
+   "word": "trois",
+   "startMs": 11510,
+   "endMs": 11950
+  },
+  {
+   "word": "attentes",
+   "startMs": 12110,
+   "endMs": 12550
+  },
+  {
+   "word": "comprises",
+   "startMs": 12550,
+   "endMs": 13070
+  },
+  {
+   "word": "d'après",
+   "startMs": 13790,
+   "endMs": 14110
+  },
+  {
+   "word": "les",
+   "startMs": 14110,
+   "endMs": 14190
+  },
+  {
+   "word": "flux",
+   "startMs": 14190,
+   "endMs": 14430
+  },
+  {
+   "word": "domicile-travail",
+   "startMs": 14430,
+   "endMs": 15430
+  },
+  {
+   "word": "du",
+   "startMs": 15430,
+   "endMs": 15550
+  },
+  {
+   "word": "recensement",
+   "startMs": 15550,
+   "endMs": 16270
+  },
+  {
+   "word": "plus",
+   "startMs": 16550,
+   "endMs": 16830
+  },
+  {
+   "word": "de",
+   "startMs": 16830,
+   "endMs": 16870
+  },
+  {
+   "word": "cinq",
+   "startMs": 16870,
+   "endMs": 17150
+  },
+  {
+   "word": "cent",
+   "startMs": 17150,
+   "endMs": 17310
+  },
+  {
+   "word": "cinquante",
+   "startMs": 17310,
+   "endMs": 17670
+  },
+  {
+   "word": "habitants",
+   "startMs": 17670,
+   "endMs": 18030
+  },
+  {
+   "word": "de",
+   "startMs": 18030,
+   "endMs": 18110
+  },
+  {
+   "word": "maisons-laffitte",
+   "startMs": 18110,
+   "endMs": 18750
+  },
+  {
+   "word": "y",
+   "startMs": 18750,
+   "endMs": 18950
+  },
+  {
+   "word": "travaillent",
+   "startMs": 18950,
+   "endMs": 19390
+  },
+  {
+   "word": "déjà",
+   "startMs": 19390,
+   "endMs": 19910
+  }
+ ]
+}

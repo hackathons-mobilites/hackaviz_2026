@@ -1,0 +1,39 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:01.190
+Dans le panneau de droite,
+
+2
+00:00:01.190 --> 00:00:03.039
+la fiche de Seine-Aval.
+
+3
+00:00:03.039 --> 00:00:03.931
+Dans la liste,
+
+4
+00:00:03.931 --> 00:00:04.710
+Poissy :
+
+5
+00:00:04.710 --> 00:00:06.550
+l’aller prend 38 minutes.
+
+6
+00:00:06.550 --> 00:00:07.370
+Le retour en prend 50,
+
+7
+00:00:07.370 --> 00:00:09.429
+attente comprise.
+
+8
+00:00:09.429 --> 00:00:11.212
+Poissy reste à sa portée,
+
+9
+00:00:11.212 --> 00:00:12.110
+même le soir.

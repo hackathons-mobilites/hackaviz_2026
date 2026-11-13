@@ -1,0 +1,3983 @@
+{
+  "sample": {
+    "groups": [
+      "tour",
+      "insight"
+    ],
+    "tour_scenarios": [
+      {
+        "insee": "78358",
+        "day": "d09"
+      },
+      {
+        "insee": "78358",
+        "day": "d14"
+      },
+      {
+        "insee": "78418",
+        "day": "d09"
+      },
+      {
+        "insee": "78418",
+        "day": "d14"
+      }
+    ],
+    "insights_used": 40,
+    "excluded_rechecked": 4,
+    "insight_plan": {
+      "eclipse_01": {
+        "id": "eclipse_01",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "78358",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78358",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ],
+          [
+            "78358",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_02": {
+        "id": "eclipse_02",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "78146",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78146",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ],
+          [
+            "78146",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_03": {
+        "id": "eclipse_03",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "94038",
+          "d": "d14",
+          "b": 45,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 45,
+        "trips": [
+          [
+            "94038",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ],
+          [
+            "94038",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_04": {
+        "id": "eclipse_04",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "91103",
+          "d": "d06",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d06",
+            "ret"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_05": {
+        "id": "eclipse_05",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "91103",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_06": {
+        "id": "eclipse_06",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "92077",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "92077",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ],
+          [
+            "92077",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_07": {
+        "id": "eclipse_07",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "92012",
+          "d": "d06",
+          "b": 45,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 45,
+        "trips": [
+          [
+            "92012",
+            "P_PARIS_QCA",
+            "d06",
+            "out"
+          ],
+          [
+            "92012",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ]
+        ]
+      },
+      "eclipse_08": {
+        "id": "eclipse_08",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "95176",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "95176",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ],
+          [
+            "95176",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_09": {
+        "id": "eclipse_09",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "78172",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78172",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ],
+          [
+            "78172",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_10": {
+        "id": "eclipse_10",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "94001",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94001",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ],
+          [
+            "94001",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_01": {
+        "id": "territorial_gap_01",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "94078",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "94022",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94078",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "94078",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ],
+          [
+            "94022",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "94022",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_02": {
+        "id": "territorial_gap_02",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "91332",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "91103",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "91332",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91332",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_03": {
+        "id": "territorial_gap_03",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "91333",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "91103",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "91333",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91333",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_04": {
+        "id": "territorial_gap_04",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "91376",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "91103",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "91376",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91376",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_05": {
+        "id": "territorial_gap_05",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "91457",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "91103",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "91457",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91457",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_06": {
+        "id": "territorial_gap_06",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "91552",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "91103",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "91552",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91552",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_07": {
+        "id": "territorial_gap_07",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "95088",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "93007",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "95088",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ],
+          [
+            "93007",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_08": {
+        "id": "territorial_gap_08",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "91347",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "91103",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "91347",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91347",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_09": {
+        "id": "territorial_gap_09",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "91570",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "91103",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "91570",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91570",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "91103",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_10": {
+        "id": "territorial_gap_10",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "94033",
+          "d": "d09",
+          "b": 45,
+          "m": "transit",
+          "vs": "75112",
+          "compare_day": null
+        },
+        "budget": 45,
+        "trips": [
+          [
+            "94033",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "94033",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ],
+          [
+            "75112",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "75112",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "bike_gain_01": {
+        "id": "bike_gain_01",
+        "published": true,
+        "kind": "bike_gain",
+        "scenario": {
+          "o": "78551",
+          "d": "d09",
+          "b": 60,
+          "m": "bike_transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78551",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "bike_gain_02": {
+        "id": "bike_gain_02",
+        "published": true,
+        "kind": "bike_gain",
+        "scenario": {
+          "o": "78586",
+          "d": "d14",
+          "b": 60,
+          "m": "bike_transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78586",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "bike_gain_03": {
+        "id": "bike_gain_03",
+        "published": true,
+        "kind": "bike_gain",
+        "scenario": {
+          "o": "78551",
+          "d": "d06",
+          "b": 60,
+          "m": "bike_transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78551",
+            "P_PARIS_QCA",
+            "d06",
+            "out"
+          ],
+          [
+            "78551",
+            "P_PARIS_QCA",
+            "d06",
+            "ret"
+          ]
+        ]
+      },
+      "bike_gain_04": {
+        "id": "bike_gain_04",
+        "published": true,
+        "kind": "bike_gain",
+        "scenario": {
+          "o": "78146",
+          "d": "d14",
+          "b": 60,
+          "m": "bike_transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78146",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "bike_gain_05": {
+        "id": "bike_gain_05",
+        "published": true,
+        "kind": "bike_gain",
+        "scenario": {
+          "o": "78551",
+          "d": "d14",
+          "b": 60,
+          "m": "bike_transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78551",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "bike_gain_06": {
+        "id": "bike_gain_06",
+        "published": true,
+        "kind": "bike_gain",
+        "scenario": {
+          "o": "78481",
+          "d": "d09",
+          "b": 60,
+          "m": "bike_transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78481",
+            "P_PARIS_QCA",
+            "d09",
+            "out"
+          ],
+          [
+            "78481",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "bike_gain_07": {
+        "id": "bike_gain_07",
+        "published": true,
+        "kind": "bike_gain",
+        "scenario": {
+          "o": "78418",
+          "d": "d09",
+          "b": 60,
+          "m": "bike_transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78418",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "bike_gain_08": {
+        "id": "bike_gain_08",
+        "published": true,
+        "kind": "bike_gain",
+        "scenario": {
+          "o": "78146",
+          "d": "d06",
+          "b": 45,
+          "m": "bike_transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 45,
+        "trips": [
+          [
+            "78146",
+            "P_PARIS_QCA",
+            "d06",
+            "out"
+          ],
+          [
+            "78146",
+            "P_PARIS_QCA",
+            "d06",
+            "ret"
+          ]
+        ]
+      },
+      "bike_gain_09": {
+        "id": "bike_gain_09",
+        "published": true,
+        "kind": "bike_gain",
+        "scenario": {
+          "o": "78481",
+          "d": "d14",
+          "b": 60,
+          "m": "bike_transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78481",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "bike_gain_10": {
+        "id": "bike_gain_10",
+        "published": true,
+        "kind": "bike_gain",
+        "scenario": {
+          "o": "78396",
+          "d": "d06",
+          "b": 60,
+          "m": "bike_transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78396",
+            "P_PARIS_QCA",
+            "d06",
+            "out"
+          ]
+        ]
+      },
+      "late_return_01": {
+        "id": "late_return_01",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "91477",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "91477",
+            "P_PARIS_QCA",
+            "d14",
+            "out"
+          ],
+          [
+            "91477",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_02": {
+        "id": "late_return_02",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "94001",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94001",
+            "P_PARIS_QCA",
+            "d14",
+            "out"
+          ],
+          [
+            "94001",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_03": {
+        "id": "late_return_03",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "94054",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94054",
+            "P_PARIS_QCA",
+            "d14",
+            "out"
+          ],
+          [
+            "94054",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_04": {
+        "id": "late_return_04",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "94077",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94077",
+            "P_PARIS_QCA",
+            "d14",
+            "out"
+          ],
+          [
+            "94077",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_05": {
+        "id": "late_return_05",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "95176",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "95176",
+            "P_PARIS_QCA",
+            "d14",
+            "out"
+          ],
+          [
+            "95176",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_06": {
+        "id": "late_return_06",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "78358",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78358",
+            "P_PARIS_QCA",
+            "d14",
+            "out"
+          ],
+          [
+            "78358",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_07": {
+        "id": "late_return_07",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "95257",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "95257",
+            "P_PARIS_QCA",
+            "d14",
+            "out"
+          ],
+          [
+            "95257",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_08": {
+        "id": "late_return_08",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "78481",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78481",
+            "P_PARIS_QCA",
+            "d14",
+            "out"
+          ],
+          [
+            "78481",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_09": {
+        "id": "late_return_09",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "92077",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "92077",
+            "P_PARIS_QCA",
+            "d14",
+            "out"
+          ],
+          [
+            "92077",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_10": {
+        "id": "late_return_10",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "78172",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78172",
+            "P_PARIS_QCA",
+            "d14",
+            "out"
+          ],
+          [
+            "78172",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "excluded:eclipse_10": {
+        "id": "eclipse_10",
+        "published": false,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "94079",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94079",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ],
+          [
+            "94079",
+            "P_PARIS_QCA",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "excluded:bike_gain_10": {
+        "id": "bike_gain_10",
+        "published": false,
+        "kind": "bike_gain",
+        "scenario": {
+          "o": "95257",
+          "d": "d09",
+          "b": 60,
+          "m": "bike_transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "95257",
+            "P_PARIS_EST",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "excluded:late_return_01": {
+        "id": "late_return_01",
+        "published": false,
+        "kind": "late_return",
+        "scenario": {
+          "o": "78396",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78396",
+            "P_PARIS_QCA",
+            "d14",
+            "out"
+          ],
+          [
+            "78396",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "excluded:late_return_11": {
+        "id": "late_return_11",
+        "published": false,
+        "kind": "late_return",
+        "scenario": {
+          "o": "94058",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94058",
+            "P_PARIS_QCA",
+            "d14",
+            "out"
+          ],
+          [
+            "94058",
+            "P_PARIS_QCA",
+            "d14",
+            "ret"
+          ]
+        ]
+      }
+    },
+    "insights_skipped": {},
+    "insights_excluded_by_meta": [
+      "bike_gain_10",
+      "eclipse_10",
+      "late_return_01",
+      "late_return_11"
+    ],
+    "random": null
+  },
+  "trips": 193,
+  "status_counts": {
+    "both": 190,
+    "starway_only": 2,
+    "neither": 1
+  },
+  "all": {
+    "n": 190,
+    "median_signed_min": -0.41,
+    "median_abs_min": 1.9,
+    "p90_abs_min": 9.69,
+    "max_abs_min": 22.78,
+    "mean_signed_min": -0.56,
+    "share_within_1_min": 0.3789,
+    "share_within_5_min": 0.7368,
+    "share_within_10_min": 0.9105,
+    "share_starway_longer": 0.3737
+  },
+  "by_leg": {
+    "aller": {
+      "n": 89,
+      "median_signed_min": -0.32,
+      "median_abs_min": 4.1,
+      "p90_abs_min": 9.43,
+      "max_abs_min": 18.13,
+      "mean_signed_min": -0.91,
+      "share_within_1_min": 0.1685,
+      "share_within_5_min": 0.6629,
+      "share_within_10_min": 0.8989,
+      "share_starway_longer": 0.4382
+    },
+    "retour": {
+      "n": 101,
+      "median_signed_min": -0.45,
+      "median_abs_min": 0.9,
+      "p90_abs_min": 9.67,
+      "max_abs_min": 22.78,
+      "mean_signed_min": -0.26,
+      "share_within_1_min": 0.5644,
+      "share_within_5_min": 0.802,
+      "share_within_10_min": 0.9208,
+      "share_starway_longer": 0.3168
+    }
+  },
+  "by_group": {
+    "tour": {
+      "n": 117,
+      "median_signed_min": -0.9,
+      "median_abs_min": 1.9,
+      "p90_abs_min": 9.98,
+      "max_abs_min": 18.13,
+      "mean_signed_min": -1.57,
+      "share_within_1_min": 0.4274,
+      "share_within_5_min": 0.7179,
+      "share_within_10_min": 0.8974,
+      "share_starway_longer": 0.2479,
+      "status_counts": {
+        "both": 117,
+        "starway_only": 2,
+        "neither": 1
+      }
+    },
+    "insight": {
+      "n": 70,
+      "median_signed_min": 0.24,
+      "median_abs_min": 1.67,
+      "p90_abs_min": 6.9,
+      "max_abs_min": 14.17,
+      "mean_signed_min": 0.61,
+      "share_within_1_min": 0.3571,
+      "share_within_5_min": 0.8143,
+      "share_within_10_min": 0.9571,
+      "share_starway_longer": 0.5571,
+      "status_counts": {
+        "both": 70
+      }
+    },
+    "random": {
+      "n": 0,
+      "status_counts": {}
+    },
+    "excluded": {
+      "n": 7,
+      "median_signed_min": 4.37,
+      "median_abs_min": 8.93,
+      "p90_abs_min": 15.76,
+      "max_abs_min": 22.78,
+      "mean_signed_min": 4.79,
+      "share_within_1_min": 0.0,
+      "share_within_5_min": 0.4286,
+      "share_within_10_min": 0.7143,
+      "share_starway_longer": 0.5714,
+      "status_counts": {
+        "both": 7
+      }
+    }
+  },
+  "aller_native": {
+    "n": 89,
+    "median_signed_min": 2.02,
+    "median_abs_min": 3.95,
+    "p90_abs_min": 8.74,
+    "max_abs_min": 14.92,
+    "mean_signed_min": 1.07,
+    "share_within_1_min": 0.1236,
+    "share_within_5_min": 0.6629,
+    "share_within_10_min": 0.9101,
+    "share_starway_longer": 0.6517
+  },
+  "largest_gaps": [
+    {
+      "insee": "95257",
+      "commune": "La Frette-sur-Seine",
+      "dep": "95",
+      "pole_id": "P_PARIS_EST",
+      "pole": "Paris - Centre-est et nord-est (3e, 4e, 10e, 11e, 12e, 18e, 19e, 20e)",
+      "day": "d09",
+      "leg": "retour",
+      "samples": "excluded:bike_gain_10",
+      "stratum": null,
+      "starway_min": 68,
+      "starway_dep": null,
+      "starway_reason": null,
+      "navitia_min": 45.22,
+      "navitia_native_min": 44.6,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": null,
+      "diff_min": 22.78,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "17:00:37",
+      "nav_arrival": "17:45:13",
+      "nav_transfers": 1,
+      "nav_walking_min": 16.2,
+      "nav_waiting_min": 3.1,
+      "nav_lines": "Métro 14 > Train Transilien J",
+      "nav_stops": "Châtelet (Paris) > Saint-Lazare (Paris) > Gare Saint-Lazare (Paris) > La Frette - Montigny (La Frette-sur-Seine)"
+    },
+    {
+      "insee": "78418",
+      "commune": "Montesson",
+      "dep": "78",
+      "pole_id": "P_BOULOGNE",
+      "pole": "Boulogne / Issy",
+      "day": "d14",
+      "leg": "aller",
+      "samples": "tour",
+      "stratum": null,
+      "starway_min": 65,
+      "starway_dep": "12:50",
+      "starway_reason": null,
+      "navitia_min": 83.13,
+      "navitia_native_min": 79.92,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": "12:35",
+      "diff_min": -18.13,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "12:38:13",
+      "nav_arrival": "13:58:08",
+      "nav_transfers": 3,
+      "nav_walking_min": 26.4,
+      "nav_waiting_min": 15.8,
+      "nav_lines": "Bus 6405 > RER A > Tramway T2 > Bus 52",
+      "nav_stops": "Victor Hugo (Montesson) > Gare de Houilles - Carrières-sur-Seine (Houilles) > Houilles - Carrières-sur-Seine (Houilles) > La Défense (Puteaux) > La Défense (Puteaux) > Parc de Saint-Cloud (Saint-Cloud) > Parc de Saint-Cloud (Saint-Cloud) > Pont de Saint-Cloud - Albert Kahn (Boulogne-Billancourt)"
+    },
+    {
+      "insee": "78418",
+      "commune": "Montesson",
+      "dep": "78",
+      "pole_id": "P_ROISSY",
+      "pole": "Roissy-CDG",
+      "day": "d14",
+      "leg": "aller",
+      "samples": "tour",
+      "stratum": null,
+      "starway_min": 98,
+      "starway_dep": "12:10",
+      "starway_reason": null,
+      "navitia_min": 113.65,
+      "navitia_native_min": 109.73,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": "12:00",
+      "diff_min": -15.65,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "12:03:55",
+      "nav_arrival": "13:53:39",
+      "nav_transfers": 2,
+      "nav_walking_min": 15.8,
+      "nav_waiting_min": 18.7,
+      "nav_lines": "Bus 6415 > RER A > RER B",
+      "nav_stops": "Cimetière (Montesson) > Gare du Vésinet - Le Pecq (Le Vésinet) > Le Vésinet - Le Pecq (Le Vésinet) > Châtelet - Les Halles (Paris) > Châtelet - Les Halles (Paris) > Aéroport Charles de Gaulle 2 (Terminal 2) (Tremblay-en-France)"
+    },
+    {
+      "insee": "78418",
+      "commune": "Montesson",
+      "dep": "78",
+      "pole_id": "P_VERSAILLES",
+      "pole": "Versailles / Vélizy",
+      "day": "d09",
+      "leg": "aller",
+      "samples": "tour",
+      "stratum": null,
+      "starway_min": 69,
+      "starway_dep": "07:45",
+      "starway_reason": null,
+      "navitia_min": 84.1,
+      "navitia_native_min": 80.12,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": "07:30",
+      "diff_min": -15.1,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "07:33:59",
+      "nav_arrival": "08:54:06",
+      "nav_transfers": 2,
+      "nav_walking_min": 12.6,
+      "nav_waiting_min": 20.7,
+      "nav_lines": "Bus 6417 > RER A > Train Transilien U",
+      "nav_stops": "Jardins Familiaux (Montesson) > Gare de Sartrouville (Sartrouville) > Sartrouville (Sartrouville) > La Défense (Puteaux) > La Défense (Puteaux) > Versailles Chantiers (Versailles)"
+    },
+    {
+      "insee": "78418",
+      "commune": "Montesson",
+      "dep": "78",
+      "pole_id": "P_CERGY",
+      "pole": "Cergy-Pontoise",
+      "day": "d14",
+      "leg": "aller",
+      "samples": "tour",
+      "stratum": null,
+      "starway_min": 59,
+      "starway_dep": "13:00",
+      "starway_reason": null,
+      "navitia_min": 44.18,
+      "navitia_native_min": 60.47,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": "12:55",
+      "diff_min": 14.82,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "12:55:59",
+      "nav_arrival": "13:39:11",
+      "nav_transfers": 1,
+      "nav_walking_min": 11.2,
+      "nav_waiting_min": 3.2,
+      "nav_lines": "Bus 6417 > RER A",
+      "nav_stops": "Jardins Familiaux (Montesson) > Gare de Sartrouville (Sartrouville) > Sartrouville (Sartrouville) > Cergy Préfecture (Cergy)"
+    },
+    {
+      "insee": "95088",
+      "commune": "Bonneuil-en-France",
+      "dep": "95",
+      "pole_id": "P_PARIS_QCA",
+      "pole": "Paris - Quartier central des affaires et ouest (1er, 2e, 8e, 9e, 16e, 17e)",
+      "day": "d09",
+      "leg": "retour",
+      "samples": "insight:territorial_gap_07",
+      "stratum": null,
+      "starway_min": 78,
+      "starway_dep": null,
+      "starway_reason": null,
+      "navitia_min": 63.83,
+      "navitia_native_min": 62.05,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": null,
+      "diff_min": 14.17,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "17:01:47",
+      "nav_arrival": "18:03:50",
+      "nav_transfers": 2,
+      "nav_walking_min": 13.8,
+      "nav_waiting_min": 10.8,
+      "nav_lines": "Métro 14 > RER D > Bus 1626",
+      "nav_stops": "Saint-Lazare (Paris) > Châtelet (Paris) > Châtelet - Les Halles (Paris) > Villiers-le-Bel - Gonesse - Arnouville (Arnouville) > Gare de Villiers-le-Bel - Gonesse - Arnouville (Arnouville) > Mairie de Bonneuil (Bonneuil-en-France)"
+    },
+    {
+      "insee": "78418",
+      "commune": "Montesson",
+      "dep": "78",
+      "pole_id": "P_CRETEIL",
+      "pole": "Créteil",
+      "day": "d14",
+      "leg": "aller",
+      "samples": "tour",
+      "stratum": null,
+      "starway_min": 86,
+      "starway_dep": "12:20",
+      "starway_reason": null,
+      "navitia_min": 99.77,
+      "navitia_native_min": 96.55,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": "12:15",
+      "diff_min": -13.77,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "12:18:13",
+      "nav_arrival": "13:54:46",
+      "nav_transfers": 2,
+      "nav_walking_min": 25.1,
+      "nav_waiting_min": 7.3,
+      "nav_lines": "Bus 6405 > RER A > Métro 8",
+      "nav_stops": "Victor Hugo (Montesson) > Gare de Houilles - Carrières-sur-Seine (Houilles) > Houilles - Carrières-sur-Seine (Houilles) > Auber (Paris) > Opéra (Paris) > Pointe du Lac (Créteil)"
+    },
+    {
+      "insee": "94078",
+      "commune": "Villeneuve-Saint-Georges",
+      "dep": "94",
+      "pole_id": "P_PARIS_QCA",
+      "pole": "Paris - Quartier central des affaires et ouest (1er, 2e, 8e, 9e, 16e, 17e)",
+      "day": "d09",
+      "leg": "aller",
+      "samples": "insight:territorial_gap_01",
+      "stratum": null,
+      "starway_min": 66,
+      "starway_dep": "07:50",
+      "starway_reason": null,
+      "navitia_min": 53.13,
+      "navitia_native_min": 52.45,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": "08:00",
+      "diff_min": 12.87,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "08:00:41",
+      "nav_arrival": "08:53:08",
+      "nav_transfers": 2,
+      "nav_walking_min": 10.0,
+      "nav_waiting_min": 6.6,
+      "nav_lines": "Bus 450 > RER D > Métro 14",
+      "nav_stops": "HBM (Villeneuve-Saint-Georges) > Gare de Villeneuve-Saint-Georges (Villeneuve-Saint-Georges) > Villeneuve-Saint-Georges (Villeneuve-Saint-Georges) > Gare de Lyon (Paris) > Gare de Lyon (Paris) > Saint-Lazare (Paris)"
+    },
+    {
+      "insee": "78358",
+      "commune": "Maisons-Laffitte",
+      "dep": "78",
+      "pole_id": "P_ORLY",
+      "pole": "Orly / Rungis",
+      "day": "d09",
+      "leg": "retour",
+      "samples": "tour",
+      "stratum": null,
+      "starway_min": 78,
+      "starway_dep": null,
+      "starway_reason": null,
+      "navitia_min": 65.28,
+      "navitia_native_min": 65.23,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": null,
+      "diff_min": 12.72,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "17:00:03",
+      "nav_arrival": "18:05:17",
+      "nav_transfers": 1,
+      "nav_walking_min": 14.3,
+      "nav_waiting_min": 2.2,
+      "nav_lines": "Métro 14 > RER A",
+      "nav_stops": "Aéroport d'Orly (Paray-Vieille-Poste) > Gare de Lyon (Paris) > Gare de Lyon (Paris) > Maisons-Laffitte (Maisons-Laffitte)"
+    },
+    {
+      "insee": "78146",
+      "commune": "Chatou",
+      "dep": "78",
+      "pole_id": "P_PARIS_QCA",
+      "pole": "Paris - Quartier central des affaires et ouest (1er, 2e, 8e, 9e, 16e, 17e)",
+      "day": "d09",
+      "leg": "retour",
+      "samples": "insight:eclipse_02",
+      "stratum": null,
+      "starway_min": 48,
+      "starway_dep": null,
+      "starway_reason": null,
+      "navitia_min": 60.48,
+      "navitia_native_min": 52.13,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": null,
+      "diff_min": -12.48,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "17:08:21",
+      "nav_arrival": "18:00:29",
+      "nav_transfers": 1,
+      "nav_walking_min": 20.2,
+      "nav_waiting_min": 4.3,
+      "nav_lines": "RER A > Bus 6417",
+      "nav_stops": "Auber (Paris) > Rueil-Malmaison (Rueil-Malmaison) > Gare de Rueil-Malmaison (Rueil-Malmaison) > République Leclerc (Chatou)"
+    }
+  ],
+  "one_side": [
+    {
+      "insee": "78358",
+      "commune": "Maisons-Laffitte",
+      "dep": "78",
+      "pole_id": "P_SQY",
+      "pole": "Saint-Quentin-en-Yvelines",
+      "day": "d14",
+      "leg": "retour",
+      "samples": "tour",
+      "stratum": null,
+      "starway_min": 106,
+      "starway_dep": null,
+      "starway_reason": null,
+      "navitia_min": null,
+      "navitia_native_min": 130.7,
+      "navitia_over_max_min": 147.72,
+      "navitia_grid_dep": null,
+      "diff_min": null,
+      "status": "starway_only",
+      "reason": "Navitia : navitia_over_max_trip",
+      "nav_departure": "22:17:01",
+      "nav_arrival": "00:27:43",
+      "nav_transfers": 2,
+      "nav_walking_min": 46.9,
+      "nav_waiting_min": 17.1,
+      "nav_lines": "Train Transilien N > Métro 6 > RER A",
+      "nav_stops": "Saint-Quentin en Yvelines - Montigny-le-Bretonneux (Montigny-le-Bretonneux) > Gare Montparnasse (Paris) > Montparnasse Bienvenue (Paris) > Charles de Gaulle - Étoile (Paris) > Charles de Gaulle - Étoile (Paris) > Sartrouville (Sartrouville)"
+    },
+    {
+      "insee": "78418",
+      "commune": "Montesson",
+      "dep": "78",
+      "pole_id": "P_EVRY",
+      "pole": "Évry-Courcouronnes",
+      "day": "d14",
+      "leg": "retour",
+      "samples": "tour",
+      "stratum": null,
+      "starway_min": 112,
+      "starway_dep": null,
+      "starway_reason": null,
+      "navitia_min": null,
+      "navitia_native_min": 136.78,
+      "navitia_over_max_min": 147.2,
+      "navitia_grid_dep": null,
+      "diff_min": null,
+      "status": "starway_only",
+      "reason": "Navitia : navitia_over_max_trip",
+      "nav_departure": "22:10:25",
+      "nav_arrival": "00:27:12",
+      "nav_transfers": 2,
+      "nav_walking_min": 39.4,
+      "nav_waiting_min": 23.0,
+      "nav_lines": "RER D > RER A > Bus 6404",
+      "nav_stops": "Évry - Courcouronnes (Évry-Courcouronnes) > Gare de Lyon (Paris) > Gare de Lyon (Paris) > Le Vésinet - Le Pecq (Le Vésinet) > Gare du Vésinet - Le Pecq (Le Vésinet) > Landes (Chatou)"
+    }
+  ],
+  "verdicts": {
+    "tour": {
+      "78358_d09": {
+        "30": {
+          "poles": 15,
+          "different": [],
+          "within_one_minute": [
+            "P_CERGY"
+          ],
+          "unknown": []
+        },
+        "45": {
+          "poles": 15,
+          "different": [
+            "P_PARIS_EST"
+          ],
+          "within_one_minute": [],
+          "unknown": []
+        },
+        "60": {
+          "poles": 15,
+          "different": [
+            "P_VERSAILLES"
+          ],
+          "within_one_minute": [],
+          "unknown": []
+        }
+      },
+      "78358_d14": {
+        "30": {
+          "poles": 15,
+          "different": [],
+          "within_one_minute": [],
+          "unknown": []
+        },
+        "45": {
+          "poles": 15,
+          "different": [],
+          "within_one_minute": [],
+          "unknown": []
+        },
+        "60": {
+          "poles": 15,
+          "different": [],
+          "within_one_minute": [],
+          "unknown": []
+        }
+      },
+      "78418_d09": {
+        "30": {
+          "poles": 15,
+          "different": [],
+          "within_one_minute": [],
+          "unknown": []
+        },
+        "45": {
+          "poles": 15,
+          "different": [
+            "P_DEFENSE"
+          ],
+          "within_one_minute": [],
+          "unknown": []
+        },
+        "60": {
+          "poles": 15,
+          "different": [],
+          "within_one_minute": [],
+          "unknown": []
+        }
+      },
+      "78418_d14": {
+        "30": {
+          "poles": 15,
+          "different": [],
+          "within_one_minute": [],
+          "unknown": []
+        },
+        "45": {
+          "poles": 15,
+          "different": [],
+          "within_one_minute": [],
+          "unknown": []
+        },
+        "60": {
+          "poles": 15,
+          "different": [],
+          "within_one_minute": [],
+          "unknown": []
+        }
+      }
+    },
+    "insights": {
+      "eclipse_01": "confirmed",
+      "eclipse_02": "within_one_minute",
+      "eclipse_03": "confirmed",
+      "eclipse_04": "confirmed",
+      "eclipse_05": "confirmed",
+      "eclipse_06": "confirmed",
+      "eclipse_07": "confirmed",
+      "eclipse_08": "confirmed",
+      "eclipse_09": "confirmed",
+      "eclipse_10": "within_one_minute",
+      "territorial_gap_01": "within_one_minute",
+      "territorial_gap_02": "confirmed",
+      "territorial_gap_03": "confirmed",
+      "territorial_gap_04": "confirmed",
+      "territorial_gap_05": "confirmed",
+      "territorial_gap_06": "confirmed",
+      "territorial_gap_07": "confirmed",
+      "territorial_gap_08": "confirmed",
+      "territorial_gap_09": "confirmed",
+      "territorial_gap_10": "confirmed",
+      "bike_gain_01": "confirmed",
+      "bike_gain_02": "confirmed",
+      "bike_gain_03": "confirmed",
+      "bike_gain_04": "confirmed",
+      "bike_gain_05": "confirmed",
+      "bike_gain_06": "confirmed",
+      "bike_gain_07": "confirmed",
+      "bike_gain_08": "confirmed",
+      "bike_gain_09": "confirmed",
+      "bike_gain_10": "confirmed",
+      "late_return_01": "within_one_minute",
+      "late_return_02": "within_one_minute",
+      "late_return_03": "confirmed",
+      "late_return_04": "confirmed",
+      "late_return_05": "confirmed",
+      "late_return_06": "confirmed",
+      "late_return_07": "confirmed",
+      "late_return_08": "confirmed",
+      "late_return_09": "confirmed",
+      "late_return_10": "confirmed",
+      "excluded:eclipse_10": "contradicted",
+      "excluded:bike_gain_10": "contradicted",
+      "excluded:late_return_01": "contradicted",
+      "excluded:late_return_11": "contradicted"
+    },
+    "insights_counts": {
+      "confirmed": 35,
+      "within_one_minute": 5,
+      "contradicted": 4
+    }
+  },
+  "tour_counts": {
+    "78358_d09": {
+      "30": {
+        "starway": {
+          "poles": [
+            "P_DEFENSE"
+          ],
+          "stars": 1,
+          "jobs": 364343
+        },
+        "navitia": {
+          "poles": [
+            "P_DEFENSE"
+          ],
+          "stars": 1,
+          "jobs": 364343
+        },
+        "only_starway": [],
+        "only_navitia": [],
+        "within_one_minute": [
+          "P_CERGY"
+        ],
+        "not_checked": []
+      },
+      "45": {
+        "starway": {
+          "poles": [
+            "P_PARIS_QCA",
+            "P_DEFENSE",
+            "P_CERGY"
+          ],
+          "stars": 3,
+          "jobs": 1273152
+        },
+        "navitia": {
+          "poles": [
+            "P_PARIS_QCA",
+            "P_PARIS_EST",
+            "P_DEFENSE",
+            "P_CERGY"
+          ],
+          "stars": 4,
+          "jobs": 1871335
+        },
+        "only_starway": [],
+        "only_navitia": [
+          "P_PARIS_EST"
+        ],
+        "within_one_minute": [],
+        "not_checked": []
+      },
+      "60": {
+        "starway": {
+          "poles": [
+            "P_PARIS_QCA",
+            "P_PARIS_RG",
+            "P_PARIS_EST",
+            "P_DEFENSE",
+            "P_BOULOGNE",
+            "P_PLAINE",
+            "P_VERSAILLES",
+            "P_CERGY"
+          ],
+          "stars": 8,
+          "jobs": 2936875
+        },
+        "navitia": {
+          "poles": [
+            "P_PARIS_QCA",
+            "P_PARIS_RG",
+            "P_PARIS_EST",
+            "P_DEFENSE",
+            "P_BOULOGNE",
+            "P_PLAINE",
+            "P_CERGY"
+          ],
+          "stars": 7,
+          "jobs": 2844425
+        },
+        "only_starway": [
+          "P_VERSAILLES"
+        ],
+        "only_navitia": [],
+        "within_one_minute": [],
+        "not_checked": []
+      }
+    },
+    "78358_d14": {
+      "30": {
+        "starway": {
+          "poles": [],
+          "stars": 0,
+          "jobs": 0
+        },
+        "navitia": {
+          "poles": [],
+          "stars": 0,
+          "jobs": 0
+        },
+        "only_starway": [],
+        "only_navitia": [],
+        "within_one_minute": [],
+        "not_checked": []
+      },
+      "45": {
+        "starway": {
+          "poles": [],
+          "stars": 0,
+          "jobs": 0
+        },
+        "navitia": {
+          "poles": [],
+          "stars": 0,
+          "jobs": 0
+        },
+        "only_starway": [],
+        "only_navitia": [],
+        "within_one_minute": [],
+        "not_checked": []
+      },
+      "60": {
+        "starway": {
+          "poles": [
+            "P_DEFENSE"
+          ],
+          "stars": 1,
+          "jobs": 364343
+        },
+        "navitia": {
+          "poles": [
+            "P_DEFENSE"
+          ],
+          "stars": 1,
+          "jobs": 364343
+        },
+        "only_starway": [],
+        "only_navitia": [],
+        "within_one_minute": [],
+        "not_checked": []
+      }
+    },
+    "78418_d09": {
+      "30": {
+        "starway": {
+          "poles": [],
+          "stars": 0,
+          "jobs": 0
+        },
+        "navitia": {
+          "poles": [],
+          "stars": 0,
+          "jobs": 0
+        },
+        "only_starway": [],
+        "only_navitia": [],
+        "within_one_minute": [],
+        "not_checked": []
+      },
+      "45": {
+        "starway": {
+          "poles": [
+            "P_DEFENSE"
+          ],
+          "stars": 1,
+          "jobs": 364343
+        },
+        "navitia": {
+          "poles": [],
+          "stars": 0,
+          "jobs": 0
+        },
+        "only_starway": [
+          "P_DEFENSE"
+        ],
+        "only_navitia": [],
+        "within_one_minute": [],
+        "not_checked": []
+      },
+      "60": {
+        "starway": {
+          "poles": [
+            "P_DEFENSE",
+            "P_CERGY"
+          ],
+          "stars": 2,
+          "jobs": 438022
+        },
+        "navitia": {
+          "poles": [
+            "P_DEFENSE",
+            "P_CERGY"
+          ],
+          "stars": 2,
+          "jobs": 438022
+        },
+        "only_starway": [],
+        "only_navitia": [],
+        "within_one_minute": [],
+        "not_checked": []
+      }
+    },
+    "78418_d14": {
+      "30": {
+        "starway": {
+          "poles": [],
+          "stars": 0,
+          "jobs": 0
+        },
+        "navitia": {
+          "poles": [],
+          "stars": 0,
+          "jobs": 0
+        },
+        "only_starway": [],
+        "only_navitia": [],
+        "within_one_minute": [],
+        "not_checked": []
+      },
+      "45": {
+        "starway": {
+          "poles": [],
+          "stars": 0,
+          "jobs": 0
+        },
+        "navitia": {
+          "poles": [],
+          "stars": 0,
+          "jobs": 0
+        },
+        "only_starway": [],
+        "only_navitia": [],
+        "within_one_minute": [],
+        "not_checked": []
+      },
+      "60": {
+        "starway": {
+          "poles": [
+            "P_DEFENSE"
+          ],
+          "stars": 1,
+          "jobs": 364343
+        },
+        "navitia": {
+          "poles": [
+            "P_DEFENSE"
+          ],
+          "stars": 1,
+          "jobs": 364343
+        },
+        "only_starway": [],
+        "only_navitia": [],
+        "within_one_minute": [],
+        "not_checked": []
+      }
+    }
+  },
+  "insight_checks": [
+    {
+      "label": "eclipse_01",
+      "id": "eclipse_01",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "78358",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78358",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 76,
+          "navitia_min": 76.12,
+          "status": "both",
+          "nav_lines": "RER A"
+        },
+        {
+          "insee": "78358",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 44,
+          "navitia_min": 44.45,
+          "status": "both",
+          "nav_lines": "RER A"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_02",
+      "id": "eclipse_02",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "78146",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "within_one_minute",
+      "trips": [
+        {
+          "insee": "78146",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 71,
+          "navitia_min": 72.57,
+          "status": "both",
+          "nav_lines": "RER A"
+        },
+        {
+          "insee": "78146",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 48,
+          "navitia_min": 60.48,
+          "status": "both",
+          "nav_lines": "RER A > Bus 6417"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_03",
+      "id": "eclipse_03",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "94038",
+        "d": "d14",
+        "b": 45,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 45,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "94038",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 47,
+          "navitia_min": 46.33,
+          "status": "both",
+          "nav_lines": "Métro 14 > Bus 286"
+        },
+        {
+          "insee": "94038",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 39,
+          "navitia_min": 44.33,
+          "status": "both",
+          "nav_lines": "Métro 14 > Bus 286"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_04",
+      "id": "eclipse_04",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "91103",
+        "d": "d06",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d06",
+          "leg": "ret",
+          "starway_min": 65,
+          "navitia_min": 64.78,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 48,
+          "navitia_min": 47.62,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_05",
+      "id": "eclipse_05",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "91103",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 65,
+          "navitia_min": 64.78,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 48,
+          "navitia_min": 47.62,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_06",
+      "id": "eclipse_06",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "92077",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "92077",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 75,
+          "navitia_min": 76.8,
+          "status": "both",
+          "nav_lines": "Train Transilien L"
+        },
+        {
+          "insee": "92077",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 57,
+          "navitia_min": 47.33,
+          "status": "both",
+          "nav_lines": "Train Transilien L > Bus 471"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_07",
+      "id": "eclipse_07",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "92012",
+        "d": "d06",
+        "b": 45,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 45,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "92012",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d06",
+          "leg": "out",
+          "starway_min": 56,
+          "navitia_min": 52.5,
+          "status": "both",
+          "nav_lines": "Métro 9"
+        },
+        {
+          "insee": "92012",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 35,
+          "navitia_min": 39.13,
+          "status": "both",
+          "nav_lines": "Métro 9 > Métro 13"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_08",
+      "id": "eclipse_08",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "95176",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "95176",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 69,
+          "navitia_min": 69.92,
+          "status": "both",
+          "nav_lines": "Train Transilien J > Bus J"
+        },
+        {
+          "insee": "95176",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 43,
+          "navitia_min": 40.45,
+          "status": "both",
+          "nav_lines": "Train Transilien J"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_09",
+      "id": "eclipse_09",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "78172",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78172",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 102,
+          "navitia_min": 102.32,
+          "status": "both",
+          "nav_lines": "Train Transilien J > Bus J"
+        },
+        {
+          "insee": "78172",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 48,
+          "navitia_min": 40.83,
+          "status": "both",
+          "nav_lines": "Train Transilien J"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_10",
+      "id": "eclipse_10",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "94001",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "within_one_minute",
+      "trips": [
+        {
+          "insee": "94001",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 62,
+          "navitia_min": 60.22,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        },
+        {
+          "insee": "94001",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 53,
+          "navitia_min": 50.88,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_01",
+      "id": "territorial_gap_01",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "94078",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "94022",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "within_one_minute",
+      "trips": [
+        {
+          "insee": "94078",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 66,
+          "navitia_min": 53.13,
+          "status": "both",
+          "nav_lines": "Bus 450 > RER D > Métro 14"
+        },
+        {
+          "insee": "94078",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 66,
+          "navitia_min": 60.62,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER D > Bus 427"
+        },
+        {
+          "insee": "94022",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 40,
+          "navitia_min": 39.47,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "94022",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 42,
+          "navitia_min": 38.47,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_02",
+      "id": "territorial_gap_02",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "91332",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "91103",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "91332",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 83,
+          "navitia_min": 78.13,
+          "status": "both",
+          "nav_lines": "Bus 4301 > RER C > Métro 14"
+        },
+        {
+          "insee": "91332",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 80,
+          "navitia_min": 79.48,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C > Bus 4301"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 48,
+          "navitia_min": 43.13,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 48,
+          "navitia_min": 47.62,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_03",
+      "id": "territorial_gap_03",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "91333",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "91103",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "91333",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 73,
+          "navitia_min": 73.13,
+          "status": "both",
+          "nav_lines": "Bus 4543 > RER C > Métro 14"
+        },
+        {
+          "insee": "91333",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 76,
+          "navitia_min": 76.57,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C > Bus 4543"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 48,
+          "navitia_min": 43.13,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 48,
+          "navitia_min": 47.62,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_04",
+      "id": "territorial_gap_04",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "91376",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "91103",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "91376",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 63,
+          "navitia_min": 63.13,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "91376",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 66,
+          "navitia_min": 64.95,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 48,
+          "navitia_min": 43.13,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 48,
+          "navitia_min": 47.62,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_05",
+      "id": "territorial_gap_05",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "91457",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "91103",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "91457",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 77,
+          "navitia_min": 76.8,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "91457",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 79,
+          "navitia_min": 80.93,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 48,
+          "navitia_min": 43.13,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 48,
+          "navitia_min": 47.62,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_06",
+      "id": "territorial_gap_06",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "91552",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "91103",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "91552",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 83,
+          "navitia_min": 81.8,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "91552",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 84,
+          "navitia_min": 84.65,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 48,
+          "navitia_min": 43.13,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 48,
+          "navitia_min": 47.62,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_07",
+      "id": "territorial_gap_07",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "95088",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "93007",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "95088",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 78,
+          "navitia_min": 63.83,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER D > Bus 1626"
+        },
+        {
+          "insee": "93007",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 46,
+          "navitia_min": 44.55,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER B"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_08",
+      "id": "territorial_gap_08",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "91347",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "91103",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "91347",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 68,
+          "navitia_min": 69.47,
+          "status": "both",
+          "nav_lines": "Bus 4537 > RER C > Métro 14"
+        },
+        {
+          "insee": "91347",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 68,
+          "navitia_min": 77.13,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C > Bus 4579"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 48,
+          "navitia_min": 43.13,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 48,
+          "navitia_min": 47.62,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_09",
+      "id": "territorial_gap_09",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "91570",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "91103",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "91570",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 68,
+          "navitia_min": 64.47,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "91570",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 69,
+          "navitia_min": 66.45,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 48,
+          "navitia_min": 43.13,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "91103",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 48,
+          "navitia_min": 47.62,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_10",
+      "id": "territorial_gap_10",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "94033",
+        "d": "d09",
+        "b": 45,
+        "m": "transit",
+        "vs": "75112",
+        "compare_day": null
+      },
+      "budget": 45,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "94033",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 50,
+          "navitia_min": 49.47,
+          "status": "both",
+          "nav_lines": "RER A > Métro 14"
+        },
+        {
+          "insee": "94033",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 49,
+          "navitia_min": 51.68,
+          "status": "both",
+          "nav_lines": "RER E > Bus 116"
+        },
+        {
+          "insee": "75112",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 25,
+          "navitia_min": 29.47,
+          "status": "both",
+          "nav_lines": "Métro 6 > Métro 14"
+        },
+        {
+          "insee": "75112",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 27,
+          "navitia_min": 25.65,
+          "status": "both",
+          "nav_lines": "Métro 14 > Métro 6"
+        }
+      ]
+    },
+    {
+      "label": "bike_gain_01",
+      "id": "bike_gain_01",
+      "published": true,
+      "kind": "bike_gain",
+      "scenario": {
+        "o": "78551",
+        "d": "d09",
+        "b": 60,
+        "m": "bike_transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78551",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 67,
+          "navitia_min": 67.15,
+          "status": "both",
+          "nav_lines": "RER A"
+        }
+      ]
+    },
+    {
+      "label": "bike_gain_02",
+      "id": "bike_gain_02",
+      "published": true,
+      "kind": "bike_gain",
+      "scenario": {
+        "o": "78586",
+        "d": "d14",
+        "b": 60,
+        "m": "bike_transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78586",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 68,
+          "navitia_min": 67.75,
+          "status": "both",
+          "nav_lines": "Train Transilien L > Bus 272"
+        }
+      ]
+    },
+    {
+      "label": "bike_gain_03",
+      "id": "bike_gain_03",
+      "published": true,
+      "kind": "bike_gain",
+      "scenario": {
+        "o": "78551",
+        "d": "d06",
+        "b": 60,
+        "m": "bike_transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78551",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d06",
+          "leg": "out",
+          "starway_min": 63,
+          "navitia_min": 64.7,
+          "status": "both",
+          "nav_lines": "RER A"
+        },
+        {
+          "insee": "78551",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d06",
+          "leg": "ret",
+          "starway_min": 62,
+          "navitia_min": 62.85,
+          "status": "both",
+          "nav_lines": "RER A > Bus 6304"
+        }
+      ]
+    },
+    {
+      "label": "bike_gain_04",
+      "id": "bike_gain_04",
+      "published": true,
+      "kind": "bike_gain",
+      "scenario": {
+        "o": "78146",
+        "d": "d14",
+        "b": 60,
+        "m": "bike_transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78146",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 71,
+          "navitia_min": 72.57,
+          "status": "both",
+          "nav_lines": "RER A"
+        }
+      ]
+    },
+    {
+      "label": "bike_gain_05",
+      "id": "bike_gain_05",
+      "published": true,
+      "kind": "bike_gain",
+      "scenario": {
+        "o": "78551",
+        "d": "d14",
+        "b": 60,
+        "m": "bike_transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78551",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 74,
+          "navitia_min": 72.67,
+          "status": "both",
+          "nav_lines": "RER A"
+        }
+      ]
+    },
+    {
+      "label": "bike_gain_06",
+      "id": "bike_gain_06",
+      "published": true,
+      "kind": "bike_gain",
+      "scenario": {
+        "o": "78481",
+        "d": "d09",
+        "b": 60,
+        "m": "bike_transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78481",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 61,
+          "navitia_min": 59.37,
+          "status": "both",
+          "nav_lines": "Bus 6321 > RER A"
+        },
+        {
+          "insee": "78481",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 63,
+          "navitia_min": 63.7,
+          "status": "both",
+          "nav_lines": "RER A > Bus 6321"
+        }
+      ]
+    },
+    {
+      "label": "bike_gain_07",
+      "id": "bike_gain_07",
+      "published": true,
+      "kind": "bike_gain",
+      "scenario": {
+        "o": "78418",
+        "d": "d09",
+        "b": 60,
+        "m": "bike_transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78418",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 62,
+          "navitia_min": 62.9,
+          "status": "both",
+          "nav_lines": "RER A > Bus 6417"
+        }
+      ]
+    },
+    {
+      "label": "bike_gain_08",
+      "id": "bike_gain_08",
+      "published": true,
+      "kind": "bike_gain",
+      "scenario": {
+        "o": "78146",
+        "d": "d06",
+        "b": 45,
+        "m": "bike_transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 45,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78146",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d06",
+          "leg": "out",
+          "starway_min": 59,
+          "navitia_min": 57.1,
+          "status": "both",
+          "nav_lines": "Bus 6404 > Train Transilien J"
+        },
+        {
+          "insee": "78146",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d06",
+          "leg": "ret",
+          "starway_min": 51,
+          "navitia_min": 51.48,
+          "status": "both",
+          "nav_lines": "RER A > Bus 6417"
+        }
+      ]
+    },
+    {
+      "label": "bike_gain_09",
+      "id": "bike_gain_09",
+      "published": true,
+      "kind": "bike_gain",
+      "scenario": {
+        "o": "78481",
+        "d": "d14",
+        "b": 60,
+        "m": "bike_transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78481",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 76,
+          "navitia_min": 82.1,
+          "status": "both",
+          "nav_lines": "RER A"
+        }
+      ]
+    },
+    {
+      "label": "bike_gain_10",
+      "id": "bike_gain_10",
+      "published": true,
+      "kind": "bike_gain",
+      "scenario": {
+        "o": "78396",
+        "d": "d06",
+        "b": 60,
+        "m": "bike_transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78396",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d06",
+          "leg": "out",
+          "starway_min": 64,
+          "navitia_min": 62.1,
+          "status": "both",
+          "nav_lines": "Train Transilien J"
+        }
+      ]
+    },
+    {
+      "label": "late_return_01",
+      "id": "late_return_01",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "91477",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "within_one_minute",
+      "trips": [
+        {
+          "insee": "91477",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 55,
+          "navitia_min": 60.3,
+          "status": "both",
+          "nav_lines": "RER B > Métro 14"
+        },
+        {
+          "insee": "91477",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 61,
+          "navitia_min": 66.55,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER B"
+        }
+      ]
+    },
+    {
+      "label": "late_return_02",
+      "id": "late_return_02",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "94001",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "within_one_minute",
+      "trips": [
+        {
+          "insee": "94001",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 48,
+          "navitia_min": 48.63,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "94001",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 62,
+          "navitia_min": 60.22,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "late_return_03",
+      "id": "late_return_03",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "94054",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "94054",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 54,
+          "navitia_min": 55.3,
+          "status": "both",
+          "nav_lines": "Bus 183 > Métro 14"
+        },
+        {
+          "insee": "94054",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 62,
+          "navitia_min": 61.77,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "late_return_04",
+      "id": "late_return_04",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "94077",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "94077",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 53,
+          "navitia_min": 48.63,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14"
+        },
+        {
+          "insee": "94077",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 68,
+          "navitia_min": 64.93,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER C"
+        }
+      ]
+    },
+    {
+      "label": "late_return_05",
+      "id": "late_return_05",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "95176",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "95176",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 42,
+          "navitia_min": 35.1,
+          "status": "both",
+          "nav_lines": "Train Transilien J"
+        },
+        {
+          "insee": "95176",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 69,
+          "navitia_min": 69.92,
+          "status": "both",
+          "nav_lines": "Train Transilien J > Bus J"
+        }
+      ]
+    },
+    {
+      "label": "late_return_06",
+      "id": "late_return_06",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "78358",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78358",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 42,
+          "navitia_min": 40.93,
+          "status": "both",
+          "nav_lines": "RER A"
+        },
+        {
+          "insee": "78358",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 76,
+          "navitia_min": 76.12,
+          "status": "both",
+          "nav_lines": "RER A"
+        }
+      ]
+    },
+    {
+      "label": "late_return_07",
+      "id": "late_return_07",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "95257",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "95257",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 42,
+          "navitia_min": 35.1,
+          "status": "both",
+          "nav_lines": "Train Transilien J"
+        },
+        {
+          "insee": "95257",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 76,
+          "navitia_min": 75.7,
+          "status": "both",
+          "nav_lines": "Train Transilien J > Bus J"
+        }
+      ]
+    },
+    {
+      "label": "late_return_08",
+      "id": "late_return_08",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "78481",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78481",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 57,
+          "navitia_min": 58.93,
+          "status": "both",
+          "nav_lines": "Bus 6321 > RER A"
+        },
+        {
+          "insee": "78481",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 76,
+          "navitia_min": 82.1,
+          "status": "both",
+          "nav_lines": "RER A"
+        }
+      ]
+    },
+    {
+      "label": "late_return_09",
+      "id": "late_return_09",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "92077",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "92077",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 52,
+          "navitia_min": 54.1,
+          "status": "both",
+          "nav_lines": "Train Transilien L"
+        },
+        {
+          "insee": "92077",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 75,
+          "navitia_min": 76.8,
+          "status": "both",
+          "nav_lines": "Train Transilien L"
+        }
+      ]
+    },
+    {
+      "label": "late_return_10",
+      "id": "late_return_10",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "78172",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78172",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 47,
+          "navitia_min": 45.1,
+          "status": "both",
+          "nav_lines": "Train Transilien J"
+        },
+        {
+          "insee": "78172",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 102,
+          "navitia_min": 102.32,
+          "status": "both",
+          "nav_lines": "Train Transilien J > Bus J"
+        }
+      ]
+    },
+    {
+      "label": "excluded:eclipse_10",
+      "id": "eclipse_10",
+      "published": false,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "94079",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "contradicted",
+      "trips": [
+        {
+          "insee": "94079",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 65,
+          "navitia_min": 53.92,
+          "status": "both",
+          "nav_lines": "RER E"
+        },
+        {
+          "insee": "94079",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 45,
+          "navitia_min": 47.08,
+          "status": "both",
+          "nav_lines": "RER E"
+        }
+      ]
+    },
+    {
+      "label": "excluded:bike_gain_10",
+      "id": "bike_gain_10",
+      "published": false,
+      "kind": "bike_gain",
+      "scenario": {
+        "o": "95257",
+        "d": "d09",
+        "b": 60,
+        "m": "bike_transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "contradicted",
+      "trips": [
+        {
+          "insee": "95257",
+          "pole_id": "P_PARIS_EST",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 68,
+          "navitia_min": 45.22,
+          "status": "both",
+          "nav_lines": "Métro 14 > Train Transilien J"
+        }
+      ]
+    },
+    {
+      "label": "excluded:late_return_01",
+      "id": "late_return_01",
+      "published": false,
+      "kind": "late_return",
+      "scenario": {
+        "o": "78396",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "contradicted",
+      "trips": [
+        {
+          "insee": "78396",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 57,
+          "navitia_min": 65.93,
+          "status": "both",
+          "nav_lines": "Bus 6432 > RER A"
+        },
+        {
+          "insee": "78396",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 101,
+          "navitia_min": 103.77,
+          "status": "both",
+          "nav_lines": "RER A"
+        }
+      ]
+    },
+    {
+      "label": "excluded:late_return_11",
+      "id": "late_return_11",
+      "published": false,
+      "kind": "late_return",
+      "scenario": {
+        "o": "94058",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "contradicted",
+      "trips": [
+        {
+          "insee": "94058",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 48,
+          "navitia_min": 43.63,
+          "status": "both",
+          "nav_lines": "Bus 116 > RER A > Métro 14"
+        },
+        {
+          "insee": "94058",
+          "pole_id": "P_PARIS_QCA",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 63,
+          "navitia_min": 53.9,
+          "status": "both",
+          "nav_lines": "RER E"
+        }
+      ]
+    }
+  ],
+  "walk_setting": {
+    "id": "normal",
+    "leg_limit_m": 3000,
+    "max_time_walking_min": 50
+  },
+  "generated_at": "2026-11-04T09:19:41Z",
+  "service_date": "2026-11-17",
+  "dataset_id": "2026-11-17_dc97ca710c6c",
+  "navitia_coverage": {
+    "id": "idfm",
+    "start_production_date": "20261031",
+    "end_production_date": "20261203",
+    "last_load_at": "20261104T081131",
+    "fetched_at": "2026-11-04T09:19:37Z"
+  },
+  "navitia_settings": {
+    "walking_speed_ms": 1.0,
+    "max_walking_duration_to_pt_s": {
+      "aller": 3000,
+      "retour": 3000
+    },
+    "max_walking_direct_path_duration_s": 3000,
+    "max_nb_transfers": 7,
+    "max_duration_s": 7200,
+    "data_freshness": "base_schedule",
+    "min_nb_journeys": 3
+  },
+  "requests_sent_this_run": 1,
+  "x_ratelimit_remaining_day": "124",
+  "stopped": null,
+  "cache_files": 1413
+}

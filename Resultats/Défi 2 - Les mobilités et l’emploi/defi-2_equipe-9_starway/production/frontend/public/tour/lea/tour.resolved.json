@@ -1,0 +1,104 @@
+{
+  "id": "lea",
+  "title": "Le ciel de Léa",
+  "voice": "fr-FR-Marc:MAI-Voice-2",
+  "processing_version": "0.1.0",
+  "dataset_id": "2026-11-17_dc97ca710c6c",
+  "generated_at": "2026-11-13T01:13:55.574Z",
+  "steps": [
+    {
+      "id": "prologue",
+      "act": "prologue",
+      "text": "C’est l’aube. Maisons-Laffitte dort encore, ou presque. Les mêmes étoiles, pour plus de 12 millions d’habitants d’Île-de-France. Mais pas toutes à portée de main. Voici Léa, une habitante imaginaire, sous un ciel bien réel. Léa cherche un emploi. Elle n’a pas de voiture, mais un vélo, pour plus tard. D’abord, seulement les transports en commun : quels emplois peut-elle rejoindre ? Et qu’est-ce qui pourrait élargir son horizon ?",
+      "minDurationMs": 8000,
+      "durationMs": 28466
+    },
+    {
+      "id": "acte1-ciel",
+      "act": "acte1",
+      "text": "Léa se donne 60 minutes de transports en commun, à l’aller comme au retour. Chaque étoile qui s’allume est un bassin d’emploi, ou un arrondissement de Paris, accessible par Léa selon ses conditions. Sa taille, ce sont ses postes salariés recensés par l’INSEE. 24 étoiles s’allument, en partie ou en entier. En partie : quand Léa n’atteint que certaines communes de l’étoile, à l’aller et au retour. Au compteur : près de 2,6 millions de postes à sa portée, hors sa commune.",
+      "minDurationMs": 8000,
+      "durationMs": 27047
+    },
+    {
+      "id": "acte1-carte",
+      "act": "acte1",
+      "text": "La carte s’ouvre : chaque étoile retrouve sa place. Le ciel de Léa part du cœur habité de Maisons-Laffitte : un point, pas une adresse. Les temps sont calculés de commune à commune.",
+      "minDurationMs": 6000,
+      "durationMs": 11116
+    },
+    {
+      "id": "acte1-preuve",
+      "act": "acte1",
+      "text": "Dans le panneau de droite, la fiche de Paris 8e. Voici un exemple de trajet : pour arriver avant le début de sa journée de travail, l’aller prend 45 minutes. À la fin de sa journée de travail, le retour prend 43 minutes, attente comprise. D’après les flux domicile-travail du recensement, plus de 550 habitants de Maisons-Laffitte y travaillent déjà. Ce sont des déplacements réellement constatés, pas des trajets calculés par STARWAY.",
+      "minDurationMs": 9000,
+      "focusPole": "BE_1107_75108",
+      "durationMs": 22981
+    },
+    {
+      "id": "acte2-recrutement",
+      "act": "acte2",
+      "text": "À droite, plus bas : les projets de recrutement. Léa vise un poste d’aide de cuisine. Dans le bassin d’emploi T1 Paris, qui couvre tout Paris, les employeurs en prévoient au moins 47 000 dans sa famille de métiers : les fonctions liées à la vente, au tourisme et aux services. Ce sont les recrutements prévus pour 2026, d’après l’enquête BMO de France Travail. Ces projets sont déclarés par les employeurs.",
+      "minDurationMs": 6000,
+      "durationMs": 21534
+    },
+    {
+      "id": "acte4-moyens",
+      "act": "acte4",
+      "text": "Dans la même fiche, Léa peut comparer les moyens de transport : les émissions carbone de chaque trajet. Les solutions complémentaires, comme le vélo jusqu’à la gare, visent à réduire l’utilisation de la voiture. Et les lignes déclarées climatisées sont utiles face au changement climatique.",
+      "minDurationMs": 8000,
+      "durationMs": 15220
+    },
+    {
+      "id": "acte3-horizons",
+      "act": "acte3",
+      "text": "L’écran se partage en deux. À droite, celui de sa voisine, Montesson, avec les mêmes réglages : même journée, même temps de trajet, mêmes transports en commun. À gauche, Maisons-Laffitte : 24 étoiles. À droite, seulement une étoile. En haut de son ciel : plus de 87 000 postes à sa portée. Deux voisines, le même ciel, mais pas les mêmes étoiles : voilà une inégalité entre territoires.",
+      "minDurationMs": 7000,
+      "durationMs": 27465
+    },
+    {
+      "id": "halo",
+      "act": "halo",
+      "text": "Le halo s’ouvre : derrière chaque commune, des habitants. D’après l’INSEE, le niveau de vie médian est d’environ 42 500 euros par an à Maisons-Laffitte. Il est d’environ 36 600 euros à Montesson. Ce halo décrit qui y vit, pas ce que chacun peut atteindre.",
+      "minDurationMs": 7000,
+      "durationMs": 17524
+    },
+    {
+      "id": "acte2-eclipse",
+      "act": "acte2",
+      "text": "Passons au soir : un poste de 14 heures à 22 heures. Un restaurant le propose à Léa, comme aide de cuisine. Les transports répondent-ils aux besoins du monde du travail, même avec des horaires décalés ? Même point de départ, même temps de trajet. Le ciel est recalculé : l’aller doit arriver avant 14 heures, et le retour compte à partir de la fin du poste. Une journée-type est un scénario, pas un horaire réel.",
+      "minDurationMs": 6000,
+      "focusPole": "BE_1125",
+      "durationMs": 27046
+    },
+    {
+      "id": "acte2-pole",
+      "act": "acte2",
+      "text": "Dans le panneau de droite, la fiche de Seine-Aval. Dans la liste des communes du pôle, la ligne de Poissy. L’aller prend 38 minutes. Le retour en prend 50, attente comprise. Poissy reste à sa portée, même le soir. Ces temps ont été recoupés avec le calculateur d’Île-de-France Mobilités.",
+      "minDurationMs": 5000,
+      "focusPole": "BE_1125",
+      "durationMs": 16305
+    },
+    {
+      "id": "acte4-voiture",
+      "act": "acte4",
+      "text": "Et si Léa avait une voiture ? Avec le trafic moyen estimé à l’aller, 29 étoiles s’allumeraient. Une estimation, à partir du trafic moyen mesuré par la direction des routes d’Île-de-France. Plus de 4,2 millions de postes seraient à sa portée. Mais Léa n’a pas de voiture.",
+      "minDurationMs": 5000,
+      "durationMs": 17336
+    },
+    {
+      "id": "acte4-velo",
+      "act": "acte4",
+      "text": "Alors, une solution complémentaire : son vélo jusqu’à la gare, puis les transports en commun. Sans compter le temps pour le garer, son périmètre de recherche d’emploi s’élargit, sans prendre la voiture.",
+      "minDurationMs": 6000,
+      "durationMs": 11048
+    },
+    {
+      "id": "epilogue",
+      "act": "epilogue",
+      "text": "Léa est imaginaire, mais ses chiffres sont réels. Ils sont calculés avec des données ouvertes, pour chaque commune d’Île-de-France. Chaque chiffre renvoie à sa source. À vous d’explorer : votre commune, votre heure, votre temps de trajet. Nous vivons tous sous le même ciel. À vous, maintenant, de découvrir vos étoiles.",
+      "minDurationMs": 5000,
+      "durationMs": 21090
+    }
+  ]
+}

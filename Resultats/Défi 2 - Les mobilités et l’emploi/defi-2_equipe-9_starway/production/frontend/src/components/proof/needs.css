@@ -1,0 +1,85 @@
+/* Rappel d'une ligne du panneau et de la légende */
+.pf-needs-recall {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* Réglage « Ce qu'il me faut sur mon trajet » (dialogue Mes réglages) : cases natives, mêmes couleurs que le reste */
+.pf-needs {
+  margin: 0 0 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.pf-needs-legend {
+  padding: 0 4px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.pf-needs-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.pf-needs-item input {
+  flex: none;
+  margin: 0;
+}
+
+.pf-needs-item input:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.pf-needs-hint {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* Feuille du bas (téléphone) : texte plein, le panneau translucide laisse passer le ciel (contraste mesuré à 3,4:1) */
+.is-sheet .pf-needs-hint {
+  color: var(--text);
+}
+
+.pf-needs-facts {
+  color: var(--text-dim);
+}
+
+/* Cases sans donnée ouverte : grisées, jamais cochables (texte lisible : pas d'opacité sur le texte) */
+.pf-needs-item.is-greyed {
+  cursor: not-allowed;
+  color: var(--text-dim);
+}
+
+.pf-needs-item.is-greyed input {
+  cursor: not-allowed;
+}
+
+.pf-needs-fixed {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
+
+.pf-needs-fixed a {
+  color: var(--text);
+}
+
+.pf-needs-summary-title {
+  margin: 6px 0 2px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.pf-needs-verdict {
+  margin-top: 6px;
+}

@@ -1,0 +1,158 @@
+/*
+ * Panneau de preuve, chantier « panneau-lignes » (04/11, V0 sobre, Maia reprendra) : lignes utilisées
+ * (climatisation, ponctualité), détail replié, heure creuse, « Comparer les modes ». Couleurs : variables
+ * de styles.css. 12 px minimum, aucune lueur sur le texte, cible de 24 px au moins pour les boutons.
+ */
+
+/* ---------- Lignes utilisées (visible) ---------- */
+.pf-lines {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pf-lines > li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pf-lines-facts,
+.pf-lines-none {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-dim);
+}
+
+.pf-lines-facts {
+  padding-left: 18px;
+}
+
+/* ---------- Détail replié (trajet, modes) ---------- */
+.pf-fold {
+  margin-top: 8px;
+}
+
+.pf-fold > summary {
+  cursor: pointer;
+  min-height: 24px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.pf-fold > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.pf-fold[open] > summary {
+  margin-bottom: 8px;
+}
+
+.proof-panel.pf h3.pf-label.pf-inline {
+  display: inline;
+  margin: 0;
+}
+
+/* ---------- Heure creuse ---------- */
+.pf-offpeak {
+  margin-top: 10px;
+  padding: 6px 0 6px 12px;
+  border-left: 2px solid rgba(168, 183, 209, 0.35);
+}
+
+.pf-offpeak-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Comparer les modes ---------- */
+.pf-modes-scroll {
+  overflow-x: auto;
+}
+
+.pf-modes-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+}
+
+.pf-modes-table th,
+.pf-modes-table td {
+  padding: 5px 6px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(168, 183, 209, 0.12);
+}
+
+.pf-modes-table thead th {
+  font-weight: 500;
+  color: var(--text-dim);
+}
+
+.pf-modes-table tbody th {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.pf-modes-table tr.is-current th,
+.pf-modes-table tr.is-current td {
+  background: rgba(156, 234, 255, 0.06);
+}
+
+.pf-modes-cur {
+  font-weight: 400;
+  color: var(--text-dim);
+}
+
+.pf-modes-show {
+  font-size: 12px;
+  min-height: 24px;
+}
+
+.pf-modes-na {
+  color: var(--text-dim);
+}
+
+.pf-modes-v.is-accessible {
+  color: var(--accessible);
+}
+
+/* Audit d'affichage du 10/11 : « Arrêts et horaires du trajet » se voit comme un bouton (bord, fond, flèche), pas comme une ligne de texte */
+.proof-panel .pf-trip-fold > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 32px;
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-glass);
+  list-style: none;
+}
+
+.proof-panel .pf-trip-fold > summary::-webkit-details-marker {
+  display: none;
+}
+
+.proof-panel .pf-trip-fold > summary::before {
+  content: '\25B8';
+  color: var(--text-dim);
+}
+
+.proof-panel .pf-trip-fold[open] > summary::before {
+  content: '\25BE';
+}
+
+.proof-panel .pf-trip-fold > summary:hover {
+  border-color: rgba(179, 155, 255, 0.55);
+}

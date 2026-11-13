@@ -1,0 +1,336 @@
+[
+ {
+  "id": "P_PARIS_QCA",
+  "name": "Paris - Quartier central des affaires et ouest (1er, 2e, 8e, 9e, 16e, 17e)",
+  "communes": [
+   "75101",
+   "75102",
+   "75108",
+   "75109",
+   "75116",
+   "75117"
+  ],
+  "jobs": 835130,
+  "point": {
+   "lon": 2.32535,
+   "lat": 48.87594,
+   "method": "arrêt le plus desservi le 17/11/2026 (7262 départs) : Gare Saint-Lazare (IDFM:71370, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.4562,
+   "y": 0.4416
+  },
+  "sky_shift": 0.0072,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_PARIS_RG",
+  "name": "Paris - Rive gauche (5e, 6e, 7e, 13e, 14e, 15e)",
+  "communes": [
+   "75105",
+   "75106",
+   "75107",
+   "75113",
+   "75114",
+   "75115"
+  ],
+  "jobs": 583659,
+  "point": {
+   "lon": 2.31934,
+   "lat": 48.84067,
+   "method": "arrêt le plus desservi le 17/11/2026 (8646 départs) : Gare Montparnasse (IDFM:71139, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.4497,
+   "y": 0.5325
+  },
+  "sky_shift": 0.0015,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_PARIS_EST",
+  "name": "Paris - Centre-est et nord-est (3e, 4e, 10e, 11e, 12e, 18e, 19e, 20e)",
+  "communes": [
+   "75103",
+   "75104",
+   "75110",
+   "75111",
+   "75112",
+   "75118",
+   "75119",
+   "75120"
+  ],
+  "jobs": 598183,
+  "point": {
+   "lon": 2.34849,
+   "lat": 48.85835,
+   "method": "arrêt le plus desservi le 17/11/2026 (6567 départs) : Châtelet (IDFM:71264, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.506,
+   "y": 0.4907
+  },
+  "sky_shift": 0.0082,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_DEFENSE",
+  "name": "La Défense",
+  "communes": [
+   "92026",
+   "92050",
+   "92062"
+  ],
+  "jobs": 364343,
+  "point": {
+   "lon": 2.2396,
+   "lat": 48.89161,
+   "method": "arrêt le plus desservi le 17/11/2026 (3771 départs) : La Défense (IDFM:71517, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.3681,
+   "y": 0.4285
+  },
+  "sky_shift": 0.0,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_BOULOGNE",
+  "name": "Boulogne / Issy",
+  "communes": [
+   "92012",
+   "92040"
+  ],
+  "jobs": 192687,
+  "point": {
+   "lon": 2.22839,
+   "lat": 48.8407,
+   "method": "arrêt le plus desservi le 17/11/2026 (2849 départs) : Boulogne Pont de Saint-Cloud (IDFM:70721, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.3529,
+   "y": 0.5222
+  },
+  "sky_shift": 0.0,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_PLAINE",
+  "name": "Saint-Denis / Plaine Commune",
+  "communes": [
+   "93001",
+   "93066",
+   "93070"
+  ],
+  "jobs": 196744,
+  "point": {
+   "lon": 2.33428,
+   "lat": 48.91252,
+   "method": "arrêt le plus desservi le 17/11/2026 (2788 départs) : Mairie de Saint-Ouen (IDFM:72168, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.4827,
+   "y": 0.3769
+  },
+  "sky_shift": 0.0031,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_ROISSY",
+  "name": "Roissy-CDG",
+  "communes": [
+   "77291",
+   "93073",
+   "95527"
+  ],
+  "jobs": 121011,
+  "point": {
+   "lon": 2.56992,
+   "lat": 49.00395,
+   "method": "arrêt le plus desservi le 17/11/2026 (2319 départs) : Aéroport CDG (Terminal 2) - TGV (IDFM:73699, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.6809,
+   "y": 0.3156
+  },
+  "sky_shift": 0.0,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_ORLY",
+  "name": "Orly / Rungis",
+  "communes": [
+   "91479",
+   "94054",
+   "94065"
+  ],
+  "jobs": 53711,
+  "point": {
+   "lon": 2.36106,
+   "lat": 48.72889,
+   "method": "arrêt le plus desservi le 17/11/2026 (1045 départs) : Aéroport d’Orly (Terminaux 1-2-3) (IDFM:63284, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.5111,
+   "y": 0.6948
+  },
+  "sky_shift": 0.0,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_CRETEIL",
+  "name": "Créteil",
+  "communes": [
+   "94028"
+  ],
+  "jobs": 72360,
+  "point": {
+   "lon": 2.46436,
+   "lat": 48.76903,
+   "method": "arrêt le plus desservi le 17/11/2026 (2250 départs) : Pointe du Lac (IDFM:69884, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.6229,
+   "y": 0.638
+  },
+  "sky_shift": 0.0,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_SACLAY",
+  "name": "Massy / Saclay",
+  "communes": [
+   "91377",
+   "91471",
+   "91477",
+   "91534"
+  ],
+  "jobs": 75325,
+  "point": {
+   "lon": 2.25882,
+   "lat": 48.72446,
+   "method": "arrêt le plus desservi le 17/11/2026 (2059 départs) : Massy - Palaiseau (IDFM:63244, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.4103,
+   "y": 0.69
+  },
+  "sky_shift": 0.0,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_VERSAILLES",
+  "name": "Versailles / Vélizy",
+  "communes": [
+   "78640",
+   "78646"
+  ],
+  "jobs": 92450,
+  "point": {
+   "lon": 2.13542,
+   "lat": 48.79564,
+   "method": "arrêt le plus desservi le 17/11/2026 (2800 départs) : Versailles Chantiers (IDFM:63880, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.31,
+   "y": 0.5816
+  },
+  "sky_shift": 0.0129,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_SQY",
+  "name": "Saint-Quentin-en-Yvelines",
+  "communes": [
+   "78297",
+   "78423"
+  ],
+  "jobs": 72828,
+  "point": {
+   "lon": 2.04534,
+   "lat": 48.78737,
+   "method": "arrêt le plus desservi le 17/11/2026 (1571 départs) : Saint-Quentin en Yvelines - Montigny-le-Bretonneux (IDFM:63812, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.2401,
+   "y": 0.578
+  },
+  "sky_shift": 0.0129,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_MARNE",
+  "name": "Marne-la-Vallée - Noisy / Champs",
+  "communes": [
+   "77083",
+   "93051"
+  ],
+  "jobs": 42707,
+  "point": {
+   "lon": 2.55035,
+   "lat": 48.84118,
+   "method": "arrêt le plus desservi le 17/11/2026 (1158 départs) : Noisy-le-Grand - Mont d'Est (IDFM:412697, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.702,
+   "y": 0.52
+  },
+  "sky_shift": 0.0,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_CERGY",
+  "name": "Cergy-Pontoise",
+  "communes": [
+   "95127",
+   "95500",
+   "95572"
+  ],
+  "jobs": 73679,
+  "point": {
+   "lon": 2.08013,
+   "lat": 49.03599,
+   "method": "arrêt le plus desservi le 17/11/2026 (1643 départs) : Cergy Préfecture (IDFM:66696, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.3044,
+   "y": 0.2942
+  },
+  "sky_shift": 0.0,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ },
+ {
+  "id": "P_EVRY",
+  "name": "Évry-Courcouronnes",
+  "communes": [
+   "91228"
+  ],
+  "jobs": 52699,
+  "point": {
+   "lon": 2.42781,
+   "lat": 48.6255,
+   "method": "arrêt le plus desservi le 17/11/2026 (1786 départs) : Évry - Courcouronnes (IDFM:60450, GTFS IDFM)"
+  },
+  "sky": {
+   "x": 0.5589,
+   "y": 0.7663
+  },
+  "sky_shift": 0.0,
+  "jobs_year": 2023,
+  "jobs_source": "EMP01"
+ }
+]

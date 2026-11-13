@@ -1,0 +1,1636 @@
+{
+  "note": "Phrases qu'on a le droit de ne plus retrouver dans l'interface, chacune avec sa justification (relue par l'équipe). Une phrase s'écrit neutralisée : minuscules, chiffres remplacés par #. `scenarios` : identifiants du relevé, « * » pour tous ; `zone` (facultatif) : panneau, barre ou legende ; `lot` : le lot qui la retire. Vide au lot 1 : rien ne disparaît, le lot 1 ne change rien de visible. Lot 2 : la légende du haut passe au nom court ; son ancien libellé est la première phrase de son « i » (le relevé le lisait en deux morceaux, l'emphase de « et » coupant la ligne). Lot 3 (D-050) : répétitions retirées du panneau et pied coupé en lignes ; chaque phrase d'avant est écrite en entier, sa justification dit où va son contenu. Vocabulaire des postes (D-065, 11/11) : dans panel-baseline.json, les phrases non exceptées qui disaient « postes salariés localisés » sont renommées une à une (« postes salariés (insee) » dans un libellé court, « recensés par l'insee » dans une phrase, « postes salariés » à la seconde mention), sans perte ; les phrases déjà en exception gardent leur ancien libellé, comme relevé daté, sauf « # postes salariés (insee) atteints aller et retour, sur # », renommée aussi dans la référence pour que le fragment de keep-visible.json y reste vu. Même jour : le bloc « Ils y travaillent déjà » dit « habitants de … qui ont un emploi » et « habitants en emploi de la commune » au lieu d'« actifs occupés » (terme exact au « i » de la barre de part) ; ses anciennes phrases sont déjà en exception ci-dessous (millésime passé au « i »), la nouvelle est relevée comme ajoutée.",
+  "exceptions": [
+    {
+      "phrase": "carbone : tc seulement (facteurs idfm).",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": 4,
+      "justification": "Phrase fausse : carbone voiture calculé (audit d'affichage du 10/11, demande de l'équipe, lot 4). Le carbone de la voiture est calculé depuis car_trip et le facteur ADEME du véhicule (co2Grams, même calcul que le pli « Coût et carbone ») et écrit dans la colonne carbone de « Comparer les moyens » ; la phrase du « i » « Ce que compte ce tableau » dit désormais : TC d'après les facteurs IDFM, voiture estimé comme dans « Coût et carbone »."
+    },
+    {
+      "phrase": "aller et retour : # € ; carbone environ # g co#e.",
+      "scenarios": [
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": 4,
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage, lot 4 : la phrase reste visible mot pour mot, la garde courte « (estimation, énergie seule) » est ajoutée après le carbone ; le relevé la lit donc comme « aller et retour : # € ; carbone environ # g co#e (estimation, énergie seule). »."
+    },
+    {
+      "phrase": "distance routière r# vers le point d'arrivée du pôle (pas commune par commune) : aller # km, retour # km.",
+      "scenarios": [
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": 4,
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage, lot 4, une information dite une seule fois : « vers le point d'arrivée du pôle, pas commune par commune » reste visible sous le total ; les kilomètres de chaque sens sont déjà dans les lignes Aller et Retour ; « Distance routière R5 » et la classe de péage sont rangées dans le « i » « Ce qui est compté », mots inchangés."
+    },
+    {
+      "phrase": "cœur cyan : postes atteints aller",
+      "scenarios": [
+        "tc",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "legende",
+      "lot": 2,
+      "justification": "Légende allégée (D-049) : le libellé visible devient « Atteints aller et retour » ; l'ancienne phrase entière, « Cœur cyan : postes atteints aller et retour, ≤ N min par sens », est la première phrase de son « i » (le relevé la lisait en deux morceaux, « et » en emphase coupant la ligne : le morceau d'avant « et » et celui d'après sont ici excusés, la phrase reste lisible d'un seul tenant)."
+    },
+    {
+      "phrase": "retour, ≤ # min par sens",
+      "scenarios": [
+        "tc",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "legende",
+      "lot": 2,
+      "justification": "Seconde moitié du même libellé de légende (D-049) : le temps par sens reste écrit dans la première phrase du « i » de l'entrée, et il est lu dans la barre (curseur et durée) ; « aller et retour » reste visible dans le nom court."
+    },
+    {
+      "phrase": "· # postes · accessible aller et retour en # min ou moins par sens",
+      "scenarios": [
+        "tc",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Répétition retirée (D-050) : « Accessible aller et retour en N min ou moins par sens » était écrit à chaque commune ; il l'est une fois, en tête de la liste du pli « Communes du pôle », et chaque commune garde son nom, ses postes et ses deux trajets. Les autres états (aller possible, retour hors de portée, hors de portée) gardent leur phrase par commune."
+    },
+    {
+      "phrase": "courbevoie, garches, la garenne-colombes, levallois-perret, nanterre, neuilly-sur-seine et # autres",
+      "scenarios": [
+        "tc",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Répétition retirée (D-050) : en commune par commune, la liste abrégée des noms des communes du pôle doublait la liste des communes, qui les donne toutes avec leurs postes et leurs trajets (pli « Communes du pôle »). Aucun nom n'est perdu ; hors commune par commune (vélo + TC, Vélib'), la liste abrégée reste."
+    },
+    {
+      "phrase": "replier (#)",
+      "scenarios": [
+        "tc",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Bouton de la liste abrégée des noms de communes (voir l'exception précédente) : la liste abrégée n'existe plus en commune par commune, son bouton non plus ; la liste des communes du pli n'a rien à replier."
+    },
+    {
+      "phrase": "détails du calcul, carbone",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Titre du pli « Détails du calcul » remplacé par les six plis du lot 3 (D-050) : le carbone passe dans « Coût et carbone », le point d'arrivée et les notes de méthode dans « Méthode et sources », le trait symbolique reste visible sous le trajet. Le contenu est conservé, seul le titre disparaît."
+    },
+    {
+      "phrase": "détails du calcul",
+      "scenarios": [
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Titre du pli « Détails du calcul » remplacé par les six plis du lot 3 (D-050) : le point d'arrivée et les notes de méthode sont dans « Méthode et sources », le trait symbolique reste visible sous le trajet, la liste des communes dans « Communes du pôle ». Le contenu est conservé, seul le titre disparaît."
+    },
+    {
+      "phrase": "au ticket, plein tarif, hors abonnement (exemple de trajet ci-dessus) :",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Le prix au ticket est dans le pli « Coût et carbone » : la phrase ne dit plus « exemple de trajet » (« trajet de l'exemple ci-dessus ») pour que « exemple de trajet » reste lu sans rien ouvrir (liste à garder visible), ce qu'écrit le titre du pli (« Aller et retour : N €, exemple de trajet »). Même sens, même prix."
+    },
+    {
+      "phrase": "point de départ du calcul : centre de gravité de la population (insee filosofi #, carreaux de # m) · transports en commun + marche, réglage de marche normal : jusqu'à # km à pied à chaque bout (choix de l'équipe (d-#), pas une donnée) · journée-type #h-#h (scénario) · en # min ou moins par sens.",
+      "scenarios": [
+        "tc",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Récapitulatif du pied du panneau coupé en lignes (D-050) : le mode et le réglage de marche (choix de l'équipe) restent visibles sous le pied, le point de départ, la journée-type, le temps par sens et les horaires théoriques sont dans le pli « Méthode et sources », une phrase par ligne. Mêmes mots, aucune information retirée."
+    },
+    {
+      "phrase": "sources : insee flores (emp#), horaires idfm (tra#), © les contributeurs d'openstreetmap (cyc#), api géo (geo#), insee filosofi #, carreaux de # m (geo#) · méthode",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Pied du panneau coupé en lignes (D-050) : le crédit OpenStreetMap reste visible sous le pied (liste à garder visible), les autres sources et le bouton Méthode sont dans le pli « Méthode et sources ». Aucune source n'est retirée, la phrase d'avant les réunissait sur une seule ligne."
+    },
+    {
+      "phrase": "point de départ du calcul : centre de gravité de la population (insee filosofi #, carreaux de # m) · vélo + transports en commun · journée-type #h-#h (scénario) · en # min ou moins par sens.",
+      "scenarios": [
+        "velo-tc"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Récapitulatif du pied du panneau coupé en lignes (D-050) : le mode et le réglage de marche (choix de l'équipe) restent visibles sous le pied, le point de départ, la journée-type, le temps par sens et les horaires théoriques sont dans le pli « Méthode et sources », une phrase par ligne. Mêmes mots, aucune information retirée."
+    },
+    {
+      "phrase": "point de départ du calcul : centre de gravité de la population (insee filosofi #, carreaux de # m) · vélib' (vélo en libre-service) · journée-type #h-#h (scénario) · en # min ou moins par sens.",
+      "scenarios": [
+        "velib"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Récapitulatif du pied du panneau coupé en lignes (D-050) : le mode et le réglage de marche (choix de l'équipe) restent visibles sous le pied, le point de départ, la journée-type, le temps par sens et les horaires théoriques sont dans le pli « Méthode et sources », une phrase par ligne. Mêmes mots, aucune information retirée."
+    },
+    {
+      "phrase": "point de départ du calcul : centre de gravité de la population (insee filosofi #, carreaux de # m) · voiture (route vide) · journée-type #h-#h (scénario) · en # min ou moins par sens.",
+      "scenarios": [
+        "voiture"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Récapitulatif du pied du panneau coupé en lignes (D-050) : le mode et le réglage de marche (choix de l'équipe) restent visibles sous le pied, le point de départ, la journée-type, le temps par sens et les horaires théoriques sont dans le pli « Méthode et sources », une phrase par ligne. Mêmes mots, aucune information retirée."
+    },
+    {
+      "phrase": "point de départ du calcul : centre de gravité de la population (insee filosofi #, carreaux de # m) · voiture (trafic moyen dirif) · journée-type #h-#h (scénario) · en # min ou moins par sens.",
+      "scenarios": [
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Récapitulatif du pied du panneau coupé en lignes (D-050) : le mode et le réglage de marche (choix de l'équipe) restent visibles sous le pied, le point de départ, la journée-type, le temps par sens et les horaires théoriques sont dans le pli « Méthode et sources », une phrase par ligne. Mêmes mots, aucune information retirée."
+    },
+    {
+      "phrase": "point de départ du calcul : centre de gravité de la population (insee filosofi #, carreaux de # m) · transports en commun + marche, réglage de marche normal : jusqu'à # km à pied à chaque bout (choix de l'équipe (d-#), pas une donnée) · horaires #h-#h (scénario) · en # min ou moins par sens.",
+      "scenarios": [
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "panneau",
+      "lot": 3,
+      "justification": "Récapitulatif du pied du panneau coupé en lignes (D-050) : le mode et le réglage de marche (choix de l'équipe) restent visibles sous le pied, le point de départ, la journée-type, le temps par sens et les horaires théoriques sont dans le pli « Méthode et sources », une phrase par ligne. Mêmes mots, aucune information retirée."
+    },
+    {
+      "phrase": "bassin d'emploi t# paris ouest la défense (france travail)",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : le nom du producteur entre parenthèses n'apparaît qu'en mode sources ; « Bassin d'emploi » et le nom du bassin restent toujours visibles, la source est dans « Sources & limites » (GEO04, EMP03)."
+    },
+    {
+      "phrase": "source : cost# - idfm, page « forfait navigo mois » : « tarifs du forfait applicables au #er janvier # » (instantané du #-#-#)",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : citation de la source du forfait Navigo (COST01) réservée au mode sources ; le prix et sa portée restent visibles, la source est dans « Sources & limites »."
+    },
+    {
+      "phrase": ". # postes salariés localisés atteints aller et retour en # min ou moins par sens, soit # % des # postes d'île-de-france hors votre commune (insee flores #), dans # communes sur #.",
+      "scenarios": [
+        "tc",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "barre",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : la mention « (INSEE Flores #) » n'apparaît qu'en mode sources ; la phrase reste, sans le nom de la source, qui est dans « Sources & limites » (EMP01)."
+    },
+    {
+      "phrase": "# postes salariés localisés atteints aller et retour en # min ou moins par sens, soit # % des # postes d'île-de-france hors votre commune (insee flores #), dans # communes sur #.",
+      "scenarios": [
+        "tc",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "barre",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : la mention « (INSEE Flores #) » n'apparaît qu'en mode sources ; la phrase reste, sans le nom de la source, qui est dans « Sources & limites » (EMP01)."
+    },
+    {
+      "phrase": "choix de l'équipe (d-#), pas une donnée.",
+      "scenarios": [
+        "tc",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "barre",
+      "lot": 6,
+      "justification": "Code de décision (D-024, D-029) retiré hors mode sources (D-033, retour de l'équipe du 09/11) : la phrase et « choix de l'équipe » restent visibles, sans le code, et le code reste écrit en mode sources."
+    },
+    {
+      "phrase": "l'aire de chaque astre est proportionnelle à ses postes salariés localisés (insee flores #).",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "legende",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : la mention « (INSEE Flores #) » n'apparaît qu'en mode sources ; la phrase reste, sans le nom de la source, qui est dans « Sources & limites » (EMP01)."
+    },
+    {
+      "phrase": "appliquer à tout le trajet un indice mesuré sur les voies rapides est un choix de l'équipe (demande de nicolas, d-#), pas une mesure.",
+      "scenarios": [
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Code de décision (D-024, D-029) retiré hors mode sources (D-033, retour de l'équipe du 09/11) : la phrase et « choix de l'équipe » restent visibles, sans le code, et le code reste écrit en mode sources."
+    },
+    {
+      "phrase": "source : drieat île-de-france, direction des routes d'île-de-france (dirif), baromètre trafic mensuel de la circulation, n° #, novembre #, page # « temps de parcours les jours ouvrés » ; indice dirif, jours ouvrés de novembre #, voies rapides d'île-de-france (± #, lu sur un graphique) ; mesuré sur les voies structurantes du réseau routier national non concédé (ex.",
+      "scenarios": [
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : citation du baromètre DiRIF réservée au mode sources ; l'indice, sa portée et « mesuré sur les voies rapides, pas sur les rues » restent visibles, la source est dans « Sources & limites » (ROAD01)."
+    },
+    {
+      "phrase": "annonces sonores (référentiel des lignes idfm)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : le nom de la source (référentiel des lignes IDFM) ne s'écrit plus hors mode sources ; la case reste, la source est dans « Sources & limites » (TRA03)."
+    },
+    {
+      "phrase": "annonces visuelles (référentiel des lignes idfm)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : le nom de la source (référentiel des lignes IDFM) ne s'écrit plus hors mode sources ; la case reste, la source est dans « Sources & limites » (TRA03)."
+    },
+    {
+      "phrase": "arrêts déclarés adaptés au fauteuil roulant (gtfs idfm, quais de montée et de descente)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : le nom de la source (GTFS IDFM) ne s'écrit plus hors mode sources ; la case garde sa précision (course, quais), la source est dans « Sources & limites » (TRA01)."
+    },
+    {
+      "phrase": "ce que déclarent les sources à la date de leur relevé (gtfs idfm : #/#/# ; référentiel des lignes idfm : #/#/# ; accessibilité en gare idfm : #/#/#).",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : les dates de relevé par source ne s'écrivent plus hors mode sources ; la phrase « Ce que déclarent les sources. À confirmer avant de partir. » reste, sources et dates sont dans « Sources & limites »."
+    },
+    {
+      "phrase": "depuis maisons-laffitte · journée #h-#h · mardi type",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Précaution de calcul retirée du premier niveau (consigne de l'équipe du 09/11) : « mardi type » reste écrit en mode sources, et « Méthode et sources » donne la date de service."
+    },
+    {
+      "phrase": "détail du trajet, climatisation et ponctualité",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Titre de pli raccourci, consigne de l'équipe du 09/11 (un titre replié dit ce qu'il cache en deux à quatre mots) : « Détail du trajet ». Le contenu du pli est inchangé."
+    },
+    {
+      "phrase": "gares sans réservation d'assistance (idfm, accessibilité en gare, niveaux # et #)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : le nom de la source (IDFM, accessibilité en gare) ne s'écrit plus hors mode sources ; la case garde les niveaux lus, la source est dans « Sources & limites » (TRA04)."
+    },
+    {
+      "phrase": "véhicules déclarés adaptés au fauteuil roulant (gtfs idfm, course)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : le nom de la source (GTFS IDFM) ne s'écrit plus hors mode sources ; la case garde sa précision (course, quais), la source est dans « Sources & limites » (TRA01)."
+    },
+    {
+      "phrase": "annonces sonores (référentiel des lignes idfm)",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "legende",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : le nom de la source (référentiel des lignes IDFM) ne s'écrit plus hors mode sources ; la case reste, la source est dans « Sources & limites » (TRA03)."
+    },
+    {
+      "phrase": "annonces visuelles (référentiel des lignes idfm)",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "legende",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : le nom de la source (référentiel des lignes IDFM) ne s'écrit plus hors mode sources ; la case reste, la source est dans « Sources & limites » (TRA03)."
+    },
+    {
+      "phrase": "arrêts déclarés adaptés au fauteuil roulant (gtfs idfm, quais de montée et de descente)",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "legende",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : le nom de la source (GTFS IDFM) ne s'écrit plus hors mode sources ; la case garde sa précision (course, quais), la source est dans « Sources & limites » (TRA01)."
+    },
+    {
+      "phrase": "ce que déclarent les sources à la date de leur relevé (gtfs idfm : #/#/# ; référentiel des lignes idfm : #/#/# ; accessibilité en gare idfm : #/#/#).",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "legende",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : les dates de relevé par source ne s'écrivent plus hors mode sources ; la phrase « Ce que déclarent les sources. À confirmer avant de partir. » reste, sources et dates sont dans « Sources & limites »."
+    },
+    {
+      "phrase": "gares sans réservation d'assistance (idfm, accessibilité en gare, niveaux # et #)",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "legende",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : le nom de la source (IDFM, accessibilité en gare) ne s'écrit plus hors mode sources ; la case garde les niveaux lus, la source est dans « Sources & limites » (TRA04)."
+    },
+    {
+      "phrase": "véhicules déclarés adaptés au fauteuil roulant (gtfs idfm, course)",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "legende",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : le nom de la source (GTFS IDFM) ne s'écrit plus hors mode sources ; la case garde sa précision (course, quais), la source est dans « Sources & limites » (TRA01)."
+    },
+    {
+      "phrase": "carbone : # kg co#e/l (ademe, base carbone v#, élément # « essence ; e# », combustion et amont).",
+      "scenarios": [
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : la source interne à la ligne Carbone (ADEME, Base Carbone) ne s'écrit plus hors mode sources ; le facteur et son périmètre (combustion et amont) restent."
+    },
+    {
+      "phrase": "les facteurs idfm des transports en commun (env#) ne disent pas leur périmètre (« fournis par les opérateurs de transport pour les transports collectifs, et par la base carbone de l'ademe pour les autres ») : la comparaison avec la voiture est un ordre de grandeur, pas une mesure au même périmètre vérifié.",
+      "scenarios": [
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : le code ENV01 n'est plus écrit hors mode sources ; la phrase et sa limite restent."
+    },
+    {
+      "phrase": "énergie : # l/# km (sdes, bilan annuel des transports en #, onglet g#.b, voitures particulières, « dont essence ») x # €/l (médiane de # stations d'île-de-france, flux « prix des carburants en france - flux instantané - v# » (licence ouverte v#), relevé du #/#/#).",
+      "scenarios": [
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Visible en mode sources, D-033 : les sources internes à la ligne Énergie (SDES, prix des carburants) ne s'écrivent plus hors mode sources ; consommation et prix restent."
+    },
+    {
+      "phrase": "depuis maisons-laffitte · horaires #h-#h · mardi type",
+      "scenarios": [
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Précaution de calcul retirée du premier niveau (consigne de l'équipe du 09/11) : « mardi type » reste écrit en mode sources, et « Méthode et sources » donne la date de service."
+    },
+    {
+      "phrase": "depuis maisons-laffitte et achères · journée #h-#h · mardi type",
+      "scenarios": [
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Précaution de calcul retirée du premier niveau (consigne de l'équipe du 09/11) : « mardi type » reste écrit en mode sources, et « Méthode et sources » donne la date de service."
+    },
+    {
+      "phrase": "ascenseur de la rue au quai (pas de donnée ouverte)",
+      "scenarios": [
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velib",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "legende",
+      "lot": "mes-reglages",
+      "justification": "Les cases à cocher de « Ce qu'il me faut sur mon trajet » quittent le panneau et la légende pour le dialogue « Mes réglages » (D-057, retour de l'équipe du 09/11) : elles y sont toutes, avec le même libellé et la même précision entre parenthèses ; le panneau et la légende gardent un rappel d'une ligne avec un lien « Modifier »."
+    },
+    {
+      "phrase": "ascenseurs non couverts.",
+      "scenarios": [
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velib",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "legende",
+      "lot": "mes-reglages",
+      "justification": "Texte fixe du réglage (D-034) : il suit les cases dans le dialogue « Mes réglages » (D-057) ; dès qu'une case est cochée il reste affiché dans le panneau, à côté de ce que disent les sources (NeedsNotes), et dans le « i » de la légende."
+    },
+    {
+      "phrase": "calcul sur le trajet le plus rapide, un autre trajet peut exister.",
+      "scenarios": [
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velib",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "legende",
+      "lot": "mes-reglages",
+      "justification": "Texte fixe du réglage (D-034) : il suit les cases dans le dialogue « Mes réglages » (D-057) ; dès qu'une case est cochée il reste affiché dans le panneau, à côté de ce que disent les sources (NeedsNotes), et dans le « i » de la légende."
+    },
+    {
+      "phrase": "ce qu'il me faut sur mon trajet",
+      "scenarios": [
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velib",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "legende",
+      "lot": "mes-reglages",
+      "justification": "Titre de l'ancien pli de la légende : la ligne devient « Ce qu'il me faut sur mon trajet : aucun coché », suivie du lien « Modifier » qui ouvre « Mes réglages » (D-057) ; le titre reste écrit au début de cette ligne."
+    },
+    {
+      "phrase": "escalators (pas de donnée ouverte)",
+      "scenarios": [
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velib",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "legende",
+      "lot": "mes-reglages",
+      "justification": "Les cases à cocher de « Ce qu'il me faut sur mon trajet » quittent le panneau et la légende pour le dialogue « Mes réglages » (D-057, retour de l'équipe du 09/11) : elles y sont toutes, avec le même libellé et la même précision entre parenthèses ; le panneau et la légende gardent un rappel d'une ligne avec un lien « Modifier »."
+    },
+    {
+      "phrase": "guidage au sol (pas de donnée ouverte)",
+      "scenarios": [
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velib",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "legende",
+      "lot": "mes-reglages",
+      "justification": "Les cases à cocher de « Ce qu'il me faut sur mon trajet » quittent le panneau et la légende pour le dialogue « Mes réglages » (D-057, retour de l'équipe du 09/11) : elles y sont toutes, avec le même libellé et la même précision entre parenthèses ; le panneau et la légende gardent un rappel d'une ligne avec un lien « Modifier »."
+    },
+    {
+      "phrase": "à confirmer avant de partir.",
+      "scenarios": [
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velib",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "legende",
+      "lot": "mes-reglages",
+      "justification": "Texte fixe du réglage (D-034) : il suit les cases dans le dialogue « Mes réglages » (D-057) ; dès qu'une case est cochée il reste affiché dans le panneau, à côté de ce que disent les sources (NeedsNotes), et dans le « i » de la légende."
+    },
+    {
+      "phrase": "ascenseur de la rue au quai (pas de donnée ouverte)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "mes-reglages",
+      "justification": "Les cases à cocher de « Ce qu'il me faut sur mon trajet » quittent le panneau et la légende pour le dialogue « Mes réglages » (D-057, retour de l'équipe du 09/11) : elles y sont toutes, avec le même libellé et la même précision entre parenthèses ; le panneau et la légende gardent un rappel d'une ligne avec un lien « Modifier »."
+    },
+    {
+      "phrase": "ascenseurs non couverts.",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "mes-reglages",
+      "justification": "Texte fixe du réglage (D-034) : il suit les cases dans le dialogue « Mes réglages » (D-057) ; dès qu'une case est cochée il reste affiché dans le panneau, à côté de ce que disent les sources (NeedsNotes), et dans le « i » de la légende."
+    },
+    {
+      "phrase": "calcul sur le trajet le plus rapide, un autre trajet peut exister.",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "mes-reglages",
+      "justification": "Texte fixe du réglage (D-034) : il suit les cases dans le dialogue « Mes réglages » (D-057) ; dès qu'une case est cochée il reste affiché dans le panneau, à côté de ce que disent les sources (NeedsNotes), et dans le « i » de la légende."
+    },
+    {
+      "phrase": "escalators (pas de donnée ouverte)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "mes-reglages",
+      "justification": "Les cases à cocher de « Ce qu'il me faut sur mon trajet » quittent le panneau et la légende pour le dialogue « Mes réglages » (D-057, retour de l'équipe du 09/11) : elles y sont toutes, avec le même libellé et la même précision entre parenthèses ; le panneau et la légende gardent un rappel d'une ligne avec un lien « Modifier »."
+    },
+    {
+      "phrase": "guidage au sol (pas de donnée ouverte)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "mes-reglages",
+      "justification": "Les cases à cocher de « Ce qu'il me faut sur mon trajet » quittent le panneau et la légende pour le dialogue « Mes réglages » (D-057, retour de l'équipe du 09/11) : elles y sont toutes, avec le même libellé et la même précision entre parenthèses ; le panneau et la légende gardent un rappel d'une ligne avec un lien « Modifier »."
+    },
+    {
+      "phrase": "à confirmer avant de partir.",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "mes-reglages",
+      "justification": "Texte fixe du réglage (D-034) : il suit les cases dans le dialogue « Mes réglages » (D-057) ; dès qu'une case est cochée il reste affiché dans le panneau, à côté de ce que disent les sources (NeedsNotes), et dans le « i » de la légende."
+    },
+    {
+      "phrase": "prix au ticket à l'unité, plein tarif, tarifs au #er janvier # ; avec un forfait navigo, le trajet est inclus.",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": 6,
+      "justification": "Audit de vérité du 09/11 (B2) : la phrase était fausse sur les trajets par Orlyval (D-032). Elle dépend maintenant des tronçons du trajet (navigoTripNote) : inclus, reste à payer, ou renvoi vers « Selon vos abonnements »."
+    },
+    {
+      "phrase": "commune de départ",
+      "scenarios": [
+        "*"
+      ],
+      "zone": "barre",
+      "lot": "point-de-depart",
+      "justification": "Libellé devenu « Ma commune de départ » (équipe, 09/11, point de départ repérable, PR 125) : le nom de la commune choisie et le bouton « Changer » restent visibles, rien n'est retiré."
+    },
+    {
+      "phrase": "pas de deux-roues électrique : aucune consommation publique jugée probante (décision de nicolas du #/#/#).",
+      "scenarios": [
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "barre",
+      "lot": "audit-0911",
+      "justification": "Audit de vérité du 09/11 (B1) : la mention « (décision de ... du ...) » ne s'affiche plus (stripPersonalNotes) ; la phrase reste, sans le prénom."
+    },
+    {
+      "phrase": "non calculés pour cette commune : vélo + transports en commun.",
+      "scenarios": [
+        "velib"
+      ],
+      "zone": "panneau",
+      "lot": "publication-f06",
+      "justification": "Publication du flux du 06/11 (PR 81) : le vélo + TC est calculé pour les 1 285 communes, meta.mode_coverage n'a plus de liste pour ce mode. La mention du mode partiel disparaît avec la donnée (coverage.ts) ; le mode reste proposé, sous le libellé « Vélo + TC »."
+    },
+    {
+      "phrase": "vélo + tc (calculé pour # communes seulement)",
+      "scenarios": [
+        "velib"
+      ],
+      "zone": "barre",
+      "lot": "publication-f06",
+      "justification": "Publication du flux du 06/11 (PR 81) : le vélo + TC est calculé pour les 1 285 communes, meta.mode_coverage n'a plus de liste pour ce mode. La mention du mode partiel disparaît avec la donnée (coverage.ts) ; le mode reste proposé, sous le libellé « Vélo + TC »."
+    },
+    {
+      "phrase": "# actifs occupés qui habitent achères travaillent dans ce pôle, soit # % des actifs occupés de la commune (recensement #, estimation).",
+      "scenarios": [
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "publication-f06",
+      "justification": "Publication du flux du 06/11 (PR 81) : la commune B de la comparaison est choisie par l'inventaire (première autre commune calculée, et couverte en vélo + TC tant que ce mode avait une liste : Achères). Le vélo + TC étant calculé partout, c'est désormais Paris 1er : la même phrase est relevée avec ce nom (« b : paris #er arrondissement », « ... qui habitent paris #er travaillent dans ce pôle ... »), rien n'est retiré de l'interface."
+    },
+    {
+      "phrase": "b : achères",
+      "scenarios": [
+        "comparaison"
+      ],
+      "zone": "barre",
+      "lot": "publication-f06",
+      "justification": "Publication du flux du 06/11 (PR 81) : la commune B de la comparaison est choisie par l'inventaire (première autre commune calculée, et couverte en vélo + TC tant que ce mode avait une liste : Achères). Le vélo + TC étant calculé partout, c'est désormais Paris 1er : la même phrase est relevée avec ce nom (« b : paris #er arrondissement », « ... qui habitent paris #er travaillent dans ce pôle ... »), rien n'est retiré de l'interface."
+    },
+    {
+      "phrase": "dont au moins # jugés difficiles et au moins # saisonniers.",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011-emplois",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage, lot 3 (pli « Emplois et recrutement ») : sans le mode sources, l'information seulement, le texte secondaire rangé dans le « i ». Pli fermé : une seule ligne chiffrée, lue dans bmo.json, « Projets de recrutement N du bassin : au moins N, dont au moins N jugés difficiles : ni des offres publiées, ni des embauches. » (recruitLineText) : « dont au moins » et les difficiles restent visibles mot pour mot ; les saisonniers passent dans le « i » de la ligne (« Projets saisonniers : au moins N. »)."
+    },
+    {
+      "phrase": "ce sont des intentions recueillies fin # : ni des offres publiées, ni des embauches.",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011-emplois",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage, lot 3 (pli « Emplois et recrutement ») : sans le mode sources, l'information seulement, le texte secondaire rangé dans le « i ». « ni des offres publiées, ni des embauches » reste visible mot pour mot, dans la ligne chiffrée du pli fermé ; « Ce sont des intentions recueillies fin N. » est dans le « i » de la ligne, mots inchangés (la réserve n'y est pas répétée : une phrase à garder visible ne va jamais dans une bulle)."
+    },
+    {
+      "phrase": "comptées à part des postes salariés localisés.",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011-emplois",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage, lot 3 (pli « Emplois et recrutement ») : sans le mode sources, l'information seulement, le texte secondaire rangé dans le « i ». La phrase reste visible mot pour mot dans la ligne du pli fermé « Offres du service public : comptées à part des postes salariés localisés. » (OffersKeepLine) ; la date de diffusion et les versants sont dans son « i », mots inchangés."
+    },
+    {
+      "phrase": "offres diffusées au #/#/# : fonction publique d'état, territoriale et hospitalière.",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011-emplois",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage, lot 3 (pli « Emplois et recrutement ») : sans le mode sources, l'information seulement, le texte secondaire rangé dans le « i ». Phrase déplacée, mots inchangés : dans le « i » de la ligne « Offres du service public : comptées à part des postes salariés localisés. » du pli fermé (la date est lue dans service_public.json)."
+    },
+    {
+      "phrase": "les employeurs de ce bassin d'emploi ont déclaré ces projets de recrutement pour #.",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011-emplois",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage, lot 3 (pli « Emplois et recrutement ») : sans le mode sources, l'information seulement, le texte secondaire rangé dans le « i ». Phrase déplacée, mots inchangés : dans le « i » de la ligne « Projets de recrutement N du bassin… » du pli fermé (trendTipLines)."
+    },
+    {
+      "phrase": "ce chiffre donne une tendance des bassins de recrutement.",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011-emplois",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage, lot 3 (pli « Emplois et recrutement ») : sans le mode sources, l'information seulement, le texte secondaire rangé dans le « i ». Phrase déplacée, mots inchangés : dans le « i » de la ligne « Projets de recrutement N du bassin… » du pli fermé (trendTipLines)."
+    },
+    {
+      "phrase": "le bassin d'emploi est un découpage de france travail.",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011-emplois",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage, lot 3 (pli « Emplois et recrutement ») : sans le mode sources, l'information seulement, le texte secondaire rangé dans le « i ». Phrase déplacée, mots inchangés (scopeText) : dans le « i » de la ligne du pli fermé et dans le « i » « Qu'est-ce que le bassin d'emploi ? » à côté du nom du bassin, pli ouvert."
+    },
+    {
+      "phrase": "les projets ne sont pas localisés plus finement et ne sont pas répartis entre les astres.",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011-emplois",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage, lot 3 (pli « Emplois et recrutement ») : sans le mode sources, l'information seulement, le texte secondaire rangé dans le « i ». Seconde phrase de scopeText, déplacée avec la première, mots inchangés : « i » de la ligne du pli fermé et « i » du nom du bassin, pli ouvert."
+    },
+    {
+      "phrase": "# cases « * » : non diffusé par france travail (vraisemblablement moins de # projets).",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011-emplois",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage, lot 3 (pli « Emplois et recrutement ») : sans le mode sources, l'information seulement, le texte secondaire rangé dans le « i ». Phrase déplacée, mots inchangés : dans le « i » « Pourquoi « au moins » ? » à côté du chiffre du bassin, pli ouvert ; « au moins N » reste écrit dans le chiffre."
+    },
+    {
+      "phrase": "non comptées : le chiffre est un minimum.",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011-emplois",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage, lot 3 (pli « Emplois et recrutement ») : sans le mode sources, l'information seulement, le texte secondaire rangé dans le « i ». Phrase déplacée, mots inchangés : dans le « i » « Pourquoi « au moins » ? » à côté du chiffre du bassin, pli ouvert, avec la note de déduction de l'équipe lue dans bmo.json."
+    },
+    {
+      "phrase": "aller : # € (# ticket métro-train-rer)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : le prix de chaque sens est dans la ligne « Au ticket » (« aller N €, retour N € ») ; le nombre et le nom des tickets de chaque sens sont dans son « i », mots inchangés."
+    },
+    {
+      "phrase": "carbone",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : le petit titre est retiré, la ligne commence par « Carbone : environ N g CO2e aller et retour (estimation, i) »."
+    },
+    {
+      "phrase": "coût",
+      "scenarios": [
+        "comparaison",
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velo-tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : le petit titre « Coût » du bloc est retiré, le titre du pli (« Coût » ou « Coût et carbone ») le dit déjà ; une information dite une seule fois."
+    },
+    {
+      "phrase": "coût d'une course en vélib' mécanique, d'après la durée de la partie vélo calculée (prise et dépose du vélo non comptées).",
+      "scenarios": [
+        "velib"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : texte rangé dans le « i », mots inchangés (« i » « Comment ce coût est-il calculé ? » de la ligne de coût Vélib')."
+    },
+    {
+      "phrase": "détail du trajet, coût au ticket et carbone : affichés pour une seule commune, hors comparaison.",
+      "scenarios": [
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : la phrase devient « Détail du trajet : affiché pour une seule commune, hors comparaison. » ; le coût et le carbone le disent dans leur pli (« Coût et carbone : calculés pour une seule commune, hors comparaison. »)."
+    },
+    {
+      "phrase": "détail du trajet, coût au ticket et carbone : calculés pour les journées-types seulement (#h-#h, #h-#h, #h-#h).",
+      "scenarios": [
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : la phrase devient « Détail du trajet : calculé pour les journées-types seulement (…) » avec le bouton « Voir l'exemple en journée … » ; le coût et le carbone le disent dans leur pli (« Coût et carbone : calculés en journée-type seulement (…) »). Une information dite une fois par bloc."
+    },
+    {
+      "phrase": "détail du trajet, coût au ticket et carbone : calculés pour les transports en commun seulement.",
+      "scenarios": [
+        "velib",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Phrase fausse en voiture (audit d'affichage du 10/11, D-059) : le pli y montre un coût et un carbone. Remplacée par « Détail du trajet : transports en commun seulement. » ; en vélo + TC le pli dit « Coût et carbone : calculés pour les transports en commun seulement. »"
+    },
+    {
+      "phrase": "environ # g co#e aller et retour (aller # g, retour # g).",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : même total, écrit « Carbone : environ N g CO2e aller et retour (estimation) » ; le détail par sens (« Aller N g, retour N g. ») est dans le « i »."
+    },
+    {
+      "phrase": "estimation : distance de chaque tronçon en transport en commun multipliée par le facteur moyen d'émission publié par île-de-france mobilités (g co#e par voyageur et par km ; opérateurs #, ademe pour le bus).",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : texte rangé dans le « i », mots inchangés (phrase de garde du carbone, CARBON_GUARD, entière dans le « i » de la ligne Carbone ; la ligne dit « estimation »)."
+    },
+    {
+      "phrase": "forfait navigo mois toutes zones (# à #), tarif plein : # € par mois, quels que soient le pôle et la commune.",
+      "scenarios": [
+        "comparaison",
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velo-tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Phrase fausse depuis D-032 (audit d'affichage du 10/11, D-059) : le coût est ce qu'on paie en plus de ce qu'on a déjà, pas le forfait mensuel « quels que soient le pôle et la commune ». Le prix du Navigo Mois reste dans le « i » des abonnements qui couvriraient le trajet et dans Mes réglages."
+    },
+    {
+      "phrase": "forfaits zonés, tarifs réduits et prise en charge par l'employeur non modélisés.",
+      "scenarios": [
+        "comparaison",
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velo-tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Phrase fausse depuis D-032 (audit d'affichage du 10/11, D-059) : la prise en charge par l'employeur est maintenant dite (« i » de « hors coût de l'abonnement »), les tarifs réduits sont proposés dans Mes réglages, les forfaits deux zones non proposés sont expliqués dans le « i » des transports en commun de Mes réglages."
+    },
+    {
+      "phrase": "hors abonnement (ticket-v (sans abonnement)) : course aller non calculé (au-delà de # min, la page offres affiche deux prix (# € et # € par # min) sans dire lequel vaut pour le vélo mécanique : non calculé), course retour non calculé (au-delà de # min, la page offres affiche deux prix (# € et # € par # min) sans dire lequel vaut pour le vélo mécanique : non calculé).",
+      "scenarios": [
+        "velib"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : la raison d'une course non calculée était écrite deux fois (aller et retour) ; la ligne dit « course aller non calculée, course retour non calculée », la raison une fois dans le « i », mots inchangés."
+    },
+    {
+      "phrase": "hors abonnement : aller et retour au ticket, # € (journée #h-#h).",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : le prix au ticket de l'aller-retour était écrit trois fois ; il l'est une fois, dans la ligne « Au ticket : N € l'aller-retour (aller, retour, trajet de l'exemple) », la journée-type dans le titre et l'en-tête."
+    },
+    {
+      "phrase": "le prix d'un abonnement n'est pas divisé par un nombre de trajets : nous ne connaissons pas votre nombre de jours de travail.",
+      "scenarios": [
+        "tc",
+        "velib"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : texte rangé dans le « i », mots inchangés (« i » de « hors coût de l'abonnement », de « Prix de ces titres » ou du coût Vélib')."
+    },
+    {
+      "phrase": "mes abonnements : aucun abonnement tc modifier",
+      "scenarios": [
+        "tc",
+        "velib",
+        "velo-tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : la ligne de rappel est remplacée par le bouton « Mes réglages » (aucun abonnement) ou « Modifier » (abonnement choisi) posé sur la ligne de coût, qui ouvre le même dialogue ; l'abonnement choisi est nommé dans la ligne (« Avec votre … »)."
+    },
+    {
+      "phrase": "navigo annuel : # € par mois, #e mois consécutif offert (# € par an au comptant), toutes zones ; frais de dossier # €",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : texte rangé dans le « i », mots inchangés (« i » « Prix de ces titres » de la ligne « Avec un … : rien à payer en plus », une phrase par titre, point final ajouté ; le Navigo Jour y est dit « titre d'un jour, aller et retour du même jour »)."
+    },
+    {
+      "phrase": "navigo jour : # € par jour, toutes zones, hors aéroports (aller et retour du même jour)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : texte rangé dans le « i », mots inchangés (« i » « Prix de ces titres » de la ligne « Avec un … : rien à payer en plus », une phrase par titre, point final ajouté ; le Navigo Jour y est dit « titre d'un jour, aller et retour du même jour »)."
+    },
+    {
+      "phrase": "navigo mois : # € par mois, toutes zones",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : texte rangé dans le « i », mots inchangés (« i » « Prix de ces titres » de la ligne « Avec un … : rien à payer en plus », une phrase par titre, point final ajouté ; le Navigo Jour y est dit « titre d'un jour, aller et retour du même jour »)."
+    },
+    {
+      "phrase": "navigo semaine : # € par semaine (du lundi au dimanche), toutes zones",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : texte rangé dans le « i », mots inchangés (« i » « Prix de ces titres » de la ligne « Avec un … : rien à payer en plus », une phrase par titre, point final ajouté ; le Navigo Jour y est dit « titre d'un jour, aller et retour du même jour »)."
+    },
+    {
+      "phrase": "retour : # € (# ticket métro-train-rer)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : le prix de chaque sens est dans la ligne « Au ticket » (« aller N €, retour N € ») ; le nombre et le nom des tickets de chaque sens sont dans son « i », mots inchangés."
+    },
+    {
+      "phrase": "salarié du secteur privé : l'employeur prend en charge # % du prix de l'abonnement (transports publics ou vélib'), sur la base de l'abonnement qui suffit pour le trajet.",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : texte rangé dans le « i », mots inchangés (« i » de « hors coût de l'abonnement » et de « Prix de ces titres »)."
+    },
+    {
+      "phrase": "selon vos abonnements",
+      "scenarios": [
+        "tc",
+        "velib",
+        "velo-tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : le petit titre du bloc est retiré ; la ligne de coût dit elle-même « Avec un … » ou « Avec votre … », le titre du pli suffit."
+    },
+    {
+      "phrase": "voiture trafic dirif (pas encore calculé)",
+      "scenarios": [
+        "comparaison",
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velib",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "barre",
+      "lot": "audit-1011",
+      "justification": "Lot 1 de l'audit d'affichage du 10/11 (D-059) : libellé faux, la voiture avec le trafic moyen DiRIF est déduite de la voiture route vide (D-029) ; le mode est maintenant proposé, sans parenthèse."
+    },
+    {
+      "phrase": "vélib' (calculé pour # communes seulement)",
+      "scenarios": [
+        "comparaison",
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "barre",
+      "lot": "audit-1011",
+      "justification": "Lot 1 de l'audit d'affichage du 10/11 (D-059) : Vélib' grisé dit maintenant « pas de station Vélib' dans cette commune » (texte publié meta.velib.out_of_zone) ou « N communes avec une station seulement » : ce n'est pas un calcul en cours, c'est la zone des stations."
+    },
+    {
+      "phrase": "vélo électrique et minutes bonus non calculés.",
+      "scenarios": [
+        "velib"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : texte rangé dans le « i », mots inchangés (même « i » que la phrase qui la précède, texts.velib_ride de subscriptions.json)."
+    },
+    {
+      "phrase": "aller et retour : # €",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : le total au ticket était écrit trois fois (titre du pli, liste « Au ticket », bloc des abonnements) ; il reste dans le titre du pli (« Aller et retour : N €, exemple de trajet ») et dans la ligne « Au ticket : N € l'aller-retour »."
+    },
+    {
+      "phrase": "ces titres couvriraient ce trajet :",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "audit-1011",
+      "justification": "Demande de l'équipe du 10/11, audit d'affichage (D-059) : la liste devient une phrase, « Avec un Navigo Mois, Navigo Semaine ou Navigo Annuel : rien à payer en plus, hors coût de l'abonnement », les prix de ces titres dans le « i »."
+    },
+    {
+      "phrase": "voiture (route vide) afficher # min # min énergie seule, péages non comptés : essence # € ; diesel # € ; électrique # € non publié",
+      "scenarios": [
+        "tc",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": 4,
+      "justification": "Phrase devenue incomplète : le carbone de la voiture est maintenant calculé (lot 4 de l'audit d'affichage du 10/11, PR 144) au lieu de « non publié ». La ligne voiture de « Comparer les moyens » garde son coût (énergie seule, péages non comptés : essence, diesel, électrique) et ajoute à la place de « non publié » le carbone estimé par véhicule (« essence # g ; diesel # g ; électrique # g CO2e (estimation, énergie seule) »). L'exception de la PR 144 ne couvrait que la phrase du « i » ; celle-ci, relevée au contrôle de la branche d'intégration du 10/11, manquait."
+    },
+    {
+      "phrase": "voiture (trafic moyen dirif) afficher # min # min énergie seule, péages non comptés : essence # € ; diesel # € ; électrique # € non publié",
+      "scenarios": [
+        "tc",
+        "voiture"
+      ],
+      "zone": "panneau",
+      "lot": 4,
+      "justification": "Phrase devenue incomplète : le carbone de la voiture est maintenant calculé (lot 4 de l'audit d'affichage du 10/11, PR 144) au lieu de « non publié ». La ligne voiture de « Comparer les moyens » garde son coût (énergie seule, péages non comptés : essence, diesel, électrique) et ajoute à la place de « non publié » le carbone estimé par véhicule (« essence # g ; diesel # g ; électrique # g CO2e (estimation, énergie seule) »). L'exception de la PR 144 ne couvrait que la phrase du « i » ; celle-ci, relevée au contrôle de la branche d'intégration du 10/11, manquait."
+    },
+    {
+      "phrase": "voiture (route vide) afficher # min # min accessible aller et retour énergie seule, péages non comptés : essence # € ; diesel # € ; électrique # € non publié",
+      "scenarios": [
+        "velo-tc",
+        "velib"
+      ],
+      "zone": "panneau",
+      "lot": 4,
+      "justification": "Phrase devenue incomplète : le carbone de la voiture est maintenant calculé (lot 4 de l'audit d'affichage du 10/11, PR 144) au lieu de « non publié ». La ligne voiture de « Comparer les moyens » garde son coût (énergie seule, péages non comptés : essence, diesel, électrique) et ajoute à la place de « non publié » le carbone estimé par véhicule (« essence # g ; diesel # g ; électrique # g CO2e (estimation, énergie seule) »). L'exception de la PR 144 ne couvrait que la phrase du « i » ; celle-ci, relevée au contrôle de la branche d'intégration du 10/11, manquait."
+    },
+    {
+      "phrase": "voiture (trafic moyen dirif) afficher # min # min accessible aller et retour énergie seule, péages non comptés : essence # € ; diesel # € ; électrique # € non publié",
+      "scenarios": [
+        "velo-tc",
+        "velib"
+      ],
+      "zone": "panneau",
+      "lot": 4,
+      "justification": "Phrase devenue incomplète : le carbone de la voiture est maintenant calculé (lot 4 de l'audit d'affichage du 10/11, PR 144) au lieu de « non publié ». La ligne voiture de « Comparer les moyens » garde son coût (énergie seule, péages non comptés : essence, diesel, électrique) et ajoute à la place de « non publié » le carbone estimé par véhicule (« essence # g ; diesel # g ; électrique # g CO2e (estimation, énergie seule) »). L'exception de la PR 144 ne couvrait que la phrase du « i » ; celle-ci, relevée au contrôle de la branche d'intégration du 10/11, manquait."
+    },
+    {
+      "phrase": "voiture (route vide) (ciel affiché) # min # min énergie seule, péages non comptés : essence # € ; diesel # € ; électrique # € non publié",
+      "scenarios": [
+        "voiture"
+      ],
+      "zone": "panneau",
+      "lot": 4,
+      "justification": "Phrase devenue incomplète : le carbone de la voiture est maintenant calculé (lot 4 de l'audit d'affichage du 10/11, PR 144) au lieu de « non publié ». La ligne voiture de « Comparer les moyens » garde son coût (énergie seule, péages non comptés : essence, diesel, électrique) et ajoute à la place de « non publié » le carbone estimé par véhicule (« essence # g ; diesel # g ; électrique # g CO2e (estimation, énergie seule) »). L'exception de la PR 144 ne couvrait que la phrase du « i » ; celle-ci, relevée au contrôle de la branche d'intégration du 10/11, manquait."
+    },
+    {
+      "phrase": "voiture (trafic moyen dirif) (ciel affiché) # min # min énergie seule, péages non comptés : essence # € ; diesel # € ; électrique # € non publié",
+      "scenarios": [
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": 4,
+      "justification": "Phrase devenue incomplète : le carbone de la voiture est maintenant calculé (lot 4 de l'audit d'affichage du 10/11, PR 144) au lieu de « non publié ». La ligne voiture de « Comparer les moyens » garde son coût (énergie seule, péages non comptés : essence, diesel, électrique) et ajoute à la place de « non publié » le carbone estimé par véhicule (« essence # g ; diesel # g ; électrique # g CO2e (estimation, énergie seule) »). L'exception de la PR 144 ne couvrait que la phrase du « i » ; celle-ci, relevée au contrôle de la branche d'intégration du 10/11, manquait."
+    },
+    {
+      "phrase": "les temps plus haut vont au centre de chaque commune du pôle : ils peuvent différer.",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "retours-kbs-1011",
+      "justification": "Retours de KBS du 10/11 (testeur extérieur : panneau trop verbeux sur les sources, exemple cité : la source de la climatisation), règle d'affichage V5 de l'équipe. Une information n'est dite qu'une fois : la phrase de l'arrêt, toujours visible sous « Transports utilisés » (liste keep-visible.json), dit déjà que la durée du titre va au centre de la commune et que les deux peuvent différer. Cette phrase du pli « Méthode et sources » n'est plus écrite quand l'arrêt est nommé ; sans arrêt nommé, elle reste."
+    },
+    {
+      "phrase": "climatisation : référentiel des lignes d'île-de-france mobilités ; ponctualité : sncf voyageurs ; deux bases sous licence odbl.",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "retours-kbs-1011",
+      "justification": "Retours de KBS du 10/11 (testeur extérieur : panneau trop verbeux sur les sources, exemple cité : la source de la climatisation), règle d'affichage V5 de l'équipe. Mention de licence des faits de ligne (TRA03, QS01) déplacée, mots inchangés, dans le « i » « Climatisation et ponctualité : d'où viennent ces valeurs ? » au bout de la liste visible des lignes (le relevé la lit dans la bulle). Les producteurs restent crédités sans rien ouvrir par la ligne « Données : ... » du pied du panneau (D-060) ; jeu, millésime et code en mode sources (?src=1)."
+    },
+    {
+      "phrase": "les fichiers d'itinéraires qui reprennent ces valeurs sont publiés sous la même licence (odbl).",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "retours-kbs-1011",
+      "justification": "Retours de KBS du 10/11 (testeur extérieur : panneau trop verbeux sur les sources, exemple cité : la source de la climatisation), règle d'affichage V5 de l'équipe. Seconde phrase de la mention de licence des faits de ligne : déplacée avec la première, mots inchangés, dans le « i » de la liste des lignes ; aussi dans « Sources & limites »."
+    },
+    {
+      "phrase": "champ « dispositif de climatisation » du référentiel des lignes d'idfm : déclaration pour la ligne, pas pour le véhicule qui passe.",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "retours-kbs-1011",
+      "justification": "Retours de KBS du 10/11 (testeur extérieur : panneau trop verbeux sur les sources, exemple cité : la source de la climatisation), règle d'affichage V5 de l'équipe. Définition de la climatisation déclarée : quitte le pli « Arrêts et horaires du trajet » (un titre ne promet que ce qu'il montre) pour le « i » de la liste des lignes, mots inchangés. La ligne de valeur (« climatisation : oui · ponctualité : ... ») est désormais visible sans rien ouvrir."
+    },
+    {
+      "phrase": "part des voyageurs arrivés à leur gare de destination avec moins de # minutes de retard, sur toute la ligne et tout le mois (pas la ponctualité de ce trajet).",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "retours-kbs-1011",
+      "justification": "Retours de KBS du 10/11 (testeur extérieur : panneau trop verbeux sur les sources, exemple cité : la source de la climatisation), règle d'affichage V5 de l'équipe. Définition de la ponctualité : quitte le pli « Arrêts et horaires du trajet » pour le « i » de la liste des lignes, mots inchangés, à côté de la valeur qu'elle définit."
+    },
+    {
+      "phrase": "climatisation (déclarée à idfm) : oui",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "retours-kbs-1011",
+      "justification": "Retours de KBS du 10/11 (testeur extérieur : panneau trop verbeux sur les sources, exemple cité : la source de la climatisation), règle d'affichage V5 de l'équipe. Phrase complète de la climatisation d'une ligne : quitte le pli « Arrêts et horaires du trajet » (son titre ne la promet pas) pour le « i » de la liste des lignes, mots inchangés, sous le nom de la ligne ; la valeur courte reste visible."
+    },
+    {
+      "phrase": "ponctualité de la ligne (sncf voyageurs, septembre #) : # % des voyageurs arrivés avec moins de # min de retard (ligne exploitée par la ratp et la sncf : sncf voyageurs ne précise pas si le taux couvre toute la ligne ou seulement sa partie sncf)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "retours-kbs-1011",
+      "justification": "Retours de KBS du 10/11 (testeur extérieur : panneau trop verbeux sur les sources, exemple cité : la source de la climatisation), règle d'affichage V5 de l'équipe. Phrase complète de la ponctualité d'une ligne, avec sa réserve RATP et SNCF : quitte le pli « Arrêts et horaires du trajet » pour le « i » de la liste des lignes, mots inchangés ; la valeur courte et le mois restent visibles."
+    },
+    {
+      "phrase": "une pratique observée, pas une possibilité calculée.",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11 (règle de l'équipe : sans le mode sources, la valeur, l'unité et le verdict seulement ; une information dite une fois). La phrase est déjà dans le « i » « Comment lire ce graphique » de la barre de part (« En perle : une pratique observée, pas une possibilité calculée. »), elle n'est plus répétée sous le titre « Ils y travaillent déjà »."
+    },
+    {
+      "phrase": "# actifs occupés qui habitent maisons-laffitte travaillent dans ce pôle, soit # % des actifs occupés de la commune (recensement #, estimation).",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11 : le millésime passe au « i » de la barre de part, qui dit déjà « Recensement 2023. » ; la phrase reste visible avec sa valeur, son dénominateur et « (estimation) »."
+    },
+    {
+      "phrase": "# actifs occupés qui habitent paris #er travaillent dans ce pôle, soit # % des actifs occupés de la commune (recensement #, estimation).",
+      "scenarios": [
+        "velib"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Même changement que pour Maisons-Laffitte (audit d'affichage du 11/11) : millésime au « i » de la barre de part, valeur, dénominateur et « (estimation) » visibles."
+    },
+    {
+      "phrase": "comparer les modes",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11, répétition retirée : ce titre interne redisait le titre du pli « Comparer les moyens »."
+    },
+    {
+      "phrase": "emplois du pôle",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11, répétition retirée : le titre, le chiffre et la légende redisaient le chiffre du pli « Emplois et recrutement » (« N postes salariés localisés »), lu pli fermé."
+    },
+    {
+      "phrase": "sens le plus long : # min, pour # min au plus par sens",
+      "scenarios": [
+        "velo-tc"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11, répétition retirée : redisait les durées aller et retour écrites au-dessus et le temps du verdict ; la barre reste ; un sens au-delà du temps choisi garde « (N min au-delà) »."
+    },
+    {
+      "phrase": "depuis maisons-laffitte · durée indépendante de l'heure",
+      "scenarios": [
+        "voiture"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11 : l'en-tête devient « Depuis Maisons-Laffitte » ; « Durée indépendante de l'heure : même valeur pour les trois journées-types. » reste dans « Méthode et sources » (dit une fois)."
+    },
+    {
+      "phrase": "depuis paris #er · durée indépendante de l'heure",
+      "scenarios": [
+        "velib"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Même changement que pour la voiture (audit d'affichage du 11/11) : en-tête « Depuis Paris 1er », la mention reste dans « Méthode et sources »."
+    },
+    {
+      "phrase": "# postes salariés (insee) atteints aller et retour, sur #",
+      "scenarios": [
+        "tc",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11, ligne P10 et décision D1 : sous le grand pourcentage, la ligne devient « N postes salariés localisés atteints aller et retour » (fragment de keep-visible.json gardé) ; le dénominateur « sur N postes du pôle dont le trajet est mesuré » est déjà écrit dans le « i » « Comment lire ce graphique » de la barre de part ; en mode sources, « , sur N » est écrit. La vue de comparaison, sans « i », le garde. Phrase renommée au vocabulaire D-065 (11/11), comme dans panel-baseline.json."
+    },
+    {
+      "phrase": "climatisation : oui · ponctualité : # % (septembre #)",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11, ligne T4 : sous la bande du trajet, la valeur reste (« climatisation : oui · ponctualité : N % ») ; le mois est dans la phrase complète du « i » des lignes (« Ponctualité de la ligne (SNCF Voyageurs, septembre 2026) : … »), et écrit en clair en mode sources."
+    },
+    {
+      "phrase": "postes salariés localisés",
+      "scenarios": [
+        "tc",
+        "velo-tc",
+        "velib",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11, ligne E1, répétition retirée : légende du chiffre du bloc « Emplois du pôle » (titre, chiffre et légende retirés) ; le même chiffre et les mêmes mots restent dans le titre du pli fermé « Emplois et recrutement » (« N postes salariés localisés »)."
+    },
+    {
+      "phrase": "transports utilisés (aller) · #:# → #:#",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11, lignes T1 et V3 : en commune par commune, le titre devient « Transports utilisés (aller, exemple de trajet) · … » (fragment de keep-visible.json) ; la note d'exemple, la phrase de l'arrêt et l'écart de durée passent dans son « i », mots inchangés."
+    },
+    {
+      "phrase": "transports utilisés (retour) · #:# → #:#",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Même changement au retour (audit d'affichage du 11/11, T1 et V3) : « Transports utilisés (retour, exemple de trajet) · … »."
+    },
+    {
+      "phrase": "transports en commun + marche (ciel affiché) # min # min # € au ticket # g co#e",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11, garde V4 (défaut de vérité à corriger quelle que soit la règle) : le carbone TC du tableau « Comparer les moyens » est une estimation (facteur moyen IDFM) ; la cellule dit désormais « N g CO2e (estimation) », comme la voiture à côté."
+    },
+    {
+      "phrase": "transports en commun + marche afficher # min # min accessible aller et retour # € au ticket # g co#e",
+      "scenarios": [
+        "velo-tc",
+        "velib"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Même correction V4 (audit d'affichage du 11/11) dans le tableau « Comparer les moyens » vu depuis un autre mode : « N g CO2e (estimation) »."
+    },
+    {
+      "phrase": "transports en commun + marche afficher # min # min # € au ticket # g co#e",
+      "scenarios": [
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Même correction V4 (audit d'affichage du 11/11) dans le tableau « Comparer les moyens » vu depuis la voiture : « N g CO2e (estimation) »."
+    },
+    {
+      "phrase": "temps de trajet",
+      "scenarios": [
+        "velo-tc"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11, décision D4 et garde V7 : en vélo + TC, le titre devient « Temps de trajet (durées minimales) » (fragment de keep-visible.json) ; la raison (« Vélo personnel jusqu'à la gare. », « Le temps pour garer le vélo n'est pas compté (aucune donnée) : ce sont des durées minimales. ») est dans son « i », mots inchangés."
+    },
+    {
+      "phrase": "rejouer le trait trait symbolique : ce n'est pas l'itinéraire.",
+      "scenarios": [
+        "velo-tc"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11, ligne P31 : le bouton « Rejouer le trait » reste ; « Trait symbolique : ce n'est pas l'itinéraire. » passe, mots inchangés, dans le « i » « Ce trait est-il l'itinéraire ? » (lu en clair en mode sources). La ligne relevée réunissait le bouton et la phrase."
+    },
+    {
+      "phrase": "sens le plus long : # min (# min au-delà), pour # min au plus par sens",
+      "scenarios": [
+        "velib"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Audit d'affichage du 11/11, ligne P15, répétition retirée : les durées aller et retour et le temps du verdict sont écrits au-dessus ; quand un sens dépasse le temps choisi, la valeur « (N min au-delà) » reste écrite sous la barre."
+    },
+    {
+      "phrase": "tc + marche",
+      "scenarios": [
+        "comparaison",
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velib",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "barre",
+      "lot": "affichage-final-1111",
+      "justification": "Retour de relecture validé par l'équipe (11/11) : le choix du mode manquait de clarté (sigles « TC », « DiRIF »). Le menu des modes dit « Transports en commun » (MODE_SHORT, labels.ts) ; le réglage de marche reste au « i » et dans le tiroir."
+    },
+    {
+      "phrase": "vélo + tc",
+      "scenarios": [
+        "comparaison",
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "barre",
+      "lot": "affichage-final-1111",
+      "justification": "Retour de relecture validé par l'équipe (11/11) : le choix du mode manquait de clarté (sigles « TC », « DiRIF »). Le menu des modes dit « Vélo + transports en commun » (MODE_SHORT, labels.ts), même mode."
+    },
+    {
+      "phrase": "voiture route vide",
+      "scenarios": [
+        "comparaison",
+        "horaires-libres",
+        "poste-de-nuit",
+        "tc",
+        "velib",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "barre",
+      "lot": "affichage-final-1111",
+      "justification": "Retour de relecture validé par l'équipe (11/11) : le choix du mode manquait de clarté (sigles « TC », « DiRIF »). Le menu des modes dit « Voiture, route vide » (MODE_SHORT, labels.ts), même mode ; « route vide : temps optimiste aux heures de pointe » reste au « i » « Précision sur ce mode »."
+    },
+    {
+      "phrase": "vélo jusqu'à la gare, puis tc et marche",
+      "scenarios": [
+        "velo-tc"
+      ],
+      "zone": "barre",
+      "lot": "affichage-final-1111",
+      "justification": "Retour de relecture validé par l'équipe (11/11) : le choix du mode manquait de clarté (sigles « TC », « DiRIF »). Même phrase au « i » « Précision sur ce mode », le sigle écrit en entier : « vélo jusqu'à la gare, puis transports en commun et marche »."
+    },
+    {
+      "phrase": "temps : indice dirif des voies rapides, appliqué à tout le trajet (choix de l'équipe).",
+      "scenarios": [
+        "voiture-trafic"
+      ],
+      "zone": "barre",
+      "lot": "affichage-final-1111",
+      "justification": "Retour de relecture validé par l'équipe (11/11) : le choix du mode manquait de clarté (sigles « TC », « DiRIF »). Même note, la DiRIF nommée en entier : « indice de trafic moyen de la DiRIF (direction des routes d'Île-de-France) sur les voies rapides, appliqué à tout le trajet (choix de l'équipe) »."
+    },
+    {
+      "phrase": "coût tc : prix au ticket de l'itinéraire détaillé, plein tarif, sans forfait.",
+      "scenarios": [
+        "tc",
+        "velib",
+        "velo-tc",
+        "voiture",
+        "voiture-trafic"
+      ],
+      "zone": "panneau",
+      "lot": "affichage-final-1111",
+      "justification": "Retour de relecture validé par l'équipe (11/11) : le choix du mode manquait de clarté (sigles « TC », « DiRIF »). Même phrase au « i » « Ce que compte ce tableau », le sigle écrit en entier : « Coût des transports en commun : prix au ticket de l'itinéraire détaillé, plein tarif, sans forfait. »"
+    },
+    {
+      "phrase": "postes salariés (insee), aller et retour, # % de l'idf hors votre commune",
+      "scenarios": [
+        "tc",
+        "voiture",
+        "voiture-trafic",
+        "horaires-libres",
+        "poste-de-nuit",
+        "comparaison"
+      ],
+      "zone": "barre",
+      "lot": "vocabulaire-postes-1211",
+      "justification": "Légende du compteur raccourcie le 12/11 : avec la part, elle était coupée par des points de suspension à 1280 et 1440 px (colonne de 100 px, trois lignes au plus). La légende visible dit « postes salariés (INSEE), aller et retour » ; la part et sa base restent dites, mots et chiffres inchangés, dans la phrase du compteur lue par les lecteurs d'écran et écrite au « i » du compteur (« soit N % des N postes d'Île-de-France hors votre commune »), et montrées par le filet de part et son « i »."
+    },
+    {
+      "phrase": "itinéraire détaillé à # min près de la durée du calcul.",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "cout-carbone-1211",
+      "justification": "Bloc « Trajet » unique (D-066, demande de l'équipe du 12/11) : un seul sens est détaillé à la fois, celui que la bascule « Aller » / « Retour » a choisi, et cette phrase n'est plus écrite dans un pli mais, mots inchangés, au « i » du bloc « D'où part et où arrive cet exemple ? » (en clair avec le mode sources), pour le sens choisi. Le relevé a l'aller affiché : la phrase du retour apparaît dans ce « i » en choisissant « Retour ». Elle précise l'écart entre l'exemple de trajet et la durée du calcul (D-064)."
+    },
+    {
+      "phrase": "la défense → maisons-laffitte",
+      "scenarios": [
+        "tc"
+      ],
+      "zone": "panneau",
+      "lot": "cout-carbone-1211",
+      "justification": "Bloc « Trajet » unique (D-066) : un seul sens est détaillé à la fois, celui que la bascule « Aller » / « Retour » a choisi ; les arrêts du sens retour (ici la Défense vers Maisons-Laffitte) s'ouvrent en choisissant « Retour ». L'aller et le retour restent lisibles en tête du bloc : chaque bouton porte la durée de son sens, et la ligne « Aller et retour » les additionne."
+    },
+    {
+      "phrase": "vélo personnel : aucun titre de transport.",
+      "scenarios": [
+        "velo-tc"
+      ],
+      "zone": "panneau",
+      "lot": "cout-carbone-1211",
+      "justification": "Bloc « Trajet » unique (D-066) : le texte publié de subscriptions.json devient la tuile Coût du bloc, « Aucun titre de transport » (le préfixe « Vélo personnel : » est remplacé par le libellé de la tuile et la garde « partie à vélo »). Même texte publié, mêmes mots pour la valeur."
+    }
+  ]
+}

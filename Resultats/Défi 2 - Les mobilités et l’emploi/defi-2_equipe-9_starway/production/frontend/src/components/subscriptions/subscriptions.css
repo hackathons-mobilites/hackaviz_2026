@@ -1,0 +1,110 @@
+/* Zone « Mes abonnements » et bloc « Selon vos abonnements » (V0, D-032 proposée) : styles propres au chantier,
+   variables du thème (styles.css), aucune couleur de donnée (cyan, or) : un coût n'est pas un état du ciel. */
+
+.subs-backdrop {
+  z-index: 70;
+}
+
+.subs-dialog {
+  width: min(520px, 100vw);
+}
+
+.subs-body p {
+  margin: 0 0 10px;
+}
+
+.subs-group {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin: 18px 0 0;
+  padding: 10px 14px 12px;
+}
+
+.subs-group legend {
+  color: var(--text);
+  font-weight: 500;
+  padding: 0 6px;
+}
+
+.subs-subtitle {
+  color: var(--text-dim);
+  font-size: var(--type-label);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 12px 0 4px !important;
+}
+
+.subs-radio {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 6px 4px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.subs-radio input {
+  margin-top: 4px;
+  accent-color: var(--accent);
+}
+
+.subs-radio:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.subs-radio-label {
+  display: block;
+  color: var(--text);
+}
+
+.subs-radio-detail {
+  display: block;
+  font-size: var(--type-small);
+  color: var(--text-dim);
+}
+
+.subs-info {
+  margin-top: 18px;
+}
+
+.subs-small {
+  font-size: var(--type-small);
+}
+
+.subs-details {
+  margin: 18px 0;
+}
+
+.subs-details summary {
+  cursor: pointer;
+  color: var(--text);
+}
+
+.subs-details li {
+  margin: 6px 0;
+  font-size: var(--type-small);
+}
+
+.subs-list {
+  margin: 4px 0 8px;
+  padding-left: 18px;
+}
+
+.subs-list li {
+  margin: 2px 0;
+}
+
+/* Audit d'affichage du 10/11 : une phrase par ligne dans les « i » du pli « Coût et carbone » et de « Mes réglages »
+   (fichier chargé par le panneau de preuve et par le dialogue) */
+.pf-tip-line {
+  display: block;
+}
+
+.pf-tip-line + .pf-tip-line {
+  margin-top: var(--space-1);
+}
+
+.subs-settings-btn {
+  margin-left: 2px;
+}

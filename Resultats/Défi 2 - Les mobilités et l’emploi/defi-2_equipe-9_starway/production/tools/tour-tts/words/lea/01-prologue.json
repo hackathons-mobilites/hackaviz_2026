@@ -1,0 +1,340 @@
+{
+ "tour": "lea",
+ "stem": "01-prologue",
+ "mp3Sha256": "5165b3525d286f37c87ed923397c8a1e808071ce0c386ead29b04ec9f1eae2aa",
+ "text": "C’est l’aube. Maisons-Laffitte dort encore, ou presque. Les mêmes étoiles, pour plus de 12 millions d’habitants d’Île-de-France. Mais pas toutes à portée de main. Voici Léa, une habitante imaginaire, sous un ciel bien réel. Léa cherche un emploi. Elle n’a pas de voiture, mais un vélo, pour plus tard. D’abord, seulement les transports en commun : quels emplois peut-elle rejoindre ? Et qu’est-ce qui pourrait élargir son horizon ?",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "C'est l'aube maison-laffitte dort encore ou presque, les mêmes étoiles pour plus de 12000000 d'habitants d'Île-De-France. Mais pas toutes à portée de main. Voici Léa, une habitante imaginaire sous un ciel bien réel. Léa cherche un emploi. Elle n'a pas de voiture, mais un vélo pour plus tard. D'abord, seulement les transports en commun. Quels emplois peut-elle rejoindre et qu'est-ce qui pourrait élargir son horizon ?",
+ "words": [
+  {
+   "word": "c'est",
+   "startMs": 70,
+   "endMs": 270
+  },
+  {
+   "word": "l'aube",
+   "startMs": 270,
+   "endMs": 710
+  },
+  {
+   "word": "maison-laffitte",
+   "startMs": 1230,
+   "endMs": 2110
+  },
+  {
+   "word": "dort",
+   "startMs": 2110,
+   "endMs": 2470
+  },
+  {
+   "word": "encore",
+   "startMs": 2470,
+   "endMs": 3110
+  },
+  {
+   "word": "ou",
+   "startMs": 3390,
+   "endMs": 3590
+  },
+  {
+   "word": "presque",
+   "startMs": 3590,
+   "endMs": 4070
+  },
+  {
+   "word": "les",
+   "startMs": 4510,
+   "endMs": 4750
+  },
+  {
+   "word": "mêmes",
+   "startMs": 4750,
+   "endMs": 4950
+  },
+  {
+   "word": "étoiles",
+   "startMs": 4990,
+   "endMs": 5470
+  },
+  {
+   "word": "pour",
+   "startMs": 5470,
+   "endMs": 5670
+  },
+  {
+   "word": "plus",
+   "startMs": 5670,
+   "endMs": 5950
+  },
+  {
+   "word": "de",
+   "startMs": 5950,
+   "endMs": 5990
+  },
+  {
+   "word": "douze",
+   "startMs": 5990,
+   "endMs": 6230
+  },
+  {
+   "word": "millions",
+   "startMs": 6230,
+   "endMs": 6590
+  },
+  {
+   "word": "d'habitants",
+   "startMs": 6590,
+   "endMs": 6990
+  },
+  {
+   "word": "d'île-de-france",
+   "startMs": 6990,
+   "endMs": 7870
+  },
+  {
+   "word": "mais",
+   "startMs": 8550,
+   "endMs": 8710
+  },
+  {
+   "word": "pas",
+   "startMs": 8710,
+   "endMs": 8830
+  },
+  {
+   "word": "toutes",
+   "startMs": 8830,
+   "endMs": 8990
+  },
+  {
+   "word": "à",
+   "startMs": 8990,
+   "endMs": 9070
+  },
+  {
+   "word": "portée",
+   "startMs": 9070,
+   "endMs": 9310
+  },
+  {
+   "word": "de",
+   "startMs": 9310,
+   "endMs": 9390
+  },
+  {
+   "word": "main",
+   "startMs": 9390,
+   "endMs": 9670
+  },
+  {
+   "word": "voici",
+   "startMs": 10670,
+   "endMs": 11150
+  },
+  {
+   "word": "léa",
+   "startMs": 11150,
+   "endMs": 11550
+  },
+  {
+   "word": "une",
+   "startMs": 11550,
+   "endMs": 11790
+  },
+  {
+   "word": "habitante",
+   "startMs": 11790,
+   "endMs": 12190
+  },
+  {
+   "word": "imaginaire",
+   "startMs": 12190,
+   "endMs": 12910
+  },
+  {
+   "word": "sous",
+   "startMs": 13030,
+   "endMs": 13350
+  },
+  {
+   "word": "un",
+   "startMs": 13350,
+   "endMs": 13470
+  },
+  {
+   "word": "ciel",
+   "startMs": 13470,
+   "endMs": 13750
+  },
+  {
+   "word": "bien",
+   "startMs": 13750,
+   "endMs": 13990
+  },
+  {
+   "word": "réel",
+   "startMs": 13990,
+   "endMs": 14470
+  },
+  {
+   "word": "léa",
+   "startMs": 15550,
+   "endMs": 16150
+  },
+  {
+   "word": "cherche",
+   "startMs": 16390,
+   "endMs": 16710
+  },
+  {
+   "word": "un",
+   "startMs": 16710,
+   "endMs": 16830
+  },
+  {
+   "word": "emploi",
+   "startMs": 16830,
+   "endMs": 17310
+  },
+  {
+   "word": "elle",
+   "startMs": 18030,
+   "endMs": 18270
+  },
+  {
+   "word": "n'a",
+   "startMs": 18270,
+   "endMs": 18390
+  },
+  {
+   "word": "pas",
+   "startMs": 18390,
+   "endMs": 18470
+  },
+  {
+   "word": "de",
+   "startMs": 18470,
+   "endMs": 18550
+  },
+  {
+   "word": "voiture",
+   "startMs": 18550,
+   "endMs": 19150
+  },
+  {
+   "word": "mais",
+   "startMs": 19190,
+   "endMs": 19390
+  },
+  {
+   "word": "un",
+   "startMs": 19390,
+   "endMs": 19430
+  },
+  {
+   "word": "vélo",
+   "startMs": 19430,
+   "endMs": 19830
+  },
+  {
+   "word": "pour",
+   "startMs": 20030,
+   "endMs": 20230
+  },
+  {
+   "word": "plus",
+   "startMs": 20230,
+   "endMs": 20430
+  },
+  {
+   "word": "tard",
+   "startMs": 20430,
+   "endMs": 20830
+  },
+  {
+   "word": "d'abord",
+   "startMs": 21790,
+   "endMs": 22470
+  },
+  {
+   "word": "seulement",
+   "startMs": 22470,
+   "endMs": 22910
+  },
+  {
+   "word": "les",
+   "startMs": 22910,
+   "endMs": 23030
+  },
+  {
+   "word": "transports",
+   "startMs": 23030,
+   "endMs": 23430
+  },
+  {
+   "word": "en",
+   "startMs": 23430,
+   "endMs": 23510
+  },
+  {
+   "word": "commun",
+   "startMs": 23510,
+   "endMs": 23910
+  },
+  {
+   "word": "quels",
+   "startMs": 24390,
+   "endMs": 24670
+  },
+  {
+   "word": "emplois",
+   "startMs": 24670,
+   "endMs": 24990
+  },
+  {
+   "word": "peut-elle",
+   "startMs": 24990,
+   "endMs": 25270
+  },
+  {
+   "word": "rejoindre",
+   "startMs": 25270,
+   "endMs": 25950
+  },
+  {
+   "word": "et",
+   "startMs": 26390,
+   "endMs": 26590
+  },
+  {
+   "word": "qu'est-ce",
+   "startMs": 26590,
+   "endMs": 26790
+  },
+  {
+   "word": "qui",
+   "startMs": 26790,
+   "endMs": 26950
+  },
+  {
+   "word": "pourrait",
+   "startMs": 26950,
+   "endMs": 27190
+  },
+  {
+   "word": "élargir",
+   "startMs": 27190,
+   "endMs": 27710
+  },
+  {
+   "word": "son",
+   "startMs": 27710,
+   "endMs": 27870
+  },
+  {
+   "word": "horizon",
+   "startMs": 27870,
+   "endMs": 28270
+  }
+ ]
+}

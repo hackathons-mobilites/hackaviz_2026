@@ -1,0 +1,313 @@
+insee,name,day,network_m,stop_name,snap_m,crow_m,category_crow,ret_null,network_lt_2km
+78320,Notre-Dame-de-la-Mer,d06,1703.0,Église,32,1505,served_stop_lt_2km,15,True
+78320,Notre-Dame-de-la-Mer,d09,1703.0,Église,32,1217,served_stop_lt_2km,14,True
+78320,Notre-Dame-de-la-Mer,d14,,,32,3996,served_stop_2km_to_walk_reach,15,False
+78262,Galluis,d06,240.0,Marronniers / Rue de la Gare,19,175,served_stop_lt_2km,9,True
+78262,Galluis,d09,240.0,Marronniers / Rue de la Gare,19,175,served_stop_lt_2km,2,True
+78262,Galluis,d14,,,19,1814,served_stop_lt_2km,15,False
+78263,Gambais,d06,,,8,1873,served_stop_lt_2km,15,False
+78263,Gambais,d09,788.0,Bel Air,8,701,served_stop_lt_2km,12,True
+78263,Gambais,d14,,,8,5404,served_stop_2km_to_walk_reach,15,False
+78404,Millemont,d06,297.0,Place Richard,45,138,served_stop_lt_2km,14,True
+78404,Millemont,d09,297.0,Place Richard,45,138,served_stop_lt_2km,14,True
+78404,Millemont,d14,,,45,1543,served_stop_lt_2km,15,False
+78655,Vieille-Église-en-Yvelines,d06,,,92,1667,served_stop_lt_2km,15,False
+78655,Vieille-Église-en-Yvelines,d09,230.0,Mairie,92,170,served_stop_lt_2km,9,True
+78655,Vieille-Église-en-Yvelines,d14,,,92,1667,served_stop_lt_2km,15,False
+78234,Flacourt,d06,,,12,1880,served_stop_lt_2km,15,False
+78234,Flacourt,d09,39.0,Mairie,12,21,served_stop_lt_2km,15,True
+78234,Flacourt,d14,,,12,1880,served_stop_lt_2km,15,False
+78278,Goupillières,d06,1687.0,Villarceaux,37,1559,served_stop_lt_2km,15,True
+78278,Goupillières,d09,289.0,Carrefour de Jumeauville / Place Bieuville,37,164,served_stop_lt_2km,8,True
+78278,Goupillières,d14,,,37,2154,served_stop_2km_to_walk_reach,15,False
+78290,Guernes,d06,,,27,1139,served_stop_lt_2km,15,False
+78290,Guernes,d09,140.0,Mairie,27,109,served_stop_lt_2km,11,True
+78290,Guernes,d14,,,27,1545,served_stop_lt_2km,15,False
+78291,Guerville,d06,,,116,1689,served_stop_lt_2km,15,False
+78291,Guerville,d09,582.0,Tilleuls,116,302,served_stop_lt_2km,9,True
+78291,Guerville,d14,,,116,1689,served_stop_lt_2km,15,False
+78305,Herbeville,d06,,,11,1713,served_stop_lt_2km,15,False
+78305,Herbeville,d09,45.0,Village,11,17,served_stop_lt_2km,5,True
+78305,Herbeville,d14,,,11,1807,served_stop_lt_2km,15,False
+78364,Marcq,d06,78.0,Jean Barbé (Mairie),16,67,served_stop_lt_2km,8,True
+78364,Marcq,d09,61.0,Jean Barbé (Mairie),16,52,served_stop_lt_2km,2,True
+78364,Marcq,d14,1888.0,Lavoir,16,1678,served_stop_lt_2km,15,True
+78565,Saint-Martin-des-Champs,d06,,,20,1728,served_stop_lt_2km,15,False
+78565,Saint-Martin-des-Champs,d09,266.0,Prieuré,20,227,served_stop_lt_2km,14,True
+78565,Saint-Martin-des-Champs,d14,,,20,1734,served_stop_lt_2km,15,False
+78681,Villiers-le-Mahieu,d06,320.0,Mairie,16,229,served_stop_lt_2km,15,True
+78681,Villiers-le-Mahieu,d09,311.0,Mairie,16,220,served_stop_lt_2km,8,True
+78681,Villiers-le-Mahieu,d14,1933.0,Mairie,16,1694,served_stop_lt_2km,15,True
+78317,Jambville,d06,,,32,1905,served_stop_lt_2km,15,False
+78317,Jambville,d09,101.0,Peupliers,32,45,served_stop_lt_2km,13,True
+78317,Jambville,d14,,,32,5224,served_stop_2km_to_walk_reach,15,False
+95008,Aincourt,d06,179.0,Centre,59,114,served_stop_lt_2km,14,True
+95008,Aincourt,d09,179.0,Centre,59,114,served_stop_lt_2km,14,True
+95008,Aincourt,d14,,,59,1972,served_stop_lt_2km,15,False
+95046,Banthelu,d06,,,44,1890,served_stop_lt_2km,15,False
+95046,Banthelu,d09,127.0,Église,44,80,served_stop_lt_2km,13,True
+95046,Banthelu,d14,,,44,1890,served_stop_lt_2km,15,False
+95309,Hodent,d06,,,11,1916,served_stop_lt_2km,15,False
+95309,Hodent,d09,278.0,Route Blanche,11,208,served_stop_lt_2km,11,True
+95309,Hodent,d14,,,11,2043,served_stop_2km_to_walk_reach,15,False
+95543,Saint-Cyr-en-Arthies,d06,,,23,1906,served_stop_lt_2km,15,False
+95543,Saint-Cyr-en-Arthies,d09,192.0,Place,23,67,served_stop_lt_2km,15,True
+95543,Saint-Cyr-en-Arthies,d14,,,23,1908,served_stop_lt_2km,15,False
+91098,Boutervilliers,d06,,,41,1999,served_stop_lt_2km,15,False
+91098,Boutervilliers,d09,145.0,Tilleul,41,66,served_stop_lt_2km,15,True
+91098,Boutervilliers,d14,,,41,6117,served_stop_2km_to_walk_reach,15,False
+91240,Fontaine-la-Rivière,d06,,,11,1962,served_stop_lt_2km,15,False
+91240,Fontaine-la-Rivière,d09,252.0,Mairie de Fontaine-la-Rivière,11,232,served_stop_lt_2km,15,True
+91240,Fontaine-la-Rivière,d14,,,11,6976,served_stop_2km_to_walk_reach,15,False
+91544,Saint-Cyr-la-Rivière,d06,,,26,1761,served_stop_lt_2km,15,False
+91544,Saint-Cyr-la-Rivière,d09,269.0,Saint Cyr la Rivière,26,244,served_stop_lt_2km,15,True
+91544,Saint-Cyr-la-Rivière,d14,,,26,7575,no_served_stop_within_walk_reach,15,False
+91186,Courson-Monteloup,d06,,,56,1553,served_stop_lt_2km,15,False
+91186,Courson-Monteloup,d09,310.0,Mairie,56,218,served_stop_lt_2km,14,True
+91186,Courson-Monteloup,d14,,,56,2829,served_stop_2km_to_walk_reach,15,False
+91243,Fontenay-lès-Briis,d06,,,50,1963,served_stop_lt_2km,15,False
+91243,Fontenay-lès-Briis,d09,560.0,Bel Air,50,230,served_stop_lt_2km,3,True
+91243,Fontenay-lès-Briis,d14,,,50,2703,served_stop_2km_to_walk_reach,15,False
+91249,Forges-les-Bains,d06,,,46,1522,served_stop_lt_2km,15,False
+91249,Forges-les-Bains,d09,441.0,Centre d'Accueil,46,312,served_stop_lt_2km,3,True
+91249,Forges-les-Bains,d14,,,46,3227,served_stop_2km_to_walk_reach,15,False
+91593,Sermaise,d06,,,47,1668,served_stop_lt_2km,15,False
+91593,Sermaise,d09,768.0,Blancheface,47,521,served_stop_lt_2km,14,True
+91593,Sermaise,d14,,,47,1610,served_stop_lt_2km,14,False
+78160,Chevreuse,d06,296.0,Mairie,45,151,served_stop_lt_2km,3,True
+78160,Chevreuse,d09,296.0,Mairie,45,151,served_stop_lt_2km,3,True
+78160,Chevreuse,d14,,,45,1913,served_stop_lt_2km,15,False
+78334,Lévis-Saint-Nom,d06,1827.0,Pompidou,70,1380,served_stop_lt_2km,12,True
+78334,Lévis-Saint-Nom,d09,301.0,Les Charmes,70,166,served_stop_lt_2km,5,True
+78334,Lévis-Saint-Nom,d14,,,70,1933,served_stop_lt_2km,15,False
+78561,Saint-Lambert,d06,,,55,1518,served_stop_lt_2km,9,False
+78561,Saint-Lambert,d09,631.0,Place,55,486,served_stop_lt_2km,8,True
+78561,Saint-Lambert,d14,,,55,1813,served_stop_lt_2km,15,False
+91093,Boullay-les-Troux,d06,,,7,1758,served_stop_lt_2km,15,False
+91093,Boullay-les-Troux,d09,673.0,Mairie,7,288,served_stop_lt_2km,3,True
+91093,Boullay-les-Troux,d14,,,7,2967,served_stop_2km_to_walk_reach,15,False
+91411,Les Molières,d06,,,37,1852,served_stop_lt_2km,15,False
+91411,Les Molières,d09,64.0,Église,37,51,served_stop_lt_2km,3,True
+91411,Les Molières,d14,,,37,2983,served_stop_2km_to_walk_reach,15,False
+78140,Chapet,d06,218.0,Mairie,26,197,served_stop_lt_2km,2,True
+78140,Chapet,d09,218.0,Mairie,26,197,served_stop_lt_2km,2,True
+78140,Chapet,d14,,,26,1691,served_stop_lt_2km,15,False
+78146,Chatou,d06,201.0,République Leclerc,27,78,served_stop_lt_2km,0,True
+78146,Chatou,d09,201.0,République Leclerc,27,78,served_stop_lt_2km,0,True
+78146,Chatou,d14,475.0,Cormiers Ricard,27,411,served_stop_lt_2km,1,True
+78152,Chavenay,d06,175.0,Centre,37,131,served_stop_lt_2km,15,True
+78152,Chavenay,d09,175.0,Centre,37,131,served_stop_lt_2km,2,True
+78152,Chavenay,d14,,,37,1948,served_stop_lt_2km,15,False
+78172,Conflans-Sainte-Honorine,d06,521.0,Conflans-Sainte-Honorine,40,337,served_stop_lt_2km,1,True
+78172,Conflans-Sainte-Honorine,d09,521.0,Conflans-Sainte-Honorine,40,337,served_stop_lt_2km,0,True
+78172,Conflans-Sainte-Honorine,d14,513.0,Conflans-Sainte-Honorine,40,338,served_stop_lt_2km,8,True
+78196,Davron,d06,117.0,Village,21,87,served_stop_lt_2km,13,True
+78196,Davron,d09,117.0,Village,21,87,served_stop_lt_2km,2,True
+78196,Davron,d14,1991.0,Cottages,21,1722,served_stop_lt_2km,15,True
+78358,Maisons-Laffitte,d06,226.0,Rue de Lorraine,34,141,served_stop_lt_2km,0,True
+78358,Maisons-Laffitte,d09,226.0,Rue de Lorraine,34,141,served_stop_lt_2km,0,True
+78358,Maisons-Laffitte,d14,382.0,Rue du Mesnil,34,263,served_stop_lt_2km,0,True
+78384,Médan,d06,637.0,Château,11,197,served_stop_lt_2km,10,True
+78384,Médan,d09,232.0,Chemin des Glaises,11,197,served_stop_lt_2km,0,True
+78384,Médan,d14,,,11,1648,served_stop_lt_2km,15,False
+78396,Le Mesnil-le-Roi,d06,95.0,Marronniers,42,79,served_stop_lt_2km,0,True
+78396,Le Mesnil-le-Roi,d09,95.0,Marronniers,42,79,served_stop_lt_2km,0,True
+78396,Le Mesnil-le-Roi,d14,95.0,Marronniers,42,79,served_stop_lt_2km,15,True
+78481,Le Pecq,d06,151.0,Jean Moulin,20,67,served_stop_lt_2km,0,True
+78481,Le Pecq,d09,151.0,Jean Moulin,20,67,served_stop_lt_2km,0,True
+78481,Le Pecq,d14,807.0,Alexandre Bertrand,20,360,served_stop_lt_2km,3,True
+78615,Thiverval-Grignon,d06,213.0,Calvaire / Église,60,186,served_stop_lt_2km,2,True
+78615,Thiverval-Grignon,d09,213.0,Calvaire / Église,60,186,served_stop_lt_2km,2,True
+78615,Thiverval-Grignon,d14,,,60,1909,served_stop_lt_2km,15,False
+95257,La Frette-sur-Seine,d06,164.0,Aristide Briand,20,93,served_stop_lt_2km,0,True
+95257,La Frette-sur-Seine,d09,164.0,Aristide Briand,20,93,served_stop_lt_2km,0,True
+95257,La Frette-sur-Seine,d14,492.0,La Frette - Montigny,20,284,served_stop_lt_2km,8,True
+95110,Brignancourt,d06,1948.0,Santeuil - Le Perchay,38,1609,served_stop_lt_2km,15,True
+95110,Brignancourt,d09,159.0,Place,38,85,served_stop_lt_2km,14,True
+95110,Brignancourt,d14,,,38,2233,served_stop_2km_to_walk_reach,15,False
+95258,Frouville,d06,,,12,1519,served_stop_lt_2km,15,False
+95258,Frouville,d09,892.0,Grande Rue,12,367,served_stop_lt_2km,14,True
+95258,Frouville,d14,,,12,5737,served_stop_2km_to_walk_reach,15,False
+95438,Moussy,d06,,,15,1921,served_stop_lt_2km,15,False
+95438,Moussy,d09,123.0,Mairie,15,53,served_stop_lt_2km,14,True
+95438,Moussy,d14,,,15,3147,served_stop_2km_to_walk_reach,15,False
+91080,Boissy-le-Cutté,d06,184.0,Centre,23,137,served_stop_lt_2km,15,True
+91080,Boissy-le-Cutté,d09,151.0,Centre,23,116,served_stop_lt_2km,4,True
+91080,Boissy-le-Cutté,d14,,,23,1883,served_stop_lt_2km,15,False
+91184,Courdimanche-sur-Essonne,d06,99.0,Mairie,22,66,served_stop_lt_2km,15,True
+91184,Courdimanche-sur-Essonne,d09,99.0,Mairie,22,66,served_stop_lt_2km,4,True
+91184,Courdimanche-sur-Essonne,d14,,,22,1933,served_stop_lt_2km,15,False
+91507,Prunay-sur-Essonne,d06,169.0,Mairie,83,132,served_stop_lt_2km,14,True
+91507,Prunay-sur-Essonne,d09,158.0,Mairie,83,110,served_stop_lt_2km,14,True
+91507,Prunay-sur-Essonne,d14,,,83,1685,served_stop_lt_2km,15,False
+91038,Auvers-Saint-Georges,d06,204.0,Église / Rue Fontaine,38,153,served_stop_lt_2km,7,True
+91038,Auvers-Saint-Georges,d09,204.0,Église / Rue Fontaine,38,153,served_stop_lt_2km,11,True
+91038,Auvers-Saint-Georges,d14,,,38,1647,served_stop_lt_2km,15,False
+91103,Brétigny-sur-Orge,d06,207.0,11 Novembre,11,17,served_stop_lt_2km,0,True
+91103,Brétigny-sur-Orge,d09,207.0,11 Novembre,11,17,served_stop_lt_2km,0,True
+91103,Brétigny-sur-Orge,d14,207.0,11 Novembre,11,17,served_stop_lt_2km,3,True
+91332,Leudeville,d06,115.0,Mairie,33,92,served_stop_lt_2km,14,True
+91332,Leudeville,d09,62.0,Mairie,33,30,served_stop_lt_2km,3,True
+91332,Leudeville,d14,62.0,Mairie,33,30,served_stop_lt_2km,8,True
+91333,Leuville-sur-Orge,d06,329.0,Paul Fort,42,130,served_stop_lt_2km,3,True
+91333,Leuville-sur-Orge,d09,329.0,Paul Fort,42,130,served_stop_lt_2km,0,True
+91333,Leuville-sur-Orge,d14,785.0,Le Jubilé,42,529,served_stop_lt_2km,11,True
+91347,Longpont-sur-Orge,d06,171.0,Paradis,19,155,served_stop_lt_2km,0,True
+91347,Longpont-sur-Orge,d09,171.0,Paradis,19,155,served_stop_lt_2km,0,True
+91347,Longpont-sur-Orge,d14,1380.0,Pont Belles Dames / Saint Fiacre,19,1140,served_stop_lt_2km,11,True
+91376,Marolles-en-Hurepoix,d06,185.0,Mairie,31,124,served_stop_lt_2km,0,True
+91376,Marolles-en-Hurepoix,d09,185.0,Mairie,31,124,served_stop_lt_2km,0,True
+91376,Marolles-en-Hurepoix,d14,784.0,Marolles-en-Hurepoix,31,706,served_stop_lt_2km,8,True
+91457,La Norville,d06,835.0,Carrefour Mouton,27,701,served_stop_lt_2km,4,True
+91457,La Norville,d09,835.0,Carrefour Mouton,27,701,served_stop_lt_2km,1,True
+91457,La Norville,d14,1104.0,Porte d'Étampes,27,794,served_stop_lt_2km,10,True
+91552,Saint-Germain-lès-Arpajon,d06,1073.0,Pré Barallon / Salvador Allende / La Norville - Saint-Germain-lès-Arpajon,47,741,served_stop_lt_2km,4,True
+91552,Saint-Germain-lès-Arpajon,d09,687.0,Louis Babin,47,540,served_stop_lt_2km,1,True
+91552,Saint-Germain-lès-Arpajon,d14,987.0,Pré Barallon / Salvador Allende / La Norville - Saint-Germain-lès-Arpajon,47,689,served_stop_lt_2km,4,True
+91570,Saint-Michel-sur-Orge,d06,541.0,Rue Berlioz / Rue de Liers,36,391,served_stop_lt_2km,0,True
+91570,Saint-Michel-sur-Orge,d09,329.0,Rue Berlioz / Rue de Liers,36,267,served_stop_lt_2km,0,True
+91570,Saint-Michel-sur-Orge,d14,541.0,Rue Berlioz / Rue de Liers,36,391,served_stop_lt_2km,4,True
+91619,Torfou,d06,234.0,Église,20,194,served_stop_lt_2km,15,True
+91619,Torfou,d09,234.0,Église,20,194,served_stop_lt_2km,15,True
+91619,Torfou,d14,,,20,1857,served_stop_lt_2km,15,False
+91477,Palaiseau,d06,225.0,Jardins de la Hunière,51,106,served_stop_lt_2km,0,True
+91477,Palaiseau,d09,225.0,Jardins de la Hunière,51,106,served_stop_lt_2km,0,True
+91477,Palaiseau,d14,742.0,Palaiseau,51,564,served_stop_lt_2km,1,True
+92012,Boulogne-Billancourt,d06,94.0,Hôtel de Ville,2,73,served_stop_lt_2km,0,True
+92012,Boulogne-Billancourt,d09,94.0,Hôtel de Ville,2,73,served_stop_lt_2km,0,True
+92012,Boulogne-Billancourt,d14,94.0,Hôtel de Ville,2,73,served_stop_lt_2km,0,True
+92077,Ville-d'Avray,d06,32.0,Jean Rostand / Musset,22,16,served_stop_lt_2km,0,True
+92077,Ville-d'Avray,d09,32.0,Jean Rostand / Musset,22,16,served_stop_lt_2km,0,True
+92077,Ville-d'Avray,d14,32.0,Jean Rostand / Musset,22,16,served_stop_lt_2km,3,True
+94001,Ablon-sur-Seine,d06,264.0,Ablon,6,126,served_stop_lt_2km,0,True
+94001,Ablon-sur-Seine,d09,264.0,Ablon,6,126,served_stop_lt_2km,0,True
+94001,Ablon-sur-Seine,d14,264.0,Ablon,6,126,served_stop_lt_2km,3,True
+94022,Choisy-le-Roi,d06,173.0,Choisy-le-Roi,58,92,served_stop_lt_2km,0,True
+94022,Choisy-le-Roi,d09,173.0,Choisy-le-Roi,58,92,served_stop_lt_2km,0,True
+94022,Choisy-le-Roi,d14,173.0,Choisy-le-Roi,58,92,served_stop_lt_2km,2,True
+94038,L'Haÿ-les-Roses,d06,29.0,Tournelles,22,16,served_stop_lt_2km,0,True
+94038,L'Haÿ-les-Roses,d09,29.0,Tournelles,22,16,served_stop_lt_2km,0,True
+94038,L'Haÿ-les-Roses,d14,29.0,Tournelles,22,16,served_stop_lt_2km,0,True
+94054,Orly,d06,141.0,La Victoire,7,100,served_stop_lt_2km,0,True
+94054,Orly,d09,141.0,La Victoire,7,100,served_stop_lt_2km,0,True
+94054,Orly,d14,141.0,La Victoire,7,100,served_stop_lt_2km,2,True
+94077,Villeneuve-le-Roi,d06,173.0,Poincaré / Victor Hugo,29,85,served_stop_lt_2km,0,True
+94077,Villeneuve-le-Roi,d09,173.0,Poincaré / Victor Hugo,29,85,served_stop_lt_2km,0,True
+94077,Villeneuve-le-Roi,d14,178.0,Marché,29,85,served_stop_lt_2km,3,True
+94078,Villeneuve-Saint-Georges,d06,36.0,HBM,31,27,served_stop_lt_2km,0,True
+94078,Villeneuve-Saint-Georges,d09,36.0,HBM,31,27,served_stop_lt_2km,0,True
+94078,Villeneuve-Saint-Georges,d14,36.0,HBM,31,27,served_stop_lt_2km,3,True
+75112,Paris 12e Arrondissement,d06,180.0,Rue de la Gare de Reuilly,70,79,served_stop_lt_2km,0,True
+75112,Paris 12e Arrondissement,d09,180.0,Rue de la Gare de Reuilly,70,79,served_stop_lt_2km,0,True
+75112,Paris 12e Arrondissement,d14,180.0,Rue de la Gare de Reuilly,70,79,served_stop_lt_2km,0,True
+95088,Bonneuil-en-France,d06,290.0,Mairie de Bonneuil,1,236,served_stop_lt_2km,0,True
+95088,Bonneuil-en-France,d09,290.0,Mairie de Bonneuil,1,236,served_stop_lt_2km,0,True
+95088,Bonneuil-en-France,d14,1029.0,Rond-Point du Christ / Les Quinconces,1,819,served_stop_lt_2km,4,True
+95176,Cormeilles-en-Parisis,d06,511.0,Joffre - Gare,21,198,served_stop_lt_2km,0,True
+95176,Cormeilles-en-Parisis,d09,405.0,Carnot / Jules Ferry,21,198,served_stop_lt_2km,0,True
+95176,Cormeilles-en-Parisis,d14,511.0,Joffre - Gare,21,198,served_stop_lt_2km,8,True
+95456,Noisy-sur-Oise,d06,335.0,Place Gambetta,71,151,served_stop_lt_2km,7,True
+95456,Noisy-sur-Oise,d09,335.0,Place Gambetta,71,151,served_stop_lt_2km,2,True
+95456,Noisy-sur-Oise,d14,,,71,1972,served_stop_lt_2km,15,False
+77112,Chevrainvilliers,d06,138.0,Château d'Eau,31,106,served_stop_lt_2km,15,True
+77112,Chevrainvilliers,d09,138.0,Château d'Eau,31,106,served_stop_lt_2km,15,True
+77112,Chevrainvilliers,d14,,,31,1937,served_stop_lt_2km,15,False
+77269,Maincy,d06,1914.0,Centre Commercial Almont,21,1719,served_stop_lt_2km,14,True
+77269,Maincy,d09,631.0,Paul Cézanne,21,70,served_stop_lt_2km,9,True
+77269,Maincy,d14,1914.0,Centre Commercial Almont,21,1752,served_stop_lt_2km,15,True
+77435,Saint-Sauveur-sur-École,d06,1877.0,Planches,37,1557,served_stop_lt_2km,15,True
+77435,Saint-Sauveur-sur-École,d09,149.0,Mairie,37,132,served_stop_lt_2km,14,True
+77435,Saint-Sauveur-sur-École,d14,,,37,2932,served_stop_2km_to_walk_reach,15,False
+77528,Voisenon,d06,,,51,1796,served_stop_lt_2km,15,False
+77528,Voisenon,d09,314.0,Château du Jard,51,67,served_stop_lt_2km,9,True
+77528,Voisenon,d14,,,51,1856,served_stop_lt_2km,15,False
+77180,Férolles-Attilly,d06,1642.0,Rond-point du Château,13,1511,served_stop_lt_2km,15,True
+77180,Férolles-Attilly,d09,131.0,Petit Parc,13,84,served_stop_lt_2km,8,True
+77180,Férolles-Attilly,d14,,,13,2344,served_stop_2km_to_walk_reach,15,False
+94079,Villiers-sur-Marne,d06,277.0,Église / Mairie,17,117,served_stop_lt_2km,0,True
+94079,Villiers-sur-Marne,d09,277.0,Église / Mairie,17,117,served_stop_lt_2km,0,True
+94079,Villiers-sur-Marne,d14,277.0,Église / Mairie,17,117,served_stop_lt_2km,2,True
+93007,Le Blanc-Mesnil,d06,130.0,Hôtel de Ville / Mairie,33,41,served_stop_lt_2km,0,True
+93007,Le Blanc-Mesnil,d09,130.0,Hôtel de Ville / Mairie,33,41,served_stop_lt_2km,0,True
+93007,Le Blanc-Mesnil,d14,130.0,Hôtel de Ville / Mairie,33,41,served_stop_lt_2km,2,True
+94033,Fontenay-sous-Bois,d06,352.0,Le Parc,48,230,served_stop_lt_2km,0,True
+94033,Fontenay-sous-Bois,d09,352.0,Le Parc,48,230,served_stop_lt_2km,0,True
+94033,Fontenay-sous-Bois,d14,352.0,Le Parc,48,230,served_stop_lt_2km,1,True
+77392,Rouvres,d06,272.0,Église,30,163,served_stop_lt_2km,8,True
+77392,Rouvres,d09,272.0,Église,30,163,served_stop_lt_2km,7,True
+77392,Rouvres,d14,,,30,1523,served_stop_lt_2km,15,False
+95154,Chennevières-lès-Louvres,d06,157.0,Église,29,129,served_stop_lt_2km,7,True
+95154,Chennevières-lès-Louvres,d09,157.0,Église,29,129,served_stop_lt_2km,7,True
+95154,Chennevières-lès-Louvres,d14,1705.0,Ferme de Vaulerand,29,1560,served_stop_lt_2km,15,True
+95212,Épiais-lès-Louvres,d06,219.0,Centre,19,195,served_stop_lt_2km,7,True
+95212,Épiais-lès-Louvres,d09,219.0,Centre,19,195,served_stop_lt_2km,7,True
+95212,Épiais-lès-Louvres,d14,,,19,1719,served_stop_lt_2km,15,False
+95580,Saint-Witz,d06,237.0,Moulin,18,202,served_stop_lt_2km,8,True
+95580,Saint-Witz,d09,237.0,Moulin,18,202,served_stop_lt_2km,7,True
+95580,Saint-Witz,d14,,,18,1881,served_stop_lt_2km,15,False
+77194,Forges,d06,,,116,1737,served_stop_lt_2km,15,False
+77194,Forges,d09,323.0,Petites Maisons,116,219,served_stop_lt_2km,15,True
+77194,Forges,d14,,,116,1737,served_stop_lt_2km,15,False
+77202,La Genevraye,d06,,,42,1996,served_stop_lt_2km,15,False
+77202,La Genevraye,d09,303.0,Mairie,42,144,served_stop_lt_2km,15,True
+77202,La Genevraye,d14,,,42,1996,served_stop_lt_2km,15,False
+77409,Saint-Germain-Laval,d06,660.0,Saint-Pierre Centre Commercial,35,488,served_stop_lt_2km,15,True
+77409,Saint-Germain-Laval,d09,660.0,Saint-Pierre Centre Commercial,35,488,served_stop_lt_2km,15,True
+77409,Saint-Germain-Laval,d14,,,35,1570,served_stop_lt_2km,15,False
+77010,Aubepierre-Ozouer-le-Repos,d06,,,119,1866,served_stop_lt_2km,15,False
+77010,Aubepierre-Ozouer-le-Repos,d09,243.0,La Noue,119,147,served_stop_lt_2km,15,True
+77010,Aubepierre-Ozouer-le-Repos,d14,,,119,1815,served_stop_lt_2km,15,False
+77052,Bréau,d06,,,46,1912,served_stop_lt_2km,15,False
+77052,Bréau,d09,276.0,Auberge,46,108,served_stop_lt_2km,15,True
+77052,Bréau,d14,,,46,4085,served_stop_2km_to_walk_reach,15,False
+77534,Yèbles,d06,1113.0,Nogent-sur-Avon,18,770,served_stop_lt_2km,15,True
+77534,Yèbles,d09,338.0,Église,18,256,served_stop_lt_2km,8,True
+77534,Yèbles,d14,,,18,1762,served_stop_lt_2km,15,False
+77095,Charny,d06,,,20,1905,served_stop_lt_2km,15,False
+77095,Charny,d09,183.0,Gare Routière,20,132,served_stop_lt_2km,7,True
+77095,Charny,d14,,,20,5508,served_stop_2km_to_walk_reach,15,False
+77248,Lesches,d06,442.0,Mairie / Chemin des Vignes,8,386,served_stop_lt_2km,6,True
+77248,Lesches,d09,384.0,Mairie / Chemin des Vignes,8,365,served_stop_lt_2km,8,True
+77248,Lesches,d14,,,8,1848,served_stop_lt_2km,15,False
+77276,Mareuil-lès-Meaux,d06,57.0,Avenue de la Brie,39,44,served_stop_lt_2km,7,True
+77276,Mareuil-lès-Meaux,d09,57.0,Avenue de la Brie,39,44,served_stop_lt_2km,2,True
+77276,Mareuil-lès-Meaux,d14,,,39,1966,served_stop_lt_2km,15,False
+77408,Saint-Fiacre,d06,,,36,1907,served_stop_lt_2km,15,False
+77408,Saint-Fiacre,d09,215.0,École - Mairie / Place du Breuil,36,37,served_stop_lt_2km,7,True
+77408,Saint-Fiacre,d14,,,36,3669,served_stop_2km_to_walk_reach,15,False
+77505,Villemareuil,d06,,,98,1818,served_stop_lt_2km,15,False
+77505,Villemareuil,d09,670.0,Centre,98,203,served_stop_lt_2km,15,True
+77505,Villemareuil,d14,,,98,4370,served_stop_2km_to_walk_reach,15,False
+77193,Forfry,d06,,,28,1722,served_stop_lt_2km,15,False
+77193,Forfry,d09,39.0,Mairie,28,25,served_stop_lt_2km,7,True
+77193,Forfry,d14,,,28,2393,served_stop_2km_to_walk_reach,15,False
+77205,Gesvres-le-Chapitre,d06,,,15,1967,served_stop_lt_2km,15,False
+77205,Gesvres-le-Chapitre,d09,318.0,Centre,15,121,served_stop_lt_2km,7,True
+77205,Gesvres-le-Chapitre,d14,,,15,3089,served_stop_2km_to_walk_reach,15,False
+77090,La Chapelle-Saint-Sulpice,d06,1991.0,Pavé du Roy,22,1792,served_stop_lt_2km,15,True
+77090,La Chapelle-Saint-Sulpice,d09,189.0,Roger Frisson,22,93,served_stop_lt_2km,15,True
+77090,La Chapelle-Saint-Sulpice,d14,1991.0,Pavé du Roy,22,1814,served_stop_lt_2km,15,True
+77298,Mons-en-Montois,d06,,,34,1748,served_stop_lt_2km,15,False
+77298,Mons-en-Montois,d09,360.0,Le Villé,34,230,served_stop_lt_2km,15,True
+77298,Mons-en-Montois,d14,,,34,7904,no_served_stop_within_walk_reach,15,False
+77357,Pécy,d06,,,83,1826,served_stop_lt_2km,15,False
+77357,Pécy,d09,1392.0,Mairie,83,865,served_stop_lt_2km,15,True
+77357,Pécy,d14,,,83,4539,served_stop_2km_to_walk_reach,15,False
+77418,Saint-Loup-de-Naud,d06,,,32,1928,served_stop_lt_2km,15,False
+77418,Saint-Loup-de-Naud,d09,317.0,Courton le Bas,32,197,served_stop_lt_2km,15,True
+77418,Saint-Loup-de-Naud,d14,,,32,2269,served_stop_2km_to_walk_reach,15,False
+77433,Beautheil-Saints,d06,349.0,La Garenne,45,264,served_stop_lt_2km,15,True
+77433,Beautheil-Saints,d09,349.0,La Garenne,45,264,served_stop_lt_2km,15,True
+77433,Beautheil-Saints,d14,,,45,1810,served_stop_lt_2km,15,False
+77117,Citry,d06,264.0,Rue des Meulières,68,124,served_stop_lt_2km,15,True
+77117,Citry,d09,264.0,Rue des Meulières,68,124,served_stop_lt_2km,15,True
+77117,Citry,d14,,,68,1643,served_stop_lt_2km,15,False
+77290,Méry-sur-Marne,d06,143.0,50 Rue de Courcelles,92,105,served_stop_lt_2km,15,True
+77290,Méry-sur-Marne,d09,143.0,50 Rue de Courcelles,92,105,served_stop_lt_2km,7,True
+77290,Méry-sur-Marne,d14,,,92,1574,served_stop_lt_2km,15,False
+77397,Saâcy-sur-Marne,d06,370.0,Rond-Point - Centre,45,197,served_stop_lt_2km,6,True
+77397,Saâcy-sur-Marne,d09,370.0,Rond-Point - Centre,45,197,served_stop_lt_2km,7,True
+77397,Saâcy-sur-Marne,d14,1946.0,Nanteuil - Saâcy,45,1635,served_stop_lt_2km,15,True
+77356,Passy-sur-Seine,d06,,,5,1701,served_stop_lt_2km,15,False
+77356,Passy-sur-Seine,d09,16.0,Mairie,5,11,served_stop_lt_2km,15,True
+77356,Passy-sur-Seine,d14,,,5,12194,no_served_stop_within_walk_reach,15,False

@@ -1,0 +1,1240 @@
+/*
+ * STARWAY - styles des fonctionnalités : panneau de preuve, carte miroir, affiche.
+ * Couleurs : variables de styles.css (miroir de src/theme/tokens.ts). Jost partout, 12 px minimum,
+ * aucune lueur sur le texte (la lueur est réservée aux étoiles).
+ */
+
+/* ---------- Panneau de preuve (spec b) ---------- */
+.proof-panel.pf {
+  top: var(--sky-panel-top);
+  right: 24px;
+  width: min(380px, calc(100vw - 40px));
+  padding: 20px 24px;
+  background: rgba(16, 27, 53, 0.9);
+  border: 1px solid rgba(168, 183, 209, 0.16);
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .proof-panel.pf {
+    width: 340px;
+  }
+}
+
+.pf-eyebrow {
+  color: var(--accent);
+  letter-spacing: 0.16em;
+  font-weight: 500;
+}
+
+.proof-panel.pf h2 {
+  margin: 4px 0 6px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.pf-place p {
+  margin: 0 0 2px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
+
+.pf-more {
+  font-size: 13px;
+}
+
+.pf-section,
+.pf-legs,
+.pf-cols,
+.pf-side {
+  margin-top: 16px;
+}
+
+.pf-section {
+  padding-top: 16px;
+  border-top: 1px solid rgba(168, 183, 209, 0.12);
+}
+
+.pf-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.pf-cols > .pf-side {
+  margin-top: 0;
+}
+
+.pf-side-head {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.pf-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.pf-verdict {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 16px 0 0;
+  padding: 2px 0 2px 12px;
+  border-left: 3px dashed #7a8cad;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
+
+.pf-side .pf-verdict {
+  margin-top: 8px;
+}
+
+.pf-verdict strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.pf-cols .pf-verdict strong {
+  font-size: 15px;
+}
+
+.pf-verdict-accessible {
+  border-left-style: solid;
+  border-left-color: var(--accessible);
+}
+
+.pf-verdict-unknown {
+  border-left-style: dotted;
+}
+
+.pf-glyph {
+  flex: none;
+  width: 14px;
+  height: 14px;
+}
+
+.pf-legs {
+  display: grid;
+  gap: 16px;
+}
+
+.pf-leg-min {
+  display: block;
+  margin-top: 2px;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.pf-cols .pf-leg-min {
+  font-size: 24px;
+}
+
+.pf-leg-min small {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-dim);
+}
+
+.pf-none {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-dim);
+}
+
+.pf-bar {
+  position: relative;
+  height: 4px;
+  margin: 22px 0 6px;
+  border-radius: 2px;
+  background: rgba(168, 183, 209, 0.14);
+}
+
+.pf-bar-fill {
+  position: absolute;
+  inset: 0;
+  border-radius: 2px;
+  transform-origin: left center;
+  background: var(--dim);
+}
+
+.pf-leg.is-within .pf-bar-fill {
+  background: var(--accessible);
+}
+
+.pf-bar-budget {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 0;
+  border-left: 1px solid var(--text);
+}
+
+.pf-bar-budget span {
+  position: absolute;
+  top: -17px;
+  left: 0;
+  transform: translateX(-50%);
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--text-dim);
+}
+
+.pf-leg-line {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.pf-note {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* Vélib' (D-027) : avertissement publié en tête du panneau de preuve, texte secondaire, jamais cyan ni or */
+.pf-velib {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
+.velib-warning strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.mirror-legend .mirror-legend-note {
+  flex-basis: 100%;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.pf-jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pf-stat {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.pf-caption {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* Demande de Nicolas (12/11) : durées du verdict en tête de la fiche, sous la barre de part */
+.proof-panel .pf-od-legs {
+  margin: var(--space-1) 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+/* Audit d'affichage du 10/11 : pli « Coût et carbone », une ligne par information, le détail (titres, méthode, règles) dans un « i » */
+.proof-panel .pf-nowrap {
+  white-space: nowrap;
+}
+
+.proof-panel .pf-cost-line {
+  margin: 0 0 var(--space-1);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.pf-flows p,
+.pf-cost p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
+
+.pf-fact-value {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.pf-minibar {
+  height: 4px;
+  margin: 8px 0 4px;
+  border-radius: 2px;
+  background: rgba(168, 183, 209, 0.14);
+}
+
+.pf-minibar span {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  /* jamais cyan : un flux est une pratique, pas une accessibilité */
+  background: rgba(201, 211, 245, 0.8);
+}
+
+.pf-src {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.pf-dim {
+  color: var(--text-dim);
+}
+
+.pf-footer {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(168, 183, 209, 0.12);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.pf-footer p {
+  margin: 0 0 6px;
+}
+
+.pf-footer .link-btn {
+  font-size: 12px;
+}
+
+.pf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.pf-btn {
+  min-height: 40px;
+}
+
+/* ---------- Carte miroir (spec a) ---------- */
+/*
+ * Pendant la carte, tout ce qui appartient au ciel se retire (280 ms) et revient en 450 ms : couche
+ * des astres (.explorer, dont les en-têtes du diptyque), légende, zoom, contraste du jour, et la
+ * barre de scénario (.scenario-bar), remplacée par une ligne compacte en tête de carte.
+ */
+.explorer,
+.legend,
+.zoom-controls,
+.scenario-bar,
+.contrast-card {
+  transition:
+    opacity 450ms var(--ease-ui),
+    visibility 0s linear 0s;
+}
+
+html.mirror-on .explorer,
+html.mirror-on .legend,
+html.mirror-on .zoom-controls,
+html.mirror-on .scenario-bar,
+html.mirror-on .contrast-card {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 280ms var(--ease-ui),
+    visibility 0s linear 280ms;
+}
+/* La barre porte un style en ligne de Motion (entrée D-021 : opacity et visibility) qui l'emporterait sur
+   la règle ci-dessus : sans !important, elle restait visible sous la carte et sa légende */
+html.mirror-on .scenario-bar {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+html.reduced-motion .explorer,
+html.reduced-motion .legend,
+html.reduced-motion .zoom-controls,
+html.reduced-motion .scenario-bar,
+html.reduced-motion .contrast-card {
+  transition-duration: 150ms, 0s;
+}
+
+.mirror {
+  position: fixed;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+  /* pincement et glisser au doigt : gérés par la carte, pas par le navigateur */
+  touch-action: none;
+  user-select: none;
+}
+
+.mirror-svg {
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+  user-select: none;
+}
+
+.mirror-svg path {
+  vector-effect: non-scaling-stroke;
+}
+
+.mirror-communes path {
+  fill: none;
+  stroke: rgba(168, 183, 209, 0.14);
+  stroke-width: 0.5px;
+}
+
+.mirror-deps {
+  fill: none;
+  stroke: rgba(168, 183, 209, 0.32);
+  stroke-width: 1px;
+  stroke-linejoin: round;
+}
+
+.terr {
+  pointer-events: visiblePainted;
+  cursor: pointer;
+  stroke-linejoin: round;
+  transition:
+    fill-opacity 120ms,
+    stroke 120ms;
+}
+
+.terr-accessible {
+  fill: #9ceaff;
+  fill-opacity: 0.16;
+  stroke: rgba(156, 234, 255, 0.7);
+  stroke-width: 1.25px;
+}
+
+.terr-off {
+  fill: #50617f;
+  fill-opacity: 0.22;
+  stroke: #7a8cad;
+  stroke-width: 1.25px;
+  stroke-dasharray: 4 3;
+}
+
+/* Aller possible, retour hors budget : trait mixte (long, court), comme le contour mi-plein mi-tirets de l'astre */
+.terr-out_only {
+  fill: #50617f;
+  fill-opacity: 0.22;
+  stroke: #7a8cad;
+  stroke-width: 1.25px;
+  stroke-dasharray: 9 2.5 2.5 2.5;
+}
+
+.terr-unknown {
+  fill: transparent;
+  stroke: #7a8cad;
+  stroke-width: 1px;
+  stroke-dasharray: 1 3;
+}
+
+.terr-neutral {
+  fill: #c9d3f5;
+  fill-opacity: 0.1;
+  stroke: none;
+}
+
+.terr-accessible.is-hover {
+  fill-opacity: 0.28;
+}
+
+/* Mode daltonien (tokens.ts mirrorCv) : accessible contre hors de portée 1,21:1 -> 1,98:1 de luminance
+   (minimum des trois simulations) ; trait plein et opaque contre les tirets : 1,27:1 -> 2,48:1 */
+[data-cv='1'] .terr-accessible {
+  fill-opacity: 0.32;
+  stroke: #9ceaff !important;
+}
+[data-cv='1'] .mirror-territories.is-od .terr-accessible {
+  stroke: #9ceaff !important;
+}
+[data-cv='1'] .terr-accessible.is-hover {
+  fill-opacity: 0.44;
+}
+[data-cv='1'] .mk-accessible {
+  background: rgba(156, 234, 255, 0.32);
+  border-color: #9ceaff;
+}
+.terr-off.is-hover,
+.terr-out_only.is-hover {
+  fill-opacity: 0.34;
+}
+.terr-neutral.is-hover {
+  fill-opacity: 0.22;
+}
+.terr.is-hover {
+  stroke: #f4f6ff;
+  stroke-width: 1.5px;
+}
+
+.mirror-origin {
+  fill: #ffe6c7;
+  fill-opacity: 0.1;
+  stroke: #ffe6c7;
+  stroke-width: 1.75px;
+  pointer-events: none;
+}
+
+.mirror-label {
+  font-size: 13px;
+  font-weight: 400;
+  fill: var(--text-dim);
+  paint-order: stroke;
+  stroke: rgba(8, 14, 32, 0.85);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.mirror-label.is-on {
+  fill: var(--text);
+}
+
+.mirror-leader {
+  stroke: rgba(168, 183, 209, 0.4);
+  stroke-width: 1px;
+}
+
+.mirror-origin-label {
+  font-size: 14px;
+  font-weight: 500;
+  fill: #ffe6c7;
+  paint-order: stroke;
+  stroke: rgba(8, 14, 32, 0.85);
+  stroke-width: 3px;
+}
+
+.mirror-poles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mirror-hit {
+  position: absolute;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  padding: 0;
+}
+
+/* Pôle hors du cadre zoomé : invisible et sans pointeur, mais atteignable au clavier (la carte se recentre) */
+.mirror-hit.is-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mirror-hit,
+.terr {
+  touch-action: none;
+}
+
+/* Surface de déplacement : tout l'écran sous la carte (le ciel dessous ne reçoit plus la molette) */
+.mirror-pan {
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+  touch-action: none;
+}
+
+.mirror-pan.is-on {
+  cursor: grab;
+}
+
+.mirror.is-dragging .mirror-pan,
+.mirror.is-dragging .terr,
+.mirror.is-dragging .mirror-hit {
+  cursor: grabbing;
+}
+
+.mirror-zoom {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 999px;
+  background: rgba(8, 14, 32, 0.6);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: auto;
+}
+
+.mirror-zoom .icon-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.mirror-zoom .zoom-level {
+  min-width: 0;
+  padding-bottom: 4px;
+}
+
+.mirror-zoom-help {
+  font-size: 12px;
+}
+
+.mirror-hit:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.mirror-tip {
+  position: absolute;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(8, 14, 32, 0.96);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--text-dim);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.mirror-tip strong {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.mirror-foot {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  pointer-events: auto;
+  padding: 12px 16px;
+  background: rgba(8, 14, 32, 0.95);
+  border: 1px solid rgba(168, 183, 209, 0.25);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.mirror-foot p {
+  margin: 6px 0 0;
+  max-width: 900px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* Grand écran : légende en colonne à droite, la carte prend toute la hauteur */
+.mirror-foot.is-side {
+  left: auto;
+  right: 24px;
+  width: 300px;
+}
+
+.mirror-foot.is-side .mirror-legend {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.mirror-foot.is-side .mirror-scale-dom {
+  margin-left: 0;
+}
+
+.mirror-foot.is-side p {
+  margin-top: 10px;
+}
+
+.mirror-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.mirror-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mk {
+  display: inline-block;
+  width: 18px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.mk-accessible {
+  background: rgba(156, 234, 255, 0.16);
+  border: 1.25px solid rgba(156, 234, 255, 0.7);
+}
+
+.mk-svg {
+  height: 12px;
+  border-radius: 0;
+}
+
+.mk-out_only-shape {
+  fill: rgba(80, 97, 127, 0.22);
+  stroke: #7a8cad;
+  stroke-width: 1.25px;
+  stroke-dasharray: 6 1.75 1.75 1.75;
+}
+
+.mk-off {
+  background: rgba(80, 97, 127, 0.22);
+  border: 1.25px dashed #7a8cad;
+}
+
+.mk-unknown {
+  border: 1px dotted #7a8cad;
+}
+
+.mk-origin {
+  background: rgba(255, 230, 199, 0.1);
+  border: 1.75px solid #ffe6c7;
+}
+
+.mirror-close {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+}
+
+.mirror-close kbd {
+  font: inherit;
+  font-size: 12px;
+  padding: 1px 6px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text-dim);
+}
+
+/* ---------- Boutons de la barre du haut (carte, affiche) et toast ---------- */
+.feature-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feature-btn svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.feature-btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.features-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--bar-h, 110px) + 24px);
+  z-index: 70;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+  color: var(--text);
+}
+
+.poster-menu {
+  position: relative;
+}
+
+.poster-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 40;
+  min-width: 250px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+
+.poster-list button {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.poster-list button span {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.poster-list button:hover,
+.poster-list button:focus-visible {
+  background: rgba(179, 155, 255, 0.12);
+}
+
+/* ---------- Halo : niveau de vie (spec c), méthode repliée ---------- */
+.halo-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+
+.halo-stat-value {
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.halo-stat.is-hidden .halo-stat-value {
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-dim);
+}
+
+.halo-stat-caption {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.halo-denominator {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.halo-denominator p {
+  margin: 0;
+}
+
+.halo-denominator ul {
+  margin: 2px 0 0;
+  padding-left: 16px;
+}
+
+.halo-guard {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.halo-method {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.halo-method summary {
+  cursor: pointer;
+  color: var(--text);
+}
+
+.halo-method p {
+  margin: 6px 0 0;
+}
+
+/* Ligne du haut de la carte : retour, scénario compact, sélecteur A/B du diptyque */
+.mirror-head {
+  position: absolute;
+  top: calc(var(--banner-h) + 72px);
+  left: 24px;
+  right: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  pointer-events: none;
+  z-index: 999;
+  background: rgba(8, 14, 32, 0.95);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.mirror-scenario {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 14px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+.mirror-scn-origin {
+  font-weight: 500;
+  color: var(--guide, #ffe6c7);
+}
+
+.mirror-scn-count {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.mirror-side {
+  pointer-events: auto;
+  margin-left: auto;
+}
+
+.mirror-side button {
+  min-height: 40px;
+}
+
+/* Commune comparée (diptyque) : contour en tirets, nom préfixé « B · » */
+.mirror-origin.is-b {
+  fill-opacity: 0.06;
+  stroke-opacity: 0.7;
+  stroke-width: 1.25px;
+  stroke-dasharray: 6 3;
+}
+
+.mk-origin.is-b {
+  background: rgba(255, 230, 199, 0.06);
+  border: 1.25px dashed rgba(255, 230, 199, 0.7);
+}
+
+.mirror-discs {
+  pointer-events: none;
+}
+
+/* Échelle graphique dans la ligne de légende : jamais sur la carte ni sur la phrase de source */
+.mirror-scale-dom {
+  margin-left: auto;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+.mirror-scale-bar {
+  display: inline-block;
+  height: 5px;
+  border: 1px solid var(--text-dim);
+  border-top: 0;
+}
+
+@media (max-width: 430px), (max-width: 1023px) and (max-height: 480px) {
+  .mirror-head {
+    top: calc(var(--banner-h) + 60px);
+    left: 12px;
+    right: 12px;
+  }
+  .mirror-scenario {
+    font-size: 13px;
+    gap: 2px 10px;
+  }
+  .mirror-side {
+    margin-left: 0;
+  }
+  .mirror-close,
+  .mirror-side button {
+    min-height: 44px;
+  }
+  .mirror-foot {
+    left: 12px;
+    right: 12px;
+  }
+  .mirror-legend {
+    font-size: 12px;
+    gap: 4px 12px;
+  }
+  .mirror-foot p {
+    font-size: 12px;
+  }
+  .mirror-scale-dom {
+    margin-left: 0;
+  }
+}
+
+/* ---------- Feuilles du bas, téléphone ≤ 430 px (spec e) ---------- */
+/* Le panneau de preuve et le halo remplacent la feuille de scénario, défilables, 75 vh au plus. */
+.proof-panel.pf.is-sheet,
+.halo-panel.is-sheet {
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-height: 75vh;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 0 16px calc(16px + env(safe-area-inset-bottom));
+  border-radius: 20px 20px 0 0;
+  border-bottom: 0;
+  z-index: 30;
+}
+
+/* Poignée 36×4 px dans une zone tactile de 44 px : on glisse vers le bas pour fermer */
+.sheet-handle {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  margin: 0 -16px 4px;
+  cursor: grab;
+  touch-action: none;
+  background: inherit;
+}
+
+.sheet-handle span {
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(168, 183, 209, 0.4);
+}
+
+.is-sheet header .icon-btn {
+  width: 44px;
+  height: 44px;
+  top: -6px;
+}
+
+.is-sheet .pf-btn,
+.is-sheet .halo-tabs button {
+  min-height: 44px;
+}
+
+.is-sheet .pf-cols {
+  gap: 12px;
+}
+
+@media (max-width: 430px), (max-width: 1023px) and (max-height: 480px) {
+  html.sheet-open .scenario-bar,
+  html.sheet-open .legend {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 280ms var(--ease-ui),
+      visibility 0s linear 280ms;
+  }
+}
+
+/* Halo en diptyque : « A : x · B : y », une ligne par catégorie */
+.halo-pairs {
+  margin: 12px 0 0;
+  padding: 10px 0 0;
+  list-style: none;
+  border-top: 1px solid rgba(168, 183, 209, 0.12);
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.halo-pairs li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2px 12px;
+}
+
+/* Le libellé passe à la ligne, la paire de valeurs reste entière et alignée à droite */
+.halo-pairs .halo-value {
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.halo-pairs .halo-label {
+  color: var(--text-dim);
+}
+
+/* Étoile filante : déclencheur et mention « trait symbolique » (jamais un itinéraire) */
+.pf-trace {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.pf-trace .link-btn {
+  font-size: 12px;
+  min-height: 32px;
+}
+
+.is-sheet .pf-trace .link-btn {
+  min-height: 44px;
+}
+
+/* Flux observés : sur-titre visible (un autre type de chiffre que l'accessibilité) */
+.pf-flows p.pf-label {
+  margin: 0 0 2px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.pf-flows-note {
+  margin-bottom: 8px;
+}
+
+/* Visite (proofFocus: 'flows') : la section lue par la voix est soulignée, sans animation (accent, jamais cyan) */
+.pf-flows[data-tour-focus] {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Découvertes : unité des écarts dite une fois pour toute la liste */
+.ins-head {
+  margin: 6px 12px 4px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* ---------- Carte miroir, table OD (D-019) : chaque commune est une destination ---------- */
+.mirror-communes.is-od path {
+  pointer-events: visiblePainted;
+}
+
+.mirror-communes path.mc-accessible {
+  fill: #9ceaff;
+  fill-opacity: 0.44;
+  stroke: rgba(156, 234, 255, 0.55) !important;
+}
+
+/* Aller possible, retour hors de portée : hachures (forme), pas seulement une teinte */
+.mirror-communes path.mc-out_only {
+  fill: url(#mc-hatch);
+}
+
+.mirror-communes path.mc-none {
+  fill: #50617f;
+  fill-opacity: 0.16;
+}
+
+.mirror-communes path.mc-unknown {
+  fill: transparent;
+  stroke-dasharray: 1 2.5;
+}
+
+/* Commune d'origine : trajet non mesuré, ni cyan ni gris (son contour chaud est tracé par .mirror-origin) */
+.mirror-communes path.mc-self {
+  fill: transparent;
+}
+
+.mirror-communes.is-od path:hover {
+  stroke: #f4f6ff !important;
+  stroke-width: 1px;
+}
+
+/* En table OD, le territoire d'un pôle n'est qu'un contour : l'état est porté par ses communes */
+.mirror-territories.is-od .terr {
+  fill: transparent !important;
+  stroke: rgba(244, 246, 255, 0.55) !important;
+  stroke-width: 1.25px;
+  stroke-dasharray: none;
+  pointer-events: stroke;
+}
+
+.mirror-territories.is-od .terr.is-hover {
+  stroke: #f4f6ff !important;
+  stroke-width: 2px;
+}
+
+/*
+ * D-030 (44 astres, table OD) : contour d'astre en deux couches, clair sur liseré sombre, nettement plus épais que
+ * les limites de communes (1 px) et lisible sur communes atteintes (claires), hors de portée (sombres) et en daltonien
+ * (contraste de luminance, pas de teinte). Valeurs : jetons mirrorAstre (theme/tokens.ts), posés en variables par
+ * MirrorMap.tsx.
+ */
+.mirror-territories.is-astres .terr-casing {
+  fill: none;
+  stroke: var(--astre-casing);
+  stroke-opacity: var(--astre-casing-a);
+  stroke-width: var(--astre-casing-w);
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.mirror-territories.is-od.is-astres .terr {
+  stroke: rgba(244, 246, 255, var(--astre-a)) !important;
+  stroke-width: var(--astre-w);
+}
+
+.mirror-territories.is-od.is-astres .terr.is-hover {
+  stroke: #f4f6ff !important;
+  stroke-width: calc(var(--astre-w) + var(--astre-hover-extra));
+}
+
+.mk-terr-astre {
+  background: transparent;
+  border: 2.5px solid rgba(244, 246, 255, 0.95);
+  box-shadow: 0 0 0 1px rgba(11, 18, 38, 0.75);
+}
+.mk-c-accessible {
+  background: rgba(156, 234, 255, 0.34);
+  border: 1px solid rgba(156, 234, 255, 0.55);
+}
+
+.mk-c-out_only {
+  background: repeating-linear-gradient(45deg, #9fb0cf 0 1.4px, rgba(80, 97, 127, 0.28) 1.4px 3.6px);
+  border: 1px solid rgba(168, 183, 209, 0.3);
+}
+
+.mk-c-none {
+  background: rgba(80, 97, 127, 0.16);
+  border: 1px solid rgba(168, 183, 209, 0.3);
+}
+
+.mk-terr-od {
+  border: 1.25px solid rgba(244, 246, 255, 0.55);
+}
+
+.mirror-tip-commune {
+  pointer-events: none;
+  z-index: 5;
+}

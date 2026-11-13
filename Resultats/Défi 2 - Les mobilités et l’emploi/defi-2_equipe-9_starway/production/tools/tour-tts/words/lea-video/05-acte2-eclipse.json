@@ -1,0 +1,195 @@
+{
+ "tour": "lea-video",
+ "stem": "05-acte2-eclipse",
+ "mp3Sha256": "3bfe37f6569be287e2d55c023cd1c731c3705d34a5bde6b159a441186c1f702e",
+ "text": "Passons au soir : un poste de 14 heures à 22 heures. Les transports répondent-ils aux besoins du monde du travail ? Même point de départ, même temps de trajet : le ciel est recalculé, aller et retour.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Passons au soir un poste de 14h00 à 22h00. Les transports répondent ils aux besoins du monde du travail ? Même point de départ, même temps de trajet, le ciel est recalculé. Allez et retour.",
+ "words": [
+  {
+   "word": "passons",
+   "startMs": 70,
+   "endMs": 310
+  },
+  {
+   "word": "au",
+   "startMs": 310,
+   "endMs": 390
+  },
+  {
+   "word": "soir",
+   "startMs": 390,
+   "endMs": 830
+  },
+  {
+   "word": "un",
+   "startMs": 830,
+   "endMs": 1070
+  },
+  {
+   "word": "poste",
+   "startMs": 1070,
+   "endMs": 1350
+  },
+  {
+   "word": "de",
+   "startMs": 1350,
+   "endMs": 1430
+  },
+  {
+   "word": "quatorze",
+   "startMs": 1470,
+   "endMs": 1870
+  },
+  {
+   "word": "heures",
+   "startMs": 1870,
+   "endMs": 2110
+  },
+  {
+   "word": "à",
+   "startMs": 2110,
+   "endMs": 2190
+  },
+  {
+   "word": "vingt",
+   "startMs": 2190,
+   "endMs": 2350
+  },
+  {
+   "word": "deux",
+   "startMs": 2350,
+   "endMs": 2590
+  },
+  {
+   "word": "heures",
+   "startMs": 2590,
+   "endMs": 2910
+  },
+  {
+   "word": "les",
+   "startMs": 2990,
+   "endMs": 3190
+  },
+  {
+   "word": "transports",
+   "startMs": 3190,
+   "endMs": 3630
+  },
+  {
+   "word": "répondent",
+   "startMs": 3630,
+   "endMs": 3990
+  },
+  {
+   "word": "ils",
+   "startMs": 3990,
+   "endMs": 4190
+  },
+  {
+   "word": "aux",
+   "startMs": 4190,
+   "endMs": 4310
+  },
+  {
+   "word": "besoins",
+   "startMs": 4310,
+   "endMs": 4630
+  },
+  {
+   "word": "du",
+   "startMs": 4630,
+   "endMs": 4750
+  },
+  {
+   "word": "monde",
+   "startMs": 4750,
+   "endMs": 4870
+  },
+  {
+   "word": "du",
+   "startMs": 4870,
+   "endMs": 4990
+  },
+  {
+   "word": "travail",
+   "startMs": 4990,
+   "endMs": 5510
+  },
+  {
+   "word": "même",
+   "startMs": 5670,
+   "endMs": 6030
+  },
+  {
+   "word": "point",
+   "startMs": 6030,
+   "endMs": 6190
+  },
+  {
+   "word": "de",
+   "startMs": 6190,
+   "endMs": 6230
+  },
+  {
+   "word": "départ",
+   "startMs": 6230,
+   "endMs": 6750
+  },
+  {
+   "word": "même",
+   "startMs": 6750,
+   "endMs": 7030
+  },
+  {
+   "word": "temps",
+   "startMs": 7030,
+   "endMs": 7150
+  },
+  {
+   "word": "de",
+   "startMs": 7150,
+   "endMs": 7190
+  },
+  {
+   "word": "trajet",
+   "startMs": 7190,
+   "endMs": 7670
+  },
+  {
+   "word": "le",
+   "startMs": 7710,
+   "endMs": 7950
+  },
+  {
+   "word": "ciel",
+   "startMs": 7950,
+   "endMs": 8390
+  },
+  {
+   "word": "est",
+   "startMs": 8390,
+   "endMs": 8470
+  },
+  {
+   "word": "recalculé",
+   "startMs": 8510,
+   "endMs": 9350
+  },
+  {
+   "word": "allez",
+   "startMs": 9350,
+   "endMs": 9910
+  },
+  {
+   "word": "et",
+   "startMs": 9950,
+   "endMs": 10110
+  },
+  {
+   "word": "retour",
+   "startMs": 10110,
+   "endMs": 10630
+  }
+ ]
+}

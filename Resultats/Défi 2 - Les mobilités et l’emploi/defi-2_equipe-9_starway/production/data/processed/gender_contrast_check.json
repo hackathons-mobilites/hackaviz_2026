@@ -1,0 +1,536 @@
+{
+ "note": "Contrôle descriptif : l'écart F - H d'un mode dépasse-t-il la marge d'erreur à 95 % publiée ? Aucun seuil inventé ; pas de causalité ; 'not_evaluable' quand la marge n'est pas publiée.",
+ "source": "GEN01 (INSEE NAV2A 2023), marges : fiche INSEE sur la précision du recensement",
+ "summary": {
+  "communes_evaluated": 1285,
+  "per_mode": {
+   "transit": {
+    "above_margin": 288,
+    "within_margin": 844,
+    "not_evaluable": 153
+   },
+   "car": {
+    "above_margin": 223,
+    "within_margin": 1056,
+    "not_evaluable": 6
+   },
+   "bike": {
+    "above_margin": 82,
+    "within_margin": 232,
+    "not_evaluable": 971
+   },
+   "walk": {
+    "above_margin": 165,
+    "within_margin": 390,
+    "not_evaluable": 730
+   },
+   "other": {
+    "above_margin": 140,
+    "within_margin": 703,
+    "not_evaluable": 442
+   }
+  },
+  "communes_with_any_mode_above_margin": 360,
+  "transit_above_margin_communes": 288,
+  "transit_above_margin_direction": {
+   "F_higher": 279,
+   "H_higher": 9
+  },
+  "focus": {
+   "78358": {
+    "insee": "78358",
+    "actifs_F": 5655,
+    "actifs_H": 5749,
+    "modes": {
+     "transit": {
+      "diff": 6.7,
+      "margin": 6.16,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "car": {
+      "diff": -4.3,
+      "margin": 3.41,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "bike": {
+      "diff": -1.2,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "walk": {
+      "diff": 0.4,
+      "margin": 1.13,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "other": {
+      "diff": -1.6,
+      "margin": 1.5,
+      "verdict": "above_margin",
+      "reason": null
+     }
+    },
+    "above_margin": [
+     "transit",
+     "car",
+     "other"
+    ]
+   },
+   "78418": {
+    "insee": "78418",
+    "actifs_F": 3602,
+    "actifs_H": 3351,
+    "modes": {
+     "transit": {
+      "diff": 9.5,
+      "margin": 5.06,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "car": {
+      "diff": -7.0,
+      "margin": 6.24,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "bike": {
+      "diff": -0.3,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "walk": {
+      "diff": 3.3,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "other": {
+      "diff": -5.5,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     }
+    },
+    "above_margin": [
+     "transit",
+     "car"
+    ]
+   },
+   "78005": {
+    "insee": "78005",
+    "actifs_F": 5381,
+    "actifs_H": 5181,
+    "modes": {
+     "transit": {
+      "diff": 6.2,
+      "margin": 5.32,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "car": {
+      "diff": -6.7,
+      "margin": 4.61,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "bike": {
+      "diff": -0.8,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "walk": {
+      "diff": 2.1,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "other": {
+      "diff": -0.7,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     }
+    },
+    "above_margin": [
+     "transit",
+     "car"
+    ]
+   },
+   "78124": {
+    "insee": "78124",
+    "actifs_F": 3627,
+    "actifs_H": 3749,
+    "modes": {
+     "transit": {
+      "diff": 9.5,
+      "margin": 6.54,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "car": {
+      "diff": -4.6,
+      "margin": 4.61,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "bike": {
+      "diff": -0.9,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "walk": {
+      "diff": 2.5,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "other": {
+      "diff": -6.7,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     }
+    },
+    "above_margin": [
+     "transit"
+    ]
+   },
+   "78146": {
+    "insee": "78146",
+    "actifs_F": 7105,
+    "actifs_H": 7492,
+    "modes": {
+     "transit": {
+      "diff": 7.4,
+      "margin": 3.62,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "car": {
+      "diff": -5.1,
+      "margin": 3.47,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "bike": {
+      "diff": -1.1,
+      "margin": 1.06,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "walk": {
+      "diff": 3.5,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "other": {
+      "diff": -4.8,
+      "margin": 1.36,
+      "verdict": "above_margin",
+      "reason": null
+     }
+    },
+    "above_margin": [
+     "transit",
+     "car",
+     "bike",
+     "other"
+    ]
+   },
+   "78396": {
+    "insee": "78396",
+    "actifs_F": 1370,
+    "actifs_H": 1415,
+    "modes": {
+     "transit": {
+      "diff": 14.6,
+      "margin": 12.9,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "car": {
+      "diff": -6.5,
+      "margin": 13.51,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "bike": {
+      "diff": -2.0,
+      "margin": 3.08,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "walk": {
+      "diff": -0.2,
+      "margin": 3.54,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "other": {
+      "diff": -5.9,
+      "margin": 4.96,
+      "verdict": "above_margin",
+      "reason": null
+     }
+    },
+    "above_margin": [
+     "transit",
+     "other"
+    ]
+   },
+   "78481": {
+    "insee": "78481",
+    "actifs_F": 3666,
+    "actifs_H": 3724,
+    "modes": {
+     "transit": {
+      "diff": 9.9,
+      "margin": 5.76,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "car": {
+      "diff": -7.2,
+      "margin": 5.61,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "bike": {
+      "diff": -0.5,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "walk": {
+      "diff": 2.0,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "other": {
+      "diff": -4.2,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     }
+    },
+    "above_margin": [
+     "transit",
+     "car"
+    ]
+   },
+   "78551": {
+    "insee": "78551",
+    "actifs_F": 9961,
+    "actifs_H": 10822,
+    "modes": {
+     "transit": {
+      "diff": 2.1,
+      "margin": 3.82,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "car": {
+      "diff": -3.8,
+      "margin": 2.83,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "bike": {
+      "diff": -0.6,
+      "margin": 0.78,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "walk": {
+      "diff": 2.9,
+      "margin": 1.36,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "other": {
+      "diff": -0.6,
+      "margin": 1.2,
+      "verdict": "within_margin",
+      "reason": null
+     }
+    },
+    "above_margin": [
+     "car",
+     "walk"
+    ]
+   },
+   "78586": {
+    "insee": "78586",
+    "actifs_F": 12112,
+    "actifs_H": 12735,
+    "modes": {
+     "transit": {
+      "diff": 9.4,
+      "margin": 3.26,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "car": {
+      "diff": -6.7,
+      "margin": 2.84,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "bike": {
+      "diff": -2.9,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "walk": {
+      "diff": 1.6,
+      "margin": 0.71,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "other": {
+      "diff": -1.5,
+      "margin": 0.85,
+      "verdict": "above_margin",
+      "reason": null
+     }
+    },
+    "above_margin": [
+     "transit",
+     "car",
+     "walk",
+     "other"
+    ]
+   },
+   "78650": {
+    "insee": "78650",
+    "actifs_F": 3370,
+    "actifs_H": 3746,
+    "modes": {
+     "transit": {
+      "diff": 3.4,
+      "margin": 7.14,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "car": {
+      "diff": -1.6,
+      "margin": 4.1,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "bike": {
+      "diff": 1.4,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "walk": {
+      "diff": 0.5,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "other": {
+      "diff": -3.8,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     }
+    },
+    "above_margin": []
+   },
+   "95176": {
+    "insee": "95176",
+    "actifs_F": 6351,
+    "actifs_H": 6474,
+    "modes": {
+     "transit": {
+      "diff": 11.2,
+      "margin": 3.78,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "car": {
+      "diff": -7.7,
+      "margin": 4.31,
+      "verdict": "above_margin",
+      "reason": null
+     },
+     "bike": {
+      "diff": -1.8,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "walk": {
+      "diff": 1.3,
+      "margin": null,
+      "verdict": "not_evaluable",
+      "reason": "marge d'erreur absente"
+     },
+     "other": {
+      "diff": -3.0,
+      "margin": 1.39,
+      "verdict": "above_margin",
+      "reason": null
+     }
+    },
+    "above_margin": [
+     "transit",
+     "car",
+     "other"
+    ]
+   },
+   "95257": {
+    "insee": "95257",
+    "actifs_F": 1111,
+    "actifs_H": 1006,
+    "modes": {
+     "transit": {
+      "diff": 11.9,
+      "margin": 13.69,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "car": {
+      "diff": -7.9,
+      "margin": 17.24,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "bike": {
+      "diff": 0.2,
+      "margin": 2.83,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "walk": {
+      "diff": 2.1,
+      "margin": 3.11,
+      "verdict": "within_margin",
+      "reason": null
+     },
+     "other": {
+      "diff": -6.4,
+      "margin": 5.69,
+      "verdict": "above_margin",
+      "reason": null
+     }
+    },
+    "above_margin": [
+     "other"
+    ]
+   }
+  },
+  "focus_missing": []
+ }
+}

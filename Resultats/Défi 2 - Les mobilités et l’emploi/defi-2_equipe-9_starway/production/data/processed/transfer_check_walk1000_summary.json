@@ -1,0 +1,4052 @@
+{
+ "generated_at": "2026-11-04T16:46:08Z",
+ "service_date": "2026-11-17",
+ "walk_setting": "comfort",
+ "source_itineraries": "data/interim/itineraries_walk1000",
+ "gtfs_sha256": "c0798a28cceb6182094ff9270f12f0e66b39a70e816696bc95fbd201bb38cece",
+ "transfers_txt": {
+  "rows": 191484,
+  "transfer_type_values": [
+   "2"
+  ],
+  "min_s": 120,
+  "median_s": 377.0,
+  "max_s": 5507,
+  "over_3600_s": 6,
+  "self_pairs": 0,
+  "from_location_types": {
+   "0": 191484
+  },
+  "to_location_types": {
+   "0": 191484
+  },
+  "duplicate_pairs": 0
+ },
+ "navitia_connections": {
+  "file": "data/processed/navitia_connections.csv",
+  "pairs_used": 253
+ },
+ "communes": 1285,
+ "itineraries": 40866,
+ "transfers_checked": 79446,
+ "transfer_status_gtfs": {
+  "short": 20367,
+  "ok": 34318,
+  "same_stop": 22263,
+  "no_line": 2498
+ },
+ "transfer_status_reference": {
+  "short": 34042,
+  "ok": 42307,
+  "no_line": 2498,
+  "same_stop": 599
+ },
+ "transfer_same_parent_by_status": {
+  "no_line": 25,
+  "ok": 29083,
+  "same_stop": 22263,
+  "short": 19253
+ },
+ "no_line_with_parent_pair_listed": 1366,
+ "short_missing_s": {
+  "median": 92.0,
+  "p90": 231.0,
+  "max": 518,
+  "le_60": 7142,
+  "le_120": 12262
+ },
+ "short_on_demand_side": 212,
+ "same_stop": {
+  "transfers": 22263,
+  "monomodal_stop_place": 20275,
+  "distinct_stops": 606,
+  "available_s_quantiles": {
+   "0.1": 86.0,
+   "0.25": 121.0,
+   "0.5": 200.0
+  },
+  "with_navitia_duration": 21664,
+  "short_vs_navitia": 13675,
+  "note": "aucune ligne transfers.txt ne relie un arrêt à lui-même : pas de minimum dans le GTFS"
+ },
+ "navitia_reference_transfers": {
+  "n": 21664,
+  "short": 13675
+ },
+ "trip_status": {
+  "gtfs": {
+   "short": 16164,
+   "no_transfer": 2180,
+   "verified": 10531,
+   "partly_unverified": 11991
+  },
+  "reference": {
+   "short": 22755,
+   "no_transfer": 2180,
+   "verified": 14260,
+   "partly_unverified": 1671
+  }
+ },
+ "by_day": {
+  "gtfs": {
+   "d06": {
+    "itineraries": 9634,
+    "with_transfer": 8924,
+    "short": 3282,
+    "short_out": 726,
+    "short_ret": 2556,
+    "verdicts": {
+     "30": {
+      "lit": 118,
+      "at_risk": 28
+     },
+     "45": {
+      "lit": 414,
+      "at_risk": 122
+     },
+     "60": {
+      "lit": 875,
+      "at_risk": 246
+     }
+    }
+   },
+   "d09": {
+    "itineraries": 19989,
+    "with_transfer": 19264,
+    "short": 8542,
+    "short_out": 5098,
+    "short_ret": 3444,
+    "verdicts": {
+     "30": {
+      "lit": 167,
+      "at_risk": 33
+     },
+     "45": {
+      "lit": 609,
+      "at_risk": 143
+     },
+     "60": {
+      "lit": 1489,
+      "at_risk": 322
+     }
+    }
+   },
+   "d14": {
+    "itineraries": 11243,
+    "with_transfer": 10498,
+    "short": 4340,
+    "short_out": 2978,
+    "short_ret": 1362,
+    "verdicts": {
+     "30": {
+      "lit": 111,
+      "at_risk": 20
+     },
+     "45": {
+      "lit": 408,
+      "at_risk": 76
+     },
+     "60": {
+      "lit": 959,
+      "at_risk": 208
+     }
+    }
+   }
+  },
+  "reference": {
+   "d06": {
+    "itineraries": 9634,
+    "with_transfer": 8924,
+    "short": 4427,
+    "short_out": 1017,
+    "short_ret": 3410,
+    "verdicts": {
+     "30": {
+      "lit": 118,
+      "at_risk": 28
+     },
+     "45": {
+      "lit": 414,
+      "at_risk": 131
+     },
+     "60": {
+      "lit": 875,
+      "at_risk": 284
+     }
+    }
+   },
+   "d09": {
+    "itineraries": 19989,
+    "with_transfer": 19264,
+    "short": 12201,
+    "short_out": 7252,
+    "short_ret": 4949,
+    "verdicts": {
+     "30": {
+      "lit": 167,
+      "at_risk": 39
+     },
+     "45": {
+      "lit": 609,
+      "at_risk": 169
+     },
+     "60": {
+      "lit": 1489,
+      "at_risk": 418
+     }
+    }
+   },
+   "d14": {
+    "itineraries": 11243,
+    "with_transfer": 10498,
+    "short": 6127,
+    "short_out": 4366,
+    "short_ret": 1761,
+    "verdicts": {
+     "30": {
+      "lit": 111,
+      "at_risk": 20
+     },
+     "45": {
+      "lit": 408,
+      "at_risk": 85
+     },
+     "60": {
+      "lit": 959,
+      "at_risk": 238
+     }
+    }
+   }
+  }
+ },
+ "by_pole": {
+  "gtfs": {
+   "P_PARIS_QCA": {
+    "name": "Paris - Quartier central des affaires et ouest (1er, 2e, 8e, 9e, 16e, 17e)",
+    "itineraries": 3560,
+    "short": 1570,
+    "at_risk": {
+     "30": 13,
+     "45": 50,
+     "60": 106
+    }
+   },
+   "P_PARIS_RG": {
+    "name": "Paris - Rive gauche (5e, 6e, 7e, 13e, 14e, 15e)",
+    "itineraries": 3241,
+    "short": 1729,
+    "at_risk": {
+     "30": 9,
+     "45": 28,
+     "60": 90
+    }
+   },
+   "P_PARIS_EST": {
+    "name": "Paris - Centre-est et nord-est (3e, 4e, 10e, 11e, 12e, 18e, 19e, 20e)",
+    "itineraries": 3546,
+    "short": 1376,
+    "at_risk": {
+     "30": 12,
+     "45": 44,
+     "60": 107
+    }
+   },
+   "P_DEFENSE": {
+    "name": "La Défense",
+    "itineraries": 3484,
+    "short": 909,
+    "at_risk": {
+     "30": 9,
+     "45": 34,
+     "60": 71
+    }
+   },
+   "P_BOULOGNE": {
+    "name": "Boulogne / Issy",
+    "itineraries": 2871,
+    "short": 1792,
+    "at_risk": {
+     "30": 2,
+     "45": 28,
+     "60": 52
+    }
+   },
+   "P_PLAINE": {
+    "name": "Saint-Denis / Plaine Commune",
+    "itineraries": 3218,
+    "short": 1532,
+    "at_risk": {
+     "30": 15,
+     "45": 36,
+     "60": 86
+    }
+   },
+   "P_ROISSY": {
+    "name": "Roissy-CDG",
+    "itineraries": 1869,
+    "short": 686,
+    "at_risk": {
+     "30": 0,
+     "45": 9,
+     "60": 13
+    }
+   },
+   "P_ORLY": {
+    "name": "Orly / Rungis",
+    "itineraries": 2448,
+    "short": 1128,
+    "at_risk": {
+     "30": 0,
+     "45": 18,
+     "60": 36
+    }
+   },
+   "P_CRETEIL": {
+    "name": "Créteil",
+    "itineraries": 2646,
+    "short": 1581,
+    "at_risk": {
+     "30": 3,
+     "45": 16,
+     "60": 40
+    }
+   },
+   "P_SACLAY": {
+    "name": "Massy / Saclay",
+    "itineraries": 2502,
+    "short": 696,
+    "at_risk": {
+     "30": 1,
+     "45": 12,
+     "60": 30
+    }
+   },
+   "P_VERSAILLES": {
+    "name": "Versailles / Vélizy",
+    "itineraries": 2376,
+    "short": 646,
+    "at_risk": {
+     "30": 3,
+     "45": 16,
+     "60": 33
+    }
+   },
+   "P_SQY": {
+    "name": "Saint-Quentin-en-Yvelines",
+    "itineraries": 1973,
+    "short": 559,
+    "at_risk": {
+     "30": 4,
+     "45": 17,
+     "60": 28
+    }
+   },
+   "P_MARNE": {
+    "name": "Marne-la-Vallée - Noisy / Champs",
+    "itineraries": 2939,
+    "short": 797,
+    "at_risk": {
+     "30": 4,
+     "45": 17,
+     "60": 39
+    }
+   },
+   "P_CERGY": {
+    "name": "Cergy-Pontoise",
+    "itineraries": 2214,
+    "short": 664,
+    "at_risk": {
+     "30": 6,
+     "45": 14,
+     "60": 28
+    }
+   },
+   "P_EVRY": {
+    "name": "Évry-Courcouronnes",
+    "itineraries": 1979,
+    "short": 499,
+    "at_risk": {
+     "30": 0,
+     "45": 2,
+     "60": 17
+    }
+   }
+  },
+  "reference": {
+   "P_PARIS_QCA": {
+    "name": "Paris - Quartier central des affaires et ouest (1er, 2e, 8e, 9e, 16e, 17e)",
+    "itineraries": 3560,
+    "short": 1741,
+    "at_risk": {
+     "30": 13,
+     "45": 56,
+     "60": 113
+    }
+   },
+   "P_PARIS_RG": {
+    "name": "Paris - Rive gauche (5e, 6e, 7e, 13e, 14e, 15e)",
+    "itineraries": 3241,
+    "short": 1856,
+    "at_risk": {
+     "30": 9,
+     "45": 30,
+     "60": 107
+    }
+   },
+   "P_PARIS_EST": {
+    "name": "Paris - Centre-est et nord-est (3e, 4e, 10e, 11e, 12e, 18e, 19e, 20e)",
+    "itineraries": 3546,
+    "short": 1794,
+    "at_risk": {
+     "30": 12,
+     "45": 50,
+     "60": 118
+    }
+   },
+   "P_DEFENSE": {
+    "name": "La Défense",
+    "itineraries": 3484,
+    "short": 1770,
+    "at_risk": {
+     "30": 13,
+     "45": 47,
+     "60": 116
+    }
+   },
+   "P_BOULOGNE": {
+    "name": "Boulogne / Issy",
+    "itineraries": 2871,
+    "short": 2009,
+    "at_risk": {
+     "30": 2,
+     "45": 28,
+     "60": 54
+    }
+   },
+   "P_PLAINE": {
+    "name": "Saint-Denis / Plaine Commune",
+    "itineraries": 3218,
+    "short": 1625,
+    "at_risk": {
+     "30": 15,
+     "45": 38,
+     "60": 95
+    }
+   },
+   "P_ROISSY": {
+    "name": "Roissy-CDG",
+    "itineraries": 1869,
+    "short": 1200,
+    "at_risk": {
+     "30": 0,
+     "45": 9,
+     "60": 13
+    }
+   },
+   "P_ORLY": {
+    "name": "Orly / Rungis",
+    "itineraries": 2448,
+    "short": 1325,
+    "at_risk": {
+     "30": 0,
+     "45": 18,
+     "60": 38
+    }
+   },
+   "P_CRETEIL": {
+    "name": "Créteil",
+    "itineraries": 2646,
+    "short": 1834,
+    "at_risk": {
+     "30": 3,
+     "45": 16,
+     "60": 40
+    }
+   },
+   "P_SACLAY": {
+    "name": "Massy / Saclay",
+    "itineraries": 2502,
+    "short": 1183,
+    "at_risk": {
+     "30": 1,
+     "45": 13,
+     "60": 35
+    }
+   },
+   "P_VERSAILLES": {
+    "name": "Versailles / Vélizy",
+    "itineraries": 2376,
+    "short": 1218,
+    "at_risk": {
+     "30": 3,
+     "45": 16,
+     "60": 42
+    }
+   },
+   "P_SQY": {
+    "name": "Saint-Quentin-en-Yvelines",
+    "itineraries": 1973,
+    "short": 1115,
+    "at_risk": {
+     "30": 4,
+     "45": 19,
+     "60": 35
+    }
+   },
+   "P_MARNE": {
+    "name": "Marne-la-Vallée - Noisy / Champs",
+    "itineraries": 2939,
+    "short": 1916,
+    "at_risk": {
+     "30": 5,
+     "45": 25,
+     "60": 69
+    }
+   },
+   "P_CERGY": {
+    "name": "Cergy-Pontoise",
+    "itineraries": 2214,
+    "short": 1216,
+    "at_risk": {
+     "30": 7,
+     "45": 17,
+     "60": 37
+    }
+   },
+   "P_EVRY": {
+    "name": "Évry-Courcouronnes",
+    "itineraries": 1979,
+    "short": 953,
+    "at_risk": {
+     "30": 0,
+     "45": 3,
+     "60": 28
+    }
+   }
+  }
+ },
+ "retime": {
+  "gtfs": {
+   "short_trips": 16164,
+   "methods": {
+    "no_run": 1070,
+    "forward": 7743,
+    "backward": 3898,
+    "over_lookback": 1619,
+    "over_max": 1834
+   },
+   "no_bound": 4523,
+   "minutes_added_vs_itinerary": {
+    "median": 10.0,
+    "p90": 28.0,
+    "max": 84,
+    "zero": 786
+   }
+  },
+  "reference": {
+   "short_trips": 22755,
+   "methods": {
+    "no_run": 1805,
+    "forward": 10083,
+    "backward": 5321,
+    "over_lookback": 2828,
+    "over_max": 2718
+   },
+   "no_bound": 7351,
+   "minutes_added_vs_itinerary": {
+    "median": 12.0,
+    "p90": 28.0,
+    "max": 84,
+    "zero": 1040
+   }
+  }
+ },
+ "verdicts_rule": "verdict publié allumé (aller et retour <= budget, durées de la matrice) ; « à risque » si la borne recalée d'un sens trop court dépasse le budget, ou s'il n'y en a pas",
+ "top_places_short_gtfs": [
+  {
+   "place": "Nation -> Nation",
+   "n": 758,
+   "median_missing_s": 127.0
+  },
+  {
+   "place": "Saint-Michel Notre-Dame -> Saint-Michel",
+   "n": 750,
+   "median_missing_s": 215.0
+  },
+  {
+   "place": "Daumesnil -> Daumesnil",
+   "n": 707,
+   "median_missing_s": 53.0
+  },
+  {
+   "place": "Auber -> Auber",
+   "n": 417,
+   "median_missing_s": 286.0
+  },
+  {
+   "place": "Montparnasse Bienvenue -> Montparnasse - Cinémas",
+   "n": 378,
+   "median_missing_s": 433.0
+  },
+  {
+   "place": "Pyramides -> Pyramides",
+   "n": 321,
+   "median_missing_s": 111.0
+  },
+  {
+   "place": "La Motte-Picquet - Grenelle -> La Motte-Picquet - Grenelle",
+   "n": 312,
+   "median_missing_s": 147.0
+  },
+  {
+   "place": "Saint-Cloud -> Gare de Saint-Cloud",
+   "n": 306,
+   "median_missing_s": 2.0
+  },
+  {
+   "place": "Saint-Ouen -> Saint-Ouen",
+   "n": 267,
+   "median_missing_s": 111.0
+  },
+  {
+   "place": "Antony -> Antony",
+   "n": 263,
+   "median_missing_s": 129.0
+  },
+  {
+   "place": "Auber -> Havre-Caumartin",
+   "n": 257,
+   "median_missing_s": 59.0
+  },
+  {
+   "place": "Saint-Michel -> Saint-Michel Notre-Dame",
+   "n": 254,
+   "median_missing_s": 200.0
+  },
+  {
+   "place": "Châtelet -> Châtelet",
+   "n": 243,
+   "median_missing_s": 122.0
+  },
+  {
+   "place": "Javel -> Javel - André Citroën",
+   "n": 232,
+   "median_missing_s": 46.0
+  },
+  {
+   "place": "Charles de Gaulle - Étoile -> Charles de Gaulle - Étoile",
+   "n": 228,
+   "median_missing_s": 162.0
+  }
+ ],
+ "story": {
+  "78358": {
+   "label": "Maisons-Laffitte (Léa)",
+   "short_trips": [
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_PARIS_QCA",
+     "pole_name": "Paris - Quartier central des affaires et ouest (1er, 2e, 8e, 9e, 16e, 17e)",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 41,
+     "itinerary_min": 39,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 45,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 45,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Auber",
+       "to": "Auber",
+       "arr": "14:09",
+       "dep": "14:11",
+       "available_s": 125,
+       "official_min_s": 404,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_PARIS_QCA",
+     "pole_name": "Paris - Quartier central des affaires et ouest (1er, 2e, 8e, 9e, 16e, 17e)",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 42,
+     "itinerary_min": 42,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 52,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 52,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "08:37",
+       "dep": "08:39",
+       "available_s": 164,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Auber",
+       "to": "Auber",
+       "arr": "08:50",
+       "dep": "08:52",
+       "available_s": 94,
+       "official_min_s": 381,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_PARIS_QCA",
+     "pole_name": "Paris - Quartier central des affaires et ouest (1er, 2e, 8e, 9e, 16e, 17e)",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 42,
+     "itinerary_min": 42,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 47,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 47,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Auber",
+       "to": "Havre-Caumartin",
+       "arr": "13:48",
+       "dep": "13:54",
+       "available_s": 324,
+       "official_min_s": 448,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_PARIS_RG",
+     "pole_name": "Paris - Rive gauche (5e, 6e, 7e, 13e, 14e, 15e)",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 52,
+     "itinerary_min": 50,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 59,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 59,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Charles de Gaulle - Étoile",
+       "to": "Charles de Gaulle - Étoile",
+       "arr": "14:23",
+       "dep": "14:26",
+       "available_s": 136,
+       "official_min_s": 360,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_PARIS_RG",
+     "pole_name": "Paris - Rive gauche (5e, 6e, 7e, 13e, 14e, 15e)",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 54,
+     "itinerary_min": 54,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 65,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 65,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "08:25",
+       "dep": "08:27",
+       "available_s": 105,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Charles de Gaulle - Étoile",
+       "to": "Charles de Gaulle - Étoile",
+       "arr": "08:35",
+       "dep": "08:38",
+       "available_s": 194,
+       "official_min_s": 338,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_PARIS_RG",
+     "pole_name": "Paris - Rive gauche (5e, 6e, 7e, 13e, 14e, 15e)",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 53,
+     "itinerary_min": 51,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 55,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 55,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Charles de Gaulle - Étoile",
+       "to": "Charles de Gaulle - Étoile",
+       "arr": "17:21",
+       "dep": "17:26",
+       "available_s": 291,
+       "official_min_s": 360,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_PARIS_RG",
+     "pole_name": "Paris - Rive gauche (5e, 6e, 7e, 13e, 14e, 15e)",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 59,
+     "itinerary_min": 59,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 60,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 60,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Charles de Gaulle - Étoile",
+       "to": "Charles de Gaulle - Étoile",
+       "arr": "13:33",
+       "dep": "13:37",
+       "available_s": 256,
+       "official_min_s": 338,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_DEFENSE",
+     "pole_name": "La Défense",
+     "day": "d06",
+     "dir": "out",
+     "matrix_min": 34,
+     "itinerary_min": 34,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 45,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "05:48",
+       "dep": "05:52",
+       "available_s": 221,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_BOULOGNE",
+     "pole_name": "Boulogne / Issy",
+     "day": "d06",
+     "dir": "out",
+     "matrix_min": 64,
+     "itinerary_min": 64,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": null,
+      "method": "no_run"
+     },
+     "retimed_reference": {
+      "minutes": null,
+      "method": "no_run"
+     },
+     "short_transfers": [
+      {
+       "at": "Parc de Saint-Cloud",
+       "to": "Parc de Saint-Cloud",
+       "arr": "05:47",
+       "dep": "05:50",
+       "available_s": 180,
+       "official_min_s": 240,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_BOULOGNE",
+     "pole_name": "Boulogne / Issy",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 47,
+     "itinerary_min": 45,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 59,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 65,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Saint-Cloud",
+       "to": "Saint-Cloud",
+       "arr": "14:13",
+       "dep": "14:17",
+       "available_s": 280,
+       "official_min_s": 370,
+       "navitia_min_s": null
+      },
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "14:24",
+       "dep": "14:26",
+       "available_s": 84,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_BOULOGNE",
+     "pole_name": "Boulogne / Issy",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 53,
+     "itinerary_min": 53,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 65,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 75,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "08:25",
+       "dep": "08:27",
+       "available_s": 105,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "08:31",
+       "dep": "08:33",
+       "available_s": 116,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Puteaux",
+       "to": "Puteaux",
+       "arr": "08:34",
+       "dep": "08:40",
+       "available_s": 310,
+       "official_min_s": 314,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_BOULOGNE",
+     "pole_name": "Boulogne / Issy",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 53,
+     "itinerary_min": 51,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 55,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "17:27",
+       "dep": "17:30",
+       "available_s": 224,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_BOULOGNE",
+     "pole_name": "Boulogne / Issy",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 55,
+     "itinerary_min": 55,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 60,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 65,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Saint-Cloud",
+       "to": "Gare de Saint-Cloud",
+       "arr": "13:42",
+       "dep": "13:49",
+       "available_s": 380,
+       "official_min_s": 382,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_ROISSY",
+     "pole_name": "Roissy-CDG",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 87,
+     "itinerary_min": 85,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 90,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "14:53",
+       "dep": "14:56",
+       "available_s": 210,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_ROISSY",
+     "pole_name": "Roissy-CDG",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 82,
+     "itinerary_min": 82,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 100,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "07:50",
+       "dep": "07:53",
+       "available_s": 164,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "08:06",
+       "dep": "08:08",
+       "available_s": 87,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_ROISSY",
+     "pole_name": "Roissy-CDG",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 90,
+     "itinerary_min": 88,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 93,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "17:56",
+       "dep": "17:57",
+       "available_s": 109,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_ROISSY",
+     "pole_name": "Roissy-CDG",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 85,
+     "itinerary_min": 85,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 95,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "13:07",
+       "dep": "13:11",
+       "available_s": 225,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_ROISSY",
+     "pole_name": "Roissy-CDG",
+     "day": "d14",
+     "dir": "ret",
+     "matrix_min": 106,
+     "itinerary_min": 107,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": null,
+      "method": "no_run"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "22:56",
+       "dep": "22:59",
+       "available_s": 204,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_ORLY",
+     "pole_name": "Orly / Rungis",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 77,
+     "itinerary_min": 77,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 87,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Houilles - Carrières-sur-Seine",
+       "to": "Houilles - Carrières-sur-Seine",
+       "arr": "07:58",
+       "dep": "08:01",
+       "available_s": 200,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_ORLY",
+     "pole_name": "Orly / Rungis",
+     "day": "d14",
+     "dir": "ret",
+     "matrix_min": 76,
+     "itinerary_min": 74,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 104,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "22:40",
+       "dep": "22:44",
+       "available_s": 235,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_CRETEIL",
+     "pole_name": "Créteil",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 72,
+     "itinerary_min": 70,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 79,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 79,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Daumesnil",
+       "to": "Daumesnil",
+       "arr": "14:23",
+       "dep": "14:26",
+       "available_s": 192,
+       "official_min_s": 300,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Nation",
+       "to": "Nation",
+       "arr": "14:30",
+       "dep": "14:34",
+       "available_s": 233,
+       "official_min_s": 320,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_CRETEIL",
+     "pole_name": "Créteil",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 69,
+     "itinerary_min": 70,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 85,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Lyon",
+       "to": "Gare de Lyon",
+       "arr": "08:28",
+       "dep": "08:30",
+       "available_s": 122,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_CRETEIL",
+     "pole_name": "Créteil",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 74,
+     "itinerary_min": 72,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 84,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 84,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Daumesnil",
+       "to": "Daumesnil",
+       "arr": "17:22",
+       "dep": "17:26",
+       "available_s": 247,
+       "official_min_s": 300,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Nation",
+       "to": "Nation",
+       "arr": "17:30",
+       "dep": "17:33",
+       "available_s": 192,
+       "official_min_s": 320,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "17:54",
+       "dep": "17:56",
+       "available_s": 64,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_CRETEIL",
+     "pole_name": "Créteil",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 76,
+     "itinerary_min": 77,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 82,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Lyon",
+       "to": "Gare de Lyon",
+       "arr": "13:22",
+       "dep": "13:23",
+       "available_s": 80,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_CRETEIL",
+     "pole_name": "Créteil",
+     "day": "d14",
+     "dir": "ret",
+     "matrix_min": 76,
+     "itinerary_min": 74,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 104,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 104,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Nation",
+       "to": "Nation",
+       "arr": "22:34",
+       "dep": "22:38",
+       "available_s": 228,
+       "official_min_s": 320,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_SACLAY",
+     "pole_name": "Massy / Saclay",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 80,
+     "itinerary_min": 80,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 85,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "08:02",
+       "dep": "08:03",
+       "available_s": 105,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "08:18",
+       "dep": "08:20",
+       "available_s": 154,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_SACLAY",
+     "pole_name": "Massy / Saclay",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 78,
+     "itinerary_min": 76,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 80,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "17:43",
+       "dep": "17:45",
+       "available_s": 120,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_SACLAY",
+     "pole_name": "Massy / Saclay",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 75,
+     "itinerary_min": 75,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 80,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "13:19",
+       "dep": "13:23",
+       "available_s": 272,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_SACLAY",
+     "pole_name": "Massy / Saclay",
+     "day": "d14",
+     "dir": "ret",
+     "matrix_min": 76,
+     "itinerary_min": 74,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 104,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "22:40",
+       "dep": "22:44",
+       "available_s": 235,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_VERSAILLES",
+     "pole_name": "Versailles / Vélizy",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 54,
+     "itinerary_min": 54,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 60,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "08:26",
+       "dep": "08:29",
+       "available_s": 160,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_VERSAILLES",
+     "pole_name": "Versailles / Vélizy",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 57,
+     "itinerary_min": 55,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 63,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "17:32",
+       "dep": "17:35",
+       "available_s": 184,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_SQY",
+     "pole_name": "Saint-Quentin-en-Yvelines",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 81,
+     "itinerary_min": 79,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 99,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 99,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Viroflay Rive Gauche",
+       "to": "Viroflay - Rive Gauche",
+       "arr": "14:23",
+       "dep": "14:27",
+       "available_s": 241,
+       "official_min_s": 310,
+       "navitia_min_s": null
+      },
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "14:54",
+       "dep": "14:58",
+       "available_s": 204,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_SQY",
+     "pole_name": "Saint-Quentin-en-Yvelines",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 74,
+     "itinerary_min": 72,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 84,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "17:47",
+       "dep": "17:50",
+       "available_s": 183,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "17:54",
+       "dep": "17:56",
+       "available_s": 64,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_MARNE",
+     "pole_name": "Marne-la-Vallée - Noisy / Champs",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 61,
+     "itinerary_min": 59,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 72,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "17:40",
+       "dep": "17:43",
+       "available_s": 155,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_EVRY",
+     "pole_name": "Évry-Courcouronnes",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 89,
+     "itinerary_min": 89,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 95,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "08:01",
+       "dep": "08:04",
+       "available_s": 147,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_EVRY",
+     "pole_name": "Évry-Courcouronnes",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 90,
+     "itinerary_min": 88,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 93,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Lyon",
+       "to": "Gare de Lyon",
+       "arr": "17:49",
+       "dep": "17:54",
+       "available_s": 295,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_EVRY",
+     "pole_name": "Évry-Courcouronnes",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 91,
+     "itinerary_min": 91,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 105,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "12:51",
+       "dep": "12:55",
+       "available_s": 255,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78358",
+     "commune": "Maisons-Laffitte",
+     "pole": "P_EVRY",
+     "pole_name": "Évry-Courcouronnes",
+     "day": "d14",
+     "dir": "ret",
+     "matrix_min": 106,
+     "itinerary_min": 107,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": null,
+      "method": "no_run"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Lyon",
+       "to": "Gare de Lyon",
+       "arr": "22:54",
+       "dep": "22:56",
+       "available_s": 126,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    }
+   ],
+   "verdicts_at_risk": {
+    "gtfs": [
+     {
+      "insee": "78358",
+      "pole": "P_PARIS_QCA",
+      "day": "d09",
+      "budget": 45,
+      "kept": false,
+      "out": 42,
+      "ret": 44,
+      "out_bound": 52,
+      "ret_bound": null
+     },
+     {
+      "insee": "78358",
+      "pole": "P_PARIS_RG",
+      "day": "d09",
+      "budget": 60,
+      "kept": false,
+      "out": 54,
+      "ret": 53,
+      "out_bound": 65,
+      "ret_bound": 55
+     },
+     {
+      "insee": "78358",
+      "pole": "P_BOULOGNE",
+      "day": "d09",
+      "budget": 60,
+      "kept": false,
+      "out": 53,
+      "ret": 53,
+      "out_bound": 65,
+      "ret_bound": null
+     }
+    ],
+    "reference": [
+     {
+      "insee": "78358",
+      "pole": "P_PARIS_QCA",
+      "day": "d09",
+      "budget": 45,
+      "kept": false,
+      "out": 42,
+      "ret": 44,
+      "out_bound": 52,
+      "ret_bound": null
+     },
+     {
+      "insee": "78358",
+      "pole": "P_PARIS_RG",
+      "day": "d09",
+      "budget": 60,
+      "kept": false,
+      "out": 54,
+      "ret": 53,
+      "out_bound": 65,
+      "ret_bound": 55
+     },
+     {
+      "insee": "78358",
+      "pole": "P_BOULOGNE",
+      "day": "d09",
+      "budget": 60,
+      "kept": false,
+      "out": 53,
+      "ret": 53,
+      "out_bound": 75,
+      "ret_bound": 55
+     },
+     {
+      "insee": "78358",
+      "pole": "P_VERSAILLES",
+      "day": "d09",
+      "budget": 60,
+      "kept": false,
+      "out": 54,
+      "ret": 57,
+      "out_bound": 60,
+      "ret_bound": 63
+     }
+    ]
+   }
+  },
+  "78418": {
+   "label": "Montesson (acte 3)",
+   "short_trips": [
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PARIS_QCA",
+     "pole_name": "Paris - Quartier central des affaires et ouest (1er, 2e, 8e, 9e, 16e, 17e)",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 57,
+     "itinerary_min": 57,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 77,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 77,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Houilles - Carrières-sur-Seine",
+       "to": "Houilles - Carrières-sur-Seine",
+       "arr": "08:29",
+       "dep": "08:33",
+       "available_s": 290,
+       "official_min_s": 448,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "08:37",
+       "dep": "08:39",
+       "available_s": 164,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Auber",
+       "to": "Auber",
+       "arr": "08:50",
+       "dep": "08:52",
+       "available_s": 94,
+       "official_min_s": 381,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PARIS_QCA",
+     "pole_name": "Paris - Quartier central des affaires et ouest (1er, 2e, 8e, 9e, 16e, 17e)",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 62,
+     "itinerary_min": 65,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 77,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 77,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Sartrouville",
+       "to": "Gare de Sartrouville",
+       "arr": "17:37",
+       "dep": "17:43",
+       "available_s": 310,
+       "official_min_s": 397,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PARIS_QCA",
+     "pole_name": "Paris - Quartier central des affaires et ouest (1er, 2e, 8e, 9e, 16e, 17e)",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 56,
+     "itinerary_min": 56,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 80,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 80,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Houilles - Carrières-sur-Seine",
+       "to": "Houilles - Carrières-sur-Seine",
+       "arr": "13:26",
+       "dep": "13:33",
+       "available_s": 420,
+       "official_min_s": 448,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PARIS_RG",
+     "pole_name": "Paris - Rive gauche (5e, 6e, 7e, 13e, 14e, 15e)",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 68,
+     "itinerary_min": 71,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 91,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 91,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Charles de Gaulle - Étoile",
+       "to": "Charles de Gaulle - Étoile",
+       "arr": "14:23",
+       "dep": "14:26",
+       "available_s": 136,
+       "official_min_s": 360,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PARIS_RG",
+     "pole_name": "Paris - Rive gauche (5e, 6e, 7e, 13e, 14e, 15e)",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 68,
+     "itinerary_min": 68,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 85,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 85,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Sartrouville",
+       "to": "Sartrouville",
+       "arr": "08:09",
+       "dep": "08:15",
+       "available_s": 370,
+       "official_min_s": 378,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Charles de Gaulle - Étoile",
+       "to": "Charles de Gaulle - Étoile",
+       "arr": "08:30",
+       "dep": "08:32",
+       "available_s": 114,
+       "official_min_s": 338,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PARIS_RG",
+     "pole_name": "Paris - Rive gauche (5e, 6e, 7e, 13e, 14e, 15e)",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 73,
+     "itinerary_min": 75,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 96,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 96,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Charles de Gaulle - Étoile",
+       "to": "Charles de Gaulle - Étoile",
+       "arr": "17:21",
+       "dep": "17:26",
+       "available_s": 291,
+       "official_min_s": 360,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PARIS_RG",
+     "pole_name": "Paris - Rive gauche (5e, 6e, 7e, 13e, 14e, 15e)",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 75,
+     "itinerary_min": 75,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 115,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 115,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare du Vésinet - Le Pecq",
+       "to": "Le Vésinet - Le Pecq",
+       "arr": "13:03",
+       "dep": "13:10",
+       "available_s": 422,
+       "official_min_s": 424,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Charles de Gaulle - Étoile",
+       "to": "Charles de Gaulle - Étoile",
+       "arr": "13:29",
+       "dep": "13:34",
+       "available_s": 296,
+       "official_min_s": 338,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PARIS_EST",
+     "pole_name": "Paris - Centre-est et nord-est (3e, 4e, 10e, 11e, 12e, 18e, 19e, 20e)",
+     "day": "d06",
+     "dir": "out",
+     "matrix_min": 65,
+     "itinerary_min": 65,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 90,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 90,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Houilles - Carrières-sur-Seine",
+       "to": "Houilles - Carrières-sur-Seine",
+       "arr": "05:18",
+       "dep": "05:23",
+       "available_s": 320,
+       "official_min_s": 448,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PARIS_EST",
+     "pole_name": "Paris - Centre-est et nord-est (3e, 4e, 10e, 11e, 12e, 18e, 19e, 20e)",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 63,
+     "itinerary_min": 63,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 70,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 70,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Sartrouville",
+       "to": "Sartrouville",
+       "arr": "08:21",
+       "dep": "08:26",
+       "available_s": 350,
+       "official_min_s": 378,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_DEFENSE",
+     "pole_name": "La Défense",
+     "day": "d06",
+     "dir": "out",
+     "matrix_min": 49,
+     "itinerary_min": 49,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 70,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 70,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Houilles - Carrières-sur-Seine",
+       "to": "Houilles - Carrières-sur-Seine",
+       "arr": "05:33",
+       "dep": "05:38",
+       "available_s": 320,
+       "official_min_s": 448,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_DEFENSE",
+     "pole_name": "La Défense",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 42,
+     "itinerary_min": 42,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 49,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 49,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Sartrouville",
+       "to": "Sartrouville",
+       "arr": "08:33",
+       "dep": "08:38",
+       "available_s": 330,
+       "official_min_s": 378,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_DEFENSE",
+     "pole_name": "La Défense",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 46,
+     "itinerary_min": 46,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 65,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 65,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare du Vésinet - Le Pecq",
+       "to": "Le Vésinet - Le Pecq",
+       "arr": "13:33",
+       "dep": "13:38",
+       "available_s": 302,
+       "official_min_s": 424,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_BOULOGNE",
+     "pole_name": "Boulogne / Issy",
+     "day": "d06",
+     "dir": "out",
+     "matrix_min": 89,
+     "itinerary_min": 89,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": null,
+      "method": "no_run"
+     },
+     "retimed_reference": {
+      "minutes": null,
+      "method": "no_run"
+     },
+     "short_transfers": [
+      {
+       "at": "Parc de Saint-Cloud",
+       "to": "Parc de Saint-Cloud",
+       "arr": "05:47",
+       "dep": "05:50",
+       "available_s": 180,
+       "official_min_s": 240,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_BOULOGNE",
+     "pole_name": "Boulogne / Issy",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 68,
+     "itinerary_min": 71,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 91,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 91,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Saint-Cloud",
+       "to": "Saint-Cloud",
+       "arr": "14:13",
+       "dep": "14:17",
+       "available_s": 280,
+       "official_min_s": 370,
+       "navitia_min_s": null
+      },
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "14:24",
+       "dep": "14:26",
+       "available_s": 84,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_BOULOGNE",
+     "pole_name": "Boulogne / Issy",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 69,
+     "itinerary_min": 69,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 79,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 89,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare du Vésinet - Le Pecq",
+       "to": "Le Vésinet - Le Pecq",
+       "arr": "08:15",
+       "dep": "08:20",
+       "available_s": 302,
+       "official_min_s": 424,
+       "navitia_min_s": null
+      },
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "08:35",
+       "dep": "08:37",
+       "available_s": 76,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Saint-Cloud",
+       "to": "Gare de Saint-Cloud",
+       "arr": "08:44",
+       "dep": "08:49",
+       "available_s": 290,
+       "official_min_s": 382,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_BOULOGNE",
+     "pole_name": "Boulogne / Issy",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 73,
+     "itinerary_min": 75,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 96,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "17:27",
+       "dep": "17:30",
+       "available_s": 224,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_BOULOGNE",
+     "pole_name": "Boulogne / Issy",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 65,
+     "itinerary_min": 65,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 105,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 105,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare du Vésinet - Le Pecq",
+       "to": "Le Vésinet - Le Pecq",
+       "arr": "13:13",
+       "dep": "13:18",
+       "available_s": 302,
+       "official_min_s": 424,
+       "navitia_min_s": null
+      },
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "13:33",
+       "dep": "13:36",
+       "available_s": 159,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Saint-Cloud",
+       "to": "Gare de Saint-Cloud",
+       "arr": "13:42",
+       "dep": "13:49",
+       "available_s": 380,
+       "official_min_s": 382,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PLAINE",
+     "pole_name": "Saint-Denis / Plaine Commune",
+     "day": "d06",
+     "dir": "out",
+     "matrix_min": 75,
+     "itinerary_min": 76,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 90,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 90,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Houilles - Carrières-sur-Seine",
+       "to": "Houilles - Carrières-sur-Seine",
+       "arr": "05:18",
+       "dep": "05:23",
+       "available_s": 320,
+       "official_min_s": 448,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PLAINE",
+     "pole_name": "Saint-Denis / Plaine Commune",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 68,
+     "itinerary_min": 68,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 85,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 85,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare du Vésinet - Le Pecq",
+       "to": "Le Vésinet - Le Pecq",
+       "arr": "08:15",
+       "dep": "08:20",
+       "available_s": 302,
+       "official_min_s": 424,
+       "navitia_min_s": null
+      },
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "08:35",
+       "dep": "08:37",
+       "available_s": 76,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Saint-Ouen",
+       "to": "Saint-Ouen",
+       "arr": "08:51",
+       "dep": "08:55",
+       "available_s": 249,
+       "official_min_s": 360,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PLAINE",
+     "pole_name": "Saint-Denis / Plaine Commune",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 63,
+     "itinerary_min": 66,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 76,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 76,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Houilles - Carrières-sur-Seine",
+       "to": "Gare de Houilles - Carrières-sur-Seine",
+       "arr": "17:35",
+       "dep": "17:42",
+       "available_s": 420,
+       "official_min_s": 448,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_PLAINE",
+     "pole_name": "Saint-Denis / Plaine Commune",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 68,
+     "itinerary_min": 69,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 105,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 105,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare du Vésinet - Le Pecq",
+       "to": "Le Vésinet - Le Pecq",
+       "arr": "13:13",
+       "dep": "13:18",
+       "available_s": 302,
+       "official_min_s": 424,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Auber",
+       "to": "Auber",
+       "arr": "13:40",
+       "dep": "13:42",
+       "available_s": 80,
+       "official_min_s": 381,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Gare Saint-Lazare",
+       "to": "Saint-Lazare",
+       "arr": "13:45",
+       "dep": "13:50",
+       "available_s": 323,
+       "official_min_s": 401,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_ROISSY",
+     "pole_name": "Roissy-CDG",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 103,
+     "itinerary_min": 106,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_max"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "14:53",
+       "dep": "14:56",
+       "available_s": 210,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_ROISSY",
+     "pole_name": "Roissy-CDG",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 97,
+     "itinerary_min": 97,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 110,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_lookback"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Sartrouville",
+       "to": "Sartrouville",
+       "arr": "07:41",
+       "dep": "07:43",
+       "available_s": 170,
+       "official_min_s": 378,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "07:50",
+       "dep": "07:53",
+       "available_s": 164,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "08:06",
+       "dep": "08:08",
+       "available_s": 87,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_ROISSY",
+     "pole_name": "Roissy-CDG",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 105,
+     "itinerary_min": 108,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 118,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "17:56",
+       "dep": "17:57",
+       "available_s": 109,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_ROISSY",
+     "pole_name": "Roissy-CDG",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 98,
+     "itinerary_min": 97,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": null,
+      "method": "over_lookback"
+     },
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_lookback"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare du Vésinet - Le Pecq",
+       "to": "Le Vésinet - Le Pecq",
+       "arr": "12:33",
+       "dep": "12:38",
+       "available_s": 302,
+       "official_min_s": 424,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "13:03",
+       "dep": "13:08",
+       "available_s": 285,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_ROISSY",
+     "pole_name": "Roissy-CDG",
+     "day": "d14",
+     "dir": "ret",
+     "matrix_min": 112,
+     "itinerary_min": 115,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_max"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "22:56",
+       "dep": "22:59",
+       "available_s": 204,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_ORLY",
+     "pole_name": "Orly / Rungis",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 100,
+     "itinerary_min": 102,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": null,
+      "method": "over_max"
+     },
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_max"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "14:40",
+       "dep": "14:44",
+       "available_s": 241,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Rueil-Malmaison",
+       "to": "Gare de Rueil-Malmaison",
+       "arr": "15:03",
+       "dep": "15:10",
+       "available_s": 398,
+       "official_min_s": 434,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_ORLY",
+     "pole_name": "Orly / Rungis",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 94,
+     "itinerary_min": 96,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 117,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 117,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Houilles - Carrières-sur-Seine",
+       "to": "Gare de Houilles - Carrières-sur-Seine",
+       "arr": "18:03",
+       "dep": "18:08",
+       "available_s": 280,
+       "official_min_s": 448,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_ORLY",
+     "pole_name": "Orly / Rungis",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 93,
+     "itinerary_min": 93,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": null,
+      "method": "over_lookback"
+     },
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_lookback"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Sartrouville",
+       "to": "Sartrouville",
+       "arr": "12:45",
+       "dep": "12:50",
+       "available_s": 330,
+       "official_min_s": 378,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_CRETEIL",
+     "pole_name": "Créteil",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 88,
+     "itinerary_min": 91,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 111,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 111,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Daumesnil",
+       "to": "Daumesnil",
+       "arr": "14:23",
+       "dep": "14:26",
+       "available_s": 192,
+       "official_min_s": 300,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Nation",
+       "to": "Nation",
+       "arr": "14:30",
+       "dep": "14:34",
+       "available_s": 233,
+       "official_min_s": 320,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_CRETEIL",
+     "pole_name": "Créteil",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 89,
+     "itinerary_min": 89,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 100,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 100,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Sartrouville",
+       "to": "Sartrouville",
+       "arr": "07:54",
+       "dep": "07:59",
+       "available_s": 300,
+       "official_min_s": 378,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Nation",
+       "to": "Nation",
+       "arr": "08:26",
+       "dep": "08:30",
+       "available_s": 206,
+       "official_min_s": 320,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Daumesnil",
+       "to": "Daumesnil",
+       "arr": "08:34",
+       "dep": "08:39",
+       "available_s": 291,
+       "official_min_s": 300,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_CRETEIL",
+     "pole_name": "Créteil",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 86,
+     "itinerary_min": 89,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 113,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 113,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Daumesnil",
+       "to": "Daumesnil",
+       "arr": "17:22",
+       "dep": "17:26",
+       "available_s": 247,
+       "official_min_s": 300,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Nation",
+       "to": "Nation",
+       "arr": "17:30",
+       "dep": "17:33",
+       "available_s": 192,
+       "official_min_s": 320,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "17:54",
+       "dep": "17:56",
+       "available_s": 64,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Sartrouville",
+       "to": "Gare de Sartrouville",
+       "arr": "18:02",
+       "dep": "18:07",
+       "available_s": 250,
+       "official_min_s": 397,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_CRETEIL",
+     "pole_name": "Créteil",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 86,
+     "itinerary_min": 87,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 97,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_lookback"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Sartrouville",
+       "to": "Sartrouville",
+       "arr": "12:45",
+       "dep": "12:50",
+       "available_s": 330,
+       "official_min_s": 378,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Gare de Lyon",
+       "to": "Gare de Lyon",
+       "arr": "13:14",
+       "dep": "13:15",
+       "available_s": 70,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_CRETEIL",
+     "pole_name": "Créteil",
+     "day": "d14",
+     "dir": "ret",
+     "matrix_min": 112,
+     "itinerary_min": 115,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": null,
+      "method": "over_max"
+     },
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_max"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Champigny - Saint-Maur",
+       "to": "Champigny",
+       "arr": "22:32",
+       "dep": "22:37",
+       "available_s": 312,
+       "official_min_s": 392,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_SACLAY",
+     "pole_name": "Massy / Saclay",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 100,
+     "itinerary_min": 102,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": null,
+      "method": "over_max"
+     },
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_max"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "14:40",
+       "dep": "14:44",
+       "available_s": 241,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Rueil-Malmaison",
+       "to": "Gare de Rueil-Malmaison",
+       "arr": "15:03",
+       "dep": "15:10",
+       "available_s": 398,
+       "official_min_s": 434,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_SACLAY",
+     "pole_name": "Massy / Saclay",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 100,
+     "itinerary_min": 100,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 105,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "08:18",
+       "dep": "08:20",
+       "available_s": 154,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_SACLAY",
+     "pole_name": "Massy / Saclay",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 94,
+     "itinerary_min": 96,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 117,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 117,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "17:43",
+       "dep": "17:45",
+       "available_s": 120,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Houilles - Carrières-sur-Seine",
+       "to": "Gare de Houilles - Carrières-sur-Seine",
+       "arr": "18:03",
+       "dep": "18:08",
+       "available_s": 280,
+       "official_min_s": 448,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_SACLAY",
+     "pole_name": "Massy / Saclay",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 95,
+     "itinerary_min": 95,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 95,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_lookback"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Sartrouville",
+       "to": "Sartrouville",
+       "arr": "12:45",
+       "dep": "12:50",
+       "available_s": 330,
+       "official_min_s": 378,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_SACLAY",
+     "pole_name": "Massy / Saclay",
+     "day": "d14",
+     "dir": "ret",
+     "matrix_min": 112,
+     "itinerary_min": 115,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 115,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Châtelet - Les Halles",
+       "to": "Châtelet - Les Halles",
+       "arr": "22:40",
+       "dep": "22:44",
+       "available_s": 235,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_VERSAILLES",
+     "pole_name": "Versailles / Vélizy",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 73,
+     "itinerary_min": 76,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 106,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 106,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Sartrouville",
+       "to": "Gare de Sartrouville",
+       "arr": "14:50",
+       "dep": "14:55",
+       "available_s": 300,
+       "official_min_s": 397,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_VERSAILLES",
+     "pole_name": "Versailles / Vélizy",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 69,
+     "itinerary_min": 69,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 85,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 85,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Sartrouville",
+       "to": "Sartrouville",
+       "arr": "08:09",
+       "dep": "08:15",
+       "available_s": 370,
+       "official_min_s": 378,
+       "navitia_min_s": null
+      },
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "08:26",
+       "dep": "08:29",
+       "available_s": 160,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_VERSAILLES",
+     "pole_name": "Versailles / Vélizy",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 73,
+     "itinerary_min": 76,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 86,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "17:32",
+       "dep": "17:35",
+       "available_s": 184,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_VERSAILLES",
+     "pole_name": "Versailles / Vélizy",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 68,
+     "itinerary_min": 68,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 105,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 105,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare du Vésinet - Le Pecq",
+       "to": "Le Vésinet - Le Pecq",
+       "arr": "12:53",
+       "dep": "12:58",
+       "available_s": 302,
+       "official_min_s": 424,
+       "navitia_min_s": null
+      },
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "13:13",
+       "dep": "13:15",
+       "available_s": 99,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_SQY",
+     "pole_name": "Saint-Quentin-en-Yvelines",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 103,
+     "itinerary_min": 106,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_max"
+     },
+     "short_transfers": [
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "15:02",
+       "dep": "15:06",
+       "available_s": 214,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_SQY",
+     "pole_name": "Saint-Quentin-en-Yvelines",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 78,
+     "itinerary_min": 78,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 100,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 100,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Sartrouville",
+       "to": "Sartrouville",
+       "arr": "07:54",
+       "dep": "07:59",
+       "available_s": 300,
+       "official_min_s": 378,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_SQY",
+     "pole_name": "Saint-Quentin-en-Yvelines",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 86,
+     "itinerary_min": 89,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 101,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 113,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "17:47",
+       "dep": "17:50",
+       "available_s": 183,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "17:54",
+       "dep": "17:56",
+       "available_s": 64,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Sartrouville",
+       "to": "Gare de Sartrouville",
+       "arr": "18:02",
+       "dep": "18:07",
+       "available_s": 250,
+       "official_min_s": 397,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_SQY",
+     "pole_name": "Saint-Quentin-en-Yvelines",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 78,
+     "itinerary_min": 78,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 105,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 105,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare du Vésinet - Le Pecq",
+       "to": "Le Vésinet - Le Pecq",
+       "arr": "12:53",
+       "dep": "12:58",
+       "available_s": 302,
+       "official_min_s": 424,
+       "navitia_min_s": null
+      },
+      {
+       "at": "La Défense",
+       "to": "La Défense",
+       "arr": "13:13",
+       "dep": "13:15",
+       "available_s": 99,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_MARNE",
+     "pole_name": "Marne-la-Vallée - Noisy / Champs",
+     "day": "d06",
+     "dir": "ret",
+     "matrix_min": 73,
+     "itinerary_min": 76,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 106,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 106,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Sartrouville",
+       "to": "Gare de Sartrouville",
+       "arr": "14:50",
+       "dep": "14:55",
+       "available_s": 300,
+       "official_min_s": 397,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_MARNE",
+     "pole_name": "Marne-la-Vallée - Noisy / Champs",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 77,
+     "itinerary_min": 78,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 85,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 85,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare du Vésinet - Le Pecq",
+       "to": "Le Vésinet - Le Pecq",
+       "arr": "08:03",
+       "dep": "08:08",
+       "available_s": 337,
+       "official_min_s": 424,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_MARNE",
+     "pole_name": "Marne-la-Vallée - Noisy / Champs",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 73,
+     "itinerary_min": 76,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 86,
+      "method": "forward"
+     },
+     "retimed_reference": {
+      "minutes": 98,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "17:40",
+       "dep": "17:43",
+       "available_s": 155,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Houilles - Carrières-sur-Seine",
+       "to": "Gare de Houilles - Carrières-sur-Seine",
+       "arr": "17:46",
+       "dep": "17:52",
+       "available_s": 310,
+       "official_min_s": 448,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_MARNE",
+     "pole_name": "Marne-la-Vallée - Noisy / Champs",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 78,
+     "itinerary_min": 79,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 115,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 115,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare du Vésinet - Le Pecq",
+       "to": "Le Vésinet - Le Pecq",
+       "arr": "13:03",
+       "dep": "13:10",
+       "available_s": 422,
+       "official_min_s": 424,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_CERGY",
+     "pole_name": "Cergy-Pontoise",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 44,
+     "itinerary_min": 44,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": 60,
+      "method": "backward"
+     },
+     "retimed_reference": {
+      "minutes": 60,
+      "method": "backward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Sartrouville",
+       "to": "Sartrouville",
+       "arr": "08:33",
+       "dep": "08:36",
+       "available_s": 180,
+       "official_min_s": 378,
+       "navitia_min_s": null
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_EVRY",
+     "pole_name": "Évry-Courcouronnes",
+     "day": "d09",
+     "dir": "out",
+     "matrix_min": 101,
+     "itinerary_min": 101,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": null,
+      "method": "over_lookback"
+     },
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_lookback"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Sartrouville",
+       "to": "Sartrouville",
+       "arr": "07:29",
+       "dep": "07:32",
+       "available_s": 190,
+       "official_min_s": 378,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Nanterre Université",
+       "to": "Nanterre Université",
+       "arr": "07:38",
+       "dep": "07:40",
+       "available_s": 105,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      },
+      {
+       "at": "Gare de Lyon",
+       "to": "Gare de Lyon",
+       "arr": "07:58",
+       "dep": "08:00",
+       "available_s": 142,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_EVRY",
+     "pole_name": "Évry-Courcouronnes",
+     "day": "d09",
+     "dir": "ret",
+     "matrix_min": 105,
+     "itinerary_min": 108,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": 118,
+      "method": "forward"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Lyon",
+       "to": "Gare de Lyon",
+       "arr": "17:49",
+       "dep": "17:54",
+       "available_s": 295,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_EVRY",
+     "pole_name": "Évry-Courcouronnes",
+     "day": "d14",
+     "dir": "out",
+     "matrix_min": 106,
+     "itinerary_min": 106,
+     "status_gtfs": "short",
+     "status_reference": "short",
+     "retimed_gtfs": {
+      "minutes": null,
+      "method": "over_lookback"
+     },
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_lookback"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare du Vésinet - Le Pecq",
+       "to": "Le Vésinet - Le Pecq",
+       "arr": "12:23",
+       "dep": "12:30",
+       "available_s": 422,
+       "official_min_s": 424,
+       "navitia_min_s": null
+      },
+      {
+       "at": "Gare de Lyon",
+       "to": "Gare de Lyon",
+       "arr": "12:58",
+       "dep": "13:00",
+       "available_s": 130,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    },
+    {
+     "insee": "78418",
+     "commune": "Montesson",
+     "pole": "P_EVRY",
+     "pole_name": "Évry-Courcouronnes",
+     "day": "d14",
+     "dir": "ret",
+     "matrix_min": 112,
+     "itinerary_min": 115,
+     "status_gtfs": "partly_unverified",
+     "status_reference": "short",
+     "retimed_gtfs": null,
+     "retimed_reference": {
+      "minutes": null,
+      "method": "over_max"
+     },
+     "short_transfers": [
+      {
+       "at": "Gare de Lyon",
+       "to": "Gare de Lyon",
+       "arr": "22:54",
+       "dep": "22:56",
+       "available_s": 126,
+       "official_min_s": null,
+       "navitia_min_s": 300
+      }
+     ]
+    }
+   ],
+   "verdicts_at_risk": {
+    "gtfs": [
+     {
+      "insee": "78418",
+      "pole": "P_DEFENSE",
+      "day": "d06",
+      "budget": 60,
+      "kept": false,
+      "out": 49,
+      "ret": 43,
+      "out_bound": 70,
+      "ret_bound": null
+     },
+     {
+      "insee": "78418",
+      "pole": "P_DEFENSE",
+      "day": "d09",
+      "budget": 45,
+      "kept": false,
+      "out": 42,
+      "ret": 43,
+      "out_bound": 49,
+      "ret_bound": null
+     },
+     {
+      "insee": "78418",
+      "pole": "P_DEFENSE",
+      "day": "d14",
+      "budget": 60,
+      "kept": false,
+      "out": 46,
+      "ret": 52,
+      "out_bound": 65,
+      "ret_bound": null
+     }
+    ],
+    "reference": [
+     {
+      "insee": "78418",
+      "pole": "P_DEFENSE",
+      "day": "d06",
+      "budget": 60,
+      "kept": false,
+      "out": 49,
+      "ret": 43,
+      "out_bound": 70,
+      "ret_bound": null
+     },
+     {
+      "insee": "78418",
+      "pole": "P_DEFENSE",
+      "day": "d09",
+      "budget": 45,
+      "kept": false,
+      "out": 42,
+      "ret": 43,
+      "out_bound": 49,
+      "ret_bound": null
+     },
+     {
+      "insee": "78418",
+      "pole": "P_DEFENSE",
+      "day": "d14",
+      "budget": 60,
+      "kept": false,
+      "out": 46,
+      "ret": 52,
+      "out_bound": 65,
+      "ret_bound": null
+     }
+    ]
+   }
+  }
+ },
+ "insights": [],
+ "outputs": {
+  "short_csv": "data/interim/transfer_check_walk1000/transfer_check_walk1000_short.csv.gz",
+  "all_csv": "data/interim/transfer_check_walk1000/transfers_all.csv.gz"
+ }
+}

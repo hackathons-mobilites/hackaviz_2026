@@ -1,0 +1,4 @@
+# Patchs et scripts lus sur la VM (Linux) : jamais de fin de ligne CRLF (git am, bash)
+*.patch -text
+*.sh text eol=lf
+*.java text eol=lf

@@ -1,0 +1,87 @@
+/* Bloc « Offres diffusées sur Choisir le service public » (D-036) : mêmes couleurs que le reste du panneau ; ni cyan ni or
+   (le cyan est réservé à l'accessibilité, l'or au gain démontré : une offre diffusée n'est ni l'un ni l'autre). Aucune
+   couleur ni taille nouvelle : seulement les variables et les valeurs déjà utilisées par les blocs voisins. */
+.pf-offers {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pf-offers-toggle {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.pf-offers-toggle input {
+  flex: none;
+  margin: 0;
+}
+
+.pf-offers-toggle input:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.pf-offers-hint {
+  margin: 0 0 6px;
+  font-size: 12px;
+}
+
+.pf-offers-note {
+  margin-top: 8px;
+}
+
+.pf-offers-versants,
+.pf-offers-items {
+  margin: 10px 0 4px;
+  padding: 0;
+  list-style: none;
+}
+
+.pf-offers-versants li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 8px;
+  align-items: baseline;
+  padding: 3px 0;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.pf-offers-value {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.pf-offers-items li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 5px 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.pf-offers-items a {
+  color: var(--text);
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+
+.pf-offers-items a:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.pf-offers-limits ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-dim);
+}

@@ -1,0 +1,265 @@
+{
+ "tour": "lea",
+ "stem": "10-acte2-pole",
+ "mp3Sha256": "e489eca65e63d6339b3cc2bc4fec6db8e73d2534b2d8ddc1ab74709d192814ab",
+ "text": "Dans le panneau de droite, la fiche de Seine-Aval. Dans la liste des communes du pôle, la ligne de Poissy. L’aller prend 38 minutes. Le retour en prend 50, attente comprise. Poissy reste à sa portée, même le soir. Ces temps ont été recoupés avec le calculateur d’Île-de-France Mobilités.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Dans le panneau de droite, La fiche de saine aval. Dans la liste des communes du pôle la ligne de Poissy, L'Allée prend 38 Min. Le retour en prend 50, attente comprise. Poissy reste à sa portée même le soir. Ces temps ont été recoupés avec le calculateur d'Île-De-France Mobilité.",
+ "words": [
+  {
+   "word": "dans",
+   "startMs": 70,
+   "endMs": 150
+  },
+  {
+   "word": "le",
+   "startMs": 150,
+   "endMs": 270
+  },
+  {
+   "word": "panneau",
+   "startMs": 270,
+   "endMs": 550
+  },
+  {
+   "word": "de",
+   "startMs": 550,
+   "endMs": 590
+  },
+  {
+   "word": "droite",
+   "startMs": 590,
+   "endMs": 1030
+  },
+  {
+   "word": "la",
+   "startMs": 1030,
+   "endMs": 1230
+  },
+  {
+   "word": "fiche",
+   "startMs": 1230,
+   "endMs": 1550
+  },
+  {
+   "word": "de",
+   "startMs": 1550,
+   "endMs": 1630
+  },
+  {
+   "word": "saine",
+   "startMs": 1630,
+   "endMs": 1910
+  },
+  {
+   "word": "aval",
+   "startMs": 1910,
+   "endMs": 2350
+  },
+  {
+   "word": "dans",
+   "startMs": 2710,
+   "endMs": 2950
+  },
+  {
+   "word": "la",
+   "startMs": 2950,
+   "endMs": 3070
+  },
+  {
+   "word": "liste",
+   "startMs": 3070,
+   "endMs": 3390
+  },
+  {
+   "word": "des",
+   "startMs": 3390,
+   "endMs": 3510
+  },
+  {
+   "word": "communes",
+   "startMs": 3510,
+   "endMs": 3830
+  },
+  {
+   "word": "du",
+   "startMs": 3830,
+   "endMs": 3950
+  },
+  {
+   "word": "pôle",
+   "startMs": 3950,
+   "endMs": 4390
+  },
+  {
+   "word": "la",
+   "startMs": 4390,
+   "endMs": 4630
+  },
+  {
+   "word": "ligne",
+   "startMs": 4630,
+   "endMs": 4830
+  },
+  {
+   "word": "de",
+   "startMs": 4830,
+   "endMs": 4950
+  },
+  {
+   "word": "poissy",
+   "startMs": 4950,
+   "endMs": 5470
+  },
+  {
+   "word": "l'allée",
+   "startMs": 5830,
+   "endMs": 6230
+  },
+  {
+   "word": "prend",
+   "startMs": 6230,
+   "endMs": 6470
+  },
+  {
+   "word": "trente",
+   "startMs": 6470,
+   "endMs": 6750
+  },
+  {
+   "word": "huit",
+   "startMs": 6750,
+   "endMs": 6870
+  },
+  {
+   "word": "minutes",
+   "startMs": 6870,
+   "endMs": 7390
+  },
+  {
+   "word": "le",
+   "startMs": 7390,
+   "endMs": 7550
+  },
+  {
+   "word": "retour",
+   "startMs": 7550,
+   "endMs": 7910
+  },
+  {
+   "word": "en",
+   "startMs": 7910,
+   "endMs": 7990
+  },
+  {
+   "word": "prend",
+   "startMs": 7990,
+   "endMs": 8190
+  },
+  {
+   "word": "cinquante",
+   "startMs": 8190,
+   "endMs": 8710
+  },
+  {
+   "word": "attente",
+   "startMs": 8710,
+   "endMs": 9070
+  },
+  {
+   "word": "comprise",
+   "startMs": 9070,
+   "endMs": 9670
+  },
+  {
+   "word": "poissy",
+   "startMs": 9910,
+   "endMs": 10310
+  },
+  {
+   "word": "reste",
+   "startMs": 10310,
+   "endMs": 10550
+  },
+  {
+   "word": "à",
+   "startMs": 10550,
+   "endMs": 10630
+  },
+  {
+   "word": "sa",
+   "startMs": 10630,
+   "endMs": 10750
+  },
+  {
+   "word": "portée",
+   "startMs": 10750,
+   "endMs": 11270
+  },
+  {
+   "word": "même",
+   "startMs": 11310,
+   "endMs": 11590
+  },
+  {
+   "word": "le",
+   "startMs": 11590,
+   "endMs": 11710
+  },
+  {
+   "word": "soir",
+   "startMs": 11710,
+   "endMs": 12230
+  },
+  {
+   "word": "ces",
+   "startMs": 12590,
+   "endMs": 12870
+  },
+  {
+   "word": "temps",
+   "startMs": 12870,
+   "endMs": 13030
+  },
+  {
+   "word": "ont",
+   "startMs": 13030,
+   "endMs": 13110
+  },
+  {
+   "word": "été",
+   "startMs": 13110,
+   "endMs": 13390
+  },
+  {
+   "word": "recoupés",
+   "startMs": 13390,
+   "endMs": 13910
+  },
+  {
+   "word": "avec",
+   "startMs": 13910,
+   "endMs": 14110
+  },
+  {
+   "word": "le",
+   "startMs": 14110,
+   "endMs": 14230
+  },
+  {
+   "word": "calculateur",
+   "startMs": 14230,
+   "endMs": 14950
+  },
+  {
+   "word": "d'île-de-france",
+   "startMs": 14950,
+   "endMs": 15590
+  },
+  {
+   "word": "mobilité",
+   "startMs": 15590,
+   "endMs": 16190
+  }
+ ]
+}

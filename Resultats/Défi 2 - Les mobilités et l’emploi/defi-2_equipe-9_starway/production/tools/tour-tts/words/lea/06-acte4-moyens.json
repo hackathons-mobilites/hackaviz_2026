@@ -1,0 +1,230 @@
+{
+ "tour": "lea",
+ "stem": "06-acte4-moyens",
+ "mp3Sha256": "71f421dedc5c73809951de0c4ccc5e4b760f15c9eb34f1015b5e34d2028efbab",
+ "text": "Dans la même fiche, Léa peut comparer les moyens de transport : les émissions carbone de chaque trajet. Les solutions complémentaires, comme le vélo jusqu’à la gare, visent à réduire l’utilisation de la voiture. Et les lignes déclarées climatisées sont utiles face au changement climatique.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Dans la même fiche, Lea peut comparer les moyens de transport, les émissions carbone de chaque trajet. Les solutions complémentaires comme le vélo jusqu'à la gare visent à réduire l'utilisation de la voiture et les lignes déclarées climatisées sont utiles face aux changements climatiques.",
+ "words": [
+  {
+   "word": "dans",
+   "startMs": 70,
+   "endMs": 190
+  },
+  {
+   "word": "la",
+   "startMs": 190,
+   "endMs": 310
+  },
+  {
+   "word": "même",
+   "startMs": 310,
+   "endMs": 510
+  },
+  {
+   "word": "fiche",
+   "startMs": 510,
+   "endMs": 910
+  },
+  {
+   "word": "lea",
+   "startMs": 1190,
+   "endMs": 1550
+  },
+  {
+   "word": "peut",
+   "startMs": 1550,
+   "endMs": 1670
+  },
+  {
+   "word": "comparer",
+   "startMs": 1670,
+   "endMs": 2150
+  },
+  {
+   "word": "les",
+   "startMs": 2150,
+   "endMs": 2270
+  },
+  {
+   "word": "moyens",
+   "startMs": 2270,
+   "endMs": 2590
+  },
+  {
+   "word": "de",
+   "startMs": 2590,
+   "endMs": 2630
+  },
+  {
+   "word": "transport",
+   "startMs": 2630,
+   "endMs": 3270
+  },
+  {
+   "word": "les",
+   "startMs": 3270,
+   "endMs": 3510
+  },
+  {
+   "word": "émissions",
+   "startMs": 3510,
+   "endMs": 3870
+  },
+  {
+   "word": "carbone",
+   "startMs": 3870,
+   "endMs": 4310
+  },
+  {
+   "word": "de",
+   "startMs": 4310,
+   "endMs": 4430
+  },
+  {
+   "word": "chaque",
+   "startMs": 4430,
+   "endMs": 4630
+  },
+  {
+   "word": "trajet",
+   "startMs": 4630,
+   "endMs": 5070
+  },
+  {
+   "word": "les",
+   "startMs": 5230,
+   "endMs": 5470
+  },
+  {
+   "word": "solutions",
+   "startMs": 5470,
+   "endMs": 5870
+  },
+  {
+   "word": "complémentaires",
+   "startMs": 5870,
+   "endMs": 6670
+  },
+  {
+   "word": "comme",
+   "startMs": 6670,
+   "endMs": 6870
+  },
+  {
+   "word": "le",
+   "startMs": 6870,
+   "endMs": 6990
+  },
+  {
+   "word": "vélo",
+   "startMs": 6990,
+   "endMs": 7270
+  },
+  {
+   "word": "jusqu'à",
+   "startMs": 7270,
+   "endMs": 7510
+  },
+  {
+   "word": "la",
+   "startMs": 7510,
+   "endMs": 7630
+  },
+  {
+   "word": "gare",
+   "startMs": 7630,
+   "endMs": 8030
+  },
+  {
+   "word": "visent",
+   "startMs": 8150,
+   "endMs": 8550
+  },
+  {
+   "word": "à",
+   "startMs": 8550,
+   "endMs": 8670
+  },
+  {
+   "word": "réduire",
+   "startMs": 8670,
+   "endMs": 9030
+  },
+  {
+   "word": "l'utilisation",
+   "startMs": 9030,
+   "endMs": 9670
+  },
+  {
+   "word": "de",
+   "startMs": 9670,
+   "endMs": 9750
+  },
+  {
+   "word": "la",
+   "startMs": 9750,
+   "endMs": 9870
+  },
+  {
+   "word": "voiture",
+   "startMs": 9870,
+   "endMs": 10350
+  },
+  {
+   "word": "et",
+   "startMs": 10510,
+   "endMs": 10710
+  },
+  {
+   "word": "les",
+   "startMs": 10710,
+   "endMs": 10830
+  },
+  {
+   "word": "lignes",
+   "startMs": 10830,
+   "endMs": 11230
+  },
+  {
+   "word": "déclarées",
+   "startMs": 11270,
+   "endMs": 12030
+  },
+  {
+   "word": "climatisées",
+   "startMs": 12030,
+   "endMs": 12830
+  },
+  {
+   "word": "sont",
+   "startMs": 12830,
+   "endMs": 13150
+  },
+  {
+   "word": "utiles",
+   "startMs": 13150,
+   "endMs": 13550
+  },
+  {
+   "word": "face",
+   "startMs": 13590,
+   "endMs": 13990
+  },
+  {
+   "word": "aux",
+   "startMs": 13990,
+   "endMs": 14110
+  },
+  {
+   "word": "changements",
+   "startMs": 14110,
+   "endMs": 14430
+  },
+  {
+   "word": "climatiques",
+   "startMs": 14430,
+   "endMs": 15110
+  }
+ ]
+}

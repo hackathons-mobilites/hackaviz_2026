@@ -1,0 +1,28 @@
+/* Bloc « Coût et carbone » du panneau de preuve (D-029, V0 sobre : Maia peut le reprendre). */
+.pf-carcost-legs {
+  margin: 4px 0 6px;
+  padding-left: 18px;
+  line-height: 1.45;
+}
+
+.pf-carcost-legs li + li {
+  margin-top: 2px;
+}
+
+.pf-carcost-src {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.pf-carcost-src li + li {
+  margin-top: 2px;
+}
+
+/* Audit d'affichage du 10/11 (lot 4) : dans un « i », une information par ligne */
+.info-pop-body .pf-tip-row {
+  display: block;
+}
+
+.info-pop-body .pf-tip-row + .pf-tip-row {
+  margin-top: 4px;
+}

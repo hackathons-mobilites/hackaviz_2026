@@ -1,0 +1,129 @@
+/*
+ * Bloc « Trajet » et tuiles Durée, Coût, Carbone (D-066). Couleurs : texte et lignes du panneau seulement (cyan réservé à
+ * l'accessible, or au gain démontré). Aucune animation. 340 à 390 px : trois tuiles par ligne, un mot long passe à la ligne.
+ */
+.pf-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin: var(--space-2) 0;
+}
+
+/* Trois tuiles : le carbone (« 146 g CO2e ») a besoin de plus de place que la durée pour tenir sur une ligne à 340 px */
+.pf-tiles[data-count='3'] {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1.35fr);
+}
+
+.pf-tiles[data-count='2'],
+.pf-tiles[data-count='4'] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pf-tiles[data-count='1'] {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.pf-tiles.is-src {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.proof-panel .pf-tile {
+  margin: 0;
+  padding: var(--space-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(168, 183, 209, 0.05);
+  min-width: 0;
+}
+
+.proof-panel .pf-tile-label {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--text-dim);
+}
+
+.proof-panel .pf-tile-value {
+  margin: 2px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pf-tile-figure {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+/* Des mots plutôt qu'un chiffre (« Pas d'émission à l'usage ») : plus petits, pour ne pas crier une valeur qui n'en est pas une */
+.pf-tile-figure.is-words {
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.pf-tile-sub {
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--text-dim);
+}
+
+/* Bascule Aller / Retour : chaque bouton porte la durée de son sens (l'aller ET le retour restent lisibles) */
+.pf-trip-block .alt-dir {
+  margin: var(--space-2) 0 var(--space-1);
+}
+
+.pf-trip-rt {
+  margin: 0 0 var(--space-2);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.pf-trip-meta {
+  margin: 0 0 var(--space-1);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-dim);
+}
+
+.pf-trip-tabs-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-1);
+}
+
+.pf-trip-tabs-row .alt-tabs {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Le détail du sens choisi (bande, lignes, arrêts) : sans son ancien titre, sous les tuiles */
+.pf-trip-block .pf-transports {
+  margin-top: var(--space-2);
+}
+
+.pf-trip-block .alt-state {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-dim);
+}
+
+/* Mode sources : la phrase de « Trajet retenu », écrite en clair, passe sous les onglets sur toute la largeur */
+.pf-trip-tabs-row .pf-src-block {
+  flex: 1 0 100%;
+}
+
+/* Péages de la voiture : le montant et le crédit de son tarif, une ligne par sens, sans puce */
+.proof-panel ul.pf-carcost-tolls,
+.proof-panel p.pf-carcost-tolls {
+  margin: var(--space-1) 0 var(--space-2);
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text);
+}

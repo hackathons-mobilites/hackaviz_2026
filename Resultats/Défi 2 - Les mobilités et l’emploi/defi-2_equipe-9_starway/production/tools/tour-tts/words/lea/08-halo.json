@@ -1,0 +1,260 @@
+{
+ "tour": "lea",
+ "stem": "08-halo",
+ "mp3Sha256": "32d14337e590b3667ec809278a89511cf6d3eabba814c70cd55f2334d3a877ec",
+ "text": "Le halo s’ouvre : derrière chaque commune, des habitants. D’après l’INSEE, le niveau de vie médian est d’environ 42 500 euros par an à Maisons-Laffitte. Il est d’environ 36 600 euros à Montesson. Ce halo décrit qui y vit, pas ce que chacun peut atteindre.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Le HALO s'ouvre derrière chaque commune des habitants. D'après l'Insee, le niveau de vie médian est d'environ 42500€ par an à Maisons-Laffitte. Il est d'environ 36600€ à montesson. Ce halo décrit qui y vit, pas ce que chacun peut atteindre.",
+ "words": [
+  {
+   "word": "le",
+   "startMs": 70,
+   "endMs": 270
+  },
+  {
+   "word": "halo",
+   "startMs": 270,
+   "endMs": 510
+  },
+  {
+   "word": "s'ouvre",
+   "startMs": 510,
+   "endMs": 1070
+  },
+  {
+   "word": "derrière",
+   "startMs": 1270,
+   "endMs": 1670
+  },
+  {
+   "word": "chaque",
+   "startMs": 1670,
+   "endMs": 1870
+  },
+  {
+   "word": "commune",
+   "startMs": 1870,
+   "endMs": 2350
+  },
+  {
+   "word": "des",
+   "startMs": 2390,
+   "endMs": 2670
+  },
+  {
+   "word": "habitants",
+   "startMs": 2670,
+   "endMs": 3150
+  },
+  {
+   "word": "d'après",
+   "startMs": 3830,
+   "endMs": 4230
+  },
+  {
+   "word": "l'insee",
+   "startMs": 4230,
+   "endMs": 4710
+  },
+  {
+   "word": "le",
+   "startMs": 4750,
+   "endMs": 4990
+  },
+  {
+   "word": "niveau",
+   "startMs": 4990,
+   "endMs": 5230
+  },
+  {
+   "word": "de",
+   "startMs": 5230,
+   "endMs": 5270
+  },
+  {
+   "word": "vie",
+   "startMs": 5270,
+   "endMs": 5430
+  },
+  {
+   "word": "médian",
+   "startMs": 5430,
+   "endMs": 5870
+  },
+  {
+   "word": "est",
+   "startMs": 5870,
+   "endMs": 5990
+  },
+  {
+   "word": "d'environ",
+   "startMs": 5990,
+   "endMs": 6430
+  },
+  {
+   "word": "quarante",
+   "startMs": 6430,
+   "endMs": 6830
+  },
+  {
+   "word": "deux",
+   "startMs": 6830,
+   "endMs": 6990
+  },
+  {
+   "word": "mille",
+   "startMs": 6990,
+   "endMs": 7150
+  },
+  {
+   "word": "cinq",
+   "startMs": 7150,
+   "endMs": 7310
+  },
+  {
+   "word": "cents",
+   "startMs": 7310,
+   "endMs": 7470
+  },
+  {
+   "word": "euros",
+   "startMs": 7470,
+   "endMs": 7710
+  },
+  {
+   "word": "par",
+   "startMs": 7710,
+   "endMs": 7990
+  },
+  {
+   "word": "an",
+   "startMs": 7990,
+   "endMs": 8110
+  },
+  {
+   "word": "à",
+   "startMs": 8110,
+   "endMs": 8310
+  },
+  {
+   "word": "maisons-laffitte",
+   "startMs": 8310,
+   "endMs": 9070
+  },
+  {
+   "word": "il",
+   "startMs": 9750,
+   "endMs": 9990
+  },
+  {
+   "word": "est",
+   "startMs": 9990,
+   "endMs": 10030
+  },
+  {
+   "word": "d'environ",
+   "startMs": 10030,
+   "endMs": 10510
+  },
+  {
+   "word": "trente",
+   "startMs": 10510,
+   "endMs": 10870
+  },
+  {
+   "word": "six",
+   "startMs": 10870,
+   "endMs": 10990
+  },
+  {
+   "word": "mille",
+   "startMs": 10990,
+   "endMs": 11190
+  },
+  {
+   "word": "six",
+   "startMs": 11190,
+   "endMs": 11350
+  },
+  {
+   "word": "cents",
+   "startMs": 11350,
+   "endMs": 11510
+  },
+  {
+   "word": "euros",
+   "startMs": 11510,
+   "endMs": 11910
+  },
+  {
+   "word": "à",
+   "startMs": 11910,
+   "endMs": 12110
+  },
+  {
+   "word": "montesson",
+   "startMs": 12110,
+   "endMs": 12670
+  },
+  {
+   "word": "ce",
+   "startMs": 13750,
+   "endMs": 14030
+  },
+  {
+   "word": "halo",
+   "startMs": 14030,
+   "endMs": 14350
+  },
+  {
+   "word": "décrit",
+   "startMs": 14350,
+   "endMs": 14750
+  },
+  {
+   "word": "qui",
+   "startMs": 14750,
+   "endMs": 14950
+  },
+  {
+   "word": "y",
+   "startMs": 14950,
+   "endMs": 15190
+  },
+  {
+   "word": "vit",
+   "startMs": 15190,
+   "endMs": 15470
+  },
+  {
+   "word": "pas",
+   "startMs": 15870,
+   "endMs": 16110
+  },
+  {
+   "word": "ce",
+   "startMs": 16110,
+   "endMs": 16190
+  },
+  {
+   "word": "que",
+   "startMs": 16190,
+   "endMs": 16310
+  },
+  {
+   "word": "chacun",
+   "startMs": 16310,
+   "endMs": 16670
+  },
+  {
+   "word": "peut",
+   "startMs": 16670,
+   "endMs": 16870
+  },
+  {
+   "word": "atteindre",
+   "startMs": 16870,
+   "endMs": 17470
+  }
+ ]
+}

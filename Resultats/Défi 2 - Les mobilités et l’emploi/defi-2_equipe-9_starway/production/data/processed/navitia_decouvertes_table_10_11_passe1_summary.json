@@ -1,0 +1,16 @@
+{
+ "generated_at": "2026-11-10T03:07:53Z",
+ "service_date": "2026-11-17",
+ "source_checks": "navitia_crosscheck_walk3000_b44_summary.json",
+ "verdicts": {
+  "eclipse_02": "contredite_sur_la_table",
+  "eclipse_04": "contredite_sur_la_table",
+  "territorial_gap_02": "confirmee_sur_la_table",
+  "late_return_03": "contredite_sur_la_table",
+  "late_return_07": "confirmee_sur_la_table"
+ },
+ "requests_sent": 28,
+ "x_ratelimit_remaining_day": "649",
+ "stopped": null,
+ "n_communes_par_cote": 2
+}

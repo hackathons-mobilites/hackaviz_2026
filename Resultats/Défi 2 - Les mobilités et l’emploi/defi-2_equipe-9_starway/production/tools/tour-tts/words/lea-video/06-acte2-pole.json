@@ -1,0 +1,185 @@
+{
+ "tour": "lea-video",
+ "stem": "06-acte2-pole",
+ "mp3Sha256": "b32af022fb3c073ac53e54c4a0355a7ddbf05869413c53cf860ab2e840e50d17",
+ "text": "Dans le panneau de droite, la fiche de Seine-Aval. Dans la liste, Poissy : l’aller prend 38 minutes. Le retour en prend 50, attente comprise. Poissy reste à sa portée, même le soir.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Dans le panneau de droite, La fiche de Seneval dans la liste Poissy, L'Allée prend 38 Min. Le retour en prend 50 à temps de comprise. Poissy reste à sa portée même le soir.",
+ "words": [
+  {
+   "word": "dans",
+   "startMs": 70,
+   "endMs": 230
+  },
+  {
+   "word": "le",
+   "startMs": 230,
+   "endMs": 310
+  },
+  {
+   "word": "panneau",
+   "startMs": 310,
+   "endMs": 510
+  },
+  {
+   "word": "de",
+   "startMs": 510,
+   "endMs": 550
+  },
+  {
+   "word": "droite",
+   "startMs": 550,
+   "endMs": 1070
+  },
+  {
+   "word": "la",
+   "startMs": 1230,
+   "endMs": 1470
+  },
+  {
+   "word": "fiche",
+   "startMs": 1470,
+   "endMs": 1830
+  },
+  {
+   "word": "de",
+   "startMs": 1830,
+   "endMs": 1910
+  },
+  {
+   "word": "seneval",
+   "startMs": 1910,
+   "endMs": 2670
+  },
+  {
+   "word": "dans",
+   "startMs": 2950,
+   "endMs": 3190
+  },
+  {
+   "word": "la",
+   "startMs": 3190,
+   "endMs": 3310
+  },
+  {
+   "word": "liste",
+   "startMs": 3310,
+   "endMs": 3830
+  },
+  {
+   "word": "poissy",
+   "startMs": 3870,
+   "endMs": 4430
+  },
+  {
+   "word": "l'allée",
+   "startMs": 4750,
+   "endMs": 5110
+  },
+  {
+   "word": "prend",
+   "startMs": 5110,
+   "endMs": 5270
+  },
+  {
+   "word": "trente",
+   "startMs": 5270,
+   "endMs": 5550
+  },
+  {
+   "word": "huit",
+   "startMs": 5550,
+   "endMs": 5670
+  },
+  {
+   "word": "minutes",
+   "startMs": 5670,
+   "endMs": 6150
+  },
+  {
+   "word": "le",
+   "startMs": 6470,
+   "endMs": 6670
+  },
+  {
+   "word": "retour",
+   "startMs": 6670,
+   "endMs": 7110
+  },
+  {
+   "word": "en",
+   "startMs": 7110,
+   "endMs": 7150
+  },
+  {
+   "word": "prend",
+   "startMs": 7150,
+   "endMs": 7350
+  },
+  {
+   "word": "cinquante",
+   "startMs": 7350,
+   "endMs": 7870
+  },
+  {
+   "word": "à",
+   "startMs": 7870,
+   "endMs": 7990
+  },
+  {
+   "word": "temps",
+   "startMs": 7990,
+   "endMs": 8110
+  },
+  {
+   "word": "de",
+   "startMs": 8110,
+   "endMs": 8150
+  },
+  {
+   "word": "comprise",
+   "startMs": 8150,
+   "endMs": 8710
+  },
+  {
+   "word": "poissy",
+   "startMs": 9310,
+   "endMs": 9830
+  },
+  {
+   "word": "reste",
+   "startMs": 9830,
+   "endMs": 10070
+  },
+  {
+   "word": "à",
+   "startMs": 10070,
+   "endMs": 10150
+  },
+  {
+   "word": "sa",
+   "startMs": 10150,
+   "endMs": 10270
+  },
+  {
+   "word": "portée",
+   "startMs": 10270,
+   "endMs": 10710
+  },
+  {
+   "word": "même",
+   "startMs": 11150,
+   "endMs": 11470
+  },
+  {
+   "word": "le",
+   "startMs": 11470,
+   "endMs": 11550
+  },
+  {
+   "word": "soir",
+   "startMs": 11550,
+   "endMs": 12110
+  }
+ ]
+}

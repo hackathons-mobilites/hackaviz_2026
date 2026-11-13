@@ -1,0 +1,165 @@
+{
+ "tour": "lea",
+ "stem": "03-acte1-carte",
+ "mp3Sha256": "9995a6578dc490793a6e0cd790aedb3f7325277f3b72ebac1bd8ed2df7862948",
+ "text": "La carte s’ouvre : chaque étoile retrouve sa place. Le ciel de Léa part du cœur habité de Maisons-Laffitte : un point, pas une adresse. Les temps sont calculés de commune à commune.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "La carte s'ouvre, chaque étoile retrouve sa place. Le ciel de Lea part du cœur habité de Maisons-Laffitte. Un point, pas une adresse. Les temps sont calculés de commune à commune.",
+ "words": [
+  {
+   "word": "la",
+   "startMs": 70,
+   "endMs": 230
+  },
+  {
+   "word": "carte",
+   "startMs": 230,
+   "endMs": 590
+  },
+  {
+   "word": "s'ouvre",
+   "startMs": 590,
+   "endMs": 1190
+  },
+  {
+   "word": "chaque",
+   "startMs": 1310,
+   "endMs": 1630
+  },
+  {
+   "word": "étoile",
+   "startMs": 1630,
+   "endMs": 1910
+  },
+  {
+   "word": "retrouve",
+   "startMs": 1910,
+   "endMs": 2230
+  },
+  {
+   "word": "sa",
+   "startMs": 2230,
+   "endMs": 2350
+  },
+  {
+   "word": "place",
+   "startMs": 2350,
+   "endMs": 2950
+  },
+  {
+   "word": "le",
+   "startMs": 3310,
+   "endMs": 3590
+  },
+  {
+   "word": "ciel",
+   "startMs": 3590,
+   "endMs": 3910
+  },
+  {
+   "word": "de",
+   "startMs": 3910,
+   "endMs": 3990
+  },
+  {
+   "word": "lea",
+   "startMs": 3990,
+   "endMs": 4470
+  },
+  {
+   "word": "part",
+   "startMs": 4590,
+   "endMs": 4830
+  },
+  {
+   "word": "du",
+   "startMs": 4830,
+   "endMs": 4950
+  },
+  {
+   "word": "cœur",
+   "startMs": 4950,
+   "endMs": 5150
+  },
+  {
+   "word": "habité",
+   "startMs": 5150,
+   "endMs": 5510
+  },
+  {
+   "word": "de",
+   "startMs": 5510,
+   "endMs": 5550
+  },
+  {
+   "word": "maisons-laffitte",
+   "startMs": 5550,
+   "endMs": 6470
+  },
+  {
+   "word": "un",
+   "startMs": 6750,
+   "endMs": 6910
+  },
+  {
+   "word": "point",
+   "startMs": 6910,
+   "endMs": 7310
+  },
+  {
+   "word": "pas",
+   "startMs": 7390,
+   "endMs": 7550
+  },
+  {
+   "word": "une",
+   "startMs": 7550,
+   "endMs": 7710
+  },
+  {
+   "word": "adresse",
+   "startMs": 7710,
+   "endMs": 8390
+  },
+  {
+   "word": "les",
+   "startMs": 8790,
+   "endMs": 9110
+  },
+  {
+   "word": "temps",
+   "startMs": 9110,
+   "endMs": 9270
+  },
+  {
+   "word": "sont",
+   "startMs": 9270,
+   "endMs": 9430
+  },
+  {
+   "word": "calculés",
+   "startMs": 9430,
+   "endMs": 9910
+  },
+  {
+   "word": "de",
+   "startMs": 9910,
+   "endMs": 9990
+  },
+  {
+   "word": "commune",
+   "startMs": 9990,
+   "endMs": 10390
+  },
+  {
+   "word": "à",
+   "startMs": 10390,
+   "endMs": 10430
+  },
+  {
+   "word": "commune",
+   "startMs": 10430,
+   "endMs": 10950
+  }
+ ]
+}

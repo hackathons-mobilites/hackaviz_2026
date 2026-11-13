@@ -1,0 +1,44 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:02.221
+Voici Maisons-Laffitte.
+
+2
+00:00:02.221 --> 00:00:03.590
+C’est ici que vit Léa,
+
+3
+00:00:03.590 --> 00:00:05.550
+une habitante imaginaire.
+
+4
+00:00:05.550 --> 00:00:06.790
+Elle cherche un emploi :
+
+5
+00:00:06.790 --> 00:00:07.750
+sans voiture,
+
+6
+00:00:07.750 --> 00:00:09.710
+avec un vélo pour plus tard.
+
+7
+00:00:09.710 --> 00:00:10.483
+D’abord,
+
+8
+00:00:10.483 --> 00:00:12.255
+seulement les transports en commun :
+
+9
+00:00:12.255 --> 00:00:14.031
+quels emplois peut-elle rejoindre ?
+
+10
+00:00:14.031 --> 00:00:16.190
+Et qu’est-ce qui pourrait élargir son
+horizon ?

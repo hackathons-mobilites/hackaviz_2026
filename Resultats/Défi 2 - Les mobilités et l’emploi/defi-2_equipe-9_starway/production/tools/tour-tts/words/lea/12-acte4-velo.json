@@ -1,0 +1,165 @@
+{
+ "tour": "lea",
+ "stem": "12-acte4-velo",
+ "mp3Sha256": "3d0829a4be8a76b3bd82eb6fec1f594c02d0e1023030385042d5e306608c8771",
+ "text": "Alors, une solution complémentaire : son vélo jusqu’à la gare, puis les transports en commun. Sans compter le temps pour le garer, son périmètre de recherche d’emploi s’élargit, sans prendre la voiture.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Alors une solution complémentaire ? Son vélo jusqu'à la gare, puis les transports en commun, sans compter le temps pour le garer. Son périmètre de recherche d'emploi s'élargit sans prendre la voiture.",
+ "words": [
+  {
+   "word": "alors",
+   "startMs": 70,
+   "endMs": 470
+  },
+  {
+   "word": "une",
+   "startMs": 470,
+   "endMs": 670
+  },
+  {
+   "word": "solution",
+   "startMs": 670,
+   "endMs": 1070
+  },
+  {
+   "word": "complémentaire",
+   "startMs": 1070,
+   "endMs": 2070
+  },
+  {
+   "word": "son",
+   "startMs": 2150,
+   "endMs": 2470
+  },
+  {
+   "word": "vélo",
+   "startMs": 2470,
+   "endMs": 2750
+  },
+  {
+   "word": "jusqu'à",
+   "startMs": 2750,
+   "endMs": 3070
+  },
+  {
+   "word": "la",
+   "startMs": 3070,
+   "endMs": 3190
+  },
+  {
+   "word": "gare",
+   "startMs": 3190,
+   "endMs": 3630
+  },
+  {
+   "word": "puis",
+   "startMs": 3870,
+   "endMs": 3990
+  },
+  {
+   "word": "les",
+   "startMs": 3990,
+   "endMs": 4070
+  },
+  {
+   "word": "transports",
+   "startMs": 4070,
+   "endMs": 4510
+  },
+  {
+   "word": "en",
+   "startMs": 4510,
+   "endMs": 4590
+  },
+  {
+   "word": "commun",
+   "startMs": 4590,
+   "endMs": 4990
+  },
+  {
+   "word": "sans",
+   "startMs": 5470,
+   "endMs": 5790
+  },
+  {
+   "word": "compter",
+   "startMs": 5790,
+   "endMs": 6110
+  },
+  {
+   "word": "le",
+   "startMs": 6110,
+   "endMs": 6230
+  },
+  {
+   "word": "temps",
+   "startMs": 6230,
+   "endMs": 6430
+  },
+  {
+   "word": "pour",
+   "startMs": 6430,
+   "endMs": 6630
+  },
+  {
+   "word": "le",
+   "startMs": 6630,
+   "endMs": 6750
+  },
+  {
+   "word": "garer",
+   "startMs": 6750,
+   "endMs": 7150
+  },
+  {
+   "word": "son",
+   "startMs": 7310,
+   "endMs": 7630
+  },
+  {
+   "word": "périmètre",
+   "startMs": 7630,
+   "endMs": 8190
+  },
+  {
+   "word": "de",
+   "startMs": 8190,
+   "endMs": 8270
+  },
+  {
+   "word": "recherche",
+   "startMs": 8270,
+   "endMs": 8590
+  },
+  {
+   "word": "d'emploi",
+   "startMs": 8590,
+   "endMs": 8950
+  },
+  {
+   "word": "s'élargit",
+   "startMs": 8950,
+   "endMs": 9670
+  },
+  {
+   "word": "sans",
+   "startMs": 9670,
+   "endMs": 10030
+  },
+  {
+   "word": "prendre",
+   "startMs": 10030,
+   "endMs": 10310
+  },
+  {
+   "word": "la",
+   "startMs": 10310,
+   "endMs": 10430
+  },
+  {
+   "word": "voiture",
+   "startMs": 10430,
+   "endMs": 10950
+  }
+ ]
+}
