@@ -1,0 +1,49 @@
+/*
+ * Provenance des données (motion-spec, section « Affichage », partie B) : 12 px, graisse 400, texte
+ * secondaire #A8B7D1 (9,47:1 sur le fond, 8,42:1 sur le panneau), jamais cyan ni or, jamais
+ * d'italique ni de lueur. Apparition immédiate, sans animation (rien à réduire).
+ */
+.prov-note {
+  margin: 6px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-dim);
+  font-style: normal;
+}
+
+.prov-link {
+  position: relative;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(168, 183, 209, 0.6);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.prov-link:hover,
+.prov-link:focus-visible {
+  color: var(--text);
+  text-decoration-style: solid;
+}
+
+.prov-link:focus-visible {
+  outline: 2px solid var(--accent, #b39bff);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Zone de frappe de 44 px de haut au doigt (comme les « i ») sans changer la ligne */
+@media (pointer: coarse) {
+  .prov-link::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 50%;
+    height: 44px;
+    transform: translateY(-50%);
+  }
+}

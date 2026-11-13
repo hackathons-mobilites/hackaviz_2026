@@ -1,0 +1,22 @@
+{
+  "name": "starway-record-tour",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Enregistrement reproductible de la visite guidée STARWAY : Playwright (vidéo) + ffmpeg (audio, sous-titres, MP4 H.264 1080p).",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "record": "node src/cli.mjs",
+    "dry-run": "node src/cli.mjs --dry-run",
+    "test": "node --test \"src/**/*.test.mjs\"",
+    "sample:audio": "node scripts/make-sample-audio.mjs",
+    "test:sample": "node scripts/make-sample-audio.mjs && node src/cli.mjs fictif --tour-dir samples/fictif --dry-run && node src/cli.mjs fictif --tour-dir samples/fictif --work-dir samples/fictif/work --out-dir samples/out --assemble-only --sync events --preset veryfast",
+    "install:browser": "playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "1.64.1"
+  }
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080E20" />
+    <meta name="description" content="STARWAY : le même ciel, mais pas les mêmes étoiles. Les pôles d'emploi d'Île-de-France que l'on peut rejoindre à l'aller et au retour en transports en commun, selon sa commune, ses horaires et son temps de trajet. Données ouvertes INSEE, IDFM, OpenStreetMap." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Préchargement des données de démarrage (le ciel en a besoin avant tout le reste) -->
+    <link rel="preload" href="/data/meta.json" as="fetch" type="application/json" crossorigin="anonymous" />
+    <link rel="preload" href="/data/poles.json" as="fetch" type="application/json" crossorigin="anonymous" />
+    <link rel="preload" href="/data/communes.json" as="fetch" type="application/json" crossorigin="anonymous" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="STARWAY" />
+    <meta property="og:title" content="STARWAY - Le même ciel, mais pas les mêmes étoiles" />
+    <meta property="og:description" content="Les pôles d'emploi d'Île-de-France que l'on peut rejoindre à l'aller et au retour en transports en commun, selon sa commune, ses horaires et son temps de trajet." />
+    <meta property="og:url" content="https://jolly-cliff-07f518503.5.azurestaticapps.net/" />
+    <!-- Image de partage 1200×630 : recadrage de la slide de dépôt (design/slides/src/build_og.py), dont le ciel est une capture du ciel par défaut à 44 astres ; l'alt est contrôlé par build_og.py -->
+    <meta property="og:image" content="https://jolly-cliff-07f518503.5.azurestaticapps.net/assets/img/og-slide.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Slide STARWAY : le ciel à 44 astres d'emploi d'Île-de-France, aux mêmes places pour tous, 6 418 845 postes salariés recensés par l'INSEE. Exemple : depuis Viroflay, 60 minutes de trajet par sens en transports en commun, 33,1 % des postes salariés atteints aller et retour en 9h-17h, 10,7 % en 14h-22h (hors commune de départ)." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="STARWAY - Le même ciel, mais pas les mêmes étoiles" />
+    <meta name="twitter:description" content="Les pôles d'emploi d'Île-de-France accessibles aller et retour en transports en commun, commune par commune." />
+    <meta name="twitter:image" content="https://jolly-cliff-07f518503.5.azurestaticapps.net/assets/img/og-slide.jpg" />
+    <title>STARWAY - Le même ciel, mais pas les mêmes étoiles</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>STARWAY nécessite JavaScript pour afficher le ciel des pôles d'emploi.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

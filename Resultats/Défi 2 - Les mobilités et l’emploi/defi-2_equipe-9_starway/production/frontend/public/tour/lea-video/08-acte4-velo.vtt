@@ -1,0 +1,32 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:00.870
+Alors,
+
+2
+00:00:00.870 --> 00:00:02.772
+une solution complémentaire :
+
+3
+00:00:02.772 --> 00:00:04.230
+son vélo jusqu’à la gare,
+
+4
+00:00:04.230 --> 00:00:06.390
+puis les transports en commun.
+
+5
+00:00:06.390 --> 00:00:08.506
+Sans compter le temps pour le garer,
+
+6
+00:00:08.506 --> 00:00:11.009
+son périmètre de recherche d’emploi
+s’élargit,
+
+7
+00:00:11.009 --> 00:00:12.278
+sans prendre la voiture.

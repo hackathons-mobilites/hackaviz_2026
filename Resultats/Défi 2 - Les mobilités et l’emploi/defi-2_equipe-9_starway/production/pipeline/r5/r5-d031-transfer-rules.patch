@@ -1,0 +1,156 @@
+From c0d5460ce15f74b8f11c98d564a5f243163576c7 Mon Sep 17 00:00:00 2001
+From: STARWAY data <starway@invalid>
+Date: Wed, 4 Nov 2026 09:52:45 +0000
+Subject: [PATCH] STARWAY D-031: transfers.txt dans McRAPTOR, minimum de
+ correspondance au meme arret (Navitia)
+
+---
+ .../conveyal/r5/profile/FastRaptorWorker.java |  4 +-
+ .../McRaptorSuboptimalPathProfileRouter.java  | 16 ++++-
+ .../r5/profile/StarwayTransferRules.java      | 67 +++++++++++++++++++
+ 3 files changed, 83 insertions(+), 4 deletions(-)
+ create mode 100644 src/main/java/com/conveyal/r5/profile/StarwayTransferRules.java
+
+diff --git a/src/main/java/com/conveyal/r5/profile/FastRaptorWorker.java b/src/main/java/com/conveyal/r5/profile/FastRaptorWorker.java
+index 02db7e0b..162c584c 100644
+--- a/src/main/java/com/conveyal/r5/profile/FastRaptorWorker.java
++++ b/src/main/java/com/conveyal/r5/profile/FastRaptorWorker.java
+@@ -541,7 +541,7 @@ public class FastRaptorWorker {
+                 if (inputState.stopWasUpdated(stop, true) &&
+                     pattern.pickups[stopInPattern] != PickDropType.NONE
+                 ) {
+-                    int earliestBoardTime = inputState.bestTimes[stop] + MINIMUM_BOARD_WAIT_SEC;
++                    int earliestBoardTime = StarwayTransferRules.earliestBoardTime(inputState, stop, MINIMUM_BOARD_WAIT_SEC); // STARWAY D-031
+                     // Boarding/reboarding search is conditional on previous-round arrival at this stop earlier than the
+                     // current trip in the current round. Otherwise the search is unnecessary and yields later trips.
+                     if (schedule != null && (earliestBoardTime >= schedule.departures[stopInPattern])) {
+@@ -653,7 +653,7 @@ public class FastRaptorWorker {
+                         if (inputState.stopWasUpdated(stop, withinMinute) &&
+                             pattern.pickups[stopPositionInPattern] != PickDropType.NONE
+                         ) {
+-                            int earliestBoardTime = inputState.bestTimes[stop] + MINIMUM_BOARD_WAIT_SEC;
++                            int earliestBoardTime = StarwayTransferRules.earliestBoardTime(inputState, stop, MINIMUM_BOARD_WAIT_SEC); // STARWAY D-031
+ 
+                             // if we're computing the upper bound, we want the worst case. This is the only thing that is
+                             // valid in a range RAPTOR search; using random schedule draws in range RAPTOR would be problematic
+diff --git a/src/main/java/com/conveyal/r5/profile/McRaptorSuboptimalPathProfileRouter.java b/src/main/java/com/conveyal/r5/profile/McRaptorSuboptimalPathProfileRouter.java
+index 222a048e..8d0f8f3a 100644
+--- a/src/main/java/com/conveyal/r5/profile/McRaptorSuboptimalPathProfileRouter.java
++++ b/src/main/java/com/conveyal/r5/profile/McRaptorSuboptimalPathProfileRouter.java
+@@ -402,7 +402,7 @@ public class McRaptorSuboptimalPathProfileRouter {
+                                 }
+                                 // clock time for trip departing a stop
+                                 int departure = tripSchedule.departures[stopPositionInPattern];
+-                                if (departure > state.time + BOARD_SLACK) {
++                                if (departure > state.time + StarwayTransferRules.boardSlack(stop, state.pattern >= 0, BOARD_SLACK)) { // STARWAY D-031
+                                     // boarding is possible here
+                                     states.add(state);
+                                     tripIndicesInPattern.put(state, currentTrip);
+@@ -438,7 +438,7 @@ public class McRaptorSuboptimalPathProfileRouter {
+                                     continue;
+                                 }
+ 
+-                                int earliestPossibleBoardTime = state.time + BOARD_SLACK;
++                                int earliestPossibleBoardTime = state.time + StarwayTransferRules.boardSlack(stop, state.pattern >= 0, BOARD_SLACK); // STARWAY D-031
+ 
+                                 // find a departure on this trip
+                                 for (int frequencyEntry = 0; frequencyEntry < tripSchedule.startTimes.length; frequencyEntry++) {
+@@ -485,10 +485,22 @@ public class McRaptorSuboptimalPathProfileRouter {
+         double walkSpeedMillimetersPerSecond = request.walkSpeed * 1000;
+         for (int stop = touchedStops.nextSetBit(0); stop >= 0; stop = touchedStops.nextSetBit(stop + 1)) {
+             TIntList transfers = network.transitLayer.streetTransfers.get(stop);
++            // STARWAY D-031 : transfers.txt (TransitLayer.gtfsTransfers), comme FastRaptorWorker.doTransfers : quai cible,
++            // duree en secondes, ajoutee a l'heure d'arrivee ; la regle de montee (BOARD_SLACK) s'applique ensuite.
++            TIntList gtfsTransfersFromStop = network.transitLayer.gtfsTransfers.get(stop);
+ 
+             // okay to use bestStates directly here, it doesn't allow the router to ride two transit vehicles in one round.
+             // because doTransfers only creates transfer states, it does not affect nonTransfer states.
+             for (McRaptorState state : bestStates.get(stop).getNonTransferStates()) {
++                if (gtfsTransfersFromStop != null) {
++                    for (int i = 0; i < gtfsTransfersFromStop.size(); i += 2) {
++                        int toStop = gtfsTransfersFromStop.get(i);
++                        int minTimeSeconds = gtfsTransfersFromStop.get(i + 1);
++                        if (addState(toStop, -1, -1, state.time + minTimeSeconds, -1, -1, -1, state)) {
++                            stopsTouchedByTransfer.set(toStop);
++                        }
++                    }
++                }
+                 for (int transfer = 0; transfer < transfers.size(); transfer += 2) {
+                     int toStop = transfers.get(transfer);
+                     int distanceMillimeters = transfers.get(transfer + 1);
+diff --git a/src/main/java/com/conveyal/r5/profile/StarwayTransferRules.java b/src/main/java/com/conveyal/r5/profile/StarwayTransferRules.java
+new file mode 100644
+index 00000000..87f9e036
+--- /dev/null
++++ b/src/main/java/com/conveyal/r5/profile/StarwayTransferRules.java
+@@ -0,0 +1,67 @@
++package com.conveyal.r5.profile;
++
++/**
++ * STARWAY (D-031) : temps de correspondance minimum au meme arret, apres une arrivee en transport en commun.
++ *
++ * R5 d'origine accepte une montee strictement plus de 60 s apres l'arrivee a l'arret (MINIMUM_BOARD_WAIT_SEC de
++ * FastRaptorWorker, BOARD_SLACK de McRaptorSuboptimalPathProfileRouter), quel que soit l'arret. Le calculateur
++ * officiel IDFM (Navitia, API PRIM "connections") applique au meme arret une duree propre a chaque arret (120, 300 ou
++ * 900 s). Le pipeline STARWAY charge ces durees, une par index d'arret R5, avant tout calcul ; un arret sans duree
++ * relevee (valeur 0) garde la regle d'origine. La regle ne s'applique qu'a une arrivee en transport en commun a cet
++ * arret : un acces a pied ou une correspondance a pied depuis un autre arret garde la regle d'origine (les minimums
++ * entre arrets differents viennent de transfers.txt, charges dans TransitLayer.gtfsTransfers).
++ *
++ * Semantique : avec une duree D pour l'arret, un depart a l'heure d est accepte apres une arrivee a l'heure a si
++ * d >= a + D, c'est-a-dire d > a + (D - 1). Le resultat n'est jamais plus permissif que la regle d'origine.
++ */
++public final class StarwayTransferRules {
++
++    /** Version du correctif STARWAY, verifiee par le pipeline dans le jar et dans la JVM. */
++    public static final int STARWAY_TRANSFER_RULES_VERSION = 1;
++
++    /** Duree minimum (s) au meme arret, par index d'arret R5 ; 0 = regle d'origine ; null = aucune duree chargee. */
++    private static volatile int[] sameStopMinSeconds = null;
++
++    private StarwayTransferRules () { }
++
++    public static void setSameStopMinSeconds (int[] values) {
++        sameStopMinSeconds = values == null ? null : values.clone();
++    }
++
++    /** Nombre d'arrets avec une duree chargee (controle du pipeline). */
++    public static int loadedStopCount () {
++        int[] m = sameStopMinSeconds;
++        if (m == null) return 0;
++        int n = 0;
++        for (int v : m) if (v > 0) n++;
++        return n;
++    }
++
++    /** Duree chargee pour un arret (0 si aucune). */
++    public static int sameStopMinSeconds (int stop) {
++        int[] m = sameStopMinSeconds;
++        return (m == null || stop < 0 || stop >= m.length) ? 0 : m[stop];
++    }
++
++    /**
++     * Attente minimum (s) avant une montee, au sens de R5 (le depart doit etre strictement posterieur a
++     * arrivee + attente). Apres une arrivee en transport en commun a un arret qui a une duree D : max(defaut, D - 1).
++     */
++    public static int boardSlack (int stop, boolean arrivedByTransitHere, int defaultSlack) {
++        if (!arrivedByTransitHere) return defaultSlack;
++        int d = sameStopMinSeconds(stop);
++        return d > 0 ? Math.max(defaultSlack, d - 1) : defaultSlack;
++    }
++
++    /**
++     * FastRaptorWorker : heure apres laquelle un depart peut etre pris a `stop` dans le tour suivant. La meilleure heure
++     * de l'arret est une arrivee en transport en commun a cet arret si elle est egale a la meilleure arrivee sans
++     * correspondance (sinon elle vient d'un acces ou d'une correspondance a pied depuis un autre arret).
++     */
++    public static int earliestBoardTime (RaptorState inputState, int stop, int defaultSlack) {
++        int best = inputState.bestTimes[stop];
++        int nonTransfer = inputState.bestNonTransferTimes[stop];
++        boolean byTransit = inputState.previous != null && nonTransfer != FastRaptorWorker.UNREACHED && nonTransfer == best;
++        return best + boardSlack(stop, byTransit, defaultSlack);
++    }
++}
+-- 
+2.43.0
+

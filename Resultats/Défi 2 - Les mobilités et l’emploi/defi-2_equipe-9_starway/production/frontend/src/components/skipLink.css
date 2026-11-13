@@ -1,0 +1,18 @@
+/* Lien d'évitement : hors écran tant qu'il n'a pas le focus, aucun texte de plus à l'écran pour les autres. */
+.skip-link {
+  position: fixed;
+  top: calc(var(--banner-h, 0px) + 8px);
+  left: 8px;
+  z-index: 100;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 14px;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}

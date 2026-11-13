@@ -1,0 +1,29 @@
+{
+  "_comment": "Profil de voix validé par l'équipe. Toute génération audio de STARWAY l'utilise. Ne pas modifier sans nouvelle validation à l'écoute (voir docs/voix-narration.md).",
+  "id": "marc-standard-r8",
+  "validatedOn": "2026-11-11",
+  "validatedBy": "l'équipe STARWAY, à l'écoute (choix relayé par Nicolas Vallot)",
+  "referenceSample": "design/voice/reference-marc-standard-r8.mp3",
+  "voice": "fr-FR-Marc:MAI-Voice-2",
+  "language": "fr-FR",
+  "speechResource": { "name": "<RESSOURCE_SPEECH>", "resourceGroup": "<GROUPE_DE_RESSOURCES>", "region": "francecentral", "sku": "F0" },
+  "outputFormat": "Audio24Khz96KBitRateMonoMp3",
+  "style": null,
+  "styleDegree": null,
+  "rate": "+8%",
+  "pitch": null,
+  "sentenceBreakMs": 300,
+  "forceLanguageTag": true,
+  "straightenApostrophes": true,
+  "aliases": {
+    "d'Île-de-France": "d'Ile de France",
+    "l'Île-de-France": "l'Ile de France",
+    "Île-de-France": "Ile de France",
+    "IDFM": "Ile de France Mobilités",
+    "IDF": "Ile de France",
+    "RER": "R E R",
+    "TC": "T C",
+    "INSEE": "Insé",
+    "PRIM": "Prime"
+  }
+}

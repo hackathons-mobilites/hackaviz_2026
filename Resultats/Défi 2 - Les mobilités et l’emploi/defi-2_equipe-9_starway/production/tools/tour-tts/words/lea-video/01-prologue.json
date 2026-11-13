@@ -1,0 +1,210 @@
+{
+ "tour": "lea-video",
+ "stem": "01-prologue",
+ "mp3Sha256": "37f0130c25fb2dc1a261155befb68f9a69617820e27477aaa15886d23d93bc8d",
+ "text": "Voici Maisons-Laffitte. C’est ici que vit Léa, une habitante imaginaire. Elle cherche un emploi : sans voiture, avec un vélo pour plus tard. D’abord, seulement les transports en commun : quels emplois peut-elle rejoindre ? Et qu’est-ce qui pourrait élargir son horizon ?",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Voici meson Laffitte. C'est ici que ville a une habitante imaginaire. Elle cherche un emploi sans voiture, avec un vélo pour plus tard. D'abord seulement les transports en commun. Quels emplois peut-elle rejoindre et qu'est-ce qui pourrait élargir son horizon ?",
+ "words": [
+  {
+   "word": "voici",
+   "startMs": 70,
+   "endMs": 430
+  },
+  {
+   "word": "meson",
+   "startMs": 430,
+   "endMs": 790
+  },
+  {
+   "word": "laffitte",
+   "startMs": 790,
+   "endMs": 1390
+  },
+  {
+   "word": "c'est",
+   "startMs": 2150,
+   "endMs": 2230
+  },
+  {
+   "word": "ici",
+   "startMs": 2230,
+   "endMs": 3430
+  },
+  {
+   "word": "que",
+   "startMs": 3430,
+   "endMs": 3470
+  },
+  {
+   "word": "ville",
+   "startMs": 3470,
+   "endMs": 3590
+  },
+  {
+   "word": "a",
+   "startMs": 3590,
+   "endMs": 3630
+  },
+  {
+   "word": "une",
+   "startMs": 3630,
+   "endMs": 3710
+  },
+  {
+   "word": "habitante",
+   "startMs": 3710,
+   "endMs": 4190
+  },
+  {
+   "word": "imaginaire",
+   "startMs": 4190,
+   "endMs": 4950
+  },
+  {
+   "word": "elle",
+   "startMs": 5590,
+   "endMs": 5830
+  },
+  {
+   "word": "cherche",
+   "startMs": 5830,
+   "endMs": 6110
+  },
+  {
+   "word": "un",
+   "startMs": 6110,
+   "endMs": 6190
+  },
+  {
+   "word": "emploi",
+   "startMs": 6190,
+   "endMs": 6670
+  },
+  {
+   "word": "sans",
+   "startMs": 6830,
+   "endMs": 7150
+  },
+  {
+   "word": "voiture",
+   "startMs": 7150,
+   "endMs": 7750
+  },
+  {
+   "word": "avec",
+   "startMs": 7790,
+   "endMs": 8150
+  },
+  {
+   "word": "un",
+   "startMs": 8150,
+   "endMs": 8230
+  },
+  {
+   "word": "vélo",
+   "startMs": 8230,
+   "endMs": 8550
+  },
+  {
+   "word": "pour",
+   "startMs": 8550,
+   "endMs": 8710
+  },
+  {
+   "word": "plus",
+   "startMs": 8710,
+   "endMs": 8910
+  },
+  {
+   "word": "tard",
+   "startMs": 8910,
+   "endMs": 9270
+  },
+  {
+   "word": "d'abord",
+   "startMs": 9750,
+   "endMs": 10430
+  },
+  {
+   "word": "seulement",
+   "startMs": 10430,
+   "endMs": 10910
+  },
+  {
+   "word": "les",
+   "startMs": 10910,
+   "endMs": 10990
+  },
+  {
+   "word": "transports",
+   "startMs": 10990,
+   "endMs": 11430
+  },
+  {
+   "word": "en",
+   "startMs": 11430,
+   "endMs": 11510
+  },
+  {
+   "word": "commun",
+   "startMs": 11510,
+   "endMs": 11910
+  },
+  {
+   "word": "quels",
+   "startMs": 12230,
+   "endMs": 12550
+  },
+  {
+   "word": "emplois",
+   "startMs": 12550,
+   "endMs": 12870
+  },
+  {
+   "word": "peut-elle",
+   "startMs": 12870,
+   "endMs": 13150
+  },
+  {
+   "word": "rejoindre",
+   "startMs": 13150,
+   "endMs": 13710
+  },
+  {
+   "word": "et",
+   "startMs": 13990,
+   "endMs": 14190
+  },
+  {
+   "word": "qu'est-ce",
+   "startMs": 14190,
+   "endMs": 14510
+  },
+  {
+   "word": "qui",
+   "startMs": 14510,
+   "endMs": 14670
+  },
+  {
+   "word": "pourrait",
+   "startMs": 14670,
+   "endMs": 14950
+  },
+  {
+   "word": "élargir",
+   "startMs": 14950,
+   "endMs": 15590
+  },
+  {
+   "word": "son",
+   "startMs": 15590,
+   "endMs": 15750
+  },
+  {
+   "word": "horizon",
+   "startMs": 15750,
+   "endMs": 16190
+  }
+ ]
+}

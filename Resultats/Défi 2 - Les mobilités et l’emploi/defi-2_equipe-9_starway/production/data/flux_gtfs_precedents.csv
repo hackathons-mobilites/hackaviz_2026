@@ -1,0 +1,4 @@
+source_id,sha256,date_extraction,fichier_local,remplace_le,motif
+TRA01,c0798a28cceb6182094ff9270f12f0e66b39a70e816696bc95fbd201bb38cece,2026-11-02T14:15Z,data/raw/TRA01/IDFM-gtfs.zip,2026-11-10,relance de tous les calculs TC sur le flux GTFS du 06/11/2026 (choix de l'équipe)
+TRA01B,c9dca203638060cf8fbc94e9698d66bcc69dc0665149cf26ebb677199dc64c99,2026-11-05T10:36Z,data/raw/TRA01B/gtfs_nuit.zip,2026-11-10,relance de tous les calculs TC sur le flux GTFS du 06/11/2026 (choix de l'équipe)
+TRA01C,c058c9d77836c37fb939d5240b58d54d69e71e01ade70408d2126a0b2a18b01c,2026-11-05T18:08Z,data/raw/TRA01C/gtfs_soir.zip,2026-11-10,relance de tous les calculs TC sur le flux GTFS du 06/11/2026 (choix de l'équipe)

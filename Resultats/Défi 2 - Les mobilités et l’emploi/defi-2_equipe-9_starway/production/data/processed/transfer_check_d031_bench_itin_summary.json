@@ -1,0 +1,96 @@
+{
+ "generated_at": "2026-11-04T10:52:39Z",
+ "source": "itin_gtfs_navitia",
+ "transfer_rules": "gtfs_navitia",
+ "r5_jar_sha256": "977adc23114234c73c7545149f1407aaa2627e4b328095e54b43031456a4cd7a",
+ "itineraries_ok": 161,
+ "transfers_by_gtfs_status": {
+  "ok": 161,
+  "same_stop": 52,
+  "no_line": 2
+ },
+ "transfers_by_reference_status": {
+  "ok": 212,
+  "no_line": 2,
+  "same_stop": 1
+ },
+ "slack_vs_gtfs_min": {
+  "n": 161,
+  "min_s": 0,
+  "negative": 0,
+  "median_s": 192.0
+ },
+ "slack_vs_navitia_same_stop_or_no_line": {
+  "n": 51,
+  "min_s": 0,
+  "negative": 0,
+  "median_s": 136.0
+ },
+ "transfers_exactly_at_minimum": {
+  "gtfs": 2,
+  "navitia": 1
+ },
+ "trips_by_day_status": [
+  {
+   "day": "d06",
+   "status_gtfs": "no_transfer",
+   "status_reference": "no_transfer",
+   "n": 11
+  },
+  {
+   "day": "d06",
+   "status_gtfs": "partly_unverified",
+   "status_reference": "verified",
+   "n": 11
+  },
+  {
+   "day": "d06",
+   "status_gtfs": "verified",
+   "status_reference": "verified",
+   "n": 22
+  },
+  {
+   "day": "d09",
+   "status_gtfs": "no_transfer",
+   "status_reference": "no_transfer",
+   "n": 7
+  },
+  {
+   "day": "d09",
+   "status_gtfs": "partly_unverified",
+   "status_reference": "verified",
+   "n": 24
+  },
+  {
+   "day": "d09",
+   "status_gtfs": "verified",
+   "status_reference": "verified",
+   "n": 29
+  },
+  {
+   "day": "d14",
+   "status_gtfs": "no_transfer",
+   "status_reference": "no_transfer",
+   "n": 5
+  },
+  {
+   "day": "d14",
+   "status_gtfs": "partly_unverified",
+   "status_reference": "partly_unverified",
+   "n": 3
+  },
+  {
+   "day": "d14",
+   "status_gtfs": "partly_unverified",
+   "status_reference": "verified",
+   "n": 16
+  },
+  {
+   "day": "d14",
+   "status_gtfs": "verified",
+   "status_reference": "verified",
+   "n": 33
+  }
+ ],
+ "rule": "disponible = départ du tronçon suivant - arrivée du précédent ; trop court si < minimum"
+}

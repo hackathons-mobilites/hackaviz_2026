@@ -1,0 +1,41 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:02.624
+Léa se donne 60 minutes de transports en
+commun,
+
+2
+00:00:02.624 --> 00:00:04.463
+à l’aller comme au retour.
+
+3
+00:00:04.463 --> 00:00:07.790
+Chaque étoile qui s’allume est un bassin
+d’emploi ou un arrondissement,
+
+4
+00:00:07.790 --> 00:00:09.890
+accessible par Léa selon ses conditions.
+
+5
+00:00:09.890 --> 00:00:12.313
+24 étoiles s’allument,
+
+6
+00:00:12.313 --> 00:00:14.910
+en partie ou en entier.
+
+7
+00:00:14.910 --> 00:00:15.790
+Au compteur,
+
+8
+00:00:15.790 --> 00:00:18.254
+les postes salariés recensés par l’INSEE :
+
+9
+00:00:18.254 --> 00:00:19.749
+près de 2,6 millions.

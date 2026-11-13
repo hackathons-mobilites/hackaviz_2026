@@ -1,0 +1,51 @@
+name: Contrôles rapides des PR du front
+
+# Types, lint, tests et build sur chaque PR qui touche le front, en quelques minutes, AVANT la fusion.
+# Ajouté après la PR 44 : ses tests en échec n'ont été vus qu'après la fusion, ce qui a bloqué la mise en ligne.
+# Ne met rien en ligne et reste hors de la file « deploy-production » : il ne ralentit aucune mise en ligne.
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'frontend/**'
+      - 'docs/limites.md'
+      - '.github/workflows/pr-checks.yml'
+
+permissions:
+  contents: read
+
+# Un nouveau commit sur la même PR annule le contrôle en cours.
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Types
+        run: npx tsc -b --noEmit
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Tests
+        run: npx vitest run
+
+      - name: Construire
+        run: npm run build

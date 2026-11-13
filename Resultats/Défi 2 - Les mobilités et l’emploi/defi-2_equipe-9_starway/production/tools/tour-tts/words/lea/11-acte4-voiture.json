@@ -1,0 +1,255 @@
+{
+ "tour": "lea",
+ "stem": "11-acte4-voiture",
+ "mp3Sha256": "10cd7887cedba2a964a27e56a8fa4cfd9b0fa60f81302b19149716510f726bdc",
+ "text": "Et si Léa avait une voiture ? Avec le trafic moyen estimé à l’aller, 29 étoiles s’allumeraient. Une estimation, à partir du trafic moyen mesuré par la direction des routes d’Île-de-France. Plus de 4,2 millions de postes seraient à sa portée. Mais Léa n’a pas de voiture.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Et si Léa avait une voiture ? Avec le trafic moyen estimé à l'aller, 29 étoiles s'allumeraient une estimation à partir du trafic moyen mesurée par la direction des routes d'Île-De-France, plus de 4,2 1000000 de postes seraient à sa portée. Mais Léa n'a pas de voiture.",
+ "words": [
+  {
+   "word": "et",
+   "startMs": 70,
+   "endMs": 190
+  },
+  {
+   "word": "si",
+   "startMs": 190,
+   "endMs": 350
+  },
+  {
+   "word": "léa",
+   "startMs": 350,
+   "endMs": 550
+  },
+  {
+   "word": "avait",
+   "startMs": 550,
+   "endMs": 710
+  },
+  {
+   "word": "une",
+   "startMs": 710,
+   "endMs": 830
+  },
+  {
+   "word": "voiture",
+   "startMs": 830,
+   "endMs": 1430
+  },
+  {
+   "word": "avec",
+   "startMs": 2190,
+   "endMs": 2550
+  },
+  {
+   "word": "le",
+   "startMs": 2550,
+   "endMs": 2630
+  },
+  {
+   "word": "trafic",
+   "startMs": 2630,
+   "endMs": 3070
+  },
+  {
+   "word": "moyen",
+   "startMs": 3070,
+   "endMs": 3390
+  },
+  {
+   "word": "estimé",
+   "startMs": 3390,
+   "endMs": 3790
+  },
+  {
+   "word": "à",
+   "startMs": 3790,
+   "endMs": 3870
+  },
+  {
+   "word": "l'aller",
+   "startMs": 3870,
+   "endMs": 4270
+  },
+  {
+   "word": "vingt",
+   "startMs": 4470,
+   "endMs": 4830
+  },
+  {
+   "word": "neuf",
+   "startMs": 4830,
+   "endMs": 5030
+  },
+  {
+   "word": "étoiles",
+   "startMs": 5030,
+   "endMs": 5430
+  },
+  {
+   "word": "s'allumeraient",
+   "startMs": 5430,
+   "endMs": 5910
+  },
+  {
+   "word": "une",
+   "startMs": 6510,
+   "endMs": 6710
+  },
+  {
+   "word": "estimation",
+   "startMs": 6710,
+   "endMs": 7470
+  },
+  {
+   "word": "à",
+   "startMs": 7550,
+   "endMs": 7750
+  },
+  {
+   "word": "partir",
+   "startMs": 7750,
+   "endMs": 8110
+  },
+  {
+   "word": "du",
+   "startMs": 8110,
+   "endMs": 8230
+  },
+  {
+   "word": "trafic",
+   "startMs": 8230,
+   "endMs": 8590
+  },
+  {
+   "word": "moyen",
+   "startMs": 8590,
+   "endMs": 8990
+  },
+  {
+   "word": "mesurée",
+   "startMs": 8990,
+   "endMs": 9430
+  },
+  {
+   "word": "par",
+   "startMs": 9430,
+   "endMs": 9550
+  },
+  {
+   "word": "la",
+   "startMs": 9550,
+   "endMs": 9670
+  },
+  {
+   "word": "direction",
+   "startMs": 9670,
+   "endMs": 10070
+  },
+  {
+   "word": "des",
+   "startMs": 10070,
+   "endMs": 10150
+  },
+  {
+   "word": "routes",
+   "startMs": 10150,
+   "endMs": 10350
+  },
+  {
+   "word": "d'île-de-france",
+   "startMs": 10350,
+   "endMs": 11190
+  },
+  {
+   "word": "plus",
+   "startMs": 11750,
+   "endMs": 12030
+  },
+  {
+   "word": "de",
+   "startMs": 12030,
+   "endMs": 12070
+  },
+  {
+   "word": "quatre",
+   "startMs": 12070,
+   "endMs": 12510
+  },
+  {
+   "word": "virgule",
+   "startMs": 12510,
+   "endMs": 12950
+  },
+  {
+   "word": "deux",
+   "startMs": 12950,
+   "endMs": 13190
+  },
+  {
+   "word": "millions",
+   "startMs": 13190,
+   "endMs": 13510
+  },
+  {
+   "word": "de",
+   "startMs": 13510,
+   "endMs": 13590
+  },
+  {
+   "word": "postes",
+   "startMs": 13590,
+   "endMs": 14150
+  },
+  {
+   "word": "seraient",
+   "startMs": 14190,
+   "endMs": 14670
+  },
+  {
+   "word": "à",
+   "startMs": 14670,
+   "endMs": 14710
+  },
+  {
+   "word": "sa",
+   "startMs": 14710,
+   "endMs": 14870
+  },
+  {
+   "word": "portée",
+   "startMs": 14870,
+   "endMs": 15310
+  },
+  {
+   "word": "mais",
+   "startMs": 15670,
+   "endMs": 15910
+  },
+  {
+   "word": "léa",
+   "startMs": 15910,
+   "endMs": 16310
+  },
+  {
+   "word": "n'a",
+   "startMs": 16310,
+   "endMs": 16550
+  },
+  {
+   "word": "pas",
+   "startMs": 16550,
+   "endMs": 16710
+  },
+  {
+   "word": "de",
+   "startMs": 16710,
+   "endMs": 16750
+  },
+  {
+   "word": "voiture",
+   "startMs": 16750,
+   "endMs": 17270
+  }
+ ]
+}

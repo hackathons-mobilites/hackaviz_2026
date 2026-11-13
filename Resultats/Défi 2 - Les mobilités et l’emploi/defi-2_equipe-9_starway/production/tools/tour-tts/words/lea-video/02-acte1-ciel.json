@@ -1,0 +1,280 @@
+{
+ "tour": "lea-video",
+ "stem": "02-acte1-ciel",
+ "mp3Sha256": "275a74982894c3d623d18aaccfd828b3844ad046df6efb3e033369659a5e0199",
+ "text": "Léa se donne 60 minutes de transports en commun, à l’aller comme au retour. Chaque étoile qui s’allume est un bassin d’emploi ou un arrondissement, accessible par Léa selon ses conditions. 24 étoiles s’allument, en partie ou en entier. Au compteur, les postes salariés recensés par l’INSEE : près de 2,6 millions.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Léa se donne 60 Min de transport en commun à l'Allée comme au retour. Chaque étoile qui s'allume est un bassin d'emploi ou un arrondissement accessible par Léa selon ses conditions. 24 étoiles s'allument en partie ou en entier. Au compteur, les postes salariés recensés par l'Ensei, près de 2,6 1000000.",
+ "words": [
+  {
+   "word": "léa",
+   "startMs": 70,
+   "endMs": 430
+  },
+  {
+   "word": "se",
+   "startMs": 430,
+   "endMs": 550
+  },
+  {
+   "word": "donne",
+   "startMs": 550,
+   "endMs": 830
+  },
+  {
+   "word": "soixante",
+   "startMs": 830,
+   "endMs": 1270
+  },
+  {
+   "word": "minutes",
+   "startMs": 1270,
+   "endMs": 1510
+  },
+  {
+   "word": "de",
+   "startMs": 1510,
+   "endMs": 1630
+  },
+  {
+   "word": "transport",
+   "startMs": 1630,
+   "endMs": 2070
+  },
+  {
+   "word": "en",
+   "startMs": 2070,
+   "endMs": 2150
+  },
+  {
+   "word": "commun",
+   "startMs": 2150,
+   "endMs": 2590
+  },
+  {
+   "word": "à",
+   "startMs": 2590,
+   "endMs": 2750
+  },
+  {
+   "word": "l'allée",
+   "startMs": 2750,
+   "endMs": 3030
+  },
+  {
+   "word": "comme",
+   "startMs": 3030,
+   "endMs": 3190
+  },
+  {
+   "word": "au",
+   "startMs": 3190,
+   "endMs": 3230
+  },
+  {
+   "word": "retour",
+   "startMs": 3230,
+   "endMs": 3790
+  },
+  {
+   "word": "chaque",
+   "startMs": 4470,
+   "endMs": 4750
+  },
+  {
+   "word": "étoile",
+   "startMs": 4750,
+   "endMs": 5070
+  },
+  {
+   "word": "qui",
+   "startMs": 5070,
+   "endMs": 5190
+  },
+  {
+   "word": "s'allume",
+   "startMs": 5190,
+   "endMs": 5670
+  },
+  {
+   "word": "est",
+   "startMs": 5670,
+   "endMs": 5870
+  },
+  {
+   "word": "un",
+   "startMs": 5870,
+   "endMs": 5950
+  },
+  {
+   "word": "bassin",
+   "startMs": 5950,
+   "endMs": 6270
+  },
+  {
+   "word": "d'emploi",
+   "startMs": 6270,
+   "endMs": 6710
+  },
+  {
+   "word": "ou",
+   "startMs": 6710,
+   "endMs": 6830
+  },
+  {
+   "word": "un",
+   "startMs": 6830,
+   "endMs": 6910
+  },
+  {
+   "word": "arrondissement",
+   "startMs": 6910,
+   "endMs": 7630
+  },
+  {
+   "word": "accessible",
+   "startMs": 7830,
+   "endMs": 8510
+  },
+  {
+   "word": "par",
+   "startMs": 8510,
+   "endMs": 8630
+  },
+  {
+   "word": "léa",
+   "startMs": 8630,
+   "endMs": 8910
+  },
+  {
+   "word": "selon",
+   "startMs": 8910,
+   "endMs": 9150
+  },
+  {
+   "word": "ses",
+   "startMs": 9150,
+   "endMs": 9270
+  },
+  {
+   "word": "conditions",
+   "startMs": 9270,
+   "endMs": 9870
+  },
+  {
+   "word": "vingt",
+   "startMs": 10870,
+   "endMs": 11230
+  },
+  {
+   "word": "quatre",
+   "startMs": 11230,
+   "endMs": 11470
+  },
+  {
+   "word": "étoiles",
+   "startMs": 11470,
+   "endMs": 11790
+  },
+  {
+   "word": "s'allument",
+   "startMs": 11790,
+   "endMs": 12270
+  },
+  {
+   "word": "en",
+   "startMs": 12270,
+   "endMs": 12470
+  },
+  {
+   "word": "partie",
+   "startMs": 12470,
+   "endMs": 12990
+  },
+  {
+   "word": "ou",
+   "startMs": 12990,
+   "endMs": 13150
+  },
+  {
+   "word": "en",
+   "startMs": 13150,
+   "endMs": 13190
+  },
+  {
+   "word": "entier",
+   "startMs": 13190,
+   "endMs": 13710
+  },
+  {
+   "word": "au",
+   "startMs": 14950,
+   "endMs": 15150
+  },
+  {
+   "word": "compteur",
+   "startMs": 15150,
+   "endMs": 15790
+  },
+  {
+   "word": "les",
+   "startMs": 15830,
+   "endMs": 16070
+  },
+  {
+   "word": "postes",
+   "startMs": 16070,
+   "endMs": 16350
+  },
+  {
+   "word": "salariés",
+   "startMs": 16350,
+   "endMs": 16750
+  },
+  {
+   "word": "recensés",
+   "startMs": 16750,
+   "endMs": 17190
+  },
+  {
+   "word": "par",
+   "startMs": 17190,
+   "endMs": 17350
+  },
+  {
+   "word": "l'ensei",
+   "startMs": 17350,
+   "endMs": 17870
+  },
+  {
+   "word": "près",
+   "startMs": 18190,
+   "endMs": 18470
+  },
+  {
+   "word": "de",
+   "startMs": 18470,
+   "endMs": 18510
+  },
+  {
+   "word": "deux",
+   "startMs": 18510,
+   "endMs": 18750
+  },
+  {
+   "word": "virgule",
+   "startMs": 18750,
+   "endMs": 19110
+  },
+  {
+   "word": "six",
+   "startMs": 19110,
+   "endMs": 19270
+  },
+  {
+   "word": "millions",
+   "startMs": 19270,
+   "endMs": 19750
+  }
+ ]
+}

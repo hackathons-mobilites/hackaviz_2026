@@ -1,0 +1,133 @@
+/* Graphique des communes du pôle (lot 4, D-051) : triangles aller et retour sur un axe commun. Couleurs des triangles : jetons (palette). */
+.pf-cc {
+  position: relative;
+  margin: var(--space-2) 0;
+}
+
+.pf-cc-title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--type-label);
+  font-weight: 500;
+  color: var(--text);
+}
+
+.pf-cc-key {
+  margin: 0 0 var(--space-2);
+  font-size: var(--type-label);
+  color: var(--text-dim);
+}
+
+.pf-cc-key svg {
+  vertical-align: middle;
+}
+
+.pf-cc-plot {
+  position: relative;
+}
+
+.pf-cc-svg {
+  display: block;
+  overflow: visible;
+  font-family: inherit;
+}
+
+.pf-cc-name {
+  fill: var(--text);
+}
+
+.pf-cc-jobs,
+.pf-cc-min {
+  fill: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.pf-cc-written,
+.pf-cc-tick {
+  fill: var(--text-dim);
+}
+
+.pf-cc-axis {
+  stroke: var(--text-dim);
+}
+
+.pf-cc-budget {
+  stroke: var(--text-dim);
+  fill: none;
+}
+
+.pf-cc-hit {
+  fill: transparent;
+}
+
+.pf-cc-on {
+  fill: var(--text);
+  fill-opacity: 0.08;
+}
+
+.pf-cc-tip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text);
+  pointer-events: none;
+}
+
+.pf-sb {
+  display: block;
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.pf-sb-track {
+  stroke: var(--text-dim);
+}
+
+/* Contenu pour les lecteurs d'écran seulement : invisible (découpé) mais pleine largeur, donc lu et atteignable au clavier avec de
+   vraies dimensions (cibles de 24 px au moins, `targets.mjs`) ; sa hauteur d'une ligne et `overflow` l'empêchent de rallonger le panneau */
+.pf-sr-clip,
+.pf-cc-table,
+.pf-tb-table {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.pf-sr-clip li,
+.pf-cc-table tr,
+.pf-tb-table tr {
+  min-height: var(--target-min, 24px);
+}
+
+.pf-rc-sel {
+  text-decoration: underline;
+}
+
+/* Tableau pour les lecteurs d'écran : chaque cellule sur sa ligne */
+.pf-cc-table caption,
+.pf-cc-table tbody,
+.pf-cc-table tr,
+.pf-cc-table td {
+  display: block;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* Comme l'ancienne liste : le nom et « · N postes » sont deux éléments d'une ligne flexible (même relevé de l'inventaire) */
+.pf-cc-table th {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 6px;
+}

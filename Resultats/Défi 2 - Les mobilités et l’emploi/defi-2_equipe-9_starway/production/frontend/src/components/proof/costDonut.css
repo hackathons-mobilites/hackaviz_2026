@@ -1,0 +1,82 @@
+/* Anneau des dépenses (CostDonut.tsx) : dans la bulle « i » du coût, étroit (340 px), lisible sans couleur de verdict. */
+.cost-donut {
+  --cd-1: var(--accent);
+  --cd-bg: rgba(8, 14, 32, 0.9);
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+}
+
+.cost-donut-svg {
+  width: 96px;
+  height: 96px;
+  display: block;
+}
+
+.cost-donut-track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 15;
+}
+
+.cost-donut-arc {
+  fill: none;
+  stroke-width: 15;
+}
+
+.cost-donut-total {
+  fill: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cost-donut-legend ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.cost-donut-legend li {
+  display: block;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.cost-donut-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  border-radius: 2px;
+  border: 1px solid var(--accent);
+  vertical-align: -1px;
+}
+.cost-donut-swatch.is-solid {
+  background: var(--accent);
+}
+.cost-donut-swatch.is-hatch {
+  background: repeating-linear-gradient(45deg, var(--accent) 0 2px, transparent 2px 4px);
+}
+.cost-donut-swatch.is-dots {
+  background: radial-gradient(circle, var(--accent) 0 1.2px, transparent 1.4px) 0 0 / 4px 4px;
+}
+
+.cost-donut-pct {
+  font-weight: 600;
+}
+
+.cost-donut-eur {
+  color: var(--text-dim);
+}
+
+.cost-donut-note {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--text-dim);
+}

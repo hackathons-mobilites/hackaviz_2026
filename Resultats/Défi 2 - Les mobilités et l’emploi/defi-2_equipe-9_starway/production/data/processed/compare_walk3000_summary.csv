@@ -1,0 +1,4 @@
+setting,limit_m,day,pairs,out_found_more,out_lost,out_shorter,out_longer,out_same,ret_found_more,ret_lost,ret_shorter,ret_longer,ret_same,communes_ret_found_more,communes_no_return_pub,communes_no_return_var,communes_no_return_resolved,out_lost_walk_only,ret_lost_walk_only,d023_unmeasured_ret,d023_ret_found_var,d023_pole_reason,d023_pole_reason_ret_found_var
+normal,3000,d06,19275,0,217,5,20,3594,133,0,65,0,7664,40,533,507,26,0,0,3840,24,21,6
+normal,3000,d09,19275,0,8,6,2,10523,32,0,40,0,10026,10,329,324,5,0,0,60,0,0,0
+normal,3000,d14,19275,0,51,8,7,7468,221,0,92,0,4926,76,741,687,54,0,0,7140,84,620,71

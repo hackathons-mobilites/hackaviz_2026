@@ -1,0 +1,1290 @@
+insee_geo04,lib_commune_geo04,bassin_code,bassin_name,status,insee_origin,name_origin,same_bassin_as_chef_lieu,name_differs
+75101,PARIS 01,1107,T1 Paris,origin,75101,Paris 1er Arrondissement,,False
+75102,PARIS 02,1107,T1 Paris,origin,75102,Paris 2e Arrondissement,,False
+75103,PARIS 03,1107,T1 Paris,origin,75103,Paris 3e Arrondissement,,False
+75104,PARIS 04,1107,T1 Paris,origin,75104,Paris 4e Arrondissement,,False
+75105,PARIS 05,1107,T1 Paris,origin,75105,Paris 5e Arrondissement,,False
+75106,PARIS 06,1107,T1 Paris,origin,75106,Paris 6e Arrondissement,,False
+75107,PARIS 07,1107,T1 Paris,origin,75107,Paris 7e Arrondissement,,False
+75108,PARIS 08,1107,T1 Paris,origin,75108,Paris 8e Arrondissement,,False
+75109,PARIS 09,1107,T1 Paris,origin,75109,Paris 9e Arrondissement,,False
+75110,PARIS 10,1107,T1 Paris,origin,75110,Paris 10e Arrondissement,,False
+75111,PARIS 11,1107,T1 Paris,origin,75111,Paris 11e Arrondissement,,False
+75112,PARIS 12,1107,T1 Paris,origin,75112,Paris 12e Arrondissement,,False
+75113,PARIS 13,1107,T1 Paris,origin,75113,Paris 13e Arrondissement,,False
+75114,PARIS 14,1107,T1 Paris,origin,75114,Paris 14e Arrondissement,,False
+75115,PARIS 15,1107,T1 Paris,origin,75115,Paris 15e Arrondissement,,False
+75116,PARIS 16,1107,T1 Paris,origin,75116,Paris 16e Arrondissement,,False
+75117,PARIS 17,1107,T1 Paris,origin,75117,Paris 17e Arrondissement,,False
+75118,PARIS 18,1107,T1 Paris,origin,75118,Paris 18e Arrondissement,,False
+75119,PARIS 19,1107,T1 Paris,origin,75119,Paris 19e Arrondissement,,False
+75120,PARIS 20,1107,T1 Paris,origin,75120,Paris 20e Arrondissement,,False
+77001,ACHERES LA FORET,1108,Sud 77,origin,77001,Achères-la-Forêt,,False
+77002,AMILLIS,1153,Brie-Créçois,origin,77002,Amillis,,False
+77003,AMPONVILLE,1108,Sud 77,origin,77003,Amponville,,False
+77004,ANDREZEL,1115,Centre 77,origin,77004,Andrezel,,False
+77005,ANNET SUR MARNE,1109,Nord Est 77,origin,77005,Annet-sur-Marne,,False
+77006,ARBONNE LA FORET,1108,Sud 77,origin,77006,Arbonne-la-Forêt,,False
+77007,ARGENTIERES,1115,Centre 77,origin,77007,Argentières,,False
+77008,ARMENTIERES EN BRIE,1109,Nord Est 77,origin,77008,Armentières-en-Brie,,False
+77009,ARVILLE,1108,Sud 77,origin,77009,Arville,,False
+77010,AUBEPIERRE OZOUER LE REPOS,1116,Est 77,origin,77010,Aubepierre-Ozouer-le-Repos,,False
+77011,AUFFERVILLE,1108,Sud 77,origin,77011,Aufferville,,False
+77012,AUGERS EN BRIE,1116,Est 77,origin,77012,Augers-en-Brie,,False
+77013,AULNOY,1153,Brie-Créçois,origin,77013,Aulnoy,,False
+77014,AVON,1108,Sud 77,origin,77014,Avon,,False
+77015,BABY,1116,Est 77,origin,77015,Baby,,False
+77016,BAGNEAUX SUR LOING,1108,Sud 77,origin,77016,Bagneaux-sur-Loing,,False
+77018,BAILLY ROMAINVILLIERS,1117,Marne la Vallée,origin,77018,Bailly-Romainvilliers,,False
+77019,BALLOY,1116,Est 77,origin,77019,Balloy,,False
+77020,BANNOST VILLEGAGNON,1116,Est 77,origin,77020,Bannost-Villegagnon,,False
+77021,BARBEY,1108,Sud 77,origin,77021,Barbey,,False
+77022,BARBIZON,1108,Sud 77,origin,77022,Barbizon,,False
+77023,BARCY,1109,Nord Est 77,origin,77023,Barcy,,False
+77024,BASSEVELLE,1153,Brie-Créçois,origin,77024,Bassevelle,,False
+77025,BAZOCHES LES BRAY,1116,Est 77,origin,77025,Bazoches-lès-Bray,,False
+77026,BEAUCHERY ST MARTIN,1116,Est 77,origin,77026,Beauchery-Saint-Martin,,False
+77027,BEAUMONT DU GATINAIS,1108,Sud 77,origin,77027,Beaumont-du-Gâtinais,,False
+77029,BEAUVOIR,1115,Centre 77,origin,77029,Beauvoir,,False
+77030,BELLOT,1116,Est 77,origin,77030,Bellot,,False
+77031,BERNAY VILBERT,1116,Est 77,origin,77031,Bernay-Vilbert,,False
+77032,BETON BAZOCHES,1116,Est 77,origin,77032,Beton-Bazoches,,False
+77033,BEZALLES,1116,Est 77,origin,77033,Bezalles,,False
+77034,BLANDY,1115,Centre 77,origin,77034,Blandy,,False
+77035,BLENNES,1108,Sud 77,origin,77035,Blennes,,False
+77036,BOISDON,1116,Est 77,origin,77036,Boisdon,,False
+77037,BOIS LE ROI,1108,Sud 77,origin,77037,Bois-le-Roi,,False
+77038,BOISSETTES,1115,Centre 77,origin,77038,Boissettes,,False
+77039,BOISSISE LA BERTRAND,1115,Centre 77,origin,77039,Boissise-la-Bertrand,,False
+77040,BOISSISE LE ROI,1115,Centre 77,origin,77040,Boissise-le-Roi,,False
+77041,BOISSY AUX CAILLES,1108,Sud 77,origin,77041,Boissy-aux-Cailles,,False
+77042,BOISSY LE CHATEL,1153,Brie-Créçois,origin,77042,Boissy-le-Châtel,,False
+77043,BOITRON,1116,Est 77,origin,77043,Boitron,,False
+77044,BOMBON,1115,Centre 77,origin,77044,Bombon,,False
+77045,BOUGLIGNY,1108,Sud 77,origin,77045,Bougligny,,False
+77046,BOULANCOURT,1108,Sud 77,origin,77046,Boulancourt,,False
+77047,BOULEURS,1153,Brie-Créçois,origin,77047,Bouleurs,,False
+77048,BOURRON MARLOTTE,1108,Sud 77,origin,77048,Bourron-Marlotte,,False
+77049,BOUTIGNY,1109,Nord Est 77,origin,77049,Boutigny,,False
+77050,BRANSLES,1108,Sud 77,origin,77050,Bransles,,False
+77051,BRAY SUR SEINE,1116,Est 77,origin,77051,Bray-sur-Seine,,False
+77052,BREAU,1116,Est 77,origin,77052,Bréau,,False
+77053,BRIE COMTE ROBERT,1117,Marne la Vallée,origin,77053,Brie-Comte-Robert,,False
+77054,LA BROSSE MONTCEAUX,1108,Sud 77,origin,77054,La Brosse-Montceaux,,False
+77055,BROU SUR CHANTEREINE,1117,Marne la Vallée,origin,77055,Brou-sur-Chantereine,,False
+77056,BURCY,1108,Sud 77,origin,77056,Burcy,,False
+77057,BUSSIERES,1153,Brie-Créçois,origin,77057,Bussières,,False
+77058,BUSSY ST GEORGES,1117,Marne la Vallée,origin,77058,Bussy-Saint-Georges,,False
+77059,BUSSY ST MARTIN,1117,Marne la Vallée,origin,77059,Bussy-Saint-Martin,,False
+77060,BUTHIERS,1108,Sud 77,origin,77060,Buthiers,,False
+77061,CANNES ECLUSE,1108,Sud 77,origin,77061,Cannes-Écluse,,False
+77062,CARNETIN,1117,Marne la Vallée,origin,77062,Carnetin,,False
+77063,LA CELLE SUR MORIN,1153,Brie-Créçois,origin,77063,La Celle-sur-Morin,,False
+77065,CELY,1108,Sud 77,origin,77065,Cély,,False
+77066,CERNEUX,1116,Est 77,origin,77066,Cerneux,,False
+77067,CESSON,1118,Porte Sud du Grand Paris,origin,77067,Cesson,,False
+77068,CESSOY EN MONTOIS,1116,Est 77,origin,77068,Cessoy-en-Montois,,False
+77069,CHAILLY EN BIERE,1108,Sud 77,origin,77069,Chailly-en-Bière,,False
+77070,CHAILLY EN BRIE,1153,Brie-Créçois,origin,77070,Chailly-en-Brie,,False
+77071,CHAINTREAUX,1108,Sud 77,origin,77071,Chaintreaux,,False
+77072,CHALAUTRE LA GRANDE,1116,Est 77,origin,77072,Chalautre-la-Grande,,False
+77073,CHALAUTRE LA PETITE,1116,Est 77,origin,77073,Chalautre-la-Petite,,False
+77075,CHALIFERT,1117,Marne la Vallée,origin,77075,Chalifert,,False
+77076,CHALMAISON,1116,Est 77,origin,77076,Chalmaison,,False
+77077,CHAMBRY,1109,Nord Est 77,origin,77077,Chambry,,False
+77078,CHAMIGNY,1153,Brie-Créçois,origin,77078,Chamigny,,False
+77079,CHAMPAGNE SUR SEINE,1108,Sud 77,origin,77079,Champagne-sur-Seine,,False
+77080,CHAMPCENEST,1116,Est 77,origin,77080,Champcenest,,False
+77081,CHAMPDEUIL,1115,Centre 77,origin,77081,Champdeuil,,False
+77082,CHAMPEAUX,1115,Centre 77,origin,77082,Champeaux,,False
+77083,CHAMPS SUR MARNE,1117,Marne la Vallée,origin,77083,Champs-sur-Marne,,False
+77084,CHANGIS SUR MARNE,1153,Brie-Créçois,origin,77084,Changis-sur-Marne,,False
+77085,CHANTELOUP EN BRIE,1117,Marne la Vallée,origin,77085,Chanteloup-en-Brie,,False
+77086,LA CHAPELLE GAUTHIER,1116,Est 77,origin,77086,La Chapelle-Gauthier,,False
+77087,LA CHAPELLE IGER,1116,Est 77,origin,77087,La Chapelle-Iger,,False
+77088,LA CHAPELLE LA REINE,1108,Sud 77,origin,77088,La Chapelle-la-Reine,,False
+77089,LA CHAPELLE RABLAIS,1116,Est 77,origin,77089,La Chapelle-Rablais,,False
+77090,LA CHAPELLE ST SULPICE,1116,Est 77,origin,77090,La Chapelle-Saint-Sulpice,,False
+77091,LES CHAPELLES BOURBON,1116,Est 77,origin,77091,Les Chapelles-Bourbon,,False
+77093,LA CHAPELLE MOUTILS,1116,Est 77,origin,77093,La Chapelle-Moutils,,False
+77094,CHARMENTRAY,1109,Nord Est 77,origin,77094,Charmentray,,False
+77095,CHARNY,1109,Nord Est 77,origin,77095,Charny,,False
+77096,CHARTRETTES,1108,Sud 77,origin,77096,Chartrettes,,False
+77097,CHARTRONGES,1116,Est 77,origin,77097,Chartronges,,False
+77098,CHATEAUBLEAU,1116,Est 77,origin,77098,Châteaubleau,,False
+77099,CHATEAU LANDON,1108,Sud 77,origin,77099,Château-Landon,,False
+77100,LE CHATELET EN BRIE,1115,Centre 77,origin,77100,Le Châtelet-en-Brie,,False
+77101,CHATENAY SUR SEINE,1116,Est 77,origin,77101,Châtenay-sur-Seine,,False
+77102,CHATENOY,1108,Sud 77,origin,77102,Châtenoy,,False
+77103,CHATILLON LA BORDE,1115,Centre 77,origin,77103,Châtillon-la-Borde,,False
+77104,CHATRES,1116,Est 77,origin,77104,Châtres,,False
+77106,CHAUFFRY,1153,Brie-Créçois,origin,77106,Chauffry,,False
+77107,CHAUMES EN BRIE,1115,Centre 77,origin,77107,Chaumes-en-Brie,,False
+77108,CHELLES,1117,Marne la Vallée,origin,77108,Chelles,,False
+77109,CHENOISE CUCHARMOY,1116,Est 77,origin,77109,Chenoise-Cucharmoy,,False
+77110,CHENOU,1108,Sud 77,origin,77110,Chenou,,False
+77111,CHESSY,1117,Marne la Vallée,origin,77111,Chessy,,False
+77112,CHEVRAINVILLIERS,1108,Sud 77,origin,77112,Chevrainvilliers,,False
+77113,CHEVRU,1153,Brie-Créçois,origin,77113,Chevru,,False
+77114,CHEVRY COSSIGNY,1117,Marne la Vallée,origin,77114,Chevry-Cossigny,,False
+77115,CHEVRY EN SEREINE,1108,Sud 77,origin,77115,Chevry-en-Sereine,,False
+77116,CHOISY EN BRIE,1116,Est 77,origin,77116,Choisy-en-Brie,,False
+77117,CITRY,1153,Brie-Créçois,origin,77117,Citry,,False
+77118,CLAYE SOUILLY,1119,Grand Roissy - Le Bourget,origin,77118,Claye-Souilly,,False
+77119,CLOS FONTAINE,1116,Est 77,origin,77119,Clos-Fontaine,,False
+77120,COCHEREL,1109,Nord Est 77,origin,77120,Cocherel,,False
+77121,COLLEGIEN,1117,Marne la Vallée,origin,77121,Collégien,,False
+77122,COMBS LA VILLE,1118,Porte Sud du Grand Paris,origin,77122,Combs-la-Ville,,False
+77123,COMPANS,1119,Grand Roissy - Le Bourget,origin,77123,Compans,,False
+77124,CONCHES SUR GONDOIRE,1117,Marne la Vallée,origin,77124,Conches-sur-Gondoire,,False
+77125,CONDE STE LIBIAIRE,1153,Brie-Créçois,origin,77125,Condé-Sainte-Libiaire,,False
+77126,CONGIS SUR THEROUANNE,1109,Nord Est 77,origin,77126,Congis-sur-Thérouanne,,False
+77127,COUBERT,1115,Centre 77,origin,77127,Coubert,,False
+77128,COUILLY PONT AUX DAMES,1153,Brie-Créçois,origin,77128,Couilly-Pont-aux-Dames,,False
+77129,COULOMBS EN VALOIS,1109,Nord Est 77,origin,77129,Coulombs-en-Valois,,False
+77130,COULOMMES,1153,Brie-Créçois,origin,77130,Coulommes,,False
+77131,COULOMMIERS,1153,Brie-Créçois,origin,77131,Coulommiers,,False
+77132,COUPVRAY,1117,Marne la Vallée,origin,77132,Coupvray,,False
+77133,COURCELLES EN BASSEE,1108,Sud 77,origin,77133,Courcelles-en-Bassée,,False
+77134,COURCHAMP,1116,Est 77,origin,77134,Courchamp,,False
+77135,COURPALAY,1116,Est 77,origin,77135,Courpalay,,False
+77136,COURQUETAINE,1115,Centre 77,origin,77136,Courquetaine,,False
+77137,COURTACON,1116,Est 77,origin,77137,Courtacon,,False
+77138,COURTOMER,1116,Est 77,origin,77138,Courtomer,,False
+77139,COURTRY,1117,Marne la Vallée,origin,77139,Courtry,,False
+77140,COUTENCON,1116,Est 77,origin,77140,Coutençon,,False
+77141,COUTEVROULT,1153,Brie-Créçois,origin,77141,Coutevroult,,False
+77142,CRECY LA CHAPELLE,1153,Brie-Créçois,origin,77142,Crécy-la-Chapelle,,False
+77143,CREGY LES MEAUX,1109,Nord Est 77,origin,77143,Crégy-lès-Meaux,,False
+77144,CREVECOEUR EN BRIE,1116,Est 77,origin,77144,Crèvecœur-en-Brie,,False
+77145,CRISENOY,1115,Centre 77,origin,77145,Crisenoy,,False
+77146,CROISSY BEAUBOURG,1117,Marne la Vallée,origin,77146,Croissy-Beaubourg,,False
+77147,LA CROIX EN BRIE,1116,Est 77,origin,77147,La Croix-en-Brie,,False
+77148,CROUY SUR OURCQ,1109,Nord Est 77,origin,77148,Crouy-sur-Ourcq,,False
+77150,CUISY,1109,Nord Est 77,origin,77150,Cuisy,,False
+77151,DAGNY,1153,Brie-Créçois,origin,77151,Dagny,,False
+77152,DAMMARIE LES LYS,1115,Centre 77,origin,77152,Dammarie-les-Lys,,False
+77153,DAMMARTIN EN GOELE,1119,Grand Roissy - Le Bourget,origin,77153,Dammartin-en-Goële,,False
+77154,DAMMARTIN SUR TIGEAUX,1153,Brie-Créçois,origin,77154,Dammartin-sur-Tigeaux,,False
+77155,DAMPMART,1117,Marne la Vallée,origin,77155,Dampmart,,False
+77156,DARVAULT,1108,Sud 77,origin,77156,Darvault,,False
+77157,DHUISY,1109,Nord Est 77,origin,77157,Dhuisy,,False
+77158,DIANT,1108,Sud 77,origin,77158,Diant,,False
+77159,DONNEMARIE DONTILLY,1116,Est 77,origin,77159,Donnemarie-Dontilly,,False
+77161,DORMELLES,1108,Sud 77,origin,77161,Dormelles,,False
+77162,DOUE,1116,Est 77,origin,77162,Doue,,False
+77163,DOUY LA RAMEE,1109,Nord Est 77,origin,77163,Douy-la-Ramée,,False
+77164,ECHOUBOULAINS,1115,Centre 77,origin,77164,Échouboulains,,False
+77165,LES ECRENNES,1115,Centre 77,origin,77165,Les Écrennes,,False
+77167,EGLIGNY,1116,Est 77,origin,77167,Égligny,,False
+77168,EGREVILLE,1108,Sud 77,origin,77168,Égreville,,False
+77169,EMERAINVILLE,1117,Marne la Vallée,origin,77169,Émerainville,,False
+77170,EPISY,1108,Sud 77,delegated_commune,77316,Moret-Loing-et-Orvanne,True,
+77171,ESBLY,1117,Marne la Vallée,origin,77171,Esbly,,False
+77172,ESMANS,1108,Sud 77,origin,77172,Esmans,,False
+77173,ETREPILLY,1109,Nord Est 77,origin,77173,Étrépilly,,False
+77174,EVERLY,1116,Est 77,origin,77174,Everly,,False
+77175,EVRY GREGY SUR YERRE,1115,Centre 77,origin,77175,Évry-Grégy-sur-Yerre,,False
+77176,FAREMOUTIERS,1153,Brie-Créçois,origin,77176,Faremoutiers,,False
+77177,FAVIERES,1116,Est 77,origin,77177,Favières,,False
+77178,FAY LES NEMOURS,1108,Sud 77,origin,77178,Faÿ-lès-Nemours,,False
+77179,FERICY,1115,Centre 77,origin,77179,Féricy,,False
+77180,FEROLLES ATTILLY,1117,Marne la Vallée,origin,77180,Férolles-Attilly,,False
+77181,FERRIERES EN BRIE,1117,Marne la Vallée,origin,77181,Ferrières-en-Brie,,False
+77182,LA FERTE GAUCHER,1116,Est 77,origin,77182,La Ferté-Gaucher,,False
+77183,LA FERTE SOUS JOUARRE,1153,Brie-Créçois,origin,77183,La Ferté-sous-Jouarre,,False
+77184,FLAGY,1108,Sud 77,origin,77184,Flagy,,False
+77185,FLEURY EN BIERE,1108,Sud 77,origin,77185,Fleury-en-Bière,,False
+77186,FONTAINEBLEAU,1108,Sud 77,origin,77186,Fontainebleau,,False
+77187,FONTAINE FOURCHES,1116,Est 77,origin,77187,Fontaine-Fourches,,False
+77188,FONTAINE LE PORT,1115,Centre 77,origin,77188,Fontaine-le-Port,,False
+77190,FONTAINS,1116,Est 77,origin,77190,Fontains,,False
+77191,FONTENAILLES,1116,Est 77,origin,77191,Fontenailles,,False
+77192,FONTENAY TRESIGNY,1116,Est 77,origin,77192,Fontenay-Trésigny,,False
+77193,FORFRY,1109,Nord Est 77,origin,77193,Forfry,,False
+77194,FORGES,1108,Sud 77,origin,77194,Forges,,False
+77195,FOUJU,1115,Centre 77,origin,77195,Fouju,,False
+77196,FRESNES SUR MARNE,1109,Nord Est 77,origin,77196,Fresnes-sur-Marne,,False
+77197,FRETOY,1116,Est 77,origin,77197,Frétoy,,False
+77198,FROMONT,1108,Sud 77,origin,77198,Fromont,,False
+77199,FUBLAINES,1109,Nord Est 77,origin,77199,Fublaines,,False
+77200,GARENTREVILLE,1108,Sud 77,origin,77200,Garentreville,,False
+77201,GASTINS,1116,Est 77,origin,77201,Gastins,,False
+77202,LA GENEVRAYE,1108,Sud 77,origin,77202,La Genevraye,,False
+77203,GERMIGNY L EVEQUE,1109,Nord Est 77,origin,77203,Germigny-l'Évêque,,False
+77204,GERMIGNY SOUS COULOMBS,1109,Nord Est 77,origin,77204,Germigny-sous-Coulombs,,False
+77205,GESVRES LE CHAPITRE,1109,Nord Est 77,origin,77205,Gesvres-le-Chapitre,,False
+77206,GIREMOUTIERS,1153,Brie-Créçois,origin,77206,Giremoutiers,,False
+77207,GIRONVILLE,1108,Sud 77,origin,77207,Gironville,,False
+77208,GOUAIX,1116,Est 77,origin,77208,Gouaix,,False
+77209,GOUVERNES,1117,Marne la Vallée,origin,77209,Gouvernes,,False
+77210,LA GRANDE PAROISSE,1108,Sud 77,origin,77210,La Grande-Paroisse,,False
+77211,GRANDPUITS BAILLY CARROIS,1116,Est 77,origin,77211,Grandpuits-Bailly-Carrois,,False
+77212,GRAVON,1116,Est 77,origin,77212,Gravon,,False
+77214,GRESSY,1119,Grand Roissy - Le Bourget,origin,77214,Gressy,,False
+77215,GRETZ ARMAINVILLIERS,1117,Marne la Vallée,origin,77215,Gretz-Armainvilliers,,False
+77216,GREZ SUR LOING,1108,Sud 77,origin,77216,Grez-sur-Loing,,False
+77217,GRISY SUISNES,1115,Centre 77,origin,77217,Grisy-Suisnes,,False
+77218,GRISY SUR SEINE,1116,Est 77,origin,77218,Grisy-sur-Seine,,False
+77219,GUERARD,1153,Brie-Créçois,origin,77219,Guérard,,False
+77220,GUERCHEVILLE,1108,Sud 77,origin,77220,Guercheville,,False
+77221,GUERMANTES,1117,Marne la Vallée,origin,77221,Guermantes,,False
+77222,GUIGNES,1115,Centre 77,origin,77222,Guignes,,False
+77223,GURCY LE CHATEL,1116,Est 77,origin,77223,Gurcy-le-Châtel,,False
+77224,HAUTEFEUILLE,1153,Brie-Créçois,origin,77224,Hautefeuille,,False
+77225,LA HAUTE MAISON,1153,Brie-Créçois,origin,77225,La Haute-Maison,,False
+77226,HERICY,1108,Sud 77,origin,77226,Héricy,,False
+77227,HERME,1116,Est 77,origin,77227,Hermé,,False
+77228,HONDEVILLIERS,1116,Est 77,origin,77228,Hondevilliers,,False
+77229,LA HOUSSAYE EN BRIE,1116,Est 77,origin,77229,La Houssaye-en-Brie,,False
+77230,ICHY,1108,Sud 77,origin,77230,Ichy,,False
+77231,ISLES LES MELDEUSES,1109,Nord Est 77,origin,77231,Isles-les-Meldeuses,,False
+77232,ISLES LES VILLENOY,1109,Nord Est 77,origin,77232,Isles-lès-Villenoy,,False
+77233,IVERNY,1109,Nord Est 77,origin,77233,Iverny,,False
+77234,JABLINES,1117,Marne la Vallée,origin,77234,Jablines,,False
+77235,JAIGNES,1109,Nord Est 77,origin,77235,Jaignes,,False
+77236,JAULNES,1116,Est 77,origin,77236,Jaulnes,,False
+77237,JOSSIGNY,1117,Marne la Vallée,origin,77237,Jossigny,,False
+77238,JOUARRE,1153,Brie-Créçois,origin,77238,Jouarre,,False
+77239,JOUY LE CHATEL,1116,Est 77,origin,77239,Jouy-le-Châtel,,False
+77240,JOUY SUR MORIN,1116,Est 77,origin,77240,Jouy-sur-Morin,,False
+77241,JUILLY,1119,Grand Roissy - Le Bourget,origin,77241,Juilly,,False
+77242,JUTIGNY,1116,Est 77,origin,77242,Jutigny,,False
+77243,LAGNY SUR MARNE,1117,Marne la Vallée,origin,77243,Lagny-sur-Marne,,False
+77244,LARCHANT,1108,Sud 77,origin,77244,Larchant,,False
+77245,LAVAL EN BRIE,1108,Sud 77,origin,77245,Laval-en-Brie,,False
+77246,LECHELLE,1116,Est 77,origin,77246,Léchelle,,False
+77247,LESCHEROLLES,1116,Est 77,origin,77247,Lescherolles,,False
+77248,LESCHES,1117,Marne la Vallée,origin,77248,Lesches,,False
+77249,LESIGNY,1117,Marne la Vallée,origin,77249,Lésigny,,False
+77250,LEUDON EN BRIE,1116,Est 77,origin,77250,Leudon-en-Brie,,False
+77251,LIEUSAINT,1118,Porte Sud du Grand Paris,origin,77251,Lieusaint,,False
+77252,LIMOGES FOURCHES,1115,Centre 77,origin,77252,Limoges-Fourches,,False
+77253,LISSY,1115,Centre 77,origin,77253,Lissy,,False
+77254,LIVERDY EN BRIE,1116,Est 77,origin,77254,Liverdy-en-Brie,,False
+77255,LIVRY SUR SEINE,1115,Centre 77,origin,77255,Livry-sur-Seine,,False
+77256,LIZINES,1116,Est 77,origin,77256,Lizines,,False
+77257,LIZY SUR OURCQ,1109,Nord Est 77,origin,77257,Lizy-sur-Ourcq,,False
+77258,LOGNES,1117,Marne la Vallée,origin,77258,Lognes,,False
+77259,LONGPERRIER,1119,Grand Roissy - Le Bourget,origin,77259,Longperrier,,False
+77260,LONGUEVILLE,1116,Est 77,origin,77260,Longueville,,False
+77261,LORREZ LE BOCAGE PREAUX,1108,Sud 77,origin,77261,Lorrez-le-Bocage-Préaux,,False
+77262,LOUAN VILLEGRUIS FONTAINE,1116,Est 77,origin,77262,Louan-Villegruis-Fontaine,,False
+77263,LUISETAINES,1116,Est 77,origin,77263,Luisetaines,,False
+77264,LUMIGNY NESLES ORMEAUX,1116,Est 77,origin,77264,Lumigny-Nesles-Ormeaux,,False
+77265,LUZANCY,1153,Brie-Créçois,origin,77265,Luzancy,,False
+77266,MACHAULT,1115,Centre 77,origin,77266,Machault,,False
+77267,LA MADELEINE SUR LOING,1108,Sud 77,origin,77267,La Madeleine-sur-Loing,,False
+77268,MAGNY LE HONGRE,1117,Marne la Vallée,origin,77268,Magny-le-Hongre,,False
+77269,MAINCY,1115,Centre 77,origin,77269,Maincy,,False
+77270,MAISONCELLES EN BRIE,1153,Brie-Créçois,origin,77270,Maisoncelles-en-Brie,,False
+77271,MAISONCELLES EN GATINAIS,1108,Sud 77,origin,77271,Maisoncelles-en-Gâtinais,,False
+77272,MAISON ROUGE,1116,Est 77,origin,77272,Maison-Rouge,,False
+77273,MARCHEMORET,1109,Nord Est 77,origin,77273,Marchémoret,,False
+77274,MARCILLY,1109,Nord Est 77,origin,77274,Marcilly,,False
+77275,LES MARETS,1116,Est 77,origin,77275,Les Marêts,,False
+77276,MAREUIL LES MEAUX,1109,Nord Est 77,origin,77276,Mareuil-lès-Meaux,,False
+77277,MARLES EN BRIE,1116,Est 77,origin,77277,Marles-en-Brie,,False
+77278,MAROLLES EN BRIE,1153,Brie-Créçois,origin,77278,Marolles-en-Brie,,False
+77279,MAROLLES SUR SEINE,1108,Sud 77,origin,77279,Marolles-sur-Seine,,False
+77280,MARY SUR MARNE,1109,Nord Est 77,origin,77280,Mary-sur-Marne,,False
+77281,MAUPERTHUIS,1153,Brie-Créçois,origin,77281,Mauperthuis,,False
+77282,MAUREGARD,1119,Grand Roissy - Le Bourget,origin,77282,Mauregard,,False
+77283,MAY EN MULTIEN,1109,Nord Est 77,origin,77283,May-en-Multien,,False
+77284,MEAUX,1109,Nord Est 77,origin,77284,Meaux,,False
+77285,LE MEE SUR SEINE,1115,Centre 77,origin,77285,Le Mée-sur-Seine,,False
+77286,MEIGNEUX,1116,Est 77,origin,77286,Meigneux,,False
+77287,MEILLERAY,1116,Est 77,origin,77287,Meilleray,,False
+77288,MELUN,1115,Centre 77,origin,77288,Melun,,False
+77289,MELZ SUR SEINE,1116,Est 77,origin,77289,Melz-sur-Seine,,False
+77290,MERY SUR MARNE,1153,Brie-Créçois,origin,77290,Méry-sur-Marne,,False
+77291,LE MESNIL AMELOT,1119,Grand Roissy - Le Bourget,origin,77291,Le Mesnil-Amelot,,False
+77292,MESSY,1109,Nord Est 77,origin,77292,Messy,,False
+77293,MISY SUR YONNE,1108,Sud 77,origin,77293,Misy-sur-Yonne,,False
+77294,MITRY MORY,1119,Grand Roissy - Le Bourget,origin,77294,Mitry-Mory,,False
+77295,MOISENAY,1115,Centre 77,origin,77295,Moisenay,,False
+77296,MOISSY CRAMAYEL,1118,Porte Sud du Grand Paris,origin,77296,Moissy-Cramayel,,False
+77297,MONDREVILLE,1108,Sud 77,origin,77297,Mondreville,,False
+77298,MONS EN MONTOIS,1116,Est 77,origin,77298,Mons-en-Montois,,False
+77299,MONTARLOT,1108,Sud 77,delegated_commune,77316,Moret-Loing-et-Orvanne,True,
+77300,MONTCEAUX LES MEAUX,1109,Nord Est 77,origin,77300,Montceaux-lès-Meaux,,False
+77301,MONTCEAUX LES PROVINS,1116,Est 77,origin,77301,Montceaux-lès-Provins,,False
+77302,MONTCOURT FROMONVILLE,1108,Sud 77,origin,77302,Moncourt-Fromonville,,True
+77303,MONTDAUPHIN,1116,Est 77,origin,77303,Montdauphin,,False
+77304,MONTENILS,1116,Est 77,origin,77304,Montenils,,False
+77305,MONTEREAU FAULT YONNE,1108,Sud 77,origin,77305,Montereau-Fault-Yonne,,False
+77306,MONTEREAU SUR LE JARD,1115,Centre 77,origin,77306,Montereau-sur-le-Jard,,False
+77307,MONTEVRAIN,1117,Marne la Vallée,origin,77307,Montévrain,,False
+77308,MONTGE EN GOELE,1109,Nord Est 77,origin,77308,Montgé-en-Goële,,False
+77309,MONTHYON,1109,Nord Est 77,origin,77309,Monthyon,,False
+77310,MONTIGNY LE GUESDIER,1116,Est 77,origin,77310,Montigny-le-Guesdier,,False
+77311,MONTIGNY LENCOUP,1116,Est 77,origin,77311,Montigny-Lencoup,,False
+77312,MONTIGNY SUR LOING,1108,Sud 77,origin,77312,Montigny-sur-Loing,,False
+77313,MONTMACHOUX,1108,Sud 77,origin,77313,Montmachoux,,False
+77314,MONTOLIVET,1116,Est 77,origin,77314,Montolivet,,False
+77315,MONTRY,1117,Marne la Vallée,origin,77315,Montry,,False
+77316,MORET LOING ET ORVANNE,1108,Sud 77,origin,77316,Moret-Loing-et-Orvanne,,False
+77317,MORMANT,1116,Est 77,origin,77317,Mormant,,False
+77318,MORTCERF,1116,Est 77,origin,77318,Mortcerf,,False
+77319,MORTERY,1116,Est 77,origin,77319,Mortery,,False
+77320,MOUROUX,1153,Brie-Créçois,origin,77320,Mouroux,,False
+77321,MOUSSEAUX LES BRAY,1116,Est 77,origin,77321,Mousseaux-lès-Bray,,False
+77322,MOUSSY LE NEUF,1119,Grand Roissy - Le Bourget,origin,77322,Moussy-le-Neuf,,False
+77323,MOUSSY LE VIEUX,1119,Grand Roissy - Le Bourget,origin,77323,Moussy-le-Vieux,,False
+77325,MOUY SUR SEINE,1116,Est 77,origin,77325,Mouy-sur-Seine,,False
+77326,NANDY,1118,Porte Sud du Grand Paris,origin,77326,Nandy,,False
+77327,NANGIS,1116,Est 77,origin,77327,Nangis,,False
+77328,NANTEAU SUR ESSONNE,1108,Sud 77,origin,77328,Nanteau-sur-Essonne,,False
+77329,NANTEAU SUR LUNAIN,1108,Sud 77,origin,77329,Nanteau-sur-Lunain,,False
+77330,NANTEUIL LES MEAUX,1109,Nord Est 77,origin,77330,Nanteuil-lès-Meaux,,False
+77331,NANTEUIL SUR MARNE,1153,Brie-Créçois,origin,77331,Nanteuil-sur-Marne,,False
+77332,NANTOUILLET,1109,Nord Est 77,origin,77332,Nantouillet,,False
+77333,NEMOURS,1108,Sud 77,origin,77333,Nemours,,False
+77335,CHAUCONIN NEUFMONTIERS,1109,Nord Est 77,origin,77335,Chauconin-Neufmontiers,,False
+77336,NEUFMOUTIERS EN BRIE,1116,Est 77,origin,77336,Neufmoutiers-en-Brie,,False
+77337,NOISIEL,1117,Marne la Vallée,origin,77337,Noisiel,,False
+77338,NOISY RUDIGNON,1108,Sud 77,origin,77338,Noisy-Rudignon,,False
+77339,NOISY SUR ECOLE,1108,Sud 77,origin,77339,Noisy-sur-École,,False
+77340,NONVILLE,1108,Sud 77,origin,77340,Nonville,,False
+77341,NOYEN SUR SEINE,1116,Est 77,origin,77341,Noyen-sur-Seine,,False
+77342,OBSONVILLE,1108,Sud 77,origin,77342,Obsonville,,False
+77343,OCQUERRE,1109,Nord Est 77,origin,77343,Ocquerre,,False
+77344,OISSERY,1109,Nord Est 77,origin,77344,Oissery,,False
+77345,ORLY SUR MORIN,1116,Est 77,origin,77345,Orly-sur-Morin,,False
+77347,LES ORMES SUR VOULZIE,1116,Est 77,origin,77347,Les Ormes-sur-Voulzie,,False
+77348,ORMESSON,1108,Sud 77,origin,77348,Ormesson,,False
+77349,OTHIS,1119,Grand Roissy - Le Bourget,origin,77349,Othis,,False
+77350,OZOIR LA FERRIERE,1117,Marne la Vallée,origin,77350,Ozoir-la-Ferrière,,False
+77352,OZOUER LE VOULGIS,1115,Centre 77,origin,77352,Ozouer-le-Voulgis,,False
+77353,PALEY,1108,Sud 77,origin,77353,Paley,,False
+77354,PAMFOU,1115,Centre 77,origin,77354,Pamfou,,False
+77355,PAROY,1116,Est 77,origin,77355,Paroy,,False
+77356,PASSY SUR SEINE,1116,Est 77,origin,77356,Passy-sur-Seine,,False
+77357,PECY,1116,Est 77,origin,77357,Pécy,,False
+77358,PENCHARD,1109,Nord Est 77,origin,77358,Penchard,,False
+77359,PERTHES,1108,Sud 77,origin,77359,Perthes,,False
+77360,PEZARCHES,1153,Brie-Créçois,origin,77360,Pézarches,,False
+77361,PIERRE LEVEE,1153,Brie-Créçois,origin,77361,Pierre-Levée,,False
+77363,LE PIN,1109,Nord Est 77,origin,77363,Le Pin,,False
+77364,LE PLESSIS AUX BOIS,1109,Nord Est 77,origin,77364,Le Plessis-aux-Bois,,False
+77365,LE PLESSIS FEU AUSSOUX,1116,Est 77,origin,77365,Le Plessis-Feu-Aussoux,,False
+77366,LE PLESSIS L EVEQUE,1109,Nord Est 77,origin,77366,Le Plessis-l'Évêque,,False
+77367,LE PLESSIS PLACY,1109,Nord Est 77,origin,77367,Le Plessis-Placy,,False
+77368,POIGNY,1116,Est 77,origin,77368,Poigny,,False
+77369,POINCY,1109,Nord Est 77,origin,77369,Poincy,,False
+77370,POLIGNY,1108,Sud 77,origin,77370,Poligny,,False
+77371,POMMEUSE,1153,Brie-Créçois,origin,77371,Pommeuse,,False
+77372,POMPONNE,1117,Marne la Vallée,origin,77372,Pomponne,,False
+77373,PONTAULT COMBAULT,1117,Marne la Vallée,origin,77373,Pontault-Combault,,False
+77374,PONTCARRE,1117,Marne la Vallée,origin,77374,Pontcarré,,False
+77376,PRECY SUR MARNE,1109,Nord Est 77,origin,77376,Précy-sur-Marne,,False
+77377,PRESLES EN BRIE,1116,Est 77,origin,77377,Presles-en-Brie,,False
+77378,PRINGY,1115,Centre 77,origin,77378,Pringy,,False
+77379,PROVINS,1116,Est 77,origin,77379,Provins,,False
+77380,PUISIEUX,1109,Nord Est 77,origin,77380,Puisieux,,False
+77381,QUIERS,1116,Est 77,origin,77381,Quiers,,False
+77382,QUINCY VOISINS,1109,Nord Est 77,origin,77382,Quincy-Voisins,,False
+77383,RAMPILLON,1116,Est 77,origin,77383,Rampillon,,False
+77384,REAU,1118,Porte Sud du Grand Paris,origin,77384,Réau,,False
+77385,REBAIS,1116,Est 77,origin,77385,Rebais,,False
+77386,RECLOSES,1108,Sud 77,origin,77386,Recloses,,False
+77387,REMAUVILLE,1108,Sud 77,origin,77387,Remauville,,False
+77388,REUIL EN BRIE,1153,Brie-Créçois,origin,77388,Reuil-en-Brie,,False
+77389,LA ROCHETTE,1115,Centre 77,origin,77389,La Rochette,,False
+77390,ROISSY EN BRIE,1117,Marne la Vallée,origin,77390,Roissy-en-Brie,,False
+77391,ROUILLY,1116,Est 77,origin,77391,Rouilly,,False
+77392,ROUVRES,1119,Grand Roissy - Le Bourget,origin,77392,Rouvres,,False
+77393,ROZAY EN BRIE,1116,Est 77,origin,77393,Rozay-en-Brie,,False
+77394,RUBELLES,1115,Centre 77,origin,77394,Rubelles,,False
+77395,RUMONT,1108,Sud 77,origin,77395,Rumont,,False
+77396,RUPEREUX,1116,Est 77,origin,77396,Rupéreux,,False
+77397,SAACY SUR MARNE,1153,Brie-Créçois,origin,77397,Saâcy-sur-Marne,,False
+77398,SABLONNIERES,1116,Est 77,origin,77398,Sablonnières,,False
+77400,ST AUGUSTIN,1153,Brie-Créçois,origin,77400,Saint-Augustin,,False
+77401,STE AULDE,1153,Brie-Créçois,origin,77401,Sainte-Aulde,,False
+77402,ST BARTHELEMY,1116,Est 77,origin,77402,Saint-Barthélemy,,False
+77403,ST BRICE,1116,Est 77,origin,77403,Saint-Brice,,False
+77404,STE COLOMBE,1116,Est 77,origin,77404,Sainte-Colombe,,False
+77405,ST CYR SUR MORIN,1116,Est 77,origin,77405,Saint-Cyr-sur-Morin,,False
+77406,ST DENIS LES REBAIS,1116,Est 77,origin,77406,Saint-Denis-lès-Rebais,,False
+77407,ST FARGEAU PONTHIERRY,1115,Centre 77,origin,77407,Saint-Fargeau-Ponthierry,,False
+77408,ST FIACRE,1109,Nord Est 77,origin,77408,Saint-Fiacre,,False
+77409,ST GERMAIN LAVAL,1108,Sud 77,origin,77409,Saint-Germain-Laval,,False
+77410,ST GERMAIN LAXIS,1115,Centre 77,origin,77410,Saint-Germain-Laxis,,False
+77411,ST GERMAIN SOUS DOUE,1116,Est 77,origin,77411,Saint-Germain-sous-Doue,,False
+77412,ST GERMAIN SUR ECOLE,1108,Sud 77,origin,77412,Saint-Germain-sur-École,,False
+77413,ST GERMAIN SUR MORIN,1117,Marne la Vallée,origin,77413,Saint-Germain-sur-Morin,,False
+77414,ST HILLIERS,1116,Est 77,origin,77414,Saint-Hilliers,,False
+77415,ST JEAN LES DEUX JUMEAUX,1153,Brie-Créçois,origin,77415,Saint-Jean-les-Deux-Jumeaux,,False
+77416,ST JUST EN BRIE,1116,Est 77,origin,77416,Saint-Just-en-Brie,,False
+77417,ST LEGER,1116,Est 77,origin,77417,Saint-Léger,,False
+77418,ST LOUP DE NAUD,1116,Est 77,origin,77418,Saint-Loup-de-Naud,,False
+77419,ST MAMMES,1108,Sud 77,origin,77419,Saint-Mammès,,False
+77420,ST MARD,1119,Grand Roissy - Le Bourget,origin,77420,Saint-Mard,,False
+77421,ST MARS VIEUX MAISONS,1116,Est 77,origin,77421,Saint-Mars-Vieux-Maisons,,False
+77423,ST MARTIN DES CHAMPS,1116,Est 77,origin,77423,Saint-Martin-des-Champs,,False
+77424,ST MARTIN DU BOSCHET,1116,Est 77,origin,77424,Saint-Martin-du-Boschet,,False
+77425,ST MARTIN EN BIERE,1108,Sud 77,origin,77425,Saint-Martin-en-Bière,,False
+77426,ST MERY,1115,Centre 77,origin,77426,Saint-Méry,,False
+77427,ST MESMES,1109,Nord Est 77,origin,77427,Saint-Mesmes,,False
+77428,ST OUEN EN BRIE,1116,Est 77,origin,77428,Saint-Ouen-en-Brie,,False
+77429,ST OUEN SUR MORIN,1116,Est 77,origin,77429,Saint-Ouen-sur-Morin,,False
+77430,ST PATHUS,1109,Nord Est 77,origin,77430,Saint-Pathus,,False
+77431,ST PIERRE LES NEMOURS,1108,Sud 77,origin,77431,Saint-Pierre-lès-Nemours,,False
+77432,ST REMY LA VANNE,1116,Est 77,origin,77432,Saint-Rémy-de-la-Vanne,,True
+77433,BEAUTHEIL SAINTS,1153,Brie-Créçois,origin,77433,Beautheil-Saints,,False
+77434,ST SAUVEUR LES BRAY,1116,Est 77,origin,77434,Saint-Sauveur-lès-Bray,,False
+77435,ST SAUVEUR SUR ECOLE,1108,Sud 77,origin,77435,Saint-Sauveur-sur-École,,False
+77436,ST SIMEON,1116,Est 77,origin,77436,Saint-Siméon,,False
+77437,ST SOUPPLETS,1109,Nord Est 77,origin,77437,Saint-Soupplets,,False
+77438,ST THIBAULT DES VIGNES,1117,Marne la Vallée,origin,77438,Saint-Thibault-des-Vignes,,False
+77439,SALINS,1108,Sud 77,origin,77439,Salins,,False
+77440,SAMMERON,1153,Brie-Créçois,origin,77440,Sammeron,,False
+77441,SAMOIS SUR SEINE,1108,Sud 77,origin,77441,Samois-sur-Seine,,False
+77442,SAMOREAU,1108,Sud 77,origin,77442,Samoreau,,False
+77443,SANCY,1153,Brie-Créçois,origin,77443,Sancy,,False
+77444,SANCY LES PROVINS,1116,Est 77,origin,77444,Sancy-lès-Provins,,False
+77445,SAVIGNY LE TEMPLE,1118,Porte Sud du Grand Paris,origin,77445,Savigny-le-Temple,,False
+77446,SAVINS,1116,Est 77,origin,77446,Savins,,False
+77447,SEINE PORT,1115,Centre 77,origin,77447,Seine-Port,,False
+77448,SEPT SORTS,1153,Brie-Créçois,origin,77448,Sept-Sorts,,False
+77449,SERRIS,1117,Marne la Vallée,origin,77449,Serris,,False
+77450,SERVON,1117,Marne la Vallée,origin,77450,Servon,,False
+77451,SIGNY SIGNETS,1153,Brie-Créçois,origin,77451,Signy-Signets,,False
+77452,SIGY,1116,Est 77,origin,77452,Sigy,,False
+77453,SIVRY COURTRY,1115,Centre 77,origin,77453,Sivry-Courtry,,False
+77454,SOGNOLLES EN MONTOIS,1116,Est 77,origin,77454,Sognolles-en-Montois,,False
+77455,SOIGNOLLES EN BRIE,1115,Centre 77,origin,77455,Soignolles-en-Brie,,False
+77456,SOISY BOUY,1116,Est 77,origin,77456,Soisy-Bouy,,False
+77457,SOLERS,1115,Centre 77,origin,77457,Solers,,False
+77458,SOUPPES SUR LOING,1108,Sud 77,origin,77458,Souppes-sur-Loing,,False
+77459,SOURDUN,1116,Est 77,origin,77459,Sourdun,,False
+77460,TANCROU,1109,Nord Est 77,origin,77460,Tancrou,,False
+77461,THENISY,1116,Est 77,origin,77461,Thénisy,,False
+77462,THIEUX,1119,Grand Roissy - Le Bourget,origin,77462,Thieux,,False
+77463,THOMERY,1108,Sud 77,origin,77463,Thomery,,False
+77464,THORIGNY SUR MARNE,1117,Marne la Vallée,origin,77464,Thorigny-sur-Marne,,False
+77465,THOURY FEROTTES,1108,Sud 77,origin,77465,Thoury-Férottes,,False
+77466,TIGEAUX,1153,Brie-Créçois,origin,77466,Tigeaux,,False
+77467,LA TOMBE,1116,Est 77,origin,77467,La Tombe,,False
+77468,TORCY,1117,Marne la Vallée,origin,77468,Torcy,,False
+77469,TOUQUIN,1153,Brie-Créçois,origin,77469,Touquin,,False
+77470,TOURNAN EN BRIE,1117,Marne la Vallée,origin,77470,Tournan-en-Brie,,False
+77471,TOUSSON,1108,Sud 77,origin,77471,Tousson,,False
+77472,LA TRETOIRE,1116,Est 77,origin,77472,La Trétoire,,False
+77473,TREUZY LEVELAY,1108,Sud 77,origin,77473,Treuzy-Levelay,,False
+77474,TRILBARDOU,1109,Nord Est 77,origin,77474,Trilbardou,,False
+77475,TRILPORT,1109,Nord Est 77,origin,77475,Trilport,,False
+77476,TROCY EN MULTIEN,1109,Nord Est 77,origin,77476,Trocy-en-Multien,,False
+77477,URY,1108,Sud 77,origin,77477,Ury,,False
+77478,USSY SUR MARNE,1153,Brie-Créçois,origin,77478,Ussy-sur-Marne,,False
+77479,VAIRES SUR MARNE,1117,Marne la Vallée,origin,77479,Vaires-sur-Marne,,False
+77480,VALENCE EN BRIE,1115,Centre 77,origin,77480,Valence-en-Brie,,False
+77481,VANVILLE,1116,Est 77,origin,77481,Vanvillé,,False
+77482,VARENNES SUR SEINE,1108,Sud 77,origin,77482,Varennes-sur-Seine,,False
+77483,VARREDDES,1109,Nord Est 77,origin,77483,Varreddes,,False
+77484,VAUCOURTOIS,1153,Brie-Créçois,origin,77484,Vaucourtois,,False
+77485,LE VAUDOUE,1108,Sud 77,origin,77485,Le Vaudoué,,False
+77486,VAUDOY EN BRIE,1116,Est 77,origin,77486,Vaudoy-en-Brie,,False
+77487,VAUX LE PENIL,1115,Centre 77,origin,77487,Vaux-le-Pénil,,False
+77489,VAUX SUR LUNAIN,1108,Sud 77,origin,77489,Vaux-sur-Lunain,,False
+77490,VENDREST,1109,Nord Est 77,origin,77490,Vendrest,,False
+77492,VERDELOT,1116,Est 77,origin,77492,Verdelot,,False
+77493,VERNEUIL L ETANG,1116,Est 77,origin,77493,Verneuil-l'Étang,,False
+77494,VERNOU LA CELLE SUR SEINE,1108,Sud 77,origin,77494,Vernou-la-Celle-sur-Seine,,False
+77495,VERT ST DENIS,1118,Porte Sud du Grand Paris,origin,77495,Vert-Saint-Denis,,False
+77496,VIEUX CHAMPAGNE,1116,Est 77,origin,77496,Vieux-Champagne,,False
+77498,VIGNELY,1109,Nord Est 77,origin,77498,Vignely,,False
+77500,VILLEBEON,1108,Sud 77,origin,77500,Villebéon,,False
+77501,VILLECERF,1108,Sud 77,origin,77501,Villecerf,,False
+77504,VILLEMARECHAL,1108,Sud 77,origin,77504,Villemaréchal,,False
+77505,VILLEMAREUIL,1109,Nord Est 77,origin,77505,Villemareuil,,False
+77506,VILLEMER,1108,Sud 77,origin,77506,Villemer,,False
+77507,VILLENAUXE LA PETITE,1116,Est 77,origin,77507,Villenauxe-la-Petite,,False
+77508,VILLENEUVE LE COMTE,1117,Marne la Vallée,origin,77508,Villeneuve-le-Comte,,False
+77509,VILLENEUVE LES BORDES,1116,Est 77,origin,77509,Villeneuve-les-Bordes,,False
+77510,VILLENEUVE ST DENIS,1117,Marne la Vallée,origin,77510,Villeneuve-Saint-Denis,,False
+77511,VILLENEUVE SOUS DAMMARTIN,1119,Grand Roissy - Le Bourget,origin,77511,Villeneuve-sous-Dammartin,,False
+77512,VILLENEUVE SUR BELLOT,1116,Est 77,origin,77512,Villeneuve-sur-Bellot,,False
+77513,VILLENOY,1109,Nord Est 77,origin,77513,Villenoy,,False
+77514,VILLEPARISIS,1119,Grand Roissy - Le Bourget,origin,77514,Villeparisis,,False
+77515,VILLEROY,1109,Nord Est 77,origin,77515,Villeroy,,False
+77516,VILLE ST JACQUES,1108,Sud 77,origin,77516,Ville-Saint-Jacques,,False
+77517,VILLEVAUDE,1109,Nord Est 77,origin,77517,Villevaudé,,False
+77518,VILLIERS EN BIERE,1115,Centre 77,origin,77518,Villiers-en-Bière,,False
+77519,VILLIERS ST GEORGES,1116,Est 77,origin,77519,Villiers-Saint-Georges,,False
+77520,VILLIERS SOUS GREZ,1108,Sud 77,origin,77520,Villiers-sous-Grez,,False
+77521,VILLIERS SUR MORIN,1153,Brie-Créçois,origin,77521,Villiers-sur-Morin,,False
+77522,VILLIERS SUR SEINE,1116,Est 77,origin,77522,Villiers-sur-Seine,,False
+77523,VILLUIS,1116,Est 77,origin,77523,Villuis,,False
+77524,VIMPELLES,1116,Est 77,origin,77524,Vimpelles,,False
+77525,VINANTES,1109,Nord Est 77,origin,77525,Vinantes,,False
+77526,VINCY MANOEUVRE,1109,Nord Est 77,origin,77526,Vincy-Manœuvre,,False
+77527,VOINSLES,1116,Est 77,origin,77527,Voinsles,,False
+77528,VOISENON,1115,Centre 77,origin,77528,Voisenon,,False
+77529,VOULANGIS,1153,Brie-Créçois,origin,77529,Voulangis,,False
+77530,VOULTON,1116,Est 77,origin,77530,Voulton,,False
+77531,VOULX,1108,Sud 77,origin,77531,Voulx,,False
+77532,VULAINES LES PROVINS,1116,Est 77,origin,77532,Vulaines-lès-Provins,,False
+77533,VULAINES SUR SEINE,1108,Sud 77,origin,77533,Vulaines-sur-Seine,,False
+77534,YEBLES,1115,Centre 77,origin,77534,Yèbles,,False
+78003,ABLIS,1124,Sud Ouest Francilien,origin,78003,Ablis,,False
+78005,ACHERES,1125,Seine-Aval,origin,78005,Achères,,False
+78006,ADAINVILLE,1124,Sud Ouest Francilien,origin,78006,Adainville,,False
+78007,AIGREMONT,1125,Seine-Aval,origin,78007,Aigremont,,False
+78009,ALLAINVILLE,1124,Sud Ouest Francilien,origin,78009,Allainville,,False
+78010,LES ALLUETS LE ROI,1125,Seine-Aval,origin,78010,Les Alluets-le-Roi,,False
+78013,ANDELU,1125,Seine-Aval,origin,78013,Andelu,,False
+78015,ANDRESY,1125,Seine-Aval,origin,78015,Andrésy,,False
+78020,ARNOUVILLE LES MANTES,1125,Seine-Aval,origin,78020,Arnouville-lès-Mantes,,False
+78029,AUBERGENVILLE,1125,Seine-Aval,origin,78029,Aubergenville,,False
+78030,AUFFARGIS,1124,Sud Ouest Francilien,origin,78030,Auffargis,,False
+78031,AUFFREVILLE BRASSEUIL,1125,Seine-Aval,origin,78031,Auffreville-Brasseuil,,False
+78033,AULNAY SUR MAULDRE,1125,Seine-Aval,origin,78033,Aulnay-sur-Mauldre,,False
+78034,AUTEUIL,1124,Sud Ouest Francilien,origin,78034,Auteuil,,False
+78036,AUTOUILLET,1124,Sud Ouest Francilien,origin,78036,Autouillet,,False
+78043,BAILLY,1126,Versailles Saclay,origin,78043,Bailly,,False
+78048,BAZAINVILLE,1124,Sud Ouest Francilien,origin,78048,Bazainville,,False
+78049,BAZEMONT,1125,Seine-Aval,origin,78049,Bazemont,,False
+78050,BAZOCHES SUR GUYONNE,1124,Sud Ouest Francilien,origin,78050,Bazoches-sur-Guyonne,,False
+78053,BEHOUST,1124,Sud Ouest Francilien,origin,78053,Béhoust,,False
+78057,BENNECOURT,1125,Seine-Aval,origin,78057,Bennecourt,,False
+78062,BEYNES,1124,Sud Ouest Francilien,origin,78062,Beynes,,False
+78068,BLARU,1125,Seine-Aval,origin,78068,Blaru,,False
+78070,BOINVILLE EN MANTOIS,1125,Seine-Aval,origin,78070,Boinville-en-Mantois,,False
+78071,BOINVILLE LE GAILLARD,1124,Sud Ouest Francilien,origin,78071,Boinville-le-Gaillard,,False
+78072,BOINVILLIERS,1124,Sud Ouest Francilien,origin,78072,Boinvilliers,,False
+78073,BOIS D ARCY,1126,Versailles Saclay,origin,78073,Bois-d'Arcy,,False
+78076,BOISSETS,1124,Sud Ouest Francilien,origin,78076,Boissets,,False
+78077,LA BOISSIERE ECOLE,1124,Sud Ouest Francilien,origin,78077,La Boissière-École,,False
+78082,BOISSY MAUVOISIN,1125,Seine-Aval,origin,78082,Boissy-Mauvoisin,,False
+78084,BOISSY SANS AVOIR,1124,Sud Ouest Francilien,origin,78084,Boissy-sans-Avoir,,False
+78087,BONNELLES,1124,Sud Ouest Francilien,origin,78087,Bonnelles,,False
+78089,BONNIERES SUR SEINE,1125,Seine-Aval,origin,78089,Bonnières-sur-Seine,,False
+78090,BOUAFLE,1125,Seine-Aval,origin,78090,Bouafle,,False
+78092,BOUGIVAL,1126,Versailles Saclay,origin,78092,Bougival,,False
+78096,BOURDONNE,1124,Sud Ouest Francilien,origin,78096,Bourdonné,,False
+78104,BREUIL BOIS ROBERT,1125,Seine-Aval,origin,78104,Breuil-Bois-Robert,,False
+78107,BREVAL,1125,Seine-Aval,origin,78107,Bréval,,False
+78108,LES BREVIAIRES,1124,Sud Ouest Francilien,origin,78108,Les Bréviaires,,False
+78113,BRUEIL EN VEXIN,1125,Seine-Aval,origin,78113,Brueil-en-Vexin,,False
+78117,BUC,1126,Versailles Saclay,origin,78117,Buc,,False
+78118,BUCHELAY,1125,Seine-Aval,origin,78118,Buchelay,,False
+78120,BULLION,1124,Sud Ouest Francilien,origin,78120,Bullion,,False
+78123,CARRIERES SOUS POISSY,1125,Seine-Aval,origin,78123,Carrières-sous-Poissy,,False
+78124,CARRIERES SUR SEINE,1125,Seine-Aval,origin,78124,Carrières-sur-Seine,,False
+78125,LA CELLE LES BORDES,1124,Sud Ouest Francilien,origin,78125,La Celle-les-Bordes,,False
+78126,LA CELLE ST CLOUD,1126,Versailles Saclay,origin,78126,La Celle-Saint-Cloud,,False
+78128,CERNAY LA VILLE,1124,Sud Ouest Francilien,origin,78128,Cernay-la-Ville,,False
+78133,CHAMBOURCY,1125,Seine-Aval,origin,78133,Chambourcy,,False
+78138,CHANTELOUP LES VIGNES,1125,Seine-Aval,origin,78138,Chanteloup-les-Vignes,,False
+78140,CHAPET,1125,Seine-Aval,origin,78140,Chapet,,False
+78143,CHATEAUFORT,1126,Versailles Saclay,origin,78143,Châteaufort,,False
+78146,CHATOU,1125,Seine-Aval,origin,78146,Chatou,,False
+78147,CHAUFOUR LES BONNIERES,1125,Seine-Aval,origin,78147,Chaufour-lès-Bonnières,,False
+78152,CHAVENAY,1125,Seine-Aval,origin,78152,Chavenay,,False
+78158,LE CHESNAY ROCQUENCOURT,1126,Versailles Saclay,origin,78158,Le Chesnay-Rocquencourt,,False
+78160,CHEVREUSE,1124,Sud Ouest Francilien,origin,78160,Chevreuse,,False
+78162,CHOISEL,1124,Sud Ouest Francilien,origin,78162,Choisel,,False
+78163,CIVRY LA FORET,1124,Sud Ouest Francilien,origin,78163,Civry-la-Forêt,,False
+78164,CLAIREFONTAINE EN YVELINES,1124,Sud Ouest Francilien,origin,78164,Clairefontaine-en-Yvelines,,False
+78165,LES CLAYES SOUS BOIS,1126,Versailles Saclay,origin,78165,Les Clayes-sous-Bois,,False
+78168,COIGNIERES,1126,Versailles Saclay,origin,78168,Coignières,,False
+78171,CONDE SUR VESGRE,1124,Sud Ouest Francilien,origin,78171,Condé-sur-Vesgre,,False
+78172,CONFLANS STE HONORINE,1125,Seine-Aval,origin,78172,Conflans-Sainte-Honorine,,False
+78185,COURGENT,1124,Sud Ouest Francilien,origin,78185,Courgent,,False
+78188,CRAVENT,1125,Seine-Aval,origin,78188,Cravent,,False
+78189,CRESPIERES,1125,Seine-Aval,origin,78189,Crespières,,False
+78190,CROISSY SUR SEINE,1125,Seine-Aval,origin,78190,Croissy-sur-Seine,,False
+78192,DAMMARTIN EN SERVE,1124,Sud Ouest Francilien,origin,78192,Dammartin-en-Serve,,False
+78193,DAMPIERRE EN YVELINES,1124,Sud Ouest Francilien,origin,78193,Dampierre-en-Yvelines,,False
+78194,DANNEMARIE,1124,Sud Ouest Francilien,origin,78194,Dannemarie,,False
+78196,DAVRON,1125,Seine-Aval,origin,78196,Davron,,False
+78202,DROCOURT,1125,Seine-Aval,origin,78202,Drocourt,,False
+78206,ECQUEVILLY,1125,Seine-Aval,origin,78206,Ecquevilly,,False
+78208,ELANCOURT,1126,Versailles Saclay,origin,78208,Élancourt,,False
+78209,EMANCE,1124,Sud Ouest Francilien,origin,78209,Émancé,,False
+78217,EPONE,1125,Seine-Aval,origin,78217,Épône,,False
+78220,LES ESSARTS LE ROI,1124,Sud Ouest Francilien,origin,78220,Les Essarts-le-Roi,,False
+78224,L ETANG LA VILLE,1125,Seine-Aval,origin,78224,L'Étang-la-Ville,,False
+78227,EVECQUEMONT,1125,Seine-Aval,origin,78227,Évecquemont,,False
+78230,LA FALAISE,1125,Seine-Aval,origin,78230,La Falaise,,False
+78231,FAVRIEUX,1125,Seine-Aval,origin,78231,Favrieux,,False
+78233,FEUCHEROLLES,1125,Seine-Aval,origin,78233,Feucherolles,,False
+78234,FLACOURT,1125,Seine-Aval,origin,78234,Flacourt,,False
+78236,FLEXANVILLE,1124,Sud Ouest Francilien,origin,78236,Flexanville,,False
+78237,FLINS NEUVE EGLISE,1124,Sud Ouest Francilien,origin,78237,Flins-Neuve-Église,,False
+78238,FLINS SUR SEINE,1125,Seine-Aval,origin,78238,Flins-sur-Seine,,False
+78239,FOLLAINVILLE DENNEMONT,1125,Seine-Aval,origin,78239,Follainville-Dennemont,,False
+78242,FONTENAY LE FLEURY,1126,Versailles Saclay,origin,78242,Fontenay-le-Fleury,,False
+78245,FONTENAY MAUVOISIN,1125,Seine-Aval,origin,78245,Fontenay-Mauvoisin,,False
+78246,FONTENAY ST PERE,1125,Seine-Aval,origin,78246,Fontenay-Saint-Père,,False
+78255,FRENEUSE,1125,Seine-Aval,origin,78255,Freneuse,,False
+78261,GAILLON SUR MONTCIENT,1125,Seine-Aval,origin,78261,Gaillon-sur-Montcient,,False
+78262,GALLUIS,1124,Sud Ouest Francilien,origin,78262,Galluis,,False
+78263,GAMBAIS,1124,Sud Ouest Francilien,origin,78263,Gambais,,False
+78264,GAMBAISEUIL,1124,Sud Ouest Francilien,origin,78264,Gambaiseuil,,False
+78265,GARANCIERES,1124,Sud Ouest Francilien,origin,78265,Garancières,,False
+78267,GARGENVILLE,1125,Seine-Aval,origin,78267,Gargenville,,False
+78269,GAZERAN,1124,Sud Ouest Francilien,origin,78269,Gazeran,,False
+78276,GOMMECOURT,1125,Seine-Aval,origin,78276,Gommecourt,,False
+78278,GOUPILLIERES,1124,Sud Ouest Francilien,origin,78278,Goupillières,,False
+78281,GOUSSONVILLE,1125,Seine-Aval,origin,78281,Goussonville,,False
+78283,GRANDCHAMP,1124,Sud Ouest Francilien,origin,78283,Grandchamp,,False
+78285,GRESSEY,1124,Sud Ouest Francilien,origin,78285,Gressey,,False
+78289,GROSROUVRE,1124,Sud Ouest Francilien,origin,78289,Grosrouvre,,False
+78290,GUERNES,1125,Seine-Aval,origin,78290,Guernes,,False
+78291,GUERVILLE,1125,Seine-Aval,origin,78291,Guerville,,False
+78296,GUITRANCOURT,1125,Seine-Aval,origin,78296,Guitrancourt,,False
+78297,GUYANCOURT,1126,Versailles Saclay,origin,78297,Guyancourt,,False
+78299,HARDRICOURT,1125,Seine-Aval,origin,78299,Hardricourt,,False
+78300,HARGEVILLE,1125,Seine-Aval,origin,78300,Hargeville,,False
+78302,LA HAUTEVILLE,1124,Sud Ouest Francilien,origin,78302,La Hauteville,,False
+78305,HERBEVILLE,1125,Seine-Aval,origin,78305,Herbeville,,False
+78307,HERMERAY,1124,Sud Ouest Francilien,origin,78307,Hermeray,,False
+78310,HOUDAN,1124,Sud Ouest Francilien,origin,78310,Houdan,,False
+78311,HOUILLES,1125,Seine-Aval,origin,78311,Houilles,,False
+78314,ISSOU,1125,Seine-Aval,origin,78314,Issou,,False
+78317,JAMBVILLE,1125,Seine-Aval,origin,78317,Jambville,,False
+78320,NOTRE DAME DE LA MER,1125,Seine-Aval,origin,78320,Notre-Dame-de-la-Mer,,False
+78321,JOUARS PONTCHARTRAIN,1124,Sud Ouest Francilien,origin,78321,Jouars-Pontchartrain,,False
+78322,JOUY EN JOSAS,1126,Versailles Saclay,origin,78322,Jouy-en-Josas,,False
+78324,JOUY MAUVOISIN,1125,Seine-Aval,origin,78324,Jouy-Mauvoisin,,False
+78325,JUMEAUVILLE,1125,Seine-Aval,origin,78325,Jumeauville,,False
+78327,JUZIERS,1125,Seine-Aval,origin,78327,Juziers,,False
+78329,LAINVILLE EN VEXIN,1125,Seine-Aval,origin,78329,Lainville-en-Vexin,,False
+78334,LEVIS ST NOM,1124,Sud Ouest Francilien,origin,78334,Lévis-Saint-Nom,,False
+78335,LIMAY,1125,Seine-Aval,origin,78335,Limay,,False
+78337,LIMETZ VILLEZ,1125,Seine-Aval,origin,78337,Limetz-Villez,,False
+78343,LES LOGES EN JOSAS,1126,Versailles Saclay,origin,78343,Les Loges-en-Josas,,False
+78344,LOMMOYE,1125,Seine-Aval,origin,78344,Lommoye,,False
+78346,LONGNES,1124,Sud Ouest Francilien,origin,78346,Longnes,,False
+78349,LONGVILLIERS,1124,Sud Ouest Francilien,origin,78349,Longvilliers,,False
+78350,LOUVECIENNES,1125,Seine-Aval,origin,78350,Louveciennes,,False
+78354,MAGNANVILLE,1125,Seine-Aval,origin,78354,Magnanville,,False
+78356,MAGNY LES HAMEAUX,1126,Versailles Saclay,origin,78356,Magny-les-Hameaux,,False
+78358,MAISONS LAFFITTE,1125,Seine-Aval,origin,78358,Maisons-Laffitte,,False
+78361,MANTES LA JOLIE,1125,Seine-Aval,origin,78361,Mantes-la-Jolie,,False
+78362,MANTES LA VILLE,1125,Seine-Aval,origin,78362,Mantes-la-Ville,,False
+78364,MARCQ,1124,Sud Ouest Francilien,origin,78364,Marcq,,False
+78366,MAREIL LE GUYON,1124,Sud Ouest Francilien,origin,78366,Mareil-le-Guyon,,False
+78367,MAREIL MARLY,1125,Seine-Aval,origin,78367,Mareil-Marly,,False
+78368,MAREIL SUR MAULDRE,1125,Seine-Aval,origin,78368,Mareil-sur-Mauldre,,False
+78372,MARLY LE ROI,1125,Seine-Aval,origin,78372,Marly-le-Roi,,False
+78380,MAULE,1125,Seine-Aval,origin,78380,Maule,,False
+78381,MAULETTE,1124,Sud Ouest Francilien,origin,78381,Maulette,,False
+78382,MAURECOURT,1127,Ouest 95,origin,78382,Maurecourt,,False
+78383,MAUREPAS,1126,Versailles Saclay,origin,78383,Maurepas,,False
+78384,MEDAN,1125,Seine-Aval,origin,78384,Médan,,False
+78385,MENERVILLE,1125,Seine-Aval,origin,78385,Ménerville,,False
+78389,MERE,1124,Sud Ouest Francilien,origin,78389,Méré,,False
+78391,MERICOURT,1125,Seine-Aval,origin,78391,Méricourt,,False
+78396,LE MESNIL LE ROI,1125,Seine-Aval,origin,78396,Le Mesnil-le-Roi,,False
+78397,LE MESNIL ST DENIS,1124,Sud Ouest Francilien,origin,78397,Le Mesnil-Saint-Denis,,False
+78398,LES MESNULS,1124,Sud Ouest Francilien,origin,78398,Les Mesnuls,,False
+78401,MEULAN EN YVELINES,1125,Seine-Aval,origin,78401,Meulan-en-Yvelines,,False
+78402,MEZIERES SUR SEINE,1125,Seine-Aval,origin,78402,Mézières-sur-Seine,,False
+78403,MEZY SUR SEINE,1125,Seine-Aval,origin,78403,Mézy-sur-Seine,,False
+78404,MILLEMONT,1124,Sud Ouest Francilien,origin,78404,Millemont,,False
+78406,MILON LA CHAPELLE,1124,Sud Ouest Francilien,origin,78406,Milon-la-Chapelle,,False
+78407,MITTAINVILLE,1124,Sud Ouest Francilien,origin,78407,Mittainville,,False
+78410,MOISSON,1125,Seine-Aval,origin,78410,Moisson,,False
+78413,MONDREVILLE,1124,Sud Ouest Francilien,origin,78413,Mondreville,,False
+78415,MONTAINVILLE,1125,Seine-Aval,origin,78415,Montainville,,False
+78416,MONTALET LE BOIS,1125,Seine-Aval,origin,78416,Montalet-le-Bois,,False
+78417,MONTCHAUVET,1124,Sud Ouest Francilien,origin,78417,Montchauvet,,False
+78418,MONTESSON,1125,Seine-Aval,origin,78418,Montesson,,False
+78420,MONTFORT L AMAURY,1124,Sud Ouest Francilien,origin,78420,Montfort-l'Amaury,,False
+78423,MONTIGNY LE BRETONNEUX,1126,Versailles Saclay,origin,78423,Montigny-le-Bretonneux,,False
+78431,MORAINVILLIERS,1125,Seine-Aval,origin,78431,Morainvilliers,,False
+78437,MOUSSEAUX SUR SEINE,1125,Seine-Aval,origin,78437,Mousseaux-sur-Seine,,False
+78439,MULCENT,1124,Sud Ouest Francilien,origin,78439,Mulcent,,False
+78440,LES MUREAUX,1125,Seine-Aval,origin,78440,Les Mureaux,,False
+78442,NEAUPHLE LE CHATEAU,1124,Sud Ouest Francilien,origin,78442,Neauphle-le-Château,,False
+78443,NEAUPHLE LE VIEUX,1124,Sud Ouest Francilien,origin,78443,Neauphle-le-Vieux,,False
+78444,NEAUPHLETTE,1125,Seine-Aval,origin,78444,Neauphlette,,False
+78451,NEZEL,1125,Seine-Aval,origin,78451,Nézel,,False
+78455,NOISY LE ROI,1126,Versailles Saclay,origin,78455,Noisy-le-Roi,,False
+78460,OINVILLE SUR MONTCIENT,1125,Seine-Aval,origin,78460,Oinville-sur-Montcient,,False
+78464,ORCEMONT,1124,Sud Ouest Francilien,origin,78464,Orcemont,,False
+78465,ORGERUS,1124,Sud Ouest Francilien,origin,78465,Orgerus,,False
+78466,ORGEVAL,1125,Seine-Aval,origin,78466,Orgeval,,False
+78470,ORPHIN,1124,Sud Ouest Francilien,origin,78470,Orphin,,False
+78472,ORSONVILLE,1124,Sud Ouest Francilien,origin,78472,Orsonville,,False
+78474,ORVILLIERS,1124,Sud Ouest Francilien,origin,78474,Orvilliers,,False
+78475,OSMOY,1124,Sud Ouest Francilien,origin,78475,Osmoy,,False
+78478,PARAY DOUAVILLE,1124,Sud Ouest Francilien,origin,78478,Paray-Douaville,,False
+78481,LE PECQ,1125,Seine-Aval,origin,78481,Le Pecq,,False
+78484,PERDREAUVILLE,1125,Seine-Aval,origin,78484,Perdreauville,,False
+78486,LE PERRAY EN YVELINES,1124,Sud Ouest Francilien,origin,78486,Le Perray-en-Yvelines,,False
+78490,PLAISIR,1126,Versailles Saclay,origin,78490,Plaisir,,False
+78497,POIGNY LA FORET,1124,Sud Ouest Francilien,origin,78497,Poigny-la-Forêt,,False
+78498,POISSY,1125,Seine-Aval,origin,78498,Poissy,,False
+78499,PONTHEVRARD,1124,Sud Ouest Francilien,origin,78499,Ponthévrard,,False
+78501,PORCHEVILLE,1125,Seine-Aval,origin,78501,Porcheville,,False
+78502,LE PORT MARLY,1125,Seine-Aval,origin,78502,Le Port-Marly,,False
+78505,PRUNAY LE TEMPLE,1124,Sud Ouest Francilien,origin,78505,Prunay-le-Temple,,False
+78506,PRUNAY EN YVELINES,1124,Sud Ouest Francilien,origin,78506,Prunay-en-Yvelines,,False
+78513,LA QUEUE LES YVELINES,1124,Sud Ouest Francilien,origin,78513,La Queue-les-Yvelines,,False
+78516,RAIZEUX,1124,Sud Ouest Francilien,origin,78516,Raizeux,,False
+78517,RAMBOUILLET,1124,Sud Ouest Francilien,origin,78517,Rambouillet,,False
+78518,RENNEMOULIN,1126,Versailles Saclay,origin,78518,Rennemoulin,,False
+78520,RICHEBOURG,1124,Sud Ouest Francilien,origin,78520,Richebourg,,False
+78522,ROCHEFORT EN YVELINES,1124,Sud Ouest Francilien,origin,78522,Rochefort-en-Yvelines,,False
+78528,ROLLEBOISE,1125,Seine-Aval,origin,78528,Rolleboise,,False
+78530,ROSAY,1124,Sud Ouest Francilien,origin,78530,Rosay,,False
+78531,ROSNY SUR SEINE,1125,Seine-Aval,origin,78531,Rosny-sur-Seine,,False
+78536,SAILLY,1125,Seine-Aval,origin,78536,Sailly,,False
+78537,ST ARNOULT EN YVELINES,1124,Sud Ouest Francilien,origin,78537,Saint-Arnoult-en-Yvelines,,False
+78545,ST CYR L ECOLE,1126,Versailles Saclay,origin,78545,Saint-Cyr-l'École,,False
+78548,ST FORGET,1124,Sud Ouest Francilien,origin,78548,Saint-Forget,,False
+78550,ST GERMAIN DE LA GRANGE,1124,Sud Ouest Francilien,origin,78550,Saint-Germain-de-la-Grange,,False
+78551,ST GERMAIN EN LAYE,1125,Seine-Aval,origin,78551,Saint-Germain-en-Laye,,False
+78557,ST HILARION,1124,Sud Ouest Francilien,origin,78557,Saint-Hilarion,,False
+78558,ST ILLIERS LA VILLE,1125,Seine-Aval,origin,78558,Saint-Illiers-la-Ville,,False
+78559,ST ILLIERS LE BOIS,1125,Seine-Aval,origin,78559,Saint-Illiers-le-Bois,,False
+78561,ST LAMBERT,1124,Sud Ouest Francilien,origin,78561,Saint-Lambert,,False
+78562,ST LEGER EN YVELINES,1124,Sud Ouest Francilien,origin,78562,Saint-Léger-en-Yvelines,,False
+78564,ST MARTIN DE BRETHENCOURT,1124,Sud Ouest Francilien,origin,78564,Saint-Martin-de-Bréthencourt,,False
+78565,ST MARTIN DES CHAMPS,1124,Sud Ouest Francilien,origin,78565,Saint-Martin-des-Champs,,False
+78567,ST MARTIN LA GARENNE,1125,Seine-Aval,origin,78567,Saint-Martin-la-Garenne,,False
+78569,STE MESME,1124,Sud Ouest Francilien,origin,78569,Sainte-Mesme,,False
+78571,ST NOM LA BRETECHE,1125,Seine-Aval,origin,78571,Saint-Nom-la-Bretèche,,False
+78575,ST REMY LES CHEVREUSE,1124,Sud Ouest Francilien,origin,78575,Saint-Rémy-lès-Chevreuse,,False
+78576,ST REMY L HONORE,1124,Sud Ouest Francilien,origin,78576,Saint-Rémy-l'Honoré,,False
+78586,SARTROUVILLE,1125,Seine-Aval,origin,78586,Sartrouville,,False
+78588,SAULX MARCHAIS,1124,Sud Ouest Francilien,origin,78588,Saulx-Marchais,,False
+78590,SENLISSE,1124,Sud Ouest Francilien,origin,78590,Senlisse,,False
+78591,SEPTEUIL,1124,Sud Ouest Francilien,origin,78591,Septeuil,,False
+78597,SOINDRES,1125,Seine-Aval,origin,78597,Soindres,,False
+78601,SONCHAMP,1124,Sud Ouest Francilien,origin,78601,Sonchamp,,False
+78605,TACOIGNIERES,1124,Sud Ouest Francilien,origin,78605,Tacoignières,,False
+78606,LE TARTRE GAUDRAN,1124,Sud Ouest Francilien,origin,78606,Le Tartre-Gaudran,,False
+78608,LE TERTRE ST DENIS,1125,Seine-Aval,origin,78608,Le Tertre-Saint-Denis,,False
+78609,TESSANCOURT SUR AUBETTE,1125,Seine-Aval,origin,78609,Tessancourt-sur-Aubette,,False
+78615,THIVERVAL GRIGNON,1124,Sud Ouest Francilien,origin,78615,Thiverval-Grignon,,False
+78616,THOIRY,1124,Sud Ouest Francilien,origin,78616,Thoiry,,False
+78618,TILLY,1124,Sud Ouest Francilien,origin,78618,Tilly,,False
+78620,TOUSSUS LE NOBLE,1126,Versailles Saclay,origin,78620,Toussus-le-Noble,,False
+78621,TRAPPES,1126,Versailles Saclay,origin,78621,Trappes,,False
+78623,LE TREMBLAY SUR MAULDRE,1124,Sud Ouest Francilien,origin,78623,Le Tremblay-sur-Mauldre,,False
+78624,TRIEL SUR SEINE,1125,Seine-Aval,origin,78624,Triel-sur-Seine,,False
+78638,VAUX SUR SEINE,1125,Seine-Aval,origin,78638,Vaux-sur-Seine,,False
+78640,VELIZY VILLACOUBLAY,1126,Versailles Saclay,origin,78640,Vélizy-Villacoublay,,False
+78642,VERNEUIL SUR SEINE,1125,Seine-Aval,origin,78642,Verneuil-sur-Seine,,False
+78643,VERNOUILLET,1125,Seine-Aval,origin,78643,Vernouillet,,False
+78644,LA VERRIERE,1126,Versailles Saclay,origin,78644,La Verrière,,False
+78646,VERSAILLES,1126,Versailles Saclay,origin,78646,Versailles,,False
+78647,VERT,1125,Seine-Aval,origin,78647,Vert,,False
+78650,LE VESINET,1125,Seine-Aval,origin,78650,Le Vésinet,,False
+78653,VICQ,1124,Sud Ouest Francilien,origin,78653,Vicq,,False
+78655,VIEILLE EGLISE EN YVELINES,1124,Sud Ouest Francilien,origin,78655,Vieille-Église-en-Yvelines,,False
+78668,LA VILLENEUVE EN CHEVRIE,1125,Seine-Aval,origin,78668,La Villeneuve-en-Chevrie,,False
+78672,VILLENNES SUR SEINE,1125,Seine-Aval,origin,78672,Villennes-sur-Seine,,False
+78674,VILLEPREUX,1126,Versailles Saclay,origin,78674,Villepreux,,False
+78677,VILLETTE,1124,Sud Ouest Francilien,origin,78677,Villette,,False
+78681,VILLIERS LE MAHIEU,1124,Sud Ouest Francilien,origin,78681,Villiers-le-Mahieu,,False
+78683,VILLIERS ST FREDERIC,1124,Sud Ouest Francilien,origin,78683,Villiers-Saint-Frédéric,,False
+78686,VIROFLAY,1126,Versailles Saclay,origin,78686,Viroflay,,False
+78688,VOISINS LE BRETONNEUX,1126,Versailles Saclay,origin,78688,Voisins-le-Bretonneux,,False
+91001,ABBEVILLE LA RIVIERE,1128,Sud 91,origin,91001,Abbéville-la-Rivière,,False
+91016,ANGERVILLE,1128,Sud 91,origin,91016,Angerville,,False
+91017,ANGERVILLIERS,1126,Versailles Saclay,origin,91017,Angervilliers,,False
+91021,ARPAJON,1118,Porte Sud du Grand Paris,origin,91021,Arpajon,,False
+91022,ARRANCOURT,1128,Sud 91,origin,91022,Arrancourt,,False
+91027,ATHIS MONS,1129,T12 Grand-Orly Seine Bièvre,origin,91027,Athis-Mons,,False
+91035,AUTHON LA PLAINE,1128,Sud 91,origin,91035,Authon-la-Plaine,,False
+91037,AUVERNAUX,1128,Sud 91,origin,91037,Auvernaux,,False
+91038,AUVERS ST GEORGES,1128,Sud 91,origin,91038,Auvers-Saint-Georges,,False
+91041,AVRAINVILLE,1118,Porte Sud du Grand Paris,origin,91041,Avrainville,,False
+91044,BALLAINVILLIERS,1126,Versailles Saclay,origin,91044,Ballainvilliers,,False
+91045,BALLANCOURT SUR ESSONNE,1128,Sud 91,origin,91045,Ballancourt-sur-Essonne,,False
+91047,BAULNE,1128,Sud 91,origin,91047,Baulne,,False
+91064,BIEVRES,1126,Versailles Saclay,origin,91064,Bièvres,,False
+91067,BLANDY,1128,Sud 91,origin,91067,Blandy,,False
+91069,BOIGNEVILLE,1128,Sud 91,origin,91069,Boigneville,,False
+91075,BOIS HERPIN,1128,Sud 91,origin,91075,Bois-Herpin,,False
+91079,BOISSY LA RIVIERE,1128,Sud 91,origin,91079,Boissy-la-Rivière,,False
+91080,BOISSY LE CUTTE,1128,Sud 91,origin,91080,Boissy-le-Cutté,,False
+91081,BOISSY LE SEC,1128,Sud 91,origin,91081,Boissy-le-Sec,,False
+91085,BOISSY SOUS ST YON,1128,Sud 91,origin,91085,Boissy-sous-Saint-Yon,,False
+91086,BONDOUFLE,1118,Porte Sud du Grand Paris,origin,91086,Bondoufle,,False
+91093,BOULLAY LES TROUX,1126,Versailles Saclay,origin,91093,Boullay-les-Troux,,False
+91095,BOURAY SUR JUINE,1128,Sud 91,origin,91095,Bouray-sur-Juine,,False
+91097,BOUSSY ST ANTOINE,1118,Porte Sud du Grand Paris,origin,91097,Boussy-Saint-Antoine,,False
+91098,BOUTERVILLIERS,1128,Sud 91,origin,91098,Boutervilliers,,False
+91099,BOUTIGNY SUR ESSONNE,1128,Sud 91,origin,91099,Boutigny-sur-Essonne,,False
+91100,BOUVILLE,1128,Sud 91,origin,91100,Bouville,,False
+91103,BRETIGNY SUR ORGE,1118,Porte Sud du Grand Paris,origin,91103,Brétigny-sur-Orge,,False
+91105,BREUILLET,1118,Porte Sud du Grand Paris,origin,91105,Breuillet,,False
+91106,BREUX JOUY,1128,Sud 91,origin,91106,Breux-Jouy,,False
+91109,BRIERES LES SCELLES,1128,Sud 91,origin,91109,Brières-les-Scellés,,False
+91111,BRIIS SOUS FORGES,1126,Versailles Saclay,origin,91111,Briis-sous-Forges,,False
+91112,BROUY,1128,Sud 91,origin,91112,Brouy,,False
+91114,BRUNOY,1118,Porte Sud du Grand Paris,origin,91114,Brunoy,,False
+91115,BRUYERES LE CHATEL,1118,Porte Sud du Grand Paris,origin,91115,Bruyères-le-Châtel,,False
+91121,BUNO BONNEVAUX,1128,Sud 91,origin,91121,Buno-Bonnevaux,,False
+91122,BURES SUR YVETTE,1126,Versailles Saclay,origin,91122,Bures-sur-Yvette,,False
+91129,CERNY,1128,Sud 91,origin,91129,Cerny,,False
+91130,CHALO ST MARS,1128,Sud 91,origin,91130,Chalo-Saint-Mars,,False
+91131,CHALOU MOULINEUX,1128,Sud 91,origin,91131,Chalou-Moulineux,,False
+91132,CHAMARANDE,1128,Sud 91,origin,91132,Chamarande,,False
+91135,CHAMPCUEIL,1128,Sud 91,origin,91135,Champcueil,,False
+91136,CHAMPLAN,1126,Versailles Saclay,origin,91136,Champlan,,False
+91137,CHAMPMOTTEUX,1128,Sud 91,origin,91137,Champmotteux,,False
+91145,CHATIGNONVILLE,1128,Sud 91,origin,91145,Chatignonville,,False
+91148,CHAUFFOUR LES ETRECHY,1128,Sud 91,origin,91148,Chauffour-lès-Étréchy,,False
+91156,CHEPTAINVILLE,1118,Porte Sud du Grand Paris,origin,91156,Cheptainville,,False
+91159,CHEVANNES,1128,Sud 91,origin,91159,Chevannes,,False
+91161,CHILLY MAZARIN,1126,Versailles Saclay,origin,91161,Chilly-Mazarin,,False
+91174,CORBEIL ESSONNES,1118,Porte Sud du Grand Paris,origin,91174,Corbeil-Essonnes,,False
+91175,CORBREUSE,1128,Sud 91,origin,91175,Corbreuse,,False
+91179,LE COUDRAY MONTCEAUX,1118,Porte Sud du Grand Paris,origin,91179,Le Coudray-Montceaux,,False
+91180,COURANCES,1128,Sud 91,origin,91180,Courances,,False
+91184,COURDIMANCHE SUR ESSONNE,1128,Sud 91,origin,91184,Courdimanche-sur-Essonne,,False
+91186,COURSON MONTELOUP,1126,Versailles Saclay,origin,91186,Courson-Monteloup,,False
+91191,CROSNE,1118,Porte Sud du Grand Paris,origin,91191,Crosne,,False
+91195,DANNEMOIS,1128,Sud 91,origin,91195,Dannemois,,False
+91198,D HUISON LONGUEVILLE,1128,Sud 91,origin,91198,D'Huison-Longueville,,False
+91200,DOURDAN,1128,Sud 91,origin,91200,Dourdan,,False
+91201,DRAVEIL,1118,Porte Sud du Grand Paris,origin,91201,Draveil,,False
+91204,ECHARCON,1128,Sud 91,origin,91204,Écharcon,,False
+91207,EGLY,1118,Porte Sud du Grand Paris,origin,91207,Égly,,False
+91215,EPINAY SOUS SENART,1118,Porte Sud du Grand Paris,origin,91215,Épinay-sous-Sénart,,False
+91216,EPINAY SUR ORGE,1126,Versailles Saclay,origin,91216,Épinay-sur-Orge,,False
+91223,ETAMPES,1128,Sud 91,origin,91223,Étampes,,False
+91225,ETIOLLES,1118,Porte Sud du Grand Paris,origin,91225,Étiolles,,False
+91226,ETRECHY,1128,Sud 91,origin,91226,Étréchy,,False
+91228,EVRY COURCOURONNES,1118,Porte Sud du Grand Paris,origin,91228,Évry-Courcouronnes,,False
+91232,LA FERTE ALAIS,1128,Sud 91,origin,91232,La Ferté-Alais,,False
+91235,FLEURY MEROGIS,1118,Porte Sud du Grand Paris,origin,91235,Fleury-Mérogis,,False
+91240,FONTAINE LA RIVIERE,1128,Sud 91,origin,91240,Fontaine-la-Rivière,,False
+91243,FONTENAY LES BRIIS,1126,Versailles Saclay,origin,91243,Fontenay-lès-Briis,,False
+91244,FONTENAY LE VICOMTE,1128,Sud 91,origin,91244,Fontenay-le-Vicomte,,False
+91247,LA FORET LE ROI,1128,Sud 91,origin,91247,La Forêt-le-Roi,,False
+91248,LA FORET STE CROIX,1128,Sud 91,origin,91248,La Forêt-Sainte-Croix,,False
+91249,FORGES LES BAINS,1126,Versailles Saclay,origin,91249,Forges-les-Bains,,False
+91272,GIF SUR YVETTE,1126,Versailles Saclay,origin,91272,Gif-sur-Yvette,,False
+91273,GIRONVILLE SUR ESSONNE,1128,Sud 91,origin,91273,Gironville-sur-Essonne,,False
+91274,GOMETZ LA VILLE,1126,Versailles Saclay,origin,91274,Gometz-la-Ville,,False
+91275,GOMETZ LE CHATEL,1126,Versailles Saclay,origin,91275,Gometz-le-Châtel,,False
+91284,LES GRANGES LE ROI,1128,Sud 91,origin,91284,Les Granges-le-Roi,,False
+91286,GRIGNY,1118,Porte Sud du Grand Paris,origin,91286,Grigny,,False
+91292,GUIBEVILLE,1118,Porte Sud du Grand Paris,origin,91292,Guibeville,,False
+91293,GUIGNEVILLE SUR ESSONNE,1128,Sud 91,origin,91293,Guigneville-sur-Essonne,,False
+91294,GUILLERVAL,1128,Sud 91,origin,91294,Guillerval,,False
+91312,IGNY,1126,Versailles Saclay,origin,91312,Igny,,False
+91315,ITTEVILLE,1128,Sud 91,origin,91315,Itteville,,False
+91318,JANVILLE SUR JUINE,1128,Sud 91,origin,91318,Janville-sur-Juine,,False
+91319,JANVRY,1126,Versailles Saclay,origin,91319,Janvry,,False
+91326,JUVISY SUR ORGE,1129,T12 Grand-Orly Seine Bièvre,origin,91326,Juvisy-sur-Orge,,False
+91330,LARDY,1128,Sud 91,origin,91330,Lardy,,False
+91332,LEUDEVILLE,1128,Sud 91,origin,91332,Leudeville,,False
+91333,LEUVILLE SUR ORGE,1118,Porte Sud du Grand Paris,origin,91333,Leuville-sur-Orge,,False
+91338,LIMOURS,1126,Versailles Saclay,origin,91338,Limours,,False
+91339,LINAS,1126,Versailles Saclay,origin,91339,Linas,,False
+91340,LISSES,1118,Porte Sud du Grand Paris,origin,91340,Lisses,,False
+91345,LONGJUMEAU,1126,Versailles Saclay,origin,91345,Longjumeau,,False
+91347,LONGPONT SUR ORGE,1118,Porte Sud du Grand Paris,origin,91347,Longpont-sur-Orge,,False
+91359,MAISSE,1128,Sud 91,origin,91359,Maisse,,False
+91363,MARCOUSSIS,1126,Versailles Saclay,origin,91363,Marcoussis,,False
+91374,MAROLLES EN BEAUCE,1128,Sud 91,origin,91374,Marolles-en-Beauce,,False
+91376,MAROLLES EN HUREPOIX,1118,Porte Sud du Grand Paris,origin,91376,Marolles-en-Hurepoix,,False
+91377,MASSY,1126,Versailles Saclay,origin,91377,Massy,,False
+91378,MAUCHAMPS,1128,Sud 91,origin,91378,Mauchamps,,False
+91386,MENNECY,1128,Sud 91,origin,91386,Mennecy,,False
+91390,LE MEREVILLOIS,1128,Sud 91,origin,91390,Le Mérévillois,,False
+91393,MEROBERT,1128,Sud 91,origin,91393,Mérobert,,False
+91399,MESPUITS,1128,Sud 91,origin,91399,Mespuits,,False
+91405,MILLY LA FORET,1128,Sud 91,origin,91405,Milly-la-Forêt,,False
+91408,MOIGNY SUR ECOLE,1128,Sud 91,origin,91408,Moigny-sur-École,,False
+91411,LES MOLIERES,1126,Versailles Saclay,origin,91411,Les Molières,,False
+91412,MONDEVILLE,1128,Sud 91,origin,91412,Mondeville,,False
+91414,MONNERVILLE,1128,Sud 91,origin,91414,Monnerville,,False
+91421,MONTGERON,1118,Porte Sud du Grand Paris,origin,91421,Montgeron,,False
+91425,MONTLHERY,1126,Versailles Saclay,origin,91425,Montlhéry,,False
+91432,MORANGIS,1129,T12 Grand-Orly Seine Bièvre,origin,91432,Morangis,,False
+91433,MORIGNY CHAMPIGNY,1128,Sud 91,origin,91433,Morigny-Champigny,,False
+91434,MORSANG SUR ORGE,1118,Porte Sud du Grand Paris,origin,91434,Morsang-sur-Orge,,False
+91435,MORSANG SUR SEINE,1118,Porte Sud du Grand Paris,origin,91435,Morsang-sur-Seine,,False
+91441,NAINVILLE LES ROCHES,1128,Sud 91,origin,91441,Nainville-les-Roches,,False
+91457,LA NORVILLE,1118,Porte Sud du Grand Paris,origin,91457,La Norville,,False
+91458,NOZAY,1126,Versailles Saclay,origin,91458,Nozay,,False
+91461,OLLAINVILLE,1118,Porte Sud du Grand Paris,origin,91461,Ollainville,,False
+91463,ONCY SUR ECOLE,1128,Sud 91,origin,91463,Oncy-sur-École,,False
+91468,ORMOY,1128,Sud 91,origin,91468,Ormoy,,False
+91469,ORMOY LA RIVIERE,1128,Sud 91,origin,91469,Ormoy-la-Rivière,,False
+91471,ORSAY,1126,Versailles Saclay,origin,91471,Orsay,,False
+91473,ORVEAU,1128,Sud 91,origin,91473,Orveau,,False
+91477,PALAISEAU,1126,Versailles Saclay,origin,91477,Palaiseau,,False
+91479,PARAY VIEILLE POSTE,1129,T12 Grand-Orly Seine Bièvre,origin,91479,Paray-Vieille-Poste,,False
+91482,PECQUEUSE,1126,Versailles Saclay,origin,91482,Pecqueuse,,False
+91494,LE PLESSIS PATE,1118,Porte Sud du Grand Paris,origin,91494,Le Plessis-Pâté,,False
+91495,PLESSIS ST BENOIST,1128,Sud 91,origin,91495,Plessis-Saint-Benoist,,False
+91507,PRUNAY SUR ESSONNE,1128,Sud 91,origin,91507,Prunay-sur-Essonne,,False
+91508,PUISELET LE MARAIS,1128,Sud 91,origin,91508,Puiselet-le-Marais,,False
+91511,PUSSAY,1128,Sud 91,origin,91511,Pussay,,False
+91514,QUINCY SOUS SENART,1118,Porte Sud du Grand Paris,origin,91514,Quincy-sous-Sénart,,False
+91519,RICHARVILLE,1128,Sud 91,origin,91519,Richarville,,False
+91521,RIS ORANGIS,1118,Porte Sud du Grand Paris,origin,91521,Ris-Orangis,,False
+91525,ROINVILLE,1128,Sud 91,origin,91525,Roinville,,False
+91526,ROINVILLIERS,1128,Sud 91,origin,91526,Roinvilliers,,False
+91533,SACLAS,1128,Sud 91,origin,91533,Saclas,,False
+91534,SACLAY,1126,Versailles Saclay,origin,91534,Saclay,,False
+91538,ST AUBIN,1126,Versailles Saclay,origin,91538,Saint-Aubin,,False
+91540,ST CHERON,1128,Sud 91,origin,91540,Saint-Chéron,,False
+91544,ST CYR LA RIVIERE,1128,Sud 91,origin,91544,Saint-Cyr-la-Rivière,,False
+91546,ST CYR SOUS DOURDAN,1128,Sud 91,origin,91546,Saint-Cyr-sous-Dourdan,,False
+91547,ST ESCOBILLE,1128,Sud 91,origin,91547,Saint-Escobille,,False
+91549,STE GENEVIEVE DES BOIS,1118,Porte Sud du Grand Paris,origin,91549,Sainte-Geneviève-des-Bois,,False
+91552,ST GERMAIN LES ARPAJON,1118,Porte Sud du Grand Paris,origin,91552,Saint-Germain-lès-Arpajon,,False
+91553,ST GERMAIN LES CORBEIL,1118,Porte Sud du Grand Paris,origin,91553,Saint-Germain-lès-Corbeil,,False
+91556,ST HILAIRE,1128,Sud 91,origin,91556,Saint-Hilaire,,False
+91560,ST JEAN DE BEAUREGARD,1126,Versailles Saclay,origin,91560,Saint-Jean-de-Beauregard,,False
+91568,ST MAURICE MONTCOURONNE,1126,Versailles Saclay,origin,91568,Saint-Maurice-Montcouronne,,False
+91570,ST MICHEL SUR ORGE,1118,Porte Sud du Grand Paris,origin,91570,Saint-Michel-sur-Orge,,False
+91573,ST PIERRE DU PERRAY,1118,Porte Sud du Grand Paris,origin,91573,Saint-Pierre-du-Perray,,False
+91577,SAINTRY SUR SEINE,1118,Porte Sud du Grand Paris,origin,91577,Saintry-sur-Seine,,False
+91578,ST SULPICE DE FAVIERES,1128,Sud 91,origin,91578,Saint-Sulpice-de-Favières,,False
+91579,ST VRAIN,1128,Sud 91,origin,91579,Saint-Vrain,,False
+91581,ST YON,1128,Sud 91,origin,91581,Saint-Yon,,False
+91587,SAULX LES CHARTREUX,1126,Versailles Saclay,origin,91587,Saulx-les-Chartreux,,False
+91589,SAVIGNY SUR ORGE,1129,T12 Grand-Orly Seine Bièvre,origin,91589,Savigny-sur-Orge,,False
+91593,SERMAISE,1128,Sud 91,origin,91593,Sermaise,,False
+91599,SOISY SUR ECOLE,1128,Sud 91,origin,91599,Soisy-sur-École,,False
+91600,SOISY SUR SEINE,1118,Porte Sud du Grand Paris,origin,91600,Soisy-sur-Seine,,False
+91602,SOUZY LA BRICHE,1128,Sud 91,origin,91602,Souzy-la-Briche,,False
+91613,CONGERVILLE THIONVILLE,1128,Sud 91,origin,91613,Congerville-Thionville,,False
+91617,TIGERY,1118,Porte Sud du Grand Paris,origin,91617,Tigery,,False
+91619,TORFOU,1128,Sud 91,origin,91619,Torfou,,False
+91629,VALPUISEAUX,1128,Sud 91,origin,91629,Valpuiseaux,,False
+91630,LE VAL ST GERMAIN,1128,Sud 91,origin,91630,Le Val-Saint-Germain,,False
+91631,VARENNES JARCY,1117,Marne la Vallée,origin,91631,Varennes-Jarcy,,False
+91634,VAUGRIGNEUSE,1126,Versailles Saclay,origin,91634,Vaugrigneuse,,False
+91635,VAUHALLAN,1126,Versailles Saclay,origin,91635,Vauhallan,,False
+91639,VAYRES SUR ESSONNE,1128,Sud 91,origin,91639,Vayres-sur-Essonne,,False
+91645,VERRIERES LE BUISSON,1126,Versailles Saclay,origin,91645,Verrières-le-Buisson,,False
+91648,VERT LE GRAND,1128,Sud 91,origin,91648,Vert-le-Grand,,False
+91649,VERT LE PETIT,1128,Sud 91,origin,91649,Vert-le-Petit,,False
+91654,VIDELLES,1128,Sud 91,origin,91654,Videlles,,False
+91657,VIGNEUX SUR SEINE,1118,Porte Sud du Grand Paris,origin,91657,Vigneux-sur-Seine,,False
+91659,VILLABE,1118,Porte Sud du Grand Paris,origin,91659,Villabé,,False
+91661,VILLEBON SUR YVETTE,1126,Versailles Saclay,origin,91661,Villebon-sur-Yvette,,False
+91662,VILLECONIN,1128,Sud 91,origin,91662,Villeconin,,False
+91665,LA VILLE DU BOIS,1126,Versailles Saclay,origin,91665,La Ville-du-Bois,,False
+91666,VILLEJUST,1126,Versailles Saclay,origin,91666,Villejust,,False
+91667,VILLEMOISSON SUR ORGE,1118,Porte Sud du Grand Paris,origin,91667,Villemoisson-sur-Orge,,False
+91671,VILLENEUVE SUR AUVERS,1128,Sud 91,origin,91671,Villeneuve-sur-Auvers,,False
+91679,VILLIERS LE BACLE,1126,Versailles Saclay,origin,91679,Villiers-le-Bâcle,,False
+91685,VILLIERS SUR ORGE,1118,Porte Sud du Grand Paris,origin,91685,Villiers-sur-Orge,,False
+91687,VIRY CHATILLON,1129,T12 Grand-Orly Seine Bièvre,origin,91687,Viry-Châtillon,,False
+91689,WISSOUS,1126,Versailles Saclay,origin,91689,Wissous,,False
+91691,YERRES,1118,Porte Sud du Grand Paris,origin,91691,Yerres,,False
+91692,LES ULIS,1126,Versailles Saclay,origin,91692,Les Ulis,,False
+92002,ANTONY,1137,T2 Vallée Sud Grand Paris,origin,92002,Antony,,False
+92004,ASNIERES SUR SEINE,1138,T5 Boucle Nord de Seine,origin,92004,Asnières-sur-Seine,,False
+92007,BAGNEUX,1137,T2 Vallée Sud Grand Paris,origin,92007,Bagneux,,False
+92009,BOIS COLOMBES,1138,T5 Boucle Nord de Seine,origin,92009,Bois-Colombes,,False
+92012,BOULOGNE BILLANCOURT,1139,T3 Grand Paris Seine Ouest,origin,92012,Boulogne-Billancourt,,False
+92014,BOURG LA REINE,1137,T2 Vallée Sud Grand Paris,origin,92014,Bourg-la-Reine,,False
+92019,CHATENAY MALABRY,1137,T2 Vallée Sud Grand Paris,origin,92019,Châtenay-Malabry,,False
+92020,CHATILLON,1137,T2 Vallée Sud Grand Paris,origin,92020,Châtillon,,False
+92022,CHAVILLE,1139,T3 Grand Paris Seine Ouest,origin,92022,Chaville,,False
+92023,CLAMART,1137,T2 Vallée Sud Grand Paris,origin,92023,Clamart,,False
+92024,CLICHY,1138,T5 Boucle Nord de Seine,origin,92024,Clichy,,False
+92025,COLOMBES,1138,T5 Boucle Nord de Seine,origin,92025,Colombes,,False
+92026,COURBEVOIE,1146,T4 Paris Ouest La Défense,origin,92026,Courbevoie,,False
+92032,FONTENAY AUX ROSES,1137,T2 Vallée Sud Grand Paris,origin,92032,Fontenay-aux-Roses,,False
+92033,GARCHES,1146,T4 Paris Ouest La Défense,origin,92033,Garches,,False
+92035,LA GARENNE COLOMBES,1146,T4 Paris Ouest La Défense,origin,92035,La Garenne-Colombes,,False
+92036,GENNEVILLIERS,1138,T5 Boucle Nord de Seine,origin,92036,Gennevilliers,,False
+92040,ISSY LES MOULINEAUX,1139,T3 Grand Paris Seine Ouest,origin,92040,Issy-les-Moulineaux,,False
+92044,LEVALLOIS PERRET,1146,T4 Paris Ouest La Défense,origin,92044,Levallois-Perret,,False
+92046,MALAKOFF,1137,T2 Vallée Sud Grand Paris,origin,92046,Malakoff,,False
+92047,MARNES LA COQUETTE,1139,T3 Grand Paris Seine Ouest,origin,92047,Marnes-la-Coquette,,False
+92048,MEUDON,1139,T3 Grand Paris Seine Ouest,origin,92048,Meudon,,False
+92049,MONTROUGE,1137,T2 Vallée Sud Grand Paris,origin,92049,Montrouge,,False
+92050,NANTERRE,1146,T4 Paris Ouest La Défense,origin,92050,Nanterre,,False
+92051,NEUILLY SUR SEINE,1146,T4 Paris Ouest La Défense,origin,92051,Neuilly-sur-Seine,,False
+92060,LE PLESSIS ROBINSON,1137,T2 Vallée Sud Grand Paris,origin,92060,Le Plessis-Robinson,,False
+92062,PUTEAUX,1146,T4 Paris Ouest La Défense,origin,92062,Puteaux,,False
+92063,RUEIL MALMAISON,1146,T4 Paris Ouest La Défense,origin,92063,Rueil-Malmaison,,False
+92064,ST CLOUD,1146,T4 Paris Ouest La Défense,origin,92064,Saint-Cloud,,False
+92071,SCEAUX,1137,T2 Vallée Sud Grand Paris,origin,92071,Sceaux,,False
+92072,SEVRES,1139,T3 Grand Paris Seine Ouest,origin,92072,Sèvres,,False
+92073,SURESNES,1146,T4 Paris Ouest La Défense,origin,92073,Suresnes,,False
+92075,VANVES,1139,T3 Grand Paris Seine Ouest,origin,92075,Vanves,,False
+92076,VAUCRESSON,1146,T4 Paris Ouest La Défense,origin,92076,Vaucresson,,False
+92077,VILLE D AVRAY,1139,T3 Grand Paris Seine Ouest,origin,92077,Ville-d'Avray,,False
+92078,VILLENEUVE LA GARENNE,1138,T5 Boucle Nord de Seine,origin,92078,Villeneuve-la-Garenne,,False
+93001,AUBERVILLIERS,1147,T6 Plaine Commune,origin,93001,Aubervilliers,,False
+93005,AULNAY SOUS BOIS,1119,Grand Roissy - Le Bourget,origin,93005,Aulnay-sous-Bois,,False
+93006,BAGNOLET,1148,T8 Est Ensemble,origin,93006,Bagnolet,,False
+93007,LE BLANC MESNIL,1119,Grand Roissy - Le Bourget,origin,93007,Le Blanc-Mesnil,,False
+93008,BOBIGNY,1148,T8 Est Ensemble,origin,93008,Bobigny,,False
+93010,BONDY,1148,T8 Est Ensemble,origin,93010,Bondy,,False
+93013,LE BOURGET,1119,Grand Roissy - Le Bourget,origin,93013,Le Bourget,,False
+93014,CLICHY SOUS BOIS,1149,T9 Grand Paris Grand Est,origin,93014,Clichy-sous-Bois,,False
+93015,COUBRON,1149,T9 Grand Paris Grand Est,origin,93015,Coubron,,False
+93027,LA COURNEUVE,1147,T6 Plaine Commune,origin,93027,La Courneuve,,False
+93029,DRANCY,1119,Grand Roissy - Le Bourget,origin,93029,Drancy,,False
+93030,DUGNY,1119,Grand Roissy - Le Bourget,origin,93030,Dugny,,False
+93031,EPINAY SUR SEINE,1147,T6 Plaine Commune,origin,93031,Épinay-sur-Seine,,False
+93032,GAGNY,1149,T9 Grand Paris Grand Est,origin,93032,Gagny,,False
+93033,GOURNAY SUR MARNE,1149,T9 Grand Paris Grand Est,origin,93033,Gournay-sur-Marne,,False
+93039,L ILE ST DENIS,1147,T6 Plaine Commune,origin,93039,L'Île-Saint-Denis,,False
+93045,LES LILAS,1148,T8 Est Ensemble,origin,93045,Les Lilas,,False
+93046,LIVRY GARGAN,1149,T9 Grand Paris Grand Est,origin,93046,Livry-Gargan,,False
+93047,MONTFERMEIL,1149,T9 Grand Paris Grand Est,origin,93047,Montfermeil,,False
+93048,MONTREUIL,1148,T8 Est Ensemble,origin,93048,Montreuil,,False
+93049,NEUILLY PLAISANCE,1149,T9 Grand Paris Grand Est,origin,93049,Neuilly-Plaisance,,False
+93050,NEUILLY SUR MARNE,1149,T9 Grand Paris Grand Est,origin,93050,Neuilly-sur-Marne,,False
+93051,NOISY LE GRAND,1149,T9 Grand Paris Grand Est,origin,93051,Noisy-le-Grand,,False
+93053,NOISY LE SEC,1148,T8 Est Ensemble,origin,93053,Noisy-le-Sec,,False
+93055,PANTIN,1148,T8 Est Ensemble,origin,93055,Pantin,,False
+93057,LES PAVILLONS SOUS BOIS,1149,T9 Grand Paris Grand Est,origin,93057,Les Pavillons-sous-Bois,,False
+93059,PIERREFITTE SUR SEINE,1147,T6 Plaine Commune,delegated_commune,93066,Saint-Denis,True,
+93061,LE PRE ST GERVAIS,1148,T8 Est Ensemble,origin,93061,Le Pré-Saint-Gervais,,False
+93062,LE RAINCY,1149,T9 Grand Paris Grand Est,origin,93062,Le Raincy,,False
+93063,ROMAINVILLE,1148,T8 Est Ensemble,origin,93063,Romainville,,False
+93064,ROSNY SOUS BOIS,1149,T9 Grand Paris Grand Est,origin,93064,Rosny-sous-Bois,,False
+93066,ST DENIS,1147,T6 Plaine Commune,origin,93066,Saint-Denis,,False
+93070,ST OUEN SUR SEINE,1147,T6 Plaine Commune,origin,93070,Saint-Ouen-sur-Seine,,False
+93071,SEVRAN,1119,Grand Roissy - Le Bourget,origin,93071,Sevran,,False
+93072,STAINS,1147,T6 Plaine Commune,origin,93072,Stains,,False
+93073,TREMBLAY EN FRANCE,1119,Grand Roissy - Le Bourget,origin,93073,Tremblay-en-France,,False
+93074,VAUJOURS,1149,T9 Grand Paris Grand Est,origin,93074,Vaujours,,False
+93077,VILLEMOMBLE,1149,T9 Grand Paris Grand Est,origin,93077,Villemomble,,False
+93078,VILLEPINTE,1119,Grand Roissy - Le Bourget,origin,93078,Villepinte,,False
+93079,VILLETANEUSE,1147,T6 Plaine Commune,origin,93079,Villetaneuse,,False
+94001,ABLON SUR SEINE,1129,T12 Grand-Orly Seine Bièvre,origin,94001,Ablon-sur-Seine,,False
+94002,ALFORTVILLE,1150,T11 Grand Paris Sud Est Avenir,origin,94002,Alfortville,,False
+94003,ARCUEIL,1129,T12 Grand-Orly Seine Bièvre,origin,94003,Arcueil,,False
+94004,BOISSY ST LEGER,1150,T11 Grand Paris Sud Est Avenir,origin,94004,Boissy-Saint-Léger,,False
+94011,BONNEUIL SUR MARNE,1150,T11 Grand Paris Sud Est Avenir,origin,94011,Bonneuil-sur-Marne,,False
+94015,BRY SUR MARNE,1151,T10 Paris Est Marne et Bois,origin,94015,Bry-sur-Marne,,False
+94016,CACHAN,1129,T12 Grand-Orly Seine Bièvre,origin,94016,Cachan,,False
+94017,CHAMPIGNY SUR MARNE,1151,T10 Paris Est Marne et Bois,origin,94017,Champigny-sur-Marne,,False
+94018,CHARENTON LE PONT,1151,T10 Paris Est Marne et Bois,origin,94018,Charenton-le-Pont,,False
+94019,CHENNEVIERES SUR MARNE,1150,T11 Grand Paris Sud Est Avenir,origin,94019,Chennevières-sur-Marne,,False
+94021,CHEVILLY LARUE,1129,T12 Grand-Orly Seine Bièvre,origin,94021,Chevilly-Larue,,False
+94022,CHOISY LE ROI,1129,T12 Grand-Orly Seine Bièvre,origin,94022,Choisy-le-Roi,,False
+94028,CRETEIL,1150,T11 Grand Paris Sud Est Avenir,origin,94028,Créteil,,False
+94033,FONTENAY SOUS BOIS,1151,T10 Paris Est Marne et Bois,origin,94033,Fontenay-sous-Bois,,False
+94034,FRESNES,1129,T12 Grand-Orly Seine Bièvre,origin,94034,Fresnes,,False
+94037,GENTILLY,1129,T12 Grand-Orly Seine Bièvre,origin,94037,Gentilly,,False
+94038,L HAY LES ROSES,1129,T12 Grand-Orly Seine Bièvre,origin,94038,L'Haÿ-les-Roses,,False
+94041,IVRY SUR SEINE,1129,T12 Grand-Orly Seine Bièvre,origin,94041,Ivry-sur-Seine,,False
+94042,JOINVILLE LE PONT,1151,T10 Paris Est Marne et Bois,origin,94042,Joinville-le-Pont,,False
+94043,LE KREMLIN BICETRE,1129,T12 Grand-Orly Seine Bièvre,origin,94043,Le Kremlin-Bicêtre,,False
+94044,LIMEIL BREVANNES,1150,T11 Grand Paris Sud Est Avenir,origin,94044,Limeil-Brévannes,,False
+94046,MAISONS ALFORT,1151,T10 Paris Est Marne et Bois,origin,94046,Maisons-Alfort,,False
+94047,MANDRES LES ROSES,1150,T11 Grand Paris Sud Est Avenir,origin,94047,Mandres-les-Roses,,False
+94048,MAROLLES EN BRIE,1150,T11 Grand Paris Sud Est Avenir,origin,94048,Marolles-en-Brie,,False
+94052,NOGENT SUR MARNE,1151,T10 Paris Est Marne et Bois,origin,94052,Nogent-sur-Marne,,False
+94053,NOISEAU,1150,T11 Grand Paris Sud Est Avenir,origin,94053,Noiseau,,False
+94054,ORLY,1129,T12 Grand-Orly Seine Bièvre,origin,94054,Orly,,False
+94055,ORMESSON SUR MARNE,1150,T11 Grand Paris Sud Est Avenir,origin,94055,Ormesson-sur-Marne,,False
+94056,PERIGNY,1150,T11 Grand Paris Sud Est Avenir,origin,94056,Périgny,,False
+94058,LE PERREUX SUR MARNE,1151,T10 Paris Est Marne et Bois,origin,94058,Le Perreux-sur-Marne,,False
+94059,LE PLESSIS TREVISE,1150,T11 Grand Paris Sud Est Avenir,origin,94059,Le Plessis-Trévise,,False
+94060,LA QUEUE EN BRIE,1150,T11 Grand Paris Sud Est Avenir,origin,94060,La Queue-en-Brie,,False
+94065,RUNGIS,1129,T12 Grand-Orly Seine Bièvre,origin,94065,Rungis,,False
+94067,ST MANDE,1151,T10 Paris Est Marne et Bois,origin,94067,Saint-Mandé,,False
+94068,ST MAUR DES FOSSES,1151,T10 Paris Est Marne et Bois,origin,94068,Saint-Maur-des-Fossés,,False
+94069,ST MAURICE,1151,T10 Paris Est Marne et Bois,origin,94069,Saint-Maurice,,False
+94070,SANTENY,1150,T11 Grand Paris Sud Est Avenir,origin,94070,Santeny,,False
+94071,SUCY EN BRIE,1150,T11 Grand Paris Sud Est Avenir,origin,94071,Sucy-en-Brie,,False
+94073,THIAIS,1129,T12 Grand-Orly Seine Bièvre,origin,94073,Thiais,,False
+94074,VALENTON,1129,T12 Grand-Orly Seine Bièvre,origin,94074,Valenton,,False
+94075,VILLECRESNES,1150,T11 Grand Paris Sud Est Avenir,origin,94075,Villecresnes,,False
+94076,VILLEJUIF,1129,T12 Grand-Orly Seine Bièvre,origin,94076,Villejuif,,False
+94077,VILLENEUVE LE ROI,1129,T12 Grand-Orly Seine Bièvre,origin,94077,Villeneuve-le-Roi,,False
+94078,VILLENEUVE ST GEORGES,1129,T12 Grand-Orly Seine Bièvre,origin,94078,Villeneuve-Saint-Georges,,False
+94079,VILLIERS SUR MARNE,1151,T10 Paris Est Marne et Bois,origin,94079,Villiers-sur-Marne,,False
+94080,VINCENNES,1151,T10 Paris Est Marne et Bois,origin,94080,Vincennes,,False
+94081,VITRY SUR SEINE,1129,T12 Grand-Orly Seine Bièvre,origin,94081,Vitry-sur-Seine,,False
+95002,ABLEIGES,1127,Ouest 95,origin,95002,Ableiges,,False
+95008,AINCOURT,1127,Ouest 95,origin,95008,Aincourt,,False
+95011,AMBLEVILLE,1127,Ouest 95,origin,95011,Ambleville,,False
+95012,AMENUCOURT,1127,Ouest 95,origin,95012,Amenucourt,,False
+95014,ANDILLY,1152,Est 95,origin,95014,Andilly,,False
+95018,ARGENTEUIL,1138,T5 Boucle Nord de Seine,origin,95018,Argenteuil,,False
+95019,ARNOUVILLE,1119,Grand Roissy - Le Bourget,origin,95019,Arnouville,,False
+95023,ARRONVILLE,1127,Ouest 95,origin,95023,Arronville,,False
+95024,ARTHIES,1127,Ouest 95,origin,95024,Arthies,,False
+95026,ASNIERES SUR OISE,1152,Est 95,origin,95026,Asnières-sur-Oise,,False
+95028,ATTAINVILLE,1152,Est 95,origin,95028,Attainville,,False
+95039,AUVERS SUR OISE,1127,Ouest 95,origin,95039,Auvers-sur-Oise,,False
+95040,AVERNES,1127,Ouest 95,origin,95040,Avernes,,False
+95042,BAILLET EN FRANCE,1152,Est 95,origin,95042,Baillet-en-France,,False
+95046,BANTHELU,1127,Ouest 95,origin,95046,Banthelu,,False
+95051,BEAUCHAMP,1152,Est 95,origin,95051,Beauchamp,,False
+95052,BEAUMONT SUR OISE,1152,Est 95,origin,95052,Beaumont-sur-Oise,,False
+95054,LE BELLAY EN VEXIN,1127,Ouest 95,origin,95054,Le Bellay-en-Vexin,,False
+95055,BELLEFONTAINE,1152,Est 95,origin,95055,Bellefontaine,,False
+95056,BELLOY EN FRANCE,1152,Est 95,origin,95056,Belloy-en-France,,False
+95058,BERNES SUR OISE,1152,Est 95,origin,95058,Bernes-sur-Oise,,False
+95059,BERVILLE,1127,Ouest 95,origin,95059,Berville,,False
+95060,BESSANCOURT,1152,Est 95,origin,95060,Bessancourt,,False
+95061,BETHEMONT LA FORET,1152,Est 95,origin,95061,Béthemont-la-Forêt,,False
+95063,BEZONS,1125,Seine-Aval,origin,95063,Bezons,,False
+95074,BOISEMONT,1127,Ouest 95,origin,95074,Boisemont,,False
+95078,BOISSY L AILLERIE,1127,Ouest 95,origin,95078,Boissy-l'Aillerie,,False
+95088,BONNEUIL EN FRANCE,1119,Grand Roissy - Le Bourget,origin,95088,Bonneuil-en-France,,False
+95091,BOUFFEMONT,1152,Est 95,origin,95091,Bouffémont,,False
+95094,BOUQUEVAL,1119,Grand Roissy - Le Bourget,origin,95094,Bouqueval,,False
+95101,BRAY ET LU,1127,Ouest 95,origin,95101,Bray-et-Lû,,False
+95102,BREANCON,1127,Ouest 95,origin,95102,Bréançon,,False
+95110,BRIGNANCOURT,1127,Ouest 95,origin,95110,Brignancourt,,False
+95116,BRUYERES SUR OISE,1152,Est 95,origin,95116,Bruyères-sur-Oise,,False
+95119,BUHY,1127,Ouest 95,origin,95119,Buhy,,False
+95120,BUTRY SUR OISE,1127,Ouest 95,origin,95120,Butry-sur-Oise,,False
+95127,CERGY,1127,Ouest 95,origin,95127,Cergy,,False
+95134,CHAMPAGNE SUR OISE,1152,Est 95,origin,95134,Champagne-sur-Oise,,False
+95139,LA CHAPELLE EN VEXIN,1127,Ouest 95,origin,95139,La Chapelle-en-Vexin,,False
+95141,CHARMONT,1127,Ouest 95,origin,95141,Charmont,,False
+95142,CHARS,1127,Ouest 95,origin,95142,Chars,,False
+95144,CHATENAY EN FRANCE,1152,Est 95,origin,95144,Châtenay-en-France,,False
+95149,CHAUMONTEL,1152,Est 95,origin,95149,Chaumontel,,False
+95150,CHAUSSY,1127,Ouest 95,origin,95150,Chaussy,,False
+95151,CHAUVRY,1152,Est 95,origin,95151,Chauvry,,False
+95154,CHENNEVIERES LES LOUVRES,1119,Grand Roissy - Le Bourget,origin,95154,Chennevières-lès-Louvres,,False
+95157,CHERENCE,1127,Ouest 95,origin,95157,Chérence,,False
+95166,CLERY EN VEXIN,1127,Ouest 95,origin,95166,Cléry-en-Vexin,,False
+95169,COMMENY,1127,Ouest 95,origin,95169,Commeny,,False
+95170,CONDECOURT,1127,Ouest 95,origin,95170,Condécourt,,False
+95176,CORMEILLES EN PARISIS,1152,Est 95,origin,95176,Cormeilles-en-Parisis,,False
+95177,CORMEILLES EN VEXIN,1127,Ouest 95,origin,95177,Cormeilles-en-Vexin,,False
+95181,COURCELLES SUR VIOSNE,1127,Ouest 95,origin,95181,Courcelles-sur-Viosne,,False
+95183,COURDIMANCHE,1127,Ouest 95,origin,95183,Courdimanche,,False
+95197,DEUIL LA BARRE,1152,Est 95,origin,95197,Deuil-la-Barre,,False
+95199,DOMONT,1152,Est 95,origin,95199,Domont,,False
+95203,EAUBONNE,1152,Est 95,origin,95203,Eaubonne,,False
+95205,ECOUEN,1119,Grand Roissy - Le Bourget,origin,95205,Écouen,,False
+95210,ENGHIEN LES BAINS,1152,Est 95,origin,95210,Enghien-les-Bains,,False
+95211,ENNERY,1127,Ouest 95,origin,95211,Ennery,,False
+95212,EPIAIS LES LOUVRES,1119,Grand Roissy - Le Bourget,origin,95212,Épiais-lès-Louvres,,False
+95213,EPIAIS RHUS,1127,Ouest 95,origin,95213,Épiais-Rhus,,False
+95214,EPINAY CHAMPLATREUX,1152,Est 95,origin,95214,Épinay-Champlâtreux,,False
+95218,ERAGNY,1127,Ouest 95,origin,95218,Éragny-sur-Oise,,True
+95219,ERMONT,1152,Est 95,origin,95219,Ermont,,False
+95229,EZANVILLE,1152,Est 95,origin,95229,Ézanville,,False
+95241,FONTENAY EN PARISIS,1119,Grand Roissy - Le Bourget,origin,95241,Fontenay-en-Parisis,,False
+95250,FOSSES,1119,Grand Roissy - Le Bourget,origin,95250,Fosses,,False
+95252,FRANCONVILLE,1152,Est 95,origin,95252,Franconville,,False
+95253,FREMAINVILLE,1127,Ouest 95,origin,95253,Frémainville,,False
+95254,FREMECOURT,1127,Ouest 95,origin,95254,Frémécourt,,False
+95256,FREPILLON,1152,Est 95,origin,95256,Frépillon,,False
+95257,LA FRETTE SUR SEINE,1152,Est 95,origin,95257,La Frette-sur-Seine,,False
+95258,FROUVILLE,1127,Ouest 95,origin,95258,Frouville,,False
+95268,GARGES LES GONESSE,1119,Grand Roissy - Le Bourget,origin,95268,Garges-lès-Gonesse,,False
+95270,GENAINVILLE,1127,Ouest 95,origin,95270,Genainville,,False
+95271,GENICOURT,1127,Ouest 95,origin,95271,Génicourt,,False
+95277,GONESSE,1119,Grand Roissy - Le Bourget,origin,95277,Gonesse,,False
+95280,GOUSSAINVILLE,1119,Grand Roissy - Le Bourget,origin,95280,Goussainville,,False
+95282,GOUZANGREZ,1127,Ouest 95,code_not_in_origins,,,,
+95287,GRISY LES PLATRES,1127,Ouest 95,origin,95287,Grisy-les-Plâtres,,False
+95288,GROSLAY,1152,Est 95,origin,95288,Groslay,,False
+95295,GUIRY EN VEXIN,1127,Ouest 95,origin,95295,Guiry-en-Vexin,,False
+95298,HARAVILLIERS,1127,Ouest 95,origin,95298,Haravilliers,,False
+95301,HAUTE ISLE,1127,Ouest 95,origin,95301,Haute-Isle,,False
+95303,LE HEAULME,1127,Ouest 95,origin,95303,Le Heaulme,,False
+95304,HEDOUVILLE,1127,Ouest 95,origin,95304,Hédouville,,False
+95306,HERBLAY SUR SEINE,1152,Est 95,origin,95306,Herblay-sur-Seine,,False
+95308,HEROUVILLE EN VEXIN,1127,Ouest 95,origin,95308,Hérouville-en-Vexin,,False
+95309,HODENT,1127,Ouest 95,origin,95309,Hodent,,False
+95313,L ISLE ADAM,1152,Est 95,origin,95313,L'Isle-Adam,,False
+95316,JAGNY SOUS BOIS,1152,Est 95,origin,95316,Jagny-sous-Bois,,False
+95323,JOUY LE MOUTIER,1127,Ouest 95,origin,95323,Jouy-le-Moutier,,False
+95328,LABBEVILLE,1127,Ouest 95,origin,95328,Labbeville,,False
+95331,LASSY,1152,Est 95,origin,95331,Lassy,,False
+95341,LIVILLIERS,1127,Ouest 95,origin,95341,Livilliers,,False
+95348,LONGUESSE,1127,Ouest 95,origin,95348,Longuesse,,False
+95351,LOUVRES,1119,Grand Roissy - Le Bourget,origin,95351,Louvres,,False
+95352,LUZARCHES,1152,Est 95,origin,95352,Luzarches,,False
+95353,MAFFLIERS,1152,Est 95,origin,95353,Maffliers,,False
+95355,MAGNY EN VEXIN,1127,Ouest 95,origin,95355,Magny-en-Vexin,,False
+95365,MAREIL EN FRANCE,1152,Est 95,origin,95365,Mareil-en-France,,False
+95369,MARGENCY,1152,Est 95,origin,95369,Margency,,False
+95370,MARINES,1127,Ouest 95,origin,95370,Marines,,False
+95371,MARLY LA VILLE,1119,Grand Roissy - Le Bourget,origin,95371,Marly-la-Ville,,False
+95379,MAUDETOUR EN VEXIN,1127,Ouest 95,origin,95379,Maudétour-en-Vexin,,False
+95387,MENOUVILLE,1127,Ouest 95,origin,95387,Menouville,,False
+95388,MENUCOURT,1127,Ouest 95,origin,95388,Menucourt,,False
+95392,MERIEL,1152,Est 95,origin,95392,Mériel,,False
+95394,MERY SUR OISE,1152,Est 95,origin,95394,Méry-sur-Oise,,False
+95395,LE MESNIL AUBRY,1119,Grand Roissy - Le Bourget,origin,95395,Le Mesnil-Aubry,,False
+95409,MOISSELLES,1152,Est 95,origin,95409,Moisselles,,False
+95422,MONTGEROULT,1127,Ouest 95,origin,95422,Montgeroult,,False
+95424,MONTIGNY LES CORMEILLES,1152,Est 95,origin,95424,Montigny-lès-Cormeilles,,False
+95426,MONTLIGNON,1152,Est 95,origin,95426,Montlignon,,False
+95427,MONTMAGNY,1152,Est 95,origin,95427,Montmagny,,False
+95428,MONTMORENCY,1152,Est 95,origin,95428,Montmorency,,False
+95429,MONTREUIL SUR EPTE,1127,Ouest 95,origin,95429,Montreuil-sur-Epte,,False
+95430,MONTSOULT,1152,Est 95,origin,95430,Montsoult,,False
+95436,MOURS,1152,Est 95,origin,95436,Mours,,False
+95438,MOUSSY,1127,Ouest 95,origin,95438,Moussy,,False
+95445,NERVILLE LA FORET,1152,Est 95,origin,95445,Nerville-la-Forêt,,False
+95446,NESLES LA VALLEE,1127,Ouest 95,origin,95446,Nesles-la-Vallée,,False
+95447,NEUILLY EN VEXIN,1127,Ouest 95,origin,95447,Neuilly-en-Vexin,,False
+95450,NEUVILLE SUR OISE,1127,Ouest 95,origin,95450,Neuville-sur-Oise,,False
+95452,NOINTEL,1152,Est 95,origin,95452,Nointel,,False
+95456,NOISY SUR OISE,1152,Est 95,origin,95456,Noisy-sur-Oise,,False
+95459,NUCOURT,1127,Ouest 95,origin,95459,Nucourt,,False
+95462,OMERVILLE,1127,Ouest 95,origin,95462,Omerville,,False
+95476,OSNY,1127,Ouest 95,origin,95476,Osny,,False
+95480,PARMAIN,1152,Est 95,origin,95480,Parmain,,False
+95483,LE PERCHAY,1127,Ouest 95,origin,95483,Le Perchay,,False
+95487,PERSAN,1152,Est 95,origin,95487,Persan,,False
+95488,PIERRELAYE,1152,Est 95,origin,95488,Pierrelaye,,False
+95489,PISCOP,1152,Est 95,origin,95489,Piscop,,False
+95491,LE PLESSIS BOUCHARD,1152,Est 95,origin,95491,Le Plessis-Bouchard,,False
+95492,LE PLESSIS GASSOT,1119,Grand Roissy - Le Bourget,origin,95492,Le Plessis-Gassot,,False
+95493,LE PLESSIS LUZARCHES,1152,Est 95,origin,95493,Le Plessis-Luzarches,,False
+95500,PONTOISE,1127,Ouest 95,origin,95500,Pontoise,,False
+95504,PRESLES,1152,Est 95,origin,95504,Presles,,False
+95509,PUISEUX EN FRANCE,1119,Grand Roissy - Le Bourget,origin,95509,Puiseux-en-France,,False
+95510,PUISEUX PONTOISE,1127,Ouest 95,origin,95510,Puiseux-Pontoise,,False
+95523,LA ROCHE GUYON,1127,Ouest 95,origin,95523,La Roche-Guyon,,False
+95527,ROISSY EN FRANCE,1119,Grand Roissy - Le Bourget,origin,95527,Roissy-en-France,,False
+95529,RONQUEROLLES,1152,Est 95,origin,95529,Ronquerolles,,False
+95535,SAGY,1127,Ouest 95,origin,95535,Sagy,,False
+95539,ST BRICE SOUS FORET,1152,Est 95,origin,95539,Saint-Brice-sous-Forêt,,False
+95541,ST CLAIR SUR EPTE,1127,Ouest 95,origin,95541,Saint-Clair-sur-Epte,,False
+95543,ST CYR EN ARTHIES,1127,Ouest 95,origin,95543,Saint-Cyr-en-Arthies,,False
+95554,ST GERVAIS,1127,Ouest 95,origin,95554,Saint-Gervais,,False
+95555,ST GRATIEN,1152,Est 95,origin,95555,Saint-Gratien,,False
+95563,ST LEU LA FORET,1152,Est 95,origin,95563,Saint-Leu-la-Forêt,,False
+95566,ST MARTIN DU TERTRE,1152,Est 95,origin,95566,Saint-Martin-du-Tertre,,False
+95572,ST OUEN L AUMONE,1127,Ouest 95,origin,95572,Saint-Ouen-l'Aumône,,False
+95574,ST PRIX,1152,Est 95,origin,95574,Saint-Prix,,False
+95580,ST WITZ,1119,Grand Roissy - Le Bourget,origin,95580,Saint-Witz,,False
+95582,SANNOIS,1152,Est 95,origin,95582,Sannois,,False
+95584,SANTEUIL,1127,Ouest 95,origin,95584,Santeuil,,False
+95585,SARCELLES,1119,Grand Roissy - Le Bourget,origin,95585,Sarcelles,,False
+95592,SERAINCOURT,1127,Ouest 95,origin,95592,Seraincourt,,False
+95594,SEUGY,1152,Est 95,origin,95594,Seugy,,False
+95598,SOISY SOUS MONTMORENCY,1152,Est 95,origin,95598,Soisy-sous-Montmorency,,False
+95604,SURVILLIERS,1119,Grand Roissy - Le Bourget,origin,95604,Survilliers,,False
+95607,TAVERNY,1152,Est 95,origin,95607,Taverny,,False
+95610,THEMERICOURT,1127,Ouest 95,origin,95610,Théméricourt,,False
+95611,THEUVILLE,1127,Ouest 95,origin,95611,Theuville,,False
+95612,LE THILLAY,1119,Grand Roissy - Le Bourget,origin,95612,Le Thillay,,False
+95625,US,1127,Ouest 95,origin,95625,Us,,False
+95627,VALLANGOUJARD,1127,Ouest 95,origin,95627,Vallangoujard,,False
+95628,VALMONDOIS,1127,Ouest 95,origin,95628,Valmondois,,False
+95633,VAUDHERLAND,1119,Grand Roissy - Le Bourget,origin,95633,Vaudherland,,False
+95637,VAUREAL,1127,Ouest 95,origin,95637,Vauréal,,False
+95641,VEMARS,1119,Grand Roissy - Le Bourget,origin,95641,Vémars,,False
+95651,VETHEUIL,1127,Ouest 95,origin,95651,Vétheuil,,False
+95652,VIARMES,1152,Est 95,origin,95652,Viarmes,,False
+95656,VIENNE EN ARTHIES,1127,Ouest 95,origin,95656,Vienne-en-Arthies,,False
+95658,VIGNY,1127,Ouest 95,origin,95658,Vigny,,False
+95660,VILLAINES SOUS BOIS,1152,Est 95,origin,95660,Villaines-sous-Bois,,False
+95675,VILLERON,1119,Grand Roissy - Le Bourget,origin,95675,Villeron,,False
+95676,VILLERS EN ARTHIES,1127,Ouest 95,origin,95676,Villers-en-Arthies,,False
+95678,VILLIERS ADAM,1152,Est 95,origin,95678,Villiers-Adam,,False
+95680,VILLIERS LE BEL,1119,Grand Roissy - Le Bourget,origin,95680,Villiers-le-Bel,,False
+95682,VILLIERS LE SEC,1152,Est 95,origin,95682,Villiers-le-Sec,,False
+95690,WY DIT JOLI VILLAGE,1127,Ouest 95,origin,95690,Wy-dit-Joli-Village,,False

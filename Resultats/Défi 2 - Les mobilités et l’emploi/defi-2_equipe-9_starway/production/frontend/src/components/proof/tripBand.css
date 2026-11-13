@@ -1,0 +1,94 @@
+/* Bande du trajet (lot 4, D-051) : marche en pointillé, attente en cadre vide, ligne à sa couleur GTFS. */
+.pf-tb {
+  position: relative;
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.pf-tb-plot {
+  position: relative;
+}
+
+.pf-tb-svg {
+  display: block;
+  overflow: visible;
+  font-family: inherit;
+}
+
+.pf-tb-seg {
+  stroke-linejoin: round;
+}
+
+.pf-tb-on {
+  stroke: var(--text);
+  stroke-width: 1.5;
+}
+
+.pf-tb-line {
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.pf-tb-min {
+  fill: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+.pf-tb-tip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text);
+  pointer-events: none;
+}
+
+/* Tableau pour les lecteurs d'écran : invisible mais atteignable au clavier (règle commune : commChart.css) */
+.pf-tb-table caption,
+.pf-tb-table tbody,
+.pf-tb-table tr,
+.pf-tb-table th,
+.pf-tb-table td {
+  display: block;
+  font-weight: 400;
+  text-align: left;
+}
+
+/*
+ * Retours KBS du 10/11 : la liste des lignes est visible sous la bande, une ligne par ligne de TC (pastille, nom, climatisation
+ * et ponctualité, puis le « i ») ; les heures sont déjà dans la bande, elles restent lues par les lecteurs d'écran seulement.
+ */
+.pf-lines.pf-lines-band {
+  margin-top: 6px;
+  gap: 2px;
+}
+
+.pf-lines.pf-lines-band > li {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 6px;
+}
+
+.pf-lines.pf-lines-band .pf-lines-facts {
+  padding-left: 0;
+}
+
+.pf-lines.pf-lines-band .pf-trip-time {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,148 @@
+/*
+ * Point de départ : la commune choisie est un vrai bouton, avec son libellé toujours lisible ; le champ de recherche
+ * n'apparaît qu'à la demande (ou tant qu'aucune commune n'est choisie). Mêmes dimensions dans les deux états : la barre ne bouge pas.
+ * Hauteur de la rangée de la barre (`--bar-row-h`, 44 px) : le libellé tient au-dessus du nom. Couleurs : jetons existants, `--guide` reste le repère chaud.
+ */
+
+.commune-label {
+  display: block;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* L'étoile ne capte pas le clic : il va au champ */
+.commune-search .combo-icon {
+  pointer-events: none;
+}
+
+/* Champ : le libellé est posé dans le cadre, au même endroit que sur le bouton */
+.combo .commune-label-over {
+  position: absolute;
+  left: 30px;
+  right: 12px;
+  top: 6px;
+  pointer-events: none;
+}
+
+.commune-search .combo input.commune-input {
+  height: var(--bar-row-h);
+  min-height: var(--bar-row-h);
+  padding: 20px 12px 2px 30px;
+  font-size: 14px;
+  line-height: 18px;
+  text-overflow: ellipsis;
+}
+
+.commune-search .combo input.commune-input::placeholder {
+  color: var(--text-dim);
+  opacity: 1;
+  text-overflow: ellipsis;
+}
+
+/* Premier usage : le contour chaud de l'étoile-guide dit où commencer */
+.commune-search .combo.is-first-use input.commune-input:not(:focus) {
+  border-color: var(--guide);
+}
+
+.commune-pick {
+  /* le mot « Changer » ne s'écrit que si le nom garde sa place */
+  container: commune-pick / inline-size;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: var(--bar-row-h);
+  padding: 0 10px 0 30px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(8, 14, 32, 0.6);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--ui) var(--ease-ui);
+}
+
+.commune-pick:hover {
+  border-color: var(--accent);
+}
+
+.commune-pick:focus-visible {
+  border-radius: 12px;
+}
+
+.commune-pick-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.commune-pick-name {
+  display: flex;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--guide);
+}
+
+.commune-pick-city {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.commune-pick-dep {
+  flex: none;
+}
+
+.commune-pick-action {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.commune-pick-action svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Barre étroite : le crayon seul, le mot reste lu par les lecteurs d'écran */
+@container commune-pick (max-width: 200px) {
+  /* le crayon monte sur la ligne du libellé : le nom garde toute la largeur */
+  .commune-pick-action {
+    position: absolute;
+    top: 7px;
+    right: 9px;
+  }
+  /* et le libellé reste entier à sa gauche */
+  .commune-pick .commune-label {
+    font-size: 11px;
+  }
+  .commune-pick-word {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+/* Barre d'ordinateur étroite : pendant la saisie, le champ et sa liste s'élargissent par-dessus la barre, sans la déplacer */
+.bar-origin .commune-search:has(input:focus) {
+  z-index: 32;
+  width: max(100%, 260px);
+}
+
+.bar-origin .commune-search:has(input:focus) .combo input.commune-input {
+  background: var(--panel);
+}

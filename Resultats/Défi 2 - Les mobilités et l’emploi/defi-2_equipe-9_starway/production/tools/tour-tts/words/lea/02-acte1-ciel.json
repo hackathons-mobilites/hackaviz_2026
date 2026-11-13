@@ -1,0 +1,415 @@
+{
+ "tour": "lea",
+ "stem": "02-acte1-ciel",
+ "mp3Sha256": "744d88a0640ca730184bd66059deffad960eda5b1fcf56d1f15f3f39b3e90443",
+ "text": "Léa se donne 60 minutes de transports en commun, à l’aller comme au retour. Chaque étoile qui s’allume est un bassin d’emploi, ou un arrondissement de Paris, accessible par Léa selon ses conditions. Sa taille, ce sont ses postes salariés recensés par l’INSEE. 24 étoiles s’allument, en partie ou en entier. En partie : quand Léa n’atteint que certaines communes de l’étoile, à l’aller et au retour. Au compteur : près de 2,6 millions de postes à sa portée, hors sa commune.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Léa se donne 60 Min de transport en commun, à l'aller comme au retour. Chaque étoile qui s'allume est un bassin d'emploi ou un arrondissement de Paris accessible par Lea selon ses conditions, sa taille. Ce sont ces postes salariés recensés par l'Insee. 24 étoiles s'allument en partie ou en entier. En partie quand Lea n'atteint que certaines communes de l'étoile à l'aller et au retour. Au compteur, près de 6000000 de postes à sa portée. Or, sa commune.",
+ "words": [
+  {
+   "word": "léa",
+   "startMs": 70,
+   "endMs": 470
+  },
+  {
+   "word": "se",
+   "startMs": 470,
+   "endMs": 630
+  },
+  {
+   "word": "donne",
+   "startMs": 630,
+   "endMs": 870
+  },
+  {
+   "word": "soixante",
+   "startMs": 870,
+   "endMs": 1270
+  },
+  {
+   "word": "minutes",
+   "startMs": 1270,
+   "endMs": 1550
+  },
+  {
+   "word": "de",
+   "startMs": 1550,
+   "endMs": 1630
+  },
+  {
+   "word": "transport",
+   "startMs": 1630,
+   "endMs": 2110
+  },
+  {
+   "word": "en",
+   "startMs": 2110,
+   "endMs": 2190
+  },
+  {
+   "word": "commun",
+   "startMs": 2190,
+   "endMs": 2590
+  },
+  {
+   "word": "à",
+   "startMs": 2590,
+   "endMs": 2750
+  },
+  {
+   "word": "l'aller",
+   "startMs": 2750,
+   "endMs": 2990
+  },
+  {
+   "word": "comme",
+   "startMs": 2990,
+   "endMs": 3190
+  },
+  {
+   "word": "au",
+   "startMs": 3190,
+   "endMs": 3230
+  },
+  {
+   "word": "retour",
+   "startMs": 3230,
+   "endMs": 3750
+  },
+  {
+   "word": "chaque",
+   "startMs": 4190,
+   "endMs": 4470
+  },
+  {
+   "word": "étoile",
+   "startMs": 4470,
+   "endMs": 4750
+  },
+  {
+   "word": "qui",
+   "startMs": 4750,
+   "endMs": 4870
+  },
+  {
+   "word": "s'allume",
+   "startMs": 4870,
+   "endMs": 5230
+  },
+  {
+   "word": "est",
+   "startMs": 5230,
+   "endMs": 5470
+  },
+  {
+   "word": "un",
+   "startMs": 5470,
+   "endMs": 5550
+  },
+  {
+   "word": "bassin",
+   "startMs": 5550,
+   "endMs": 5830
+  },
+  {
+   "word": "d'emploi",
+   "startMs": 5830,
+   "endMs": 6350
+  },
+  {
+   "word": "ou",
+   "startMs": 6350,
+   "endMs": 6550
+  },
+  {
+   "word": "un",
+   "startMs": 6550,
+   "endMs": 6630
+  },
+  {
+   "word": "arrondissement",
+   "startMs": 6630,
+   "endMs": 7150
+  },
+  {
+   "word": "de",
+   "startMs": 7150,
+   "endMs": 7230
+  },
+  {
+   "word": "paris",
+   "startMs": 7230,
+   "endMs": 7670
+  },
+  {
+   "word": "accessible",
+   "startMs": 7750,
+   "endMs": 8510
+  },
+  {
+   "word": "par",
+   "startMs": 8510,
+   "endMs": 8710
+  },
+  {
+   "word": "lea",
+   "startMs": 8710,
+   "endMs": 8950
+  },
+  {
+   "word": "selon",
+   "startMs": 8950,
+   "endMs": 9190
+  },
+  {
+   "word": "ses",
+   "startMs": 9190,
+   "endMs": 9310
+  },
+  {
+   "word": "conditions",
+   "startMs": 9310,
+   "endMs": 9870
+  },
+  {
+   "word": "sa",
+   "startMs": 10270,
+   "endMs": 10550
+  },
+  {
+   "word": "taille",
+   "startMs": 10550,
+   "endMs": 10910
+  },
+  {
+   "word": "ce",
+   "startMs": 10990,
+   "endMs": 11030
+  },
+  {
+   "word": "sont",
+   "startMs": 11030,
+   "endMs": 11390
+  },
+  {
+   "word": "ces",
+   "startMs": 11390,
+   "endMs": 11510
+  },
+  {
+   "word": "postes",
+   "startMs": 11510,
+   "endMs": 11830
+  },
+  {
+   "word": "salariés",
+   "startMs": 11830,
+   "endMs": 12270
+  },
+  {
+   "word": "recensés",
+   "startMs": 12270,
+   "endMs": 12710
+  },
+  {
+   "word": "par",
+   "startMs": 12710,
+   "endMs": 12830
+  },
+  {
+   "word": "l'insee",
+   "startMs": 12830,
+   "endMs": 13310
+  },
+  {
+   "word": "vingt",
+   "startMs": 13790,
+   "endMs": 14110
+  },
+  {
+   "word": "quatre",
+   "startMs": 14110,
+   "endMs": 14390
+  },
+  {
+   "word": "étoiles",
+   "startMs": 14390,
+   "endMs": 14710
+  },
+  {
+   "word": "s'allument",
+   "startMs": 14710,
+   "endMs": 15110
+  },
+  {
+   "word": "en",
+   "startMs": 15230,
+   "endMs": 15430
+  },
+  {
+   "word": "partie",
+   "startMs": 15430,
+   "endMs": 15990
+  },
+  {
+   "word": "ou",
+   "startMs": 16070,
+   "endMs": 16310
+  },
+  {
+   "word": "en",
+   "startMs": 16310,
+   "endMs": 16350
+  },
+  {
+   "word": "entier",
+   "startMs": 16350,
+   "endMs": 16790
+  },
+  {
+   "word": "en",
+   "startMs": 17510,
+   "endMs": 17630
+  },
+  {
+   "word": "partie",
+   "startMs": 17630,
+   "endMs": 18110
+  },
+  {
+   "word": "quand",
+   "startMs": 18310,
+   "endMs": 18510
+  },
+  {
+   "word": "lea",
+   "startMs": 18510,
+   "endMs": 18750
+  },
+  {
+   "word": "n'atteint",
+   "startMs": 18750,
+   "endMs": 19030
+  },
+  {
+   "word": "que",
+   "startMs": 19030,
+   "endMs": 19150
+  },
+  {
+   "word": "certaines",
+   "startMs": 19150,
+   "endMs": 19510
+  },
+  {
+   "word": "communes",
+   "startMs": 19510,
+   "endMs": 19790
+  },
+  {
+   "word": "de",
+   "startMs": 19790,
+   "endMs": 19870
+  },
+  {
+   "word": "l'étoile",
+   "startMs": 19870,
+   "endMs": 20430
+  },
+  {
+   "word": "à",
+   "startMs": 20670,
+   "endMs": 20830
+  },
+  {
+   "word": "l'aller",
+   "startMs": 20830,
+   "endMs": 21270
+  },
+  {
+   "word": "et",
+   "startMs": 21390,
+   "endMs": 21590
+  },
+  {
+   "word": "au",
+   "startMs": 21590,
+   "endMs": 21630
+  },
+  {
+   "word": "retour",
+   "startMs": 21630,
+   "endMs": 22230
+  },
+  {
+   "word": "au",
+   "startMs": 22990,
+   "endMs": 23150
+  },
+  {
+   "word": "compteur",
+   "startMs": 23150,
+   "endMs": 23750
+  },
+  {
+   "word": "près",
+   "startMs": 23870,
+   "endMs": 24110
+  },
+  {
+   "word": "de",
+   "startMs": 24110,
+   "endMs": 24190
+  },
+  {
+   "word": "six",
+   "startMs": 24190,
+   "endMs": 24470
+  },
+  {
+   "word": "millions",
+   "startMs": 24470,
+   "endMs": 24750
+  },
+  {
+   "word": "de",
+   "startMs": 24750,
+   "endMs": 24870
+  },
+  {
+   "word": "postes",
+   "startMs": 24870,
+   "endMs": 25150
+  },
+  {
+   "word": "à",
+   "startMs": 25150,
+   "endMs": 25190
+  },
+  {
+   "word": "sa",
+   "startMs": 25190,
+   "endMs": 25350
+  },
+  {
+   "word": "portée",
+   "startMs": 25350,
+   "endMs": 25790
+  },
+  {
+   "word": "or",
+   "startMs": 26070,
+   "endMs": 26350
+  },
+  {
+   "word": "sa",
+   "startMs": 26350,
+   "endMs": 26470
+  },
+  {
+   "word": "commune",
+   "startMs": 26470,
+   "endMs": 26990
+  }
+ ]
+}

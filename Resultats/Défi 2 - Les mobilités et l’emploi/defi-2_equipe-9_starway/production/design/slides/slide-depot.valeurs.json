@@ -1,0 +1,124 @@
+{
+ "dataset_id": "2026-11-17_dc97ca710c6c",
+ "processing_version": "0.1.0",
+ "commune_insee": "78686",
+ "valeurs": [
+  {
+   "quoi": "postes salariés recensés par l'INSEE en Île-de-France",
+   "valeur": 6418845,
+   "fichier": "frontend/public/data/od_walk3000/index.json"
+  },
+  {
+   "quoi": "millésime des postes",
+   "valeur": 2023,
+   "fichier": "frontend/public/data/poles.json"
+  },
+  {
+   "quoi": "astres d'emploi",
+   "valeur": 44,
+   "fichier": "frontend/public/data/poles.json"
+  },
+  {
+   "quoi": "bassins d'emploi hors Paris",
+   "valeur": 24,
+   "fichier": "frontend/public/data/poles.json"
+  },
+  {
+   "quoi": "arrondissements de Paris",
+   "valeur": 20,
+   "fichier": "frontend/public/data/communes.json"
+  },
+  {
+   "quoi": "part des postes couverte par le ciel (%)",
+   "valeur": 100.0,
+   "fichier": "frontend/public/data/poles.json"
+  },
+  {
+   "quoi": "points de départ possibles",
+   "valeur": 1285,
+   "fichier": "frontend/public/data/communes.json"
+  },
+  {
+   "quoi": "communes de départ hors arrondissements",
+   "valeur": 1265,
+   "fichier": "frontend/public/data/communes.json"
+  },
+  {
+   "quoi": "date de l'offre GTFS citée",
+   "valeur": "mardi 17 novembre 2026",
+   "fichier": "frontend/public/data/meta.json"
+  },
+  {
+   "quoi": "millésime des bassins d'emploi cité",
+   "valeur": 2026,
+   "fichier": "frontend/public/data/sources.json"
+  },
+  {
+   "quoi": "millésime du recensement cité",
+   "valeur": 2023,
+   "fichier": "frontend/public/data/sources.json"
+  },
+  {
+   "quoi": "commune de l'exemple",
+   "valeur": "Viroflay",
+   "fichier": "frontend/public/data/communes.json"
+  },
+  {
+   "quoi": "temps de trajet par sens de l'exemple (min)",
+   "valeur": 60,
+   "fichier": "commande (--budget), cran de meta.budgets"
+  },
+  {
+   "quoi": "journée-type de référence",
+   "valeur": "9h-17h",
+   "fichier": "frontend/public/data/meta.json"
+  },
+  {
+   "quoi": "journée-type comparée",
+   "valeur": "14h-22h",
+   "fichier": "frontend/public/data/meta.json"
+  },
+  {
+   "quoi": "postes atteints, journée de référence",
+   "valeur": 2121991,
+   "fichier": "frontend/public/data/od_walk3000/o/78686.bin"
+  },
+  {
+   "quoi": "postes atteints, journée comparée",
+   "valeur": 686341,
+   "fichier": "frontend/public/data/od_walk3000/o/78686.bin"
+  },
+  {
+   "quoi": "part atteinte, journée de référence (%)",
+   "valeur": 33.1,
+   "fichier": "frontend/public/data/od_walk3000/o/78686.bin"
+  },
+  {
+   "quoi": "part atteinte, journée comparée (%)",
+   "valeur": 10.7,
+   "fichier": "frontend/public/data/od_walk3000/o/78686.bin"
+  },
+  {
+   "quoi": "dénominateur des pourcentages",
+   "valeur": 6414620,
+   "fichier": "frontend/public/data/od_walk3000/index.json"
+  },
+  {
+   "quoi": "postes de la commune de départ, hors calcul",
+   "valeur": 4225,
+   "fichier": "frontend/public/data/od_walk3000/index.json"
+  },
+  {
+   "quoi": "adresse du site",
+   "valeur": "https://jolly-cliff-07f518503.5.azurestaticapps.net",
+   "fichier": "frontend/index.html (og:url)"
+  },
+  {
+   "quoi": "adresse du dépôt",
+   "valeur": "https://github.com/hackathons-mobilites/hackaviz_2026",
+   "fichier": "frontend/src/theme/links.ts (REPO_URL)"
+  }
+ ],
+ "texte_alternatif_slide": "Logo STARWAY. Hackathon Mobilités 2026, Spécial Dataviz’, défi 2. Starway, by Middleway. Nous vivons tous sous le même ciel, mais nous n’avons pas accès aux mêmes étoiles. La question du défi 2 : « De quelles manières les réseaux de transport public permettent-ils d’atteindre les lieux où l’emploi se crée et se concentre ? » L’œuvre : un ciel stable, seule la lumière change. Explorer : Commune, journée-type, temps de trajet, mode : les astres atteignables à l’aller et au retour s’allument. Comparer deux communes, partager le lien. Lancer la visite : Le ciel de Léa, habitante fictive, chiffres réels : une visite guidée et sous-titrée en quatre actes, qui pilote l’application elle-même. Illustration : capture du ciel du site, 44 astres d’emploi aux mêmes places pour tous les scénarios ; aire des disques proportionnelle aux postes salariés recensés par l’INSEE (Flores 2023) ; en cyan, les astres atteints aller et retour depuis Viroflay, journée-type 9h-17h, 60 minutes par sens, en transports en commun. 6 418 845 postes salariés en Île-de-France fin 2023. 44 astres d’emploi : 24 bassins d’emploi hors Paris (France Travail 2026) et 20 arrondissements de Paris, soit 100 % des postes salariés. 1 285 points de départ possibles. Un exemple, l’éclipse : depuis Viroflay, en transports en commun, avec 60 minutes ou moins par sens, 2 121 991 postes salariés sont atteints aller et retour pour la journée-type 9h-17h (33,1 %), 686 341 pour la journée-type 14h-22h (10,7 %). Les pourcentages sont calculés sur les postes salariés d’Île-de-France hors la commune de départ (4 225 postes, dont le trajet n’est pas mesuré). Seul l’horaire change. Sources : INSEE Flores 2023, IDFM GTFS (offre du mardi 17 novembre 2026), France Travail (bassins d’emploi 2026), © les contributeurs d’OpenStreetMap (ODbL), API Géo, INSEE RP 2023. Site : https://jolly-cliff-07f518503.5.azurestaticapps.net Dépôt : https://github.com/hackathons-mobilites/hackaviz_2026",
+ "texte_alternatif_image_de_partage": "Slide STARWAY : le ciel à 44 astres d'emploi d'Île-de-France, aux mêmes places pour tous, 6 418 845 postes salariés recensés par l'INSEE. Exemple : depuis Viroflay, 60 minutes de trajet par sens en transports en commun, 33,1 % des postes salariés atteints aller et retour en 9h-17h, 10,7 % en 14h-22h (hors commune de départ)."
+}

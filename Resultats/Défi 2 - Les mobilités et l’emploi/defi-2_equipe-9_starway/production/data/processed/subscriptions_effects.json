@@ -1,0 +1,126 @@
+{
+ "generated_at": "2026-11-12T08:18:11Z",
+ "itineraries_communes": 1285,
+ "transit": {
+  "legs_with_itinerary": 126945,
+  "tickets_status": {
+   "ok": 126122,
+   "unknown": 823
+  },
+  "legs_airport_ticket": 3055,
+  "legs_orlyval": 62,
+  "legs_ter": 5295,
+  "legs_unpriced_agency": 15,
+  "by_option": {
+   "navigo_month": {
+    "included": 126060,
+    "extra": 62,
+    "unknown": 823
+   },
+   "navigo_week": {
+    "included": 126060,
+    "extra": 62,
+    "unknown": 823
+   },
+   "navigo_annual": {
+    "included": 126060,
+    "extra": 62,
+    "unknown": 823
+   },
+   "navigo_senior": {
+    "included": 126060,
+    "extra": 62,
+    "unknown": 823
+   },
+   "imagine_r_student": {
+    "included": 126060,
+    "extra": 62,
+    "unknown": 823
+   },
+   "solidarity75_month": {
+    "included": 117785,
+    "extra": 0,
+    "unknown": 9160
+   },
+   "solidarity75_week": {
+    "included": 126060,
+    "extra": 62,
+    "unknown": 823
+   },
+   "solidarity_free": {
+    "included": 117785,
+    "extra": 0,
+    "unknown": 9160
+   },
+   "insertion_free": {
+    "included": 120769,
+    "extra": 61,
+    "unknown": 6115
+   },
+   "amethyste_1_5": {
+    "included": 120769,
+    "extra": 61,
+    "unknown": 6115
+   },
+   "navigo_day": {
+    "included": 117785,
+    "extra": 3045,
+    "unknown": 6115
+   }
+  },
+  "round_trips": 52092,
+  "round_trip_ticket_eur": {
+   "known": 51290,
+   "min": 0.0,
+   "max": 38.25,
+   "median": 8.7
+  },
+  "round_trips_above_day_pass": {
+   "title": "navigo_day",
+   "price_eur": 12.3,
+   "round_trips_known": 51290,
+   "round_trips_above": 2655
+  }
+ },
+ "velib": {
+  "round_trips": 2262,
+  "rides": 4524,
+  "by_offer": {
+   "ticket_v": {
+    "included": 0,
+    "paid": 1507,
+    "unknown": 3017,
+    "round_trips_both_included": 0
+   },
+   "v_libre": {
+    "included": 0,
+    "paid": 4524,
+    "unknown": 0,
+    "round_trips_both_included": 0
+   },
+   "v_plus": {
+    "included": 715,
+    "paid": 3809,
+    "unknown": 0,
+    "round_trips_both_included": 336
+   },
+   "v_max": {
+    "included": 2469,
+    "paid": 2055,
+    "unknown": 0,
+    "round_trips_both_included": 1202
+   },
+   "pass_24h": {
+    "included": 715,
+    "paid": 3809,
+    "unknown": 0,
+    "round_trips_both_included": 336
+   }
+  },
+  "ride_min": {
+   "min": 1,
+   "median": 56,
+   "max": 113
+  }
+ }
+}

@@ -1,0 +1,198 @@
+/*
+ * Trajets alternatifs (D-055), dans le pli « Coût et carbone ». Couleurs : variables de styles.css (accent d'interface pour les onglets ;
+ * l'or reste réservé au gain démontré, aucune couleur de donnée ici hormis celle de la ligne GTFS). Aucune animation : un onglet s'affiche
+ * d'un coup, en mouvement normal comme en mouvement réduit.
+ */
+.pf-alt {
+  margin-top: var(--space-4);
+}
+
+.alt-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.proof-panel.pf .alt-title h3.pf-label {
+  margin: 0;
+}
+
+.alt-tip-line {
+  display: block;
+}
+
+.alt-tip-line + .alt-tip-line {
+  margin-top: var(--space-1);
+}
+
+/* Sens du trajet : deux boutons, l'état se lit aussi au soulignement (pas seulement à la couleur) */
+.alt-dir {
+  display: inline-flex;
+  gap: var(--space-1);
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.alt-dir-btn {
+  min-height: 32px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  font-size: 13px;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+.alt-dir-btn[aria-pressed='true'] {
+  border-color: var(--accent);
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.alt-dir-btn:focus-visible,
+.alt-tab:focus-visible,
+.alt-panel:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Onglets : trois colonnes égales, le libellé passe à la ligne plutôt que de sortir à 390 px */
+.alt-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-1);
+  border-bottom: 1px solid var(--line);
+}
+
+.alt-tab {
+  min-height: 44px;
+  padding: var(--space-1) 2px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  font-size: 13px;
+  line-height: 1.2;
+  color: var(--text-dim);
+  text-align: center;
+  cursor: pointer;
+}
+
+.alt-tab[aria-selected='true'] {
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.alt-panel {
+  padding-top: var(--space-2);
+}
+
+.alt-state {
+  margin: var(--space-2) 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.alt-same {
+  margin: var(--space-2) 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.alt-compare {
+  margin: 0 0 var(--space-2);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.alt-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin: 0 0 var(--space-1);
+}
+
+.alt-facts dt {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.alt-facts dd {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.alt-note {
+  margin: 0 0 var(--space-1);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-dim);
+}
+
+.alt-legs {
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.alt-leg {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-1) 0 var(--space-1) var(--space-3);
+  border-left: 2px solid var(--line);
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.alt-leg-walk {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px var(--space-2);
+  border-left-style: dashed;
+  color: var(--text-dim);
+}
+
+.alt-leg-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px var(--space-2);
+}
+
+.alt-line {
+  display: inline-block;
+  padding: 1px var(--space-2);
+  border-radius: 4px;
+  background: var(--line);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.alt-leg-time {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+}
+
+.alt-leg-where {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.alt-subs {
+  margin: var(--space-2) 0 0;
+  font-size: 12px;
+  color: var(--text-dim);
+}

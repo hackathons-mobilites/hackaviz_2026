@@ -1,0 +1,43 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:01.470
+Léa est imaginaire,
+
+2
+00:00:01.470 --> 00:00:03.391
+mais ses chiffres sont réels.
+
+3
+00:00:03.391 --> 00:00:04.390
+À vous d’explorer :
+
+4
+00:00:04.390 --> 00:00:05.500
+votre commune,
+
+5
+00:00:05.500 --> 00:00:06.517
+votre heure,
+
+6
+00:00:06.517 --> 00:00:08.226
+votre temps de trajet.
+
+7
+00:00:08.226 --> 00:00:10.630
+Nous vivons tous sous le même ciel.
+
+8
+00:00:10.630 --> 00:00:11.608
+À vous,
+
+9
+00:00:11.608 --> 00:00:12.550
+maintenant,
+
+10
+00:00:12.550 --> 00:00:14.070
+de découvrir vos étoiles.

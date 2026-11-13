@@ -1,0 +1,47 @@
+{
+ "generated_at": "2026-11-04T12:56:33Z",
+ "stops_wanted": 638,
+ "stops_answered": 638,
+ "stops_missing": [],
+ "stops_paginated_incomplete": [],
+ "connections": 8356,
+ "self_connections": 638,
+ "self_duration_s": {
+  "120": 541,
+  "300": 96,
+  "900": 1
+ },
+ "same_stop_transfers_covered": 23851,
+ "same_stop_transfers_total": 24316,
+ "gtfs_pairs_compared": 7712,
+ "gtfs_pairs_equal_duration": 7697,
+ "gtfs_pairs_navitia_minus_gtfs_s": {
+  "min": -277,
+  "max": 168
+ },
+ "journeys_vs_gtfs": {
+  "transfers_with_gtfs_line": 4294,
+  "shorter_than_gtfs_min": 0,
+  "no_gtfs_line": 8,
+  "same_stop": 950,
+  "same_stop_gap_s": {
+   "min": 120.0,
+   "median": 450.0
+  }
+ },
+ "same_stop_min_file": {
+  "stops": 638,
+  "monomodal_in_gtfs": 471,
+  "monomodal_with_duration": 471,
+  "monomodal_without_duration": 0,
+  "monomodal_without_duration_multi_route": 0,
+  "duration_s": {
+   "120": 541,
+   "300": 96,
+   "900": 1
+  }
+ },
+ "requests_sent_this_run": 279,
+ "x_ratelimit_remaining_day": "720",
+ "stopped": null
+}

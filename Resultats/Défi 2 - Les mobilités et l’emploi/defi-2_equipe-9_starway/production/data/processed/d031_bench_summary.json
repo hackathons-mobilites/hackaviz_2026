@@ -1,0 +1,2102 @@
+{
+ "generated_at": "2026-11-04T10:50:20Z",
+ "base": "matrix_walk3000",
+ "bench_dir": "d031_bench",
+ "available": [
+  "r5",
+  "gtfs",
+  "gtfs_navitia"
+ ],
+ "r5": {
+  "communes": 31,
+  "pairs": 1395,
+  "transfer_rules": "r5",
+  "r5_jar_sha256": "977adc23114234c73c7545149f1407aaa2627e4b328095e54b43031456a4cd7a",
+  "out": {
+   "d06": {
+    "n": 465,
+    "both": 264,
+    "changed": 0,
+    "longer": 0,
+    "shorter": 0,
+    "lost": 0,
+    "gained": 0,
+    "delta_median_min": null,
+    "delta_p90_min": null,
+    "delta_max_min": 0.0,
+    "delta_min_min": 0.0
+   },
+   "d09": {
+    "n": 465,
+    "both": 459,
+    "changed": 0,
+    "longer": 0,
+    "shorter": 0,
+    "lost": 0,
+    "gained": 0,
+    "delta_median_min": null,
+    "delta_p90_min": null,
+    "delta_max_min": 0.0,
+    "delta_min_min": 0.0
+   },
+   "d14": {
+    "n": 465,
+    "both": 439,
+    "changed": 0,
+    "longer": 0,
+    "shorter": 0,
+    "lost": 0,
+    "gained": 0,
+    "delta_median_min": null,
+    "delta_p90_min": null,
+    "delta_max_min": 0.0,
+    "delta_min_min": 0.0
+   },
+   "all": {
+    "n": 1395,
+    "both": 1162,
+    "changed": 0,
+    "longer": 0,
+    "shorter": 0,
+    "lost": 0,
+    "gained": 0,
+    "delta_median_min": null,
+    "delta_p90_min": null,
+    "delta_max_min": 0.0,
+    "delta_min_min": 0.0
+   }
+  },
+  "ret": {
+   "d06": {
+    "n": 465,
+    "both": 438,
+    "changed": 0,
+    "longer": 0,
+    "shorter": 0,
+    "lost": 0,
+    "gained": 0,
+    "delta_median_min": null,
+    "delta_p90_min": null,
+    "delta_max_min": 0.0,
+    "delta_min_min": 0.0
+   },
+   "d09": {
+    "n": 465,
+    "both": 460,
+    "changed": 0,
+    "longer": 0,
+    "shorter": 0,
+    "lost": 0,
+    "gained": 0,
+    "delta_median_min": null,
+    "delta_p90_min": null,
+    "delta_max_min": 0.0,
+    "delta_min_min": 0.0
+   },
+   "d14": {
+    "n": 465,
+    "both": 356,
+    "changed": 0,
+    "longer": 0,
+    "shorter": 0,
+    "lost": 0,
+    "gained": 0,
+    "delta_median_min": null,
+    "delta_p90_min": null,
+    "delta_max_min": 0.0,
+    "delta_min_min": 0.0
+   },
+   "all": {
+    "n": 1395,
+    "both": 1254,
+    "changed": 0,
+    "longer": 0,
+    "shorter": 0,
+    "lost": 0,
+    "gained": 0,
+    "delta_median_min": null,
+    "delta_p90_min": null,
+    "delta_max_min": 0.0,
+    "delta_min_min": 0.0
+   }
+  },
+  "verdicts": {
+   "d06": {
+    "30": {
+     "lit_before": 5,
+     "lit_after": 5,
+     "lost": 0,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 29,
+     "lit_after": 29,
+     "lost": 0,
+     "gained": 0
+    },
+    "60": {
+     "lit_before": 81,
+     "lit_after": 81,
+     "lost": 0,
+     "gained": 0
+    }
+   },
+   "d09": {
+    "30": {
+     "lit_before": 9,
+     "lit_after": 9,
+     "lost": 0,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 53,
+     "lit_after": 53,
+     "lost": 0,
+     "gained": 0
+    },
+    "60": {
+     "lit_before": 132,
+     "lit_after": 132,
+     "lost": 0,
+     "gained": 0
+    }
+   },
+   "d14": {
+    "30": {
+     "lit_before": 5,
+     "lit_after": 5,
+     "lost": 0,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 21,
+     "lit_after": 21,
+     "lost": 0,
+     "gained": 0
+    },
+    "60": {
+     "lit_before": 68,
+     "lit_after": 68,
+     "lost": 0,
+     "gained": 0
+    }
+   },
+   "all": {
+    "30": {
+     "lit_before": 19,
+     "lit_after": 19,
+     "lost": 0,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 103,
+     "lit_after": 103,
+     "lost": 0,
+     "gained": 0
+    },
+    "60": {
+     "lit_before": 281,
+     "lit_after": 281,
+     "lost": 0,
+     "gained": 0
+    }
+   }
+  },
+  "noop_identical": true
+ },
+ "gtfs": {
+  "communes": 31,
+  "pairs": 1395,
+  "transfer_rules": "gtfs",
+  "r5_jar_sha256": "977adc23114234c73c7545149f1407aaa2627e4b328095e54b43031456a4cd7a",
+  "out": {
+   "d06": {
+    "n": 465,
+    "both": 262,
+    "changed": 54,
+    "longer": 38,
+    "shorter": 16,
+    "lost": 2,
+    "gained": 0,
+    "delta_median_min": 3.0,
+    "delta_p90_min": 10.0,
+    "delta_max_min": 20.0,
+    "delta_min_min": -24.0
+   },
+   "d09": {
+    "n": 465,
+    "both": 459,
+    "changed": 193,
+    "longer": 157,
+    "shorter": 36,
+    "lost": 0,
+    "gained": 0,
+    "delta_median_min": 4.0,
+    "delta_p90_min": 8.0,
+    "delta_max_min": 15.0,
+    "delta_min_min": -15.0
+   },
+   "d14": {
+    "n": 465,
+    "both": 438,
+    "changed": 150,
+    "longer": 125,
+    "shorter": 25,
+    "lost": 1,
+    "gained": 3,
+    "delta_median_min": 4.0,
+    "delta_p90_min": 8.199999999999989,
+    "delta_max_min": 15.0,
+    "delta_min_min": -20.0
+   },
+   "all": {
+    "n": 1395,
+    "both": 1159,
+    "changed": 397,
+    "longer": 320,
+    "shorter": 77,
+    "lost": 3,
+    "gained": 3,
+    "delta_median_min": 4.0,
+    "delta_p90_min": 8.0,
+    "delta_max_min": 20.0,
+    "delta_min_min": -24.0
+   }
+  },
+  "ret": {
+   "d06": {
+    "n": 465,
+    "both": 435,
+    "changed": 135,
+    "longer": 103,
+    "shorter": 32,
+    "lost": 3,
+    "gained": 2,
+    "delta_median_min": 3.0,
+    "delta_p90_min": 14.0,
+    "delta_max_min": 25.0,
+    "delta_min_min": -19.0
+   },
+   "d09": {
+    "n": 465,
+    "both": 459,
+    "changed": 152,
+    "longer": 118,
+    "shorter": 34,
+    "lost": 1,
+    "gained": 0,
+    "delta_median_min": 3.5,
+    "delta_p90_min": 12.0,
+    "delta_max_min": 19.0,
+    "delta_min_min": -20.0
+   },
+   "d14": {
+    "n": 465,
+    "both": 348,
+    "changed": 60,
+    "longer": 42,
+    "shorter": 18,
+    "lost": 8,
+    "gained": 1,
+    "delta_median_min": 3.0,
+    "delta_p90_min": 14.0,
+    "delta_max_min": 24.0,
+    "delta_min_min": -16.0
+   },
+   "all": {
+    "n": 1395,
+    "both": 1242,
+    "changed": 347,
+    "longer": 263,
+    "shorter": 84,
+    "lost": 12,
+    "gained": 3,
+    "delta_median_min": 3.0,
+    "delta_p90_min": 13.400000000000034,
+    "delta_max_min": 25.0,
+    "delta_min_min": -20.0
+   }
+  },
+  "verdicts": {
+   "d06": {
+    "30": {
+     "lit_before": 5,
+     "lit_after": 5,
+     "lost": 0,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 29,
+     "lit_after": 23,
+     "lost": 6,
+     "gained": 0
+    },
+    "60": {
+     "lit_before": 81,
+     "lit_after": 81,
+     "lost": 3,
+     "gained": 3
+    }
+   },
+   "d09": {
+    "30": {
+     "lit_before": 9,
+     "lit_after": 9,
+     "lost": 0,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 53,
+     "lit_after": 45,
+     "lost": 8,
+     "gained": 0
+    },
+    "60": {
+     "lit_before": 132,
+     "lit_after": 131,
+     "lost": 7,
+     "gained": 6
+    }
+   },
+   "d14": {
+    "30": {
+     "lit_before": 5,
+     "lit_after": 5,
+     "lost": 0,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 21,
+     "lit_after": 19,
+     "lost": 2,
+     "gained": 0
+    },
+    "60": {
+     "lit_before": 68,
+     "lit_after": 67,
+     "lost": 2,
+     "gained": 1
+    }
+   },
+   "all": {
+    "30": {
+     "lit_before": 19,
+     "lit_after": 19,
+     "lost": 0,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 103,
+     "lit_after": 87,
+     "lost": 16,
+     "gained": 0
+    },
+    "60": {
+     "lit_before": 281,
+     "lit_after": 279,
+     "lost": 12,
+     "gained": 10
+    }
+   }
+  }
+ },
+ "gtfs_navitia": {
+  "communes": 419,
+  "pairs": 18855,
+  "transfer_rules": "gtfs_navitia",
+  "r5_jar_sha256": "977adc23114234c73c7545149f1407aaa2627e4b328095e54b43031456a4cd7a",
+  "out": {
+   "d06": {
+    "n": 6285,
+    "both": 2169,
+    "changed": 803,
+    "longer": 664,
+    "shorter": 139,
+    "lost": 145,
+    "gained": 17,
+    "delta_median_min": 5.0,
+    "delta_p90_min": 15.0,
+    "delta_max_min": 45.0,
+    "delta_min_min": -28.0
+   },
+   "d09": {
+    "n": 6285,
+    "both": 5185,
+    "changed": 3484,
+    "longer": 2869,
+    "shorter": 615,
+    "lost": 174,
+    "gained": 45,
+    "delta_median_min": 5.0,
+    "delta_p90_min": 10.0,
+    "delta_max_min": 37.0,
+    "delta_min_min": -30.0
+   },
+   "d14": {
+    "n": 6285,
+    "both": 4300,
+    "changed": 2437,
+    "longer": 2013,
+    "shorter": 424,
+    "lost": 225,
+    "gained": 43,
+    "delta_median_min": 5.0,
+    "delta_p90_min": 12.0,
+    "delta_max_min": 42.0,
+    "delta_min_min": -33.0
+   },
+   "all": {
+    "n": 18855,
+    "both": 11654,
+    "changed": 6724,
+    "longer": 5546,
+    "shorter": 1178,
+    "lost": 544,
+    "gained": 105,
+    "delta_median_min": 5.0,
+    "delta_p90_min": 11.0,
+    "delta_max_min": 45.0,
+    "delta_min_min": -33.0
+   }
+  },
+  "ret": {
+   "d06": {
+    "n": 6285,
+    "both": 4387,
+    "changed": 1594,
+    "longer": 1371,
+    "shorter": 223,
+    "lost": 245,
+    "gained": 48,
+    "delta_median_min": 6.0,
+    "delta_p90_min": 16.0,
+    "delta_max_min": 37.0,
+    "delta_min_min": -32.0
+   },
+   "d09": {
+    "n": 6285,
+    "both": 5004,
+    "changed": 2116,
+    "longer": 1816,
+    "shorter": 300,
+    "lost": 198,
+    "gained": 51,
+    "delta_median_min": 5.0,
+    "delta_p90_min": 15.0,
+    "delta_max_min": 36.0,
+    "delta_min_min": -34.0
+   },
+   "d14": {
+    "n": 6285,
+    "both": 3196,
+    "changed": 810,
+    "longer": 663,
+    "shorter": 147,
+    "lost": 157,
+    "gained": 42,
+    "delta_median_min": 6.0,
+    "delta_p90_min": 19.0,
+    "delta_max_min": 65.0,
+    "delta_min_min": -40.0
+   },
+   "all": {
+    "n": 18855,
+    "both": 12587,
+    "changed": 4520,
+    "longer": 3850,
+    "shorter": 670,
+    "lost": 600,
+    "gained": 141,
+    "delta_median_min": 5.0,
+    "delta_p90_min": 15.0,
+    "delta_max_min": 65.0,
+    "delta_min_min": -40.0
+   }
+  },
+  "verdicts": {
+   "d06": {
+    "30": {
+     "lit_before": 76,
+     "lit_after": 76,
+     "lost": 3,
+     "gained": 3
+    },
+    "45": {
+     "lit_before": 300,
+     "lit_after": 266,
+     "lost": 38,
+     "gained": 4
+    },
+    "60": {
+     "lit_before": 687,
+     "lit_after": 623,
+     "lost": 81,
+     "gained": 17
+    }
+   },
+   "d09": {
+    "30": {
+     "lit_before": 109,
+     "lit_after": 98,
+     "lost": 11,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 431,
+     "lit_after": 382,
+     "lost": 50,
+     "gained": 1
+    },
+    "60": {
+     "lit_before": 1034,
+     "lit_after": 924,
+     "lost": 124,
+     "gained": 14
+    }
+   },
+   "d14": {
+    "30": {
+     "lit_before": 73,
+     "lit_after": 67,
+     "lost": 6,
+     "gained": 0
+    },
+    "45": {
+     "lit_before": 287,
+     "lit_after": 263,
+     "lost": 25,
+     "gained": 1
+    },
+    "60": {
+     "lit_before": 679,
+     "lit_after": 616,
+     "lost": 67,
+     "gained": 4
+    }
+   },
+   "all": {
+    "30": {
+     "lit_before": 258,
+     "lit_after": 241,
+     "lost": 20,
+     "gained": 3
+    },
+    "45": {
+     "lit_before": 1018,
+     "lit_after": 911,
+     "lost": 113,
+     "gained": 6
+    },
+    "60": {
+     "lit_before": 2400,
+     "lit_after": 2163,
+     "lost": 272,
+     "gained": 35
+    }
+   }
+  }
+ },
+ "crosscheck_07d": {
+  "trips": 193,
+  "published_vs_navitia": {
+   "n": 190,
+   "median_signed_min": -0.41000000000000014,
+   "median_abs_min": 1.9000000000000057,
+   "share_within_5_min": 0.7368421052631579,
+   "share_starway_shorter_by_more_than_5": 0.1631578947368421
+  },
+  "r5": {
+   "trips": 186,
+   "published_vs_navitia": {
+    "n": 186,
+    "median_signed_min": -0.45000000000000284,
+    "median_abs_min": 1.8999999999999986,
+    "share_within_5_min": 0.7419354838709677,
+    "share_starway_shorter_by_more_than_5": 0.16666666666666666
+   },
+   "rule_vs_navitia": {
+    "n": 186,
+    "median_signed_min": -0.45000000000000284,
+    "median_abs_min": 1.8999999999999986,
+    "share_within_5_min": 0.7419354838709677,
+    "share_starway_shorter_by_more_than_5": 0.16666666666666666
+   }
+  },
+  "gtfs": {
+   "trips": 185,
+   "published_vs_navitia": {
+    "n": 185,
+    "median_signed_min": -0.45000000000000284,
+    "median_abs_min": 1.8999999999999986,
+    "share_within_5_min": 0.745945945945946,
+    "share_starway_shorter_by_more_than_5": 0.16216216216216217
+   },
+   "rule_vs_navitia": {
+    "n": 185,
+    "median_signed_min": -0.12000000000000455,
+    "median_abs_min": 1.0699999999999932,
+    "share_within_5_min": 0.827027027027027,
+    "share_starway_shorter_by_more_than_5": 0.05405405405405406
+   }
+  },
+  "gtfs_navitia": {
+   "trips": 185,
+   "published_vs_navitia": {
+    "n": 185,
+    "median_signed_min": -0.45000000000000284,
+    "median_abs_min": 1.8999999999999986,
+    "share_within_5_min": 0.745945945945946,
+    "share_starway_shorter_by_more_than_5": 0.16216216216216217
+   },
+   "rule_vs_navitia": {
+    "n": 185,
+    "median_signed_min": 0.21999999999999886,
+    "median_abs_min": 0.9300000000000068,
+    "share_within_5_min": 0.8162162162162162,
+    "share_starway_shorter_by_more_than_5": 0.010810810810810811
+   }
+  }
+ },
+ "story_trips": [
+  {
+   "insee": "78358",
+   "pole": "P_BOULOGNE",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 59.13,
+   "published_min": 53.0,
+   "group": "tour",
+   "r5_min": 53.0,
+   "gtfs_min": 54.0,
+   "gtfs_navitia_min": 58.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_BOULOGNE",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 56.95,
+   "published_min": 53.0,
+   "group": "tour",
+   "r5_min": 53.0,
+   "gtfs_min": 53.0,
+   "gtfs_navitia_min": 57.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_BOULOGNE",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 58.13,
+   "published_min": 55.0,
+   "group": "tour",
+   "r5_min": 55.0,
+   "gtfs_min": 58.0,
+   "gtfs_navitia_min": 58.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_BOULOGNE",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 76.12,
+   "published_min": 76.0,
+   "group": "tour",
+   "r5_min": 76.0,
+   "gtfs_min": 76.0,
+   "gtfs_navitia_min": 76.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_CERGY",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 29.52,
+   "published_min": 29.0,
+   "group": "tour",
+   "r5_min": 29.0,
+   "gtfs_min": 29.0,
+   "gtfs_navitia_min": 29.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_CERGY",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 30.95,
+   "published_min": 31.0,
+   "group": "tour",
+   "r5_min": 31.0,
+   "gtfs_min": 31.0,
+   "gtfs_navitia_min": 31.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_CERGY",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 29.18,
+   "published_min": 29.0,
+   "group": "tour",
+   "r5_min": 29.0,
+   "gtfs_min": 29.0,
+   "gtfs_navitia_min": 29.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_CERGY",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 75.2,
+   "published_min": 75.0,
+   "group": "tour",
+   "r5_min": 75.0,
+   "gtfs_min": 75.0,
+   "gtfs_navitia_min": 75.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_CRETEIL",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 73.07,
+   "published_min": 69.0,
+   "group": "tour",
+   "r5_min": 69.0,
+   "gtfs_min": 69.0,
+   "gtfs_navitia_min": 74.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_CRETEIL",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 77.78,
+   "published_min": 74.0,
+   "group": "tour",
+   "r5_min": 74.0,
+   "gtfs_min": 78.0,
+   "gtfs_navitia_min": 78.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_CRETEIL",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 79.77,
+   "published_min": 76.0,
+   "group": "tour",
+   "r5_min": 76.0,
+   "gtfs_min": 76.0,
+   "gtfs_navitia_min": 76.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_CRETEIL",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 76.12,
+   "published_min": 76.0,
+   "group": "tour",
+   "r5_min": 76.0,
+   "gtfs_min": 76.0,
+   "gtfs_navitia_min": 76.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_DEFENSE",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 28.7,
+   "published_min": 29.0,
+   "group": "tour",
+   "r5_min": 29.0,
+   "gtfs_min": 29.0,
+   "gtfs_navitia_min": 29.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_DEFENSE",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 27.78,
+   "published_min": 28.0,
+   "group": "tour",
+   "r5_min": 28.0,
+   "gtfs_min": 28.0,
+   "gtfs_navitia_min": 28.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_DEFENSE",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 28.32,
+   "published_min": 30.0,
+   "group": "tour",
+   "r5_min": 30.0,
+   "gtfs_min": 30.0,
+   "gtfs_navitia_min": 30.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_DEFENSE",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 49.2,
+   "published_min": 49.0,
+   "group": "tour",
+   "r5_min": 49.0,
+   "gtfs_min": 49.0,
+   "gtfs_navitia_min": 49.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_EVRY",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 93.42,
+   "published_min": 89.0,
+   "group": "tour",
+   "r5_min": 89.0,
+   "gtfs_min": 89.0,
+   "gtfs_navitia_min": 94.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_EVRY",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 94.45,
+   "published_min": 90.0,
+   "group": "tour",
+   "r5_min": 90.0,
+   "gtfs_min": 90.0,
+   "gtfs_navitia_min": 94.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_EVRY",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 83.42,
+   "published_min": 91.0,
+   "group": "tour",
+   "r5_min": 91.0,
+   "gtfs_min": 91.0,
+   "gtfs_navitia_min": 91.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_EVRY",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 106.12,
+   "published_min": 106.0,
+   "group": "tour",
+   "r5_min": 106.0,
+   "gtfs_min": 106.0,
+   "gtfs_navitia_min": 106.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_MARNE",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 63.4,
+   "published_min": 62.0,
+   "group": "tour",
+   "r5_min": 62.0,
+   "gtfs_min": 62.0,
+   "gtfs_navitia_min": 62.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_MARNE",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 65.28,
+   "published_min": 61.0,
+   "group": "tour",
+   "r5_min": 61.0,
+   "gtfs_min": 61.0,
+   "gtfs_navitia_min": 65.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_MARNE",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 60.55,
+   "published_min": 59.0,
+   "group": "tour",
+   "r5_min": 59.0,
+   "gtfs_min": 59.0,
+   "gtfs_navitia_min": 59.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_MARNE",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 76.12,
+   "published_min": 76.0,
+   "group": "tour",
+   "r5_min": 76.0,
+   "gtfs_min": 76.0,
+   "gtfs_navitia_min": 76.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_ORLY",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 67.75,
+   "published_min": 77.0,
+   "group": "tour",
+   "r5_min": 77.0,
+   "gtfs_min": 74.0,
+   "gtfs_navitia_min": 74.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_ORLY",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 65.28,
+   "published_min": 78.0,
+   "group": "tour",
+   "r5_min": 78.0,
+   "gtfs_min": 78.0,
+   "gtfs_navitia_min": 78.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_ORLY",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 69.48,
+   "published_min": 78.0,
+   "group": "tour",
+   "r5_min": 78.0,
+   "gtfs_min": 80.0,
+   "gtfs_navitia_min": 80.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_ORLY",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 76.12,
+   "published_min": 76.0,
+   "group": "tour",
+   "r5_min": 76.0,
+   "gtfs_min": 76.0,
+   "gtfs_navitia_min": 106.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PARIS_EST",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 41.62,
+   "published_min": 48.0,
+   "group": "tour",
+   "r5_min": 48.0,
+   "gtfs_min": 48.0,
+   "gtfs_navitia_min": 48.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PARIS_EST",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 44.45,
+   "published_min": 44.0,
+   "group": "tour",
+   "r5_min": 44.0,
+   "gtfs_min": 44.0,
+   "gtfs_navitia_min": 44.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PARIS_EST",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 44.32,
+   "published_min": 47.0,
+   "group": "tour",
+   "r5_min": 47.0,
+   "gtfs_min": 47.0,
+   "gtfs_navitia_min": 47.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PARIS_EST",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 76.12,
+   "published_min": 76.0,
+   "group": "tour",
+   "r5_min": 76.0,
+   "gtfs_min": 76.0,
+   "gtfs_navitia_min": 76.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PARIS_QCA",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 39.1,
+   "published_min": 42.0,
+   "group": "tour",
+   "r5_min": 42.0,
+   "gtfs_min": 42.0,
+   "gtfs_navitia_min": 45.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PARIS_QCA",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 44.45,
+   "published_min": 44.0,
+   "group": "tour;insight:eclipse_01",
+   "r5_min": 44.0,
+   "gtfs_min": 44.0,
+   "gtfs_navitia_min": 44.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PARIS_QCA",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 40.93,
+   "published_min": 42.0,
+   "group": "tour;insight:late_return_06",
+   "r5_min": 42.0,
+   "gtfs_min": 42.0,
+   "gtfs_navitia_min": 43.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PARIS_QCA",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 76.12,
+   "published_min": 76.0,
+   "group": "tour;insight:eclipse_01;insight:late_return_06",
+   "r5_min": 76.0,
+   "gtfs_min": 76.0,
+   "gtfs_navitia_min": 76.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PARIS_RG",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 55.92,
+   "published_min": 54.0,
+   "group": "tour",
+   "r5_min": 54.0,
+   "gtfs_min": 56.0,
+   "gtfs_navitia_min": 57.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PARIS_RG",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 52.78,
+   "published_min": 53.0,
+   "group": "tour",
+   "r5_min": 53.0,
+   "gtfs_min": 57.0,
+   "gtfs_navitia_min": 57.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PARIS_RG",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 59.1,
+   "published_min": 59.0,
+   "group": "tour",
+   "r5_min": 59.0,
+   "gtfs_min": 60.0,
+   "gtfs_navitia_min": 60.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PARIS_RG",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 76.12,
+   "published_min": 76.0,
+   "group": "tour",
+   "r5_min": 76.0,
+   "gtfs_min": 76.0,
+   "gtfs_navitia_min": 76.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PLAINE",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 48.23,
+   "published_min": 50.0,
+   "group": "tour",
+   "r5_min": 50.0,
+   "gtfs_min": 48.0,
+   "gtfs_navitia_min": 48.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PLAINE",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 48.62,
+   "published_min": 53.0,
+   "group": "tour",
+   "r5_min": 53.0,
+   "gtfs_min": 49.0,
+   "gtfs_navitia_min": 49.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PLAINE",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 53.62,
+   "published_min": 58.0,
+   "group": "tour",
+   "r5_min": 58.0,
+   "gtfs_min": 58.0,
+   "gtfs_navitia_min": 58.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_PLAINE",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 76.12,
+   "published_min": 76.0,
+   "group": "tour",
+   "r5_min": 76.0,
+   "gtfs_min": 76.0,
+   "gtfs_navitia_min": 76.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_ROISSY",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 81.82,
+   "published_min": 82.0,
+   "group": "tour",
+   "r5_min": 82.0,
+   "gtfs_min": 82.0,
+   "gtfs_navitia_min": 88.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_ROISSY",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 90.28,
+   "published_min": 90.0,
+   "group": "tour",
+   "r5_min": 90.0,
+   "gtfs_min": 90.0,
+   "gtfs_navitia_min": 94.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_ROISSY",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 81.32,
+   "published_min": 85.0,
+   "group": "tour",
+   "r5_min": 85.0,
+   "gtfs_min": 85.0,
+   "gtfs_navitia_min": 88.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_ROISSY",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 106.12,
+   "published_min": 106.0,
+   "group": "tour",
+   "r5_min": 106.0,
+   "gtfs_min": 106.0,
+   "gtfs_navitia_min": 106.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_SACLAY",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 78.6,
+   "published_min": 80.0,
+   "group": "tour",
+   "r5_min": 80.0,
+   "gtfs_min": 80.0,
+   "gtfs_navitia_min": 85.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_SACLAY",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 77.78,
+   "published_min": 78.0,
+   "group": "tour",
+   "r5_min": 78.0,
+   "gtfs_min": 78.0,
+   "gtfs_navitia_min": 82.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_SACLAY",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 79.1,
+   "published_min": 75.0,
+   "group": "tour",
+   "r5_min": 75.0,
+   "gtfs_min": 75.0,
+   "gtfs_navitia_min": 80.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_SACLAY",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 76.12,
+   "published_min": 76.0,
+   "group": "tour",
+   "r5_min": 76.0,
+   "gtfs_min": 76.0,
+   "gtfs_navitia_min": 106.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_SQY",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 63.37,
+   "published_min": 63.0,
+   "group": "tour",
+   "r5_min": 63.0,
+   "gtfs_min": 63.0,
+   "gtfs_navitia_min": 63.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_SQY",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 77.78,
+   "published_min": 74.0,
+   "group": "tour",
+   "r5_min": 74.0,
+   "gtfs_min": 74.0,
+   "gtfs_navitia_min": 78.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_SQY",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 63.37,
+   "published_min": 68.0,
+   "group": "tour",
+   "r5_min": 68.0,
+   "gtfs_min": 68.0,
+   "gtfs_navitia_min": 68.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_SQY",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": null,
+   "published_min": 106.0,
+   "group": "tour",
+   "r5_min": 106.0,
+   "gtfs_min": 106.0,
+   "gtfs_navitia_min": 106.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_VERSAILLES",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 59.1,
+   "published_min": 54.0,
+   "group": "tour",
+   "r5_min": 54.0,
+   "gtfs_min": 54.0,
+   "gtfs_navitia_min": 59.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_VERSAILLES",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 65.28,
+   "published_min": 57.0,
+   "group": "tour",
+   "r5_min": 57.0,
+   "gtfs_min": 57.0,
+   "gtfs_navitia_min": 65.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_VERSAILLES",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 53.6,
+   "published_min": 58.0,
+   "group": "tour",
+   "r5_min": 58.0,
+   "gtfs_min": 58.0,
+   "gtfs_navitia_min": 58.0
+  },
+  {
+   "insee": "78358",
+   "pole": "P_VERSAILLES",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 106.12,
+   "published_min": 106.0,
+   "group": "tour",
+   "r5_min": 106.0,
+   "gtfs_min": 106.0,
+   "gtfs_navitia_min": 106.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_BOULOGNE",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 79.13,
+   "published_min": 69.0,
+   "group": "tour",
+   "r5_min": 69.0,
+   "gtfs_min": 74.0,
+   "gtfs_navitia_min": 78.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_BOULOGNE",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 73.9,
+   "published_min": 73.0,
+   "group": "tour",
+   "r5_min": 73.0,
+   "gtfs_min": 73.0,
+   "gtfs_navitia_min": 73.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_BOULOGNE",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 83.13,
+   "published_min": 65.0,
+   "group": "tour",
+   "r5_min": 65.0,
+   "gtfs_min": 78.0,
+   "gtfs_navitia_min": 78.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_BOULOGNE",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 82.9,
+   "published_min": 82.0,
+   "group": "tour",
+   "r5_min": 82.0,
+   "gtfs_min": 82.0,
+   "gtfs_navitia_min": 82.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_CERGY",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 49.18,
+   "published_min": 44.0,
+   "group": "tour",
+   "r5_min": 44.0,
+   "gtfs_min": 54.0,
+   "gtfs_navitia_min": 54.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_CERGY",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 50.9,
+   "published_min": 50.0,
+   "group": "tour",
+   "r5_min": 50.0,
+   "gtfs_min": 50.0,
+   "gtfs_navitia_min": 50.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_CERGY",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 44.18,
+   "published_min": 59.0,
+   "group": "tour",
+   "r5_min": 59.0,
+   "gtfs_min": 64.0,
+   "gtfs_navitia_min": 64.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_CERGY",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 112.9,
+   "published_min": 112.0,
+   "group": "tour",
+   "r5_min": 112.0,
+   "gtfs_min": 112.0,
+   "gtfs_navitia_min": 112.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_CRETEIL",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 90.77,
+   "published_min": 89.0,
+   "group": "tour",
+   "r5_min": 89.0,
+   "gtfs_min": 89.0,
+   "gtfs_navitia_min": 98.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_CRETEIL",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 95.9,
+   "published_min": 86.0,
+   "group": "tour",
+   "r5_min": 86.0,
+   "gtfs_min": 95.0,
+   "gtfs_navitia_min": 95.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_CRETEIL",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 99.77,
+   "published_min": 86.0,
+   "group": "tour",
+   "r5_min": 86.0,
+   "gtfs_min": 96.0,
+   "gtfs_navitia_min": 96.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_CRETEIL",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 112.9,
+   "published_min": 112.0,
+   "group": "tour",
+   "r5_min": 112.0,
+   "gtfs_min": 112.0,
+   "gtfs_navitia_min": 112.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_DEFENSE",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 49.03,
+   "published_min": 42.0,
+   "group": "tour",
+   "r5_min": 42.0,
+   "gtfs_min": 47.0,
+   "gtfs_navitia_min": 49.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_DEFENSE",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 43.9,
+   "published_min": 43.0,
+   "group": "tour",
+   "r5_min": 43.0,
+   "gtfs_min": 43.0,
+   "gtfs_navitia_min": 43.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_DEFENSE",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 46.32,
+   "published_min": 46.0,
+   "group": "tour",
+   "r5_min": 46.0,
+   "gtfs_min": 60.0,
+   "gtfs_navitia_min": 60.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_DEFENSE",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 52.9,
+   "published_min": 52.0,
+   "group": "tour",
+   "r5_min": 52.0,
+   "gtfs_min": 52.0,
+   "gtfs_navitia_min": 52.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_EVRY",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 108.42,
+   "published_min": 101.0,
+   "group": "tour",
+   "r5_min": 101.0,
+   "gtfs_min": 109.0,
+   "gtfs_navitia_min": 109.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_EVRY",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 110.9,
+   "published_min": 105.0,
+   "group": "tour",
+   "r5_min": 105.0,
+   "gtfs_min": 105.0,
+   "gtfs_navitia_min": 110.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_EVRY",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 118.42,
+   "published_min": 106.0,
+   "group": "tour",
+   "r5_min": 106.0,
+   "gtfs_min": null,
+   "gtfs_navitia_min": null
+  },
+  {
+   "insee": "78418",
+   "pole": "P_EVRY",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": null,
+   "published_min": 112.0,
+   "group": "tour",
+   "r5_min": 112.0,
+   "gtfs_min": 112.0,
+   "gtfs_navitia_min": null
+  },
+  {
+   "insee": "78418",
+   "pole": "P_MARNE",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 82.43,
+   "published_min": 77.0,
+   "group": "tour",
+   "r5_min": 77.0,
+   "gtfs_min": 81.0,
+   "gtfs_navitia_min": 81.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_MARNE",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 83.9,
+   "published_min": 73.0,
+   "group": "tour",
+   "r5_min": 73.0,
+   "gtfs_min": 83.0,
+   "gtfs_navitia_min": 83.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_MARNE",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 80.55,
+   "published_min": 78.0,
+   "group": "tour",
+   "r5_min": 78.0,
+   "gtfs_min": 79.0,
+   "gtfs_navitia_min": 79.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_MARNE",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 112.9,
+   "published_min": 111.0,
+   "group": "tour",
+   "r5_min": 111.0,
+   "gtfs_min": 111.0,
+   "gtfs_navitia_min": 111.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_ORLY",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 87.75,
+   "published_min": 97.0,
+   "group": "tour",
+   "r5_min": 97.0,
+   "gtfs_min": 97.0,
+   "gtfs_navitia_min": 97.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_ORLY",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 83.9,
+   "published_min": 94.0,
+   "group": "tour",
+   "r5_min": 94.0,
+   "gtfs_min": 95.0,
+   "gtfs_navitia_min": 95.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_ORLY",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 89.48,
+   "published_min": 93.0,
+   "group": "tour",
+   "r5_min": 93.0,
+   "gtfs_min": 100.0,
+   "gtfs_navitia_min": 100.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_ORLY",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 112.9,
+   "published_min": 112.0,
+   "group": "tour",
+   "r5_min": 112.0,
+   "gtfs_min": 112.0,
+   "gtfs_navitia_min": 112.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PARIS_EST",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 68.95,
+   "published_min": 63.0,
+   "group": "tour",
+   "r5_min": 63.0,
+   "gtfs_min": 70.0,
+   "gtfs_navitia_min": 70.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PARIS_EST",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 62.9,
+   "published_min": 62.0,
+   "group": "tour",
+   "r5_min": 62.0,
+   "gtfs_min": 62.0,
+   "gtfs_navitia_min": 62.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PARIS_EST",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 60.32,
+   "published_min": 65.0,
+   "group": "tour",
+   "r5_min": 65.0,
+   "gtfs_min": 67.0,
+   "gtfs_navitia_min": 67.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PARIS_EST",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 82.9,
+   "published_min": 82.0,
+   "group": "tour",
+   "r5_min": 82.0,
+   "gtfs_min": 82.0,
+   "gtfs_navitia_min": 82.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PARIS_QCA",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 59.1,
+   "published_min": 57.0,
+   "group": "tour",
+   "r5_min": 57.0,
+   "gtfs_min": 62.0,
+   "gtfs_navitia_min": 68.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PARIS_QCA",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 62.9,
+   "published_min": 62.0,
+   "group": "tour;insight:bike_gain_07",
+   "r5_min": 62.0,
+   "gtfs_min": 62.0,
+   "gtfs_navitia_min": 62.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PARIS_QCA",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 60.93,
+   "published_min": 56.0,
+   "group": "tour",
+   "r5_min": 56.0,
+   "gtfs_min": 62.0,
+   "gtfs_navitia_min": 63.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PARIS_QCA",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 82.9,
+   "published_min": 82.0,
+   "group": "tour",
+   "r5_min": 82.0,
+   "gtfs_min": 82.0,
+   "gtfs_navitia_min": 82.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PARIS_RG",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 75.92,
+   "published_min": 68.0,
+   "group": "tour",
+   "r5_min": 68.0,
+   "gtfs_min": 76.0,
+   "gtfs_navitia_min": 76.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PARIS_RG",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 73.68,
+   "published_min": 73.0,
+   "group": "tour",
+   "r5_min": 73.0,
+   "gtfs_min": 73.0,
+   "gtfs_navitia_min": 73.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PARIS_RG",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 79.1,
+   "published_min": 75.0,
+   "group": "tour",
+   "r5_min": 75.0,
+   "gtfs_min": 80.0,
+   "gtfs_navitia_min": 80.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PARIS_RG",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 82.9,
+   "published_min": 82.0,
+   "group": "tour",
+   "r5_min": 82.0,
+   "gtfs_min": 82.0,
+   "gtfs_navitia_min": 82.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PLAINE",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 68.23,
+   "published_min": 68.0,
+   "group": "tour",
+   "r5_min": 68.0,
+   "gtfs_min": 68.0,
+   "gtfs_navitia_min": 68.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PLAINE",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 63.9,
+   "published_min": 63.0,
+   "group": "tour",
+   "r5_min": 63.0,
+   "gtfs_min": 63.0,
+   "gtfs_navitia_min": 63.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PLAINE",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 76.95,
+   "published_min": 68.0,
+   "group": "tour",
+   "r5_min": 68.0,
+   "gtfs_min": 78.0,
+   "gtfs_navitia_min": 73.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_PLAINE",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 82.9,
+   "published_min": 82.0,
+   "group": "tour",
+   "r5_min": 82.0,
+   "gtfs_min": 82.0,
+   "gtfs_navitia_min": 82.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_ROISSY",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 96.82,
+   "published_min": 97.0,
+   "group": "tour",
+   "r5_min": 97.0,
+   "gtfs_min": 103.0,
+   "gtfs_navitia_min": 103.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_ROISSY",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 105.9,
+   "published_min": 105.0,
+   "group": "tour",
+   "r5_min": 105.0,
+   "gtfs_min": 105.0,
+   "gtfs_navitia_min": 110.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_ROISSY",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 113.65,
+   "published_min": 98.0,
+   "group": "tour",
+   "r5_min": 98.0,
+   "gtfs_min": 108.0,
+   "gtfs_navitia_min": 115.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_ROISSY",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 112.9,
+   "published_min": 112.0,
+   "group": "tour",
+   "r5_min": 112.0,
+   "gtfs_min": 112.0,
+   "gtfs_navitia_min": 112.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_SACLAY",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 93.05,
+   "published_min": 100.0,
+   "group": "tour",
+   "r5_min": 100.0,
+   "gtfs_min": 100.0,
+   "gtfs_navitia_min": 99.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_SACLAY",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 95.9,
+   "published_min": 94.0,
+   "group": "tour",
+   "r5_min": 94.0,
+   "gtfs_min": 95.0,
+   "gtfs_navitia_min": 98.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_SACLAY",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 99.1,
+   "published_min": 95.0,
+   "group": "tour",
+   "r5_min": 95.0,
+   "gtfs_min": 95.0,
+   "gtfs_navitia_min": 100.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_SACLAY",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 112.9,
+   "published_min": 112.0,
+   "group": "tour",
+   "r5_min": 112.0,
+   "gtfs_min": 112.0,
+   "gtfs_navitia_min": 112.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_SQY",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 88.37,
+   "published_min": 78.0,
+   "group": "tour",
+   "r5_min": 78.0,
+   "gtfs_min": 88.0,
+   "gtfs_navitia_min": 88.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_SQY",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 95.9,
+   "published_min": 86.0,
+   "group": "tour",
+   "r5_min": 86.0,
+   "gtfs_min": 94.0,
+   "gtfs_navitia_min": 95.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_SQY",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 83.37,
+   "published_min": 78.0,
+   "group": "tour",
+   "r5_min": 78.0,
+   "gtfs_min": 83.0,
+   "gtfs_navitia_min": 88.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_SQY",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": null,
+   "published_min": null,
+   "group": "tour",
+   "r5_min": null,
+   "gtfs_min": null,
+   "gtfs_navitia_min": null
+  },
+  {
+   "insee": "78418",
+   "pole": "P_VERSAILLES",
+   "day": "d09",
+   "dir": "out",
+   "navitia_min": 84.1,
+   "published_min": 69.0,
+   "group": "tour",
+   "r5_min": 69.0,
+   "gtfs_min": 74.0,
+   "gtfs_navitia_min": 84.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_VERSAILLES",
+   "day": "d09",
+   "dir": "ret",
+   "navitia_min": 83.9,
+   "published_min": 73.0,
+   "group": "tour",
+   "r5_min": 73.0,
+   "gtfs_min": 73.0,
+   "gtfs_navitia_min": 83.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_VERSAILLES",
+   "day": "d14",
+   "dir": "out",
+   "navitia_min": 73.6,
+   "published_min": 68.0,
+   "group": "tour",
+   "r5_min": 68.0,
+   "gtfs_min": 73.0,
+   "gtfs_navitia_min": 78.0
+  },
+  {
+   "insee": "78418",
+   "pole": "P_VERSAILLES",
+   "day": "d14",
+   "dir": "ret",
+   "navitia_min": 112.9,
+   "published_min": 112.0,
+   "group": "tour",
+   "r5_min": 112.0,
+   "gtfs_min": 112.0,
+   "gtfs_navitia_min": 112.0
+  }
+ ]
+}

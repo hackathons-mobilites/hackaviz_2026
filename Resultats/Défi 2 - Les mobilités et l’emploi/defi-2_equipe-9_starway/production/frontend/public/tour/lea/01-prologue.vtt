@@ -1,0 +1,73 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:01.314
+C’est l’aube.
+
+2
+00:00:01.314 --> 00:00:03.350
+Maisons-Laffitte dort encore,
+
+3
+00:00:03.350 --> 00:00:04.571
+ou presque.
+
+4
+00:00:04.571 --> 00:00:05.470
+Les mêmes étoiles,
+
+5
+00:00:05.470 --> 00:00:08.554
+pour plus de 12 millions d’habitants
+d’Île-de-France.
+
+6
+00:00:08.554 --> 00:00:10.630
+Mais pas toutes à portée de main.
+
+7
+00:00:10.630 --> 00:00:11.608
+Voici Léa,
+
+8
+00:00:11.608 --> 00:00:12.990
+une habitante imaginaire,
+
+9
+00:00:12.990 --> 00:00:15.650
+sous un ciel bien réel.
+
+10
+00:00:15.650 --> 00:00:17.990
+Léa cherche un emploi.
+
+11
+00:00:17.990 --> 00:00:19.150
+Elle n’a pas de voiture,
+
+12
+00:00:19.150 --> 00:00:19.990
+mais un vélo,
+
+13
+00:00:19.990 --> 00:00:21.750
+pour plus tard.
+
+14
+00:00:21.750 --> 00:00:22.555
+D’abord,
+
+15
+00:00:22.555 --> 00:00:24.481
+seulement les transports en commun :
+
+16
+00:00:24.481 --> 00:00:26.350
+quels emplois peut-elle rejoindre ?
+
+17
+00:00:26.350 --> 00:00:28.270
+Et qu’est-ce qui pourrait élargir son
+horizon ?

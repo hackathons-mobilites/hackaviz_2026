@@ -1,0 +1,380 @@
+{
+ "tour": "lea",
+ "stem": "05-acte2-recrutement",
+ "mp3Sha256": "466d8034f8a2a691c8b72916d511d269864877cc12aa7160396618bffc651c64",
+ "text": "À droite, plus bas : les projets de recrutement. Léa vise un poste d’aide de cuisine. Dans le bassin d’emploi T1 Paris, qui couvre tout Paris, les employeurs en prévoient au moins 47 000 dans sa famille de métiers : les fonctions liées à la vente, au tourisme et aux services. Ce sont les recrutements prévus pour 2026, d’après l’enquête BMO de France Travail. Ces projets sont déclarés par les employeurs.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "À droite, Plus bas, les projets de recrutement. Léa vise un poste d'aide de cuisine dans le bassin d'emploi t un Paris qui couvre tout Paris, les employeurs en prévoient au moins 47000 dans sa famille de métiers, les fonctions liées à la vente, au tourisme et au service, ce sont les recrutements prévus pour 2026. D'après l'enquête BMO de France travaille, ces projets sont déclarés par les employeurs.",
+ "words": [
+  {
+   "word": "à",
+   "startMs": 70,
+   "endMs": 190
+  },
+  {
+   "word": "droite",
+   "startMs": 190,
+   "endMs": 510
+  },
+  {
+   "word": "plus",
+   "startMs": 510,
+   "endMs": 710
+  },
+  {
+   "word": "bas",
+   "startMs": 710,
+   "endMs": 950
+  },
+  {
+   "word": "les",
+   "startMs": 950,
+   "endMs": 1110
+  },
+  {
+   "word": "projets",
+   "startMs": 1110,
+   "endMs": 1470
+  },
+  {
+   "word": "de",
+   "startMs": 1470,
+   "endMs": 1510
+  },
+  {
+   "word": "recrutement",
+   "startMs": 1510,
+   "endMs": 2110
+  },
+  {
+   "word": "léa",
+   "startMs": 2350,
+   "endMs": 2710
+  },
+  {
+   "word": "vise",
+   "startMs": 2710,
+   "endMs": 2990
+  },
+  {
+   "word": "un",
+   "startMs": 2990,
+   "endMs": 3150
+  },
+  {
+   "word": "poste",
+   "startMs": 3150,
+   "endMs": 3550
+  },
+  {
+   "word": "d'aide",
+   "startMs": 3550,
+   "endMs": 3750
+  },
+  {
+   "word": "de",
+   "startMs": 3750,
+   "endMs": 3830
+  },
+  {
+   "word": "cuisine",
+   "startMs": 3870,
+   "endMs": 4350
+  },
+  {
+   "word": "dans",
+   "startMs": 4350,
+   "endMs": 4510
+  },
+  {
+   "word": "le",
+   "startMs": 4510,
+   "endMs": 4550
+  },
+  {
+   "word": "bassin",
+   "startMs": 4550,
+   "endMs": 4870
+  },
+  {
+   "word": "d'emploi",
+   "startMs": 4870,
+   "endMs": 5190
+  },
+  {
+   "word": "t",
+   "startMs": 5190,
+   "endMs": 5310
+  },
+  {
+   "word": "un",
+   "startMs": 5310,
+   "endMs": 5430
+  },
+  {
+   "word": "paris",
+   "startMs": 5430,
+   "endMs": 5710
+  },
+  {
+   "word": "qui",
+   "startMs": 5710,
+   "endMs": 5830
+  },
+  {
+   "word": "couvre",
+   "startMs": 5830,
+   "endMs": 6150
+  },
+  {
+   "word": "tout",
+   "startMs": 6150,
+   "endMs": 6390
+  },
+  {
+   "word": "paris",
+   "startMs": 6390,
+   "endMs": 6750
+  },
+  {
+   "word": "les",
+   "startMs": 6910,
+   "endMs": 7110
+  },
+  {
+   "word": "employeurs",
+   "startMs": 7110,
+   "endMs": 7470
+  },
+  {
+   "word": "en",
+   "startMs": 7470,
+   "endMs": 7550
+  },
+  {
+   "word": "prévoient",
+   "startMs": 7550,
+   "endMs": 7950
+  },
+  {
+   "word": "au",
+   "startMs": 7950,
+   "endMs": 7990
+  },
+  {
+   "word": "moins",
+   "startMs": 7990,
+   "endMs": 8230
+  },
+  {
+   "word": "quarante",
+   "startMs": 8230,
+   "endMs": 8630
+  },
+  {
+   "word": "sept",
+   "startMs": 8630,
+   "endMs": 8910
+  },
+  {
+   "word": "mille",
+   "startMs": 8910,
+   "endMs": 9150
+  },
+  {
+   "word": "dans",
+   "startMs": 9150,
+   "endMs": 9350
+  },
+  {
+   "word": "sa",
+   "startMs": 9350,
+   "endMs": 9550
+  },
+  {
+   "word": "famille",
+   "startMs": 9550,
+   "endMs": 9870
+  },
+  {
+   "word": "de",
+   "startMs": 9870,
+   "endMs": 9950
+  },
+  {
+   "word": "métiers",
+   "startMs": 9950,
+   "endMs": 10470
+  },
+  {
+   "word": "les",
+   "startMs": 10630,
+   "endMs": 10950
+  },
+  {
+   "word": "fonctions",
+   "startMs": 10950,
+   "endMs": 11350
+  },
+  {
+   "word": "liées",
+   "startMs": 11350,
+   "endMs": 11750
+  },
+  {
+   "word": "à",
+   "startMs": 11750,
+   "endMs": 11870
+  },
+  {
+   "word": "la",
+   "startMs": 11870,
+   "endMs": 11990
+  },
+  {
+   "word": "vente",
+   "startMs": 11990,
+   "endMs": 12510
+  },
+  {
+   "word": "au",
+   "startMs": 12510,
+   "endMs": 12670
+  },
+  {
+   "word": "tourisme",
+   "startMs": 12670,
+   "endMs": 13150
+  },
+  {
+   "word": "et",
+   "startMs": 13150,
+   "endMs": 13270
+  },
+  {
+   "word": "au",
+   "startMs": 13270,
+   "endMs": 13390
+  },
+  {
+   "word": "service",
+   "startMs": 13390,
+   "endMs": 13790
+  },
+  {
+   "word": "ce",
+   "startMs": 13790,
+   "endMs": 13990
+  },
+  {
+   "word": "sont",
+   "startMs": 14190,
+   "endMs": 14590
+  },
+  {
+   "word": "les",
+   "startMs": 14590,
+   "endMs": 14710
+  },
+  {
+   "word": "recrutements",
+   "startMs": 14710,
+   "endMs": 15270
+  },
+  {
+   "word": "prévus",
+   "startMs": 15270,
+   "endMs": 15750
+  },
+  {
+   "word": "pour",
+   "startMs": 15990,
+   "endMs": 16230
+  },
+  {
+   "word": "deux",
+   "startMs": 16230,
+   "endMs": 16310
+  },
+  {
+   "word": "mille",
+   "startMs": 16310,
+   "endMs": 16470
+  },
+  {
+   "word": "vingt",
+   "startMs": 16470,
+   "endMs": 16630
+  },
+  {
+   "word": "six",
+   "startMs": 16630,
+   "endMs": 16870
+  },
+  {
+   "word": "d'après",
+   "startMs": 16870,
+   "endMs": 17150
+  },
+  {
+   "word": "l'enquête",
+   "startMs": 17150,
+   "endMs": 17510
+  },
+  {
+   "word": "bmo",
+   "startMs": 17510,
+   "endMs": 18030
+  },
+  {
+   "word": "de",
+   "startMs": 18030,
+   "endMs": 18230
+  },
+  {
+   "word": "france",
+   "startMs": 18230,
+   "endMs": 18510
+  },
+  {
+   "word": "travaille",
+   "startMs": 18510,
+   "endMs": 18950
+  },
+  {
+   "word": "ces",
+   "startMs": 19230,
+   "endMs": 19470
+  },
+  {
+   "word": "projets",
+   "startMs": 19470,
+   "endMs": 19790
+  },
+  {
+   "word": "sont",
+   "startMs": 19790,
+   "endMs": 19870
+  },
+  {
+   "word": "déclarés",
+   "startMs": 19870,
+   "endMs": 20430
+  },
+  {
+   "word": "par",
+   "startMs": 20510,
+   "endMs": 20710
+  },
+  {
+   "word": "les",
+   "startMs": 20710,
+   "endMs": 20790
+  },
+  {
+   "word": "employeurs",
+   "startMs": 20830,
+   "endMs": 21430
+  }
+ ]
+}

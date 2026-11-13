@@ -1,0 +1,1156 @@
+{
+ "generated_at": "2026-11-09T23:39:19Z",
+ "service_date": "2026-11-17",
+ "walk_setting": "normal",
+ "source_itineraries": "data/interim/itineraries_walk3000_d031_b44",
+ "gtfs_sha256": "e990debabf77bec57569468486e7a73129de91678edb07ee6d8f448ebb4e6eb0",
+ "transfers_txt": {
+  "rows": 191304,
+  "transfer_type_values": [
+   "2"
+  ],
+  "min_s": 120,
+  "median_s": 377.0,
+  "max_s": 5507,
+  "over_3600_s": 6,
+  "self_pairs": 0,
+  "from_location_types": {
+   "0": 191304
+  },
+  "to_location_types": {
+   "0": 191304
+  },
+  "duplicate_pairs": 0
+ },
+ "navitia_connections": {
+  "file": "data/processed/navitia_connections.csv",
+  "pairs_used": 650
+ },
+ "communes": 1285,
+ "itineraries": 126945,
+ "transfers_checked": 215853,
+ "transfer_status_gtfs": {
+  "ok": 167906,
+  "no_line": 7807,
+  "same_stop": 40140
+ },
+ "transfer_status_reference": {
+  "ok": 204891,
+  "no_line": 7807,
+  "same_stop": 3140,
+  "short": 15
+ },
+ "transfer_same_parent_by_status": {
+  "no_line": 123,
+  "ok": 140220,
+  "same_stop": 40140
+ },
+ "no_line_with_parent_pair_listed": 4078,
+ "short_missing_s": {
+  "median": null,
+  "p90": null,
+  "max": null,
+  "le_60": 0,
+  "le_120": 0
+ },
+ "short_on_demand_side": 0,
+ "same_stop": {
+  "transfers": 40140,
+  "monomodal_stop_place": 34446,
+  "distinct_stops": 887,
+  "available_s_quantiles": {
+   "0.1": 210.0,
+   "0.25": 320.0,
+   "0.5": 406.0
+  },
+  "with_navitia_duration": 37000,
+  "short_vs_navitia": 15,
+  "note": "aucune ligne transfers.txt ne relie un arrêt à lui-même : pas de minimum dans le GTFS"
+ },
+ "navitia_reference_transfers": {
+  "n": 37000,
+  "short": 15
+ },
+ "trip_status": {
+  "gtfs": {
+   "no_transfer": 9906,
+   "verified": 75784,
+   "partly_unverified": 41255
+  },
+  "reference": {
+   "no_transfer": 9906,
+   "verified": 106526,
+   "partly_unverified": 10498,
+   "short": 15
+  }
+ },
+ "by_day": {
+  "gtfs": {
+   "d06": {
+    "itineraries": 33196,
+    "with_transfer": 29757,
+    "short": 0,
+    "short_out": 0,
+    "short_ret": 0,
+    "verdicts": {
+     "30": {
+      "lit": 411,
+      "at_risk": 0
+     },
+     "45": {
+      "lit": 1298,
+      "at_risk": 0
+     },
+     "60": {
+      "lit": 3009,
+      "at_risk": 0
+     }
+    }
+   },
+   "d09": {
+    "itineraries": 58394,
+    "with_transfer": 55370,
+    "short": 0,
+    "short_out": 0,
+    "short_ret": 0,
+    "verdicts": {
+     "30": {
+      "lit": 533,
+      "at_risk": 0
+     },
+     "45": {
+      "lit": 1727,
+      "at_risk": 0
+     },
+     "60": {
+      "lit": 4157,
+      "at_risk": 0
+     }
+    }
+   },
+   "d14": {
+    "itineraries": 35355,
+    "with_transfer": 31912,
+    "short": 0,
+    "short_out": 0,
+    "short_ret": 0,
+    "verdicts": {
+     "30": {
+      "lit": 413,
+      "at_risk": 0
+     },
+     "45": {
+      "lit": 1329,
+      "at_risk": 0
+     },
+     "60": {
+      "lit": 3042,
+      "at_risk": 0
+     }
+    }
+   }
+  },
+  "reference": {
+   "d06": {
+    "itineraries": 33196,
+    "with_transfer": 29757,
+    "short": 0,
+    "short_out": 0,
+    "short_ret": 0,
+    "verdicts": {
+     "30": {
+      "lit": 411,
+      "at_risk": 0
+     },
+     "45": {
+      "lit": 1298,
+      "at_risk": 0
+     },
+     "60": {
+      "lit": 3009,
+      "at_risk": 0
+     }
+    }
+   },
+   "d09": {
+    "itineraries": 58394,
+    "with_transfer": 55370,
+    "short": 15,
+    "short_out": 0,
+    "short_ret": 15,
+    "verdicts": {
+     "30": {
+      "lit": 533,
+      "at_risk": 0
+     },
+     "45": {
+      "lit": 1727,
+      "at_risk": 0
+     },
+     "60": {
+      "lit": 4157,
+      "at_risk": 0
+     }
+    }
+   },
+   "d14": {
+    "itineraries": 35355,
+    "with_transfer": 31912,
+    "short": 0,
+    "short_out": 0,
+    "short_ret": 0,
+    "verdicts": {
+     "30": {
+      "lit": 413,
+      "at_risk": 0
+     },
+     "45": {
+      "lit": 1329,
+      "at_risk": 0
+     },
+     "60": {
+      "lit": 3042,
+      "at_risk": 0
+     }
+    }
+   }
+  }
+ },
+ "by_pole": {
+  "gtfs": {
+   "BE_1107_75101": {
+    "name": "Paris 1er Arrondissement",
+    "itineraries": 3880,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75102": {
+    "name": "Paris 2e Arrondissement",
+    "itineraries": 3888,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75103": {
+    "name": "Paris 3e Arrondissement",
+    "itineraries": 3809,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75104": {
+    "name": "Paris 4e Arrondissement",
+    "itineraries": 4064,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75105": {
+    "name": "Paris 5e Arrondissement",
+    "itineraries": 4007,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75106": {
+    "name": "Paris 6e Arrondissement",
+    "itineraries": 3750,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75107": {
+    "name": "Paris 7e Arrondissement",
+    "itineraries": 3608,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75108": {
+    "name": "Paris 8e Arrondissement",
+    "itineraries": 3959,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75109": {
+    "name": "Paris 9e Arrondissement",
+    "itineraries": 4017,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75110": {
+    "name": "Paris 10e Arrondissement",
+    "itineraries": 3937,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75111": {
+    "name": "Paris 11e Arrondissement",
+    "itineraries": 3888,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75112": {
+    "name": "Paris 12e Arrondissement",
+    "itineraries": 3973,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75113": {
+    "name": "Paris 13e Arrondissement",
+    "itineraries": 3600,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75114": {
+    "name": "Paris 14e Arrondissement",
+    "itineraries": 3668,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75115": {
+    "name": "Paris 15e Arrondissement",
+    "itineraries": 3477,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75116": {
+    "name": "Paris 16e Arrondissement",
+    "itineraries": 2950,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75117": {
+    "name": "Paris 17e Arrondissement",
+    "itineraries": 3502,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75118": {
+    "name": "Paris 18e Arrondissement",
+    "itineraries": 3763,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75119": {
+    "name": "Paris 19e Arrondissement",
+    "itineraries": 3753,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75120": {
+    "name": "Paris 20e Arrondissement",
+    "itineraries": 3112,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1108": {
+    "name": "Sud 77",
+    "itineraries": 1712,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1109": {
+    "name": "Nord Est 77",
+    "itineraries": 1616,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1115": {
+    "name": "Centre 77",
+    "itineraries": 1685,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1116": {
+    "name": "Est 77",
+    "itineraries": 395,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1117": {
+    "name": "Marne la Vallée",
+    "itineraries": 2473,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1118": {
+    "name": "Porte Sud du Grand Paris",
+    "itineraries": 2022,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1119": {
+    "name": "Grand Roissy - Le Bourget",
+    "itineraries": 1877,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1124": {
+    "name": "Sud Ouest Francilien",
+    "itineraries": 1219,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1125": {
+    "name": "Seine-Aval",
+    "itineraries": 2129,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1126": {
+    "name": "Versailles Saclay",
+    "itineraries": 2459,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1127": {
+    "name": "Ouest 95",
+    "itineraries": 2215,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1128": {
+    "name": "Sud 91",
+    "itineraries": 605,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1129": {
+    "name": "T12 Grand-Orly Seine Bièvre",
+    "itineraries": 2008,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1137": {
+    "name": "T2 Vallée Sud Grand Paris",
+    "itineraries": 3287,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1138": {
+    "name": "T5 Boucle Nord de Seine",
+    "itineraries": 3525,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1139": {
+    "name": "T3 Grand Paris Seine Ouest",
+    "itineraries": 2809,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1146": {
+    "name": "T4 Paris Ouest La Défense",
+    "itineraries": 3756,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1147": {
+    "name": "T6 Plaine Commune",
+    "itineraries": 3520,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1148": {
+    "name": "T8 Est Ensemble",
+    "itineraries": 3199,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1149": {
+    "name": "T9 Grand Paris Grand Est",
+    "itineraries": 1897,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1150": {
+    "name": "T11 Grand Paris Sud Est Avenir",
+    "itineraries": 2004,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1151": {
+    "name": "T10 Paris Est Marne et Bois",
+    "itineraries": 2128,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1152": {
+    "name": "Est 95",
+    "itineraries": 3007,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1153": {
+    "name": "Brie-Créçois",
+    "itineraries": 793,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   }
+  },
+  "reference": {
+   "BE_1107_75101": {
+    "name": "Paris 1er Arrondissement",
+    "itineraries": 3880,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75102": {
+    "name": "Paris 2e Arrondissement",
+    "itineraries": 3888,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75103": {
+    "name": "Paris 3e Arrondissement",
+    "itineraries": 3809,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75104": {
+    "name": "Paris 4e Arrondissement",
+    "itineraries": 4064,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75105": {
+    "name": "Paris 5e Arrondissement",
+    "itineraries": 4007,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75106": {
+    "name": "Paris 6e Arrondissement",
+    "itineraries": 3750,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75107": {
+    "name": "Paris 7e Arrondissement",
+    "itineraries": 3608,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75108": {
+    "name": "Paris 8e Arrondissement",
+    "itineraries": 3959,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75109": {
+    "name": "Paris 9e Arrondissement",
+    "itineraries": 4017,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75110": {
+    "name": "Paris 10e Arrondissement",
+    "itineraries": 3937,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75111": {
+    "name": "Paris 11e Arrondissement",
+    "itineraries": 3888,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75112": {
+    "name": "Paris 12e Arrondissement",
+    "itineraries": 3973,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75113": {
+    "name": "Paris 13e Arrondissement",
+    "itineraries": 3600,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75114": {
+    "name": "Paris 14e Arrondissement",
+    "itineraries": 3668,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75115": {
+    "name": "Paris 15e Arrondissement",
+    "itineraries": 3477,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75116": {
+    "name": "Paris 16e Arrondissement",
+    "itineraries": 2950,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75117": {
+    "name": "Paris 17e Arrondissement",
+    "itineraries": 3502,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75118": {
+    "name": "Paris 18e Arrondissement",
+    "itineraries": 3763,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75119": {
+    "name": "Paris 19e Arrondissement",
+    "itineraries": 3753,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1107_75120": {
+    "name": "Paris 20e Arrondissement",
+    "itineraries": 3112,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1108": {
+    "name": "Sud 77",
+    "itineraries": 1712,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1109": {
+    "name": "Nord Est 77",
+    "itineraries": 1616,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1115": {
+    "name": "Centre 77",
+    "itineraries": 1685,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1116": {
+    "name": "Est 77",
+    "itineraries": 395,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1117": {
+    "name": "Marne la Vallée",
+    "itineraries": 2473,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1118": {
+    "name": "Porte Sud du Grand Paris",
+    "itineraries": 2022,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1119": {
+    "name": "Grand Roissy - Le Bourget",
+    "itineraries": 1877,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1124": {
+    "name": "Sud Ouest Francilien",
+    "itineraries": 1219,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1125": {
+    "name": "Seine-Aval",
+    "itineraries": 2129,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1126": {
+    "name": "Versailles Saclay",
+    "itineraries": 2459,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1127": {
+    "name": "Ouest 95",
+    "itineraries": 2215,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1128": {
+    "name": "Sud 91",
+    "itineraries": 605,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1129": {
+    "name": "T12 Grand-Orly Seine Bièvre",
+    "itineraries": 2008,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1137": {
+    "name": "T2 Vallée Sud Grand Paris",
+    "itineraries": 3287,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1138": {
+    "name": "T5 Boucle Nord de Seine",
+    "itineraries": 3525,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1139": {
+    "name": "T3 Grand Paris Seine Ouest",
+    "itineraries": 2809,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1146": {
+    "name": "T4 Paris Ouest La Défense",
+    "itineraries": 3756,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1147": {
+    "name": "T6 Plaine Commune",
+    "itineraries": 3520,
+    "short": 1,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1148": {
+    "name": "T8 Est Ensemble",
+    "itineraries": 3199,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1149": {
+    "name": "T9 Grand Paris Grand Est",
+    "itineraries": 1897,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1150": {
+    "name": "T11 Grand Paris Sud Est Avenir",
+    "itineraries": 2004,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1151": {
+    "name": "T10 Paris Est Marne et Bois",
+    "itineraries": 2128,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1152": {
+    "name": "Est 95",
+    "itineraries": 3007,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   },
+   "BE_1153": {
+    "name": "Brie-Créçois",
+    "itineraries": 793,
+    "short": 0,
+    "at_risk": {
+     "30": 0,
+     "45": 0,
+     "60": 0
+    }
+   }
+  }
+ },
+ "retime": {
+  "gtfs": {
+   "short_trips": 0,
+   "methods": {},
+   "no_bound": 0,
+   "minutes_added_vs_itinerary": {
+    "median": null,
+    "p90": null,
+    "max": null,
+    "zero": 0
+   }
+  },
+  "reference": {
+   "short_trips": 15,
+   "methods": {
+    "forward": 15
+   },
+   "no_bound": 0,
+   "minutes_added_vs_itinerary": {
+    "median": 12.0,
+    "p90": 12.0,
+    "max": 12,
+    "zero": 0
+   }
+  }
+ },
+ "verdicts_rule": "verdict publié allumé (aller et retour <= budget, durées de la matrice) ; « à risque » si la borne recalée d'un sens trop court dépasse le budget, ou s'il n'y en a pas",
+ "top_places_short_gtfs": [],
+ "story": {
+  "78358": {
+   "label": "Maisons-Laffitte (Léa)",
+   "short_trips": [],
+   "verdicts_at_risk": {
+    "gtfs": [],
+    "reference": []
+   }
+  },
+  "78418": {
+   "label": "Montesson (acte 3)",
+   "short_trips": [],
+   "verdicts_at_risk": {
+    "gtfs": [],
+    "reference": []
+   }
+  }
+ },
+ "insights": [],
+ "outputs": {
+  "short_csv": "data/interim/transfer_check_b44/transfer_check_walk3000_short.csv.gz",
+  "all_csv": "data/interim/transfer_check_b44/transfers_all.csv.gz"
+ }
+}

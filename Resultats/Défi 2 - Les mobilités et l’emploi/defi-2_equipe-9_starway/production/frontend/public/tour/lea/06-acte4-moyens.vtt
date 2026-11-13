@@ -1,0 +1,34 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:01.260
+Dans la même fiche,
+
+2
+00:00:01.260 --> 00:00:03.270
+Léa peut comparer les moyens de transport
+:
+
+3
+00:00:03.270 --> 00:00:05.317
+les émissions carbone de chaque trajet.
+
+4
+00:00:05.317 --> 00:00:06.670
+Les solutions complémentaires,
+
+5
+00:00:06.670 --> 00:00:08.110
+comme le vélo jusqu’à la gare,
+
+6
+00:00:08.110 --> 00:00:10.596
+visent à réduire l’utilisation de la
+voiture.
+
+7
+00:00:10.596 --> 00:00:15.110
+Et les lignes déclarées climatisées sont
+utiles face au changement climatique.

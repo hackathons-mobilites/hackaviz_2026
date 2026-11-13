@@ -1,0 +1,155 @@
+/*
+ * Repères visuels de la visite (components/TourMarks.tsx, jeton `tourMark` de theme/tokens.ts).
+ * Calque décoratif : aucun pointeur, au-dessus de la barre de scénario (50), sous les bulles « i » (60) et le choix de la
+ * visite (70). Les sous-titres (31) ne sont jamais recouverts : leur zone est retirée du dessin (masque).
+ */
+.tour-marks {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Voile de l'interface (jamais le ciel) : fondu doux à l'allumage et à l'extinction */
+.tour-marks .tm-veil {
+  opacity: 0;
+  transition: opacity var(--tm-in) var(--tm-ease);
+}
+.tour-marks .tm-veil.is-on {
+  opacity: var(--tm-veil, 0.5);
+}
+
+.tour-marks .tm-line,
+.tour-marks .tm-glow {
+  fill: none;
+  stroke: var(--tm-color);
+}
+
+/* Entrée : fondu et léger resserrement vers l'élément (aucun clignotement, aucune boucle) */
+.tour-marks .tm-shape {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tm-in var(--tm-in) var(--tm-ease) both;
+}
+.tour-marks .is-reduced .tm-shape {
+  animation: tm-in-reduced var(--tm-in-reduced) linear both;
+}
+
+@keyframes tm-in {
+  from {
+    opacity: 0;
+    transform: scale(var(--tm-scale, 1.12));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes tm-in-reduced {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-marks .tm-shape {
+    animation: tm-in-reduced var(--tm-in-reduced) linear both;
+  }
+}
+
+/*
+ * Mode épuré de la visite (retour de l'équipe du 10/11 : « trop d'infos à l'écran »). Pendant la visite seulement (et en
+ * ?record=1) : classe `tour-calm` sur <html>, posée par TourOverlay, retirée à la fin de la visite. Les réglages et boutons
+ * que la visite n'utilise pas sont ATTÉNUÉS (jamais retirés : ils restent utilisables, et reviennent à pleine opacité au
+ * survol et au focus clavier). Jamais touchés : le ciel, le compteur, les sous-titres, les contrôles de la visite, la
+ * commune, la journée-type, la jauge et le mode (la voix en parle), le panneau de preuve et le diptyque.
+ * Un élément entouré par un repère (`data-tour-mark`) n'est jamais atténué.
+ */
+.tour-calm .top-actions > :not(.btn-tour):not(:has(.btn-tour)),
+.tour-calm .bar-toggle,
+.tour-calm .scenario-bar .info-tip,
+.tour-calm .scenario-bar .shift-toggle,
+.tour-calm .scenario-bar .mode-note,
+.tour-calm .zoom-controls,
+.tour-calm .insight-chip,
+.tour-calm .contrast-card,
+.tour-calm .proof-panel .pf-group:not([data-tour-focus]),
+.tour-calm .proof-panel .pf-trace,
+.tour-calm .proof-panel .pf-prov,
+.tour-calm .proof-panel .pf-footer {
+  opacity: var(--tour-calm-opacity, 0.32);
+  transition: opacity var(--tour-calm-ms, 360ms) cubic-bezier(0.25, 1, 0.5, 1);
+}
+.tour-calm .top-actions > :not(.btn-tour):not(:has(.btn-tour)):hover,
+.tour-calm .top-actions > :not(.btn-tour):not(:has(.btn-tour)):focus-within,
+.tour-calm .bar-toggle:hover,
+.tour-calm .bar-toggle:focus-visible,
+.tour-calm .scenario-bar .info-tip:focus-within,
+.tour-calm .scenario-bar .info-tip:hover,
+.tour-calm .scenario-bar .shift-toggle:hover,
+.tour-calm .scenario-bar .shift-toggle:focus-visible,
+.tour-calm .zoom-controls:hover,
+.tour-calm .zoom-controls:focus-within,
+.tour-calm .proof-panel .pf-group:focus-within,
+.tour-calm .proof-panel .pf-group:hover,
+.tour-calm .proof-panel .pf-footer:focus-within,
+.tour-calm .proof-panel .pf-footer:hover {
+  opacity: 1;
+}
+/* un repère l'emporte sur l'atténuation, quelle que soit la règle qui atténue */
+.tour-calm [data-tour-mark] {
+  opacity: 1 !important;
+}
+
+/*
+ * Retour de Nicolas du 12/11 (« il met du violet mais ça reste grisé, faudrait le faire briller aussi ») : l'élément entouré passe
+ * au texte plein (ses libellés atténués s'éclaircissent) et, dans le panneau, un léger fond d'accent l'éclaire de l'intérieur.
+ * Décoratif, retiré avec l'attribut à la fin du repère ; aucune taille ne change.
+ */
+[data-tour-mark] {
+  --text-dim: var(--text);
+}
+.proof-panel [data-tour-mark] {
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  box-shadow: inset 0 0 22px color-mix(in srgb, var(--accent) 16%, transparent);
+  border-radius: 10px;
+  transition:
+    background-color var(--tm-in, 360ms) cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow var(--tm-in, 360ms) cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/*
+ * Visite seulement : prénom fictif du personnage (« Léa ») sous le nom de l'étoile-guide (PoleLayer, `TourScript.persona`),
+ * petit, dans la couleur de l'étoile-guide. Place réservée par le placement du nom (`guideLabel.personaPx`). Décoratif : la
+ * voix et les sous-titres le disent.
+ */
+.guide-persona {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2px;
+  padding: 0 6px;
+  border-radius: 4px;
+  /* même fond que le nom (lisible sur un astre allumé) */
+  background: rgba(8, 14, 32, 0.92);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: var(--guide);
+  pointer-events: none;
+  animation: tm-persona-in 360ms cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+@keyframes tm-persona-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

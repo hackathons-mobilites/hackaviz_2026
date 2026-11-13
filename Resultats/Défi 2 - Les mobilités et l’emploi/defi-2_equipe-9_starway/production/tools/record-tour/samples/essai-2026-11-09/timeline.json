@@ -1,0 +1,90 @@
+{
+ "_comment": "Écrit par tools/record-tour. Temps en millisecondes depuis l'époque Unix (horloge de la machine).",
+ "tourId": "lea-video",
+ "viewport": {
+  "width": 1920,
+  "height": 1080
+ },
+ "fps": 30,
+ "headed": false,
+ "playwright": "1.64.1",
+ "videoStartedAt": 1794246272023,
+ "closeRequestedAt": 1794246438527,
+ "timedOut": false,
+ "events": [
+  {
+   "type": "ready",
+   "tourId": "lea-video",
+   "t": 1794246281681.9001,
+   "receivedAt": 1794246281690
+  },
+  {
+   "type": "step",
+   "index": 0,
+   "id": "prologue",
+   "t": 1794246293723,
+   "receivedAt": 1794246293766
+  },
+  {
+   "type": "step",
+   "index": 1,
+   "id": "acte1-ciel",
+   "t": 1794246304550.3,
+   "receivedAt": 1794246304640
+  },
+  {
+   "type": "step",
+   "index": 2,
+   "id": "acte1-preuve",
+   "t": 1794246326501,
+   "receivedAt": 1794246331397
+  },
+  {
+   "type": "step",
+   "index": 3,
+   "id": "acte3-horizons",
+   "t": 1794246354531.4001,
+   "receivedAt": 1794246354604
+  },
+  {
+   "type": "step",
+   "index": 4,
+   "id": "acte2-eclipse",
+   "t": 1794246369616.2002,
+   "receivedAt": 1794246369617
+  },
+  {
+   "type": "step",
+   "index": 5,
+   "id": "acte2-pole",
+   "t": 1794246383812.6,
+   "receivedAt": 1794246384511
+  },
+  {
+   "type": "step",
+   "index": 6,
+   "id": "acte4-voiture",
+   "t": 1794246397852.6,
+   "receivedAt": 1794246401342
+  },
+  {
+   "type": "step",
+   "index": 7,
+   "id": "acte4-velo",
+   "t": 1794246412035.6,
+   "receivedAt": 1794246412082
+  },
+  {
+   "type": "step",
+   "index": 8,
+   "id": "epilogue",
+   "t": 1794246425788.3,
+   "receivedAt": 1794246425787
+  },
+  {
+   "type": "end",
+   "t": 1794246438467.2002,
+   "receivedAt": 1794246438525
+  }
+ ]
+}

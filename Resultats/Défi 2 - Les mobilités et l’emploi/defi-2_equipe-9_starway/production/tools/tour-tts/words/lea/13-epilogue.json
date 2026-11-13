@@ -1,0 +1,260 @@
+{
+ "tour": "lea",
+ "stem": "13-epilogue",
+ "mp3Sha256": "00221fcea2fcc18a9e4e278cddbdeabf90240e6d0e4115dd17b18d4c50ec9c60",
+ "text": "Léa est imaginaire, mais ses chiffres sont réels. Ils sont calculés avec des données ouvertes, pour chaque commune d’Île-de-France. Chaque chiffre renvoie à sa source. À vous d’explorer : votre commune, votre heure, votre temps de trajet. Nous vivons tous sous le même ciel. À vous, maintenant, de découvrir vos étoiles.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "Lea est imaginaire. Mais ces chiffres sont réels. Ils sont calculés avec des données ouvertes pour chaque commune d'ÎLE-De-France. Chaque chiffre renvoie à sa source. À vous d'explorer votre commune, votre heure, votre temps de trajet. Nous vivons tous sous le même ciel. À vous maintenant de découvrir vos étoiles.",
+ "words": [
+  {
+   "word": "lea",
+   "startMs": 70,
+   "endMs": 310
+  },
+  {
+   "word": "est",
+   "startMs": 310,
+   "endMs": 390
+  },
+  {
+   "word": "imaginaire",
+   "startMs": 390,
+   "endMs": 1230
+  },
+  {
+   "word": "mais",
+   "startMs": 1310,
+   "endMs": 1590
+  },
+  {
+   "word": "ces",
+   "startMs": 1590,
+   "endMs": 1710
+  },
+  {
+   "word": "chiffres",
+   "startMs": 1710,
+   "endMs": 2110
+  },
+  {
+   "word": "sont",
+   "startMs": 2110,
+   "endMs": 2270
+  },
+  {
+   "word": "réels",
+   "startMs": 2270,
+   "endMs": 2830
+  },
+  {
+   "word": "ils",
+   "startMs": 3230,
+   "endMs": 3510
+  },
+  {
+   "word": "sont",
+   "startMs": 3510,
+   "endMs": 3630
+  },
+  {
+   "word": "calculés",
+   "startMs": 3630,
+   "endMs": 4150
+  },
+  {
+   "word": "avec",
+   "startMs": 4150,
+   "endMs": 4390
+  },
+  {
+   "word": "des",
+   "startMs": 4390,
+   "endMs": 4470
+  },
+  {
+   "word": "données",
+   "startMs": 4470,
+   "endMs": 4830
+  },
+  {
+   "word": "ouvertes",
+   "startMs": 4830,
+   "endMs": 5510
+  },
+  {
+   "word": "pour",
+   "startMs": 5710,
+   "endMs": 5990
+  },
+  {
+   "word": "chaque",
+   "startMs": 5990,
+   "endMs": 6190
+  },
+  {
+   "word": "commune",
+   "startMs": 6190,
+   "endMs": 6590
+  },
+  {
+   "word": "d'île-de-france",
+   "startMs": 6590,
+   "endMs": 7430
+  },
+  {
+   "word": "chaque",
+   "startMs": 7870,
+   "endMs": 8270
+  },
+  {
+   "word": "chiffre",
+   "startMs": 8270,
+   "endMs": 8630
+  },
+  {
+   "word": "renvoie",
+   "startMs": 8630,
+   "endMs": 9110
+  },
+  {
+   "word": "à",
+   "startMs": 9110,
+   "endMs": 9190
+  },
+  {
+   "word": "sa",
+   "startMs": 9190,
+   "endMs": 9350
+  },
+  {
+   "word": "source",
+   "startMs": 9350,
+   "endMs": 9910
+  },
+  {
+   "word": "à",
+   "startMs": 10590,
+   "endMs": 10670
+  },
+  {
+   "word": "vous",
+   "startMs": 10670,
+   "endMs": 10830
+  },
+  {
+   "word": "d'explorer",
+   "startMs": 10830,
+   "endMs": 11510
+  },
+  {
+   "word": "votre",
+   "startMs": 11830,
+   "endMs": 12190
+  },
+  {
+   "word": "commune",
+   "startMs": 12190,
+   "endMs": 12750
+  },
+  {
+   "word": "votre",
+   "startMs": 12870,
+   "endMs": 13430
+  },
+  {
+   "word": "heure",
+   "startMs": 13430,
+   "endMs": 13750
+  },
+  {
+   "word": "votre",
+   "startMs": 13990,
+   "endMs": 14430
+  },
+  {
+   "word": "temps",
+   "startMs": 14430,
+   "endMs": 14590
+  },
+  {
+   "word": "de",
+   "startMs": 14590,
+   "endMs": 14670
+  },
+  {
+   "word": "trajet",
+   "startMs": 14670,
+   "endMs": 15150
+  },
+  {
+   "word": "nous",
+   "startMs": 15750,
+   "endMs": 15950
+  },
+  {
+   "word": "vivons",
+   "startMs": 15950,
+   "endMs": 16270
+  },
+  {
+   "word": "tous",
+   "startMs": 16270,
+   "endMs": 16510
+  },
+  {
+   "word": "sous",
+   "startMs": 16510,
+   "endMs": 16670
+  },
+  {
+   "word": "le",
+   "startMs": 16670,
+   "endMs": 16750
+  },
+  {
+   "word": "même",
+   "startMs": 16750,
+   "endMs": 16950
+  },
+  {
+   "word": "ciel",
+   "startMs": 16950,
+   "endMs": 17350
+  },
+  {
+   "word": "à",
+   "startMs": 17790,
+   "endMs": 17990
+  },
+  {
+   "word": "vous",
+   "startMs": 17990,
+   "endMs": 18270
+  },
+  {
+   "word": "maintenant",
+   "startMs": 18550,
+   "endMs": 19230
+  },
+  {
+   "word": "de",
+   "startMs": 19590,
+   "endMs": 19630
+  },
+  {
+   "word": "découvrir",
+   "startMs": 19630,
+   "endMs": 20350
+  },
+  {
+   "word": "vos",
+   "startMs": 20350,
+   "endMs": 20470
+  },
+  {
+   "word": "étoiles",
+   "startMs": 20470,
+   "endMs": 21030
+  }
+ ]
+}

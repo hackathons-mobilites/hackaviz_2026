@@ -1,0 +1,4 @@
+setting,limit_m,day,pairs,out_found_more,out_lost,out_shorter,out_longer,out_same,ret_found_more,ret_lost,ret_shorter,ret_longer,ret_same,communes_ret_found_more,communes_no_return_pub,communes_no_return_var,communes_no_return_resolved,out_lost_walk_only,ret_lost_walk_only,d023_unmeasured_ret,d023_ret_found_var,d023_pole_reason,d023_pole_reason_ret_found_var
+comfort,1000,d06,19275,0,1452,54,275,2055,0,467,0,628,6634,0,533,596,0,1,0,3840,0,21,0
+comfort,1000,d09,19275,0,259,201,311,9768,0,298,0,634,9134,0,329,356,0,0,0,60,0,0,0
+comfort,1000,d14,19275,0,673,143,402,6316,0,597,0,507,3914,0,741,832,0,0,3,7140,0,620,0

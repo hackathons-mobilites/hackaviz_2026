@@ -1,0 +1,28 @@
+{
+  "_comment": "FICHIER D'EXEMPLE FICTIF pour tester tools/record-tour (dry-run et assemblage). Aucune donnée réelle, aucun chiffre. Les MP3 sont des bips générés par npm run sample:audio. Ne pas copier dans frontend/public/tour/.",
+  "id": "fictif",
+  "title": "Visite d'exemple (fictive)",
+  "voice": "fr-FR-DeniseNeural",
+  "processing_version": "sample-fictif",
+  "steps": [
+    {
+      "id": "intro",
+      "act": "prologue",
+      "text": "Ceci est une étape de test. Elle ne contient aucune donnée réelle.",
+      "minDurationMs": 4000,
+      "durationMs": 3000
+    },
+    {
+      "id": "milieu",
+      "act": "acte1",
+      "text": "Deuxième étape fictive, pour vérifier le placement de l'audio.",
+      "durationMs": 2500
+    },
+    {
+      "id": "fin",
+      "act": "epilogue",
+      "text": "Dernière étape fictive. Les sous-titres doivent tomber sur le bon bip.",
+      "durationMs": 3500
+    }
+  ]
+}

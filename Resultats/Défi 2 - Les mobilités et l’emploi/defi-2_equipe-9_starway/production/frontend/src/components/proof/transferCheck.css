@@ -1,0 +1,47 @@
+/*
+ * Correspondances plus courtes que le minimum d'IDFM (D-031 c) : V0 sobre, à reprendre par Maia.
+ * Jamais cyan (réservé à « accessible ») ni or (réservé au gain démontré) : texte, filet pointillé, glyphe.
+ */
+
+.tc-badge {
+  border-style: dotted;
+  color: var(--text);
+}
+
+.tc-glyph {
+  flex: none;
+  color: var(--text-dim);
+}
+
+.tc-section .tc-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.tc-section .tc-list > li + li {
+  margin-top: 4px;
+}
+
+.tc-section .tc-bound {
+  color: var(--text-dim);
+}
+
+.tc-risk {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 0 0 8px;
+  padding: 8px 10px;
+  border: 1px dotted #7a8cad;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.tc-risk .tc-glyph {
+  margin-top: 2px;
+}

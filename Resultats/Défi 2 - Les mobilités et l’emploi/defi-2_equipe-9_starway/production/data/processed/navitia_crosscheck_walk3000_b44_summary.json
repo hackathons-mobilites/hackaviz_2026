@@ -1,0 +1,3101 @@
+{
+  "sample": {
+    "groups": [
+      "insight",
+      "random"
+    ],
+    "tour_scenarios": [],
+    "insights_used": 30,
+    "excluded_rechecked": 4,
+    "insight_plan": {
+      "eclipse_01": {
+        "id": "eclipse_01",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "94021",
+          "d": "d06",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94021",
+            "BE_1146",
+            "d06",
+            "out"
+          ],
+          [
+            "94021",
+            "BE_1146",
+            "d09",
+            "out"
+          ]
+        ]
+      },
+      "eclipse_02": {
+        "id": "eclipse_02",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "93048",
+          "d": "d06",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "93048",
+            "BE_1146",
+            "d06",
+            "out"
+          ],
+          [
+            "93048",
+            "BE_1146",
+            "d09",
+            "out"
+          ]
+        ]
+      },
+      "eclipse_03": {
+        "id": "eclipse_03",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "78124",
+          "d": "d06",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78124",
+            "BE_1139",
+            "d06",
+            "out"
+          ],
+          [
+            "78124",
+            "BE_1139",
+            "d06",
+            "ret"
+          ],
+          [
+            "78124",
+            "BE_1139",
+            "d09",
+            "out"
+          ],
+          [
+            "78124",
+            "BE_1139",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_04": {
+        "id": "eclipse_04",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "78358",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78358",
+            "BE_1147",
+            "d14",
+            "ret"
+          ],
+          [
+            "78358",
+            "BE_1147",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_05": {
+        "id": "eclipse_05",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "92022",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "92022",
+            "BE_1147",
+            "d14",
+            "ret"
+          ],
+          [
+            "92022",
+            "BE_1147",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_06": {
+        "id": "eclipse_06",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "95210",
+          "d": "d06",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "95210",
+            "BE_1148",
+            "d06",
+            "out"
+          ],
+          [
+            "95210",
+            "BE_1148",
+            "d06",
+            "ret"
+          ],
+          [
+            "95210",
+            "BE_1148",
+            "d09",
+            "out"
+          ],
+          [
+            "95210",
+            "BE_1148",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_07": {
+        "id": "eclipse_07",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "95210",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "95210",
+            "BE_1148",
+            "d14",
+            "ret"
+          ],
+          [
+            "95210",
+            "BE_1148",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "eclipse_08": {
+        "id": "eclipse_08",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "92012",
+          "d": "d06",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "92012",
+            "BE_1147",
+            "d06",
+            "out"
+          ],
+          [
+            "92012",
+            "BE_1147",
+            "d09",
+            "out"
+          ]
+        ]
+      },
+      "eclipse_09": {
+        "id": "eclipse_09",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "94043",
+          "d": "d06",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94043",
+            "BE_1139",
+            "d06",
+            "out"
+          ],
+          [
+            "94043",
+            "BE_1139",
+            "d09",
+            "out"
+          ]
+        ]
+      },
+      "eclipse_10": {
+        "id": "eclipse_10",
+        "published": true,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "75116",
+          "d": "d06",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "75116",
+            "BE_1126",
+            "d06",
+            "out"
+          ],
+          [
+            "75116",
+            "BE_1126",
+            "d09",
+            "out"
+          ]
+        ]
+      },
+      "territorial_gap_01": {
+        "id": "territorial_gap_01",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "92063",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "92073",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "92063",
+            "BE_1126",
+            "d09",
+            "out"
+          ],
+          [
+            "92063",
+            "BE_1126",
+            "d09",
+            "ret"
+          ],
+          [
+            "92073",
+            "BE_1126",
+            "d09",
+            "out"
+          ],
+          [
+            "92073",
+            "BE_1126",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_02": {
+        "id": "territorial_gap_02",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "94069",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "75112",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94069",
+            "BE_1147",
+            "d09",
+            "ret"
+          ],
+          [
+            "75112",
+            "BE_1147",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_03": {
+        "id": "territorial_gap_03",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "94033",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "75112",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94033",
+            "BE_1129",
+            "d09",
+            "out"
+          ],
+          [
+            "94033",
+            "BE_1129",
+            "d09",
+            "ret"
+          ],
+          [
+            "75112",
+            "BE_1129",
+            "d09",
+            "out"
+          ],
+          [
+            "75112",
+            "BE_1129",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_04": {
+        "id": "territorial_gap_04",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "94074",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "94022",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94074",
+            "BE_1146",
+            "d09",
+            "out"
+          ],
+          [
+            "94074",
+            "BE_1146",
+            "d09",
+            "ret"
+          ],
+          [
+            "94022",
+            "BE_1146",
+            "d09",
+            "out"
+          ],
+          [
+            "94022",
+            "BE_1146",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_05": {
+        "id": "territorial_gap_05",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "95428",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "95210",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "95428",
+            "BE_1146",
+            "d09",
+            "ret"
+          ],
+          [
+            "95210",
+            "BE_1146",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_06": {
+        "id": "territorial_gap_06",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "94033",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "94080",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94033",
+            "BE_1129",
+            "d09",
+            "out"
+          ],
+          [
+            "94033",
+            "BE_1129",
+            "d09",
+            "ret"
+          ],
+          [
+            "94080",
+            "BE_1129",
+            "d09",
+            "out"
+          ],
+          [
+            "94080",
+            "BE_1129",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_07": {
+        "id": "territorial_gap_07",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "78418",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "78358",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78418",
+            "BE_1107_75108",
+            "d09",
+            "out"
+          ],
+          [
+            "78418",
+            "BE_1107_75108",
+            "d09",
+            "ret"
+          ],
+          [
+            "78358",
+            "BE_1107_75108",
+            "d09",
+            "out"
+          ],
+          [
+            "78358",
+            "BE_1107_75108",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_08": {
+        "id": "territorial_gap_08",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "78418",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "78124",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78418",
+            "BE_1107_75108",
+            "d09",
+            "out"
+          ],
+          [
+            "78418",
+            "BE_1107_75108",
+            "d09",
+            "ret"
+          ],
+          [
+            "78124",
+            "BE_1107_75108",
+            "d09",
+            "out"
+          ],
+          [
+            "78124",
+            "BE_1107_75108",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_09": {
+        "id": "territorial_gap_09",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "78396",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "78358",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78396",
+            "BE_1107_75108",
+            "d09",
+            "ret"
+          ],
+          [
+            "78358",
+            "BE_1107_75108",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "territorial_gap_10": {
+        "id": "territorial_gap_10",
+        "published": true,
+        "kind": "territorial_gap",
+        "scenario": {
+          "o": "95088",
+          "d": "d09",
+          "b": 60,
+          "m": "transit",
+          "vs": "93007",
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "95088",
+            "BE_1146",
+            "d09",
+            "out"
+          ],
+          [
+            "95088",
+            "BE_1146",
+            "d09",
+            "ret"
+          ],
+          [
+            "93007",
+            "BE_1146",
+            "d09",
+            "out"
+          ],
+          [
+            "93007",
+            "BE_1146",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_01": {
+        "id": "late_return_01",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "94001",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94001",
+            "BE_1146",
+            "d14",
+            "out"
+          ],
+          [
+            "94001",
+            "BE_1146",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_02": {
+        "id": "late_return_02",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "92022",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "92022",
+            "BE_1147",
+            "d14",
+            "out"
+          ],
+          [
+            "92022",
+            "BE_1147",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_03": {
+        "id": "late_return_03",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "78358",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78358",
+            "BE_1126",
+            "d14",
+            "out"
+          ],
+          [
+            "78358",
+            "BE_1126",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_04": {
+        "id": "late_return_04",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "78686",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "78686",
+            "BE_1107_75108",
+            "d14",
+            "out"
+          ],
+          [
+            "78686",
+            "BE_1107_75108",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_05": {
+        "id": "late_return_05",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "92064",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "92064",
+            "BE_1126",
+            "d14",
+            "out"
+          ],
+          [
+            "92064",
+            "BE_1126",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_06": {
+        "id": "late_return_06",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "94058",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94058",
+            "BE_1146",
+            "d14",
+            "out"
+          ],
+          [
+            "94058",
+            "BE_1146",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_07": {
+        "id": "late_return_07",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "95210",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "95210",
+            "BE_1117",
+            "d14",
+            "out"
+          ],
+          [
+            "95210",
+            "BE_1117",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_08": {
+        "id": "late_return_08",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "92073",
+          "d": "d14",
+          "b": 45,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 45,
+        "trips": [
+          [
+            "92073",
+            "BE_1126",
+            "d14",
+            "out"
+          ],
+          [
+            "92073",
+            "BE_1126",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_09": {
+        "id": "late_return_09",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "95257",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "95257",
+            "BE_1146",
+            "d14",
+            "out"
+          ],
+          [
+            "95257",
+            "BE_1146",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "late_return_10": {
+        "id": "late_return_10",
+        "published": true,
+        "kind": "late_return",
+        "scenario": {
+          "o": "94042",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94042",
+            "BE_1147",
+            "d14",
+            "out"
+          ],
+          [
+            "94042",
+            "BE_1147",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "excluded:eclipse_02": {
+        "id": "eclipse_02",
+        "published": false,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "94079",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94079",
+            "BE_1146",
+            "d14",
+            "ret"
+          ],
+          [
+            "94079",
+            "BE_1146",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "excluded:eclipse_04": {
+        "id": "eclipse_04",
+        "published": false,
+        "kind": "eclipse",
+        "scenario": {
+          "o": "94079",
+          "d": "d06",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": "d09"
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "94079",
+            "BE_1147",
+            "d06",
+            "ret"
+          ],
+          [
+            "94079",
+            "BE_1147",
+            "d09",
+            "ret"
+          ]
+        ]
+      },
+      "excluded:late_return_03": {
+        "id": "late_return_03",
+        "published": false,
+        "kind": "late_return",
+        "scenario": {
+          "o": "95555",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "95555",
+            "BE_1107_75109",
+            "d14",
+            "out"
+          ],
+          [
+            "95555",
+            "BE_1107_75109",
+            "d14",
+            "ret"
+          ]
+        ]
+      },
+      "excluded:late_return_11": {
+        "id": "late_return_11",
+        "published": false,
+        "kind": "late_return",
+        "scenario": {
+          "o": "92063",
+          "d": "d14",
+          "b": 60,
+          "m": "transit",
+          "vs": null,
+          "compare_day": null
+        },
+        "budget": 60,
+        "trips": [
+          [
+            "92063",
+            "BE_1126",
+            "d14",
+            "out"
+          ],
+          [
+            "92063",
+            "BE_1126",
+            "d14",
+            "ret"
+          ]
+        ]
+      }
+    },
+    "insights_skipped": {},
+    "insights_excluded_by_meta": [
+      "eclipse_02",
+      "eclipse_04",
+      "late_return_03",
+      "late_return_11"
+    ],
+    "random": {
+      "seed": 20261117,
+      "per_stratum": 6,
+      "bins": [
+        "0-30",
+        "31-45",
+        "46-60",
+        "61-120"
+      ],
+      "population": 127417,
+      "strata_sizes": {
+        "75|0-30": 1816,
+        "75|31-45": 1210,
+        "75|46-60": 499,
+        "75|61-120": 1384,
+        "77|0-30": 205,
+        "77|31-45": 431,
+        "77|46-60": 1467,
+        "77|61-120": 28865,
+        "78|0-30": 103,
+        "78|31-45": 428,
+        "78|46-60": 1605,
+        "78|61-120": 20707,
+        "91|0-30": 64,
+        "91|31-45": 218,
+        "91|46-60": 1169,
+        "91|61-120": 19081,
+        "92|0-30": 394,
+        "92|31-45": 1761,
+        "92|46-60": 2415,
+        "92|61-120": 3675,
+        "93|0-30": 319,
+        "93|31-45": 1407,
+        "93|46-60": 2484,
+        "93|61-120": 4667,
+        "94|0-30": 296,
+        "94|31-45": 1572,
+        "94|46-60": 2603,
+        "94|61-120": 6107,
+        "95|0-30": 115,
+        "95|31-45": 379,
+        "95|46-60": 2332,
+        "95|61-120": 17639
+      },
+      "drawn": 192
+    }
+  },
+  "trips": 271,
+  "status_counts": {
+    "both": 270,
+    "starway_only": 1
+  },
+  "all": {
+    "n": 270,
+    "median_signed_min": -0.14,
+    "median_abs_min": 1.29,
+    "p90_abs_min": 5.97,
+    "max_abs_min": 31.43,
+    "mean_signed_min": 0.48,
+    "share_within_1_min": 0.463,
+    "share_within_5_min": 0.8407,
+    "share_within_10_min": 0.9593,
+    "share_starway_longer": 0.4556
+  },
+  "by_leg": {
+    "aller": {
+      "n": 146,
+      "median_signed_min": -0.17,
+      "median_abs_min": 1.45,
+      "p90_abs_min": 5.82,
+      "max_abs_min": 31.43,
+      "mean_signed_min": 0.08,
+      "share_within_1_min": 0.4315,
+      "share_within_5_min": 0.8288,
+      "share_within_10_min": 0.9589,
+      "share_starway_longer": 0.4589
+    },
+    "retour": {
+      "n": 124,
+      "median_signed_min": -0.12,
+      "median_abs_min": 1.04,
+      "p90_abs_min": 6.62,
+      "max_abs_min": 28.13,
+      "mean_signed_min": 0.95,
+      "share_within_1_min": 0.5,
+      "share_within_5_min": 0.8548,
+      "share_within_10_min": 0.9597,
+      "share_starway_longer": 0.4516
+    }
+  },
+  "by_group": {
+    "tour": {
+      "n": 0,
+      "status_counts": {}
+    },
+    "insight": {
+      "n": 71,
+      "median_signed_min": -0.33,
+      "median_abs_min": 0.9,
+      "p90_abs_min": 5.77,
+      "max_abs_min": 10.9,
+      "mean_signed_min": 0.52,
+      "share_within_1_min": 0.507,
+      "share_within_5_min": 0.8592,
+      "share_within_10_min": 0.9718,
+      "share_starway_longer": 0.3521,
+      "status_counts": {
+        "both": 71
+      }
+    },
+    "random": {
+      "n": 191,
+      "median_signed_min": 0.0,
+      "median_abs_min": 1.3,
+      "p90_abs_min": 5.87,
+      "max_abs_min": 31.43,
+      "mean_signed_min": 0.44,
+      "share_within_1_min": 0.466,
+      "share_within_5_min": 0.8429,
+      "share_within_10_min": 0.9581,
+      "share_starway_longer": 0.4974,
+      "weighted": {
+        "median_signed_min": 0.1,
+        "median_abs_min": 1.47,
+        "p90_abs_min": 11.25,
+        "share_within_5_min": 0.7581
+      },
+      "status_counts": {
+        "both": 191,
+        "starway_only": 1
+      }
+    },
+    "excluded": {
+      "n": 8,
+      "median_signed_min": -1.25,
+      "median_abs_min": 2.6,
+      "p90_abs_min": 8.04,
+      "max_abs_min": 11.08,
+      "mean_signed_min": 1.11,
+      "share_within_1_min": 0.0,
+      "share_within_5_min": 0.625,
+      "share_within_10_min": 0.875,
+      "share_starway_longer": 0.375,
+      "status_counts": {
+        "both": 8
+      }
+    }
+  },
+  "aller_native": {
+    "n": 146,
+    "median_signed_min": 2.6,
+    "median_abs_min": 2.92,
+    "p90_abs_min": 6.01,
+    "max_abs_min": 27.02,
+    "mean_signed_min": 2.39,
+    "share_within_1_min": 0.1849,
+    "share_within_5_min": 0.8082,
+    "share_within_10_min": 0.9521,
+    "share_starway_longer": 0.8425
+  },
+  "largest_gaps": [
+    {
+      "insee": "75114",
+      "commune": "Paris 14e Arrondissement",
+      "dep": "75",
+      "pole_id": "BE_1152",
+      "pole": "Est 95",
+      "day": "d06",
+      "leg": "aller",
+      "samples": "random",
+      "stratum": "75|46-60",
+      "starway_min": 60,
+      "starway_dep": "05:00",
+      "starway_reason": null,
+      "navitia_min": 91.43,
+      "navitia_native_min": 87.02,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": "04:25",
+      "diff_min": -31.43,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "04:29:25",
+      "nav_arrival": "05:56:26",
+      "nav_transfers": 2,
+      "nav_walking_min": 18.4,
+      "nav_waiting_min": 14.7,
+      "nav_lines": "Bus N21 > Bus N16 > Train Transilien J",
+      "nav_stops": "Mouton - Duvernet (Paris) > Châtelet - Quai de Gesvres (Paris) > Châtelet (Paris) > Gare Saint-Lazare (Paris) > Gare Saint-Lazare (Paris) > Ermont - Eaubonne (Ermont)"
+    },
+    {
+      "insee": "78486",
+      "commune": "Le Perray-en-Yvelines",
+      "dep": "78",
+      "pole_id": "BE_1126",
+      "pole": "Versailles Saclay",
+      "day": "d06",
+      "leg": "retour",
+      "samples": "random",
+      "stratum": "78|61-120",
+      "starway_min": 73,
+      "starway_dep": null,
+      "starway_reason": null,
+      "navitia_min": 44.87,
+      "navitia_native_min": 44.8,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": null,
+      "diff_min": 28.13,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "14:00:04",
+      "nav_arrival": "14:44:52",
+      "nav_transfers": 0,
+      "nav_walking_min": 15.1,
+      "nav_waiting_min": 0.0,
+      "nav_lines": "Train Transilien N",
+      "nav_stops": "Versailles Chantiers (Versailles) > Le Perray (Le Perray-en-Yvelines)"
+    },
+    {
+      "insee": "78349",
+      "commune": "Longvilliers",
+      "dep": "78",
+      "pole_id": "BE_1107_75103",
+      "pole": "Paris 3e Arrondissement",
+      "day": "d09",
+      "leg": "retour",
+      "samples": "random",
+      "stratum": "78|61-120",
+      "starway_min": 102,
+      "starway_dep": null,
+      "starway_reason": null,
+      "navitia_min": 87.48,
+      "navitia_native_min": 86.75,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": null,
+      "diff_min": 14.52,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "17:00:44",
+      "nav_arrival": "18:27:29",
+      "nav_transfers": 4,
+      "nav_walking_min": 13.2,
+      "nav_waiting_min": 14.1,
+      "nav_lines": "Métro 3 > Métro 4 > RER B > Bus 9103 > Bus 7810",
+      "nav_stops": "Arts et Métiers (Paris) > Réaumur - Sébastopol (Paris) > Réaumur - Sébastopol (Paris) > Les Halles (Paris) > Châtelet - Les Halles (Paris) > Massy - Palaiseau (Massy) > Gare de Massy - Palaiseau (Massy) > Le Plessis Mornay (Longvilliers) > Le Plessis Mornay (Longvilliers) > Mairie / Village (Longvilliers)"
+    },
+    {
+      "insee": "95088",
+      "commune": "Bonneuil-en-France",
+      "dep": "95",
+      "pole_id": "BE_1107_75107",
+      "pole": "Paris 7e Arrondissement",
+      "day": "d06",
+      "leg": "aller",
+      "samples": "random",
+      "stratum": "95|61-120",
+      "starway_min": 94,
+      "starway_dep": "04:10",
+      "starway_reason": null,
+      "navitia_min": 107.57,
+      "navitia_native_min": 105.8,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": "04:10",
+      "diff_min": -13.57,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "04:11:46",
+      "nav_arrival": "05:57:34",
+      "nav_transfers": 3,
+      "nav_walking_min": 25.6,
+      "nav_waiting_min": 47.5,
+      "nav_lines": "Bus TàD > RER D > RER B > RER C",
+      "nav_stops": "Rond-Point du Christ (Garges-lès-Gonesse) > Gare de Garges - Sarcelles (Garges-lès-Gonesse) > Garges - Sarcelles (Sarcelles) > Gare du Nord (Paris) > Gare du Nord (Paris) > Saint-Michel Notre-Dame (Paris) > Saint-Michel Notre-Dame (Paris) > Invalides (Paris)"
+    },
+    {
+      "insee": "91114",
+      "commune": "Brunoy",
+      "dep": "91",
+      "pole_id": "BE_1115",
+      "pole": "Centre 77",
+      "day": "d14",
+      "leg": "aller",
+      "samples": "random",
+      "stratum": "91|31-45",
+      "starway_min": 43,
+      "starway_dep": "13:15",
+      "starway_reason": null,
+      "navitia_min": 30.58,
+      "navitia_native_min": 29.92,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": "13:20",
+      "diff_min": 12.42,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "13:20:40",
+      "nav_arrival": "13:50:35",
+      "nav_transfers": 0,
+      "nav_walking_min": 3.4,
+      "nav_waiting_min": 0.0,
+      "nav_lines": "RER D",
+      "nav_stops": "Brunoy (Brunoy) > Melun (Melun)"
+    },
+    {
+      "insee": "91377",
+      "commune": "Massy",
+      "dep": "91",
+      "pole_id": "BE_1107_75114",
+      "pole": "Paris 14e Arrondissement",
+      "day": "d14",
+      "leg": "retour",
+      "samples": "random",
+      "stratum": "91|46-60",
+      "starway_min": 48,
+      "starway_dep": null,
+      "starway_reason": null,
+      "navitia_min": 36.53,
+      "navitia_native_min": 35.53,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": null,
+      "diff_min": 11.47,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "22:01:00",
+      "nav_arrival": "22:36:32",
+      "nav_transfers": 0,
+      "nav_walking_min": 13.6,
+      "nav_waiting_min": 0.0,
+      "nav_lines": "RER B",
+      "nav_stops": "Denfert-Rochereau (Paris) > Massy - Verrières (Massy)"
+    },
+    {
+      "insee": "77184",
+      "commune": "Flagy",
+      "dep": "77",
+      "pole_id": "BE_1115",
+      "pole": "Centre 77",
+      "day": "d09",
+      "leg": "aller",
+      "samples": "random",
+      "stratum": "77|61-120",
+      "starway_min": 88,
+      "starway_dep": "07:20",
+      "starway_reason": null,
+      "navitia_min": 76.75,
+      "navitia_native_min": 72.28,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": "07:35",
+      "diff_min": 11.25,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "07:39:28",
+      "nav_arrival": "08:51:45",
+      "nav_transfers": 1,
+      "nav_walking_min": 7.1,
+      "nav_waiting_min": 15.5,
+      "nav_lines": "Bus 3319 > Train Transilien R",
+      "nav_stops": "École (Flagy) > Gare de Montereau (Montereau-Fault-Yonne) > Montereau (Montereau-Fault-Yonne) > Melun (Melun)"
+    },
+    {
+      "insee": "94079",
+      "commune": "Villiers-sur-Marne",
+      "dep": "94",
+      "pole_id": "BE_1146",
+      "pole": "T4 Paris Ouest La Défense",
+      "day": "d14",
+      "leg": "retour",
+      "samples": "excluded:eclipse_02",
+      "stratum": null,
+      "starway_min": 65,
+      "starway_dep": null,
+      "starway_reason": null,
+      "navitia_min": 53.92,
+      "navitia_native_min": 53.6,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": null,
+      "diff_min": 11.08,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "22:00:19",
+      "nav_arrival": "22:53:55",
+      "nav_transfers": 1,
+      "nav_walking_min": 13.7,
+      "nav_waiting_min": 8.3,
+      "nav_lines": "RER A > RER E",
+      "nav_stops": "La Défense (Puteaux) > Val de Fontenay (Fontenay-sous-Bois) > Val de Fontenay (Fontenay-sous-Bois) > Villiers-sur-Marne - Le Plessis-Trévise (Villiers-sur-Marne)"
+    },
+    {
+      "insee": "78124",
+      "commune": "Carrières-sur-Seine",
+      "dep": "78",
+      "pole_id": "BE_1107_75108",
+      "pole": "Paris 8e Arrondissement",
+      "day": "d09",
+      "leg": "aller",
+      "samples": "insight:territorial_gap_08",
+      "stratum": null,
+      "starway_min": 50,
+      "starway_dep": "08:05",
+      "starway_reason": null,
+      "navitia_min": 39.1,
+      "navitia_native_min": 37.78,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": "08:20",
+      "diff_min": 10.9,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "08:21:19",
+      "nav_arrival": "08:59:06",
+      "nav_transfers": 1,
+      "nav_walking_min": 19.9,
+      "nav_waiting_min": 4.3,
+      "nav_lines": "Bus 6423 > Train Transilien J",
+      "nav_stops": "Buzenval (Carrières-sur-Seine) > Gare de Houilles - Carrières-sur-Seine (Houilles) > Houilles - Carrières-sur-Seine (Houilles) > Gare Saint-Lazare (Paris)"
+    },
+    {
+      "insee": "94001",
+      "commune": "Ablon-sur-Seine",
+      "dep": "94",
+      "pole_id": "BE_1146",
+      "pole": "T4 Paris Ouest La Défense",
+      "day": "d14",
+      "leg": "retour",
+      "samples": "insight:late_return_01",
+      "stratum": null,
+      "starway_min": 71,
+      "starway_dep": null,
+      "starway_reason": null,
+      "navitia_min": 60.22,
+      "navitia_native_min": 59.32,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": null,
+      "diff_min": 10.78,
+      "status": "both",
+      "reason": null,
+      "nav_departure": "22:00:54",
+      "nav_arrival": "23:00:13",
+      "nav_transfers": 2,
+      "nav_walking_min": 12.0,
+      "nav_waiting_min": 8.8,
+      "nav_lines": "RER E > RER B > RER C",
+      "nav_stops": "La Défense (Puteaux) > Magenta (Paris) > Gare du Nord (Paris) > Saint-Michel Notre-Dame (Paris) > Saint-Michel Notre-Dame (Paris) > Ablon (Ablon-sur-Seine)"
+    }
+  ],
+  "one_side": [
+    {
+      "insee": "91244",
+      "commune": "Fontenay-le-Vicomte",
+      "dep": "91",
+      "pole_id": "BE_1107_75120",
+      "pole": "Paris 20e Arrondissement",
+      "day": "d09",
+      "leg": "aller",
+      "samples": "random",
+      "stratum": "91|61-120",
+      "starway_min": 115,
+      "starway_dep": "07:05",
+      "starway_reason": null,
+      "navitia_min": null,
+      "navitia_native_min": null,
+      "navitia_over_max_min": null,
+      "navitia_grid_dep": null,
+      "diff_min": null,
+      "status": "starway_only",
+      "reason": "Navitia : navitia_no_journey_arriving_in_time",
+      "nav_departure": null,
+      "nav_arrival": null,
+      "nav_transfers": null,
+      "nav_walking_min": null,
+      "nav_waiting_min": null,
+      "nav_lines": null,
+      "nav_stops": null
+    }
+  ],
+  "verdicts": {
+    "tour": {},
+    "insights": {
+      "eclipse_01": "confirmed",
+      "eclipse_02": "confirmed",
+      "eclipse_03": "within_one_minute",
+      "eclipse_04": "confirmed",
+      "eclipse_05": "within_one_minute",
+      "eclipse_06": "within_one_minute",
+      "eclipse_07": "within_one_minute",
+      "eclipse_08": "confirmed",
+      "eclipse_09": "confirmed",
+      "eclipse_10": "confirmed",
+      "territorial_gap_01": "confirmed",
+      "territorial_gap_02": "contradicted",
+      "territorial_gap_03": "confirmed",
+      "territorial_gap_04": "confirmed",
+      "territorial_gap_05": "confirmed",
+      "territorial_gap_06": "confirmed",
+      "territorial_gap_07": "confirmed",
+      "territorial_gap_08": "confirmed",
+      "territorial_gap_09": "confirmed",
+      "territorial_gap_10": "confirmed",
+      "late_return_01": "within_one_minute",
+      "late_return_02": "confirmed",
+      "late_return_03": "confirmed",
+      "late_return_04": "confirmed",
+      "late_return_05": "confirmed",
+      "late_return_06": "contradicted",
+      "late_return_07": "confirmed",
+      "late_return_08": "confirmed",
+      "late_return_09": "confirmed",
+      "late_return_10": "confirmed",
+      "excluded:eclipse_02": "contradicted",
+      "excluded:eclipse_04": "contradicted",
+      "excluded:late_return_03": "contradicted",
+      "excluded:late_return_11": "contradicted"
+    },
+    "insights_counts": {
+      "confirmed": 23,
+      "contradicted": 6,
+      "within_one_minute": 5
+    }
+  },
+  "tour_counts": {},
+  "insight_checks": [
+    {
+      "label": "eclipse_01",
+      "id": "eclipse_01",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "94021",
+        "d": "d06",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "94021",
+          "pole_id": "BE_1146",
+          "day": "d06",
+          "leg": "out",
+          "starway_min": 73,
+          "navitia_min": 77.43,
+          "status": "both",
+          "nav_lines": "Bus N22 > RER B > RER A"
+        },
+        {
+          "insee": "94021",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 51,
+          "navitia_min": 52.85,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER A"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_02",
+      "id": "eclipse_02",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "93048",
+        "d": "d06",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "93048",
+          "pole_id": "BE_1146",
+          "day": "d06",
+          "leg": "out",
+          "starway_min": 63,
+          "navitia_min": 64.62,
+          "status": "both",
+          "nav_lines": "RER A"
+        },
+        {
+          "insee": "93048",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 41,
+          "navitia_min": 42.85,
+          "status": "both",
+          "nav_lines": "Métro 9 > RER A"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_03",
+      "id": "eclipse_03",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "78124",
+        "d": "d06",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "within_one_minute",
+      "trips": [
+        {
+          "insee": "78124",
+          "pole_id": "BE_1139",
+          "day": "d06",
+          "leg": "out",
+          "starway_min": 72,
+          "navitia_min": 67.13,
+          "status": "both",
+          "nav_lines": "Bus 6404 > RER A > Tramway T2 > Bus 175"
+        },
+        {
+          "insee": "78124",
+          "pole_id": "BE_1139",
+          "day": "d06",
+          "leg": "ret",
+          "starway_min": 64,
+          "navitia_min": 64.33,
+          "status": "both",
+          "nav_lines": "Bus 160 > Train Transilien U > RER A > Bus 6404"
+        },
+        {
+          "insee": "78124",
+          "pole_id": "BE_1139",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 59,
+          "navitia_min": 59.13,
+          "status": "both",
+          "nav_lines": "Bus 6434 > RER A > Train Transilien L > Bus 467"
+        },
+        {
+          "insee": "78124",
+          "pole_id": "BE_1139",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 60,
+          "navitia_min": 60.33,
+          "status": "both",
+          "nav_lines": "Bus 467 > Train Transilien L > RER A > Bus 6404"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_04",
+      "id": "eclipse_04",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "78358",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78358",
+          "pole_id": "BE_1147",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 76,
+          "navitia_min": 76.12,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER A"
+        },
+        {
+          "insee": "78358",
+          "pole_id": "BE_1147",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 49,
+          "navitia_min": 48.62,
+          "status": "both",
+          "nav_lines": "Métro 14 > Train Transilien L"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_05",
+      "id": "eclipse_05",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "92022",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "within_one_minute",
+      "trips": [
+        {
+          "insee": "92022",
+          "pole_id": "BE_1147",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 64,
+          "navitia_min": 64.63,
+          "status": "both",
+          "nav_lines": "Métro 14 > Train Transilien L"
+        },
+        {
+          "insee": "92022",
+          "pole_id": "BE_1147",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 59,
+          "navitia_min": 60.3,
+          "status": "both",
+          "nav_lines": "Métro 14 > Train Transilien L"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_06",
+      "id": "eclipse_06",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "95210",
+        "d": "d06",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "within_one_minute",
+      "trips": [
+        {
+          "insee": "95210",
+          "pole_id": "BE_1148",
+          "day": "d06",
+          "leg": "out",
+          "starway_min": 70,
+          "navitia_min": 69.53,
+          "status": "both",
+          "nav_lines": "Train Transilien H > Métro 4 > Métro 9"
+        },
+        {
+          "insee": "95210",
+          "pole_id": "BE_1148",
+          "day": "d06",
+          "leg": "ret",
+          "starway_min": 63,
+          "navitia_min": 63.65,
+          "status": "both",
+          "nav_lines": "Métro 9 > Métro 5 > Train Transilien H"
+        },
+        {
+          "insee": "95210",
+          "pole_id": "BE_1148",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 57,
+          "navitia_min": 55.05,
+          "status": "both",
+          "nav_lines": "Train Transilien H > Métro 5 > Métro 9"
+        },
+        {
+          "insee": "95210",
+          "pole_id": "BE_1148",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 60,
+          "navitia_min": 60.15,
+          "status": "both",
+          "nav_lines": "Métro 9 > Métro 5 > Train Transilien H"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_07",
+      "id": "eclipse_07",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "95210",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "within_one_minute",
+      "trips": [
+        {
+          "insee": "95210",
+          "pole_id": "BE_1148",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 63,
+          "navitia_min": 63.65,
+          "status": "both",
+          "nav_lines": "Métro 9 > Métro 5 > Train Transilien H"
+        },
+        {
+          "insee": "95210",
+          "pole_id": "BE_1148",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 60,
+          "navitia_min": 60.15,
+          "status": "both",
+          "nav_lines": "Métro 9 > Métro 5 > Train Transilien H"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_08",
+      "id": "eclipse_08",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "92012",
+        "d": "d06",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "92012",
+          "pole_id": "BE_1147",
+          "day": "d06",
+          "leg": "out",
+          "starway_min": 64,
+          "navitia_min": 67.03,
+          "status": "both",
+          "nav_lines": "Bus N61 > Métro 8 > Métro 14"
+        },
+        {
+          "insee": "92012",
+          "pole_id": "BE_1147",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 43,
+          "navitia_min": 44.57,
+          "status": "both",
+          "nav_lines": "Métro 9 > Métro 14"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_09",
+      "id": "eclipse_09",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "94043",
+        "d": "d06",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "94043",
+          "pole_id": "BE_1139",
+          "day": "d06",
+          "leg": "out",
+          "starway_min": 70,
+          "navitia_min": 64.92,
+          "status": "both",
+          "nav_lines": "Bus N22 > Métro 10"
+        },
+        {
+          "insee": "94043",
+          "pole_id": "BE_1139",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 59,
+          "navitia_min": 58.58,
+          "status": "both",
+          "nav_lines": "Métro 7 > Métro 10"
+        }
+      ]
+    },
+    {
+      "label": "eclipse_10",
+      "id": "eclipse_10",
+      "published": true,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "75116",
+        "d": "d06",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "75116",
+          "pole_id": "BE_1126",
+          "day": "d06",
+          "leg": "out",
+          "starway_min": 61,
+          "navitia_min": 61.27,
+          "status": "both",
+          "nav_lines": "Bus N61 > TER TER"
+        },
+        {
+          "insee": "75116",
+          "pole_id": "BE_1126",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 39,
+          "navitia_min": 44.77,
+          "status": "both",
+          "nav_lines": "RER C > RER C"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_01",
+      "id": "territorial_gap_01",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "92063",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "92073",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "92063",
+          "pole_id": "BE_1126",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 64,
+          "navitia_min": 64.1,
+          "status": "both",
+          "nav_lines": "Bus 144 > Bus 263 > Train Transilien U"
+        },
+        {
+          "insee": "92063",
+          "pole_id": "BE_1126",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 63,
+          "navitia_min": 64.07,
+          "status": "both",
+          "nav_lines": "Train Transilien U > Bus 241 > Bus 144"
+        },
+        {
+          "insee": "92073",
+          "pole_id": "BE_1126",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 29,
+          "navitia_min": 24.1,
+          "status": "both",
+          "nav_lines": "Train Transilien U"
+        },
+        {
+          "insee": "92073",
+          "pole_id": "BE_1126",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 30,
+          "navitia_min": 30.1,
+          "status": "both",
+          "nav_lines": "Train Transilien U"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_02",
+      "id": "territorial_gap_02",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "94069",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "75112",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "contradicted",
+      "trips": [
+        {
+          "insee": "94069",
+          "pole_id": "BE_1147",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 62,
+          "navitia_min": 53.2,
+          "status": "both",
+          "nav_lines": "Métro 14 > Bus 77"
+        },
+        {
+          "insee": "75112",
+          "pole_id": "BE_1147",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 34,
+          "navitia_min": 32.15,
+          "status": "both",
+          "nav_lines": "Métro 14 > Métro 6"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_03",
+      "id": "territorial_gap_03",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "94033",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "75112",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "94033",
+          "pole_id": "BE_1129",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 64,
+          "navitia_min": 63.17,
+          "status": "both",
+          "nav_lines": "Bus 124 > RER A > Bus 427"
+        },
+        {
+          "insee": "94033",
+          "pole_id": "BE_1129",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 67,
+          "navitia_min": 73.83,
+          "status": "both",
+          "nav_lines": "Bus 427 > RER A"
+        },
+        {
+          "insee": "75112",
+          "pole_id": "BE_1129",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 42,
+          "navitia_min": 42.07,
+          "status": "both",
+          "nav_lines": "Métro 8 > CableWay C1"
+        },
+        {
+          "insee": "75112",
+          "pole_id": "BE_1129",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 43,
+          "navitia_min": 41.92,
+          "status": "both",
+          "nav_lines": "CableWay C1 > Métro 8"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_04",
+      "id": "territorial_gap_04",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "94074",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "94022",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "94074",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 66,
+          "navitia_min": 62.85,
+          "status": "both",
+          "nav_lines": "Bus 428 > RER D > RER A"
+        },
+        {
+          "insee": "94074",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 65,
+          "navitia_min": 65.1,
+          "status": "both",
+          "nav_lines": "RER A > RER D > Bus 393 > Bus 429"
+        },
+        {
+          "insee": "94022",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 51,
+          "navitia_min": 52.85,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14 > RER A"
+        },
+        {
+          "insee": "94022",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 53,
+          "navitia_min": 53.47,
+          "status": "both",
+          "nav_lines": "RER A > RER B > RER C"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_05",
+      "id": "territorial_gap_05",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "95428",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "95210",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "95428",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 66,
+          "navitia_min": 65.78,
+          "status": "both",
+          "nav_lines": "RER E > Train Transilien H > Bus 1513"
+        },
+        {
+          "insee": "95210",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 45,
+          "navitia_min": 45.32,
+          "status": "both",
+          "nav_lines": "RER E > Train Transilien H"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_06",
+      "id": "territorial_gap_06",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "94033",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "94080",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "94033",
+          "pole_id": "BE_1129",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 64,
+          "navitia_min": 63.17,
+          "status": "both",
+          "nav_lines": "Bus 124 > RER A > Bus 427"
+        },
+        {
+          "insee": "94033",
+          "pole_id": "BE_1129",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 67,
+          "navitia_min": 73.83,
+          "status": "both",
+          "nav_lines": "Bus 427 > RER A"
+        },
+        {
+          "insee": "94080",
+          "pole_id": "BE_1129",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 54,
+          "navitia_min": 53.17,
+          "status": "both",
+          "nav_lines": "RER A > Bus 427"
+        },
+        {
+          "insee": "94080",
+          "pole_id": "BE_1129",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 55,
+          "navitia_min": 56.37,
+          "status": "both",
+          "nav_lines": "Bus 427 > RER A"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_07",
+      "id": "territorial_gap_07",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "78418",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "78358",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78418",
+          "pole_id": "BE_1107_75108",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 68,
+          "navitia_min": 59.1,
+          "status": "both",
+          "nav_lines": "Bus 6435 > Train Transilien J"
+        },
+        {
+          "insee": "78418",
+          "pole_id": "BE_1107_75108",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 62,
+          "navitia_min": 62.9,
+          "status": "both",
+          "nav_lines": "RER A > Bus 6417"
+        },
+        {
+          "insee": "78358",
+          "pole_id": "BE_1107_75108",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 45,
+          "navitia_min": 39.1,
+          "status": "both",
+          "nav_lines": "RER A > Train Transilien J"
+        },
+        {
+          "insee": "78358",
+          "pole_id": "BE_1107_75108",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 44,
+          "navitia_min": 44.45,
+          "status": "both",
+          "nav_lines": "RER A"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_08",
+      "id": "territorial_gap_08",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "78418",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "78124",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78418",
+          "pole_id": "BE_1107_75108",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 68,
+          "navitia_min": 59.1,
+          "status": "both",
+          "nav_lines": "Bus 6435 > Train Transilien J"
+        },
+        {
+          "insee": "78418",
+          "pole_id": "BE_1107_75108",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 62,
+          "navitia_min": 62.9,
+          "status": "both",
+          "nav_lines": "RER A > Bus 6417"
+        },
+        {
+          "insee": "78124",
+          "pole_id": "BE_1107_75108",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 50,
+          "navitia_min": 39.1,
+          "status": "both",
+          "nav_lines": "Bus 6423 > Train Transilien J"
+        },
+        {
+          "insee": "78124",
+          "pole_id": "BE_1107_75108",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 50,
+          "navitia_min": 50.33,
+          "status": "both",
+          "nav_lines": "RER A > Bus 6404"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_09",
+      "id": "territorial_gap_09",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "78396",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "78358",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78396",
+          "pole_id": "BE_1107_75108",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 68,
+          "navitia_min": 68.52,
+          "status": "both",
+          "nav_lines": "Train Transilien L > Bus 6428"
+        },
+        {
+          "insee": "78358",
+          "pole_id": "BE_1107_75108",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 44,
+          "navitia_min": 44.45,
+          "status": "both",
+          "nav_lines": "RER A"
+        }
+      ]
+    },
+    {
+      "label": "territorial_gap_10",
+      "id": "territorial_gap_10",
+      "published": true,
+      "kind": "territorial_gap",
+      "scenario": {
+        "o": "95088",
+        "d": "d09",
+        "b": 60,
+        "m": "transit",
+        "vs": "93007",
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "95088",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 66,
+          "navitia_min": 68.18,
+          "status": "both",
+          "nav_lines": "Bus 1626 > RER D > RER A"
+        },
+        {
+          "insee": "95088",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 86,
+          "navitia_min": 86.88,
+          "status": "both",
+          "nav_lines": "RER A > RER D > Bus 1602"
+        },
+        {
+          "insee": "93007",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "out",
+          "starway_min": 49,
+          "navitia_min": 49.53,
+          "status": "both",
+          "nav_lines": "RER B > RER E"
+        },
+        {
+          "insee": "93007",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 50,
+          "navitia_min": 47.55,
+          "status": "both",
+          "nav_lines": "RER E > RER B"
+        }
+      ]
+    },
+    {
+      "label": "late_return_01",
+      "id": "late_return_01",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "94001",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "within_one_minute",
+      "trips": [
+        {
+          "insee": "94001",
+          "pole_id": "BE_1146",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 57,
+          "navitia_min": 58.78,
+          "status": "both",
+          "nav_lines": "RER C > Métro 14 > RER A"
+        },
+        {
+          "insee": "94001",
+          "pole_id": "BE_1146",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 71,
+          "navitia_min": 60.22,
+          "status": "both",
+          "nav_lines": "RER E > RER B > RER C"
+        }
+      ]
+    },
+    {
+      "label": "late_return_02",
+      "id": "late_return_02",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "92022",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "92022",
+          "pole_id": "BE_1147",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 48,
+          "navitia_min": 48.62,
+          "status": "both",
+          "nav_lines": "Train Transilien L > Métro 14"
+        },
+        {
+          "insee": "92022",
+          "pole_id": "BE_1147",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 64,
+          "navitia_min": 64.63,
+          "status": "both",
+          "nav_lines": "Métro 14 > Train Transilien L"
+        }
+      ]
+    },
+    {
+      "label": "late_return_03",
+      "id": "late_return_03",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "78358",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78358",
+          "pole_id": "BE_1126",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 58,
+          "navitia_min": 53.6,
+          "status": "both",
+          "nav_lines": "RER A > Train Transilien U"
+        },
+        {
+          "insee": "78358",
+          "pole_id": "BE_1126",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 106,
+          "navitia_min": 106.12,
+          "status": "both",
+          "nav_lines": "Train Transilien N > Métro 6 > RER A"
+        }
+      ]
+    },
+    {
+      "label": "late_return_04",
+      "id": "late_return_04",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "78686",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "78686",
+          "pole_id": "BE_1107_75108",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 48,
+          "navitia_min": 49.1,
+          "status": "both",
+          "nav_lines": "Train Transilien L"
+        },
+        {
+          "insee": "78686",
+          "pole_id": "BE_1107_75108",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 63,
+          "navitia_min": 63.38,
+          "status": "both",
+          "nav_lines": "Métro 13 > Train Transilien N"
+        }
+      ]
+    },
+    {
+      "label": "late_return_05",
+      "id": "late_return_05",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "92064",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "92064",
+          "pole_id": "BE_1126",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 28,
+          "navitia_min": 28.6,
+          "status": "both",
+          "nav_lines": "Train Transilien U"
+        },
+        {
+          "insee": "92064",
+          "pole_id": "BE_1126",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 66,
+          "navitia_min": 69.57,
+          "status": "both",
+          "nav_lines": "Bus U"
+        }
+      ]
+    },
+    {
+      "label": "late_return_06",
+      "id": "late_return_06",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "94058",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "contradicted",
+      "trips": [
+        {
+          "insee": "94058",
+          "pole_id": "BE_1146",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 50,
+          "navitia_min": 44.78,
+          "status": "both",
+          "nav_lines": "Bus 116 > RER A"
+        },
+        {
+          "insee": "94058",
+          "pole_id": "BE_1146",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 63,
+          "navitia_min": 53.9,
+          "status": "both",
+          "nav_lines": "RER A > RER E"
+        }
+      ]
+    },
+    {
+      "label": "late_return_07",
+      "id": "late_return_07",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "95210",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "95210",
+          "pole_id": "BE_1117",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 59,
+          "navitia_min": 58.27,
+          "status": "both",
+          "nav_lines": "Train Transilien H > Métro 5 > Train Transilien P"
+        },
+        {
+          "insee": "95210",
+          "pole_id": "BE_1117",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 63,
+          "navitia_min": 63.65,
+          "status": "both",
+          "nav_lines": "Train Transilien P > Métro 5 > Train Transilien H"
+        }
+      ]
+    },
+    {
+      "label": "late_return_08",
+      "id": "late_return_08",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "92073",
+        "d": "d14",
+        "b": 45,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 45,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "92073",
+          "pole_id": "BE_1126",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 23,
+          "navitia_min": 23.6,
+          "status": "both",
+          "nav_lines": "Train Transilien U"
+        },
+        {
+          "insee": "92073",
+          "pole_id": "BE_1126",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 60,
+          "navitia_min": 63.73,
+          "status": "both",
+          "nav_lines": "Train Transilien N > Bus 179 > Tramway T2"
+        }
+      ]
+    },
+    {
+      "label": "late_return_09",
+      "id": "late_return_09",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "95257",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "95257",
+          "pole_id": "BE_1146",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 57,
+          "navitia_min": 53.2,
+          "status": "both",
+          "nav_lines": "Train Transilien J > RER E"
+        },
+        {
+          "insee": "95257",
+          "pole_id": "BE_1146",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 76,
+          "navitia_min": 75.7,
+          "status": "both",
+          "nav_lines": "Train Transilien L > Train Transilien J > Bus J"
+        }
+      ]
+    },
+    {
+      "label": "late_return_10",
+      "id": "late_return_10",
+      "published": true,
+      "kind": "late_return",
+      "scenario": {
+        "o": "94042",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "confirmed",
+      "trips": [
+        {
+          "insee": "94042",
+          "pole_id": "BE_1147",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 53,
+          "navitia_min": 53.62,
+          "status": "both",
+          "nav_lines": "Bus 201 > RER A > Métro 14"
+        },
+        {
+          "insee": "94042",
+          "pole_id": "BE_1147",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 65,
+          "navitia_min": 68.82,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER A"
+        }
+      ]
+    },
+    {
+      "label": "excluded:eclipse_02",
+      "id": "eclipse_02",
+      "published": false,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "94079",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "contradicted",
+      "trips": [
+        {
+          "insee": "94079",
+          "pole_id": "BE_1146",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 65,
+          "navitia_min": 53.92,
+          "status": "both",
+          "nav_lines": "RER A > RER E"
+        },
+        {
+          "insee": "94079",
+          "pole_id": "BE_1146",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 45,
+          "navitia_min": 47.08,
+          "status": "both",
+          "nav_lines": "RER E"
+        }
+      ]
+    },
+    {
+      "label": "excluded:eclipse_04",
+      "id": "eclipse_04",
+      "published": false,
+      "kind": "eclipse",
+      "scenario": {
+        "o": "94079",
+        "d": "d06",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": "d09"
+      },
+      "budget": 60,
+      "verdict": "contradicted",
+      "trips": [
+        {
+          "insee": "94079",
+          "pole_id": "BE_1147",
+          "day": "d06",
+          "leg": "ret",
+          "starway_min": 65,
+          "navitia_min": 66.42,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER E"
+        },
+        {
+          "insee": "94079",
+          "pole_id": "BE_1147",
+          "day": "d09",
+          "leg": "ret",
+          "starway_min": 60,
+          "navitia_min": 61.92,
+          "status": "both",
+          "nav_lines": "Métro 14 > RER E"
+        }
+      ]
+    },
+    {
+      "label": "excluded:late_return_03",
+      "id": "late_return_03",
+      "published": false,
+      "kind": "late_return",
+      "scenario": {
+        "o": "95555",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "contradicted",
+      "trips": [
+        {
+          "insee": "95555",
+          "pole_id": "BE_1107_75109",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 47,
+          "navitia_min": 43.88,
+          "status": "both",
+          "nav_lines": "RER C > Métro 3"
+        },
+        {
+          "insee": "95555",
+          "pole_id": "BE_1107_75109",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 61,
+          "navitia_min": 54.27,
+          "status": "both",
+          "nav_lines": "Métro 3 > Train Transilien J > Bus 138"
+        }
+      ]
+    },
+    {
+      "label": "excluded:late_return_11",
+      "id": "late_return_11",
+      "published": false,
+      "kind": "late_return",
+      "scenario": {
+        "o": "92063",
+        "d": "d14",
+        "b": 60,
+        "m": "transit",
+        "vs": null,
+        "compare_day": null
+      },
+      "budget": 60,
+      "verdict": "contradicted",
+      "trips": [
+        {
+          "insee": "92063",
+          "pole_id": "BE_1126",
+          "day": "d14",
+          "leg": "out",
+          "starway_min": 58,
+          "navitia_min": 63.6,
+          "status": "both",
+          "nav_lines": "Bus 244 > Bus 241 > Train Transilien U"
+        },
+        {
+          "insee": "92063",
+          "pole_id": "BE_1126",
+          "day": "d14",
+          "leg": "ret",
+          "starway_min": 78,
+          "navitia_min": 79.07,
+          "status": "both",
+          "nav_lines": "Train Transilien N > Bus 179 > Tramway T2 > Bus 144"
+        }
+      ]
+    }
+  ],
+  "walk_setting": {
+    "id": "normal",
+    "leg_limit_m": 3000,
+    "max_time_walking_min": 50
+  },
+  "generated_at": "2026-11-10T03:21:19Z",
+  "service_date": "2026-11-17",
+  "dataset_id": "2026-11-17_dc97ca710c6c",
+  "navitia_coverage": {
+    "id": "idfm",
+    "start_production_date": "20261105",
+    "end_production_date": "20261208",
+    "last_load_at": "20261109T230555",
+    "fetched_at": "2026-11-10T01:45:32Z"
+  },
+  "navitia_settings": {
+    "walking_speed_ms": 1.0,
+    "max_walking_duration_to_pt_s": {
+      "aller": 3000,
+      "retour": 3000
+    },
+    "max_walking_direct_path_duration_s": 3000,
+    "max_nb_transfers": 7,
+    "max_duration_s": 7200,
+    "data_freshness": "base_schedule",
+    "min_nb_journeys": 3
+  },
+  "requests_sent_this_run": 0,
+  "x_ratelimit_remaining_day": null,
+  "stopped": null,
+  "cache_files": 303
+}

@@ -1,0 +1,467 @@
+{
+ "coverage": {
+  "contract": "alternatives-coverage-1",
+  "walk_setting": "normal",
+  "suboptimal_min": 15,
+  "setting_note": "largeur de recherche de 15 minutes : réglage de l'équipe, pas une donnée (D-055)",
+  "comfort_note": "réglage de marche « confort » non calculé",
+  "poles": [
+   "BE_1107_75101",
+   "BE_1107_75103",
+   "BE_1107_75104",
+   "BE_1108"
+  ],
+  "days": [
+   "d06"
+  ],
+  "dirs": [
+   "out",
+   "ret"
+  ],
+  "communes": {
+   "78358": {
+    "d06": {
+     "out": "aass",
+     "ret": "aass"
+    }
+   },
+   "93066": null
+  }
+ },
+ "commune": {
+  "insee": "78358",
+  "contract": "alternatives-1",
+  "walk_setting": "normal",
+  "suboptimal_min": 15,
+  "setting_note": "largeur de recherche de 15 minutes : réglage de l'équipe, pas une donnée (D-055)",
+  "comfort_note": "réglage de marche « confort » non calculé",
+  "poles": [
+   "BE_1107_75101",
+   "BE_1107_75103",
+   "BE_1107_75104",
+   "BE_1108"
+  ],
+  "days": {
+   "d06": {
+    "out": [
+     {
+      "state": "calcule_avec_alternatives",
+      "a_lines": [
+       "A",
+       "7"
+      ],
+      "B": null,
+      "C": {
+       "dep": "05:05",
+       "arr": "05:56",
+       "min": 51,
+       "rides": 1,
+       "wait_min": 3.9,
+       "walk_m": 1470,
+       "legs": [
+        {
+         "m": "walk",
+         "dep": "05:05",
+         "arr": "05:14",
+         "min": 9.2,
+         "dist_m": 542,
+         "role": "access",
+         "from": null,
+         "to": "Maisons-Laffitte"
+        },
+        {
+         "m": "rer",
+         "dep": "05:18",
+         "arr": "05:41",
+         "min": 22.9,
+         "dist_m": 18037,
+         "line": "A",
+         "color": "EB2132",
+         "text_color": "FFFFFF",
+         "route_type": 2,
+         "agency": "RER",
+         "from": "Maisons-Laffitte",
+         "to": "Châtelet - Les Halles",
+         "wait_min": 3.9,
+         "wc_trip": true,
+         "wc_from": true,
+         "wc_to": null,
+         "air_conditioning": "true",
+         "punctuality": {
+          "value_pct": 89.423,
+          "month": "2026-09"
+         }
+        },
+        {
+         "m": "walk",
+         "dep": "05:41",
+         "arr": "05:56",
+         "min": 15.4,
+         "dist_m": 928,
+         "role": "egress",
+         "from": "Châtelet - Les Halles",
+         "to": null
+        }
+       ],
+       "tickets": {
+        "metro_train_rer": 1,
+        "bus_tram": 0,
+        "airport": 0,
+        "cost_eur": 2.55,
+        "status": "ok"
+       },
+       "co2_g": {
+        "value": 99,
+        "status": "ok"
+       }
+      }
+     },
+     {
+      "state": "calcule_avec_alternatives",
+      "a_lines": [
+       "A",
+       "3"
+      ],
+      "B": null,
+      "C": {
+       "dep": "05:05",
+       "arr": "05:59",
+       "min": 54,
+       "rides": 1,
+       "wait_min": 3.9,
+       "walk_m": 1631,
+       "legs": [
+        {
+         "m": "walk",
+         "dep": "05:05",
+         "arr": "05:14",
+         "min": 9.2,
+         "dist_m": 542,
+         "role": "access",
+         "from": null,
+         "to": "Maisons-Laffitte"
+        },
+        {
+         "m": "rer",
+         "dep": "05:18",
+         "arr": "05:41",
+         "min": 22.9,
+         "dist_m": 18037,
+         "line": "A",
+         "color": "EB2132",
+         "text_color": "FFFFFF",
+         "route_type": 2,
+         "agency": "RER",
+         "from": "Maisons-Laffitte",
+         "to": "Châtelet - Les Halles",
+         "wait_min": 3.9,
+         "wc_trip": true,
+         "wc_from": true,
+         "wc_to": null,
+         "air_conditioning": "true",
+         "punctuality": {
+          "value_pct": 89.423,
+          "month": "2026-09"
+         }
+        },
+        {
+         "m": "walk",
+         "dep": "05:41",
+         "arr": "05:59",
+         "min": 18.1,
+         "dist_m": 1089,
+         "role": "egress",
+         "from": "Châtelet - Les Halles",
+         "to": null
+        }
+       ],
+       "tickets": {
+        "metro_train_rer": 1,
+        "bus_tram": 0,
+        "airport": 0,
+        "cost_eur": 2.55,
+        "status": "ok"
+       },
+       "co2_g": {
+        "value": 99,
+        "status": "ok"
+       }
+      }
+     },
+     {
+      "state": "calcule_sans_alternative",
+      "a_lines": [
+       "A"
+      ],
+      "B": null,
+      "C": null
+     },
+     {
+      "state": "calcule_sans_alternative",
+      "status": "no_trip_in_matrix"
+     }
+    ],
+    "ret": [
+     {
+      "state": "calcule_avec_alternatives",
+      "a_lines": [
+       "1",
+       "A"
+      ],
+      "B": null,
+      "C": {
+       "dep": "14:00",
+       "arr": "14:50",
+       "min": 50,
+       "rides": 1,
+       "wait_min": 4.1,
+       "walk_m": 1382,
+       "legs": [
+        {
+         "m": "walk",
+         "dep": "14:00",
+         "arr": "14:16",
+         "min": 16.4,
+         "dist_m": 950,
+         "role": "access",
+         "from": null,
+         "to": "Châtelet - Les Halles"
+        },
+        {
+         "m": "rer",
+         "dep": "14:20",
+         "arr": "14:43",
+         "min": 22.5,
+         "dist_m": 18037,
+         "line": "A",
+         "color": "EB2132",
+         "text_color": "FFFFFF",
+         "route_type": 2,
+         "agency": "RER",
+         "from": "Châtelet - Les Halles",
+         "to": "Maisons-Laffitte",
+         "wait_min": 4.1,
+         "wc_trip": true,
+         "wc_from": null,
+         "wc_to": true,
+         "air_conditioning": "true",
+         "punctuality": {
+          "value_pct": 89.423,
+          "month": "2026-09"
+         }
+        },
+        {
+         "m": "walk",
+         "dep": "14:43",
+         "arr": "14:50",
+         "min": 7.2,
+         "dist_m": 432,
+         "role": "egress",
+         "from": "Maisons-Laffitte",
+         "to": null
+        }
+       ],
+       "tickets": {
+        "metro_train_rer": 1,
+        "bus_tram": 0,
+        "airport": 0,
+        "cost_eur": 2.55,
+        "status": "ok"
+       },
+       "co2_g": {
+        "value": 99,
+        "status": "ok"
+       }
+      }
+     },
+     {
+      "state": "calcule_avec_alternatives",
+      "a_lines": [
+       "3",
+       "A"
+      ],
+      "B": {
+       "dep": "14:00",
+       "arr": "14:45",
+       "min": 45,
+       "rides": 2,
+       "wait_min": 4.3,
+       "walk_m": null,
+       "legs": [
+        {
+         "m": "walk",
+         "dep": "14:00",
+         "arr": "14:01",
+         "min": 1.2,
+         "dist_m": 69,
+         "role": "access",
+         "from": null,
+         "to": "Arts et Métiers"
+        },
+        {
+         "m": "metro",
+         "dep": "14:03",
+         "arr": "14:06",
+         "min": 3.0,
+         "dist_m": 1184,
+         "line": "11",
+         "color": "6E491E",
+         "text_color": "FFFFFF",
+         "route_type": 1,
+         "agency": "RATP",
+         "from": "Arts et Métiers",
+         "to": "Châtelet",
+         "wait_min": 2.5,
+         "wc_trip": false,
+         "wc_from": false,
+         "wc_to": false,
+         "air_conditioning": "true",
+         "punctuality": {
+          "value_pct": null,
+          "month": null,
+          "reason": "no_open_data"
+         }
+        },
+        {
+         "m": "walk",
+         "dep": "14:06",
+         "arr": "14:14",
+         "min": 8.0,
+         "dist_m": null,
+         "role": "transfer",
+         "from": "Châtelet",
+         "to": "Châtelet - Les Halles"
+        },
+        {
+         "m": "rer",
+         "dep": "14:16",
+         "arr": "14:38",
+         "min": 22.2,
+         "dist_m": 18037,
+         "line": "A",
+         "color": "EB2132",
+         "text_color": "FFFFFF",
+         "route_type": 2,
+         "agency": "RER",
+         "from": "Châtelet - Les Halles",
+         "to": "Maisons-Laffitte",
+         "wait_min": 1.9,
+         "wc_trip": true,
+         "wc_from": null,
+         "wc_to": true,
+         "air_conditioning": "true",
+         "punctuality": {
+          "value_pct": 89.423,
+          "month": "2026-09"
+         }
+        },
+        {
+         "m": "walk",
+         "dep": "14:38",
+         "arr": "14:45",
+         "min": 7.2,
+         "dist_m": 432,
+         "role": "egress",
+         "from": "Maisons-Laffitte",
+         "to": null
+        }
+       ],
+       "tickets": {
+        "metro_train_rer": 1,
+        "bus_tram": 0,
+        "airport": 0,
+        "cost_eur": 2.55,
+        "status": "ok"
+       },
+       "co2_g": {
+        "value": 104,
+        "status": "ok"
+       }
+      },
+      "C": {
+       "dep": "14:00",
+       "arr": "14:50",
+       "min": 50,
+       "rides": 1,
+       "wait_min": 1.4,
+       "walk_m": 1542,
+       "legs": [
+        {
+         "m": "walk",
+         "dep": "14:00",
+         "arr": "14:19",
+         "min": 19.1,
+         "dist_m": 1110,
+         "role": "access",
+         "from": null,
+         "to": "Châtelet - Les Halles"
+        },
+        {
+         "m": "rer",
+         "dep": "14:20",
+         "arr": "14:43",
+         "min": 22.5,
+         "dist_m": 18037,
+         "line": "A",
+         "color": "EB2132",
+         "text_color": "FFFFFF",
+         "route_type": 2,
+         "agency": "RER",
+         "from": "Châtelet - Les Halles",
+         "to": "Maisons-Laffitte",
+         "wait_min": 1.4,
+         "wc_trip": true,
+         "wc_from": null,
+         "wc_to": true,
+         "air_conditioning": "true",
+         "punctuality": {
+          "value_pct": 89.423,
+          "month": "2026-09"
+         }
+        },
+        {
+         "m": "walk",
+         "dep": "14:43",
+         "arr": "14:50",
+         "min": 7.2,
+         "dist_m": 432,
+         "role": "egress",
+         "from": "Maisons-Laffitte",
+         "to": null
+        }
+       ],
+       "tickets": {
+        "metro_train_rer": 1,
+        "bus_tram": 0,
+        "airport": 0,
+        "cost_eur": 2.55,
+        "status": "ok"
+       },
+       "co2_g": {
+        "value": 99,
+        "status": "ok"
+       }
+      }
+     },
+     {
+      "state": "calcule_sans_alternative",
+      "a_lines": [
+       "A"
+      ],
+      "B": null,
+      "C": null
+     },
+     {
+      "state": "calcule_sans_alternative",
+      "a_lines": [
+       "R",
+       "A"
+      ],
+      "B": null,
+      "C": null
+     }
+    ]
+   }
+  }
+ }
+}

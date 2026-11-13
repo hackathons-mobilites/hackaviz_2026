@@ -1,0 +1,345 @@
+{
+ "tour": "lea",
+ "stem": "07-acte3-horizons",
+ "mp3Sha256": "c000be78d64ce7d86b6096850f08d45f96efe02b482f10864383cdfa711bc047",
+ "text": "L’écran se partage en deux. À droite, celui de sa voisine, Montesson, avec les mêmes réglages : même journée, même temps de trajet, mêmes transports en commun. À gauche, Maisons-Laffitte : 24 étoiles. À droite, seulement une étoile. En haut de son ciel : plus de 87 000 postes à sa portée. Deux voisines, le même ciel, mais pas les mêmes étoiles : voilà une inégalité entre territoires.",
+ "source": "Azure AI Speech, reconnaissance fr-FR (REST, wordLevelTimestamps), ressource Speech de l’équipe",
+ "recognized": "L'écran se partage en 2 à droite, celui de sa voisine montesson, avec les mêmes réglages, même journée, même temps de trajet, même transport en commun. À gauche, Maisons-Laffitte, 24 étoiles. À droite seulement, une étoile en haut de son ciel, plus de 87000 postes à sa portée. 2 voisines, le même ciel mais pas les mêmes étoiles, voilà une inégalité entre territoires.",
+ "words": [
+  {
+   "word": "l'écran",
+   "startMs": 70,
+   "endMs": 470
+  },
+  {
+   "word": "se",
+   "startMs": 470,
+   "endMs": 630
+  },
+  {
+   "word": "partage",
+   "startMs": 630,
+   "endMs": 990
+  },
+  {
+   "word": "en",
+   "startMs": 990,
+   "endMs": 1070
+  },
+  {
+   "word": "deux",
+   "startMs": 1070,
+   "endMs": 1430
+  },
+  {
+   "word": "à",
+   "startMs": 1830,
+   "endMs": 2030
+  },
+  {
+   "word": "droite",
+   "startMs": 2030,
+   "endMs": 2590
+  },
+  {
+   "word": "celui",
+   "startMs": 2590,
+   "endMs": 3030
+  },
+  {
+   "word": "de",
+   "startMs": 3030,
+   "endMs": 3070
+  },
+  {
+   "word": "sa",
+   "startMs": 3070,
+   "endMs": 3190
+  },
+  {
+   "word": "voisine",
+   "startMs": 3190,
+   "endMs": 3750
+  },
+  {
+   "word": "montesson",
+   "startMs": 3750,
+   "endMs": 4510
+  },
+  {
+   "word": "avec",
+   "startMs": 4590,
+   "endMs": 4950
+  },
+  {
+   "word": "les",
+   "startMs": 4950,
+   "endMs": 5030
+  },
+  {
+   "word": "mêmes",
+   "startMs": 5030,
+   "endMs": 5230
+  },
+  {
+   "word": "réglages",
+   "startMs": 5230,
+   "endMs": 5870
+  },
+  {
+   "word": "même",
+   "startMs": 6110,
+   "endMs": 6430
+  },
+  {
+   "word": "journée",
+   "startMs": 6430,
+   "endMs": 6990
+  },
+  {
+   "word": "même",
+   "startMs": 7070,
+   "endMs": 7430
+  },
+  {
+   "word": "temps",
+   "startMs": 7430,
+   "endMs": 7590
+  },
+  {
+   "word": "de",
+   "startMs": 7590,
+   "endMs": 7670
+  },
+  {
+   "word": "trajet",
+   "startMs": 7670,
+   "endMs": 8230
+  },
+  {
+   "word": "même",
+   "startMs": 8350,
+   "endMs": 8670
+  },
+  {
+   "word": "transport",
+   "startMs": 8670,
+   "endMs": 9110
+  },
+  {
+   "word": "en",
+   "startMs": 9110,
+   "endMs": 9190
+  },
+  {
+   "word": "commun",
+   "startMs": 9190,
+   "endMs": 9630
+  },
+  {
+   "word": "à",
+   "startMs": 10310,
+   "endMs": 10470
+  },
+  {
+   "word": "gauche",
+   "startMs": 10470,
+   "endMs": 10990
+  },
+  {
+   "word": "maisons-laffitte",
+   "startMs": 11230,
+   "endMs": 12150
+  },
+  {
+   "word": "vingt",
+   "startMs": 12430,
+   "endMs": 12750
+  },
+  {
+   "word": "quatre",
+   "startMs": 12750,
+   "endMs": 12990
+  },
+  {
+   "word": "étoiles",
+   "startMs": 12990,
+   "endMs": 13510
+  },
+  {
+   "word": "à",
+   "startMs": 14190,
+   "endMs": 14270
+  },
+  {
+   "word": "droite",
+   "startMs": 14270,
+   "endMs": 14830
+  },
+  {
+   "word": "seulement",
+   "startMs": 14870,
+   "endMs": 15470
+  },
+  {
+   "word": "une",
+   "startMs": 15470,
+   "endMs": 15670
+  },
+  {
+   "word": "étoile",
+   "startMs": 15670,
+   "endMs": 16190
+  },
+  {
+   "word": "en",
+   "startMs": 16550,
+   "endMs": 16790
+  },
+  {
+   "word": "haut",
+   "startMs": 16790,
+   "endMs": 16950
+  },
+  {
+   "word": "de",
+   "startMs": 16950,
+   "endMs": 17070
+  },
+  {
+   "word": "son",
+   "startMs": 17070,
+   "endMs": 17230
+  },
+  {
+   "word": "ciel",
+   "startMs": 17230,
+   "endMs": 17670
+  },
+  {
+   "word": "plus",
+   "startMs": 18110,
+   "endMs": 18430
+  },
+  {
+   "word": "de",
+   "startMs": 18430,
+   "endMs": 18470
+  },
+  {
+   "word": "quatre",
+   "startMs": 18470,
+   "endMs": 18870
+  },
+  {
+   "word": "vingt",
+   "startMs": 18870,
+   "endMs": 19030
+  },
+  {
+   "word": "sept",
+   "startMs": 19030,
+   "endMs": 19310
+  },
+  {
+   "word": "mille",
+   "startMs": 19310,
+   "endMs": 19510
+  },
+  {
+   "word": "postes",
+   "startMs": 19510,
+   "endMs": 19830
+  },
+  {
+   "word": "à",
+   "startMs": 19830,
+   "endMs": 19910
+  },
+  {
+   "word": "sa",
+   "startMs": 19910,
+   "endMs": 20030
+  },
+  {
+   "word": "portée",
+   "startMs": 20030,
+   "endMs": 20510
+  },
+  {
+   "word": "deux",
+   "startMs": 21230,
+   "endMs": 21510
+  },
+  {
+   "word": "voisines",
+   "startMs": 21510,
+   "endMs": 22110
+  },
+  {
+   "word": "le",
+   "startMs": 22430,
+   "endMs": 22710
+  },
+  {
+   "word": "même",
+   "startMs": 22710,
+   "endMs": 22910
+  },
+  {
+   "word": "ciel",
+   "startMs": 22910,
+   "endMs": 23430
+  },
+  {
+   "word": "mais",
+   "startMs": 23550,
+   "endMs": 23830
+  },
+  {
+   "word": "pas",
+   "startMs": 23830,
+   "endMs": 23950
+  },
+  {
+   "word": "les",
+   "startMs": 23950,
+   "endMs": 24070
+  },
+  {
+   "word": "mêmes",
+   "startMs": 24070,
+   "endMs": 24270
+  },
+  {
+   "word": "étoiles",
+   "startMs": 24310,
+   "endMs": 24830
+  },
+  {
+   "word": "voilà",
+   "startMs": 25310,
+   "endMs": 25670
+  },
+  {
+   "word": "une",
+   "startMs": 25670,
+   "endMs": 25790
+  },
+  {
+   "word": "inégalité",
+   "startMs": 25790,
+   "endMs": 26390
+  },
+  {
+   "word": "entre",
+   "startMs": 26390,
+   "endMs": 26670
+  },
+  {
+   "word": "territoires",
+   "startMs": 26670,
+   "endMs": 27310
+  }
+ ]
+}

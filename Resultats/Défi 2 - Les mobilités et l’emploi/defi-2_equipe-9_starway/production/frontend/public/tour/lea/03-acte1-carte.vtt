@@ -1,0 +1,29 @@
+WEBVTT
+
+NOTE Généré par tools/tour-tts, voix fr-FR-Marc:MAI-Voice-2 (profil marc-standard-r8), processing_version 0.1.0. Aligné sur les mots reconnus (Azure AI Speech, scripts/align-tour-vtt.mjs) et la fin du silence qui précède chaque proposition (ffmpeg silencedetect -40 dB, 0,12 s).
+
+1
+00:00:00.000 --> 00:00:01.270
+La carte s’ouvre :
+
+2
+00:00:01.270 --> 00:00:03.422
+chaque étoile retrouve sa place.
+
+3
+00:00:03.422 --> 00:00:06.760
+Le ciel de Léa part du cœur habité de
+Maisons-Laffitte :
+
+4
+00:00:06.760 --> 00:00:07.434
+un point,
+
+5
+00:00:07.434 --> 00:00:08.750
+pas une adresse.
+
+6
+00:00:08.750 --> 00:00:10.950
+Les temps sont calculés de commune à
+commune.

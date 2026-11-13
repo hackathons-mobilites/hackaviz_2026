@@ -1,0 +1,15 @@
+# Lecture de la figure « CO2 et conso de carburant en usage réel ADEME » (ADEME, « 2RM : mise à jour des connaissances sur les consommations et les émissions à l'échappement », septembre 2023, § 4 « Les résultats 2/3 RM détaillés », page 6), relevée à l'écran le 04/11/2026 sur une capture de l'équipe.
+# Méthode : hauteur des barres en pixels, axe de droite 0,0 à 6,0 L/100 km (80 px par litre) et axe de gauche 0 à 120 g/km ; précision de lecture d'environ 0,05 L/100 km et 1 g/km.
+# Recoupement : les mêmes consommations (véhicules Euro4 et Euro5) sont les points pleins de la figure « Consommation sur le trajet de référence : comparaison des 2RM Euro3 / Euro 4 & 5 », page 7 ; catégorie de chaque véhicule d'après le tableau de la page 5 et la légende de la page 7.
+vehicule_n,categorie,conso_l_100km,co2_g_km
+28,125 cm3,2.3,47.9
+32,125 cm3,2.875,59.0
+24,125 cm3,3.0,63.3
+27,125 cm3,2.475,53.8
+31,maxiscooter,3.875,86.0
+21,maxiscooter,3.56,79.6
+23,maxiscooter,4.3,97.3
+29,moto moyenne cylindrée,3.26,73.4
+25,moto moyenne cylindrée,3.975,84.2
+30,moto plus de 900 cm3,4.725,107.1
+20,moto plus de 900 cm3,4.575,103.5

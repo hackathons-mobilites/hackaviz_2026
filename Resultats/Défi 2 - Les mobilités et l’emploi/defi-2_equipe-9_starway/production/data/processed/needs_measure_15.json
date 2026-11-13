@@ -1,0 +1,151 @@
+{
+ "data_dir": "..\\frontend\\public\\data\\astres15",
+ "budget_min": 60,
+ "rule": "starway.needs.star_marked",
+ "normal": {
+  "dir": "itineraries",
+  "files": 1285,
+  "poles": 15,
+  "all_pairs": {
+   "pairs": 17993,
+   "with_ride": 17980,
+   "walk_only": 13,
+   "pct": {
+    "line_tra03_not_a_box": 2.1,
+    "1_wc_trip": 30.9,
+    "2_wc_stops": 17.4,
+    "3_station": 15.1,
+    "3_station_only_trips_without_rail_station": 10.5,
+    "4_audio": 2.5,
+    "5_visual": 2.3,
+    "1+2": 12.0,
+    "1+2+3": 2.6,
+    "marked_1_2_3": 2.6,
+    "4+5": 2.1
+   },
+   "counts": {
+    "audio+visual": 381,
+    "box_audio": 442,
+    "box_station": 2714,
+    "box_visual": 410,
+    "box_wc_stops": 3131,
+    "box_wc_trip": 5555,
+    "line_tra03": 374,
+    "marked_1_2_3": 466,
+    "no_station_both": 1896,
+    "pairs": 17993,
+    "walk_only": 13,
+    "wc_trip+wc_stops": 2153,
+    "wc_trip+wc_stops+station": 466,
+    "with_ride": 17980
+   }
+  },
+  "within_60_min": {
+   "pairs": 3491,
+   "with_ride": 3478,
+   "walk_only": 13,
+   "pct": {
+    "line_tra03_not_a_box": 8.6,
+    "1_wc_trip": 41.9,
+    "2_wc_stops": 33.1,
+    "3_station": 42.9,
+    "3_station_only_trips_without_rail_station": 35.0,
+    "4_audio": 7.0,
+    "5_visual": 6.6,
+    "1+2": 25.6,
+    "1+2+3": 9.9,
+    "marked_1_2_3": 9.9,
+    "4+5": 6.3
+   },
+   "counts": {
+    "audio+visual": 221,
+    "box_audio": 244,
+    "box_station": 1499,
+    "box_visual": 232,
+    "box_wc_stops": 1157,
+    "box_wc_trip": 1464,
+    "line_tra03": 299,
+    "marked_1_2_3": 347,
+    "no_station_both": 1222,
+    "pairs": 3491,
+    "walk_only": 13,
+    "wc_trip+wc_stops": 895,
+    "wc_trip+wc_stops+station": 347,
+    "with_ride": 3478
+   }
+  }
+ },
+ "comfort": {
+  "dir": "itineraries_walk1000",
+  "files": 1285,
+  "poles": 15,
+  "all_pairs": {
+   "pairs": 15533,
+   "with_ride": 15524,
+   "walk_only": 9,
+   "pct": {
+    "line_tra03_not_a_box": 2.2,
+    "1_wc_trip": 27.9,
+    "2_wc_stops": 17.3,
+    "3_station": 15.9,
+    "3_station_only_trips_without_rail_station": 11.5,
+    "4_audio": 2.5,
+    "5_visual": 2.4,
+    "1+2": 11.4,
+    "1+2+3": 2.6,
+    "marked_1_2_3": 2.6,
+    "4+5": 2.2
+   },
+   "counts": {
+    "audio+visual": 343,
+    "box_audio": 392,
+    "box_station": 2473,
+    "box_visual": 366,
+    "box_wc_stops": 2692,
+    "box_wc_trip": 4329,
+    "line_tra03": 337,
+    "marked_1_2_3": 406,
+    "no_station_both": 1781,
+    "pairs": 15533,
+    "walk_only": 9,
+    "wc_trip+wc_stops": 1773,
+    "wc_trip+wc_stops+station": 406,
+    "with_ride": 15524
+   }
+  },
+  "within_60_min": {
+   "pairs": 3323,
+   "with_ride": 3314,
+   "walk_only": 9,
+   "pct": {
+    "line_tra03_not_a_box": 8.7,
+    "1_wc_trip": 40.8,
+    "2_wc_stops": 32.5,
+    "3_station": 44.1,
+    "3_station_only_trips_without_rail_station": 36.3,
+    "4_audio": 7.0,
+    "5_visual": 6.7,
+    "1+2": 24.9,
+    "1+2+3": 9.9,
+    "marked_1_2_3": 9.9,
+    "4+5": 6.4
+   },
+   "counts": {
+    "audio+visual": 213,
+    "box_audio": 231,
+    "box_station": 1465,
+    "box_visual": 221,
+    "box_wc_stops": 1080,
+    "box_wc_trip": 1357,
+    "line_tra03": 289,
+    "marked_1_2_3": 328,
+    "no_station_both": 1206,
+    "pairs": 3323,
+    "walk_only": 9,
+    "wc_trip+wc_stops": 828,
+    "wc_trip+wc_stops+station": 328,
+    "with_ride": 3314
+   }
+  }
+ }
+}

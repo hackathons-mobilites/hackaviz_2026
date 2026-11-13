@@ -1,0 +1,97 @@
+{
+ "generated_at": "2026-11-10T03:19:52Z",
+ "service_date": "2026-11-17",
+ "source_checks": "navitia_crosscheck_walk3000_b44_summary.json",
+ "verdicts": {
+  "territorial_gap_02": "confirmee_sur_la_table",
+  "late_return_06": "confirmee_sur_la_table",
+  "late_return_10": "contredite_sur_la_table",
+  "excluded:eclipse_02": "contredite_sur_la_table",
+  "excluded:eclipse_04": "contredite_sur_la_table",
+  "excluded:late_return_03": "contredite_sur_la_table"
+ },
+ "judged": {
+  "[\"territorial_gap\", {\"b\": 60, \"compare_day\": null, \"d\": \"d09\", \"m\": \"transit\", \"o\": \"94069\", \"vs\": \"75112\"}]": {
+   "kind": "territorial_gap",
+   "scenario": {
+    "o": "94069",
+    "d": "d09",
+    "b": 60,
+    "m": "transit",
+    "vs": "75112",
+    "compare_day": null
+   },
+   "verdict": "confirmee_sur_la_table",
+   "label": "territorial_gap_02"
+  },
+  "[\"late_return\", {\"b\": 60, \"compare_day\": null, \"d\": \"d14\", \"m\": \"transit\", \"o\": \"94058\", \"vs\": null}]": {
+   "kind": "late_return",
+   "scenario": {
+    "o": "94058",
+    "d": "d14",
+    "b": 60,
+    "m": "transit",
+    "vs": null,
+    "compare_day": null
+   },
+   "verdict": "confirmee_sur_la_table",
+   "label": "late_return_06"
+  },
+  "[\"late_return\", {\"b\": 60, \"compare_day\": null, \"d\": \"d14\", \"m\": \"transit\", \"o\": \"92063\", \"vs\": null}]": {
+   "kind": "late_return",
+   "scenario": {
+    "o": "92063",
+    "d": "d14",
+    "b": 60,
+    "m": "transit",
+    "vs": null,
+    "compare_day": null
+   },
+   "verdict": "contredite_sur_la_table",
+   "label": "late_return_10"
+  },
+  "[\"eclipse\", {\"b\": 60, \"compare_day\": \"d09\", \"d\": \"d14\", \"m\": \"transit\", \"o\": \"94079\", \"vs\": null}]": {
+   "kind": "eclipse",
+   "scenario": {
+    "o": "94079",
+    "d": "d14",
+    "b": 60,
+    "m": "transit",
+    "vs": null,
+    "compare_day": "d09"
+   },
+   "verdict": "contredite_sur_la_table",
+   "label": "excluded:eclipse_02"
+  },
+  "[\"eclipse\", {\"b\": 60, \"compare_day\": \"d09\", \"d\": \"d06\", \"m\": \"transit\", \"o\": \"94079\", \"vs\": null}]": {
+   "kind": "eclipse",
+   "scenario": {
+    "o": "94079",
+    "d": "d06",
+    "b": 60,
+    "m": "transit",
+    "vs": null,
+    "compare_day": "d09"
+   },
+   "verdict": "contredite_sur_la_table",
+   "label": "excluded:eclipse_04"
+  },
+  "[\"late_return\", {\"b\": 60, \"compare_day\": null, \"d\": \"d14\", \"m\": \"transit\", \"o\": \"95555\", \"vs\": null}]": {
+   "kind": "late_return",
+   "scenario": {
+    "o": "95555",
+    "d": "d14",
+    "b": 60,
+    "m": "transit",
+    "vs": null,
+    "compare_day": null
+   },
+   "verdict": "contredite_sur_la_table",
+   "label": "excluded:late_return_03"
+  }
+ },
+ "requests_sent": 0,
+ "x_ratelimit_remaining_day": null,
+ "stopped": null,
+ "n_communes_par_cote": 2
+}
