@@ -31,7 +31,7 @@ On croise **où sont les emplois** (INSEE), **où vivent les gens** (INSEE), **l
 - **Licence** : ODbL 1.0, attribution « © les contributeurs d'OpenStreetMap ».
 - **Pourquoi** : c'est le seul réseau ouvert qui couvre à la fois la marche, le vélo et la voiture.
 - **Ce qu'on en fait** : la marche jusqu'à l'arrêt, les correspondances à pied, les trajets à vélo et en voiture.
-- **Limite à dire** : la voiture est calculée **sans trafic** : ses temps sont optimistes aux heures de pointe.
+- **Limite à dire** : la voiture est calculée **sans trafic** (mode « Voiture (route vide) ») : ses temps sont optimistes aux heures de pointe. Le mode « Voiture (trafic moyen DiRIF) » en donne une estimation avec le trafic moyen de chaque tranche horaire (voir `limites.md`).
 
 ### GEO01 - Les communes : API Géo
 - **Ce que c'est** : la liste officielle des communes, leurs contours et leur population.
