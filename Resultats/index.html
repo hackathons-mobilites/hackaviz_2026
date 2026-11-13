@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hackaviz Mobilités 2026 — Explorateur des projets</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #111827;
+      --surface-2: #1e293b;
+      --surface-3: #273449;
+      --border: rgba(148, 163, 184, 0.16);
+      --border-strong: rgba(148, 163, 184, 0.3);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.14);
+      --d1: #fb923c;
+      --d2: #34d399;
+      --d3: #c084fc;
+      --d4: #f472b6;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    header {
+      padding: 14px 22px;
+      background: rgba(17, 24, 39, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      z-index: 10;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand h1 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .badge-count {
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--accent-soft);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: var(--accent);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .pill {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--muted);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .pill:hover { color: var(--text); border-color: var(--border-strong); }
+    .pill.active {
+      background: var(--accent);
+      color: #0b1120;
+      border-color: var(--accent);
+      font-weight: 700;
+    }
+    .search {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      width: 220px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search:focus { border-color: var(--accent); }
+
+    /* Main Grid */
+    .layout {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      min-height: 0;
+    }
+
+    /* Sidebar */
+    aside {
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--surface);
+    }
+    .card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+    }
+    .card.active {
+      border-color: var(--accent);
+      background: var(--surface-3);
+      box-shadow: 0 0 0 1px var(--accent), 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      gap: 8px;
+    }
+    .team-num {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .defi-tag {
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.68rem;
+      color: #0b1120;
+    }
+    .d1 { background: var(--d1); }
+    .d2 { background: var(--d2); }
+    .d3 { background: var(--d3); }
+    .d4 { background: var(--d4); }
+    .card-title {
+      font-weight: 600;
+      font-size: 0.92rem;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 0.74rem;
+      color: var(--muted);
+    }
+    .mini-chip {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+    .mini-chip.video {
+      color: #fde047;
+      border-color: rgba(253, 224, 71, 0.3);
+      background: rgba(253, 224, 71, 0.08);
+    }
+
+    /* Viewer Area */
+    main {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      background: var(--bg);
+    }
+    .viewer-bar {
+      padding: 14px 24px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .viewer-info h2 {
+      margin: 0 0 3px 0;
+      font-size: 1.08rem;
+      letter-spacing: -0.01em;
+    }
+    .viewer-info p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Segmented Tabs */
+    .controls-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .segmented {
+      display: inline-flex;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4px;
+      gap: 4px;
+    }
+    .tab-btn {
+      padding: 7px 14px;
+      border-radius: 7px;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active {
+      background: var(--accent);
+      color: #0b1120;
+      box-shadow: 0 2px 8px rgba(56, 189, 248, 0.25);
+    }
+    .tab-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #fde047;
+      display: inline-block;
+    }
+    .tab-btn.active .tab-dot { background: #0b1120; }
+
+    .ext-link {
+      padding: 8px 13px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      background: var(--surface-2);
+      transition: border-color 0.15s;
+    }
+    .ext-link:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Stage */
+    .stage {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    /* Documentation View */
+    .doc-container {
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 0 20px 40px 20px;
+    }
+    .summary-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+    }
+    .summary-card label {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .summary-card span {
+      font-size: 0.86rem;
+      line-height: 1.4;
+      display: block;
+    }
+
+    .markdown-body {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      line-height: 1.65;
+      font-size: 0.94rem;
+      color: #e2e8f0;
+    }
+    .markdown-body h1, .markdown-body h2, .markdown-body h3 {
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-top: 24px;
+    }
+    .markdown-body h1:first-child { margin-top: 0; }
+    .markdown-body a { color: var(--accent); }
+    .markdown-body code {
+      background: var(--bg);
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-size: 0.85em;
+    }
+    .markdown-body pre {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    .markdown-body pre code { background: none; padding: 0; }
+    .markdown-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.85rem;
+    }
+    .markdown-body th, .markdown-body td {
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      text-align: left;
+    }
+    .markdown-body th { background: var(--surface-2); }
+    .markdown-body img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .markdown-body blockquote {
+      margin: 14px 0;
+      padding: 8px 16px;
+      border-left: 3px solid var(--accent);
+      background: rgba(56, 189, 248, 0.06);
+      color: #cbd5e1;
+    }
+
+    /* Video View */
+    .video-container {
+      max-width: 960px;
+      margin: 28px auto;
+      padding: 0 20px;
+    }
+    .video-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .video-card video {
+      width: 100%;
+      max-height: 70vh;
+      border-radius: 8px;
+      background: #000;
+      outline: none;
+    }
+    .video-caption {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.84rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Iframe View */
+    .iframe-wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .iframe-notice {
+      padding: 8px 20px;
+      background: rgba(30, 58, 138, 0.45);
+      color: #bfdbfe;
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .iframe-notice a { color: #7dd3fc; font-weight: 600; }
+    iframe {
+      width: 100%;
+      flex: 1;
+      border: 0;
+      background: #ffffff;
+    }
+
+    /* Placeholder */
+    .placeholder {
+      max-width: 680px;
+      margin: 48px auto;
+      padding: 36px;
+      background: var(--surface);
+      border: 1px dashed var(--border-strong);
+      border-radius: 16px;
+      text-align: center;
+    }
+    .placeholder .icon { font-size: 2.6rem; margin-bottom: 12px; }
+    .placeholder h3 { margin: 0 0 8px 0; font-size: 1.15rem; }
+    .placeholder p { color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+    .cmd-box {
+      text-align: left;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.8rem;
+      margin: 18px 0;
+      overflow-x: auto;
+      color: #e2e8f0;
+    }
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .empty-state {
+      padding: 28px 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 960px) {
+      .layout { grid-template-columns: 1fr; grid-template-rows: 260px 1fr; }
+      aside { border-right: 0; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>🚇 Hackaviz Mobilités 2026</h1>
+      <span class="badge-count" id="countBadge">15 projets</span>
+    </div>
+    <div class="filters">
+      <button class="pill active" data-defi="all">Tous (15)</button>
+      <button class="pill" data-defi="1">Défi 1 · Climat (5)</button>
+      <button class="pill" data-defi="2">Défi 2 · Emploi (7)</button>
+      <button class="pill" data-defi="3">Défi 3 · Territoire (0)</button>
+      <button class="pill" data-defi="4">Défi 4 · Inégalités (3)</button>
+      <input class="search" id="searchInput" type="search" placeholder="Rechercher équipe, outil..." />
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="projectList"></aside>
+    <main>
+      <div class="viewer-bar">
+        <div class="viewer-info">
+          <h2 id="viewTitle">Sélectionnez un projet</h2>
+          <p id="viewMeta"></p>
+        </div>
+        <div class="controls-right">
+          <div class="segmented" role="tablist">
+            <button class="tab-btn active" id="tabDoc" onclick="setMode('doc')">📖 Documentation</button>
+            <button class="tab-btn" id="tabVid" onclick="setMode('video')">🎬 Vidéo</button>
+            <button class="tab-btn" id="tabViz" onclick="setMode('viz')">📊 Dataviz</button>
+          </div>
+          <a class="ext-link" id="ghLink" href="#" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="stage" id="stage"></div>
+    </main>
+  </div>
+
+  <script>
+    const BASE_GH = "https://github.com/hackathons-mobilites/hackaviz_2026/tree/main/Resultats/";
+    const LOCAL_RESULTS = "";
+
+    const PROJECTS = [
+      {
+        teamNum: 1, defi: 2, teamName: "YSSAK",
+        title: "Aller travailler en Île-de-France",
+        participants: "Taha Yassine Tourbi, Kris Lokoun, Mohamed-sami Mechaiakh, Arsène Tognifodé, Soriba Touré",
+        tools: "Python, DuckDB, dbt, Observable Framework, D3, GitHub Pages",
+        folder: "Défi 2 - Les mobilités et l’emploi/defi-2_YSSAK",
+        readme: "README.md",
+        vizType: "iframe",
+        vizUrl: "https://tourbiriad26-hub.github.io/hakathon_mobilite/",
+        fallbackQuestion: "Comment les habitants d'Île-de-France se rendent-ils au travail, et l'accès à l'emploi est-il le même partout ?"
+      },
+      {
+        teamNum: 2, defi: 2, teamName: "Ca travaille la nuit",
+        title: "Voyager la nuit, travailler la nuit",
+        participants: "Gaëlle Courregelongue, Stéphanie De Andrade Jelambi, Judicaël Léger, Clarisse Paillet, Gaëtan Peyronel Bera, Pierre Rolland",
+        tools: "Python, QGIS, HTML",
+        folder: "Défi 2 - Les mobilités et l’emploi/defi_2_Ca_travaille_la_nuit",
+        readme: "README.md",
+        vizType: "local_html",
+        localPath: "production/DataViz_Voyager la nuit, travailler la nuit.html",
+        fallbackQuestion: "Quelles disparités territoriales pour l’accès à l’emploi (travailleurs de nuit) ?"
+      },
+      {
+        teamNum: 3, defi: 1, teamName: "SANS_NOM",
+        title: "Canicules et incidents — Sarah's Story",
+        participants: "Non renseignés",
+        tools: "HTML / Datastory",
+        folder: "Défi 1 - Les mobilités et l’adaptation climatique/Projet_equipe_3",
+        readme: "README_2026_resilienceincidents.md",
+        vizType: "local_html",
+        localPath: "histoire_chaleur_reseau_COMPLET 1.html",
+        fallbackQuestion: "Comment réagit le réseau ferré face aux périodes caniculaires ?"
+      },
+      {
+        teamNum: 4, defi: 1, teamName: "Atouvent",
+        title: "AtouVent : se déplacer en Île-de-France malgré la chaleur",
+        participants: "Brice Bokatola, William Laine",
+        tools: "Python, DuckDB, FastAPI, MongoDB, React, MapLibre GL, Capacitor",
+        folder: "Défi 1 - Les mobilités et l’adaptation climatique/defi-1_equipe-4_atouvent",
+        readme: "README.md",
+        videoPath: "production/AtouVent-demo.mp4",
+        videoNote: "Vidéo de démonstration (1 min 45, sous-titrée en français).",
+        vizType: "iframe",
+        vizUrl: "https://atouvent.com",
+        fallbackQuestion: "Quand il fait très chaud, qui renonce à prendre le train en Île-de-France et comment aider chaque voyageur ?"
+      },
+      {
+        teamNum: 5, defi: 2, teamName: "Les Isochrones",
+        title: "Travailler sans voiture en Île-de-France : où, pour qui, à quelle heure ?",
+        participants: "Sokheng Din, Veasna Ra, Hok Seng, Menghor Thuo",
+        tools: "Python, FastAPI, CSA (GTFS), HTML/JS, Docker",
+        folder: "Défi 2 - Les mobilités et l’emploi/defi-2_equipe-5_les-isochrones",
+        readme: "README.md",
+        vizType: "iframe",
+        vizUrl: "https://dataviz.sokhengdin.dev/",
+        fallbackQuestion: "Les pôles d'emploi franciliens sont-ils réellement accessibles en transports en commun, pour tout le monde et à toute heure ?"
+      },
+      {
+        teamNum: 7, defi: 2, teamName: "Traboule",
+        title: "Moby d'Île",
+        participants: "Romain Azaïs, Florent Delomier, Adrien Marion, Florian Patout, Manuel Petit",
+        tools: "Population synthétique, graphe GTFS/OSM, HTML autonome",
+        folder: "Défi 2 - Les mobilités et l’emploi/defi-2_equipe7_traboule",
+        readme: "README.md",
+        vizType: "local_html",
+        localPath: "production/mobydile.html",
+        fallbackQuestion: "Où se trouvent les 5,5 millions d’actifs franciliens tout au long d’une journée type de semaine ?"
+      },
+      {
+        teamNum: 8, defi: 4, teamName: "Setec",
+        title: "Noctambulle · Trajets de nuit en Île-de-France",
+        participants: "Florian Dufour, Victoria Jacob, Simon Lavoine, Benoît Fontanel",
+        tools: "Python, FastAPI, GeoPandas, React, deck.gl, MapLibre GL",
+        folder: "Défi 4 - Les mobilités et les inégalités/defi-4_setec",
+        readme: "README.md",
+        videoPath: "production/demo_hackathon_setec.mp4",
+        videoNote: "Vidéo de démonstration du prototype Noctambulle.",
+        vizType: "backend",
+        reason: "Application interactive FastAPI + React nécessitant un lancement en local (documentation et vidéo disponibles).",
+        runCmd: "# Guide d'installation :\n# https://setec-labs.github.io/hackaviz-2026/utilisateur/",
+        altUrl: "https://setec-labs.github.io/hackaviz-2026/",
+        altLabel: "Documentation & captures en ligne",
+        fallbackQuestion: "Comment les temps de parcours, l'accessibilité et le contexte des trajets de nuit révèlent-ils les inégalités de mobilité ?"
+      },
+      {
+        teamNum: 9, defi: 2, teamName: "Starway",
+        title: "STARWAY — Les constellations de l'emploi",
+        participants: "Nicolas Vallot, Maia Sutter, Cyril Gateau, Florian Caillaud, Sara Putzu",
+        tools: "Python, r5py, React, TypeScript, PixiJS (WebGL), Azure Static Web Apps",
+        folder: "Défi 2 - Les mobilités et l’emploi/defi-2_equipe-9_starway",
+        readme: "README.md",
+        videoNote: "Pas de fichier .mp4 : le site intègre directement une visite guidée narrée (« Lancer la visite », ~3 min).",
+        vizType: "iframe",
+        vizUrl: "https://jolly-cliff-07f518503.5.azurestaticapps.net",
+        fallbackQuestion: "Comment la commune, l'horaire et le mode changent-ils l'accès aller et retour aux pôles d'emploi ?"
+      },
+      {
+        teamNum: 10, defi: 1, teamName: "Tamoviz",
+        title: "Une journée sous canicule",
+        participants: "Yeltsin Valero, Caroline Prioton, Arthur Savi, Jorge Cabrera, Jérôme Voinot",
+        tools: "Python, MATSim 15, MapLibre GL, RAPTOR JS",
+        folder: "Défi 1 - Les mobilités et l’adaptation climatique/defi-1_tamoviz",
+        readme: "README.md",
+        videoPath: "pitch/TAMOVIZ_demo.mp4",
+        videoNote: "Vidéo de démonstration (2 min) présentant la question, les cartogrammes et le parcours.",
+        vizType: "iframe",
+        vizUrl: "http://52.47.51.94/",
+        fallbackQuestion: "Pendant une canicule, où les voyageurs sont-ils les plus exposés, qui renonce et quelle mesure protège le mieux ?"
+      },
+      {
+        teamNum: 12, defi: 4, teamName: "Team Datalab",
+        title: "Observatoire des fractures et inégalités ferroviaires en Île-de-France",
+        participants: "Robin Le Huerou Kerisel, Samuel Bienvenu, Jean-Bastien Ricot, Emma Lahaye, Justine Lebrun, Elisa Delbreil",
+        tools: "Python, Streamlit, Pandas, GeoPandas, Plotly",
+        folder: "Défi 4 - Les mobilités et les inégalités/defi-4_team-datalab",
+        readme: "README.md",
+        vizType: "backend",
+        reason: "Application Streamlit locale nécessitant de télécharger les données sources (non incluses dans Git).",
+        runCmd: "cd production\npip install -r requirements.txt\nstreamlit run Codes/app.py",
+        fallbackQuestion: "Comment identifier les inégalités d'accès au réseau ferroviaire et repérer les écarts offre / fréquentation ?"
+      },
+      {
+        teamNum: 14, defi: 4, teamName: "Équipe 14",
+        title: "Correspondances — Métro, RER, tramway : violences, eau, air et accessibilité",
+        participants: "Noa Tendero Jovaní, Daniel Breton",
+        tools: "Cartes interactives web + affiches",
+        folder: "Défi 4 - Les mobilités et les inégalités/defi-4_Equipe_14",
+        readme: "README.md",
+        vizType: "iframe",
+        vizUrl: "https://www.visualdataflow.com/IDFM/",
+        fallbackQuestion: "Violences, eau, air, accessibilité : quelles inégalités vécues en station ?"
+      },
+      {
+        teamNum: 15, defi: 1, teamName: "Canopée",
+        title: "Canopée — Mobilités douces, ville plus chaude",
+        participants: "Maxime Pimpaud, Adrien Bourdin",
+        tools: "JavaScript, Vite, MapLibre GL, Motion, Node.js, Python, Vercel",
+        folder: "Défi 1 - Les mobilités et l’adaptation climatique/defi-1_canopee",
+        readme: "README.md",
+        videoPath: "production/canopee/public/media/paris-ombre-journee.mp4",
+        videoNote: "Animation de l'évolution de l'ombre à Paris au fil de la journée.",
+        vizType: "iframe",
+        vizUrl: "https://canopee-delta.vercel.app/dataviz",
+        fallbackQuestion: "Comment la chaleur modifie-t-elle le confort des déplacements à pied, à vélo et vers les TC à Paris ?"
+      },
+      {
+        teamNum: 16, defi: 2, teamName: "Rhizome",
+        title: "EcloWork",
+        participants: "Aurélie Auzas, Amar Tamourt, Michel Huang, Élodie Thiébault, Loane Cotellon",
+        tools: "Next.js, React, TypeScript, Highcharts Maps, Python, QGIS",
+        folder: "Défi 2 - Les mobilités et l’emploi/defi-2_rhizome",
+        readme: "README.md",
+        vizType: "iframe",
+        vizUrl: "https://dataviz-rhizome-liard.vercel.app/",
+        fallbackQuestion: "Quel a été l’impact du développement du réseau de transport sur l’emploi ces dix dernières années ?"
+      },
+      {
+        teamNum: 17, defi: 1, teamName: "Thermoviz",
+        title: "Thermo Réseau",
+        participants: "Melvine Moubeyi, Benoit Martin",
+        tools: "Microsoft Power BI Desktop, Power Query",
+        folder: "Défi 1 - Les mobilités et l’adaptation climatique/defi-1_Thermoviz",
+        readme: "README.md",
+        vizType: "iframe",
+        vizUrl: "https://app.powerbi.com/links/9r6Pwcn3SN?ctid=7dce31e1-0e64-442b-9c26-4c8cc8af1fb1&pbi_source=linkShare",
+        fallbackQuestion: "Comment analyser, gare par gare et ligne par ligne, les relations entre températures et fréquentation ?"
+      },
+      {
+        teamNum: 18, defi: 2, teamName: "Trajemploi",
+        title: "Trajemploi — L'emploi au-delà du rail",
+        participants: "Melvyn Motho, Pierre Thai, Maroua Zoubir",
+        tools: "Python, Streamlit, SVG natif, Web Speech/Audio API (WCAG 2.1 AA)",
+        folder: "Défi 2 - Les mobilités et l’emploi/defi-2_equipe-18",
+        readme: "README.md",
+        vizType: "iframe",
+        vizUrl: "https://hackaviz2026-trajemploi-idfm.streamlit.app/?embed=true",
+        fallbackUrl: "https://hackaviz2026-trajemploi-idfm.streamlit.app/",
+        fallbackQuestion: "L'offre de transport en commun mène-t-elle les employés et les ouvriers jusqu'à leur lieu de travail, et à leurs horaires ?"
+      }
+    ];
+
+    let activeDefi = "all";
+    let searchQuery = "";
+    let selectedTeam = PROJECTS[0].teamNum;
+    let mode = "doc"; // 'doc' | 'video' | 'viz'
+    const readmeCache = new Map();
+
+    const listEl = document.getElementById("projectList");
+    const stageEl = document.getElementById("stage");
+    const viewTitleEl = document.getElementById("viewTitle");
+    const viewMetaEl = document.getElementById("viewMeta");
+    const ghLinkEl = document.getElementById("ghLink");
+    const countBadgeEl = document.getElementById("countBadge");
+
+    function ghFolderUrl(folder) {
+      return BASE_GH + folder.split("/").map(encodeURIComponent).join("/");
+    }
+    function localFileUrl(folder, relPath) {
+      const full = LOCAL_RESULTS + folder + "/" + relPath;
+      return full.split("/").map(encodeURIComponent).join("/");
+    }
+
+    function filteredProjects() {
+      return PROJECTS.filter(p => {
+        const matchDefi = activeDefi === "all" || String(p.defi) === activeDefi;
+        const q = searchQuery.trim().toLowerCase();
+        const matchQ = !q || [p.teamName, p.title, p.participants, p.tools, String(p.teamNum)]
+          .join(" ").toLowerCase().includes(q);
+        return matchDefi && matchQ;
+      });
+    }
+
+    function renderList() {
+      const items = filteredProjects();
+      countBadgeEl.textContent = `${items.length} projet${items.length > 1 ? "s" : ""}`;
+      if (items.length === 0) {
+        listEl.innerHTML = `<div class="empty-state">Aucun projet pour ce filtre.<br/><br/>(Défi 3 : 0 soumission reçue)</div>`;
+        return;
+      }
+      listEl.innerHTML = items.map(p => {
+        const vizLabel = p.vizType === "backend" ? "⚙️ Local / Backend" : p.vizType === "local_html" ? "📄 HTML local" : "🌐 En ligne";
+        return `
+          <div class="card ${p.teamNum === selectedTeam ? "active" : ""}" onclick="selectProject(${p.teamNum})">
+            <div class="card-top">
+              <span class="team-num">Équipe ${String(p.teamNum).padStart(2, "0")} · ${p.teamName}</span>
+              <span class="defi-tag d${p.defi}">Défi ${p.defi}</span>
+            </div>
+            <div class="card-title">${p.title}</div>
+            <div class="card-meta">
+              <span class="mini-chip">${vizLabel}</span>
+              ${p.videoPath ? `<span class="mini-chip video">🎬 Vidéo</span>` : ""}
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    async function loadReadme(p) {
+      const url = localFileUrl(p.folder, p.readme);
+      if (readmeCache.has(url)) return readmeCache.get(url);
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const md = await res.text();
+        readmeCache.set(url, { ok: true, md });
+        return { ok: true, md };
+      } catch (err) {
+        return { ok: false, err: err.message };
+      }
+    }
+
+    function renderMarkdown(md, folder) {
+      if (typeof marked === "undefined") {
+        return `<pre style="white-space:pre-wrap;">${md.replace(/</g, "&lt;")}</pre>`;
+      }
+      const html = marked.parse(md);
+      const doc = new DOMParser().parseFromString(html, "text/html");
+      // Fix relative image src so screenshots inside READMEs load when served from /home/onyxia/work
+      doc.querySelectorAll("img").forEach(img => {
+        const src = img.getAttribute("src");
+        if (src && !src.startsWith("http") && !src.startsWith("data:")) {
+          img.setAttribute("src", localFileUrl(folder, src.replace(/^\.\//, "")));
+        }
+      });
+      doc.querySelectorAll("a").forEach(a => {
+        const href = a.getAttribute("href");
+        if (href && !href.startsWith("http") && !href.startsWith("#") && !href.startsWith("mailto:")) {
+          a.setAttribute("href", ghFolderUrl(folder) + "/" + href.replace(/^\.\//, ""));
+        }
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noopener");
+      });
+      return doc.body.innerHTML;
+    }
+
+    async function renderStage() {
+      const p = PROJECTS.find(x => x.teamNum === selectedTeam);
+      if (!p) return;
+
+      viewTitleEl.textContent = `Équipe ${p.teamNum} (${p.teamName}) — ${p.title}`;
+      viewMetaEl.textContent = `Défi ${p.defi} · ${p.participants}`;
+      ghLinkEl.href = ghFolderUrl(p.folder);
+
+      document.getElementById("tabDoc").classList.toggle("active", mode === "doc");
+      const tabVid = document.getElementById("tabVid");
+      tabVid.classList.toggle("active", mode === "video");
+      tabVid.innerHTML = p.videoPath ? `🎬 Vidéo <span class="tab-dot"></span>` : `🎬 Vidéo`;
+      document.getElementById("tabViz").classList.toggle("active", mode === "viz");
+
+      if (mode === "doc") {
+        stageEl.innerHTML = `
+          <div class="doc-container">
+            <div class="summary-strip">
+              <div class="summary-card"><label>Équipe</label><span>${p.teamName} (n° ${p.teamNum})</span></div>
+              <div class="summary-card"><label>Défi</label><span>Défi ${p.defi}</span></div>
+              <div class="summary-card"><label>Outils</label><span>${p.tools}</span></div>
+            </div>
+            <div class="markdown-body" id="readmeTarget">Chargement du README…</div>
+          </div>
+        `;
+        const currentTeam = p.teamNum;
+        const result = await loadReadme(p);
+        if (selectedTeam !== currentTeam || mode !== "doc") return;
+        const target = document.getElementById("readmeTarget");
+        if (!target) return;
+        if (result.ok) {
+          target.innerHTML = renderMarkdown(result.md, p.folder);
+        } else {
+          target.innerHTML = `
+            <p><strong>Résumé :</strong> ${p.fallbackQuestion}</p>
+            <p style="color:#94a3b8;font-size:0.85rem;">
+              ℹ️ Impossible de charger <code>${p.folder}/${p.readme}</code> directement (${result.err}).<br/>
+              Pour afficher les README complets en local, lancez un serveur HTTP depuis <code>/home/onyxia/work</code> :
+            </p>
+            <pre><code>cd /home/onyxia/work && python3 -m http.server 8080</code></pre>
+            <p><a href="${ghFolderUrl(p.folder)}" target="_blank" rel="noopener">Ouvrir le README sur GitHub ↗</a></p>
+          `;
+        }
+      } else if (mode === "video") {
+        if (p.videoPath) {
+          const vUrl = localFileUrl(p.folder, p.videoPath);
+          stageEl.innerHTML = `
+            <div class="video-container">
+              <div class="video-card">
+                <video controls preload="metadata" src="${vUrl}">
+                  Votre navigateur ne supporte pas la lecture vidéo HTML5.
+                </video>
+                <div class="video-caption">
+                  <span>${p.videoNote || "Vidéo de démonstration"}</span>
+                  <a class="ext-link" href="${vUrl}" target="_blank" rel="noopener">Télécharger / ouvrir la vidéo ↗</a>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          stageEl.innerHTML = `
+            <div class="placeholder">
+              <div class="icon">🎬</div>
+              <h3>Aucune vidéo déposée pour ce projet</h3>
+              <p>${p.videoNote || "Cette équipe n'a pas joint de fichier vidéo (.mp4/.webm) dans son dépôt."}</p>
+              <div class="btn-row">
+                <button class="tab-btn active" onclick="setMode('viz')">📊 Voir la Dataviz</button>
+                <button class="ext-link" style="cursor:pointer;" onclick="setMode('doc')">📖 Lire la Documentation</button>
+              </div>
+            </div>
+          `;
+        }
+      } else {
+        if (p.vizType === "iframe") {
+          const openUrl = p.fallbackUrl || p.vizUrl;
+          stageEl.innerHTML = `
+            <div class="iframe-wrap">
+              <div class="iframe-notice">
+                <span>Aperçu intégré — si l'écran reste blanc, le site bloque l'iframe (X-Frame-Options ou HTTP/HTTPS).</span>
+                <a href="${openUrl}" target="_blank" rel="noopener">Ouvrir la dataviz dans un nouvel onglet ↗</a>
+              </div>
+              <iframe src="${p.vizUrl}" title="${p.title}" loading="lazy"></iframe>
+            </div>
+          `;
+        } else if (p.vizType === "local_html") {
+          const lUrl = localFileUrl(p.folder, p.localPath);
+          stageEl.innerHTML = `
+            <div class="iframe-wrap">
+              <div class="iframe-notice">
+                <span>Fichier HTML local (<code>${p.localPath}</code>) — servi via HTTP local.</span>
+                <a href="${lUrl}" target="_blank" rel="noopener">Ouvrir le fichier HTML ↗</a>
+              </div>
+              <iframe src="${lUrl}" title="${p.title}"></iframe>
+            </div>
+          `;
+        } else {
+          stageEl.innerHTML = `
+            <div class="placeholder">
+              <div class="icon">⚙️</div>
+              <h3>Dataviz nécessitant un backend ou un outil local</h3>
+              <p>${p.reason}</p>
+              <div class="cmd-box"><pre style="margin:0;">${p.runCmd}</pre></div>
+              <div class="btn-row">
+                ${p.altUrl ? `<a class="tab-btn active" style="text-decoration:none;" href="${p.altUrl}" target="_blank" rel="noopener">${p.altLabel} ↗</a>` : ""}
+                ${p.videoPath ? `<button class="tab-btn active" onclick="setMode('video')">🎬 Voir la vidéo de démo</button>` : ""}
+                <a class="ext-link" href="${ghFolderUrl(p.folder)}" target="_blank" rel="noopener">Voir les fichiers sur GitHub ↗</a>
+              </div>
+            </div>
+          `;
+        }
+      }
+    }
+
+    function selectProject(num) {
+      selectedTeam = num;
+      renderList();
+      renderStage();
+    }
+
+    function setMode(nextMode) {
+      mode = nextMode;
+      renderStage();
+    }
+
+    document.querySelectorAll(".pill").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".pill").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeDefi = btn.dataset.defi;
+        const items = filteredProjects();
+        if (items.length && !items.some(x => x.teamNum === selectedTeam)) {
+          selectedTeam = items[0].teamNum;
+        }
+        renderList();
+        renderStage();
+      });
+    });
+
+    document.getElementById("searchInput").addEventListener("input", e => {
+      searchQuery = e.target.value;
+      renderList();
+    });
+
+    renderList();
+    renderStage();
+  </script>
+</body>
+</html>
