@@ -1,0 +1,180 @@
+/* Réseau sous canicule · présentation de pitch, style vidéo de motion design.
+   Une carte MapLibre unique sert de caméra pour toute la présentation ; les textes et graphiques
+   se posent sur une scène de 1 280 × 720 réduite ou agrandie à l'écran (jamais de défilement).
+   Valeurs visuelles : design/tokens.css. */
+
+:root{
+  --hot:#e0582a;          /* aplat de chaleur (graphiques) */
+  --hot-tx:#b03d12;       /* variante texte de l'orange : 5,6:1 sur le panneau clair */
+  --veil:rgba(233,238,245,.9);
+  --k:1;
+}
+:root[data-theme="dark"]{--hot-tx:#ff9a6e;--veil:rgba(17,22,28,.9)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--hot-tx:#ff9a6e;--veil:rgba(17,22,28,.9)}}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--canvas);color:var(--tx);font-family:var(--font);
+  font-variant-numeric:lining-nums tabular-nums;-webkit-font-smoothing:antialiased}
+
+/* ---------- carte caméra : tout l'écran ---------- */
+#map{position:fixed;inset:0;z-index:0;background:var(--canvas)}
+#map .maplibregl-ctrl-attrib{font-size:12px;background:var(--panel);color:var(--tx3)}
+#map .maplibregl-ctrl-attrib a{color:var(--tx3)}
+#dim{position:fixed;inset:0;z-index:1;background:var(--veil);opacity:0;pointer-events:none;transition:opacity .9s ease}
+body.dim #dim{opacity:1}
+
+/* ---------- scène 1 280 × 720 ---------- */
+#stage{position:fixed;left:50%;top:50%;width:1280px;height:720px;z-index:2;pointer-events:none;
+  transform:translate(-50%,-50%) scale(var(--k));transform-origin:50% 50%}
+#stage > *{pointer-events:auto}
+
+.sl{position:absolute;inset:0;pointer-events:none;visibility:hidden}
+.sl.on{visibility:visible}
+.sl .notes{display:none}
+
+/* panneau de texte : fenêtre posée sur la carte */
+.pan{position:absolute;left:40px;top:40px;width:470px;padding:26px 28px 22px;background:var(--panel);border-radius:var(--r);
+  box-shadow:var(--shadow);pointer-events:auto}
+.pan.wide{width:560px}
+.kick{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-tx)}
+.kick .n{color:var(--tx3);font-weight:600}
+h1,h2{margin:0;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+h1{font-size:64px}
+h2{font-size:34px}
+.lead{margin:14px 0 0;font-size:18px;line-height:1.45;color:var(--tx2);font-weight:500}
+.lead b{color:var(--tx);font-weight:700}
+.src{margin:14px 0 0;padding-top:10px;border-top:1px solid var(--line);font-size:12px;line-height:1.4;color:var(--tx3)}
+.hot{color:var(--hot-tx)}
+.acc{color:var(--accent-tx)}
+.fig{margin:18px 0 0;font-size:56px;font-weight:700;letter-spacing:-.02em;line-height:1}
+.fig small{font-size:20px;font-weight:600;color:var(--tx2);letter-spacing:0;margin-left:4px}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--alert);color:#fff;font-size:13px;font-weight:700;
+  letter-spacing:.04em;vertical-align:middle}
+:root[data-theme="dark"] .badge{color:#1a1010}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .badge{color:#1a1010}}
+
+/* entrée animée : chaque élément marqué .in arrive avec un léger glissement, dans l'ordre de --d */
+.in{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.sl.on .in{opacity:1;transform:none;transition-delay:calc(var(--d,0) * 1s + .25s)}
+/* titres : révélation ligne par ligne derrière un masque */
+.mask{display:block;overflow:hidden;padding-bottom:.06em}
+.mask > span{display:inline-block;transform:translateY(105%);transition:transform .8s cubic-bezier(.2,.75,.15,1)}
+.sl.on .mask > span{transform:none;transition-delay:calc(var(--d,0) * 1s + .15s)}
+
+/* ---------- 1. titre ---------- */
+.s-hook .pan{left:40px;top:auto;bottom:96px;width:600px;padding:28px 32px 22px}
+.s-hook h1{font-size:44px;white-space:nowrap}
+.s-hook .lead{font-size:20px}
+.hookfig{margin:4px 0 6px;font-size:96px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--hot-tx)}
+
+/* personnage qui attend au soleil (accroche) */
+.waiter{width:150px;pointer-events:none;opacity:0;transform:translateY(18px) scale(.9);transform-origin:50% 100%;
+  transition:opacity .7s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.waiter.on{opacity:1;transform:none}
+.waiter svg{display:block;width:150px;height:auto;overflow:visible}
+.waiter .ws{stroke:var(--heat-3);fill:var(--heat-2);stroke-width:3.5;stroke-linecap:round;transform-origin:88px 26px;animation:spin 14s linear infinite}
+.waiter .wsh{fill:rgba(0,0,0,.25)}
+.waiter .wpole{fill:var(--tx2)}
+.waiter .wsign{fill:#529889}
+.waiter .wp{fill:var(--tx)}
+.waiter .wd{fill:var(--seq-3);animation:drip 1.6s ease-in infinite}
+.waiter .wd + .wd{animation-delay:.8s}
+.waiter .wt{position:absolute;left:96px;top:58px;padding:3px 9px;border-radius:999px;background:var(--alert);color:#fff;font:800 15px var(--font);white-space:nowrap}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drip{0%{opacity:0;transform:translateY(-4px)}30%{opacity:1}100%{opacity:0;transform:translateY(10px)}}
+
+/* ---------- graphiques dans les panneaux ---------- */
+.vis{margin-top:16px}
+.vis svg{display:block;width:100%;height:auto;overflow:visible}
+.vis text{font-family:var(--font);font-size:12.5px;fill:var(--tx2)}
+.vis text.mono{font-family:var(--mono);font-size:12px}
+.vis text.v{font-family:var(--mono);font-size:13px;font-weight:500;fill:var(--tx)}
+.vis text.vh{fill:var(--hot-tx);font-weight:600}
+.vis text.va{fill:var(--accent-tx);font-weight:600}
+.vis .grid{stroke:var(--line2);stroke-width:1}
+
+/* compteurs */
+.counts{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;margin-top:18px}
+.counts div{border-top:1px solid var(--line);padding-top:8px}
+.counts b{display:block;font-size:28px;font-weight:700;letter-spacing:-.02em}
+.counts span{font-size:13px;color:var(--tx2);font-weight:500}
+
+/* liste des cinq fragilités */
+.crit{margin:16px 0 0;padding:0;list-style:none}
+.crit li{display:grid;grid-template-columns:22px 1fr auto;align-items:center;gap:10px;padding:7px 0;border-top:1px solid var(--line);
+  font-size:15px;font-weight:600;color:var(--tx3);transition:color .4s}
+.crit li i{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--line2);transition:background .4s,border-color .4s}
+.crit li small{font-size:12px;color:var(--tx3);font-weight:500;text-align:right}
+.crit li.lit{color:var(--tx)}
+.crit li.lit i{background:var(--hot);border-color:var(--hot)}
+.crit li.cur{color:var(--hot-tx)}
+
+/* légende de carte */
+.leg{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:13px;color:var(--tx2);font-weight:500}
+.leg span{display:inline-flex;align-items:center;gap:7px}
+.leg i{width:11px;height:11px;border-radius:50%;display:inline-block}
+.leg i.ln{width:18px;height:3px;border-radius:2px}
+
+/* horloge de la simulation */
+.clock{position:absolute;right:40px;top:40px;padding:12px 18px;background:var(--panel);border-radius:var(--r);box-shadow:var(--shadow);
+  font-family:var(--mono);font-size:30px;font-weight:500;color:var(--tx)}
+.clock small{display:block;font-family:var(--font);font-size:12px;font-weight:600;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase}
+
+/* ---------- écrans réels du projet, en fenêtre ---------- */
+#shot{position:absolute;left:330px;top:34px;width:910px;height:569px;border-radius:var(--r);overflow:hidden;background:var(--panel);
+  box-shadow:var(--shadow);border:1px solid var(--line2);transform-origin:50% 50%;pointer-events:none;
+  transform:perspective(1800px) translate3d(140px,60px,0) rotateY(-16deg) rotateX(7deg) scale(.8);opacity:0;visibility:hidden;
+  transition:transform 1.6s cubic-bezier(.2,.7,.15,1),opacity .6s ease,visibility 0s .6s}
+body.shot-on #shot{opacity:1;visibility:visible;transform:perspective(1800px) translate3d(0,0,0) rotateY(0) rotateX(0) scale(1);transition-delay:0s}
+#shot iframe{position:absolute;left:0;top:0;width:1280px;height:800px;border:0;transform-origin:0 0;transform:scale(.7109375)}
+#shot .cam{position:absolute;inset:0;transform-origin:62% 30%;transition:transform 6s cubic-bezier(.4,0,.2,1)}
+.side{position:absolute;left:40px;top:34px;width:270px}
+.side h2{font-size:28px}
+.side .lead{font-size:16px}
+.side .pan{position:static;width:auto;padding:22px 22px 18px}
+.side .fig{font-size:44px}
+
+/* ---------- profils types : fiches ---------- */
+.cards{display:flex;flex-direction:column;gap:4px;margin-top:12px}
+.card{display:grid;grid-template-columns:1fr auto;gap:1px 10px;padding:6px 0 5px;border-top:1px solid var(--line)}
+.card b{font-size:16px}
+.card .who{font-size:12.5px;color:var(--tx2);font-weight:500}
+.card .out{grid-row:1 / span 2;grid-column:2;align-self:center;text-align:right;font-family:var(--mono);font-size:20px;font-weight:500;color:var(--hot-tx)}
+.card .out small{display:block;font-family:var(--font);font-size:12px;color:var(--tx3);font-weight:600}
+.card .fr{grid-column:1 / span 2;position:relative;height:8px;margin-top:5px;border-radius:2px;background:var(--panel2);overflow:hidden}
+.card .fr i{position:absolute;top:0;bottom:0}
+.card .fr em{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--tx);left:0}
+
+/* repères de personnage sur la carte */
+.pm{display:flex;align-items:center;gap:6px;pointer-events:none}
+.pm i{width:14px;height:14px;border-radius:50%;background:var(--tx);border:2.5px solid var(--panel);box-shadow:0 1px 3px rgba(0,0,0,.35)}
+.pm.out i{background:var(--hot)}
+.pm span{padding:2px 8px;border-radius:999px;background:var(--panel);color:var(--tx);font:700 12.5px var(--font);box-shadow:var(--shadow)}
+
+/* ---------- conclusion ---------- */
+.keep{margin:16px 0 0;padding:0;list-style:none}
+.keep li{padding:11px 0;border-top:1px solid var(--line);font-size:17px;line-height:1.4;color:var(--tx2)}
+.keep li b{color:var(--tx)}
+.keep .sc{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3);margin-bottom:2px}
+
+/* ---------- barre du bas : progression, lecture, thème ---------- */
+#bar{position:absolute;left:40px;right:40px;bottom:22px;height:40px;display:flex;align-items:center;gap:14px;padding:0 6px 0 14px;
+  background:var(--panel);border-radius:999px;box-shadow:var(--shadow);pointer-events:auto}
+#prog{flex:1;display:flex;gap:4px;min-width:0;height:24px;align-items:center}
+#prog button{flex:1;height:24px;padding:0;border:0;background:none;cursor:pointer;position:relative}
+#prog button::before{content:"";position:absolute;left:0;right:0;top:10px;height:4px;border-radius:2px;background:var(--line2)}
+#prog button i{position:absolute;left:0;top:10px;height:4px;border-radius:2px;background:var(--accent);width:0}
+#prog button.done i{width:100%}
+#prog button.nt{margin-left:10px}
+#prog button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+#tps{font-size:13px;font-weight:700;color:var(--tx2);white-space:nowrap;min-width:200px}
+#num{font-family:var(--mono);font-size:12.5px;color:var(--tx2);min-width:52px;text-align:center}
+#bar .b{height:30px;padding:0 13px;border-radius:999px;border:1px solid var(--line2);background:var(--panel);color:var(--tx);
+  font:600 13px var(--font);cursor:pointer;white-space:nowrap}
+#bar .b[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+#bar .b:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+@media (prefers-reduced-motion:reduce){
+  .in,.mask > span,#shot,#shot .cam,.waiter{transition:none!important}
+  .waiter .ws,.waiter .wd{animation:none}
+}
