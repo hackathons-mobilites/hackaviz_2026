@@ -576,6 +576,84 @@
       font-size: 0.88rem;
     }
 
+    /* Home / Welcome View */
+    .home-container {
+      max-width: 960px;
+      margin: 28px auto;
+      padding: 0 24px 48px 24px;
+    }
+    .home-hero {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+    }
+    .home-logo {
+      max-width: 340px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 18px;
+    }
+    .home-hero h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+    .home-hero p {
+      margin: 0 0 18px 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+    .home-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .stat-pill {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .stat-pill strong {
+      display: block;
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .stat-pill span {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .home-video-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .home-video-card h3 {
+      margin: 0 0 12px 0;
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 800;
+    }
+    .home-video-card video {
+      width: 100%;
+      max-height: 62vh;
+      border-radius: 10px;
+      background: #000;
+      outline: none;
+    }
+
     @media (max-width: 960px) {
       .layout { grid-template-columns: 1fr; grid-template-rows: 260px 1fr; }
       aside { border-right: 0; border-bottom: 1px solid var(--border); }
@@ -593,6 +671,7 @@
         <span class="badge-count" id="countBadge">15 projets</span>
       </div>
       <div class="header-actions">
+        <button class="idfm-btn-outline" style="cursor:pointer;" onclick="showHome()">🏠 Accueil</button>
         <a class="idfm-btn-outline" href="https://github.com/hackathons-mobilites/hackaviz_2026" target="_blank" rel="noopener">Dépôt GitHub ↗</a>
       </div>
     </div>
@@ -817,9 +896,26 @@
 
     let activeDefi = "all";
     let searchQuery = "";
-    let selectedTeam = PROJECTS[0].teamNum;
+    let selectedTeam = null;
     let mode = "doc"; // 'doc' | 'video' | 'viz'
     const readmeCache = new Map();
+
+    function showHome() {
+      selectedTeam = null;
+      renderList();
+      renderStage();
+    }
+
+    function filterAndShowFirst(defi) {
+      document.querySelectorAll(".pill").forEach(b => {
+        b.classList.toggle("active", b.dataset.defi === String(defi));
+      });
+      activeDefi = String(defi);
+      const items = filteredProjects();
+      selectedTeam = items.length ? items[0].teamNum : null;
+      renderList();
+      renderStage();
+    }
 
     const listEl = document.getElementById("projectList");
     const stageEl = document.getElementById("stage");
@@ -915,8 +1011,45 @@
     }
 
     async function renderStage() {
+      const viewerBar = document.querySelector(".viewer-bar");
+      if (selectedTeam === null) {
+        viewerBar.style.display = "none";
+        stageEl.innerHTML = `
+          <div class="home-container">
+            <div class="home-hero">
+              <img class="home-logo" src="assets/logo-hackaviz-2026.svg" alt="Hackaviz Mobilités 2026" />
+              <h2>Exploration des résultats du Hackathon Mobilités 2026</h2>
+              <p>
+                Bienvenue sur l'espace d'exploration des projets réalisés du 2 au 13 novembre 2026 dans le cadre du
+                <strong>Hackaviz Mobilités 2026 spécial Dataviz</strong> organisé par Île-de-France Mobilités.
+                Sélectionnez une équipe dans la liste à gauche pour consulter sa documentation, sa vidéo de démonstration et sa dataviz interactive.
+              </p>
+              <div class="home-stats">
+                <div class="stat-pill"><strong>15 projets</strong><span>Déposés sur GitHub</span></div>
+                <div class="stat-pill"><strong>5 projets</strong><span>Défi 1 · Adaptation climatique</span></div>
+                <div class="stat-pill"><strong>7 projets</strong><span>Défi 2 · Emploi</span></div>
+                <div class="stat-pill"><strong>3 projets</strong><span>Défi 4 · Inégalités</span></div>
+              </div>
+              <div class="btn-row" style="justify-content:flex-start; margin-top:8px;">
+                <button class="idfm-btn-primary" onclick="filterAndShowFirst('1')">Explorer le Défi 1 →</button>
+                <button class="idfm-btn-outline" style="cursor:pointer;" onclick="filterAndShowFirst('2')">Explorer le Défi 2 →</button>
+                <button class="idfm-btn-outline" style="cursor:pointer;" onclick="filterAndShowFirst('4')">Explorer le Défi 4 →</button>
+              </div>
+            </div>
+            <div class="home-video-card">
+              <h3>🎬 Vidéo d'introduction — Consolidation des projets</h3>
+              <video controls preload="metadata" src="assets/intro-hackaviz-2026.mp4">
+                Votre navigateur ne supporte pas la lecture vidéo HTML5.
+              </video>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
       const p = PROJECTS.find(x => x.teamNum === selectedTeam);
       if (!p) return;
+      viewerBar.style.display = "flex";
 
       viewTitleEl.textContent = `Équipe ${p.teamNum} (${p.teamName}) — ${p.title}`;
       viewMetaEl.textContent = `Défi ${p.defi} · ${p.participants}`;
