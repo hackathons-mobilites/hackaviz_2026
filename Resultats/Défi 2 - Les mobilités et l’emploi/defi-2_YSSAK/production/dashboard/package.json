@@ -1,0 +1,18 @@
+{
+  "name": "hakathon-mobilite-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dashboard statique (Observable Framework + DuckDB-wasm) sur la mobilité domicile-travail en Île-de-France",
+  "scripts": {
+    "dev": "observable preview",
+    "build": "observable build",
+    "clean": "rimraf src/.observablehq/cache dist"
+  },
+  "dependencies": {
+    "@observablehq/framework": "^1.13.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,52 @@
+version: 2
+
+seeds:
+  - name: indicateurs
+    description: >
+      Dictionnaire des indicateurs. code_indicateur est la clé stable utilisée par le
+      dashboard : ne pas renommer. type_mesure = effectif | part | taux | montant
+      (ne jamais sommer une part, un taux ou un montant).
+    columns:
+      - name: code_indicateur
+        data_tests: [unique, not_null]
+      - name: type_mesure
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['effectif', 'part', 'taux', 'montant']
+
+  - name: fusions_communes
+    description: >
+      Communes fusionnées entre le millésime du recensement (géographie 2024 pour le RP 2022)
+      et le COG 2025 utilisé par dim_geo. Appliqué dans stg_mobpro aux lieux de résidence et de
+      travail. À compléter à chaque changement de millésime (source : INSEE, COG, "communes nouvelles").
+    columns:
+      - name: ancien_code
+        data_tests: [unique, not_null]
+      - name: nouveau_code
+        data_tests: [not_null]
+
+  - name: catalogue_sources
+    description: >
+      Catalogue des jeux de données du défi 2 (liste officielle du Hackathon) et des sources
+      transverses : statut d'intégration et usage dans le projet. Alimente la page « Sources » du dashboard.
+    columns:
+      - name: titre
+        data_tests: [unique, not_null]
+      - name: statut
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['intégré', 'couvert', 'disponible', 'non retenu']
+
+  - name: modes_transport
+    description: Libellés courts et ordre d'affichage des modes (variable TRANS de MOBPRO).
+    columns:
+      - name: code_trans
+        data_tests: [unique, not_null]
+      - name: code_indicateur
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('indicateurs')
+                field: code_indicateur

@@ -1,0 +1,117 @@
+# Chaîne complète : téléchargement des données ouvertes -> dbt (DuckDB) -> export -> site statique -> GitHub Pages.
+#
+# Déclencheurs : push sur main, tous les lundis à 06h00 UTC (mise à jour des validations IDFM), ou à la main.
+# Pré-requis une seule fois : Settings > Pages > Source = "GitHub Actions".
+name: Build & deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Installer la chaîne Python
+        run: pip install -r requirements.txt
+
+      # Les fichiers INSEE (~90 Mo) changent rarement : on les met en cache par mois.
+      # Les fichiers IDFM (validations) sont volontairement re-téléchargés à chaque exécution.
+      - name: Restaurer le cache des fichiers INSEE
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/raw/RP2022_mobpro.parquet
+            data/raw/varmod_mobpro_2022.csv
+            data/raw/cog_2025.zip
+            data/raw/filosofi_2021_geo2025.zip
+            data/raw/communes_contours.geojson
+          key: insee-${{ hashFiles('scripts/ingest.py') }}-${{ github.run_id }}
+          restore-keys: insee-${{ hashFiles('scripts/ingest.py') }}-
+
+      # Les Parquet normalisés sont versionnés dans data/parquet/ : si une source est injoignable
+      # (insee.fr renvoie parfois des 500 aux runners), on garde la version du dépôt et on continue.
+      - name: Ingestion des données ouvertes
+        run: |
+          set +e
+          python scripts/ingest.py
+          status=$?
+          set -e
+          if [ $status -ne 0 ]; then
+            echo "::warning::Ingestion incomplète (code $status) : les fichiers Parquet versionnés sont utilisés pour les sources manquantes."
+          fi
+
+      - name: dbt build (modèles + tests)
+        run: dbt build --profiles-dir . --target dev
+
+      - name: dbt docs
+        run: dbt docs generate --profiles-dir . --target dev --static
+
+      - name: Export des tables vers le dashboard
+        run: python scripts/export_dashboard.py
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: dashboard/package-lock.json
+
+      - name: Construire le site
+        working-directory: dashboard
+        run: |
+          npm ci
+          npm run build
+          mkdir -p dist/dbt && cp target/static_index.html dist/dbt/index.html 2>/dev/null || cp ../target/static_index.html dist/dbt/index.html
+
+      # Les navigateurs gardent les pages en cache 10 min : on garde aussi les fichiers de la version
+      # en ligne, sinon une page en cache demande des fichiers de données supprimés (404).
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Conserver les fichiers de la version précédente
+        run: python scripts/conserver_version_precedente.py dashboard/dist "${{ steps.pages.outputs.base_url }}"
+
+      # Dernier garde-fou avant publication : chaque Parquet du site doit commencer et finir par PAR1.
+      - name: Vérifier l'intégrité des fichiers Parquet publiés
+        run: |
+          ko=0
+          for f in $(find dashboard/dist -name '*.parquet'); do
+            if [ "$(head -c4 "$f")" != "PAR1" ] || [ "$(tail -c4 "$f")" != "PAR1" ]; then
+              echo "::error file=$f::Parquet corrompu (en-tête ou fin différent de PAR1)"; ko=1
+            fi
+          done
+          exit $ko
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard/dist
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

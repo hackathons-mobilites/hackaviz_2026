@@ -1,0 +1,27 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# dbt
+target/
+dbt_packages/
+logs/
+.user.yml
+package-lock.yml
+
+# Données brutes (re-téléchargées par scripts/ingest.py). Les Parquet normalisés de data/parquet/
+# sont versionnés (~17 Mo) : le build reste possible même si une source est indisponible.
+data/raw/
+data/*.duckdb
+data/*.duckdb.wal
+
+# Dashboard
+dashboard/node_modules/
+dashboard/dist/
+dashboard/src/.observablehq/cache/
+
+# Divers
+.DS_Store
+Thumbs.db
+.env

@@ -1,0 +1,11 @@
+# Pipeline de données (ingestion + dbt)
+dbt-core>=1.10,<2
+dbt-duckdb>=1.10,<2
+duckdb>=1.3,<2
+pandas>=2.2,<3
+python-calamine>=0.3   # lecture des fichiers Excel de l'INSEE
+xlrd>=2.0               # lecture des .xls (chômage départemental INSEE)
+shapely>=2.0,<3        # simplification des contours communaux
+
+# Optionnel : cible PostgreSQL
+# dbt-postgres>=1.10,<2

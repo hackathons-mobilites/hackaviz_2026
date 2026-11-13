@@ -1,0 +1,89 @@
+version: 2
+
+models:
+  - name: dim_geo
+    description: Référentiel des territoires de la région, toutes mailles (clé composite maille + codegeo).
+    columns:
+      - name: maille
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Commune', 'EPCI', "Zone d''emploi", "Bassin d''emploi", 'Département', 'Région']
+      - name: codegeo
+        data_tests: [not_null]
+      - name: libgeo
+        data_tests: [not_null]
+
+  - name: dim_indicateurs
+    description: Dictionnaire des indicateurs publiés dans fact_mobilite.
+    columns:
+      - name: code_indicateur
+        data_tests: [unique, not_null]
+
+  - name: dim_gares
+    description: Pôles ferrés IDFM (zones de correspondance) rattachés à leur commune, avec validations 12 mois.
+    columns:
+      - name: id_zdc
+        data_tests: [unique, not_null]
+      - name: codegeo_commune
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_cog_communes')
+                field: codgeo
+
+  - name: fact_mobilite
+    description: >
+      Indicateurs au format long (territoire x indicateur x période). Les parts sont recalculées
+      à chaque maille ; `fiable` signale les effectifs trop petits pour être interprétés.
+    columns:
+      - name: code_indicateur
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_indicateurs')
+                field: code_indicateur
+      - name: nombre
+        data_tests: [not_null]
+      - name: fiable
+        data_tests: [not_null]
+
+  - name: fact_flux
+    description: Flux domicile-travail commune x commune x mode (actifs pondérés).
+    columns:
+      - name: nb_actifs
+        data_tests: [not_null]
+      - name: code_trans
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('modes_transport')
+                field: code_trans
+
+  - name: fact_bmo
+    description: Projets de recrutement (enquête BMO) par bassin d'emploi et métier.
+    columns:
+      - name: code_be
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_bassins_emploi')
+                field: code_be
+
+  - name: fact_validations_jour
+    description: Validations ferrées, total régional par jour sur les 4 derniers trimestres.
+    columns:
+      - name: jour
+        data_tests: [unique, not_null]
+
+  - name: fact_validations
+    description: Validations ferrées par pôle et par trimestre.
+    columns:
+      - name: id_zdc
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_gares')
+                field: id_zdc

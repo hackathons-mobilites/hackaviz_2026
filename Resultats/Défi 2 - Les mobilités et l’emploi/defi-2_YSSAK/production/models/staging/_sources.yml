@@ -1,0 +1,50 @@
+version: 2
+
+# Données brutes produites par scripts/ingest.py.
+# - Cible DuckDB : lues directement dans data/parquet/<nom>.parquet (external_location).
+# - Cible PostgreSQL : lues dans le schéma sources_hakathon (tables de même nom).
+sources:
+  - name: open_data
+    schema: sources_hakathon
+    meta:
+      external_location: "data/parquet/{name}.parquet"
+    tables:
+      - name: cog_communes
+        description: "INSEE - Table d'appartenance géographique des communes au 01/01/2025 (onglet COM)."
+      - name: cog_arrondissements
+        description: "INSEE - Même fichier, onglet ARM (arrondissements municipaux de Paris, Lyon, Marseille)."
+      - name: cog_libelles_supra
+        description: "INSEE - Même fichier, onglet Zones_supra_communales (libellés EPCI, EPT, ZE, DEP...)."
+      - name: mobpro_2022
+        description: "INSEE - RP 2022, fichier détail MOBPRO. Filtré à l'ingestion sur les actifs qui résident OU travaillent dans la région."
+      - name: mobpro_2022_varmod
+        description: "INSEE - Dictionnaire des variables et modalités de MOBPRO 2022."
+      - name: filosofi_2021
+        description: "INSEE - Filosofi 2021, géographie 2025, format long (une ligne = territoire x mesure)."
+      - name: chomage_ze
+        description: "INSEE - Taux de chômage localisés par zone d'emploi, série trimestrielle depuis 2003."
+      - name: idfm_gares
+        description: "Île-de-France Mobilités - Emplacement des gares et stations du réseau ferré (une ligne par gare x ligne)."
+      - name: idfm_validations_arret
+        description: "Île-de-France Mobilités - Validations sur le réseau ferré, agrégées par zone de correspondance et par trimestre."
+      - name: idfm_validations_jour
+        description: "Île-de-France Mobilités - Validations sur le réseau ferré, total régional par jour."
+      - name: contours_idf
+        description: "geo.api.gouv.fr - Contours simplifiés des communes et départements de la région (GeoJSON)."
+      # --- défi 2 : mobilités et emploi ---
+      - name: bassins_emploi
+        description: "Région Île-de-France - 25 bassins d'emploi (2021), contours et statut de gouvernance."
+      - name: communes_bassins
+        description: "Rattachement commune -> bassin d'emploi (point représentatif dans le polygone, calculé à l'ingestion)."
+      - name: bmo_2026
+        description: "France Travail - Enquête Besoins en Main-d'Œuvre 2026 : projets de recrutement par bassin d'emploi et métier (région)."
+      - name: chomage_dep
+        description: "INSEE - Taux de chômage localisés, comparaisons départementales, série trimestrielle."
+      - name: defm_ze
+        description: "DARES - Demandeurs d'emploi inscrits à France Travail par zone d'emploi, mensuel, catégories A à E (région)."
+      - name: idfm_lignes
+        description: "Île-de-France Mobilités - Référentiel des lignes de transport en commun actives et prochainement actives."
+      - name: polarites_sdrife
+        description: "Région Île-de-France - Polarités du SDRIF-E (communes structurantes) et leur niveau d'importance."
+      - name: polarites_communes
+        description: "Même source, une ligne par commune citée dans une polarité (éclatée à l'ingestion)."

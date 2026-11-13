@@ -1,0 +1,50 @@
+name: 'hakathon'
+version: '2.0.0'
+config-version: 2
+ 
+profile: 'hakathon'          # doit correspondre au nom du bloc dans profiles.yml
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Paramètres partagés par tous les modèles : à changer ici (ou via --vars) lors d'un changement de millésime.
+vars:
+  region: '11'               # code INSEE de la région étudiée (11 = Île-de-France)
+  annee_mobpro: 2022         # millésime du recensement (fichier détail MOBPRO)
+  annee_filosofi: 2021       # millésime Filosofi
+  seuil_fiabilite: 200       # effectif pondéré minimal pour qu'une valeur MOBPRO soit jugée fiable
+
+models:
+  hakathon:
+    +materialized: table
+    staging:
+      +schema: staging
+    intermediate:
+      +schema: intermediate
+
+seeds:
+  hakathon:
+    +schema: referentiels
+    indicateurs:
+      +column_types:
+        ordre: integer
+    modes_transport:
+      +column_types:
+        code_trans: varchar
+        ordre: integer
+    catalogue_sources:
+      +column_types:
+        ordre: integer
+    fusions_communes:
+      +column_types:
+        ancien_code: varchar
+        nouveau_code: varchar
+        date_effet: date

@@ -1,0 +1,27 @@
+# Connexions dbt.
+#
+# - dev (par défaut) : DuckDB, fichier local data/hakathon.duckdb. Rien à installer
+#   à part `pip install -r requirements.txt`. C'est la cible utilisée par la CI
+#   GitHub Actions et par le dashboard.
+# - postgres : la base PostgreSQL de l'équipe. Les tables brutes doivent exister
+#   dans le schéma sources_hakathon avec les mêmes noms que les fichiers de
+#   data/parquet/ (cog_communes, mobpro_2022, ...). Lancer : dbt build --target postgres
+#   Le mot de passe n'est jamais versionné : le fournir via DBT_PG_PASSWORD
+#   (export DBT_PG_PASSWORD=... ou fichier .env non commité).
+hakathon:
+  target: "{{ env_var('DBT_TARGET', 'dev') }}"
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DBT_DUCKDB_PATH', 'data/hakathon.duckdb') }}"
+      schema: prod_hakathon
+      threads: 4
+    postgres:
+      type: postgres
+      host: "{{ env_var('DBT_PG_HOST', 'localhost') }}"
+      port: "{{ env_var('DBT_PG_PORT', '5432') | as_number }}"
+      user: "{{ env_var('DBT_PG_USER', 'postgres') }}"
+      password: "{{ env_var('DBT_PG_PASSWORD', '') }}"
+      dbname: "{{ env_var('DBT_PG_DBNAME', 'postgres') }}"
+      schema: prod_hakathon
+      threads: 4

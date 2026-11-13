@@ -1,0 +1,1303 @@
+@import url("observablehq:default.css");
+@import url("observablehq:theme-air.css");
+
+/* ------------------------------------------------------------------
+   Charte sobre, d'après le code couleur d'Île-de-France Mobilités :
+   encre bleu-gris, un seul bleu d'accent, bordures fines, fond blanc.
+   Les mêmes valeurs sont utilisées par les graphiques (components/format.js).
+   ------------------------------------------------------------------ */
+:root {
+  --idfm-encre: #25303b;      /* texte principal */
+  --idfm-texte-2: #4e5864;    /* texte secondaire */
+  --idfm-bleu: #0268d5;       /* accent unique */
+  --idfm-bleu-pale: #f5f9ff;  /* fonds discrets */
+  --idfm-bordure: #e0e5ec;
+  --idfm-rouge: #c52625;      /* réservé aux alertes */
+
+  --theme-foreground: var(--idfm-encre);
+  --theme-foreground-muted: var(--idfm-texte-2);
+  --theme-foreground-focus: var(--idfm-bleu);
+  --theme-background: #ffffff;
+  --theme-background-alt: var(--idfm-bleu-pale);
+  --rayon: 6px;
+
+  color-scheme: light;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--idfm-encre);
+  background: #ffffff;
+}
+
+a {
+  color: var(--idfm-bleu);
+}
+
+/* ------------------------------------------------------------------
+   Titres
+   ------------------------------------------------------------------ */
+#observablehq-main > h1:first-of-type {
+  font-size: clamp(26px, 3.4vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  max-width: 880px;
+  margin-top: 8px;
+}
+
+#observablehq-main > h1:first-of-type + p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--idfm-texte-2);
+  max-width: 800px;
+}
+
+#observablehq-main h2 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-top: 2.4rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--idfm-bordure);
+}
+
+/* Menu du haut : des onglets, celui de la page affichée est en bleu plein */
+#observablehq-header .onglets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  font-size: 14px;
+}
+
+#observablehq-header .onglets a {
+  color: var(--idfm-texte-2);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+#observablehq-header .onglets a:hover {
+  background: var(--idfm-bleu-pale);
+  color: var(--idfm-bleu);
+  border-color: var(--idfm-bordure);
+}
+
+#observablehq-header .onglets a.actif {
+  background: var(--idfm-bleu);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Barre latérale : lien actif en bleu, sans fond coloré */
+#observablehq-sidebar {
+  border-right: 1px solid var(--idfm-bordure);
+}
+
+#observablehq-sidebar .observablehq-link-active a {
+  color: var(--idfm-bleu);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------------
+   Cartes : blanches, bordure fine, pas d'ombre
+   ------------------------------------------------------------------ */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--idfm-bordure);
+  border-radius: var(--rayon);
+  box-shadow: none;
+}
+
+#observablehq-main .card h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--idfm-encre);
+  margin: 0 0 8px 0;
+  padding: 0;
+  border: none;
+}
+
+/* Libellé des indicateurs clés : petit texte gris au-dessus du chiffre */
+#observablehq-main .kpi h2,
+#observablehq-main .grid-cols-3 > .card > h2:first-child,
+#observablehq-main .grid-cols-4 > .card > h2:first-child {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--idfm-texte-2);
+  margin: 0 0 6px 0;
+}
+
+.card .big {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--idfm-encre);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.card .muted {
+  font-size: 12px;
+  color: var(--idfm-texte-2);
+  margin-top: 4px;
+}
+
+/* Indicateurs clés : tous identiques, la couleur n'est plus utilisée pour décorer.
+   Seule la carte d'alerte garde un repère rouge discret. */
+.kpi,
+.kpi--tc,
+.kpi--voiture,
+.kpi--velo,
+.kpi--marche,
+.kpi--neutre {
+  border-left: 1px solid var(--idfm-bordure);
+}
+
+.kpi .big {
+  color: var(--idfm-encre);
+}
+
+.kpi--tc .big {
+  color: var(--idfm-bleu);
+}
+
+.kpi--alerte {
+  border-top: 3px solid var(--idfm-rouge);
+}
+
+.grid .card form {
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------
+   Notes de lecture : fond pâle, filet bleu
+   ------------------------------------------------------------------ */
+.note {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--idfm-texte-2);
+  background: var(--idfm-bleu-pale);
+  border-left: 3px solid var(--idfm-bleu);
+  border-radius: 0 4px 4px 0;
+  padding: 10px 14px;
+  margin: 14px 0 4px 0;
+}
+
+/* ------------------------------------------------------------------
+   Tableaux et contrôles
+   ------------------------------------------------------------------ */
+form[class^="inputs-"] table thead th {
+  background: var(--idfm-bleu-pale);
+  color: var(--idfm-encre);
+  font-weight: 600;
+}
+
+form[class^="inputs-"] table tbody tr:hover {
+  background: var(--idfm-bleu-pale);
+}
+
+form[class^="inputs-"] table td {
+  font-variant-numeric: tabular-nums;
+}
+
+form[class^="inputs-"] select,
+form[class^="inputs-"] input[type="text"] {
+  border: 1px solid var(--idfm-bordure);
+  border-radius: 4px;
+}
+
+form[class^="inputs-"] input[type="radio"],
+form[class^="inputs-"] input[type="checkbox"] {
+  accent-color: var(--idfm-bleu);
+}
+
+/* Graphiques : texte lisible (13 px minimum), encre foncée pour les étiquettes */
+figure svg,
+.card svg {
+  font-size: 13px;
+  color: var(--idfm-encre);
+}
+
+figure > div[class$="-swatches"],
+.card div[class$="-swatches"],
+figure > div[class$="-ramp"],
+.card div[class$="-ramp"] {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+/* Légende des cartes (dégradé) : chiffres plus grands */
+.card div[class$="-ramp"] svg {
+  font-size: 12px;
+}
+
+/* ------------------------------------------------------------------
+   Logos des producteurs de données : bandeau discret
+   ------------------------------------------------------------------ */
+.bandeau-sources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin: 4px 0 20px 0;
+  padding: 8px 0;
+  border-top: 1px solid var(--idfm-bordure);
+  border-bottom: 1px solid var(--idfm-bordure);
+}
+
+.bandeau-sources .muted {
+  font-size: 12px;
+  color: var(--idfm-texte-2);
+}
+
+.logo-source {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  filter: grayscale(1);
+  opacity: 0.75;
+  transition: filter 0.15s ease, opacity 0.15s ease;
+}
+
+.logo-source:hover {
+  filter: none;
+  opacity: 1;
+}
+
+.logo-source img {
+  display: block;
+  width: auto;
+  max-width: 160px;
+}
+
+.logo-source .sigle {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 8px;
+  border: 1.5px solid;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.logos-cellule {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.grille-producteurs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 12px 0 24px 0;
+}
+
+.grille-producteurs .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  margin: 0;
+}
+
+.grille-producteurs .card .n {
+  font-size: 12px;
+  color: var(--idfm-texte-2);
+}
+
+/* ------------------------------------------------------------------
+   Mobile
+   ------------------------------------------------------------------ */
+@media (max-width: 640px) {
+  .card .big {
+    font-size: 24px;
+  }
+
+  .bandeau-sources {
+    gap: 10px;
+  }
+
+  .logo-source img {
+    max-width: 100px;
+  }
+
+  #observablehq-header .onglets {
+    font-size: 13px;
+  }
+
+  #observablehq-header .onglets a {
+    padding: 4px 9px;
+  }
+
+  .filtres select,
+  .filtres input[type="text"] {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Barre de filtres : même présentation sur toutes les pages
+   ------------------------------------------------------------------ */
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px 28px;
+  margin: 14px 0 18px 0;
+  padding: 14px 18px 16px 18px;
+  background: var(--idfm-bleu-pale);
+  border: 1px solid var(--idfm-bordure);
+  border-radius: var(--rayon);
+}
+
+.filtres::before {
+  content: "Filtres";
+  flex-basis: 100%;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--idfm-bleu);
+}
+
+.filtres > .observablehq,
+.filtres > div {
+  margin: 0;
+}
+
+.filtres form[class^="inputs-"],
+.accueil-recherche form[class^="inputs-"] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  --label-width: auto;
+}
+
+.filtres form[class^="inputs-"] > label,
+.accueil-recherche form[class^="inputs-"] > label {
+  width: auto;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--idfm-encre);
+}
+
+.filtres form[class^="inputs-"] > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+
+.filtres select,
+.filtres input[type="text"],
+.accueil-recherche input[type="text"] {
+  min-height: 36px;
+  min-width: 240px;
+  padding: 4px 10px;
+  font-size: 14px;
+  color: var(--idfm-encre);
+  background: #ffffff;
+  border: 1px solid #b8c2cf;
+  border-radius: 6px;
+}
+
+.filtres select:focus,
+.filtres input[type="text"]:focus,
+.accueil-recherche input[type="text"]:focus {
+  outline: 2px solid var(--idfm-bleu);
+  outline-offset: 1px;
+  border-color: var(--idfm-bleu);
+}
+
+.filtres label {
+  font-size: 14px;
+}
+
+/* ------------------------------------------------------------------
+   Cartes et barres cliquables
+   ------------------------------------------------------------------ */
+.carte-cliquable g.zones path {
+  cursor: pointer;
+  transition: fill-opacity 0.12s ease;
+}
+
+.carte-cliquable g.zones path:hover {
+  fill: #25303b;
+  fill-opacity: 0.18;
+  stroke: #25303b;
+  stroke-width: 1.5px;
+}
+
+.barres-cliquables g[aria-label="bar"] rect {
+  cursor: pointer;
+  transition: opacity 0.12s ease;
+}
+
+.barres-cliquables g[aria-label="bar"] rect:hover {
+  opacity: 0.75;
+}
+
+.barres-cliquables g[aria-label="dot"] circle,
+.nuage-cliquable g[aria-label="dot"] circle {
+  cursor: pointer;
+}
+
+.barres-cliquables g[aria-label="dot"] circle:hover {
+  opacity: 0.75;
+}
+
+.nuage-cliquable {
+  cursor: pointer;
+}
+
+.anneau path {
+  transition: opacity 0.12s ease;
+}
+
+.anneau path:hover {
+  opacity: 0.8;
+}
+
+/* Les barres « poussent » à l'affichage, les chiffres apparaissent en douceur */
+@keyframes pousse {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes apparait {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  g[aria-label="bar"] rect {
+    transform-box: fill-box;
+    transform-origin: left center;
+    animation: pousse 0.45s ease-out both;
+  }
+
+  .card .big,
+  .fiche-ligne b {
+    animation: apparait 0.35s ease-out both;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Fiche d'un territoire ou d'une gare
+   ------------------------------------------------------------------ */
+.fiche-titre {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--idfm-bleu);
+  margin: 2px 0 6px 0;
+}
+
+.fiche .fiche-titre:not(:first-child) {
+  margin-top: 18px;
+}
+
+#observablehq-main .fiche h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.fiche-ligne {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--idfm-bordure);
+  font-size: 14px;
+}
+
+.fiche-ligne span {
+  color: var(--idfm-texte-2);
+}
+
+.fiche-ligne b {
+  color: var(--idfm-encre);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------
+   Accueil : recherche, tuiles, étapes
+   ------------------------------------------------------------------ */
+.accueil-recherche {
+  background: var(--idfm-bleu-pale);
+  max-width: 640px;
+}
+
+.accueil-recherche input[type="text"] {
+  min-width: min(420px, 100%);
+  min-height: 42px;
+  font-size: 16px;
+}
+
+a.tuile {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+a.tuile:hover {
+  border-color: var(--idfm-bleu);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(2, 104, 213, 0.12);
+}
+
+#observablehq-main a.tuile h2 {
+  font-size: 17px;
+  color: var(--idfm-encre);
+}
+
+a.tuile p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--idfm-texte-2);
+  flex: 1;
+}
+
+a.tuile span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--idfm-bleu);
+}
+
+.etape .numero {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--idfm-bleu);
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.etape p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--idfm-texte-2);
+}
+
+/* ------------------------------------------------------------------
+   Lexique et sources, en bas de chaque page
+   ------------------------------------------------------------------ */
+.lexique {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+  margin: 12px 0 8px 0;
+}
+
+.lexique > div {
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 1px solid var(--idfm-bordure);
+  border-left: 3px solid var(--idfm-bleu);
+  border-radius: 0 4px 4px 0;
+}
+
+.lexique dt {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--idfm-encre);
+}
+
+.lexique dd {
+  margin: 4px 0 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--idfm-texte-2);
+}
+
+.pied-sources ul {
+  margin: 8px 0 12px 0;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--idfm-texte-2);
+  max-width: 900px;
+}
+
+.pied-sources .bandeau-sources {
+  margin: 0 0 8px 0;
+}
+
+.pied-sources p.muted {
+  font-size: 13px;
+  color: var(--idfm-texte-2);
+  max-width: 900px;
+}
+
+.tableau-simple {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+}
+
+.tableau-simple th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--idfm-texte-2);
+  border-bottom: 1px solid var(--idfm-bordure);
+  padding: 6px 4px;
+}
+
+.tableau-simple td {
+  padding: 7px 4px;
+  border-bottom: 1px solid var(--idfm-bordure);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Liens « page précédente / page suivante » en français */
+#observablehq-footer nav a[rel="prev"]::before {
+  content: "Page précédente";
+}
+
+#observablehq-footer nav a[rel="next"]::before {
+  content: "Page suivante";
+}
+
+.note b {
+  color: var(--idfm-encre);
+}
+
+/* ==================================================================
+   CHARTE ÎLE-DE-FRANCE MOBILITÉS
+   Reprend les principes du site iledefrance-mobilites.fr :
+   - police Raleway, hiérarchie par la graisse plus que par la taille ;
+   - texte bleu-gris foncé #25303B, une seule couleur d'action (bleu #0268D5) ;
+   - cartes blanches, coins de 8 px, ombres diffuses teintées de bleu ;
+   - en-tête foncé, sections séparées par des fonds bleu très pâle ;
+   - rouge #C52625 réservé aux alertes.
+   Ces règles complètent et remplacent celles du haut du fichier.
+   ================================================================== */
+:root {
+  --rayon: 8px;
+  --ombre-idfm: 0 2px 20px #deeeff;
+  --idfm-gris-bleu: #e0e5ec;
+}
+
+body {
+  font-family: "Raleway", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-feature-settings: "lnum" 1, "tnum" 1; /* chiffres alignés, lisibles dans les tableaux */
+  /* Pictogramme en fond de page, très estompé pour ne pas attirer l'œil */
+  background-color: #ffffff;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("data:image/png;base64,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");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, right 48px bottom 48px;
+  background-size: cover, 340px 340px;
+  background-attachment: fixed, fixed;
+}
+
+/* Titres : gras, tailles proches */
+#observablehq-main > h1:first-of-type {
+  font-size: clamp(26px, 3.2vw, 32px);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+#observablehq-main > h1:first-of-type + p {
+  font-size: 16px;
+}
+
+/* Titres de section : un bandeau bleu très pâle, en capitales, comme un intercalaire */
+#observablehq-main > h2 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--idfm-encre);
+  background: var(--idfm-bleu-pale);
+  border: none;
+  border-left: 4px solid var(--idfm-bleu);
+  border-radius: 0 var(--rayon) var(--rayon) 0;
+  padding: 12px 16px;
+  margin: 2.6rem 0 1rem 0;
+  max-width: none;
+}
+
+.surtitre {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--idfm-bleu);
+  margin: 8px 0 0 0;
+}
+
+.surtitre + h1 {
+  margin-top: 4px !important;
+}
+
+/* En-tête foncé, onglets blancs, onglet actif en bleu */
+#observablehq-header {
+  background: var(--idfm-encre);
+  border-bottom: none;
+  color: #ffffff;
+}
+
+#observablehq-header .onglets {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  gap: 4px;
+  font-size: 14px;
+}
+
+#observablehq-header .onglets a {
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: var(--rayon);
+  border: 1px solid transparent;
+}
+
+#observablehq-header .onglets a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+#observablehq-header .onglets a.actif {
+  background: #ffffff;
+  color: var(--idfm-encre);
+  font-weight: 700;
+}
+
+/* Barre latérale */
+#observablehq-sidebar {
+  background: var(--idfm-bleu-pale);
+  border-right: 1px solid var(--idfm-gris-bleu);
+  font-family: inherit;
+}
+
+/* Cartes : coins de 8 px et ombre bleutée */
+.card {
+  border: 1px solid #eaf1fb;
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre-idfm);
+}
+
+#observablehq-main .card h2 {
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  background: none;
+}
+
+#observablehq-main .kpi h2,
+#observablehq-main .grid-cols-3 > .card > h2:first-child,
+#observablehq-main .grid-cols-4 > .card > h2:first-child {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#observablehq-main .fiche h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.card .big {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.kpi,
+.kpi--tc,
+.kpi--voiture,
+.kpi--velo,
+.kpi--marche,
+.kpi--neutre {
+  border-left: 1px solid #eaf1fb;
+}
+
+.rangee-kpi {
+  margin-top: 0.5rem;
+}
+
+.note {
+  border-radius: 0 var(--rayon) var(--rayon) 0;
+}
+
+/* ------------------------------------------------------------------
+   Les 4 filtres de territoire, en haut de chaque page
+   ------------------------------------------------------------------ */
+.filtres {
+  border-radius: var(--rayon);
+  background: #ffffff;
+  border: 1px solid #eaf1fb;
+  box-shadow: var(--ombre-idfm);
+}
+
+.filtres-territoires {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px 18px;
+  align-items: end;
+}
+
+.filtres-territoires::before {
+  content: "Territoires";
+  grid-column: 1 / -1;
+}
+
+.filtres-carte::before {
+  content: "Filtres de la carte";
+}
+
+.filtres-territoires label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.filtres-territoires label > span {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--idfm-encre);
+}
+
+.filtres-territoires select {
+  width: 100%;
+  min-width: 0;
+  min-height: 40px;
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--idfm-encre);
+  background: #ffffff;
+  border: 1px solid #b8c2cf;
+  border-radius: var(--rayon);
+}
+
+/* Le territoire principal est mis en avant ; la comparaison est plus discrète */
+.filtres-territoires .filtre-principal select {
+  border-color: var(--idfm-bleu);
+  box-shadow: inset 0 0 0 1px var(--idfm-bleu);
+}
+
+.filtres-territoires .filtre-comparaison > span {
+  color: var(--idfm-texte-2);
+}
+
+.filtres-territoires .filtre-comparaison select {
+  background: var(--idfm-bleu-pale);
+  font-weight: 500;
+}
+
+.filtres select,
+.filtres input[type="text"],
+.accueil-recherche input[type="text"] {
+  border-radius: var(--rayon);
+  font-family: inherit;
+}
+
+@media (max-width: 900px) {
+  .filtres-territoires {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .filtres-territoires {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Tableau « Comparaison »
+   ------------------------------------------------------------------ */
+table.comparaison {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 13px;
+  margin: 4px 0 0 0;
+}
+
+table.comparaison thead th {
+  text-align: left;
+  vertical-align: bottom;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--idfm-encre);
+  padding: 6px 6px 8px 6px;
+  border-bottom: 2px solid var(--idfm-gris-bleu);
+  overflow-wrap: anywhere;
+}
+
+table.comparaison thead th:first-child {
+  width: 36%;
+}
+
+table.comparaison tbody th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--idfm-texte-2);
+  padding: 9px 6px;
+  border-bottom: 1px solid var(--idfm-gris-bleu);
+  overflow-wrap: anywhere;
+}
+
+table.comparaison td {
+  padding: 9px 6px;
+  border-bottom: 1px solid var(--idfm-gris-bleu);
+  vertical-align: top;
+}
+
+.comp-valeur {
+  display: block;
+  font-weight: 700;
+  color: var(--idfm-encre);
+  font-variant-numeric: tabular-nums;
+}
+
+.comp-barre {
+  height: 6px;
+  margin-top: 5px;
+  background: var(--idfm-bleu-pale);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.comp-barre > div {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.comp-a {
+  background: var(--idfm-bleu);
+}
+
+.comp-b {
+  background: #a9b4c2;
+}
+
+/* ------------------------------------------------------------------
+   Encadré « À savoir », source, message « non disponible »
+   ------------------------------------------------------------------ */
+.a-savoir {
+  margin: 16px 0 6px 0;
+  padding: 14px 18px 14px 18px;
+  background: var(--idfm-bleu-pale);
+  border: 1px solid #dbe8fa;
+  border-left: 4px solid var(--idfm-bleu);
+  border-radius: 0 var(--rayon) var(--rayon) 0;
+}
+
+.a-savoir-titre {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--idfm-bleu);
+  border-radius: 999px;
+  padding: 3px 12px;
+  margin-bottom: 8px;
+}
+
+.a-savoir p {
+  margin: 6px 0 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--idfm-encre);
+  max-width: 980px;
+}
+
+p.source {
+  margin: 8px 0 0 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--idfm-texte-2);
+  max-width: none;
+}
+
+p.indisponible {
+  margin: 10px 0;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--idfm-encre);
+  background: #fff7f6;
+  border: 1px solid #f3d3d1;
+  border-left: 4px solid var(--idfm-rouge);
+  border-radius: 0 var(--rayon) var(--rayon) 0;
+  max-width: none;
+}
+
+/* ------------------------------------------------------------------
+   Catalogue des données
+   ------------------------------------------------------------------ */
+.resultats-entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 1.6rem 0 0.6rem 0;
+}
+
+#observablehq-main .resultats-entete h2 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.pastille-nombre {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--idfm-bleu);
+  background: #e6f0fb;
+  border-radius: 999px;
+  padding: 4px 14px;
+  white-space: nowrap;
+}
+
+.catalogue-carte {
+  padding: 0;
+  overflow-x: auto;
+}
+
+table.catalogue {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+}
+
+table.catalogue thead th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--idfm-bleu);
+  padding: 14px 14px 12px 14px;
+  border-bottom: 2px solid var(--idfm-bleu);
+  white-space: nowrap;
+}
+
+table.catalogue td {
+  padding: 14px;
+  border-bottom: 1px solid var(--idfm-gris-bleu);
+  vertical-align: top;
+  color: var(--idfm-encre);
+}
+
+table.catalogue tbody tr:hover {
+  background: var(--idfm-bleu-pale);
+}
+
+table.catalogue .cat-theme {
+  font-weight: 700;
+  color: var(--idfm-bleu);
+  min-width: 150px;
+}
+
+table.catalogue .cat-nom {
+  font-weight: 700;
+  min-width: 190px;
+}
+
+table.catalogue .cat-unite,
+table.catalogue .cat-source {
+  color: var(--idfm-texte-2);
+  font-size: 13px;
+}
+
+.etiquette {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--idfm-encre);
+  background: var(--idfm-bleu-pale);
+  border: 1px solid #dbe8fa;
+  border-radius: 999px;
+  padding: 1px 9px;
+  margin: 0 4px 4px 0;
+  white-space: nowrap;
+}
+
+/* Tuiles de l'accueil et lexique : mêmes coins, même ombre */
+a.tuile:hover {
+  box-shadow: 0 4px 24px #cfe3fb;
+}
+
+.lexique > div {
+  border-radius: 0 var(--rayon) var(--rayon) 0;
+}
+
+/* ------------------------------------------------------------------
+   Un seul menu : la barre latérale de gauche (le menu du haut est retiré)
+   ------------------------------------------------------------------ */
+#observablehq-header {
+  display: none;
+}
+
+#observablehq-sidebar nav a,
+#observablehq-sidebar summary {
+  font-size: 14px;
+}
+
+#observablehq-sidebar .observablehq-link-active a {
+  color: var(--idfm-bleu);
+  font-weight: 700;
+}
+
+.equipe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 4px 0;
+}
+
+.equipe .membre {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  transition: border-color 0.12s ease, color 0.12s ease;
+}
+
+.equipe a.membre:hover {
+  color: #0a66c2;
+  border-color: #0a66c2;
+}
+
+.equipe .logo-linkedin {
+  flex: none;
+}
+
+.equipe-pied a.membre {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #0a66c2;
+  text-underline-offset: 2px;
+}
+
+.equipe .membre {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--idfm-encre);
+  background: #ffffff;
+  border: 1px solid #dbe8fa;
+  border-radius: 999px;
+  padding: 5px 14px;
+  box-shadow: var(--ombre-idfm);
+}
+
+/* ------------------------------------------------------------------
+   Bouton « Exporter en PDF » (en haut à droite de chaque page)
+   ------------------------------------------------------------------ */
+.bouton-pdf {
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font: 600 14px Raleway, sans-serif;
+  color: #ffffff;
+  background: var(--idfm-bleu);
+  border: none;
+  border-radius: 999px;
+  padding: 9px 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(2, 104, 213, 0.3);
+  transition: background 0.12s ease;
+}
+
+.bouton-pdf:hover {
+  background: #01458d;
+}
+
+/* ------------------------------------------------------------------
+   Export PDF : mise en page imprimée (paysage, sans menu ni boutons)
+   ------------------------------------------------------------------ */
+@page {
+  size: A4 landscape;
+  margin: 12mm;
+}
+
+@media print {
+  html, body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: #ffffff !important;
+  }
+
+  .bouton-pdf,
+  #observablehq-sidebar,
+  #observablehq-sidebar-toggle,
+  label[for="observablehq-sidebar-toggle"],
+  #observablehq-header,
+  #observablehq-footer nav,
+  .accueil-recherche {
+    display: none !important;
+  }
+
+  #observablehq-center {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Un peu plus petit qu'à l'écran : plus de contenu par page, moins de blancs. */
+  #observablehq-main {
+    max-width: none !important;
+    zoom: 0.82;
+  }
+
+  /* Les grands blocs peuvent se couper entre deux pages (sinon ils laissent une page à moitié vide) ;
+     seuls les petits éléments restent d'un seul tenant. */
+  .note,
+  .a-savoir,
+  .kpi,
+  .fiche-ligne,
+  figure,
+  svg,
+  tr {
+    break-inside: avoid;
+  }
+
+  .card {
+    box-shadow: none !important;
+  }
+
+  h2,
+  .filtres {
+    break-after: avoid;
+  }
+}

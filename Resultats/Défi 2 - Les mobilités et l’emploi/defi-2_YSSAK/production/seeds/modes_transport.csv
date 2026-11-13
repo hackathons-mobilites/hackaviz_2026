@@ -1,0 +1,7 @@
+code_trans,mode,mode_court,code_indicateur,ordre
+1,Pas de transport,Sans déplacement,part_sans_transport,6
+2,"Marche à pied (ou rollers, patinette)",Marche,part_marche,4
+3,Vélo (y compris à assistance électrique),Vélo,part_velo,3
+4,Deux-roues motorisé,Deux-roues motorisé,part_2rm,5
+5,"Voiture, camion, fourgonnette",Voiture,part_voiture,2
+6,Transports en commun,Transports en commun,part_tc,1

@@ -1,0 +1,41 @@
+# Vérification sur les pull requests : modèles + 50 tests dbt sur les Parquet versionnés de data/parquet/
+# (aucun téléchargement : ~1 min), puis construction du dashboard pour détecter une page cassée.
+# Le build complet avec ré-ingestion des données ouvertes tourne sur main : voir build-and-deploy.yml.
+name: CI
+
+on:
+  pull_request:
+
+jobs:
+  dbt-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Syntaxe des scripts Python
+        run: python -m py_compile scripts/ingest.py scripts/export_dashboard.py
+
+      - name: dbt build (modèles + tests) sur les Parquet versionnés
+        run: dbt build --profiles-dir . --target dev
+
+      - name: Export des tables vers le dashboard
+        run: python scripts/export_dashboard.py
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: dashboard/package-lock.json
+
+      - name: Construire le site
+        working-directory: dashboard
+        run: |
+          npm ci
+          npm run build
