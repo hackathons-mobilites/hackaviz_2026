@@ -81,10 +81,15 @@ def _calculer_validations_communales(gdf_territoires: gpd.GeoDataFrame) -> pd.Da
         ignore_index=True,
     )
     validations.columns = validations.columns.astype(str).str.strip().str.upper()
-    validations["DATE"] = validations["DATE"] if "DATE" in validations.columns else pd.NaT
-    if "JOUR" in validations.columns:
-        validations["DATE"] = validations["DATE"].fillna(validations["JOUR"])
-    validations["DATE"] = pd.to_datetime(validations["DATE"], dayfirst=True, errors="coerce")
+    if "DATE" in validations.columns and "JOUR" in validations.columns:
+        date_brute = np.where(validations["DATE"].notna(), validations["DATE"], validations["JOUR"])
+    elif "DATE" in validations.columns:
+        date_brute = validations["DATE"]
+    elif "JOUR" in validations.columns:
+        date_brute = validations["JOUR"]
+    else:
+        date_brute = pd.NaT
+    validations["DATE"] = pd.to_datetime(date_brute, dayfirst=True, errors="coerce")
     validations["CODE_STIF_ARRET"] = (
         pd.to_numeric(validations["CODE_STIF_ARRET"], errors="coerce").astype("Int64").astype(str)
     )
@@ -207,11 +212,26 @@ def charger_et_preparer_donnees():
         0.0,
     )
 
+    def qualifier_frequentation(territoire):
+        comparables = df.assign(
+            ecart_indice=(df["indice"] - territoire["indice"]).abs()
+        ).nsmallest(15, "ecart_indice")
+        reference = comparables["validations_pour_1k_hab"].median()
+        if reference == 0:
+            return "Frequentation non comparable"
+        if territoire["validations_pour_1k_hab"] < reference * 0.75:
+            return "Frequentation faible"
+        if territoire["validations_pour_1k_hab"] > reference * 1.25:
+            return "Frequentation particulierement forte"
+        return "Frequentation attendue"
+
+    df["niveau_frequentation"] = df.apply(qualifier_frequentation, axis=1)
+
     cols_fusion = [c for c in [
         "insee", "commune", "dept", "zone_geographique", "nb_gares",
         "population", "offre", "offre_par_10k_hab", "fiabilite_pct",
         "indice", "typologie_inegalite", "lignes", "gares", "validations_jour",
-        "validations_pour_1k_hab",
+        "validations_pour_1k_hab", "niveau_frequentation",
     ] if c in df.columns]
 
     gdf_tot = gdf_tot.merge(df[cols_fusion], on="insee", how="left")
@@ -503,25 +523,26 @@ with tab_carte:
 
     def insight_frequentation(data_t):
         """Compare l'usage par habitant a des territoires d'accessibilite equivalente."""
-        comparables = df_filtre.assign(ecart_indice=(df_filtre["indice"] - data_t["indice"]).abs()).nsmallest(15, "ecart_indice")
+        comparables = df_communes.assign(ecart_indice=(df_communes["indice"] - data_t["indice"]).abs()).nsmallest(15, "ecart_indice")
         reference = comparables["validations_pour_1k_hab"].median()
         frequentation = data_t.get("validations_pour_1k_hab", 0)
+        niveau = data_t.get("niveau_frequentation", "Frequentation non comparable")
         if reference == 0:
             return "La frequentation ne peut pas etre comparee : les territoires ayant une accessibilite similaire ne comptent pas de validations ferroviaires mesurables."
         if frequentation < reference * 0.75:
             return (
-                f"Les habitants valident en moyenne {frequentation:.0f} trajets ferroviaires par jour pour 1 000 habitants. "
+                f"{niveau} : les habitants valident en moyenne {frequentation:.0f} trajets ferroviaires par jour pour 1 000 habitants. "
                 f"C'est moins que les {reference:.0f} validations observees dans des territoires ayant une accessibilite similaire : "
                 "un potentiel de frequentation supplementaire est a explorer."
             )
         if frequentation > reference * 1.25:
             return (
-                f"Les habitants valident en moyenne {frequentation:.0f} trajets ferroviaires par jour pour 1 000 habitants. "
+                f"{niveau} : les habitants valident en moyenne {frequentation:.0f} trajets ferroviaires par jour pour 1 000 habitants. "
                 f"C'est plus que les {reference:.0f} validations observees dans des territoires ayant une accessibilite similaire : "
                 "le reseau y est particulierement sollicite."
             )
         return (
-            f"Les habitants valident en moyenne {frequentation:.0f} trajets ferroviaires par jour pour 1 000 habitants, "
+            f"{niveau} : les habitants valident en moyenne {frequentation:.0f} trajets ferroviaires par jour pour 1 000 habitants, "
             f"un niveau proche des {reference:.0f} validations observees dans les territoires ayant une accessibilite similaire."
         )
 
@@ -538,11 +559,15 @@ with tab_carte:
             st.caption(f"Code INSEE : {data_t['insee']} | Couronne : {data_t['zone_geographique']} (Departement {data_t['dept']})")
 
             diag = data_t.get("typologie_inegalite", "Non renseigne")
+            niveau_frequentation = data_t.get("niveau_frequentation", "Frequentation non comparable")
             st.markdown(
                 f"""
                 <div style="margin: 0.6rem 0 0.9rem 0;">
                     <span class="status-badge">
                         Diagnostic territorial : <strong>{diag}</strong>
+                    </span>
+                    <span class="status-badge">
+                        Frequentation : <strong>{niveau_frequentation}</strong>
                     </span>
                 </div>
                 """,
@@ -700,6 +725,7 @@ with tab_carte:
                 "validations_jour": ":,.0f",
                 "validations_pour_1k_hab": ":.2f",
                 "indice": ":.1f",
+                "niveau_frequentation": True,
             },
             labels={
                 "insee": "Code INSEE",
@@ -707,6 +733,7 @@ with tab_carte:
                 "validations_jour": "Validations moyennes / jour",
                 "validations_pour_1k_hab": "Validations / 1 000 hab.",
                 "indice": "Indice d'accessibilite",
+                "niveau_frequentation": "Niveau de frequentation",
             },
             center={"lat": c_lat, "lon": c_lon},
             zoom=zoom_carte,
@@ -907,7 +934,7 @@ with tab_donnees:
         "insee", "commune", "dept", "zone_geographique", "population",
         "indice", "typologie_inegalite", "nb_gares", "offre",
         "offre_par_10k_hab", "fiabilite_pct", "validations_jour",
-        "validations_pour_1k_hab",
+        "validations_pour_1k_hab", "niveau_frequentation",
     ]
     df_export = pd.DataFrame(df_filtre.drop(columns="geometry", errors="ignore"))[colonnes_export].copy()
     df_export = df_export.rename(columns={
@@ -924,6 +951,7 @@ with tab_donnees:
         "fiabilite_pct": "Realisation (%)",
         "validations_jour": "Validations moyennes / jour (2025)",
         "validations_pour_1k_hab": "Validations / 1 000 hab. (2025)",
+        "niveau_frequentation": "Niveau de frequentation",
     })
 
     filtre_txt = st.text_input("Filtrer par nom de commune ou code INSEE :", "")
