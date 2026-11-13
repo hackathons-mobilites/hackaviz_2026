@@ -1,0 +1,15 @@
+// Points de rupture : mobile d'abord, la mise en page s'élargit au-delà.
+@use "sass:map";
+
+$breakpoints: (
+  md: 700px,  // tablette : les grilles des écrans décideurs passent sur une colonne en dessous
+  lg: 900px,  // grand écran : navigation latérale au lieu de la barre du bas
+);
+
+@mixin up($name) {
+  @media (min-width: map.get($breakpoints, $name)) { @content; }
+}
+
+@mixin down($name) {
+  @media (max-width: map.get($breakpoints, $name)) { @content; }
+}

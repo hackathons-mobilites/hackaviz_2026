@@ -1,0 +1,19 @@
+// Boutons : principal, sombre, contour, danger, désactivé, appuyé ; bouton icône
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:var(--cible);padding:0 20px;
+  border:2px solid transparent;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer}
+.btn--primary{background:var(--bleu);color:var(--blanc)}
+.btn--primary:hover{background:var(--bleu-fonce)}
+.btn--dark{background:var(--nuit);color:var(--blanc)}
+.btn--ghost{background:var(--surface);color:var(--texte);border-color:var(--texte)}
+.btn--danger{background:var(--surface);color:var(--braise);border-color:var(--braise)}
+.btn--outline{background:var(--surface);color:var(--texte);border-color:var(--texte);min-height:52px;font-size:.9375rem;padding:0 8px}
+.btn--warm{background:#C2410C;color:#FFFFFF;min-height:44px}
+.btn--block{width:100%}
+.btn--lg{min-height:54px;font-size:1.0625rem}
+/* Bouton désactivé : lisible (pas de transparence), mais visiblement inactif */
+.btn[disabled]{background:var(--surface-2);color:var(--texte-2);border-color:var(--bord-fort);cursor:not-allowed}
+.btn[aria-pressed="true"]{background:var(--nuit);color:var(--blanc);border-color:var(--nuit)}
+.icon-btn{width:var(--cible);height:var(--cible);display:inline-flex;align-items:center;justify-content:center;flex:none;
+  border:1px solid var(--bord-nuit);border-radius:var(--r-s);background:transparent;color:var(--blanc);cursor:pointer}
+

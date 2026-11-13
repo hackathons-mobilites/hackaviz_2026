@@ -1,0 +1,9 @@
+// Liens isolés : zone tactile d'au moins 44 px (WCAG 2.5.8)
+/* Liens isolés (hors d'une phrase) : zone tactile d'au moins 44 px de haut (WCAG 2.5.8, recommandations mobiles) */
+.around-head__link,.a11y-footer a,.form__row-links a,.form__link,.form__alt a,.auth-switch a,.head-link,.around-links a,.footnote a,.form__bottom a,.alert a{display:inline-flex;align-items:center;min-height:44px}
+.it-card__head{min-height:44px}
+.map-tabs .mode-chip,.segmented button{min-height:44px}
+.brand-link{display:inline-flex;align-items:center;min-height:44px}
+
+// Boutons de zoom des cartes : 44 px au doigt (MapLibre les fait de 29 px)
+.maplibregl-ctrl.maplibregl-ctrl-group button{width:44px;height:44px}

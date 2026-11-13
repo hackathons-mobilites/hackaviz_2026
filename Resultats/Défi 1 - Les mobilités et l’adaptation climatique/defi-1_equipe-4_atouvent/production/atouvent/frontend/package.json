@@ -1,0 +1,38 @@
+{
+  "name": "atouvent-pwa",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "build:android": "vite build --mode android && cap sync android",
+    "android:open": "cap open android",
+    "android:apk": "node scripts/android.mjs",
+    "android:release": "node scripts/android.mjs release",
+    "a11y:contrast": "node scripts/a11y/contrast.mjs",
+    "a11y:audit": "node scripts/a11y/audit.mjs",
+    "a11y:keyboard": "node scripts/a11y/keyboard.mjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.6.9",
+    "@capacitor/app": "^7.1.2",
+    "@capacitor/core": "^7.6.9",
+    "@capacitor/geolocation": "^7.1.8",
+    "idb": "^8.0.4",
+    "maplibre-gl": "^6.14.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.6.9",
+    "@vitejs/plugin-react": "^6.1.2",
+    "sass": "^1.83.4",
+    "vite": "^8.3.4",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^5.0.5"
+  }
+}

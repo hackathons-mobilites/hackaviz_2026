@@ -1,0 +1,196 @@
+// Écrans décideurs 09 à 11 : en-tête, indicateurs, cartes, temps réel, prévision
+@use "../abstracts/breakpoints" as bp;
+
+/* Écrans décideurs 09 à 11 (maquette « Analyse décideurs ») : grand écran, cartes blanches à bordure fine */
+.dash{min-height:100dvh;background:var(--fond)}
+
+/* En-tête sombre : marque, onglets, période */
+.dash-head{background:var(--nuit);color:var(--blanc);padding:18px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.dash-brand{display:flex;align-items:center;gap:14px;color:var(--blanc);text-decoration:none}
+.dash-brand > span{display:flex;flex-direction:column}
+.dash-brand__name{font-family:var(--font-titre);font-weight:800;font-size:22px;letter-spacing:-.02em}
+.dash-brand__name b{color:var(--ciel);font-weight:800}
+.dash-brand__sub{font-size:13px;color:#B9C4D3}
+.dash-tabs{display:flex;gap:6px;background:var(--nuit-2);padding:4px;border-radius:10px;overflow-x:auto}
+.dash-tabs a{font-size:14px;font-weight:600;border-radius:8px;padding:10px 18px;min-height:44px;display:flex;align-items:center;
+  color:#DCE3EC;text-decoration:none;white-space:nowrap}
+.dash-tabs a[aria-current="page"]{background:var(--blanc);color:var(--nuit)}
+.dash-period{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+.dash-period div{display:flex;flex-direction:column;gap:4px}
+.dash-period dt{font-size:11px;color:#B9C4D3}
+.dash-period dd{margin:0;font-size:14px;padding:9px 12px;border-radius:8px;border:1px solid var(--bord-nuit);background:var(--nuit-2);min-height:44px;
+  display:flex;align-items:center}
+
+.dash-main{max-width:1376px;margin:0 auto;padding:28px 32px 48px;display:flex;flex-direction:column;gap:24px}
+.dash-main h2{font-family:var(--font-titre);font-weight:700;font-size:20px;margin:0}
+
+/* Aléa analysé */
+.dash-chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.dash-chips__label{font-size:14px;font-weight:600;color:var(--texte-2);margin-right:4px}
+.dash-chips__note{font-size:13px;color:var(--texte-2)}
+.chip{font-size:14px;font-weight:600;border:2px solid var(--bord-fort);background:var(--surface);color:var(--texte);border-radius:999px;
+  padding:8px 16px;min-height:44px}
+.chip[aria-pressed="true"]{background:var(--nuit);border-color:var(--nuit);color:var(--blanc)}
+.chip--small{font-size:13px;min-height:44px;padding:8px 14px;display:inline-flex;align-items:center;background:var(--nuit);border-color:var(--nuit);color:var(--blanc)}
+
+/* Titre, phrase-choc et seuil */
+.dash-intro{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
+.dash-intro > div:first-child{max-width:820px}
+.dash-eyebrow{font-family:var(--font-mono);font-size:13px;color:var(--braise);letter-spacing:.06em;text-transform:uppercase;margin:0}
+.dash-eyebrow--muted{color:var(--texte-2);font-size:12px}
+.dash-title{font-family:var(--font-titre);font-weight:800;font-size:clamp(28px,3.4vw,40px);line-height:1.08;letter-spacing:-.025em;margin:10px 0 0}
+.dash-headline{font-size:18px;line-height:1.45;margin:12px 0 0;max-width:760px}
+.dash-threshold{display:grid;grid-template-columns:auto 140px auto;align-items:center;gap:6px 10px;background:var(--surface);
+  border:1px solid var(--bord);border-radius:12px;padding:12px 16px}
+.dash-threshold label{font-size:13px;color:var(--texte-2)}
+.dash-threshold input{width:140px;accent-color:var(--braise);min-height:var(--cible)}
+.dash-threshold output{font-family:var(--font-mono);font-weight:500;font-size:15px}
+.dash-threshold small{grid-column:1 / -1;font-size:12px;color:var(--texte-2)}
+
+/* Indicateurs clés */
+.dash-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.kpi-card{background:var(--surface);border:1px solid var(--bord);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.kpi-card__label{font-size:13px;color:var(--texte-2);font-weight:500}
+.kpi-card__value{font-family:var(--font-titre);font-weight:700;font-size:36px;line-height:1.1;color:var(--serie-1)}
+.kpi-card__value--warm{color:var(--braise)}
+.kpi-card__sub{font-size:13px;color:var(--texte-2)}
+.kpi-card--dark{background:var(--nuit);border-color:var(--nuit)}
+.kpi-card--dark .kpi-card__label,.kpi-card--dark .kpi-card__sub{color:#B9C4D3}
+.kpi-card--dark .kpi-card__value{color:var(--corail)}
+
+/* Cartes et rangées */
+.dash-row{display:flex;flex-wrap:wrap;gap:16px}
+.dash-card{background:var(--surface);border:1px solid var(--bord);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.dash-card--grow{flex:999 1 640px}
+.dash-card--half{flex:1 1 520px}
+.dash-card__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.dash-sub{margin:0;font-size:14px;color:var(--texte-2)}
+.dash-note{margin:0;font-size:12px;color:var(--texte-2);font-style:italic}
+.dash-label{font-size:13px;font-weight:600;margin:0}
+.dash-link{background:none;border:0;padding:0;color:var(--lien);font-weight:600;font-size:14px;text-decoration:underline;cursor:pointer;min-height:var(--cible)}
+.dash-select{min-height:var(--cible);border:1px solid var(--bord-fort);border-radius:10px;padding:0 12px;background:var(--surface);color:var(--texte);font-size:15px}
+
+/* Carte des gares */
+.dash-map{height:440px;border-radius:10px;overflow:hidden;background:var(--surface-2)}
+.dash-legend{display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:var(--texte-2)}
+.dash-legend span{display:flex;align-items:center;gap:8px}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;flex:none;vertical-align:-1px}
+.dot--1{background:var(--serie-1)}
+.dot--2{background:var(--serie-2)}
+.dot--ring{border:2px solid var(--serie-neutre);background:var(--surface)}
+.dash-popup .maplibregl-popup-content{background:var(--nuit);color:var(--blanc);font:600 13px var(--font-texte);padding:6px 10px;border-radius:8px}
+.dash-popup .maplibregl-popup-tip{display:none}
+
+/* Panneau « gare sélectionnée » */
+.dash-station{flex:1 1 300px;gap:14px}
+.dash-station__name{font-size:26px!important;font-weight:800!important;margin:6px 0 8px!important}
+.dash-status{margin:0;border-radius:10px;padding:12px 14px;font-size:14px;font-weight:600;background:var(--surface-2)}
+.dash-status--non{background:var(--chaud-pale);color:var(--chaud-texte)}
+.dash-status--equipee{background:var(--ciel-pale);color:var(--texte)}
+.dash-facts{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.dash-facts dt{font-size:12px;color:var(--texte-2)}
+.dash-facts dd{margin:4px 0 0;font-family:var(--font-titre);font-weight:700;font-size:24px}
+.dash-facts dd.warm{color:var(--braise)}
+.dash-station__series{border-top:1px solid var(--bord);padding-top:14px;display:flex;flex-direction:column;gap:6px}
+.spark{width:100%;height:90px;display:block}
+.spark__hot{fill:var(--chaud-pale)}
+.spark__ref{stroke:var(--serie-neutre);stroke-width:1;stroke-dasharray:3 4;vector-effect:non-scaling-stroke}
+.spark__line{fill:none;stroke:var(--texte);stroke-width:2;stroke-linejoin:round}
+
+/* Pastilles de lignes, couleur officielle IDFM */
+.dash-lines{display:inline-flex;flex-wrap:wrap;gap:4px}
+.line-chip{min-width:26px;padding:2px 6px;border-radius:6px;background:var(--line);font-weight:700;font-size:12px;text-align:center}
+
+/* 10 · Temps réel */
+.dash-live{display:flex;align-items:center;gap:8px;background:var(--nuit-2);border-radius:999px;padding:10px 16px;font-size:14px;font-weight:600}
+.status-dot{width:9px;height:9px;border-radius:50%;background:var(--ok-vif);flex:none}
+.dash-kpis--5{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.dash-kpis--3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.kpi-card__value--small{font-size:26px}
+.kpi-card__value--muted{color:var(--texte-2);font-size:20px}
+.kpi-card a{font-weight:600;font-size:14px}
+.dep-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.dep-list li{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bord);font-size:15px}
+.dep-list strong{font-family:var(--font-titre);font-size:20px}
+.tag--cool{background:var(--ciel-pale);color:var(--bleu-fonce)}
+.src-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.src{background:var(--surface-2);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.src strong{font-size:16px}
+.src span:not(.tag){color:var(--texte-2)}
+.src .tag{align-self:flex-start}
+
+/* 11 · Prévision */
+.dash-head__note{font-size:14px;color:#B9C4D3}
+.fc-days{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.fc-day{background:var(--surface);border:1px solid var(--bord);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.fc-day h2{font-size:15px!important;font-family:var(--font-texte)!important;font-weight:700!important}
+.fc-day svg{color:var(--vert)}
+.fc-day--hazard svg{color:var(--braise)}
+.fc-day--first.fc-day--hazard{border:3px solid var(--braise)}
+.fc-day--first{border-width:2px;border-color:var(--texte)}
+.fc-day__temp{margin:0;font-family:var(--font-titre);font-weight:700;font-size:20px}
+.fc-day__label{margin:0;font-size:14px;color:var(--texte-2)}
+.fc-limits{grid-column:span 2}
+.fc-limits__title{color:var(--signal)!important;font-family:var(--font-titre);font-weight:700;font-size:18px!important}
+.fc-limits ul{margin:4px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14px;color:#FFFFFF}
+@include bp.down(md){ .fc-limits{grid-column:auto} }
+.dash-row--top{align-items:flex-start}
+.line-chip{white-space:nowrap;display:inline-block}
+
+/* 09 · couches sociales et climatiques */
+.chip--toggle{font-size:13px;min-height:44px;padding:8px 14px}
+.dot--neutral{background:var(--serie-neutre)}
+.ramp-legend{gap:8px}
+.ramp{display:inline-block;width:96px;height:10px;border-radius:5px}
+.ramp--heat{background:linear-gradient(90deg,var(--seq-heat-lo),var(--seq-heat-hi))}
+.ramp--poor{background:linear-gradient(90deg,var(--seq-poor-lo),var(--seq-poor-hi))}
+.dash-facts dd{font-size:22px}
+.dash-tabs--view{background:transparent;padding:0;gap:4px}
+.dash-tabs--view a,.dash-tabs--view span{font-size:14px;font-weight:600;border-radius:8px;min-height:44px;padding:8px 14px;border:1px solid var(--bord-nuit);
+  display:flex;align-items:center;color:#DCE3EC;text-decoration:none}
+.dash-tabs--view span[aria-current="page"]{background:var(--blanc);color:var(--nuit);border-color:var(--blanc)}
+
+/* 10 · Info trafic en direct */
+.traffic-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.traffic-item{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:start;border:1px solid var(--bord);border-radius:12px;padding:14px 16px}
+.traffic-item div{display:flex;flex-direction:column;gap:2px;font-size:14px}
+.traffic-item strong{font-size:16px}
+.traffic-item div span{color:var(--texte-2)}
+.traffic-item--meteo{background:var(--chaud-pale);border-color:var(--braise)}
+.traffic-item__tag{font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--bleu-fonce)}
+.traffic-item--meteo .traffic-item__tag{color:var(--braise)}
+
+/* Puces d'aléas avec pictogramme de la charte */
+.chip--icon{display:inline-flex;align-items:center;gap:6px}
+/* Aléa sans aucun jour observé : inactif mais lisible (pas de transparence), contour en pointillés */
+.chip--icon:disabled{color:var(--texte-2);border-style:dashed;cursor:not-allowed}
+.chip__count{font-weight:400;font-size:12px}
+.dash-reliability{align-self:flex-start;white-space:nowrap}
+.dash-rank{margin:8px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:14px}
+.dash-rank li{display:list-item}
+.dash-rank li .mono{float:right}
+.dash-card h2 svg,.dash-eyebrow svg,.dash-rowbtn svg{vertical-align:-3px}
+.dash-table tr[aria-selected="true"] th{color:var(--accent,var(--texte))}
+.dash-table th .dash-rowbtn{white-space:nowrap}
+.dash-cta{display:inline-flex;align-items:center;min-height:44px}
+
+/* Prévision : pictogramme du temps, aléas avec pictogramme, qualité de l'air */
+.fc-day__sky{color:var(--bleu)}
+.fc-day__hazards{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px;font-size:.8125rem;font-weight:600}
+.fc-day__hazards li{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.fc-day__air{font-size:.75rem;color:var(--texte-2);display:flex;align-items:center;gap:4px}
+.kpi-card__label svg,.dash-card h2 svg{vertical-align:-3px}
+
+.dash-section-title{font-size:1.375rem;margin:8px 0 0}
+
+/* État des données : texte + couleur (jamais la couleur seule) */
+.dh-tag{margin-left:8px;font-size:.75rem;vertical-align:middle}
+.dh-tag--ok{background:var(--vert-pale);color:var(--vert)}
+.dh-tag--warn{background:var(--signal-pale);color:var(--signal-texte)}
+.dh-tag--ko{background:var(--vigilance);color:var(--vigilance-texte)}
+
+/* 11 · Chaleur à venir */
+.future-heat{display:flex;flex-direction:column;gap:18px;margin-top:12px}
+.dash-title--section{font-size:clamp(22px,3vw,32px)}
+.dash-details{margin-top:12px}
+.dash-details > summary{cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:center}

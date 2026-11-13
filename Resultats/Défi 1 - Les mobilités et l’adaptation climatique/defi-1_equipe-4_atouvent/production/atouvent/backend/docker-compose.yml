@@ -1,0 +1,23 @@
+# API + collecteur + MongoDB. Lancer : docker compose up -d
+services:
+  mongo:
+    image: mongo:7
+    volumes: [mongo-data:/data/db]
+    restart: always
+  api:
+    build: .
+    env_file: .env
+    environment: { MONGO_URI: "mongodb://mongo:27017" }
+    # Exposé seulement en local : mettre un proxy HTTPS (nginx, Caddy) devant en production
+    ports: ["127.0.0.1:8000:8000"]
+    depends_on: [mongo]
+    restart: always
+  worker:
+    build: .
+    command: ["python", "-m", "app.worker"]
+    env_file: .env
+    environment: { MONGO_URI: "mongodb://mongo:27017" }
+    depends_on: [mongo]
+    restart: always
+volumes:
+  mongo-data:

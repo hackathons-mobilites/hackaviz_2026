@@ -1,0 +1,125 @@
+// 03 · Autour de moi : arrêts, tuiles, carte et repères
+/* Écran 03 : autour de moi (maquette 03) */
+.brand-link{text-decoration:none;flex:1}
+.position-chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;border:1px solid var(--bord-nuit);
+  border-radius:10px;background:var(--nuit-2);font-weight:600;font-size:.875rem;white-space:nowrap}
+.position-chip svg{flex:none}
+.around-head .page-head__inner{gap:14px}
+.around-search{display:flex;flex-direction:column;gap:6px}
+.around-search label{font-size:.8125rem;color:#B9C4D3}
+.around-search__input{border:0;border-radius:12px;color:var(--nuit);background:#FFFFFF}
+.around-head__link{color:var(--blanc)!important;font-size:.875rem;font-weight:600}
+.around-main{gap:10px}
+.section-title__h1{font-size:1.25rem}
+.on-dark{color:#B9C4D3;font-weight:500}
+
+/* Carte d'une gare proche */
+.station__head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.station__name{font-family:var(--font-texte);font-size:1.0625rem;font-weight:700}
+.station__lines{list-style:none;display:flex;flex-direction:column;gap:8px}
+.station__line{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px}
+.station__line-body{min-width:0;display:flex;flex-direction:column}
+.station__dest{font-weight:600;font-size:.9375rem}
+.station__ac{font-size:.8125rem;color:var(--texte-2)}
+.station__ac--true{color:var(--bleu-fonce)}
+.station__ac--false{color:var(--braise-fonce)}
+.station__time{text-align:right;min-width:4.5rem}
+.station__time strong{display:block;font-family:var(--font-titre);font-weight:800;font-size:1.5rem;line-height:1}
+.station__time small{font-size:.75rem;color:var(--texte-2)}
+.station__nolive{font-size:.8125rem}
+
+/* Tuiles Fontaine, Lieu frais, Vélib' */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.tile{background:var(--surface);border:1px solid var(--bord);border-radius:12px;padding:8px;display:grid;
+  grid-template-columns:minmax(0,1fr);row-gap:2px;align-content:start;font-size:.8125rem}
+/* Pictogramme au-dessus du libellé : les mots gardent toute la largeur de la tuile (pas de coupure « Fontain-e ») */
+.tile strong{font-weight:700;overflow-wrap:break-word;hyphens:auto;line-height:1.2}
+.tile span{color:var(--texte-2)}
+.tile__icon--bleu{color:var(--bleu)}
+.tile__icon--vert{color:var(--vert)}
+.tile__icon--ardoise{color:var(--ardoise)}
+.around-links{text-align:center;font-size:.875rem;color:var(--texte-2)}
+
+.map{height:240px;border-radius:var(--r);overflow:hidden;border:1px solid var(--bord);background:var(--lin)}
+.map--placeholder{display:block}
+.map-pin{width:18px;height:18px;border-radius:50%;border:3px solid var(--blanc);box-shadow:0 1px 4px rgba(0,0,0,.4)}
+.map-pin--me{background:var(--bleu);width:22px;height:22px}
+.map-pin--velib{background:var(--vert)}
+
+.list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.list__item{display:flex;flex-direction:column;padding:10px 0;border-top:1px solid var(--bord)}
+.list__item:first-child{border-top:0}
+.card h3{display:flex;align-items:center;gap:8px}
+
+/* Marqueurs avec pictogramme écrit (M, RER, T, BUS, nombre de Vélib') : grands, contrastés, bordure blanche */
+.map-pin--label{width:auto;height:auto;min-width:30px;padding:3px 6px;border-radius:7px;font:800 12px/1.1 var(--font-titre);
+  color:#FFFFFF;text-align:center;border:2px solid #FFFFFF}
+.map-pin--on{transform:scale(1.35);z-index:2;outline:3px solid #FFD23F}
+.map-pin--dest{background:#B83A16}
+/* Même pastille dans les listes */
+.stop-badge{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:28px;padding:0 6px;border-radius:7px;
+  font:800 .75rem/1 var(--font-titre);color:#FFFFFF;flex:none}
+.around-map{gap:10px}
+.around-map__head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.around-map .segmented button svg{vertical-align:-3px}
+.around-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin:0;padding:0}
+.around-item{display:flex;align-items:center;gap:8px;padding:6px;border-radius:10px}
+.around-item--on{background:var(--ciel-pale)}
+.around-item__main{flex:1;min-width:0;display:flex;gap:10px;align-items:flex-start;background:none;border:0;padding:4px;text-align:left;color:inherit;cursor:pointer}
+.around-item__text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.around-item__text small{color:var(--texte-2)}
+.tile--button{cursor:pointer;font:inherit;color:inherit;text-align:inherit;border:2px solid var(--bord-fort)}
+
+.map-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.map-tabs .mode-chip{min-height:44px;padding:6px 12px}
+
+/* Tons des pastilles (carte et liste) : texte blanc, contraste ≥ 4,5:1 sur chaque fond */
+.map-pin--tone-bus,.stop-badge--bus{background:#1A5C96}
+.map-pin--tone-tram,.stop-badge--tram,.map-pin--tone-green,.stop-badge--green,.map-pin--tone-velib,.stop-badge--velib{background:#0E5E3A}
+.map-pin--tone-metro,.stop-badge--metro{background:#0F1B2D}
+.map-pin--tone-metro{border-radius:50%;min-width:28px;height:28px;display:flex;align-items:center;justify-content:center}
+.stop-badge--metro{border-radius:50%;min-width:28px}
+.map-pin--tone-rail,.stop-badge--rail,.map-pin--tone-works,.stop-badge--works{background:#8A2A0E}
+.map-pin--tone-water,.stop-badge--water{background:#154A7A}
+.map-pin--tone-empty{background:#4A5A70}
+
+/* Qualité de l'air du jour (texte + pictogramme, jamais la couleur seule) */
+.air-strip{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--bord);font-size:.875rem}
+.air-strip--degrade,.air-strip--mauvais,.air-strip--tres_mauvais{background:var(--vigilance);color:var(--vigilance-texte);border-color:transparent}
+.vigilance-tag{display:inline-block;margin:2px 0;padding:2px 8px;border-radius:6px;font-size:.75rem;font-weight:800;background:#FFFFFF;color:#0F1B2D;border:2px solid currentColor}
+.vigilance-tag--orange{color:#8A4B00}.vigilance-tag--rouge{color:#8A2A0E}.vigilance-tag--jaune{color:#5C4A00}
+
+/* Climat maintenant : première carte de l'accueil */
+.climate-now{display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:var(--r);background:var(--surface);border:1px solid var(--bord)}
+// Place réservée pendant le chargement (hauteur du bloc chargé) : rien ne descend quand les données arrivent
+.climate-now--loading{min-height:290px;justify-content:center}
+@media (max-width:600px){.climate-now--loading{min-height:310px}}
+@media (max-width:360px){.climate-now--loading{min-height:390px}}
+.stations-loading{min-height:370px;display:flex;align-items:flex-start}
+@media (max-width:360px){.stations-loading{min-height:455px}}
+.climate-now--alert{border:2px solid var(--braise);background:var(--corail-pale)}
+.climate-now__head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.climate-now__head h2{font-size:1.125rem}
+.climate-now__head small{color:var(--texte-2);font-size:.75rem;text-align:right}
+.climate-now__main{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:12px;align-items:center}
+.climate-now__main svg{color:var(--bleu)}
+.climate-now__temp{font-family:var(--font-titre);font-weight:800;font-size:2.5rem;line-height:1}
+.climate-now__facts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;font-size:.875rem;color:var(--texte-2)}
+.climate-now__hazards{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.climate-now__hazards li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px}
+.climate-now__hazards li svg{color:var(--braise)}
+.climate-now__hazards strong{display:block}
+.climate-now__hazards small{display:block;color:var(--texte-2);margin-top:2px}
+.climate-now__ok{display:flex;gap:8px;align-items:center;font-weight:600;color:var(--vert)}
+.climate-now__lines{list-style:none;margin:0;padding:10px 0 0;border-top:1px solid var(--bord);display:flex;flex-direction:column;gap:4px;font-size:.8125rem;color:var(--texte-2)}
+.climate-now__lines li{display:flex;gap:6px;align-items:center}
+
+/* Position en direct de l'appareil : point bleu cerclé de blanc, avec une pulsation (coupée si « réduire les animations ») */
+// Prend toute la hauteur du cadre parent (carte du suivi : 100 %) ; sans cadre dimensionné, la carte garde ses 240 px
+.map-wrap{position:relative;height:100%}
+.map-me{width:18px;height:18px;border-radius:50%;background:var(--bleu);border:3px solid #FFFFFF;box-shadow:0 0 0 2px var(--bleu)}
+.map-me::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid var(--bleu);animation:me-pulse 2s ease-out infinite}
+@keyframes me-pulse{from{transform:scale(.6);opacity:.9}to{transform:scale(1.6);opacity:0}}
+@media (prefers-reduced-motion: reduce){.map-me::after{animation:none;opacity:.5}}
+.map-locate{position:absolute;left:8px;bottom:8px;z-index:2;min-height:44px;padding:0 12px;border-radius:10px;border:2px solid var(--texte);
+  background:var(--surface);color:var(--texte);font-weight:700;font-size:.8125rem;cursor:pointer}

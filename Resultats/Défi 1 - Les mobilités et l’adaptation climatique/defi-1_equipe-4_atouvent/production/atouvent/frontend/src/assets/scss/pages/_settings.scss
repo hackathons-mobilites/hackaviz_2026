@@ -1,0 +1,100 @@
+// 06-08 · Accessibilité, alertes, compte
+/* Écrans 06, 07 et 08 : accessibilité, alertes, compte */
+.card__legend{font-family:var(--font-titre);font-weight:700;font-size:1.125rem;margin-bottom:8px;padding:0}
+.switch__label{display:flex;align-items:center;gap:10px;font-weight:600}
+.switch__hint{display:block}
+.switch:last-of-type{border-bottom:0}
+.stack{display:flex;flex-direction:column;gap:10px}
+.a11y-footer{font-size:.875rem;color:var(--texte-2);display:flex;flex-direction:column;gap:4px}
+
+/* Administration */
+.admin-user{display:grid;gap:8px}
+.admin-user > .badge{justify-self:start}
+.admin-user__actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.admin-user__actions .input{flex:1 1 160px;width:auto}
+
+/* 06 · Trajet accessible (maquette 06) */
+.a11y-head .page-head__inner{gap:14px}
+.a11y-toolbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.a11y-toolbar button{display:flex;align-items:center;justify-content:center;gap:6px;min-height:48px;border:2px solid #FFFFFF;border-radius:10px;
+  background:transparent;color:#FFFFFF;font-weight:700;font-size:.9375rem;cursor:pointer}
+.a11y-toolbar button[aria-pressed="true"]{background:var(--signal);border-color:var(--signal);color:#0B0F14}
+.a11y-main{gap:14px}
+.a11y-legend{font-size:.875rem;font-weight:600;color:var(--texte-2);margin-bottom:8px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{min-height:44px;padding:0 14px;border:2px solid var(--bord-fort);border-radius:999px;background:transparent;color:var(--texte);font-weight:600;font-size:.9375rem;cursor:pointer}
+.pill[aria-pressed="true"]{background:var(--nuit);border-color:var(--nuit);color:#FFFFFF;font-weight:700}
+.a11y-trip{border:2px solid var(--texte);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.a11y-trip__row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.a11y-trip__min{font-family:var(--font-titre);font-weight:800;font-size:1.375rem;white-space:nowrap}
+.a11y-steps{list-style:none;display:flex;flex-direction:column;gap:10px}
+.a11y-step{display:flex;gap:12px;align-items:flex-start}
+.a11y-step div{display:flex;flex-direction:column}
+.a11y-step span:not(.a11y-step__icon){font-size:.9375rem;color:var(--texte-2)}
+.a11y-step__icon{flex:none;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#0B0F14}
+.a11y-step--ok .a11y-step__icon{background:var(--ok-vif)}
+.a11y-step--bad .a11y-step__icon{background:#FF8A5C}
+.a11y-step--unknown .a11y-step__icon{background:var(--lin);color:var(--texte)}
+.a11y-actions{display:flex;flex-direction:column;gap:10px}
+.a11y-actions .trip-actions .btn{min-height:54px}
+
+/* 07 · Mes alertes (maquette 07) */
+.head-link{background:none;border:0;color:#FFFFFF;font-weight:600;font-size:.875rem;text-decoration:underline;padding:12px 4px;min-width:44px;min-height:44px;cursor:pointer}
+.segmented--dark{background:var(--nuit-2)}
+.segmented--dark button{color:#DCE3EC;font-size:.9375rem}
+.segmented--dark button[aria-pressed="true"]{background:#FFFFFF;color:var(--nuit)}
+.alerts-main{gap:12px}
+.alert{background:var(--surface);border:1px solid var(--bord);border-left:6px solid var(--alerte, var(--ardoise));border-radius:12px;padding:14px 16px;
+  display:flex;gap:12px;color:var(--texte)}
+.alert > svg{flex:none;color:var(--alerte, var(--ardoise))}
+.alert div{display:flex;flex-direction:column;gap:4px}
+.alert__label{font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--alerte-texte, var(--texte-2))}
+.alert__text{font-size:.875rem;color:var(--texte-2)}
+.alert a{font-weight:700;font-size:.9375rem;padding-top:6px}
+.alert--orages_pluie{--alerte:#1A5C96;--alerte-texte:#154A7A}
+.alert--chaleur,.alert--ascenseur{--alerte:#C2410C;--alerte-texte:#A3290A}
+.alert--grand_froid,.alert--neige_verglas,.alert--vent_fort{--alerte:#4A5A70;--alerte-texte:#4A5A70}
+.alert--pollution{--alerte:#8A6A00;--alerte-texte:#5C4300}
+:root[data-contrast="high"] .alert{--alerte-texte:#FFFFFF}
+
+/* Ligne « libellé + case à cocher » (maquette 08) */
+.check-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;border-bottom:1px solid var(--bord);font-weight:600;cursor:pointer}
+.check-row:last-child{border-bottom:0}
+.check-row input{width:26px;height:26px;accent-color:var(--bleu);flex:none;margin:0}
+
+/* 08 · Mon compte (maquette 08) */
+.avatar{width:52px;height:52px;border-radius:50%;background:var(--corail);color:var(--nuit);display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-titre);font-weight:800;font-size:1.375rem;flex:none}
+.account-id{display:flex;flex-direction:column;min-width:0}
+.account-id h1{font-size:1.375rem}
+.account-id span{color:#B9C4D3;font-size:.875rem;overflow:hidden;text-overflow:ellipsis}
+.account-main{gap:14px}
+.account-main .card h2{font-size:1.125rem}
+.link-row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;border-bottom:1px solid var(--bord);color:var(--texte);text-decoration:none}
+.link-row span,.check-row span{display:flex;flex-direction:column}
+.link-row small,.check-row small{color:var(--texte-2);font-size:.8125rem;font-weight:400;display:flex;flex-wrap:wrap;gap:0 6px}
+.link-row small .current{font-weight:700;color:var(--texte)}
+.text-sizes{display:flex;gap:6px}
+.text-sizes button{width:44px;height:44px;border:2px solid var(--bord-fort);border-radius:10px;background:var(--surface);font-weight:700;cursor:pointer}
+.text-sizes button[aria-pressed="true"]{background:var(--nuit);border-color:var(--nuit);color:#FFFFFF}
+.details-title{cursor:pointer;font-family:var(--font-titre);font-weight:700;font-size:1.125rem;min-height:var(--cible);display:flex;align-items:center}
+.data-list{list-style:none;display:flex;flex-direction:column;gap:6px;font-size:.9375rem}
+.data-list li{display:flex;gap:8px;align-items:flex-start}
+.data-list svg{color:var(--vert);flex:none;margin-top:3px}
+
+/* Mes trajets enregistrés : lien vers les itinéraires + suppression */
+.place-row{display:flex;align-items:center;gap:8px}
+.place-row .link-row{flex:1;min-width:0}
+.btn--small{min-height:44px;padding:8px 12px;font-size:14px}
+
+/* Administration : indicateurs, états de collecte (texte + pictogramme, jamais la couleur seule) */
+.admin{display:flex;flex-direction:column;gap:14px}
+.admin-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:8px 0}
+.admin-kpi{background:var(--surface-2);border-radius:10px;padding:10px 12px}
+.admin-kpi dt{font-size:.8125rem;color:var(--texte-2)}
+.admin-kpi dd{margin:2px 0 0;font-family:var(--font-titre);font-weight:800;font-size:1.5rem}
+.admin-state{display:inline-flex;align-items:center;gap:4px;font-weight:700}
+.admin-state--ok{color:var(--vert)}
+.admin-state--late{color:var(--signal-texte)}
+.admin-state--failing{color:var(--braise-fonce)}
+.admin-error code{white-space:normal;word-break:break-word;font-size:.8125rem}

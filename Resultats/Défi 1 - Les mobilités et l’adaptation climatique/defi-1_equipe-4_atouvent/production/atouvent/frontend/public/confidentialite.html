@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité · AtouVent</title>
+<style>
+body{margin:0;background:#F2F4F7;color:#0F1B2D;font:16px/1.6 system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:24px 20px 48px}
+h1{font-size:1.75rem;line-height:1.2}h2{font-size:1.25rem;margin-top:2rem}
+a{color:#1A5C96}:focus-visible{outline:3px solid #FFD23F;outline-offset:2px}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #DCE2EA;padding:8px;text-align:left;vertical-align:top}
+@media (prefers-color-scheme: dark){body{background:#0B1422;color:#EEF2F7}a{color:#7FC4E8}th,td{border-color:#2A3C55}}
+</style>
+</head>
+<body>
+<main>
+<p><a href="/">Retour à l'application</a></p>
+<h1>Politique de confidentialité</h1>
+<p>Cette page explique quelles données AtouVent utilise, pourquoi, combien de temps, et comment exercer vos droits (Règlement général sur la protection des données, RGPD, et loi Informatique et Libertés).</p>
+
+<h2>Responsable du traitement</h2>
+<p>Brice Bokatola et William Laine, équipe AtouVent (projet réalisé pour le Hackathon Mobilités 2026, sans structure juridique) · Contact : <a href="mailto:contact@atouvent.com">contact@atouvent.com</a>.</p>
+
+<h2>Sans compte</h2>
+<p>Vous pouvez utiliser AtouVent sans compte. Votre position sert seulement à afficher la météo, les Vélib' proches et les itinéraires : elle n'est pas enregistrée sur nos serveurs. Pour la météo, le serveur arrondit la position à environ 5 km avant d'interroger Open-Meteo.</p>
+
+<h2>Données d'un compte</h2>
+<table>
+<thead><tr><th scope="col">Donnée</th><th scope="col">Pourquoi</th><th scope="col">Base légale</th></tr></thead>
+<tbody>
+<tr><td>Adresse e-mail, mot de passe (stocké sous forme d'empreinte, jamais en clair)</td><td>Se connecter, réinitialiser le mot de passe</td><td>Exécution du service demandé</td></tr>
+<tr><td>Langue, alertes choisies, réglages d'affichage et d'annonces</td><td>Retrouver vos réglages sur tous vos appareils</td><td>Exécution du service demandé</td></tr>
+<tr><td>Profil de déplacement (handicap, sensibilité au climat) : <strong>facultatif</strong></td><td>Adapter les trajets (sans marche, annonces vocales, alertes renforcées)</td><td>Votre consentement explicite (article 9.2.a du RGPD), dont la date est conservée</td></tr>
+</tbody>
+</table>
+<p>Le profil de déplacement est une donnée de santé. Il est <strong>chiffré</strong> dans la base de données et n'est visible ni par les administrateurs, ni dans les statistiques. Vous pouvez le retirer à tout moment depuis « Mon compte » : il est alors effacé.</p>
+
+<h2>Durée de conservation</h2>
+<p>Les données du compte sont gardées tant que le compte existe. La suppression du compte (« Mon compte » › « Supprimer mon compte ») les efface immédiatement de la base.</p>
+
+<h2>Destinataires et services utilisés</h2>
+<ul>
+<li>Hébergement de l'application et de la base : Hostinger, serveur situé à Paris (France).</li>
+<li>Envoi des e-mails (réinitialisation du mot de passe) : Hostinger, pour votre seule adresse e-mail.</li>
+<li>Météo : Open-Meteo reçoit une position arrondie, sans lien avec votre compte.</li>
+<li>Recherche d'adresse : la Géoplateforme de l'IGN reçoit le texte recherché, sans lien avec votre compte.</li>
+</ul>
+<p>Aucune donnée n'est vendue ni utilisée à des fins publicitaires. Il n'y a pas de cookie de suivi ni d'outil de mesure d'audience.</p>
+
+<h2 id="cookies">Cookies et stockage sur votre appareil</h2>
+<p>AtouVent n'utilise <strong>aucun cookie publicitaire, de suivi ou de mesure d'audience</strong>. Le seul cookie est celui de la session, strictement nécessaire pour rester connecté : il est exempté de consentement (article 82 de la loi Informatique et Libertés, recommandations de la CNIL). Aucun bandeau ne vous est donc demandé.</p>
+<table>
+  <caption>Ce que l'application garde sur votre appareil</caption>
+  <thead><tr><th scope="col">Nom</th><th scope="col">Type</th><th scope="col">À quoi il sert</th><th scope="col">Durée</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">atv_session</th><td>Cookie (seulement si vous êtes connecté)</td><td>Vous garder connecté. Il est illisible par les pages (HttpOnly), n'est jamais envoyé depuis un autre site (SameSite=Strict) et ne circule qu'en HTTPS une fois le site en ligne.</td><td>7 jours, ou jusqu'à la déconnexion</td></tr>
+    <tr><th scope="row">atv.lang, atv.prefs, atv.modes, atv.voice</th><td>Stockage local</td><td>Langue, réglages d'affichage et d'accessibilité, modes de transport choisis.</td><td>Jusqu'à ce que vous les changiez</td></tr>
+    <tr><th scope="row">atv.session, atv.user</th><td>Stockage local (seulement si vous êtes connecté)</td><td>Savoir que vous êtes connecté et afficher votre compte sans réseau.</td><td>Jusqu'à la déconnexion</td></tr>
+    <tr><th scope="row">Trajet en cours</th><td>Base locale (IndexedDB)</td><td>Suivre votre trajet sous terre ou sans réseau.</td><td>Jusqu'à la fin du trajet ou la déconnexion</td></tr>
+    <tr><th scope="row">Cache de l'application</th><td>Cache hors ligne</td><td>Ouvrir l'application et la carte sans réseau.</td><td>30 jours au plus</td></tr>
+  </tbody>
+</table>
+<p>La déconnexion efface le cookie de session, le compte gardé sur l'appareil, le trajet et les réponses mises en cache. Vous pouvez aussi tout effacer depuis les réglages de votre navigateur.</p>
+
+<h2>Vos droits</h2>
+<p>Vous pouvez accéder à vos données et les télécharger (« Mon compte » › « Télécharger mes données »), les corriger, les supprimer, retirer votre consentement pour le profil de déplacement, et vous opposer à un traitement. Pour toute demande : <a href="mailto:contact@atouvent.com">contact@atouvent.com</a>.</p>
+<p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL (cnil.fr).</p>
+
+<p><small>Dernière mise à jour : 12/11/2026.</small></p>
+</main>
+</body>
+</html>

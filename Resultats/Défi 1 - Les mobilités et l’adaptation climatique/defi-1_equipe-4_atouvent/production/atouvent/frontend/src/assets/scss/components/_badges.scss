@@ -1,0 +1,14 @@
+// Pastilles de ligne et badges
+/* Pastilles de ligne et badges */
+.line{display:inline-flex;align-items:center;min-height:28px;padding:0 8px;border-radius:6px;color:var(--blanc);
+  font-weight:700;font-size:.875rem;background:var(--bleu);white-space:nowrap}
+.line--metro{background:var(--braise)}
+.line--bus{background:var(--ardoise)}
+.line--walk{background:var(--lin);color:var(--nuit)}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:8px;font-weight:600;font-size:.875rem}
+.badge--ok{background:var(--vert-pale);color:var(--vert)}
+.badge--warn{background:var(--corail-pale);color:var(--braise-fonce)}
+.badge--info{background:var(--ciel-pale);color:var(--bleu-fonce)}
+.badge--estimate{background:transparent;color:var(--bleu);font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+

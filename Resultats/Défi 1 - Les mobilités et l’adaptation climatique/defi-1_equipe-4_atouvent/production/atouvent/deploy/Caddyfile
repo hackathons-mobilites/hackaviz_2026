@@ -1,0 +1,14 @@
+# Entrée publique d'AtouVent : HTTPS automatique (Let's Encrypt), puis le conteneur « web » (site + /api).
+atouvent.com {
+	encode gzip
+	header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+	reverse_proxy web:80 {
+		# Flux en direct (Server-Sent Events) : pas de mise en mémoire tampon
+		flush_interval -1
+	}
+}
+
+# www.atouvent.com renvoie vers l'adresse principale
+www.atouvent.com {
+	redir https://atouvent.com{uri} permanent
+}

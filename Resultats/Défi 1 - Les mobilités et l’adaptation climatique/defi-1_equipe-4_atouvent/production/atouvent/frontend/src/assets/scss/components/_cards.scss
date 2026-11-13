@@ -1,0 +1,10 @@
+// Cartes et titres de section
+/* Cartes */
+.card{background:var(--surface);border:1px solid var(--bord);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.card--selected{border:2px solid var(--bleu)}
+.card__row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.card__meta{color:var(--texte-2);font-size:.9375rem}
+.section-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.section-title small{color:var(--texte-2);font-size:.875rem}
+.section-title__h1{font-size:1.375rem} /* h1 de la page, à la taille visuelle d'un h2 */
+

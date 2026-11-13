@@ -1,0 +1,47 @@
+// Connexion, inscription, choix de la langue
+/* Écrans 00 à 02b : langue, connexion, inscription (fond blanc, en-tête de marque) */
+.info-chip{display:flex;align-items:center;gap:10px;background:var(--ciel-pale);color:var(--bleu-fonce);border-radius:10px;padding:10px 12px;font-size:.875rem}
+.info-chip svg{flex:none}
+
+/* 00 · Langue */
+.lang-main{padding-top:20px}
+.lang-form{display:flex;flex-direction:column;gap:12px;min-height:calc(100dvh - 260px)}
+.lang-form fieldset{gap:8px}
+.lang-choice{font-weight:400}
+.lang-choice__name{flex:1;display:flex;flex-direction:column}
+.lang-choice__name > span{font-weight:700;font-size:1.0625rem}
+.lang-choice__name small{font-size:.8125rem;color:var(--texte-2)}
+.lang-choice__code{font-family:var(--font-mono);font-size:.8125rem;color:var(--texte-2)}
+.lang-form__submit{margin-top:auto}
+.lang-form .footnote{font-size:.8125rem}
+
+/* 01 et 02 · Connexion, inscription */
+.form{display:flex;flex-direction:column;gap:16px}
+.field label{font-size:.9375rem}
+.form__link{align-self:flex-start;font-weight:600;font-size:.9375rem;padding:6px 0}
+.form__bottom{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:.9375rem;margin-top:auto;padding-top:16px}
+.form__bottom span{color:var(--texte-2)}
+.form__bottom a{font-weight:700;padding:8px 0}
+.form__row-links{display:flex;justify-content:space-between;gap:12px;font-size:.9375rem;font-weight:600;flex-wrap:wrap;margin-top:auto;padding-top:16px}
+.form__alt{text-align:center}
+.hint-check{display:flex;align-items:center;gap:6px;font-size:.875rem;color:var(--texte-2);margin:0}
+.hint-check svg{color:var(--vert)}
+.checks{gap:10px}
+.checks legend{font-size:.9375rem;font-weight:600;margin-bottom:8px}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:.9375rem;line-height:1.35;cursor:pointer}
+.check input{width:24px;height:24px;margin:0;flex:none;accent-color:var(--bleu)}
+.check small{color:var(--texte-2);font-size:inherit}
+
+/* 02b · Profil : la réponse « Oui » s'ouvre sur les cases à cocher */
+.step-label{font-size:.875rem;font-weight:600;color:#DCE3EC}
+.need legend{font-size:1.0625rem;font-weight:700;line-height:1.35;margin-bottom:10px}
+.need-yes{border:2px solid var(--bord-fort);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.need-yes:has(> .need-yes__head input:checked){border:3px solid var(--bleu);background:var(--ciel-pale);padding:11px 13px}
+.need-yes__head{display:flex;gap:12px;align-items:center;cursor:pointer;font-weight:700;min-height:32px}
+.need-yes__head input{width:22px;height:22px;margin:0;accent-color:var(--bleu)}
+.need-yes fieldset{padding-left:34px;gap:8px}
+.need-yes fieldset legend{font-size:.875rem;color:var(--texte-2);font-weight:400;margin-bottom:6px}
+.need-yes .check{min-height:32px;align-items:center}
+.need-yes .check input{width:22px;height:22px}
+.choice--consent{align-items:flex-start;font-weight:400;font-size:.9375rem}
+.choice--button{width:100%;text-align:left;font-weight:500}

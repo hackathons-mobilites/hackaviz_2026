@@ -1,0 +1,79 @@
+// Jetons de la charte : couleurs (clair, sombre, contraste renforcé), typographie, espacements.
+@use "../abstracts/mixins";
+
+/* Couleurs, typographie et espacements de la charte AtouVent */
+:root{
+  --nuit:#0F1B2D; --nuit-2:#1C2C42; --nuit-3:#2A3C55; --bleu:#1A5C96; --bleu-fonce:#154A7A;
+  --ciel:#7FC4E8; --ciel-pale:#E6EFF8; --braise:#B83A16; --braise-fonce:#8A2A0E;
+  --corail:#F28B5B; --corail-pale:#FDEEE8; --vert:#0E5E3A; --vert-pale:#DDF5EA;
+  --signal:#FFD23F; --signal-pale:#FFF3C4; --signal-texte:#3D2E00; --signal-bord:#8A6A00;
+  --brume:#F2F4F7; --lin:#DCE2EA; --ardoise:#4A5A70; --blanc:#FFFFFF;
+
+  --fond:var(--brume); --surface:var(--blanc); --texte:var(--nuit); --texte-2:var(--ardoise);
+  --bord:var(--lin); --lien:var(--bleu); --focus:var(--signal);
+  /* Séries des graphiques (validées daltonisme et contraste, clair et sombre) */
+  --serie-1:#1A5C96; --serie-2:#C2410C; --serie-neutre:#6B7A90; --chaud-pale:#FDEEE8; --chaud-texte:#8A2A0E;
+  --surface-2:#F7F9FB; --bord-fort:#76839A; --bord-champ:#6B7A90; --bord-nuit:#7C90AA; --switch-off:var(--ardoise);
+  /* Bordures des éléments cliquables : ≥ 3:1 sur leur fond (WCAG 1.4.11) ; --bord-nuit sur les en-têtes sombres */
+  --vigilance:#FFE3D6; --vigilance-texte:#5C1A06; --ok-vif:#3DDC97;
+  /* Rampes séquentielles (une teinte, du clair au foncé) : chaleur et ménages modestes */
+  --seq-heat-lo:#F9D9CC; --seq-heat-hi:#8A2A0E; --seq-poor-lo:#CFE0F1; --seq-poor-hi:#154A7A;
+  /* Scénarios de chaleur, du plus doux au plus chaud : 3,7 / 7,3 / 13,1:1 sur blanc */
+  --heat-step-0:#D9622B; --heat-step-1:#A3290A; --heat-step-2:#5C1A06;
+
+  --font-titre:"Archivo","Noto Sans SC",system-ui,sans-serif;
+  --font-texte:"IBM Plex Sans","Noto Sans SC",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+
+  --base:16px; --r:14px; --r-s:10px; --gap:12px; --pad:20px;
+  --cible:48px; /* taille minimale des zones cliquables (RGAA 13.x, WCAG 2.5.8) */
+  --nav-h:72px; --max:560px;
+}
+
+/* Taille du texte choisie par l'usager */
+:root[data-text="1"]{--base:15px}
+:root[data-text="3"]{--base:20px}
+
+/* Contraste renforcé (maquette écran 06) : fond noir, texte blanc, accents jaunes */
+:root[data-contrast="high"]{
+  --fond:#0B0F14; --surface:#0B0F14; --surface-2:#141B24; --texte:#FFFFFF; --texte-2:#C9D2DE; --bord:#FFFFFF; --bord-fort:#FFFFFF;
+  --bord-champ:#FFFFFF; --bord-nuit:#FFFFFF; --lien:#FFD23F; --ardoise:#C9D2DE; --lin:#2A3340; --nuit:#0B0F14; --nuit-2:#141B24; --nuit-3:#2A3340;
+  --bleu:#FFD23F; --bleu-fonce:#FFE680; --ciel-pale:#141B24; --vert-pale:#0F2A1F; --vert:#3DDC97; --corail-pale:#2A1610;
+  --braise:#FF8A5C; --braise-fonce:#FF8A5C; --vigilance:#2A1610; --vigilance-texte:#FFB899; --signal-pale:#2A2408; --signal-texte:#FFD23F;
+  --serie-1:#4A8BC9; --serie-2:#D9622B; --chaud-pale:#2A1610; --chaud-texte:#FFB899;
+  --heat-step-0:#FF8A5C; --heat-step-1:#FFB899; --heat-step-2:#FFE680;
+}
+/* Sur fond jaune, le texte des boutons principaux passe en noir */
+:root[data-contrast="high"] .btn--primary,:root[data-contrast="high"] .next-step{color:#0B0F14}
+:root[data-contrast="high"] .btn[disabled]{color:var(--texte-2);background:var(--surface-2)}
+
+/* Thème sombre automatique, sauf contraste renforcé */
+@media (prefers-color-scheme: dark){
+  :root:not([data-contrast="high"]){
+    --fond:#0B1422; --surface:#15233A; --texte:#EEF2F7; --texte-2:#B9C4D3; --bord:#2A3C55; --lien:#7FC4E8;
+    --ciel-pale:#17314F; --vert-pale:#123B2A; --corail-pale:#3D1C12; --signal-pale:#3A3108; --signal-texte:#FFE89A;
+    --serie-1:#4A8BC9; --serie-2:#D9622B; --serie-neutre:#8B98AA; --chaud-pale:#3D1C12; --chaud-texte:#F7B79A;
+    --surface-2:#1C2C42; --bord-fort:#6E829C; --bord-champ:#8A9DB5; --switch-off:#8A9DB5;
+    --seq-heat-lo:#5A2414; --seq-heat-hi:#F7B79A; --seq-poor-lo:#1E3A5C; --seq-poor-hi:#A9CDEB;
+    /* Sur fond sombre, le plus chaud est le plus clair : 4,3 / 6,3 / 9,2:1 sur la surface */
+    --heat-step-0:#D9622B; --heat-step-1:#F0884F; --heat-step-2:#F7B79A;
+    /* Textes colorés lisibles sur fond sombre (contraste ≥ 4,5:1, vérifié avec scratchpad/contrast.mjs) */
+    --vert:#5FE3A8; --braise:#FF9C7A; --braise-fonce:#FFAB8A; --bleu-fonce:#9AD2F0; --lin:#2A3C55;
+  }
+  /* Ces couleurs servent aussi de fond : le texte posé dessus passe en foncé */
+  :root:not([data-contrast="high"]) .line--metro,:root:not([data-contrast="high"]) .step--done .step__dot{color:#0B1422}
+  :root:not([data-contrast="high"]) .bottom-nav a[aria-current="page"],:root:not([data-contrast="high"]) .lang-choice{color:var(--texte)}
+  :root:not([data-contrast="high"]) .bottom-nav a[aria-current="page"] svg{color:var(--ciel)}
+  /* Bouton principal bleu et puce choisie : contour ou fond clair pour rester visibles sur la surface sombre */
+  :root:not([data-contrast="high"]) .btn--primary:not([disabled]){border-color:var(--ciel)}
+  /* Boutons choisis (puces, tailles de texte, profils) : fond clair, sinon ils se confondraient avec la surface sombre */
+  :root:not([data-contrast="high"]) :is(.mode-chip,.pill,.chip,.text-sizes button,.btn)[aria-pressed="true"]{@include mixins.pressed(var(--ciel), #0B1422)}
+  :root:not([data-contrast="high"]) .btn--dark{border-color:var(--bord-fort)}
+  :root:not([data-contrast="high"]) .alert{--alerte-texte:var(--texte-2)}
+}
+
+/* Contraste renforcé : onglet actif du menu en jaune sur noir, pastilles de ligne sans couleur officielle en noir sur jaune */
+:root[data-contrast="high"] .bottom-nav a[aria-current="page"]{color:#FFD23F}
+:root[data-contrast="high"] .line:not([style]){color:#0B0F14}
+:root[data-contrast="high"] :is(.mode-chip,.pill,.chip,.text-sizes button,.btn)[aria-pressed="true"]{@include mixins.pressed(#FFD23F, #0B0F14)}
+:root[data-contrast="high"] .btn--dark{border-color:#FFFFFF}

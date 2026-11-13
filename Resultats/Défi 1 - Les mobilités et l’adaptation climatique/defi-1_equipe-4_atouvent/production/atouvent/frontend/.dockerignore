@@ -1,0 +1,8 @@
+# Jamais dans l'image : dépendances locales, constructions, projet Android, variables d'environnement
+node_modules/
+dist/
+dev-dist/
+android/
+.env
+.env.*
+scripts/

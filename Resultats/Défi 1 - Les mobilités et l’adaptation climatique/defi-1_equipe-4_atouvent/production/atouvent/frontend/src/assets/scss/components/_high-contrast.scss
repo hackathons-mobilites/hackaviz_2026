@@ -1,0 +1,6 @@
+// Contraste renforcé : composants à fond gris repassés en noir sur blanc
+/* Contraste renforcé : composants à fond gris repassés en noir sur blanc */
+:root[data-contrast="high"] .segmented{background:var(--fond);border:2px solid var(--texte)}
+:root[data-contrast="high"] .segmented button[aria-pressed="true"]{background:var(--nuit);color:var(--blanc)}
+:root[data-contrast="high"] .line--walk{background:var(--fond);color:var(--texte);border:2px solid var(--texte)}
+

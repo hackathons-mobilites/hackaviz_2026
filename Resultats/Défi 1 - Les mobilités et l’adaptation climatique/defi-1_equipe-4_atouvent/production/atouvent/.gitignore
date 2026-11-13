@@ -1,0 +1,30 @@
+# Secrets : clés d'API, mot de passe SMTP, clé de chiffrement des profils (jamais versionnés)
+.env
+.env.*
+!.env.example
+!frontend/.env.android
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node et constructions
+node_modules/
+dist/
+dev-dist/
+
+# Données téléchargées ou recalculées (gros fichiers, régénérables depuis les sources ouvertes) :
+# voir README, « Données ». Seule l'analyse publiée (chaleur.json, données ouvertes) est versionnée.
+analyse/raw/
+backend/data/*
+!backend/data/chaleur.json
+
+# Outils
+*.log
+.DS_Store
+Thumbs.db
+
+# Jetons des comptes de test gardés par scripts/scenario_usagers.py --keep
+backend/scripts/.jetons.json

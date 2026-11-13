@@ -1,0 +1,28 @@
+// Écrans de données (onglets)
+/* Écrans 09, 10 et 11 : données pour les décideurs */
+.data-tabs{display:flex;gap:6px;border-bottom:2px solid var(--bord);overflow-x:auto}
+.data-tabs a{min-height:var(--cible);display:flex;align-items:center;padding:0 14px;text-decoration:none;color:var(--texte-2);
+  font-weight:600;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap}
+.data-tabs a[aria-current="page"]{color:var(--texte);border-color:var(--bleu)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.kpi{font-family:var(--font-titre);font-weight:700;font-size:1.25rem}
+
+/* Graphique */
+.chart{margin:0;display:flex;flex-direction:column;gap:8px}
+.chart__title{font-family:var(--font-titre);font-weight:700;font-size:1.125rem}
+.chart__plot{position:relative}
+.chart svg{width:100%;height:auto;overflow:visible}
+.chart__grid line{stroke:var(--bord);stroke-width:1}
+.chart__grid text,.chart__tick{fill:var(--texte-2);font-size:12px;font-family:var(--font-texte)}
+.chart__axis{stroke:var(--texte-2);stroke-width:1}
+.chart__mark{fill:var(--bleu)}
+.chart__mark--flag{fill:var(--braise)}
+.chart__flag{fill:var(--braise);font-size:11px}
+.chart__bar{outline:none;cursor:default}
+.chart__bar:focus-visible .chart__mark,.chart__bar:hover .chart__mark{fill:var(--bleu-fonce)}
+.chart__bar:focus-visible rect{stroke:var(--nuit);stroke-width:2}
+.chart__tip{position:absolute;top:0;transform:translateX(-50%);background:var(--nuit);color:var(--blanc);border-radius:8px;
+  padding:8px 10px;font-size:.8125rem;display:flex;flex-direction:column;pointer-events:none;white-space:nowrap;z-index:2}
+.chart__table summary{cursor:pointer;color:var(--lien);font-weight:600;min-height:var(--cible);display:flex;align-items:center}
+.chart__table table{border-collapse:collapse;width:100%;font-size:.875rem}
+.chart__table th,.chart__table td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--bord)}

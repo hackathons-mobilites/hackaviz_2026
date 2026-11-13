@@ -1,0 +1,30 @@
+# Mise en ligne sur atouvent.com (serveur avec Docker, ports 80 et 443 ouverts) :
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+# Caddy obtient et renouvelle seul le certificat HTTPS ; le site n'est plus exposé directement.
+services:
+  caddy:
+    image: caddy:2
+    ports: ["80:80", "443:443", "443:443/udp"]
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on: [web]
+    restart: unless-stopped
+
+  web:
+    ports: !reset []
+
+  # Petit serveur : MongoDB limité à 512 Mo de cache (80 Mo de données suffisent largement)
+  mongo:
+    command: ["--wiredTigerCacheSizeGB", "0.5"]
+
+  api:
+    environment: { MONGO_URI: "mongodb://mongo:27017", TRUST_PROXY: "1" }
+
+  worker:
+    environment: { MONGO_URI: "mongodb://mongo:27017", TRUST_PROXY: "1" }
+
+volumes:
+  caddy-data:
+  caddy-config:

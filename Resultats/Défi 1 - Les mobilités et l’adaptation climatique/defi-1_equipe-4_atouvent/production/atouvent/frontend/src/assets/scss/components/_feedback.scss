@@ -1,0 +1,10 @@
+// Barre de progression, états vides et chargement
+/* Barre de progression */
+.progress{height:8px;border-radius:999px;background:var(--nuit-3);overflow:hidden}
+.progress > span{display:block;height:100%;background:var(--ciel);border-radius:999px;transition:width .4s}
+
+/* États vides et chargement */
+.empty{color:var(--texte-2);text-align:center;padding:24px 8px}
+.loading{color:var(--texte-2)}
+
+

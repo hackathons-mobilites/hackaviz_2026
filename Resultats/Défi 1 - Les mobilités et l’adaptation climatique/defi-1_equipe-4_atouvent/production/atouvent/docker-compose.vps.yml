@@ -1,0 +1,21 @@
+# Serveur partagé avec d'autres sites (nginx déjà en place sur 80/443) :
+#   docker compose -p atouvent -f docker-compose.yml -f docker-compose.vps.yml up -d --build
+# AtouVent écoute seulement en local sur 127.0.0.1:8090 ; nginx (deploy/nginx-atouvent.conf) le publie en HTTPS.
+# Mémoire plafonnée pour ne pas gêner les autres sites du serveur.
+services:
+  web:
+    ports: !override ["127.0.0.1:8090:80"]
+    mem_limit: 64m
+
+  mongo:
+    command: ["--wiredTigerCacheSizeGB", "0.25"]
+    mem_limit: 600m
+
+  api:
+    environment: { MONGO_URI: "mongodb://mongo:27017", TRUST_PROXY: "1" }
+    mem_limit: 900m
+
+  worker:
+    # Horaires IDFM reconstruits sur le PC (1,9 Go de mémoire) et envoyés par deploy/maj-horaires.ps1 : ici, vérification seule
+    environment: { MONGO_URI: "mongodb://mongo:27017", TRUST_PROXY: "1", GTFS_BUILD: "0" }
+    mem_limit: 600m

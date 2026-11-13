@@ -1,0 +1,178 @@
+// 04-05 · Itinéraires et suivi du trajet
+/* Écrans 04, 05 et 05b : itinéraires et suivi du trajet */
+.route-form{display:grid;grid-template-columns:52px minmax(0,1fr);gap:8px;align-items:center}
+.route-form__label{font-size:.875rem;color:#B9C4D3}
+.route-form__search{display:flex;gap:8px}
+.route-form__search .input{min-width:0;flex:1}
+.route-hazard{border-radius:10px;padding:10px 12px;font-size:.875rem;line-height:1.35}
+.route-hazard strong{display:inline}
+
+/* Cartes d'itinéraire */
+.its{gap:8px}
+.it-card{gap:8px}
+.it-card__head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;background:none;border:0;padding:0;text-align:left;cursor:pointer;color:inherit}
+.it-card__min{font-family:var(--font-titre);font-weight:800;font-size:1.375rem;white-space:nowrap}
+.card--selected .it-card__min{font-size:1.625rem}
+.it-card__lines{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.it-card__line{display:inline-flex;align-items:center;gap:6px;color:var(--texte-2)}
+.it-tags{list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:.8125rem;font-weight:600}
+.it-tags li{background:var(--vert-pale);color:var(--vert);border-radius:6px;padding:4px 8px}
+.it-warn{display:flex;align-items:center;gap:6px;font-size:.875rem;color:var(--braise-fonce);font-weight:600}
+.it-warn svg{flex:none}
+
+/* Heure d'arrivée, très lisible */
+.eta{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.eta__label{font-size:.8125rem;color:#B9C4D3}
+.eta__time{font-family:var(--font-titre);font-weight:800;font-size:2.75rem;line-height:1}
+.eta__right{text-align:right}
+.eta__left{font-family:var(--font-titre);font-weight:700;font-size:1.5rem}
+
+.status-chip{display:inline-flex;align-items:center;gap:6px;font-size:.8125rem;font-weight:700;color:var(--ciel);max-width:45%;text-align:right}
+.status-chip--warn{color:var(--signal)}
+
+/* Prochaine étape : l'information la plus importante */
+.next-step{background:var(--bleu);color:var(--blanc);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:6px}
+.next-step__label{font-size:.8125rem;font-weight:600;color:#D6E6F5;text-transform:uppercase;letter-spacing:.05em}
+.next-step__title{font-size:1.5rem;color:var(--blanc)}
+
+/* Liste des étapes */
+.steps{list-style:none;display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;padding:10px 0;align-items:start}
+.step__dot{width:22px;height:22px;border-radius:50%;border:2px solid #8B98AA;background:var(--surface);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.step--done .step__dot{background:var(--vert);border-color:var(--vert);color:var(--blanc)}
+.step--current .step__dot{border:5px solid var(--bleu)}
+.step--done .step__title{color:var(--texte-2)}
+.step__title{font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.step--current .step__title{font-weight:700}
+.step__meta{font-size:.8125rem;color:var(--texte-2)}
+.step--current .step__meta{color:var(--bleu-fonce)}
+.step__time{font-family:var(--font-mono);font-size:.8125rem;color:var(--texte-2)}
+
+.trip-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.footnote{font-size:.75rem;color:var(--texte-2);text-align:center}
+.status-chip svg,.position-chip svg{flex:none}
+
+/* En-tête du suivi (maquette 05) */
+.trip-head .page-head__inner{gap:10px}
+.trip-head__title{font-family:var(--font-texte)!important;font-size:1rem!important;font-weight:600!important;color:#DCE3EC!important;
+  min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trip-head .status-chip{flex:none;white-space:nowrap}
+.status-chip{color:var(--blanc);max-width:none}
+.status-dot{width:9px;height:9px;border-radius:50%;background:var(--ok-vif);flex:none}
+.trip-main{gap:12px}
+.step--arrival .step__dot{border-radius:4px}
+
+/* Alerte avec action (sortie du trajet, détour) */
+.alert-card{background:var(--surface);border:2px solid #C2410C;border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;color:var(--texte)}
+.alert-card svg{color:#C2410C;flex:none}
+.alert-card div{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+
+/* Modes de transport choisis par l'usager */
+.mode-chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.mode-chip{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 14px;border-radius:999px;font-weight:600;font-size:.875rem;
+  border:2px solid var(--bord-fort);background:var(--surface);color:var(--texte);cursor:pointer}
+.mode-chip[aria-pressed="true"]{background:var(--nuit);border-color:var(--nuit);color:var(--blanc)}
+
+/* Bandeau du profil : compte classique ou profil de déplacement */
+.profile-strip{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--bord);
+  color:var(--texte);text-decoration:none;font-size:.875rem}
+.profile-strip span{display:flex;flex-direction:column;gap:2px}
+.profile-strip small{color:var(--texte-2)}
+.profile-strip--a11y{border-color:var(--bleu);background:var(--ciel-pale)}
+.profile-strip svg{flex:none}
+
+/* Trajet recommandé, étapes et temps */
+.it-card--best{border:2px solid var(--vert)}
+.it-best{display:flex;flex-direction:column;gap:2px;font-size:.8125rem;font-weight:700;color:var(--vert)}
+.it-best span{font-weight:600}
+.it-legs{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin:0;padding:0}
+.it-leg{display:inline-flex;align-items:center;gap:4px;color:var(--texte-2);font-size:.875rem;font-weight:600}
+.it-leg + .it-leg::before{content:"›";color:var(--texte-2);margin-right:6px}
+.it-leg__walk,.it-leg__min{font-variant-numeric:tabular-nums}
+.it-leg__walk::after,.it-leg__min::after{content:" min"}
+.it-times{font-size:.8125rem;color:var(--texte-2)}
+.it-detail{list-style:none;display:flex;flex-direction:column;gap:6px;margin:4px 0 0;padding:8px 0 0;border-top:1px solid var(--bord);font-size:.875rem}
+.it-detail li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px}
+.segmented button svg{vertical-align:-3px}
+
+/* Équipements des arrêts (abri, annonces, accessibilité…) */
+.stop-chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.stop-chip{display:inline-flex;align-items:center;gap:3px;font-size:.75rem;font-weight:600;padding:2px 6px;border-radius:6px;background:var(--vert-pale);color:var(--vert)}
+.stop-chip--no{background:var(--surface-2);color:var(--braise-fonce)}
+
+/* Suivi en direct (carte, passages en temps réel, perturbations, signalements) */
+.live{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--bord);border-radius:var(--r);padding:12px}
+.live__head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.live__head h2{font-size:1.125rem}
+.live__chip{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;font-weight:700;color:var(--vert)}
+.live__chip--off{color:var(--braise-fonce)}
+.map--trip{height:240px;border-radius:10px;overflow:hidden}
+.map--trip .map{height:100%}
+.map-pin--dest{background:var(--braise,#F28B5B);width:20px;height:20px;border-radius:4px}
+.map-pin--report{background:var(--signal,#E8A317);width:16px;height:16px}
+.live-dep{display:flex;gap:10px;align-items:center;padding:10px;border-radius:10px;background:var(--vert-pale);color:var(--texte)}
+.live-dep span{display:flex;flex-direction:column}
+.live-dep small{color:var(--vert);font-weight:700}
+.live-dep--late{background:var(--signal-pale)}
+.live-dep--late small{color:var(--braise-fonce)}
+/* Perturbations : fonds et textes par les jetons (lisibles dans les 3 thèmes), pictogramme de la couleur du texte */
+.live-alert{display:flex;gap:8px;align-items:flex-start;padding:10px;border-radius:10px;background:var(--signal-pale);color:var(--texte);font-size:.875rem}
+.live-alert svg{flex:none;color:var(--braise-fonce)}
+.live-alert p{margin:2px 0 0;color:var(--texte-2)}
+.live-alert--block{background:var(--corail-pale);border-left:4px solid var(--braise-fonce)}
+.live-alert__sev{display:block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--braise-fonce)}
+.reports{list-style:none;display:flex;flex-direction:column;gap:6px;margin:0;padding:0}
+.report{display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;align-items:center;padding:8px;border-radius:10px;background:var(--surface-2)}
+.report__text{display:flex;flex-direction:column}
+.report__text small{color:var(--texte-2)}
+.report__vote{grid-column:2;display:flex;gap:6px}
+.report__voted{grid-column:2;color:var(--vert);font-weight:700}
+.report-sheet{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.report-kind{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:72px;padding:10px;border-radius:12px;border:2px solid var(--bord-fort);
+  background:var(--surface);font-weight:700;font-size:.8125rem;cursor:pointer;color:var(--texte)}
+.report-sheet .btn{grid-column:1 / -1}
+
+/* Bandeau climat (maquette 04) : fond clair dans l'en-tête sombre, pictogramme + phrase */
+.climate-banner{display:flex;flex-direction:column;gap:8px;margin-top:4px;padding:12px 14px;border-radius:12px;background:var(--ciel-pale);color:var(--nuit);font-size:.9375rem;line-height:1.35}
+.climate-banner p{display:flex;gap:10px;align-items:flex-start}
+.climate-banner svg{flex:none;margin-top:1px;color:var(--bleu)}
+.climate-banner strong{font-weight:700}
+:root[data-contrast="high"] .climate-banner{background:#141B24;color:#FFFFFF;border:2px solid #FFD23F}
+
+.it-entrance{display:flex;align-items:center;gap:4px;margin-top:2px;color:var(--texte-2);font-size:.8125rem}
+
+/* Écologie : empreinte carbone du trajet (texte + pictogramme, contraste vérifié) */
+.it-eco{display:flex;align-items:center;gap:6px;font-size:.8125rem;font-weight:600;color:var(--texte-2)}
+.it-eco svg{color:var(--vert);flex:none}
+.it-eco--best{color:var(--vert)}
+.it-eco-year{font-size:.8125rem;color:var(--vert);font-weight:600;margin:4px 0 0}
+.eco-note{display:flex;gap:6px;align-items:flex-start;font-size:.8125rem;color:var(--texte-2);margin:4px 0}
+.eco-note svg{color:var(--vert);flex:none;margin-top:2px}
+.segmented button svg{vertical-align:-3px}
+
+/* Quand partir ? (trajet à venir) */
+.depart{display:flex;flex-direction:column;gap:10px;margin:12px 0}
+.depart__legend{font-weight:700;margin-bottom:6px}
+.depart__fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.depart__weather{display:flex;align-items:flex-start;gap:8px;margin:0;color:var(--texte);font-size:.9375rem}
+
+/* Mouvement de l'usager (GPS) : avance, à l'arrêt, recule */
+.motion{display:flex;align-items:center;gap:8px;margin:0;padding:10px 12px;border-radius:10px;background:var(--surface-2);color:var(--texte);font-weight:600}
+.motion--alert{background:var(--corail-pale);border-left:4px solid var(--braise-fonce)}
+.motion svg{flex:none}
+
+/* Carte d'itinéraire repliée : toute la surface est cliquable (le bouton du titre s'étend sur la carte) */
+.it-card{position:relative}
+.it-card:not(.card--selected) .it-card__head::after{content:"";position:absolute;inset:0;border-radius:14px}
+.it-card:not(.card--selected){cursor:pointer;transition:border-color .15s}
+.it-card:not(.card--selected):hover{border-color:var(--bleu)}
+.it-card:has(.it-card__head:focus-visible){outline:3px solid var(--focus);outline-offset:2px}
+.it-card__head:focus-visible{outline:none;box-shadow:none}
+// En attente du départ : texte puis bouton « Je pars maintenant » en dessous, pleine largeur sur mobile
+.trip-wait p{margin:0 0 10px}
+.trip-wait .btn{width:100%}
+@media (min-width:600px){.trip-wait .btn{width:auto}}
+// Directions, correspondances et sortie sous les lignes de la carte d'itinéraire
+.it-dirs{margin:0;font-size:.875rem;line-height:1.45;color:var(--texte)}
+.it-dirs span{display:inline}
+.it-dirs span + span::before{content:" · ";color:var(--texte-2)}

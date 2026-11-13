@@ -1,0 +1,38 @@
+// Écran d'ouverture : construction du logo élément par élément, puis le nom lettre par lettre (voir components/Splash.jsx).
+@use "sass:math";
+
+$box-in: 0ms;          // carré blanc
+$stroke-start: 300ms;  // premier trait de vent
+$stroke-gap: 320ms;    // un trait toutes les 320 ms
+$stroke-draw: 360ms;   // durée du tracé d'un trait
+$dot-at: 980ms;        // point corail, entre le 2e et le 3e trait
+$letters-start: 1350ms;
+$letter-gap: 70ms;     // une lettre toutes les 70 ms
+
+.splash{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:#0F1B2D;cursor:pointer;
+  transition:opacity .4s ease}
+.splash--leave{opacity:0}
+.splash__logo{display:flex;flex-direction:column;align-items:center;gap:18px}
+.splash__name{margin:0;font-family:var(--font-titre);font-weight:800;font-size:2.5rem;letter-spacing:-.02em;color:#FFFFFF}
+
+.splash__box{transform-origin:32px 32px;animation:splash-box .35s cubic-bezier(.2,.9,.3,1.3) $box-in both}
+.splash__stroke{stroke-dasharray:1;stroke-dashoffset:1;animation:splash-draw $stroke-draw ease-out both}
+@for $i from 1 through 3 {
+  // Le 3e trait vient après le point corail
+  .splash__stroke--#{$i}{animation-delay:$stroke-start + ($i - 1) * $stroke-gap + if($i == 3, 120ms, 0ms)}
+}
+.splash__dot{transform-origin:48.5px 33px;animation:splash-pop .3s cubic-bezier(.2,.9,.3,1.5) $dot-at both}
+.splash__letter{display:inline-block;animation:splash-letter .32s ease-out both;
+  animation-delay:calc(#{$letters-start} + var(--i) * #{$letter-gap})}
+.splash__letter--accent{color:var(--ciel)}
+
+@keyframes splash-box{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes splash-draw{to{stroke-dashoffset:0}}
+@keyframes splash-pop{from{transform:scale(0)}to{transform:scale(1)}}
+@keyframes splash-letter{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+
+// « Réduire les animations » : tout est affiché d'emblée, sans mouvement
+.splash--still .splash__part,.splash--still .splash__letter{animation:none;opacity:1;transform:none;stroke-dashoffset:0}
+@media (prefers-reduced-motion: reduce){
+  .splash__part,.splash__letter{animation:none !important;opacity:1;transform:none;stroke-dashoffset:0}
+}

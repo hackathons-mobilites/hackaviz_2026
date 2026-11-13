@@ -1,0 +1,35 @@
+// Champs de formulaire, choix en grandes cibles, interrupteur, mot de passe avec bouton « Afficher »
+/* Champs de formulaire */
+.field{display:flex;flex-direction:column;gap:6px}
+.field label,.field legend{font-weight:600}
+.field__hint{color:var(--texte-2);font-size:.875rem}
+.field__error{color:var(--braise);font-weight:600;font-size:.9375rem}
+.input{min-height:50px;width:100%;padding:0 14px;border:2px solid var(--bord-champ);border-radius:10px;background:var(--surface);font-size:1.0625rem}
+.input--dark{background:var(--nuit-2);border:1px solid var(--bord-nuit);color:var(--blanc);min-height:44px;font-size:1rem;padding:0 12px}
+.input--dark::placeholder{color:#AEB9C8}
+.input[aria-invalid="true"]{border-color:var(--braise)}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+
+/* Choix (cases et boutons radio en grandes cibles) */
+.choice{display:flex;align-items:center;gap:14px;min-height:58px;padding:8px 16px;border:2px solid var(--bord-fort);
+  border-radius:12px;background:var(--surface);cursor:pointer;font-weight:600}
+.choice:has(> input:checked){border:3px solid var(--bleu);background:var(--ciel-pale);padding:7px 15px}
+.choice input{width:24px;height:24px;accent-color:var(--bleu);flex:none;margin:0}
+.choice small{display:block;font-weight:400;color:var(--texte-2)}
+
+/* Interrupteur */
+.switch{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding:8px 0;border-bottom:1px solid var(--bord)}
+.switch input{appearance:none;width:52px;height:30px;border-radius:999px;background:var(--switch-off);position:relative;cursor:pointer;flex:none}
+.switch input::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:var(--blanc);transition:left .15s}
+.switch input:checked{background:var(--vert)}
+.switch input:checked::after{left:25px}
+
+/* Mot de passe avec bouton « Afficher » */
+.pw{display:flex;gap:8px}
+.pw .input{flex:1;min-width:0}
+.pw__toggle{min-width:80px;min-height:50px;border:2px solid var(--bord-champ);border-radius:10px;background:var(--surface);font-size:.875rem;font-weight:600;cursor:pointer}
+.pw__toggle[aria-pressed="true"]{background:var(--nuit);color:var(--blanc);border-color:var(--nuit)}
+
+
+/* Pictogramme des listes de choix : taille fixe, même avec un texte long sur petit écran */
+.choice svg{flex:none}

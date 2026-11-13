@@ -1,0 +1,40 @@
+# AtouVent complet : site web, API, collecteur et MongoDB.
+#   docker compose up -d          → images publiées dans GitHub Packages (ghcr.io)
+#   docker compose up -d --build  → construites depuis ce dépôt
+# Avant : copier backend/.env.example en backend/.env et le remplir (secrets jamais versionnés).
+# Les gros fichiers de données (horaires, équipements, ombre) sont dans backend/data, monté dans les conteneurs.
+services:
+  mongo:
+    image: mongo:8
+    volumes: [mongo-data:/data/db]
+    restart: unless-stopped
+
+  api:
+    image: ghcr.io/bricebokatola/atouvent-api:latest
+    build: ./backend
+    env_file: backend/.env
+    environment: { MONGO_URI: "mongodb://mongo:27017" }
+    volumes: [./backend/data:/srv/data]
+    depends_on: [mongo]
+    restart: unless-stopped
+
+  worker:
+    image: ghcr.io/bricebokatola/atouvent-api:latest
+    build: ./backend
+    command: ["python", "-m", "app.worker"]
+    env_file: backend/.env
+    environment: { MONGO_URI: "mongodb://mongo:27017" }
+    volumes: [./backend/data:/srv/data]
+    depends_on: [mongo]
+    restart: unless-stopped
+
+  web:
+    image: ghcr.io/bricebokatola/atouvent-web:latest
+    build: ./frontend
+    # Exposé en local : mettre un proxy HTTPS (Caddy, nginx, hébergeur) devant en production
+    ports: ["127.0.0.1:8080:80"]
+    depends_on: [api]
+    restart: unless-stopped
+
+volumes:
+  mongo-data:

@@ -1,0 +1,22 @@
+// Point d'entrée des styles d'AtouVent (importé par src/main.jsx).
+@use "base/fonts";
+@use "base/tokens";
+@use "base/base";
+@use "layout/layout";
+@use "components/buttons";
+@use "components/cards";
+@use "components/forms";
+@use "components/segmented";
+@use "components/badges";
+@use "components/banners";
+@use "components/feedback";
+@use "components/links";
+@use "components/charts";
+@use "components/high-contrast";
+@use "components/splash";
+@use "pages/auth";
+@use "pages/around";
+@use "pages/trip";
+@use "pages/settings";
+@use "pages/data";
+@use "pages/dashboard";

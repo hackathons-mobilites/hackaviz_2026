@@ -1,0 +1,73 @@
+// Graphiques et tableaux de données des écrans décideurs (nuage de points, barres, tableaux, barres par scénario)
+@use "../abstracts/breakpoints" as bp;
+
+/* Graphique en nuage de points */
+.dchart{margin:0;display:flex;flex-direction:column;gap:10px}
+.dchart__plot{position:relative}
+.dchart svg{width:100%;height:auto;display:block;overflow:visible}
+.dchart__band{fill:var(--chaud-pale);opacity:.8}
+.dchart__band-label{font-family:var(--font-mono);font-size:12px;fill:var(--chaud-texte)}
+.dchart__grid{stroke:var(--bord);stroke-width:1}
+.dchart__zero{stroke:var(--serie-neutre);stroke-width:1;stroke-dasharray:3 4}
+.dchart__tick{font-family:var(--font-mono);font-size:11px;fill:var(--texte-2)}
+.dchart__mark{stroke:var(--surface);stroke-width:2;cursor:default}
+.dchart__mark--1{fill:var(--serie-1)}
+.dchart__mark--2{fill:var(--serie-2)}
+.dchart__tip{position:absolute;transform:translate(-50%,calc(-100% - 12px));background:var(--nuit);color:var(--blanc);border-radius:8px;
+  padding:8px 10px;font-size:13px;display:flex;flex-direction:column;gap:2px;pointer-events:none;white-space:nowrap;z-index:2}
+.dchart__legend{display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:var(--texte-2)}
+.dchart__legend span,.dchart__tip span{display:flex;align-items:center;gap:8px}
+.dchart__key{display:inline-block;width:10px;height:10px;border-radius:50%;flex:none}
+.dchart__key--1{background:var(--serie-1)}
+.dchart__key--2{background:var(--serie-2)}
+.dchart__key--square{border-radius:2px}
+.dchart__table summary{cursor:pointer;color:var(--lien);font-weight:600;font-size:14px;min-height:var(--cible);display:flex;align-items:center}
+.dchart__table table{border-collapse:collapse;width:100%;font-size:13px}
+.dchart__table th,.dchart__table td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--bord)}
+
+/* Barres horizontales */
+.hbars{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.hbars__row{display:grid;grid-template-columns:minmax(150px,1.2fr) 2fr auto;align-items:center;gap:12px;font-size:14px}
+.hbars__label{font-weight:600}
+.hbars__track{height:16px;background:var(--surface-2);border-radius:4px;overflow:hidden}
+.hbars__bar{display:block;height:100%;background:var(--serie-neutre);border-radius:0 4px 4px 0}
+.hbars__row--hl .hbars__bar{background:var(--serie-1)} /* mise en avant : une barre colorée, les autres en gris */
+.hbars__value{font-family:var(--font-mono);font-size:13px;min-width:64px;text-align:right}
+
+/* Tableaux */
+.dash-table-wrap{overflow-x:auto}
+.dash-table{width:100%;border-collapse:collapse;font-size:14px}
+.dash-table th,.dash-table td{padding:10px 8px;border-bottom:1px solid var(--bord);text-align:left;vertical-align:middle}
+.dash-table thead th{color:var(--texte-2);font-size:12px;font-weight:600}
+.dash-table tbody th{font-weight:600}
+.dash-table .num{text-align:right}
+.dash-table .mono{font-family:var(--font-mono)}
+.dash-table tr[aria-selected="true"]{background:var(--ciel-pale)}
+.dash-rowbtn{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--texte);cursor:pointer;text-align:left;min-height:32px}
+.dash-rowbtn:hover{text-decoration:underline}
+.tag{display:inline-block;border-radius:6px;padding:3px 8px;font-size:12px;font-weight:600;background:var(--surface-2)}
+.tag--warm{background:var(--chaud-pale);color:var(--chaud-texte)}
+.tag--solide{background:var(--vert-pale);color:var(--vert)}
+.tag--moyenne{background:var(--signal-pale);color:var(--signal-texte)}
+.tag--indicatif{background:var(--chaud-pale);color:var(--chaud-texte)}
+
+.dash-footer{border-top:1px solid var(--bord);padding-top:20px;font-size:13px;color:var(--texte-2);display:flex;flex-direction:column;gap:8px}
+.dash-footer h2{font-size:16px!important;color:var(--texte)}
+.dash-footer ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.dash-footer p{margin:0}
+
+@include bp.down(md){
+  .dash-head,.dash-main{padding-left:16px;padding-right:16px}
+  .dash-map{height:340px}
+  .hbars__row{grid-template-columns:1fr auto}
+  .hbars__track{grid-column:1 / -1;grid-row:2}
+}
+
+
+/* Barres groupées par scénario (chaleur à venir) : chaque barre a son nom et sa valeur, la couleur ne fait que renforcer */
+.scenario-bars{margin:0;display:flex;flex-direction:column;gap:14px}
+.scenario-bars__title{font-weight:700;font-size:15px}
+.scenario-bars__group-title{font-size:14px;font-weight:600;color:var(--texte-2);margin:0 0 6px}
+@for $i from 0 through 2 {
+  .hbars__bar--step#{$i}{background:var(--heat-step-#{$i})}
+}

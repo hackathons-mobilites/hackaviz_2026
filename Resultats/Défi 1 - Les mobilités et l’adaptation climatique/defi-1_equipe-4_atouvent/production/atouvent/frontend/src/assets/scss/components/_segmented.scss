@@ -1,0 +1,11 @@
+// Onglets segmentés
+/* Onglets segmentés */
+.segmented{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;background:var(--lin);border-radius:12px;padding:4px;gap:4px}
+.segmented button{min-height:44px;border:0;border-radius:9px;background:transparent;font-weight:600;font-size:.875rem;cursor:pointer;padding:0 4px;line-height:1.15;
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;text-align:center}
+.segmented button svg{flex:none}
+.segmented button[aria-pressed="true"]{background:var(--surface);font-weight:700;border:2px solid var(--texte)}
+
+
+// Tri des itinéraires : 2 × 2 sur téléphone, pour des boutons lisibles sur une ligne
+@media (max-width:520px){.segmented--sort{grid-auto-flow:row;grid-template-columns:1fr 1fr}}
