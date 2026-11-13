@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réseau sous canicule · Présentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="pitch.css">
+</head>
+<body>
+
+<div id="map" aria-hidden="true"></div>
+<div id="dim" aria-hidden="true"></div>
+
+<main id="stage" aria-roledescription="présentation" aria-label="Réseau sous canicule">
+
+  <!-- Temps 1 · L'accroche : l'Île-de-France sous 40 °C, une personne attend au soleil -->
+  <section class="sl s-hook" data-scene="accroche" data-t="1" data-tn="L’accroche" data-dur="15" aria-label="L’accroche : 40,5 °C, une personne attend au soleil">
+    <div class="pan">
+      <p class="kick in">Jeudi 25 juin 2026 · vigilance rouge</p>
+      <p class="hookfig in" style="--d:.2"><span id="h-temp">40,5</span>&nbsp;°C</p>
+      <h1><span class="mask" style="--d:.5"><span>Réseau sous canicule</span></span></h1>
+      <p class="lead in" style="--d:3.4" id="h-say">À <b>Sarcelles</b>, elle attend au soleil.</p>
+      <p class="src in" style="--d:3.8">Tracés officiels des lignes (IDFM), température maximale à Paris-Montsouris (Météo-France), arrêt et heure tirés d’une personne simulée (MATSim). Candidature indépendante, pas un site officiel.</p>
+    </div>
+    <aside class="notes">Le 24 juin, 40,5 degrés à Paris. Tout le réseau chauffe. Et le lendemain matin, à Sarcelles, une femme attend son tramway en plein soleil.</aside>
+  </section>
+
+  <!-- Temps 2 · Le problème : qui part, qui reste -->
+  <section class="sl" data-scene="reste" data-t="2" data-tn="Le problème" data-dur="13" aria-label="Le problème : qui peut rester chez soi">
+    <div class="pan">
+      <p class="kick in">Le problème</p>
+      <h2><span class="mask"><span>En vigilance rouge,</span></span><span class="mask" style="--d:.2"><span>tout le monde ne peut pas rester chez soi</span></span></h2>
+      <p class="lead in" style="--d:.5">Sur dix personnes de chaque groupe, combien restent à la maison&nbsp;?</p>
+      <div class="vis in" style="--d:.7" id="v-ppl"></div>
+      <div class="leg in" style="--d:.9"><span><i style="background:var(--accent)"></i>reste chez soi</span><span><i style="background:var(--hot)"></i>part travailler</span></div>
+      <p class="src in" style="--d:1">Simulation MATSim, 1 % des navetteurs en transport en commun (Insee MOBPRO 2021), vigilance rouge. Source : web/data/profils.js.</p>
+    </div>
+    <div class="clock in" style="--d:.3"><small>Voyageurs simulés</small><span id="clk2">7 h 30</span></div>
+    <aside class="notes">Premier constat de la simulation : en vigilance rouge, cinq cadres sur dix restent chez eux. Chez les employés et les ouvriers, un ou deux sur dix seulement.</aside>
+  </section>
+
+  <section class="sl" data-scene="dehors" data-t="2" data-tn="Le problème" data-dur="14" aria-label="Le problème : qui passe le plus de temps dehors">
+    <div class="pan">
+      <p class="kick in">Le problème</p>
+      <h2><span class="mask"><span>Ceux qui sortent passent</span></span><span class="mask" style="--d:.2"><span>le plus de temps dehors</span></span></h2>
+      <p class="lead in" style="--d:.5">Minutes dehors par personne, à pied et à l’arrêt. Un soleil = une minute.</p>
+      <div class="vis in" style="--d:.7" id="v-sun"></div>
+      <p class="src in" style="--d:1">Moyenne de la catégorie, en comptant 0 pour ceux qui restent chez eux. Simulation MATSim, vigilance rouge. Source : web/data/profils.js.</p>
+    </div>
+    <div class="clock in" style="--d:.3"><small>Dehors en ce moment, estimé</small><span id="clk3">0</span></div>
+    <aside class="notes">Et ceux qui sortent prennent la chaleur à pied et à l’arrêt : onze minutes dehors en moyenne par employé, cinq par cadre. En orange sur la carte : les voyageurs simulés qui sont dehors à cet instant.</aside>
+  </section>
+
+  <!-- Temps 3 · La solution : l'écran « Une journée sous canicule » -->
+  <section class="sl" data-scene="choix" data-t="3" data-tn="Notre solution" data-dur="14" data-dim="1" data-shot="1" aria-label="La solution : choisir une personne">
+    <div class="side">
+      <div class="pan">
+        <p class="kick in">Notre solution</p>
+        <h2><span class="mask"><span>Une journée</span></span><span class="mask" style="--d:.15"><span>sous canicule</span></span></h2>
+        <p class="lead in" style="--d:.5">On choisit une personne type tirée de la simulation, et on règle sa fiche&nbsp;: prénom, elle ou il, apparence, métier d’exemple.</p>
+        <p class="src in" style="--d:.9">L’écran du projet, en direct (design/maquette/trajet.html).</p>
+      </div>
+    </div>
+    <aside class="notes">Notre réponse, c’est un seul écran : une journée sous canicule. On choisit une personne type, tirée de la simulation, et on règle sa fiche.</aside>
+  </section>
+
+  <section class="sl" data-scene="suivre" data-t="3" data-tn="Notre solution" data-dur="50" data-dim="1" data-shot="1" aria-label="La solution : suivre sa matinée">
+    <div class="side">
+      <div class="pan">
+        <p class="kick in">Notre solution</p>
+        <h2><span class="mask"><span>On suit sa matinée,</span></span><span class="mask" style="--d:.15"><span>minute par minute</span></span></h2>
+        <p class="lead in" style="--d:.5">Sur la carte, le compteur <b class="hot">«&nbsp;Dehors&nbsp;: N&nbsp;min&nbsp;»</b> avance à chaque pas et à chaque attente.</p>
+        <p class="lead in" style="--d:.8">Scènes dessinées&nbsp;: la porte, l’arrêt, le trajet aller et retour, les cinq personnes, les mesures à cocher.</p>
+        <p class="src in" style="--d:1">L’écran du projet, en direct.</p>
+      </div>
+    </div>
+    <aside class="notes">On suit sa matinée sur la carte : à pied, à l’arrêt, à bord. Le compteur dit combien de minutes elle passe dehors. Des scènes dessinées s’ouvrent aux moments clés.</aside>
+  </section>
+
+  <!-- Temps 4 · La différenciation -->
+  <section class="sl" data-scene="agent" data-t="4" data-tn="Ce qui nous distingue" data-dur="20" aria-label="Différenciation : une personne simulée réelle">
+    <div class="pan">
+      <p class="kick in">Ce qui nous distingue</p>
+      <h2><span class="mask"><span>Une personne simulée,</span></span><span class="mask" style="--d:.2"><span>pas inventée</span></span></h2>
+      <ul class="keep">
+        <li class="in" style="--d:.6"><span class="sc">Réelle</span><b>Un voyageur de la simulation</b>, avec ses communes, ses horaires et ses correspondances.</li>
+        <li class="in" style="--d:.9"><span class="sc">Reproductible</span><b>Choisi par une règle</b>&nbsp;: le plus proche de la médiane de son groupe.</li>
+        <li class="in" style="--d:1.2"><span class="sc">Minute par minute</span><b>Sur les tracés officiels</b> des lignes empruntées.</li>
+      </ul>
+      <div class="cards in" style="--d:1.4" id="a-card"></div>
+      <p class="src in" style="--d:1.5">Simulation MATSim (vigilance rouge), règle de choix : docs/methodologie.md, « Profils types ». Source : web/data/profils.js.</p>
+    </div>
+    <div class="clock in" style="--d:.3"><small>Dehors</small><span id="a-out">0 min</span></div>
+    <aside class="notes">Ce qui nous distingue : la personne n’est pas inventée. C’est un voyageur de la simulation, choisi par une règle que chacun peut refaire, et suivi minute par minute sur les vrais tracés.</aside>
+  </section>
+
+  <section class="sl" data-scene="donnees" data-t="4" data-tn="Ce qui nous distingue" data-dur="15" aria-label="Différenciation : des données croisées">
+    <div class="pan">
+      <p class="kick in">Ce qui nous distingue</p>
+      <h2><span class="mask"><span>Des données croisées,</span></span><span class="mask" style="--d:.2"><span>calculées sur place</span></span></h2>
+      <ul class="crit" id="srcs"></ul>
+      <p class="lead in" style="--d:.8"><b>Aucun service en ligne</b> pour les calculs. <b>Accessible</b>&nbsp;: clavier, contraste, mobile.</p>
+      <p class="src in" style="--d:1">Le cartogramme et la simulation sont des étapes de calcul (scripts 05 et 11 à 14), pas des écrans. Sources : IDFM, Cerema, OpenStreetMap, Insee, Météo-France.</p>
+    </div>
+    <aside class="notes">Derrière, quatre sources croisées arrêt par arrêt : les horaires, les îlots de chaleur, les lieux frais et la simulation. Tout est calculé sans service en ligne, et l’écran se pilote au clavier, sur mobile.</aside>
+  </section>
+
+  <!-- Temps 5 · Les impacts attendus -->
+  <section class="sl" data-scene="impacts" data-t="5" data-tn="Les impacts" data-dur="16" aria-label="Impacts : où agir">
+    <div class="pan">
+      <p class="kick in">Les impacts attendus</p>
+      <h2><span class="mask"><span>Où agir, et ce que</span></span><span class="mask" style="--d:.2"><span>chaque mesure fait gagner</span></span></h2>
+      <p class="lead in" style="--d:.5">Minutes au soleil ou dans un bus chaud en moins, sur le trajet du matin.</p>
+      <div class="vis in" style="--d:.7" id="v-mes"></div>
+      <p class="src in" style="--d:1">Ombrager l’arrêt annule l’attente au soleil, doubler les passages la divise par deux, climatiser annule les minutes en bus non climatisé (docs/methodologie.md). Sur la carte : ses arrêts d’attente et les arrêts très exposés.</p>
+    </div>
+    <aside class="notes">Les impacts : pour Nadia, ombrager ses arrêts et doubler les passages réduisent son attente au soleil. Pour Thomas, qui prend un bus sans climatisation, c’est la climatisation qui compte le plus.</aside>
+  </section>
+
+  <!-- Temps 6 · La suite -->
+  <section class="sl" data-scene="suite" data-t="6" data-tn="La suite" data-dur="13" aria-label="La suite : testez votre trajet">
+    <div class="pan wide">
+      <p class="kick in">La suite</p>
+      <h2><span class="mask"><span>Testez votre trajet.</span></span></h2>
+      <ul class="keep">
+        <li class="in" style="--d:.6"><span class="sc">Pour chacun</span><b>Votre propre trajet</b>, recalculé sur les horaires du réseau, avec le même compteur de minutes dehors.</li>
+        <li class="in" style="--d:.9"><span class="sc">Pour IDFM et les collectivités</span><b>Partir des <span id="hotn2">1&nbsp;804</span> arrêts très exposés</b> pour choisir où ombrager, où doubler les passages, quels bus climatiser.</li>
+      </ul>
+      <p class="lead in" style="--d:1.2">Ceux qui ne peuvent pas rester chez eux prennent la chaleur <b class="hot">à pied et à l’arrêt</b>. C’est là qu’il faut agir.</p>
+      <p class="src in" style="--d:1.4">Arrêts cumulant au moins trois fragilités (chaleur, bus non climatisés, faible fréquence, pas de lieu frais, revenus bas). Réseau sous canicule · Hackaviz IDFM 2026.</p>
+    </div>
+    <aside class="notes">La suite : chacun peut tester son propre trajet. Et pour IDFM et les collectivités, une liste d’arrêts prioritaires où ombrager, doubler les passages et climatiser. Merci.</aside>
+  </section>
+
+  <!-- écran réel du projet, partagé par les deux diapositives de la solution -->
+  <div class="shot" id="shot"><div class="cam"><iframe data-src="../maquette/trajet.html" title="Écran Une journée sous canicule" tabindex="-1"></iframe></div></div>
+
+  <nav id="bar" aria-label="Navigation de la présentation">
+    <span id="tps" aria-live="polite"></span>
+    <div id="prog"></div>
+    <span id="num">1 / 10</span>
+    <button class="b" id="play" aria-pressed="false" title="Espace">Lecture automatique</button>
+    <button class="b" id="theme" title="T">Thème sombre</button>
+  </nav>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
+<script src="../../web/data/core.js"></script>
+<script src="../../web/data/couleurs_lignes.js"></script>
+<script src="../../web/data/traces_lignes.js"></script>
+<script src="../../web/data/volet2.js"></script>
+<script src="../../web/data/matsim.js"></script>
+<script src="../../web/data/profils.js"></script>
+<script src="pitch.js"></script>
+</body>
+</html>

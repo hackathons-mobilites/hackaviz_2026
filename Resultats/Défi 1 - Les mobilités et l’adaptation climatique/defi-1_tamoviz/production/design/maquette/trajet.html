@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquette · Une journée sous canicule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="maquette.css">
+<link rel="stylesheet" href="trajet.css">
+</head>
+<body class="immersif">
+
+<main id="desk">
+  <section class="win on" id="wgame" aria-label="Une journée sous canicule : le trajet d’une personne type le 25 juin 2026, raconté minute par minute">
+    <div id="map" aria-hidden="true"></div>
+    <p class="sr-only" id="mapdesc">Carte : le trajet de la personne choisie ; ses marches et ses attentes au soleil en pointillés orange, ses trajets à bord à la couleur de chaque ligne.</p>
+    <div id="haze" aria-hidden="true"></div>
+
+    <!-- heure et température -->
+    <div class="hud" id="hclock" hidden>
+      <span id="clock">07 h 30</span>
+      <span id="ctemp">27 °C</span>
+      <span class="vig">Vigilance rouge</span>
+    </div>
+
+    <!-- compteur : minutes passées dehors -->
+    <div class="hud" id="hout" hidden>
+      <p class="ok">Dehors</p>
+      <p class="ov"><span id="omin">0</span><small>min</small></p>
+      <p class="od" id="odet">à pied 0 · à l’arrêt 0</p>
+      <p class="os" id="ost" data-st="sun">au soleil</p>
+    </div>
+
+    <!-- l'étape en cours, en une ligne -->
+    <div class="cap" id="cap" role="status" aria-live="polite" aria-atomic="true" hidden><span class="mini" id="capm" aria-hidden="true"></span><div><p id="capt"></p><p class="chips" id="capc"></p></div></div>
+
+    <!-- carton d'ouverture -->
+    <div class="title" id="title" role="status" aria-live="polite" tabindex="-1" hidden><p class="kick" id="titk"></p><h1 id="titt"></h1><p id="titx"></p></div>
+
+    <!-- frise du trajet -->
+    <div class="hud" id="hline" hidden>
+      <button class="ib" id="pp" aria-label="Pause" data-on="1"><svg class="i pl" viewBox="0 0 24 24"><path d="M7 5v14l11-7z"/></svg><svg class="i pa" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button>
+      <div id="frise"><div id="fsegs" role="slider" aria-label="Avancer dans le trajet" aria-valuemin="0" aria-valuemax="100" tabindex="0"></div><div id="fmarks"></div><i id="fhead"></i></div>
+      <button class="tgl" id="auto" aria-pressed="false" title="Les scènes se ferment seules après quelques secondes">Lecture continue</button>
+      <button class="tgl" id="speed" aria-label="Vitesse de lecture × 1">× 1</button>
+      <p class="flegend" aria-hidden="true"><span><i class="lw"></i>à pied</span><span><i class="lt"></i>à l’arrêt</span><span><i class="lb"></i>à bord, à l’abri</span><span><i class="ln"></i>bus sans clim</span></p>
+    </div>
+
+    <!-- chapitre -->
+    <div id="veil" hidden></div>
+    <article class="hud" id="chap" role="dialog" aria-labelledby="cht" tabindex="-1" hidden>
+      <div class="say"><span class="m3" id="chm" aria-hidden="true"></span><div class="bub"><p class="kick" id="chk"></p><h2 id="cht"></h2></div></div>
+      <div id="chv"></div>
+      <p id="chn" hidden></p>
+      <div class="cfoot"><p id="chs"></p><button class="tgl" id="chd" type="button" aria-pressed="false" hidden>Données</button><button class="go" id="chgo">Continuer<i class="bar" aria-hidden="true"></i></button></div>
+    </article>
+
+    <!-- couverture : choix du trajet -->
+    <div class="pclock" id="pclockw"><p class="pct"><span id="pclock">7 h 30</span><small>simulation MATSim, jeudi de vigilance rouge</small></p>
+      <ul class="pleg" aria-label="En ce moment dans la simulation">
+        <li><i style="background:#f08a4b"></i>à pied <b id="cpied">0</b></li>
+        <li><i style="background:#b03d12"></i>à l’arrêt <b id="carret">0</b></li>
+        <li><i class="tr"></i>à bord <b id="cbord">0</b></li>
+        <li><i style="background:#1d8a5c"></i>à vélo</li>
+        <li><i class="hm"></i>chez eux ce jour-là <b id="cchez">0</b></li>
+      </ul><p class="pnote">Trains, métros, trams et bus aux couleurs de leur ligne (les bus en zoomant). Une personne simulée représente 100 navetteurs.</p></div>
+    <form class="hud" id="pick" autocomplete="off" novalidate>
+      <p class="kick">Jeudi 25 juin 2026 · vigilance rouge</p>
+      <h1>Créez votre personnage.</h1>
+      <section class="wst0" id="wst0" aria-label="Comment commencer">
+        <button type="button" class="w0" data-w0="suivre"><b>Suivre une personne de la simulation</b><small>Cinq Franciliens types : un clic et sa journée commence.</small></button>
+        <div class="w0list" id="w0list" hidden></div>
+        <button type="button" class="w0" data-w0="creer"><b>Créer mon personnage</b><small>Son travail, son apparence, son trajet : en quatre étapes.</small></button>
+      </section>
+      <ol class="wsteps" id="wsteps" aria-label="Étapes" hidden>
+        <li><button type="button" data-go="1">Son travail</button></li>
+        <li><button type="button" data-go="2">Son personnage</button></li>
+        <li><button type="button" data-go="3">Sa journée</button></li>
+        <li><button type="button" data-go="4">Son trajet</button></li>
+      </ol>
+
+      <section class="wst" data-s="1" aria-labelledby="ws1">
+        <h2 id="ws1">Quel est son travail ?</h2>
+        <div class="wcs" id="wcs" role="radiogroup" aria-labelledby="ws1"></div>
+      </section>
+
+      <section class="wst" data-s="2" aria-labelledby="ws2" hidden>
+        <h2 id="ws2">À quoi ressemble-t-il ou elle ?</h2>
+        <div class="wme"><span id="wav"></span>
+          <div class="fld"><label for="fn">Prénom</label><input id="fn" maxlength="20" spellcheck="false" autocomplete="off"></div></div>
+        <p class="flab" id="wacc">Elle ou il</p><div class="acc" id="acc" role="radiogroup" aria-labelledby="wacc"></div>
+        <p class="flab" id="wsil">Son teint</p><div class="sil" id="sil" role="radiogroup" aria-labelledby="wsil"></div>
+      </section>
+
+      <section class="wst" data-s="3" aria-labelledby="ws3" hidden>
+        <h2 id="ws3">Sa journée</h2>
+        <div class="fld"><label for="fm">Métier <span class="ex">exemple</span></label><select id="fm"></select></div>
+        <div class="fld"><label for="ph">Part de chez soi</label><select id="ph"></select></div>
+        <div class="fld"><label for="pa">Âge</label><select id="pa"><option value="a1">18 à 29 ans</option><option value="a2" selected>30 à 44 ans</option><option value="a3">45 à 59 ans</option><option value="a4">60 ans et plus</option></select></div>
+        <label class="chk"><input type="checkbox" id="fpous"> Avec une poussette</label>
+        <input type="hidden" id="pr" value="actif">
+        <p class="fown" id="wage"></p>
+      </section>
+
+      <section class="wst" data-s="4" aria-labelledby="ws4" hidden>
+        <h2 id="ws4">Son trajet</h2>
+        <div class="fld adr"><label for="po">Habite</label>
+          <div class="adrow"><input id="po" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="pol" placeholder="Adresse, commune ou gare"><button type="button" class="tgl wmap" data-pick="o" aria-pressed="false">Sur la carte</button></div>
+          <ul class="sugg" id="pol" role="listbox" aria-label="Suggestions pour le domicile" hidden></ul></div>
+        <div class="fld adr"><label for="pd">Travaille</label>
+          <div class="adrow"><input id="pd" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="pdl" placeholder="Adresse, commune ou gare"><button type="button" class="tgl wmap" data-pick="d" aria-pressed="false">Sur la carte</button></div>
+          <ul class="sugg" id="pdl" role="listbox" aria-label="Suggestions pour le travail" hidden></ul></div>
+        <p class="fown" id="whow"></p>
+        <p class="fown">Les adresses sont recherchées dans la Base Adresse Nationale (service public) ; le calcul du trajet reste sur votre appareil.</p>
+      </section>
+
+      <p class="err" id="perr" role="alert" hidden></p>
+      <div class="fact"><button class="tgl" id="wprev" type="button">Retour</button><button class="go" id="wnext" type="button"><span>Suivant</span><i class="bar" aria-hidden="true"></i></button></div>
+      <p class="fsrc"><b class="niv rec">Reconstitué</b>Personnage imaginaire, trajet tiré de la simulation.</p>
+    </form>
+
+    <!-- conclusion -->
+    <div class="hud" id="end" hidden>
+      <p class="kick" id="endk"></p>
+      <h2 id="endt" tabindex="-1"></h2>
+      <div class="etabs" id="etabs" role="tablist" aria-label="Résultats"></div>
+      <div id="endv"></div>
+      <div class="enav" id="enav"><button type="button" class="tgl ep">Précédent</button><button type="button" class="tgl edat" aria-pressed="false">Données</button><span class="ed" aria-hidden="true"></span><button type="button" class="go en">Suivant</button></div>
+      <div class="eact"><button class="tgl" id="again">Revoir</button><button class="tgl" id="other">Changer de personne</button></div>
+    </div>
+  </section>
+</main>
+
+<!-- bas -->
+<div id="bottom">
+<!-- guide conversationnel retiré du site final : sans serveur, il ne répondait qu'à des questions préparées -->
+<form class="pill" id="ask" autocomplete="off" hidden>
+  <svg class="masc" id="mascBar" width="26" height="29" viewBox="0 0 32 36" aria-hidden="true"><path class="bd" d="M16 2C16 2 4 15 4 23a12 12 0 0 0 24 0C28 15 16 2 16 2z"/><circle class="ey" cx="11.5" cy="22" r="3.2"/><circle class="ey" cx="20.5" cy="22" r="3.2"/><circle class="pu" cx="12.2" cy="22.6" r="1.5"/><circle class="pu" cx="21.2" cy="22.6" r="1.5"/><path class="mo" d="M13 28.5q3 2 6 0"/></svg>
+  <input id="q" placeholder="Demandez au guide…" aria-label="Question au guide">
+  <button class="go" type="submit">Demander</button>
+</form>
+</div>
+
+<datalist id="places"></datalist>
+<div id="spot" aria-hidden="true"></div>
+<div id="bubble" role="status" aria-live="polite" hidden>
+  <svg class="masc" id="mascBub" width="38" height="43" viewBox="0 0 32 36" aria-hidden="true"><path class="bd" d="M16 2C16 2 4 15 4 23a12 12 0 0 0 24 0C28 15 16 2 16 2z"/><circle class="ey" cx="11.5" cy="22" r="3.2"/><circle class="ey" cx="20.5" cy="22" r="3.2"/><circle class="pu" cx="12.2" cy="22.6" r="1.5"/><circle class="pu" cx="21.2" cy="22.6" r="1.5"/><path class="mo" d="M13 28.5q3 2 6 0"/></svg>
+  <div class="bt"><span class="who">Le guide</span><p class="tx" id="btx"></p><div class="acts" id="bacts"></div></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
+<script src="../../web/data/core.js"></script>
+<script src="../../web/data/couleurs_lignes.js"></script>
+<script src="../../web/data/traces_lignes.js"></script>
+<script src="../../web/data/msanim_canicule.js"></script>
+<script src="../../web/data/access.js"></script>
+<script src="../../web/data/sim.js"></script>
+<script src="../../web/data/macro.js"></script>
+<script src="../../web/data/matsim.js"></script>
+<script src="../../web/data/profils.js"></script>
+<script src="../../web/raptor_engine.js"></script>
+<script src="ui.js"></script>
+<script src="trajet_chapitres.js"></script>
+<script src="trajet_profils.js"></script>
+<script src="trajet.js"></script>
+</body>
+</html>

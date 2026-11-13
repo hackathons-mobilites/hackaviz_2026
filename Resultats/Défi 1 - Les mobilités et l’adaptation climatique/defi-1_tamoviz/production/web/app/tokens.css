@@ -1,0 +1,98 @@
+/* =====================================================================
+   Réseau sous canicule · design system « Papier » (BROUILLON)
+   Base : design system Paris Mobilité, version « Papier », palette observée
+   sur iledefrance-mobilites.fr (pas une charte officielle IDFM).
+   Mise en page : bureau en canevas, fenêtres flottantes. Règles : DESIGN.md.
+   ===================================================================== */
+
+:root{
+  color-scheme:light;
+
+  /* ---------- Palette de référence ---------- */
+  --idfm-blue:#1972d2;
+  --idfm-blue-deep:#0268d5;
+  --idfm-ink:#25303b;
+  --idfm-slate:#4e5864;
+  --idfm-mist:#f5f9ff;
+  --idfm-line:#e0e5ec;
+  --idfm-alert:#c52625;
+
+  /* ---------- Surfaces ---------- */
+  --canvas:#e9eef5;                 /* fond du bureau */
+  --canvas-dot:rgba(37,48,59,.10);  /* trame de points du canevas */
+  --panel:#ffffff;                  /* fenêtres, pilules */
+  --panel2:var(--idfm-mist);        /* surface secondaire : en-tête de tableau, carte de méthode */
+  --line:rgba(37,48,59,.10);        /* séparateurs */
+  --line2:rgba(37,48,59,.20);       /* contours de contrôles */
+
+  /* ---------- Texte ---------- */
+  --tx:var(--idfm-ink);             /* principal    contraste 13,4:1 sur --panel, 11,5:1 sur --canvas */
+  --tx2:var(--idfm-slate);          /* secondaire   contraste 7,2:1 sur --panel, 6,2:1 sur --canvas */
+  --tx3:#5f6a78;                    /* tertiaire    contraste 5,5:1 sur --panel, 4,7:1 sur --canvas (plancher) */
+
+  /* ---------- Accent et états ---------- */
+  --accent:var(--idfm-blue);        /* un seul accent par vue ; blanc dessus 4,8:1 */
+  --accent-tx:var(--idfm-blue-deep);
+  --accent-ink:#ffffff;
+  --accent-wash:rgba(25,114,210,.10);
+  --alert:var(--idfm-alert);        /* le rouge ne signifie qu'alerte */
+  --ok:#1d8a5c;
+
+  /* ---------- Données ---------- */
+  --heat-1:#fde9c9; --heat-2:#f9b672; --heat-3:#ec7340; --heat-4:#c23a22; --heat-5:#7a1414;  /* chaleur, dose */
+  --div-neg:#c52625; --div-n2:#e58f80; --div-mid:#efe6dc; --div-p2:#8fbcec; --div-pos:#1972d2; /* divergente */
+  --seq-1:#eef4fc; --seq-2:#c5dcf8; --seq-3:#8fbcec; --seq-4:#4a93e0; --seq-5:#0f58ad;        /* séquentielle bleue */
+  --ns:#a7b0bb;                     /* non significatif */
+  --m-metro:#b89755; --m-rer:#6574b6; --m-tram:#529889; --m-bus:#c67f77;                      /* modes */
+  --m-bus-clim:#529889; --m-bus-noclim:#d4572a;
+
+  /* ---------- Typographie ---------- */
+  --font:"Raleway","DM Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",Consolas,monospace;
+  --fs-figure:28px;   /* chiffre clé */
+  --fs-title:17px;    /* titre de fenêtre */
+  --fs-body:14px;
+  --fs-ui:13px;       /* contrôles, onglets, tableaux */
+  --fs-small:12px;    /* sources, légendes : plancher */
+  --fs-mono:11.5px;
+
+  /* ---------- Forme et profondeur ---------- */
+  --r:12px;           /* fenêtres, pilules */
+  --r-s:8px;          /* contrôles, cartes */
+  --shadow:0 1px 2px rgba(37,48,59,.06),0 10px 28px -8px rgba(37,48,59,.18);
+  --map-filter:grayscale(1) contrast(.8) brightness(1.1);
+
+  /* ---------- Espacements ---------- */
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px;
+  --gap:16px;         /* écart entre fenêtres et bord d'écran */
+  --pill-h:44px;      /* hauteur des pilules */
+  --target:24px;      /* cible cliquable minimale */
+}
+
+/* ---------- Mode sombre : préférence du système, ou choix mémorisé (bouton de la barre du bas) ---------- */
+:root[data-theme="dark"]{
+    color-scheme:dark;
+    --canvas:#11161c; --canvas-dot:rgba(255,255,255,.06);
+    --panel:#1a2129; --panel2:#222b35;
+    --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.2);
+    --tx:#e9eef3; --tx2:#b9c3ce; --tx3:#94a0ad;
+    --accent:#4a93e0; --accent-tx:#8bbcf0; --accent-ink:#0b1117; --accent-wash:rgba(74,147,224,.16);
+    --alert:#ef6b5b; --ok:#3fbf88; --ns:#5d6874;
+    --div-mid:#3a3530;
+    --shadow:0 1px 2px rgba(0,0,0,.45),0 12px 30px -8px rgba(0,0,0,.65);
+    --map-filter:invert(1) hue-rotate(180deg) grayscale(1) brightness(.78) contrast(.92);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --canvas:#11161c; --canvas-dot:rgba(255,255,255,.06);
+    --panel:#1a2129; --panel2:#222b35;
+    --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.2);
+    --tx:#e9eef3; --tx2:#b9c3ce; --tx3:#94a0ad;
+    --accent:#4a93e0; --accent-tx:#8bbcf0; --accent-ink:#0b1117; --accent-wash:rgba(74,147,224,.16);
+    --alert:#ef6b5b; --ok:#3fbf88; --ns:#5d6874;
+    --div-mid:#3a3530;
+    --shadow:0 1px 2px rgba(0,0,0,.45),0 12px 30px -8px rgba(0,0,0,.65);
+    --map-filter:invert(1) hue-rotate(180deg) grayscale(1) brightness(.78) contrast(.92);
+  }
+}

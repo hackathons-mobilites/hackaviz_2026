@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquette · Cartogramme</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="maquette.css">
+</head>
+<body>
+
+<!-- rail droit : outils -->
+<nav class="rail" id="tools" aria-label="Outils">
+  <h2>Outils</h2>
+  <button class="ib" aria-pressed="true" aria-label="Carte"><svg class="i" viewBox="0 0 24 24"><path d="m3 6 6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg></button>
+  <button class="ib" aria-pressed="false" aria-label="Graphique"><svg class="i" viewBox="0 0 24 24"><path d="M4 20h16M7 16v-5M12 16V6M17 16v-8"/></svg></button>
+  <button class="ib" aria-pressed="false" aria-label="Tableau"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg></button>
+  <button class="ib" aria-pressed="false" aria-label="Sources"><svg class="i" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></button>
+  <button class="ib" aria-pressed="false" aria-label="Notes"><svg class="i" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M9 11h7M9 15h7M9 7h3"/></svg></button>
+</nav>
+
+<!-- bureau -->
+<main id="desk">
+  <section class="win on" id="wmap" aria-labelledby="t-map">
+    <div class="wh">
+      <h3 id="t-map">Où se concentrent voyageurs et habitants exposés ?</h3>
+      <button class="ib mx" aria-label="Agrandir la fenêtre" aria-pressed="false"><svg class="i gr" viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><svg class="i rs" viewBox="0 0 24 24"><path d="M20 10h-6V4M4 14h6v6M14 10l7-7M10 14l-7 7"/></svg></button>
+    </div>
+    <div class="chips">
+      <div class="seg" role="group" aria-label="Unité" id="cunit"><button aria-pressed="true" data-u="com">Communes</button><button aria-pressed="false" data-u="iris">IRIS</button></div>
+      <button class="tgl" id="cmorph" aria-pressed="true">Cartogramme</button>
+      <div class="rng day" id="cday-row" hidden><label for="cday">Jour</label><input type="range" id="cday" min="0" max="4" step="1"><output id="o-cday"></output></div>
+    </div>
+    <div class="mapbox carto">
+      <div id="map" role="img" aria-label="Cartogramme des communes ou des IRIS d’Île-de-France"></div>
+      <div class="zl" id="cnt">1 285 communes</div>
+    </div>
+    <div class="legbar" id="leg"></div>
+  </section>
+
+  <section class="win" id="wset" aria-labelledby="t-set">
+    <div class="wh">
+      <h3 id="t-set">Réglages du cartogramme</h3>
+    </div>
+    <div class="wb">
+      <div class="form">
+        <div class="fr"><label for="cw">Taille des zones</label>
+          <select id="cw" class="sel"><option value="vref">Validations, jour ordinaire</option><option value="vday">Validations du jour choisi</option><option value="pop">Habitants</option><option value="expo">Habitants exposés (score ≥ 3)</option></select></div>
+        <div class="fr"><span class="lb">Échelle des surfaces</span>
+          <div class="seg" role="group" aria-label="Échelle des surfaces" id="clog"><button aria-pressed="true" data-l="false">Proportionnelle</button><button aria-pressed="false" data-l="true">Logarithmique</button></div></div>
+        <div class="fr"><span class="lb">Contour régional</span>
+          <div class="seg" role="group" aria-label="Contour régional" id="cfix"><button aria-pressed="true" data-f="false">Libre</button><button aria-pressed="false" data-f="true">Fixe</button></div></div>
+        <div class="fr"><label for="cc">Couleur</label>
+          <select id="cc" class="sel"><option value="expo">Habitants exposés (%)</option><option value="score">Score moyen des arrêts</option><option value="red">Voyageurs, semaine rouge (écart)</option></select></div>
+        <div class="fr"><span class="lb">Précision des surfaces</span><span class="val" id="cerr">–</span></div>
+      </div>
+      <div class="take"><p class="kick">Ce que montre la carte</p><p id="cread"></p></div>
+    </div>
+  </section>
+
+  <section class="win" id="wmeth" aria-labelledby="t-meth">
+    <div class="wh">
+      <h3 id="t-meth">Données et méthode</h3>
+      <button class="ib mx" aria-label="Agrandir la fenêtre" aria-pressed="false"><svg class="i gr" viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><svg class="i rs" viewBox="0 0 24 24"><path d="M20 10h-6V4M4 14h6v6M14 10l7-7M10 14l-7 7"/></svg></button>
+    </div>
+    <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-p="m-cr">Croisement</button><button role="tab" aria-selected="false" data-p="m-src">Sources</button><button role="tab" aria-selected="false" data-p="m-lim">Limites</button></div>
+    <div class="wb">
+      <div class="pane" id="m-cr">
+      <div class="dia" id="dia">
+        <p class="kick" style="grid-column:1;grid-row:1">Sources</p><p class="kick" style="grid-column:3;grid-row:1">Traitement</p>
+        <div class="nd src" id="s-val" style="grid-column:1;grid-row:2"><span class="ni"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 10h14M8 21l2-4M16 21l-2-4"/><circle cx="9" cy="13.5" r=".9"/><circle cx="15" cy="13.5" r=".9"/></svg></span><div><b>IDFM · validations</b><small id="n-val">fréquentation par arrêt</small></div></div>
+        <div class="nd src" id="s-fil" style="grid-column:1;grid-row:3"><span class="ni"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2M16 3.1a4 4 0 0 1 0 7.8M22 21v-2a4 4 0 0 0-3-3.9"/></svg></span><div><b>Insee · Filosofi 2019</b><small id="n-fil">habitants, carreaux 200 m</small></div></div>
+        <div class="nd src" id="s-geo" style="grid-column:1;grid-row:4"><span class="ni"><svg viewBox="0 0 24 24"><path d="m3 6 6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg></span><div><b>IGN · IRIS et communes</b><small id="n-geo">contours</small></div></div>
+        <div class="nd step" id="p-agg" style="grid-column:3;grid-row:2/4"><span class="ni"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17.5h7M17.5 14v7"/></svg></span><div><b>Agréger par zone</b><small>arrêts et carreaux de chaque zone</small></div></div>
+        <div class="nd step" id="p-dif" style="grid-column:3;grid-row:4"><span class="ni"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></span><div><b>Diffuser les densités</b><small>grille de 40 m, 3 passes</small></div></div>
+        <div class="nd step out" id="p-out" style="grid-column:3;grid-row:5"><span class="ni"><svg viewBox="0 0 24 24"><path d="M4 7c3-3 6 3 9 0s5-3 7 0M4 12c3-3 6 3 9 0s5-3 7 0M4 17c3-3 6 3 9 0s5-3 7 0"/></svg></span><div><b>Cartogramme</b><small id="n-out">surface ∝ poids choisi</small></div></div>
+        <svg class="wires" aria-hidden="true"></svg>
+      </div>
+      </div>
+      <div class="pane" id="m-src" hidden>
+        <table class="ttab"><thead><tr><th>Jeu de données</th><th>Producteur</th><th>Période</th></tr></thead><tbody>
+          <tr><td>Validations par jour, ferré et surface</td><td>IDFM</td><td>18 mai - 30 juin 2026</td></tr>
+          <tr><td>Fréquentation de référence par arrêt</td><td>IDFM</td><td>jour ordinaire</td></tr>
+          <tr><td>Revenus et population, carreaux de 200 m</td><td>Insee, Filosofi</td><td>2019</td></tr>
+          <tr><td>Contours des IRIS</td><td>IGN, Géoplateforme</td><td>–</td></tr>
+          <tr><td>Communes et arrondissements</td><td>geo.api.gouv.fr</td><td>–</td></tr>
+        </tbody></table>
+      </div>
+      <div class="pane" id="m-lim" hidden>
+        <ul class="tlist">
+          <li>Une zone sans arrêt ni habitant reçoit un <b>poids plancher</b> (5 % du poids moyen) pour rester visible.</li>
+          <li>Avec le <b>contour fixe</b>, l’écart de surface grandit près du bord : moins de 5 % pour les communes en échelle logarithmique, jusqu’à 30 % pour les IRIS.</li>
+          <li>La forme dépend du découpage : c’est un <b>outil de lecture</b>, pas une mesure.</li>
+          <li>Le jour par jour n’existe qu’à l’échelle des communes, avec le contour libre.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- bas -->
+<div id="bottom">
+<nav class="pill" id="src" aria-label="Écrans"><a href="index.html">Mesures</a><a href="cartogramme.html" aria-current="page">Cartogramme</a><a href="simulation.html">Simulation</a><a href="trajet.html">Une journée</a></nav>
+<form class="pill" id="ask" autocomplete="off">
+  <svg class="masc" id="mascBar" width="26" height="29" viewBox="0 0 32 36" aria-hidden="true"><path class="bd" d="M16 2C16 2 4 15 4 23a12 12 0 0 0 24 0C28 15 16 2 16 2z"/><circle class="ey" cx="11.5" cy="22" r="3.2"/><circle class="ey" cx="20.5" cy="22" r="3.2"/><circle class="pu" cx="12.2" cy="22.6" r="1.5"/><circle class="pu" cx="21.2" cy="22.6" r="1.5"/><path class="mo" d="M13 28.5q3 2 6 0"/></svg>
+  <input id="q" placeholder="Demandez au guide…" aria-label="Question au guide">
+  <button class="go" type="submit">Demander</button>
+</form>
+<div class="pill" id="zoom">
+  <button class="ib" aria-label="Dézoomer" id="zout"><svg class="i" viewBox="0 0 24 24"><path d="M6 12h12"/></svg></button>
+  <span id="zlab">100 %</span>
+  <button class="ib" aria-label="Zoomer" id="zin"><svg class="i" viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></svg></button>
+  <button class="ib" aria-label="Recentrer" id="zfit"><svg class="i" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</div>
+</div>
+
+<div id="spot" aria-hidden="true"></div>
+<div id="bubble" role="status" aria-live="polite" hidden>
+  <svg class="masc" id="mascBub" width="38" height="43" viewBox="0 0 32 36" aria-hidden="true"><path class="bd" d="M16 2C16 2 4 15 4 23a12 12 0 0 0 24 0C28 15 16 2 16 2z"/><circle class="ey" cx="11.5" cy="22" r="3.2"/><circle class="ey" cx="20.5" cy="22" r="3.2"/><circle class="pu" cx="12.2" cy="22.6" r="1.5"/><circle class="pu" cx="21.2" cy="22.6" r="1.5"/><path class="mo" d="M13 28.5q3 2 6 0"/></svg>
+  <div class="bt"><span class="who">Le guide</span><p class="tx" id="btx"></p><div class="acts" id="bacts"></div></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="../../web/data/core.js"></script>
+<script src="../../web/data/flow.js"></script>
+<script src="../../web/data/carreaux.js"></script>
+<script src="../../web/data/layers.js"></script>
+<script src="../../web/data/volet2.js"></script>
+<script src="../../web/data/carto_com.js"></script>
+<script src="ui.js"></script>
+<script src="cartogramme.js"></script>
+</body>
+</html>

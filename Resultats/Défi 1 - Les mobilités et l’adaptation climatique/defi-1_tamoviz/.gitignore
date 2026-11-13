@@ -1,0 +1,8 @@
+# Racine du dépôt (les règles du projet sont dans production/.gitignore)
+.claude/
+CLAUDE.md
+AGENTS.md
+desktop.ini
+Thumbs.db
+.DS_Store
+*.zip
