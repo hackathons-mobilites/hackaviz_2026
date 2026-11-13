@@ -1,0 +1,21 @@
+.atlas-hex { transition: fill 750ms linear; }
+.hero-atlas #atlas { overflow: visible; }
+.hero-atlas .atlas-heading { display: block; text-align: center; margin: 0 0 -8px; }
+.hero-atlas .atlas-heading strong { font-size: 18px; font-weight: 400; color: var(--muted); }
+.hero-atlas .atlas-heading span { color: var(--muted); }
+.hero-atlas .atlas-controls { border: 0; background: transparent; box-shadow: none; padding-inline: 0; margin-top: 16px; }
+.hero-atlas .play-control { color: var(--ink); }
+.atlas-map-surface { position: relative; }
+.atlas-map-caption { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 0; color: var(--muted); font-size: 12px; }
+.atlas-compass { width: 48px; height: 48px; flex: none; }
+.hero-atlas .hex-legend { position: absolute; top: 10%; right: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; line-height: 1.2; text-align: center; padding: 12px 10px; border-radius: 10px; background: rgba(255,255,255,.95); color: var(--muted); }
+.hex-legend strong { color: var(--ink); font-weight: 600; margin-bottom: 4px; }
+.hex-legend-ramp { width: 10px; height: 100px; background: linear-gradient(0deg,#f4d27a,#5ba3d9,#0055a4); border-radius: 3px; }
+.motion-reduced .atlas-hex { transition: none; }
+@media (prefers-reduced-motion: reduce) { .atlas-hex { transition: none; } }
+@media (max-width: 500px) {
+  .hero-atlas .atlas-heading strong { font-size: 16px; }
+  .hero-atlas .atlas-heading span { font-size: 12px; }
+  .hero-atlas .hex-legend { font-size: 10px; padding: 8px; top: 3%; }
+  .hex-legend-ramp { height: 64px; }
+}

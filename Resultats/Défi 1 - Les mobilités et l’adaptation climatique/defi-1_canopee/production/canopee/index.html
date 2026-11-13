@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="./canopee-icon.png" />
+    <title>Canopée</title>
+    <meta name="description" content="Itinéraires à pied, à vélo et en Vélib à Paris, selon l’ensoleillement des rues." />
+  </head>
+  <body>
+    <a class="skip" href="#carte">Aller à la carte</a>
+    <div id="carte" role="region" aria-label="Carte de l’ombre à Paris"></div>
+
+    <aside id="recit">
+      <img class="logo" src="./canopee-logo.webp" alt="Canopée" width="640" height="165" />
+      <div class="itineraire">
+        <div class="trajet-groupe">
+          <form id="form-a" class="champ">
+            <span class="point" aria-hidden="true">A</span>
+            <label class="sr-only" for="adresse-a">Départ</label>
+            <input id="adresse-a" type="search" placeholder="Départ" required autocomplete="street-address" />
+          </form>
+          <form id="form-b" class="champ">
+            <span class="point" aria-hidden="true">B</span>
+            <label class="sr-only" for="adresse-b">Arrivée</label>
+            <input id="adresse-b" type="search" placeholder="Arrivée" required autocomplete="street-address" />
+          </form>
+          <button type="button" id="inverser" aria-label="Inverser le départ et l’arrivée">
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+              <path d="M5 2.5v9M5 11.5 3 9.5M5 11.5 7 9.5M11 13.5v-9M11 4.5 9 6.5M11 4.5 13 6.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div id="choix-a" class="choix-adresse" aria-live="polite"></div>
+        <div id="choix-b" class="choix-adresse" aria-live="polite"></div>
+        <div class="trajet-outils">
+          <button type="button" id="effacer">Effacer</button>
+        </div>
+        <div class="segments" id="allure" role="group" aria-label="Mode de déplacement">
+          <button type="button" id="allure-pied" aria-pressed="true">À pied</button>
+          <button type="button" id="allure-velo" aria-pressed="false">Vélo</button>
+          <button type="button" id="allure-velib" aria-pressed="false">Vélib</button>
+        </div>
+        <div class="trajet-resultat" id="trajet-resultat">Chargement de Paris…</div>
+        <p class="trajet-comparaison" id="trajet-comparaison" hidden></p>
+        <ol class="trajet-etapes" id="trajet-etapes" hidden></ol>
+        <p class="trajet-contexte" id="trajet-contexte"></p>
+      </div>
+
+      <div class="segments" role="group" aria-label="Instant">
+        <button type="button" id="mode-direct" aria-pressed="false">Direct</button>
+      </div>
+      <div class="segments" role="group" aria-label="Année">
+        <button type="button" id="vue-aujourdhui" aria-pressed="true">2026</button>
+        <button type="button" id="vue-future" aria-pressed="false">2036</button>
+      </div>
+      <div class="segments" role="group" aria-label="Saison">
+        <button type="button" id="saison-ete" aria-pressed="true">Été</button>
+        <button type="button" id="saison-hiver" aria-pressed="false">Hiver</button>
+      </div>
+      <div class="soleil-crans" id="soleil-crans" role="group" aria-label="Soleil">
+        <button type="button" data-accept="0" aria-pressed="true">Pas de soleil</button>
+        <button type="button" data-accept="33" aria-pressed="false">Un peu</button>
+        <button type="button" data-accept="50" aria-pressed="false">Normal</button>
+        <button type="button" data-accept="67" aria-pressed="false">Beaucoup</button>
+        <button type="button" data-accept="100" aria-pressed="false">Plein soleil</button>
+      </div>
+      <p class="objectif" id="vue-explication">
+        <span class="objectif-icone" id="objectif-icone" aria-hidden="true"></span>
+        <span>
+          <strong id="objectif-but">Le trajet évite le soleil.</strong>
+          <span class="suite" id="objectif-suite"></span>
+        </span>
+      </p>
+
+      <details class="stations">
+        <summary>
+          <span>Stations</span>
+          <svg class="chevron" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+            <path d="M4 6.5 8 10.5 12 6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <p class="constats" id="constats" aria-live="polite"></p>
+        <label class="sr-only" for="chercher-station">Station</label>
+        <input id="chercher-station" type="search" placeholder="Station" autocomplete="off" />
+        <p id="stations-compte" class="stations-compte"></p>
+        <ol id="stations-liste" class="stations-liste"></ol>
+        <button type="button" id="stations-toutes" class="texte">Toutes les stations</button>
+      </details>
+
+      <div class="liens-carte">
+        <button type="button" class="texte" id="ouvrir-methode">Sources</button>
+        <a class="texte" href="./dataviz">Dataviz</a>
+      </div>
+    </aside>
+
+    <div class="vues-carte" role="group" aria-label="Commandes de la carte">
+      <div class="commandes-carte" id="commandes-carte"></div>
+      <p class="aide-rotation" id="aide-rotation" hidden>
+        <span class="aide-souris">Pour tourner la carte, maintenez <kbd id="touche-rotation">Ctrl</kbd> et faites glisser.</span>
+        <span class="aide-tactile">Tournez la carte à deux doigts.</span>
+      </p>
+      <div class="segments vue-carte" role="group" aria-label="Choisir la vue de la carte">
+        <button type="button" id="vue-dessus" aria-pressed="true">Vue du dessus</button>
+        <button type="button" id="vue-inclinee" aria-pressed="false">Vue 3D inclinée</button>
+      </div>
+    </div>
+
+    <section class="heure-dock" aria-label="Heure">
+      <div class="heure-ligne">
+        <button type="button" id="precedent" aria-label="Heure précédente">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="heure-centre">
+          <p class="heure" id="heure-lue"><span id="heure-nombre">16</span><span id="heure-unite"> h</span></p>
+          <p class="meteo" id="meteo"></p>
+        </div>
+        <button type="button" id="suivant" aria-label="Heure suivante">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <label class="sr-only" for="heure">Heure</label>
+      <input id="heure" type="range" min="7" max="21" step="1" value="16" />
+      <div class="ticks" aria-hidden="true"><span>7</span><span>12</span><span>16</span><span>21</span></div>
+      <button type="button" id="lecture" class="lecture" aria-pressed="false" aria-label="Lire les heures">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M5.2 3.2v9.6L13 8z" fill="currentColor"/></svg>
+      </button>
+    </section>
+
+    <aside class="cle" id="cle" aria-label="Légende">
+      <div class="cle-entete">
+        <h2 class="cle-titre">Légende</h2>
+        <button type="button" class="cle-info" id="cle-info" aria-label="À propos des couleurs" aria-expanded="false" aria-controls="lecture-mode"><span aria-hidden="true">i</span></button>
+      </div>
+      <p id="lecture-mode" class="cle-detail" hidden>Ombre moyenne des rues par secteur</p>
+      <span class="sr-only">Part d’ombre, de exposé à ombragé.</span>
+      <div class="echelle" id="degrade">
+        <span class="echelle-mot">Exposé</span>
+        <span class="hexes" aria-hidden="true">
+          <i class="hex"></i><i class="hex"></i><i class="hex"></i><i class="hex"></i><i class="hex"></i><i class="hex"></i><i class="hex"></i>
+        </span>
+        <span class="echelle-barre" aria-hidden="true"></span>
+        <span class="echelle-mot">Ombragé</span>
+      </div>
+      <ul class="symboles">
+        <li>
+          <label class="symbole">
+            <input id="couche-eau" type="checkbox" checked />
+            <svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="#0878ad"/><rect x="4.2" y="5.4" width="7.2" height="1.8" rx="0.6" fill="#fff"/><path d="M5.6 11.2h6.6l-.9 2.2H6.5z" fill="#fff"/></svg>
+            Fontaine
+          </label>
+        </li>
+        <li>
+          <label class="symbole">
+            <input id="couche-frais" type="checkbox" checked />
+            <svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="6.5" fill="#eaf8f5" stroke="#217464" stroke-width="1.2"/><path d="M4.8 9h8.4M6.4 6.2l5.2 5.6M6.4 11.8l5.2-5.6" fill="none" stroke="#176c61" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Lieu frais
+          </label>
+        </li>
+        <li>
+          <label class="symbole">
+            <input id="couche-parcs" type="checkbox" checked />
+            <svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="6.5" fill="#f1f8e9" stroke="#4c872f" stroke-width="1.2"/><path d="M9 9.2v4" stroke="#6a4b30" stroke-width="1.3" stroke-linecap="round"/><circle cx="6.8" cy="8.8" r="2" fill="#397b38"/><circle cx="9" cy="6.6" r="2.4" fill="#397b38"/><circle cx="11.2" cy="8.8" r="2" fill="#397b38"/></svg>
+            Parc
+          </label>
+        </li>
+        <li>
+          <label class="symbole">
+            <input id="couche-stations" type="checkbox" checked />
+            <svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="#214c83"/><rect x="5.6" y="5.8" width="6.6" height="5.6" rx="1" fill="#fff"/><path d="M6.6 7.2h1.6v1.6H6.6zm3 0h1.6v1.6H9.6z" fill="#214c83"/></svg>
+            Arrêt
+          </label>
+        </li>
+        <li>
+          <label class="symbole">
+            <input id="couche-velib" type="checkbox" checked />
+            <svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="#0b6e4f"/><circle cx="6.2" cy="11.2" r="1.7" fill="none" stroke="#fff" stroke-width="1"/><circle cx="11.8" cy="11.2" r="1.7" fill="none" stroke="#fff" stroke-width="1"/><path d="M6.2 11.2 8.4 7.6h2.2L11.8 11.2M8.4 7.6h2.2" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round"/></svg>
+            Vélib
+          </label>
+        </li>
+        <li id="legende-alerte">
+          <span class="symbole symbole-fixe">
+            <svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="#b34012"/><rect x="5.4" y="6" width="6.2" height="5.2" rx="1" fill="#fff"/><circle cx="13.2" cy="4.6" r="2.3" fill="#fff"/><text x="13.2" y="5.6" text-anchor="middle" font-size="4.2" font-weight="700" fill="#b34012">!</text></svg>
+            Arrêt en alerte
+          </span>
+        </li>
+        <li id="legende-gain" hidden>
+          <span class="symbole symbole-fixe">
+            <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h14" stroke="#258251" stroke-width="3" stroke-linecap="round"/></svg>
+            Canopée en plus
+          </span>
+        </li>
+        <li id="legende-manque" hidden>
+          <span class="symbole symbole-fixe">
+            <svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="5" fill="#c98d32" opacity="0.85" stroke="#fff" stroke-width="1.2"/></svg>
+            Manque
+          </span>
+        </li>
+        <li id="legende-projet" hidden>
+          <span class="symbole symbole-fixe">
+            <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h14" stroke="#744a9b" stroke-width="2" stroke-dasharray="3 2" stroke-linecap="round"/></svg>
+            Projet
+          </span>
+        </li>
+      </ul>
+    </aside>
+
+    <p id="direct" class="sr-only" aria-live="polite"></p>
+
+    <dialog id="methode">
+      <article>
+        <header>
+          <h2>Sources</h2>
+          <button type="button" id="fermer-methode">Fermer</button>
+        </header>
+        <div id="methode-corps"></div>
+      </article>
+    </dialog>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
