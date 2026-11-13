@@ -1,0 +1,128 @@
+.shade-heatmap-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  padding: 4px 3px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: #b3c5c9 transparent;
+}
+
+.shade-heatmap-grid {
+  min-width: 660px;
+  display: grid;
+  gap: 5px;
+}
+
+.shade-heatmap-row {
+  display: grid;
+  grid-template-columns: 132px repeat(var(--heatmap-columns, 15), minmax(28px, 1fr));
+  gap: 4px;
+  align-items: center;
+}
+
+.shade-heatmap-header {
+  padding-bottom: 4px;
+}
+
+.shade-heatmap-station {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
+  color: var(--muted, #6e6e73);
+  background: var(--paper, #f2f2f2);
+  font-size: 13px;
+  line-height: 1.15;
+}
+
+.shade-heatmap-row.is-active .shade-heatmap-station {
+  color: var(--ink, #1d1d1f);
+  font-weight: 600;
+}
+
+.shade-heatmap-hour {
+  text-align: center;
+  color: var(--muted, #6e6e73);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.shade-heatmap-hour.is-active {
+  color: var(--ink, #1d1d1f);
+  font-weight: 600;
+}
+
+.shade-heatmap-cell {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 28px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 5px;
+  background: #f4d27a;
+  cursor: pointer;
+  transform-origin: center;
+  outline-offset: 1px;
+}
+
+.shade-heatmap-cell:hover,
+.shade-heatmap-cell.is-active {
+  outline: 1.5px solid var(--ink, #1d1d1f);
+}
+
+.shade-heatmap-cell:focus-visible {
+  outline: 2px solid var(--accent, #0071e3);
+  outline-offset: 2px;
+}
+
+.shade-heatmap-cell.is-missing {
+  background: repeating-linear-gradient(135deg, #f2f2f2 0 4px, #ddd 4px 5px);
+}
+
+.shade-heatmap-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  padding-top: 12px;
+  color: var(--muted, #6e6e73);
+  font-size: 13px;
+}
+
+.shade-heatmap-legend-key {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.shade-heatmap-legend-ramp {
+  width: 120px;
+  height: 10px;
+  border-radius: 3px;
+  background: linear-gradient(to right, #f4d27a, #5ba3d9, #0055a4);
+}
+
+.shade-heatmap-instruction {
+  margin-left: auto;
+}
+
+@media (max-width: 640px) {
+  .shade-heatmap-instruction {
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+
+  .shade-heatmap-row {
+    grid-template-columns: 120px repeat(var(--heatmap-columns, 15), minmax(28px, 1fr));
+  }
+
+  .shade-heatmap-station {
+    font-size: 12px;
+  }
+}

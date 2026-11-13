@@ -1,0 +1,6 @@
+{
+  "framework": "vite",
+  "outputDirectory": "dist",
+  "trailingSlash": false,
+  "rewrites": [{ "source": "/dataviz", "destination": "/recit.html" }]
+}

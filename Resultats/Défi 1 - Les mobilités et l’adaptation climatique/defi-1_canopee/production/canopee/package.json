@@ -1,0 +1,22 @@
+{
+  "name": "ombre-paris",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare-story": "node scripts/prepare-story.mjs && node scripts/prepare-story-hex.mjs",
+    "prepare-story-hex": "node scripts/prepare-story-hex.mjs",
+    "prepare-data": "node scripts/fetch-paris.mjs && node --max-old-space-size=8192 scripts/prepare-paris.mjs && node scripts/fetch-amenities.mjs && node scripts/prepare-tree-cover.mjs && node scripts/prepare-stations.mjs && node scripts/pack-data.mjs",
+    "prepare-velib": "node scripts/fetch-velib.mjs",
+    "dev": "vite --host 0.0.0.0 --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 5173"
+  },
+  "dependencies": {
+    "@fontsource/source-sans-3": "^5.3.1",
+    "maplibre-gl": "^6.17.0",
+    "motion": "^14.13.0"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
