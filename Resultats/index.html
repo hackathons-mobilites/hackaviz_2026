@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hackaviz Mobilités 2026 — Explorateur des projets</title>
+  <title>Hackathon Mobilités 2026 — Explorateur des projets</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -654,10 +654,113 @@
       outline: none;
     }
 
+    .mobile-drawer-btn {
+      display: none;
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--surface);
+      border: 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--navy);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     @media (max-width: 960px) {
-      .layout { grid-template-columns: 1fr; grid-template-rows: 260px 1fr; }
-      aside { border-right: 0; border-bottom: 1px solid var(--border); }
-      .header-top, .filters-bar, .viewer-bar { padding-left: 16px; padding-right: 16px; }
+      body {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+      }
+      .layout {
+        display: block;
+      }
+      .mobile-drawer-btn {
+        display: flex;
+      }
+      aside {
+        display: none;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+        max-height: 55vh;
+        overflow-y: auto;
+      }
+      aside.open {
+        display: flex;
+      }
+      .stage {
+        overflow-y: visible;
+      }
+      .iframe-wrap {
+        height: 75vh;
+        min-height: 460px;
+      }
+      .header-top {
+        flex-wrap: wrap;
+        padding: 10px 16px;
+        gap: 10px;
+      }
+      .brand {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .filters-bar {
+        padding: 10px 16px;
+      }
+      .filters {
+        width: 100%;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .pill {
+        flex-shrink: 0;
+      }
+      .search {
+        width: 100%;
+      }
+      .viewer-bar {
+        padding: 12px 16px 0 16px;
+      }
+      .tabs-row {
+        overflow-x: auto;
+        width: 100%;
+      }
+      .tab-btn {
+        flex-shrink: 0;
+        padding: 10px 12px;
+      }
+      .home-container, .doc-container, .video-container {
+        padding: 0 12px 32px 12px;
+        margin: 16px auto;
+      }
+      .home-hero {
+        padding: 20px 16px;
+      }
+      .home-hero h2 {
+        font-size: 1.25rem;
+      }
+      .markdown-body {
+        padding: 18px 16px;
+        overflow-wrap: anywhere;
+      }
+      .markdown-body table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .brand-sep { display: none; }
+      .brand img { height: 24px; }
+      .brand h1 { font-size: 0.96rem; }
+      .header-actions { width: 100%; justify-content: flex-start; }
     }
   </style>
 </head>
@@ -667,7 +770,7 @@
       <div class="brand">
         <img src="https://www.iledefrance-mobilites.fr/idfm-logo.svg" alt="Île-de-France Mobilités" onerror="this.style.display='none'" />
         <span class="brand-sep"></span>
-        <h1>Hackaviz Mobilités 2026 — Explorateur des résultats</h1>
+        <h1>Hackathon Mobilités 2026 — Explorateur des résultats</h1>
         <span class="badge-count" id="countBadge">15 projets</span>
       </div>
       <div class="header-actions">
@@ -688,6 +791,10 @@
   </header>
 
   <div class="layout">
+    <button class="mobile-drawer-btn" id="mobileDrawerBtn" onclick="toggleMobileList()">
+      <span id="mobileDrawerLabel">📋 Choisir une équipe (15)</span>
+      <span id="mobileDrawerArrow">▾</span>
+    </button>
     <aside id="projectList"></aside>
     <main>
       <div class="viewer-bar">
@@ -902,6 +1009,8 @@
 
     function showHome() {
       selectedTeam = null;
+      toggleMobileList(false);
+      updateMobileLabel();
       renderList();
       renderStage();
     }
@@ -913,6 +1022,8 @@
       activeDefi = String(defi);
       const items = filteredProjects();
       selectedTeam = items.length ? items[0].teamNum : null;
+      toggleMobileList(false);
+      updateMobileLabel();
       renderList();
       renderStage();
     }
@@ -1017,11 +1128,11 @@
         stageEl.innerHTML = `
           <div class="home-container">
             <div class="home-hero">
-              <img class="home-logo" src="assets/logo-hackaviz-2026.svg" alt="Hackaviz Mobilités 2026" />
+              <img class="home-logo" src="assets/logo-hackaviz-2026.svg" alt="Hackathon Mobilités 2026" />
               <h2>Exploration des résultats du Hackathon Mobilités 2026</h2>
               <p>
                 Bienvenue sur l'espace d'exploration des projets réalisés du 2 au 13 novembre 2026 dans le cadre du
-                <strong>Hackaviz Mobilités 2026 spécial Dataviz</strong> organisé par Île-de-France Mobilités.
+                <strong>Hackathon Mobilités 2026 spécial Dataviz</strong> organisé par Île-de-France Mobilités.
                 Sélectionnez une équipe dans la liste à gauche pour consulter sa documentation, sa vidéo de démonstration et sa dataviz interactive.
               </p>
               <div class="home-stats">
@@ -1160,8 +1271,30 @@
       }
     }
 
+    function toggleMobileList(forceState) {
+      const open = typeof forceState === "boolean"
+        ? forceState
+        : !listEl.classList.contains("open");
+      listEl.classList.toggle("open", open);
+      document.getElementById("mobileDrawerArrow").textContent = open ? "▴" : "▾";
+    }
+
+    function updateMobileLabel() {
+      const lbl = document.getElementById("mobileDrawerLabel");
+      if (!lbl) return;
+      if (selectedTeam === null) {
+        const count = filteredProjects().length;
+        lbl.textContent = `📋 Choisir une équipe (${count})`;
+      } else {
+        const p = PROJECTS.find(x => x.teamNum === selectedTeam);
+        lbl.textContent = p ? `📋 Équipe ${p.teamNum} · ${p.teamName} (changer)` : "📋 Choisir une équipe";
+      }
+    }
+
     function selectProject(num) {
       selectedTeam = num;
+      toggleMobileList(false);
+      updateMobileLabel();
       renderList();
       renderStage();
     }
@@ -1180,6 +1313,7 @@
         if (items.length && !items.some(x => x.teamNum === selectedTeam)) {
           selectedTeam = items[0].teamNum;
         }
+        updateMobileLabel();
         renderList();
         renderStage();
       });
@@ -1187,6 +1321,7 @@
 
     document.getElementById("searchInput").addEventListener("input", e => {
       searchQuery = e.target.value;
+      updateMobileLabel();
       renderList();
     });
 
