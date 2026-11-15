@@ -114,6 +114,11 @@
       color: var(--accent);
       background: var(--surface-3);
     }
+    .idfm-btn-outline.active {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
 
     .filters-bar {
       padding: 10px 28px;
@@ -734,6 +739,431 @@
       outline: none;
     }
 
+    /* Jury mode */
+    .jury-panel {
+      display: none;
+      min-width: 0;
+      min-height: 0;
+      flex-direction: column;
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      overflow: hidden;
+    }
+    body.jury-mode .layout {
+      grid-template-columns: 280px minmax(0, 1fr) 400px;
+    }
+    body.jury-mode .jury-panel { display: flex; }
+    .jury-mobile-btn { display: none; }
+    .jury-close {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--navy);
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-left: 4px;
+    }
+    .jury-head {
+      flex: 0 0 auto;
+      padding: 14px 18px 12px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .jury-head-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .jury-kicker {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+    .jury-total {
+      margin-left: auto;
+      padding: 3px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--navy);
+      font-size: 1.05rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .jury-project {
+      margin: 7px 0 2px;
+      color: var(--navy);
+      font-size: 0.96rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .jury-project-meta {
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.4;
+    }
+    .jury-tools-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .jury-flag-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .jury-flag-btn:hover { border-color: #fdba74; color: #ac5700; }
+    .jury-flag-btn.active {
+      border-color: #fdba74;
+      background: #fff7ed;
+      color: #ac5700;
+    }
+    .jury-menu { position: relative; margin-left: auto; }
+    .jury-menu summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 5px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      user-select: none;
+    }
+    .jury-menu summary::-webkit-details-marker { display: none; }
+    .jury-menu summary:hover { border-color: var(--accent); color: var(--accent); }
+    .jury-menu > div {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 6px);
+      z-index: 30;
+      min-width: 220px;
+      padding: 6px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      box-shadow: var(--shadow-md);
+    }
+    .jury-menu button {
+      display: block;
+      width: 100%;
+      padding: 8px 9px;
+      border: 0;
+      border-radius: 7px;
+      background: transparent;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .jury-menu button:hover { background: var(--surface-3); color: var(--accent); }
+    .jury-progress-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .jury-progress {
+      flex: 1;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--surface-3);
+      overflow: hidden;
+    }
+    .jury-progress span {
+      display: block;
+      width: 0;
+      height: 100%;
+      border-radius: 999px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+    .jury-progress-text {
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .jury-save {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.7rem;
+    }
+    .jury-save.dirty { color: #ac5700; }
+    .jury-form {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      padding: 14px 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: var(--bg);
+    }
+    .jury-criterion {
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .jury-criterion-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .jury-criterion-title {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      min-width: 0;
+    }
+    .jury-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+    .jury-criterion h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 0.82rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .jury-criterion-score {
+      flex: 0 0 auto;
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+    }
+    .jury-hint {
+      margin: 5px 0 8px;
+      color: var(--muted);
+      font-size: 0.71rem;
+      line-height: 1.45;
+    }
+    .jury-score-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+    }
+    .jury-score {
+      padding: 7px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--navy);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.13s ease;
+    }
+    .jury-score:hover { border-color: var(--accent); color: var(--accent); }
+    .jury-score.selected {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(25, 114, 210, 0.28);
+    }
+    .jury-comment,
+    .jury-global textarea {
+      width: 100%;
+      margin-top: 8px;
+      padding: 8px 9px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.76rem;
+      line-height: 1.45;
+      resize: vertical;
+    }
+    .jury-comment:focus,
+    .jury-global textarea:focus {
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(25, 114, 210, 0.1);
+    }
+    .jury-global {
+      padding: 14px 2px 0;
+      border-top: 1px dashed var(--border);
+    }
+    .jury-global label {
+      display: block;
+      color: var(--navy);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .jury-global textarea { margin-top: 6px; }
+    .jury-empty {
+      padding: 38px 18px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .jury-empty-icon { font-size: 2rem; margin-bottom: 8px; }
+    .jury-empty strong { display: block; color: var(--navy); margin-bottom: 4px; }
+    .jury-empty p { margin: 0; }
+    .jury-foot {
+      flex: 0 0 auto;
+      display: flex;
+      gap: 6px;
+      padding: 10px 14px;
+      border-top: 1px solid var(--border);
+      background: var(--surface-2);
+    }
+    .jury-foot button {
+      flex: 1;
+      padding: 8px 8px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--navy);
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .jury-foot button:hover { border-color: var(--accent); color: var(--accent); }
+    .jury-foot .jury-next-unrated {
+      flex: 1.5;
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+    }
+    .jury-foot .jury-next-unrated:hover { background: var(--accent-hover); color: #ffffff; }
+    .jury-status {
+      padding: 2px 8px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .jury-status.todo { background: #f1f5f9; color: #52657a; border-color: #dce5f0; }
+    .jury-status.partial { background: #fff8e8; color: #ac5700; border-color: #f0d49b; }
+    .jury-status.done { background: #edfcf2; color: #087443; border-color: #bbf7d0; }
+
+    /* Jury synthesis modal */
+    .jury-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(9, 49, 92, 0.45);
+    }
+    .jury-modal.open { display: flex; }
+    .jury-modal-card {
+      display: flex;
+      flex-direction: column;
+      width: min(1120px, 100%);
+      max-height: 86vh;
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 24px 60px rgba(9, 49, 92, 0.3);
+      overflow: hidden;
+    }
+    .jury-modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .jury-modal-head h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+    .jury-modal-close {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--navy);
+      cursor: pointer;
+    }
+    .jury-modal-body {
+      padding: 16px 20px 24px;
+      overflow: auto;
+    }
+    .jury-summary-note {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    .jury-summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+    }
+    .jury-summary-table th,
+    .jury-summary-table td {
+      padding: 8px 7px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+    .jury-summary-table th {
+      position: sticky;
+      top: 0;
+      background: var(--surface-2);
+      color: var(--navy);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .jury-summary-table td.num {
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .jury-summary-sub {
+      color: var(--muted);
+      font-size: 0.72rem;
+    }
+
     .mobile-drawer-btn {
       display: none;
       width: 100%;
@@ -751,6 +1181,12 @@
       justify-content: space-between;
     }
 
+    @media (max-width: 1250px) and (min-width: 961px) {
+      body.jury-mode .layout {
+        grid-template-columns: 250px minmax(0, 1fr) 370px;
+      }
+    }
+
     @media (max-width: 960px) {
       body {
         height: auto;
@@ -760,6 +1196,23 @@
       .layout {
         display: block;
       }
+      body.jury-mode .layout {
+        display: block;
+      }
+      .jury-panel {
+        position: fixed;
+        inset: 0;
+        z-index: 120;
+        width: 100%;
+        height: 100dvh;
+        border-left: 0;
+      }
+      body.jury-mode .jury-panel { display: none; }
+      body.jury-mode .jury-panel.open { display: flex; }
+      body.jury-mode .jury-mobile-btn { display: inline-flex; }
+      .jury-close { display: inline-flex; }
+      .jury-foot { padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+      .jury-modal { padding: 12px; }
       .mobile-drawer-btn {
         display: flex;
       }
@@ -840,7 +1293,7 @@
       .brand-sep { display: none; }
       .brand img { height: 24px; }
       .brand h1 { font-size: 0.96rem; }
-      .header-actions { width: 100%; justify-content: flex-start; }
+      .header-actions { width: 100%; justify-content: flex-start; flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -854,6 +1307,8 @@
         <span class="badge-count" id="countBadge">15 projets</span>
       </div>
       <div class="header-actions">
+        <button class="idfm-btn-outline" id="juryToggle" style="cursor:pointer;" onclick="toggleJuryMode()" aria-pressed="false">🧑‍⚖️ Mode jury</button>
+        <button class="idfm-btn-outline jury-mobile-btn" id="juryMobileBtn" onclick="toggleJuryPanel(true)">📝 Notes</button>
         <button class="idfm-btn-outline" style="cursor:pointer;" onclick="showHome()">🏠 Accueil</button>
         <a class="idfm-btn-outline" href="https://github.com/hackathons-mobilites/hackaviz_2026" target="_blank" rel="noopener">Dépôt GitHub ↗</a>
       </div>
@@ -893,6 +1348,52 @@
       </div>
       <div class="stage" id="stage"></div>
     </main>
+    <section class="jury-panel" id="juryPanel" aria-label="Bloc-notes jury">
+      <div class="jury-head">
+        <div class="jury-head-row">
+          <span class="jury-kicker">Notation jury</span>
+          <span class="jury-total" id="juryTotal">— / 20</span>
+          <button class="jury-close" onclick="toggleJuryPanel(false)" aria-label="Fermer les notes">✕</button>
+        </div>
+        <h3 class="jury-project" id="juryProject">Sélectionnez un projet</h3>
+        <div class="jury-project-meta" id="juryProjectMeta"></div>
+        <div class="jury-tools-row">
+          <button class="jury-flag-btn" id="juryFlag" onclick="toggleJuryFlag()" aria-pressed="false" title="Marquer ce projet à revoir">⚑ À revoir</button>
+          <details class="jury-menu">
+            <summary title="Plus d'actions">⋯ Actions</summary>
+            <div>
+              <button onclick="openJurySummary()">📊 Voir la synthèse</button>
+              <button onclick="exportJuryJSON()">💾 Exporter en JSON</button>
+              <button onclick="exportJuryCSV()">📄 Exporter en CSV</button>
+              <button onclick="triggerJuryImport()">📥 Importer un JSON</button>
+              <button onclick="resetCurrentJury()">🗑 Réinitialiser ce projet</button>
+            </div>
+          </details>
+        </div>
+        <div class="jury-progress-row">
+          <div class="jury-progress" aria-hidden="true"><span id="juryProgressBar"></span></div>
+          <span class="jury-progress-text" id="juryProgressText">0 / 15 notés</span>
+        </div>
+        <div class="jury-save" id="jurySaveStatus" aria-live="polite">Sauvegarde locale</div>
+      </div>
+      <div class="jury-form" id="juryForm"></div>
+      <div class="jury-foot">
+        <button onclick="juryNavigate(-1)">◀ Préc.</button>
+        <button class="jury-next-unrated" onclick="juryNextUnrated()">Suivant non noté</button>
+        <button onclick="juryNavigate(1)">Suiv. ▶</button>
+      </div>
+      <input type="file" id="juryImportInput" accept="application/json,.json" style="display:none" onchange="importJuryFile(event)" />
+    </section>
+  </div>
+
+  <div class="jury-modal" id="jurySummary" aria-hidden="true">
+    <div class="jury-modal-card" role="dialog" aria-modal="true" aria-labelledby="jurySummaryTitle">
+      <div class="jury-modal-head">
+        <h2 id="jurySummaryTitle">Synthèse des notes</h2>
+        <button class="jury-modal-close" onclick="closeJurySummary()" aria-label="Fermer la synthèse">✕</button>
+      </div>
+      <div class="jury-modal-body" id="jurySummaryBody"></div>
+    </div>
   </div>
 
   <script>
@@ -1085,18 +1586,84 @@
       }
     ];
 
+    const JURY_CRITERIA = [
+      {
+        key: "pertinence",
+        label: "Pertinence et qualité visuelle",
+        short: "Pertinence",
+        hint: "Réponse au défi, lisibilité, hiérarchie visuelle et clarté du message."
+      },
+      {
+        key: "donnees",
+        label: "Données et traitements",
+        short: "Données",
+        hint: "Exactitude, pertinence des données, qualité des sources et des traitements."
+      },
+      {
+        key: "documentation",
+        label: "Documentation",
+        short: "Doc.",
+        hint: "Sources citées, accès aux livrables, clarté et partage du code."
+      },
+      {
+        key: "perennite",
+        label: "Pérennité et réutilisabilité",
+        short: "Pérennité",
+        hint: "Mise à jour possible, extension à d’autres contextes et frugalité."
+      },
+      {
+        key: "accessibilite",
+        label: "Accessibilité du service proposé",
+        short: "Accessibilité",
+        hint: "Ergonomie, adaptation aux écrans, contrastes et accessibilité technique."
+      }
+    ];
+    const JURY_STORAGE_KEY = "hackaviz-jury-2026-v1";
+    const JURY_MODE_KEY = "hackaviz-jury-mode";
+    const JURY_SESSION_KEY = "hackaviz-jury-team";
+
+    function loadJuryData() {
+      try {
+        const raw = localStorage.getItem(JURY_STORAGE_KEY);
+        const parsed = raw ? JSON.parse(raw) : {};
+        return parsed && typeof parsed === "object" ? parsed : {};
+      } catch (err) {
+        return {};
+      }
+    }
+
+    let juryData = loadJuryData();
+    let juryMode = false;
+    let jurySaveTimer = null;
+    try {
+      juryMode = localStorage.getItem(JURY_MODE_KEY) === "1";
+    } catch (err) {
+      juryMode = false;
+    }
+
     let activeDefi = "all";
     let searchQuery = "";
     let selectedTeam = null;
+    try {
+      const savedTeam = Number(sessionStorage.getItem(JURY_SESSION_KEY));
+      if (savedTeam && PROJECTS.some(p => p.teamNum === savedTeam)) selectedTeam = savedTeam;
+    } catch (err) {
+      selectedTeam = null;
+    }
+    if (juryMode && selectedTeam === null) selectedTeam = PROJECTS[0].teamNum;
     let mode = "doc"; // 'doc' | 'video' | 'viz'
     const readmeCache = new Map();
 
     function showHome() {
       selectedTeam = null;
+      try {
+        sessionStorage.removeItem(JURY_SESSION_KEY);
+      } catch (err) {}
       toggleMobileList(false);
       updateMobileLabel();
       renderList();
       renderStage();
+      renderJuryPanel();
     }
 
     function filterAndShowFirst(defi) {
@@ -1106,10 +1673,16 @@
       activeDefi = String(defi);
       const items = filteredProjects();
       selectedTeam = items.length ? items[0].teamNum : null;
+      if (selectedTeam !== null) {
+        try {
+          sessionStorage.setItem(JURY_SESSION_KEY, String(selectedTeam));
+        } catch (err) {}
+      }
       toggleMobileList(false);
       updateMobileLabel();
       renderList();
       renderStage();
+      renderJuryPanel();
     }
 
     const listEl = document.getElementById("projectList");
@@ -1125,6 +1698,456 @@
     function localFileUrl(folder, relPath) {
       const full = LOCAL_RESULTS + folder + "/" + relPath;
       return full.split("/").map(encodeURIComponent).join("/");
+    }
+
+    function escapeHtml(value) {
+      return String(value == null ? "" : value).replace(/[&<>"']/g, ch => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[ch]));
+    }
+
+    function ensureJuryEntry(teamNum) {
+      if (!juryData[teamNum] || typeof juryData[teamNum] !== "object") {
+        juryData[teamNum] = { scores: {}, comments: {}, global: "", flag: false, updatedAt: null };
+      }
+      const entry = juryData[teamNum];
+      if (!entry.scores || typeof entry.scores !== "object") entry.scores = {};
+      if (!entry.comments || typeof entry.comments !== "object") entry.comments = {};
+      if (typeof entry.global !== "string") entry.global = "";
+      if (typeof entry.flag !== "boolean") entry.flag = false;
+      return entry;
+    }
+
+    function juryScoreCount(entry) {
+      if (!entry || !entry.scores) return 0;
+      return JURY_CRITERIA.reduce((count, criterion) => {
+        return count + (typeof entry.scores[criterion.key] === "number" ? 1 : 0);
+      }, 0);
+    }
+
+    function juryTotal(entry) {
+      if (!entry || !entry.scores) return 0;
+      return JURY_CRITERIA.reduce((total, criterion) => {
+        return total + (typeof entry.scores[criterion.key] === "number" ? entry.scores[criterion.key] : 0);
+      }, 0);
+    }
+
+    function juryIsComplete(entry) {
+      return juryScoreCount(entry) === JURY_CRITERIA.length;
+    }
+
+    function juryStatusInfo(teamNum) {
+      const entry = juryData[teamNum];
+      const count = juryScoreCount(entry);
+      const flag = entry && entry.flag ? " · ⚑" : "";
+      if (count === 0) return { cls: "todo", label: entry && entry.flag ? "⚑ À revoir" : "○ À noter" };
+      if (count < JURY_CRITERIA.length) return { cls: "partial", label: `◐ ${count}/5${flag}` };
+      return { cls: "done", label: `● ${juryTotal(entry)}/20${flag}` };
+    }
+
+    function setJurySaveStatus(message, dirty) {
+      const el = document.getElementById("jurySaveStatus");
+      if (!el) return;
+      el.textContent = message;
+      el.classList.toggle("dirty", !!dirty);
+    }
+
+    function scheduleJurySave() {
+      setJurySaveStatus("Enregistrement…", true);
+      window.clearTimeout(jurySaveTimer);
+      jurySaveTimer = window.setTimeout(saveJuryData, 400);
+    }
+
+    function saveJuryData() {
+      window.clearTimeout(jurySaveTimer);
+      jurySaveTimer = null;
+      try {
+        localStorage.setItem(JURY_STORAGE_KEY, JSON.stringify(juryData));
+        const time = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+        setJurySaveStatus(`Enregistré à ${time}`, false);
+      } catch (err) {
+        setJurySaveStatus("Sauvegarde locale impossible", true);
+      }
+    }
+
+    function updateJuryProgress() {
+      const bar = document.getElementById("juryProgressBar");
+      const label = document.getElementById("juryProgressText");
+      if (!bar || !label) return;
+      let done = 0;
+      let partial = 0;
+      PROJECTS.forEach(p => {
+        const count = juryScoreCount(juryData[p.teamNum]);
+        if (count === JURY_CRITERIA.length) done++;
+        else if (count > 0) partial++;
+      });
+      bar.style.width = `${Math.round((done / PROJECTS.length) * 100)}%`;
+      label.textContent = `${done} / ${PROJECTS.length} notés${partial ? ` · ${partial} en cours` : ""}`;
+    }
+
+    function renderJuryPanel() {
+      if (!juryMode) return;
+      const formEl = document.getElementById("juryForm");
+      if (!formEl) return;
+      const p = PROJECTS.find(x => x.teamNum === selectedTeam);
+      const totalEl = document.getElementById("juryTotal");
+      const projectEl = document.getElementById("juryProject");
+      const metaEl = document.getElementById("juryProjectMeta");
+      const flagEl = document.getElementById("juryFlag");
+
+      updateJuryProgress();
+
+      if (!p) {
+        projectEl.textContent = "Sélectionnez un projet";
+        metaEl.textContent = "";
+        totalEl.textContent = "— / 20";
+        flagEl.style.display = "none";
+        formEl.innerHTML = `
+          <div class="jury-empty">
+            <div class="jury-empty-icon">📝</div>
+            <strong>Mode jury activé</strong>
+            <p>Sélectionnez un projet dans la liste pour saisir vos notes et commentaires.</p>
+          </div>
+        `;
+        return;
+      }
+
+      const entry = juryData[p.teamNum] || {};
+      const scores = entry.scores || {};
+      const comments = entry.comments || {};
+      const count = juryScoreCount(entry);
+      const total = juryTotal(entry);
+
+      projectEl.textContent = `Équipe ${p.teamNum} · ${p.teamName}`;
+      metaEl.textContent = p.title;
+      totalEl.textContent = count ? `${total} / 20` : "— / 20";
+      flagEl.style.display = "inline-flex";
+      flagEl.classList.toggle("active", !!entry.flag);
+      flagEl.setAttribute("aria-pressed", entry.flag ? "true" : "false");
+
+      formEl.innerHTML = JURY_CRITERIA.map((criterion, index) => {
+        const value = scores[criterion.key];
+        const hasValue = typeof value === "number";
+        return `
+          <section class="jury-criterion" data-key="${criterion.key}">
+            <div class="jury-criterion-head">
+              <div class="jury-criterion-title">
+                <span class="jury-num">${index + 1}</span>
+                <h4>${criterion.label}</h4>
+              </div>
+              <span class="jury-criterion-score">${hasValue ? `${value}/4` : "—/4"}</span>
+            </div>
+            <p class="jury-hint">${criterion.hint}</p>
+            <div class="jury-score-row" role="group" aria-label="${criterion.label}">
+              ${[0, 1, 2, 3, 4].map(note => `
+                <button type="button"
+                  class="jury-score${value === note ? " selected" : ""}"
+                  onclick="setJuryScore('${criterion.key}', ${note})"
+                  aria-pressed="${value === note}"
+                  title="Cliquer à nouveau pour effacer la note">${note}</button>
+              `).join("")}
+            </div>
+            <textarea class="jury-comment" rows="2"
+              placeholder="Commentaire sur ce critère (optionnel)…"
+              aria-label="Commentaire — ${criterion.label}"
+              oninput="setJuryComment('${criterion.key}', this.value)">${escapeHtml(comments[criterion.key] || "")}</textarea>
+          </section>
+        `;
+      }).join("") + `
+        <section class="jury-global">
+          <label for="juryGlobal">Commentaire général</label>
+          <textarea id="juryGlobal" rows="4"
+            placeholder="Points forts, points faibles, éléments à confirmer…"
+            oninput="setJuryGlobal(this.value)">${escapeHtml(entry.global || "")}</textarea>
+        </section>
+      `;
+
+      if (entry.updatedAt) {
+        const time = new Date(entry.updatedAt).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+        setJurySaveStatus(`Dernière modification à ${time}`, false);
+      } else {
+        setJurySaveStatus("Aucune note enregistrée", false);
+      }
+    }
+
+    function rerenderJuryPanelKeepingScroll() {
+      const form = document.getElementById("juryForm");
+      const scrollTop = form ? form.scrollTop : 0;
+      renderJuryPanel();
+      if (form) form.scrollTop = scrollTop;
+    }
+
+    function setJuryScore(key, value) {
+      const p = PROJECTS.find(x => x.teamNum === selectedTeam);
+      if (!p) return;
+      const entry = ensureJuryEntry(p.teamNum);
+      if (entry.scores[key] === value) delete entry.scores[key];
+      else entry.scores[key] = value;
+      entry.updatedAt = new Date().toISOString();
+      rerenderJuryPanelKeepingScroll();
+      renderList();
+      scheduleJurySave();
+    }
+
+    function setJuryComment(key, value) {
+      const p = PROJECTS.find(x => x.teamNum === selectedTeam);
+      if (!p) return;
+      const entry = ensureJuryEntry(p.teamNum);
+      entry.comments[key] = value;
+      entry.updatedAt = new Date().toISOString();
+      scheduleJurySave();
+    }
+
+    function setJuryGlobal(value) {
+      const p = PROJECTS.find(x => x.teamNum === selectedTeam);
+      if (!p) return;
+      const entry = ensureJuryEntry(p.teamNum);
+      entry.global = value;
+      entry.updatedAt = new Date().toISOString();
+      scheduleJurySave();
+    }
+
+    function toggleJuryFlag() {
+      const p = PROJECTS.find(x => x.teamNum === selectedTeam);
+      if (!p) return;
+      const entry = ensureJuryEntry(p.teamNum);
+      entry.flag = !entry.flag;
+      entry.updatedAt = new Date().toISOString();
+      rerenderJuryPanelKeepingScroll();
+      renderList();
+      scheduleJurySave();
+    }
+
+    function resetCurrentJury() {
+      const p = PROJECTS.find(x => x.teamNum === selectedTeam);
+      if (!p) return;
+      if (!confirm(`Réinitialiser les notes de l’équipe ${p.teamNum} (${p.teamName}) ?`)) return;
+      delete juryData[p.teamNum];
+      saveJuryData();
+      renderJuryPanel();
+      renderList();
+    }
+
+    function syncJuryModeUI() {
+      document.body.classList.toggle("jury-mode", juryMode);
+      const btn = document.getElementById("juryToggle");
+      if (btn) {
+        btn.classList.toggle("active", juryMode);
+        btn.textContent = juryMode ? "🧑‍⚖️ Mode jury ✓" : "🧑‍⚖️ Mode jury";
+        btn.setAttribute("aria-pressed", juryMode ? "true" : "false");
+      }
+      if (!juryMode) {
+        const panel = document.getElementById("juryPanel");
+        if (panel) panel.classList.remove("open");
+      }
+    }
+
+    function toggleJuryMode() {
+      juryMode = !juryMode;
+      try {
+        localStorage.setItem(JURY_MODE_KEY, juryMode ? "1" : "0");
+      } catch (err) {}
+      if (juryMode && selectedTeam === null && PROJECTS.length) {
+        selectedTeam = PROJECTS[0].teamNum;
+        try {
+          sessionStorage.setItem(JURY_SESSION_KEY, String(selectedTeam));
+        } catch (err) {}
+        renderStage();
+      }
+      syncJuryModeUI();
+      updateMobileLabel();
+      renderList();
+      renderJuryPanel();
+    }
+
+    function toggleJuryPanel(forceState) {
+      const panel = document.getElementById("juryPanel");
+      if (!panel) return;
+      const open = typeof forceState === "boolean"
+        ? forceState
+        : !panel.classList.contains("open");
+      panel.classList.toggle("open", open);
+    }
+
+    function juryNavigate(delta) {
+      const items = filteredProjects();
+      if (!items.length) return;
+      let index = items.findIndex(p => p.teamNum === selectedTeam);
+      if (index === -1) index = 0;
+      const next = items[index + delta];
+      if (next) selectProject(next.teamNum);
+    }
+
+    function juryNextUnrated() {
+      const items = filteredProjects();
+      if (!items.length) return;
+      const start = Math.max(0, items.findIndex(p => p.teamNum === selectedTeam));
+      const ordered = [...items.slice(start + 1), ...items.slice(0, start + 1)];
+      const next = ordered.find(p => !juryIsComplete(juryData[p.teamNum]));
+      if (next) selectProject(next.teamNum);
+      else alert("Tous les projets affichés sont notés.");
+    }
+
+    function downloadFile(filename, content, mimeType) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function juryDateStamp() {
+      return new Date().toISOString().slice(0, 10);
+    }
+
+    function exportJuryJSON() {
+      const payload = {
+        version: 1,
+        exportedAt: new Date().toISOString(),
+        projects: juryData
+      };
+      downloadFile(
+        `notes-jury-hackaviz-2026-${juryDateStamp()}.json`,
+        JSON.stringify(payload, null, 2),
+        "application/json"
+      );
+    }
+
+    function csvCell(value) {
+      const str = value == null ? "" : String(value);
+      return `"${str.replace(/"/g, '""')}"`;
+    }
+
+    function exportJuryCSV() {
+      const header = [
+        "Équipe",
+        "Projet",
+        ...JURY_CRITERIA.map(c => c.label),
+        "Total /20",
+        ...JURY_CRITERIA.map(c => `Commentaire — ${c.label}`),
+        "Commentaire général",
+        "À revoir",
+        "Dernière modification"
+      ];
+      const rows = [header];
+      PROJECTS.forEach(p => {
+        const entry = juryData[p.teamNum] || {};
+        const scores = entry.scores || {};
+        const comments = entry.comments || {};
+        rows.push([
+          p.teamNum,
+          p.title,
+          ...JURY_CRITERIA.map(c => typeof scores[c.key] === "number" ? scores[c.key] : ""),
+          juryIsComplete(entry) ? juryTotal(entry) : "",
+          ...JURY_CRITERIA.map(c => comments[c.key] || ""),
+          entry.global || "",
+          entry.flag ? "oui" : "non",
+          entry.updatedAt ? new Date(entry.updatedAt).toLocaleString("fr-FR") : ""
+        ]);
+      });
+      const csv = "\uFEFF" + rows.map(row => row.map(csvCell).join(";")).join("\r\n");
+      downloadFile(
+        `notes-jury-hackaviz-2026-${juryDateStamp()}.csv`,
+        csv,
+        "text/csv;charset=utf-8"
+      );
+    }
+
+    function triggerJuryImport() {
+      const input = document.getElementById("juryImportInput");
+      if (input) input.click();
+    }
+
+    function importJuryFile(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const parsed = JSON.parse(String(reader.result));
+          const imported = parsed && parsed.projects ? parsed.projects : parsed;
+          if (!imported || typeof imported !== "object" || Array.isArray(imported)) {
+            throw new Error("invalid");
+          }
+          if (!confirm("Remplacer les notes locales par les notes de ce fichier ?")) return;
+          juryData = imported;
+          saveJuryData();
+          renderList();
+          renderJuryPanel();
+        } catch (err) {
+          alert("Fichier JSON invalide ou illisible.");
+        }
+      };
+      reader.readAsText(file);
+      event.target.value = "";
+    }
+
+    function renderJurySummary() {
+      const body = document.getElementById("jurySummaryBody");
+      if (!body) return;
+      let done = 0;
+      const rows = PROJECTS.map(p => {
+        const entry = juryData[p.teamNum] || {};
+        const scores = entry.scores || {};
+        const complete = juryIsComplete(entry);
+        if (complete) done++;
+        return `
+          <tr>
+            <td class="num">${p.teamNum}</td>
+            <td>${escapeHtml(p.teamName)}<br><span class="jury-summary-sub">${escapeHtml(p.title)}</span></td>
+            ${JURY_CRITERIA.map(c => `<td class="num">${typeof scores[c.key] === "number" ? scores[c.key] : "—"}</td>`).join("")}
+            <td class="num"><strong>${complete ? juryTotal(entry) : "—"}</strong></td>
+            <td class="num">${entry.flag ? "⚑" : ""}</td>
+          </tr>
+        `;
+      }).join("");
+      body.innerHTML = `
+        <p class="jury-summary-note">
+          ${done} projet${done > 1 ? "s" : ""} noté${done > 1 ? "s" : ""} sur ${PROJECTS.length}.
+          Les notes incomplètes ne sont pas comptées dans le total.
+        </p>
+        <div style="overflow:auto;">
+          <table class="jury-summary-table">
+            <thead>
+              <tr>
+                <th>Éq.</th>
+                <th>Projet</th>
+                ${JURY_CRITERIA.map(c => `<th>${c.short}</th>`).join("")}
+                <th>Total</th>
+                <th>⚑</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+        <div class="btn-row" style="justify-content:flex-start; margin-top:16px;">
+          <button class="idfm-btn-primary" onclick="exportJuryCSV()">Exporter en CSV</button>
+          <button class="idfm-btn-outline" style="cursor:pointer;" onclick="exportJuryJSON()">Exporter en JSON</button>
+        </div>
+      `;
+    }
+
+    function openJurySummary() {
+      renderJurySummary();
+      const modal = document.getElementById("jurySummary");
+      if (!modal) return;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeJurySummary() {
+      const modal = document.getElementById("jurySummary");
+      if (!modal) return;
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
     }
 
     function renderDownloadPanel(p) {
@@ -1176,6 +2199,7 @@
       }
       listEl.innerHTML = items.map(p => {
         const vizLabel = p.vizType === "backend" ? "⚙️ Local / Backend" : p.vizType === "local_html" ? "📄 HTML local" : "🌐 En ligne";
+        const juryStatus = juryStatusInfo(p.teamNum);
         return `
           <div class="card ${p.teamNum === selectedTeam ? "active" : ""}" onclick="selectProject(${p.teamNum})">
             <div class="card-body">
@@ -1188,6 +2212,7 @@
                 <span class="mini-chip">${vizLabel}</span>
                 ${p.videoPath ? `<span class="mini-chip video">🎬 Vidéo</span>` : ""}
                 ${p.downloadPath ? `<span class="mini-chip download">📥 .pbix</span>` : ""}
+                ${juryMode ? `<span class="jury-status ${juryStatus.cls}">${juryStatus.label}</span>` : ""}
               </div>
             </div>
             <svg class="card-chevron" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 26 26" aria-hidden="true">
@@ -1424,10 +2449,14 @@
 
     function selectProject(num) {
       selectedTeam = num;
+      try {
+        sessionStorage.setItem(JURY_SESSION_KEY, String(num));
+      } catch (err) {}
       toggleMobileList(false);
       updateMobileLabel();
       renderList();
       renderStage();
+      renderJuryPanel();
     }
 
     function setMode(nextMode) {
@@ -1443,10 +2472,14 @@
         const items = filteredProjects();
         if (items.length && !items.some(x => x.teamNum === selectedTeam)) {
           selectedTeam = items[0].teamNum;
+          try {
+            sessionStorage.setItem(JURY_SESSION_KEY, String(selectedTeam));
+          } catch (err) {}
         }
         updateMobileLabel();
         renderList();
         renderStage();
+        renderJuryPanel();
       });
     });
 
@@ -1456,8 +2489,33 @@
       renderList();
     });
 
+    window.addEventListener("beforeunload", () => {
+      if (jurySaveTimer) saveJuryData();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeJurySummary();
+        toggleJuryPanel(false);
+      }
+      if (!juryMode) return;
+      if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
+        event.preventDefault();
+        juryNavigate(1);
+      }
+    });
+
+    const jurySummaryEl = document.getElementById("jurySummary");
+    if (jurySummaryEl) {
+      jurySummaryEl.addEventListener("click", event => {
+        if (event.target === jurySummaryEl) closeJurySummary();
+      });
+    }
+
+    syncJuryModeUI();
     renderList();
     renderStage();
+    renderJuryPanel();
   </script>
 </body>
 </html>
