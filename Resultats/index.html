@@ -64,6 +64,15 @@
       display: flex;
       align-items: center;
       gap: 16px;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    .brand:hover h1 { color: var(--accent); }
+    .brand:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
     }
     .brand img {
       height: 30px;
@@ -1300,14 +1309,13 @@
 <body>
   <header>
     <div class="header-top">
-      <div class="brand">
+      <a class="brand" href="#" onclick="showHome(); return false;" title="Retour à l'accueil">
         <img src="https://www.iledefrance-mobilites.fr/idfm-logo.svg" alt="Île-de-France Mobilités" onerror="this.style.display='none'" />
         <span class="brand-sep"></span>
         <h1>Hackathon Mobilités 2026 — Explorateur des résultats</h1>
         <span class="badge-count" id="countBadge">15 projets</span>
-      </div>
+      </a>
       <div class="header-actions">
-        <button class="idfm-btn-outline" id="juryToggle" style="cursor:pointer;" onclick="toggleJuryMode()" aria-pressed="false">🧑‍⚖️ Mode jury</button>
         <button class="idfm-btn-outline jury-mobile-btn" id="juryMobileBtn" onclick="toggleJuryPanel(true)">📝 Notes</button>
         <button class="idfm-btn-outline" style="cursor:pointer;" onclick="showHome()">🏠 Accueil</button>
         <a class="idfm-btn-outline" href="https://github.com/hackathons-mobilites/hackaviz_2026" target="_blank" rel="noopener">Dépôt GitHub ↗</a>
@@ -1367,6 +1375,7 @@
               <button onclick="exportJuryCSV()">📄 Exporter en CSV</button>
               <button onclick="triggerJuryImport()">📥 Importer un JSON</button>
               <button onclick="resetCurrentJury()">🗑 Réinitialiser ce projet</button>
+              <button onclick="exitJuryMode()">🚪 Quitter le mode jury</button>
             </div>
           </details>
         </div>
@@ -1619,8 +1628,8 @@
       }
     ];
     const JURY_STORAGE_KEY = "hackaviz-jury-2026-v1";
-    const JURY_MODE_KEY = "hackaviz-jury-mode";
     const JURY_SESSION_KEY = "hackaviz-jury-team";
+    const JURY_PARAM = "jury";
 
     function loadJuryData() {
       try {
@@ -1632,14 +1641,18 @@
       }
     }
 
-    let juryData = loadJuryData();
-    let juryMode = false;
-    let jurySaveTimer = null;
-    try {
-      juryMode = localStorage.getItem(JURY_MODE_KEY) === "1";
-    } catch (err) {
-      juryMode = false;
+    function juryModeFromUrl() {
+      try {
+        const value = (new URLSearchParams(window.location.search).get(JURY_PARAM) || "").toLowerCase();
+        return value === "true" || value === "1" || value === "oui";
+      } catch (err) {
+        return false;
+      }
     }
+
+    let juryData = loadJuryData();
+    let juryMode = juryModeFromUrl();
+    let jurySaveTimer = null;
 
     let activeDefi = "all";
     let searchQuery = "";
@@ -1934,31 +1947,19 @@
 
     function syncJuryModeUI() {
       document.body.classList.toggle("jury-mode", juryMode);
-      const btn = document.getElementById("juryToggle");
-      if (btn) {
-        btn.classList.toggle("active", juryMode);
-        btn.textContent = juryMode ? "🧑‍⚖️ Mode jury ✓" : "🧑‍⚖️ Mode jury";
-        btn.setAttribute("aria-pressed", juryMode ? "true" : "false");
-      }
       if (!juryMode) {
         const panel = document.getElementById("juryPanel");
         if (panel) panel.classList.remove("open");
       }
     }
 
-    function toggleJuryMode() {
-      juryMode = !juryMode;
+    function exitJuryMode() {
+      juryMode = false;
       try {
-        localStorage.setItem(JURY_MODE_KEY, juryMode ? "1" : "0");
+        const url = new URL(window.location.href);
+        url.searchParams.delete(JURY_PARAM);
+        history.replaceState(null, "", url.pathname + url.search + url.hash);
       } catch (err) {}
-      const visibleItems = filteredProjects();
-      if (juryMode && selectedTeam === null && visibleItems.length) {
-        selectedTeam = visibleItems[0].teamNum;
-        try {
-          sessionStorage.setItem(JURY_SESSION_KEY, String(selectedTeam));
-        } catch (err) {}
-        renderStage();
-      }
       syncJuryModeUI();
       updateMobileLabel();
       renderList();
