@@ -268,6 +268,12 @@
       background: #fff7ed;
       font-weight: 600;
     }
+    .mini-chip.download {
+      color: #0b5cab;
+      border-color: #bfdbfe;
+      background: #eff6ff;
+      font-weight: 600;
+    }
 
     /* Viewer Area */
     main {
@@ -535,6 +541,80 @@
       flex: 1;
       border: 0;
       background: #ffffff;
+    }
+
+    /* Download panel (fichiers .pbix) */
+    .download-panel {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 24px;
+      background: #fff8e8;
+      border-bottom: 1px solid #f0d49b;
+    }
+    .download-icon { font-size: 1.5rem; line-height: 1.2; }
+    .download-content { flex: 1; min-width: 0; }
+    .download-content h4 {
+      margin: 0 0 4px;
+      font-size: 0.93rem;
+      color: var(--navy);
+      font-weight: 800;
+    }
+    .download-content p {
+      margin: 0 0 6px;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .download-content .download-hint { margin-bottom: 0; }
+    .download-content code {
+      background: #ffffff;
+      border: 1px solid #f0d49b;
+      border-radius: 4px;
+      padding: 0 4px;
+      font-size: 0.78rem;
+      color: var(--navy);
+    }
+    .download-content .btn-row {
+      justify-content: flex-start;
+      margin-top: 10px;
+      gap: 8px;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background 0.15s ease;
+    }
+    .download-btn:hover { background: var(--accent-hover); }
+    .iframe-wrap.has-download { height: auto; min-height: 100%; }
+    .iframe-wrap.has-download iframe { height: 70vh; flex: none; }
+    .iframe-blocked {
+      max-width: 680px;
+      margin: 36px auto;
+      padding: 32px 36px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+    }
+    .iframe-blocked .icon { font-size: 2.2rem; margin-bottom: 10px; }
+    .iframe-blocked h3 { margin: 0 0 8px; font-size: 1.1rem; color: var(--navy); font-weight: 800; }
+    .iframe-blocked p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+    .iframe-blocked code {
+      background: #f1f5f9;
+      border-radius: 4px;
+      padding: 1px 5px;
+      color: var(--navy);
+      font-size: 0.82em;
     }
 
     /* Placeholder */
@@ -982,6 +1062,13 @@
         readme: "README.md",
         vizType: "iframe",
         vizUrl: "https://app.powerbi.com/links/9r6Pwcn3SN?ctid=7dce31e1-0e64-442b-9c26-4c8cc8af1fb1&pbi_source=linkShare",
+        iframeBlocked: true,
+        idfmUrl: "https://app.powerbi.com/links/9r6Pwcn3SN?ctid=7dce31e1-0e64-442b-9c26-4c8cc8af1fb1&pbi_source=linkShare",
+        idfmLabel: "Pour les agents IDFM",
+        downloadPath: "production/Power IDFM.pbix",
+        downloadLabel: "Power IDFM.pbix",
+        downloadSize: "4,2 Mo",
+        downloadNote: "Power BI interdit l’affichage du rapport dans une iframe. Les agents IDFM peuvent ouvrir le rapport directement dans Power BI en ligne (authentification IDFM requise). Les jurés hors IDFM peuvent télécharger le fichier .pbix ci-dessous et l’ouvrir avec Power BI Desktop.",
         fallbackQuestion: "Comment analyser, gare par gare et ligne par ligne, les relations entre températures et fréquentation ?"
       },
       {
@@ -1040,6 +1127,36 @@
       return full.split("/").map(encodeURIComponent).join("/");
     }
 
+    function renderDownloadPanel(p) {
+      if (!p.downloadPath) return "";
+      const downloadUrl = localFileUrl(p.folder, p.downloadPath);
+      const fileName = p.downloadLabel || p.downloadPath.split("/").pop();
+      const size = p.downloadSize ? ` (${p.downloadSize})` : "";
+      const idfmButton = p.idfmUrl
+        ? `<a class="idfm-btn-primary" href="${p.idfmUrl}" target="_blank" rel="noopener">${p.idfmLabel || "Ouvrir dans Power BI"} ↗</a>`
+        : "";
+      return `
+        <div class="download-panel">
+          <div class="download-icon" aria-hidden="true">📥</div>
+          <div class="download-content">
+            <h4>Accéder au rapport Power BI</h4>
+            <p>${p.downloadNote || ""}</p>
+            <p class="download-hint">
+              L’ouverture d’un fichier <code>.pbix</code> nécessite
+              <strong>Microsoft Power BI Desktop</strong>, application gratuite pour Windows.
+              Le fichier s’ouvre localement, sans passer par le lien partagé.
+            </p>
+            <div class="btn-row">
+              ${idfmButton}
+              <a class="download-btn" href="${downloadUrl}" download="${fileName}">⬇️ Télécharger le fichier .pbix${size}</a>
+              <a class="ext-link" href="https://www.microsoft.com/fr-fr/power-platform/products/power-bi/desktop" target="_blank" rel="noopener">Installer Power BI Desktop ↗</a>
+              <a class="ext-link" href="${ghFolderUrl(p.folder)}" target="_blank" rel="noopener">Voir le dépôt sur GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     function filteredProjects() {
       return PROJECTS.filter(p => {
         const matchDefi = activeDefi === "all" || String(p.defi) === activeDefi;
@@ -1070,6 +1187,7 @@
               <div class="card-meta">
                 <span class="mini-chip">${vizLabel}</span>
                 ${p.videoPath ? `<span class="mini-chip video">🎬 Vidéo</span>` : ""}
+                ${p.downloadPath ? `<span class="mini-chip download">📥 .pbix</span>` : ""}
               </div>
             </div>
             <svg class="card-chevron" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 26 26" aria-hidden="true">
@@ -1229,16 +1347,32 @@
         }
       } else {
         if (p.vizType === "iframe") {
-          const openUrl = p.fallbackUrl || p.vizUrl;
-          stageEl.innerHTML = `
-            <div class="iframe-wrap">
-              <div class="iframe-notice">
-                <span>Aperçu intégré — si l'écran reste blanc, le site bloque l'iframe (X-Frame-Options ou HTTP/HTTPS).</span>
-                <a href="${openUrl}" target="_blank" rel="noopener">Ouvrir la dataviz dans un nouvel onglet ↗</a>
+          if (p.iframeBlocked) {
+            stageEl.innerHTML = `
+              ${renderDownloadPanel(p)}
+              <div class="iframe-blocked">
+                <div class="icon" aria-hidden="true">🔒</div>
+                <h3>Aperçu intégré indisponible</h3>
+                <p>
+                  Power BI bloque l’affichage de ce rapport dans une iframe (en-tête <code>X-Frame-Options</code>).
+                  Utilisez le bouton <strong>« ${p.idfmLabel || "Ouvrir dans Power BI"} »</strong> ci-dessus
+                  pour l’ouvrir directement, ou téléchargez le fichier <code>.pbix</code>.
+                </p>
               </div>
-              <iframe src="${p.vizUrl}" title="${p.title}" loading="lazy"></iframe>
-            </div>
-          `;
+            `;
+          } else {
+            const openUrl = p.fallbackUrl || p.vizUrl;
+            stageEl.innerHTML = `
+              <div class="iframe-wrap${p.downloadPath ? " has-download" : ""}">
+                ${renderDownloadPanel(p)}
+                <div class="iframe-notice">
+                  <span>Aperçu intégré — si l'écran reste blanc, le site bloque l'iframe (X-Frame-Options ou HTTP/HTTPS).</span>
+                  <a href="${openUrl}" target="_blank" rel="noopener">Ouvrir la dataviz dans un nouvel onglet ↗</a>
+                </div>
+                <iframe src="${p.vizUrl}" title="${p.title}" loading="lazy"></iframe>
+              </div>
+            `;
+          }
         } else if (p.vizType === "local_html") {
           const lUrl = localFileUrl(p.folder, p.localPath);
           stageEl.innerHTML = `
