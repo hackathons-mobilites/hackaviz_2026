@@ -1951,8 +1951,9 @@
       try {
         localStorage.setItem(JURY_MODE_KEY, juryMode ? "1" : "0");
       } catch (err) {}
-      if (juryMode && selectedTeam === null && PROJECTS.length) {
-        selectedTeam = PROJECTS[0].teamNum;
+      const visibleItems = filteredProjects();
+      if (juryMode && selectedTeam === null && visibleItems.length) {
+        selectedTeam = visibleItems[0].teamNum;
         try {
           sessionStorage.setItem(JURY_SESSION_KEY, String(selectedTeam));
         } catch (err) {}
