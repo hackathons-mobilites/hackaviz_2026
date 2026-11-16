@@ -670,6 +670,158 @@
       font-size: 0.88rem;
     }
 
+    /* Home cinema */
+    .home-cinema {
+      --home-tile-w: clamp(150px, 14vw, 300px);
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: calc(100vh - 138px);
+      overflow: hidden;
+      background: #eaf1f9;
+    }
+    .home-mosaic {
+      position: absolute;
+      inset: -6%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .home-mosaic-grid {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: grid;
+      grid-template-columns: repeat(8, var(--home-tile-w));
+      gap: 14px;
+      transform: translate(-50%, -50%) perspective(1500px) rotateX(20deg) rotateZ(-8deg) scale(1.08);
+      transform-origin: center;
+      animation: homeMosaicDrift 34s ease-in-out infinite alternate;
+    }
+    .home-tile {
+      display: block;
+      width: var(--home-tile-w);
+      aspect-ratio: 460 / 300;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 12px;
+      background-size: cover;
+      background-position: var(--pos, 50% 50%);
+      box-shadow: 0 16px 34px rgba(9, 49, 92, 0.2);
+      opacity: 0;
+      animation: homeTileIn 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) var(--delay, 0s) forwards;
+    }
+    @keyframes homeTileIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-46px) translateZ(160px) scale(0.93);
+        filter: blur(9px) saturate(0.65);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) translateZ(0) scale(1);
+        filter: blur(0) saturate(0.92) contrast(1.02);
+      }
+    }
+    @keyframes homeMosaicDrift {
+      from {
+        transform: translate(-50%, -50%) perspective(1500px) rotateX(20deg) rotateZ(-8deg) scale(1.06) translate3d(-1.2%, -1%, 0);
+      }
+      to {
+        transform: translate(-50%, -50%) perspective(1500px) rotateX(20deg) rotateZ(-8deg) scale(1.12) translate3d(1.2%, 1%, 0);
+      }
+    }
+    .home-shade {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(244, 247, 251, 0.99) 0%, rgba(244, 247, 251, 0.97) 34%, rgba(244, 247, 251, 0.9) 52%, rgba(244, 247, 251, 0.55) 68%, rgba(244, 247, 251, 0.12) 88%, rgba(244, 247, 251, 0) 100%),
+        linear-gradient(0deg, rgba(244, 247, 251, 0.96) 0%, rgba(244, 247, 251, 0) 32%);
+    }
+    .home-cinema-content {
+      position: relative;
+      z-index: 2;
+      width: min(680px, 52vw);
+      margin-left: max(28px, 6vw);
+      padding: 32px 0 52px;
+      animation: homeContentIn 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s backwards;
+    }
+    @keyframes homeContentIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: none; }
+    }
+    .home-cinema-logo {
+      display: block;
+      width: min(250px, 58%);
+      height: auto;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 10px 24px rgba(9, 49, 92, 0.16));
+    }
+    .home-kicker {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .home-cinema-content h2 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+      text-wrap: balance;
+    }
+    .home-cinema-content > p {
+      margin: 0 0 20px;
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+    .home-cinema-content .home-stats {
+      max-width: 680px;
+      margin-bottom: 18px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .home-cinema-content .stat-pill {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(8px);
+    }
+    .home-scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      z-index: 2;
+      transform: translateX(-50%);
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      animation: homeCue 2.4s ease-in-out infinite;
+    }
+    @keyframes homeCue {
+      0%, 100% { transform: translate(-50%, 0); opacity: 0.7; }
+      50% { transform: translate(-50%, 5px); opacity: 1; }
+    }
+    .home-below {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .home-mosaic-grid,
+      .home-tile,
+      .home-cinema-content,
+      .home-scroll-cue {
+        animation: none !important;
+      }
+      .home-tile { opacity: 1; }
+    }
+
     /* Home / Welcome View */
     .home-container {
       max-width: 960px;
@@ -1278,6 +1430,28 @@
         flex-shrink: 0;
         padding: 10px 12px;
       }
+      .home-cinema {
+        --home-tile-w: 140px;
+        min-height: 78vh;
+        align-items: flex-end;
+      }
+      .home-cinema-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 32px 18px 54px;
+      }
+      .home-cinema-logo {
+        width: min(250px, 70%);
+        margin-bottom: 18px;
+      }
+      .home-cinema-content .home-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+      .home-shade {
+        background:
+          linear-gradient(0deg, rgba(244, 247, 251, 0.99) 0%, rgba(244, 247, 251, 0.96) 42%, rgba(244, 247, 251, 0.55) 68%, rgba(244, 247, 251, 0.08) 100%);
+      }
+      .home-scroll-cue { display: none; }
       .home-container, .doc-container, .video-container {
         padding: 0 12px 32px 12px;
         margin: 16px auto;
@@ -1630,6 +1804,56 @@
     const JURY_STORAGE_KEY = "hackaviz-jury-2026-v1";
     const JURY_SESSION_KEY = "hackaviz-jury-team";
     const JURY_PARAM = "jury";
+
+    const HOME_MOSAIC_GROUPS = [
+      [
+        "atouvent-accueil-1", "atouvent-accueil-2", "atouvent-accueil-3",
+        "atouvent-suivi-1", "atouvent-suivi-2", "atouvent-suivi-3",
+        "atouvent-trajet-1", "atouvent-trajet-2",
+        "atouvent-alertes-1", "atouvent-alertes-2",
+        "atouvent-supervision-1", "atouvent-supervision-2",
+        "atouvent-itineraires-1", "atouvent-itineraires-2"
+      ],
+      [
+        "nuit-intro-1", "nuit-intro-2", "nuit-intro-3",
+        "nuit-poles-1", "nuit-poles-2", "nuit-poles-3",
+        "nuit-travailleurs-1", "nuit-travailleurs-2",
+        "nuit-1-1", "nuit-1-2", "nuit-3-1", "nuit-3-2"
+      ],
+      [
+        "starway-vue-1", "starway-vue-2", "starway-vue-3",
+        "starway-carte-1", "starway-carte-2",
+        "starway-decouvertes-1", "starway-decouvertes-2",
+        "starway-cover-1", "starway-cover-2"
+      ],
+      [
+        "tamoviz-couverture-1", "tamoviz-couverture-2", "tamoviz-couverture-3",
+        "tamoviz-agir-1", "tamoviz-agir-2",
+        "tamoviz-scene-1", "tamoviz-scene-2"
+      ],
+      ["canopee-ombre-1", "canopee-ombre-2", "canopee-ombre-3"],
+      ["rhizome-reseau-1", "rhizome-reseau-2", "rhizome-reseau-3"]
+    ];
+
+    function renderHomeMosaicTiles() {
+      const groups = HOME_MOSAIC_GROUPS.map(group => group.slice());
+      const files = [];
+      let index = 0;
+      while (files.length < 48 && groups.some(group => group.length)) {
+        const group = groups[index % groups.length];
+        if (group.length) files.push(group.shift());
+        index++;
+      }
+      const positions = ["50% 45%", "32% 55%", "68% 42%"];
+      return files.map((file, i) => {
+        const col = i % 8;
+        const row = Math.floor(i / 8);
+        const delay = (row * 0.055 + col * 0.028).toFixed(3);
+        const pos = positions[i % positions.length];
+        const url = localFileUrl("assets/mosaic", `${file}.webp`);
+        return `<span class="home-tile" style="--delay:${delay}s;--pos:${pos};background-image:url('${url}')"></span>`;
+      }).join("");
+    }
 
     function loadJuryData() {
       try {
@@ -2268,9 +2492,14 @@
       if (selectedTeam === null) {
         viewerBar.style.display = "none";
         stageEl.innerHTML = `
-          <div class="home-container">
-            <div class="home-hero">
-              <img class="home-logo" src="assets/logo-hackaviz-2026.svg" alt="Hackathon Mobilités 2026" />
+          <div class="home-cinema">
+            <div class="home-mosaic" aria-hidden="true">
+              <div class="home-mosaic-grid">${renderHomeMosaicTiles()}</div>
+            </div>
+            <div class="home-shade" aria-hidden="true"></div>
+            <div class="home-cinema-content">
+              <img class="home-cinema-logo" src="assets/logo-hackaviz-2026.svg" alt="Hackaviz 2026 — Hackathon Mobilités" />
+              <p class="home-kicker">Édition 2026 · Spéciale Dataviz</p>
               <h2>Exploration des résultats du Hackathon Mobilités 2026</h2>
               <p>
                 Bienvenue sur l'espace d'exploration des projets réalisés du 2 au 13 novembre 2026 dans le cadre du
@@ -2289,6 +2518,9 @@
                 <button class="idfm-btn-outline" style="cursor:pointer;" onclick="filterAndShowFirst('4')">Explorer le Défi 4 →</button>
               </div>
             </div>
+            <div class="home-scroll-cue" aria-hidden="true">Les projets ↓</div>
+          </div>
+          <div class="home-container home-below">
             <div class="home-video-card">
               <h3>🎬 Vidéo d'introduction — Consolidation des projets</h3>
               <video controls preload="metadata" src="assets/intro-hackaviz-2026.mp4">
