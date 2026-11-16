@@ -1,5 +1,6 @@
-# ReadMe - Canicules et incidents - Sarah's Story
+# Quand le thermomètre déraille
 
+**Équipe :** The notorious F.A.R.I.D
 
 ## Présentation du projet
 
