@@ -251,6 +251,35 @@
       background: var(--accent);
       color: #ffffff;
     }
+    .reopen-projects {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 40;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 12px 10px 10px;
+      border: 1px solid var(--accent);
+      border-left: 0;
+      border-radius: 0 10px 10px 0;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(9, 49, 92, 0.16);
+      white-space: nowrap;
+    }
+    .reopen-projects:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+    body.list-collapsed:not(.mosaic-view) .reopen-projects {
+      display: inline-flex;
+    }
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -1595,6 +1624,7 @@
 
     @media (max-width: 960px) {
       .list-toggle { display: none; }
+      .reopen-projects { display: none !important; }
     }
 
     @media (min-width: 961px) {
@@ -1685,6 +1715,8 @@
       <input class="search" id="searchInput" type="search" placeholder="Rechercher équipe, outil..." />
     </div>
   </header>
+
+  <button class="reopen-projects" id="reopenProjects" onclick="toggleProjectList()" title="Réafficher la liste des projets" aria-label="Réafficher la liste des projets">☰ Projets</button>
 
   <div class="layout">
     <button class="mobile-drawer-btn" id="mobileDrawerBtn" onclick="toggleMobileList()">
@@ -1842,8 +1874,10 @@
         readme: "README.md",
         videoPath: "production/demo_hackathon_setec.mp4",
         videoNote: "Vidéo de démonstration du prototype Noctambulle.",
-        vizType: "iframe",
+        vizType: "external",
+        vizLabel: "🌐 Accès externe",
         vizUrl: "https://user-alihmaou-339753-user.user.lab.sspcloud.fr/",
+        externalNote: "L'application Noctambulle (prototype FastAPI + React) s'ouvre dans un nouvel onglet.",
         fallbackQuestion: "Comment les temps de parcours, l'accessibilité et le contexte des trajets de nuit révèlent-ils les inégalités de mobilité ?"
       },
       {
