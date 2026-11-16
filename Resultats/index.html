@@ -896,7 +896,6 @@
       font-size: 1rem;
       line-height: 1;
     }
-    .landing-hint-mobile { display: none; }
     .landing-content {
       position: relative;
       z-index: 2;
@@ -976,7 +975,7 @@
       to { opacity: 1; transform: none; }
     }
     @media (hover: none) {
-      .landing-caption { opacity: 1; transform: none; }
+      .landing-caption { display: none; }
     }
     @media (prefers-reduced-motion: reduce) {
       .landing-loop,
@@ -1668,13 +1667,9 @@
         background:
           linear-gradient(0deg, rgba(244, 247, 251, 0.99) 0%, rgba(244, 247, 251, 0.98) 50%, rgba(244, 247, 251, 0.92) 70%, rgba(244, 247, 251, 0.45) 85%, rgba(244, 247, 251, 0.08) 100%);
       }
-      .landing-hint {
-        top: 18px;
-        right: 18px;
-        bottom: auto;
-      }
-      .landing-hint-desktop { display: none; }
-      .landing-hint-mobile { display: inline; }
+      .landing-hint { display: none; }
+      .landing-pan { pointer-events: none; }
+      .landing-caption { display: none; }
     }
 
     body.mosaic-view .layout {
@@ -2244,8 +2239,7 @@
           <div class="landing-shade" aria-hidden="true"></div>
           <div class="landing-hint" aria-hidden="true">
             <span class="landing-hint-icon">👆</span>
-            <span class="landing-hint-desktop">Glissez pour explorer</span>
-            <span class="landing-hint-mobile">Touchez une tuile</span>
+            <span>Glissez pour explorer</span>
           </div>
         </div>
       `;
