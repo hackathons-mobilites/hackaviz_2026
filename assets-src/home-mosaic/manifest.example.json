@@ -1,0 +1,32 @@
+[
+  {
+    "teamNum": 4,
+    "slug": "equipe-04-atouvent",
+    "src": "01-accueil.png",
+    "alt": "Atouvent — écran d’accueil",
+    "focus": "center"
+  },
+  {
+    "teamNum": 17,
+    "slug": "equipe-17-thermoviz",
+    "src": "01-rapport.png",
+    "alt": "Thermo Réseau — vue d’ensemble",
+    "focus": "center"
+  },
+  {
+    "teamNum": 17,
+    "slug": "equipe-17-thermoviz",
+    "src": "02-detail-gares.png",
+    "alt": "Thermo Réseau — analyse par gare",
+    "focus": "left"
+  },
+  {
+    "teamNum": 10,
+    "slug": "equipe-10-tamoviz",
+    "src": "demo.mp4",
+    "type": "video",
+    "poster": "equipe-10-tamoviz/tamoviz-couverture-1.webp",
+    "alt": "Tamoviz — démonstration animée",
+    "focus": "center"
+  }
+]

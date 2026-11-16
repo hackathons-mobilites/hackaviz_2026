@@ -1,0 +1,298 @@
+[
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-accueil-1.webp",
+    "alt": "Atouvent — capture 1",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/nuit-intro-1.webp",
+    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 2",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/starway-vue-1.webp",
+    "alt": "Starway — Les constellations de l’emploi — capture 3",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 10,
+    "file": "equipe-10-tamoviz/tamoviz-couverture-1.webp",
+    "alt": "Tamoviz — Une journée sous canicule — capture 4",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 10,
+    "file": "equipe-10-tamoviz/tamoviz-demo.gif",
+    "type": "gif",
+    "alt": "Tamoviz — démonstration animée",
+    "focus": "center",
+    "poster": "equipe-10-tamoviz/tamoviz-couverture-1.webp"
+  },
+  {
+    "teamNum": 15,
+    "file": "equipe-15-canopee/canopee-ombre-1.webp",
+    "alt": "Canopée — Mobilités douces, ville plus chaude — capture 5",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 16,
+    "file": "equipe-16-rhizome/rhizome-reseau-1.webp",
+    "alt": "Rhizome — EcloWork — capture 6",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-accueil-2.webp",
+    "alt": "Atouvent — capture 7",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/nuit-intro-2.webp",
+    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 8",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/starway-vue-2.webp",
+    "alt": "Starway — Les constellations de l’emploi — capture 9",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 10,
+    "file": "equipe-10-tamoviz/tamoviz-couverture-2.webp",
+    "alt": "Tamoviz — Une journée sous canicule — capture 10",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 15,
+    "file": "equipe-15-canopee/canopee-ombre-2.webp",
+    "alt": "Canopée — Mobilités douces, ville plus chaude — capture 11",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 16,
+    "file": "equipe-16-rhizome/rhizome-reseau-2.webp",
+    "alt": "Rhizome — EcloWork — capture 12",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-accueil-3.webp",
+    "alt": "Atouvent — capture 13",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/nuit-intro-3.webp",
+    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 14",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/starway-vue-3.webp",
+    "alt": "Starway — Les constellations de l’emploi — capture 15",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 10,
+    "file": "equipe-10-tamoviz/tamoviz-couverture-3.webp",
+    "alt": "Tamoviz — Une journée sous canicule — capture 16",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 15,
+    "file": "equipe-15-canopee/canopee-ombre-3.webp",
+    "alt": "Canopée — Mobilités douces, ville plus chaude — capture 17",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 16,
+    "file": "equipe-16-rhizome/rhizome-reseau-3.webp",
+    "alt": "Rhizome — EcloWork — capture 18",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-suivi-1.webp",
+    "alt": "Atouvent — capture 19",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/nuit-poles-1.webp",
+    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 20",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/starway-carte-1.webp",
+    "alt": "Starway — Les constellations de l’emploi — capture 21",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 10,
+    "file": "equipe-10-tamoviz/tamoviz-agir-1.webp",
+    "alt": "Tamoviz — Une journée sous canicule — capture 22",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-suivi-2.webp",
+    "alt": "Atouvent — capture 23",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/nuit-poles-2.webp",
+    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 24",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/starway-carte-2.webp",
+    "alt": "Starway — Les constellations de l’emploi — capture 25",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 10,
+    "file": "equipe-10-tamoviz/tamoviz-agir-2.webp",
+    "alt": "Tamoviz — Une journée sous canicule — capture 26",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-suivi-3.webp",
+    "alt": "Atouvent — capture 27",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/nuit-poles-3.webp",
+    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 28",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/starway-decouvertes-1.webp",
+    "alt": "Starway — Les constellations de l’emploi — capture 29",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 10,
+    "file": "equipe-10-tamoviz/tamoviz-scene-1.webp",
+    "alt": "Tamoviz — Une journée sous canicule — capture 30",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-trajet-1.webp",
+    "alt": "Atouvent — capture 31",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/nuit-travailleurs-1.webp",
+    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 32",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/starway-decouvertes-2.webp",
+    "alt": "Starway — Les constellations de l’emploi — capture 33",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 10,
+    "file": "equipe-10-tamoviz/tamoviz-scene-2.webp",
+    "alt": "Tamoviz — Une journée sous canicule — capture 34",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-trajet-2.webp",
+    "alt": "Atouvent — capture 35",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/nuit-travailleurs-2.webp",
+    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 36",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/starway-cover-1.webp",
+    "alt": "Starway — Les constellations de l’emploi — capture 37",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-alertes-1.webp",
+    "alt": "Atouvent — capture 38",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/nuit-1-1.webp",
+    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 39",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/starway-cover-2.webp",
+    "alt": "Starway — Les constellations de l’emploi — capture 40",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-alertes-2.webp",
+    "alt": "Atouvent — capture 41",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/nuit-1-2.webp",
+    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 42",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-supervision-1.webp",
+    "alt": "Atouvent — capture 43",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/nuit-3-1.webp",
+    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 44",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-supervision-2.webp",
+    "alt": "Atouvent — capture 45",
+    "focus": "68% 42%"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/nuit-3-2.webp",
+    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 46",
+    "focus": "50% 45%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-itineraires-1.webp",
+    "alt": "Atouvent — capture 47",
+    "focus": "32% 55%"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/atouvent-itineraires-2.webp",
+    "alt": "Atouvent — capture 48",
+    "focus": "68% 42%"
+  }
+]

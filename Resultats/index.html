@@ -57,6 +57,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 16px;
       border-bottom: 1px solid var(--border);
     }
@@ -99,6 +100,20 @@
       border-radius: 999px;
       color: var(--navy);
     }
+    .preview-badge {
+      padding: 3px 9px;
+      border: 1px solid #fdba74;
+      border-radius: 999px;
+      background: #fff7ed;
+      color: #ac5700;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .preview-badge[hidden] { display: none; }
+    body:not(.preview) .list-toggle,
+    body:not(.preview) .mosaic-nav { display: none; }
     .header-actions {
       display: flex;
       align-items: center;
@@ -184,6 +199,7 @@
       display: grid;
       grid-template-columns: 380px 1fr;
       min-height: 0;
+      transition: grid-template-columns 0.2s ease;
     }
 
     /* Sidebar (IDFM button-card style) */
@@ -195,6 +211,45 @@
       flex-direction: column;
       gap: 10px;
       background: var(--bg);
+    }
+    .project-list-head {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: -16px -16px 2px;
+      padding: 12px 16px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .project-list-head > span {
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .project-list-collapse {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 11px;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .project-list-collapse:hover {
+      background: var(--accent);
+      color: #ffffff;
     }
     .card {
       background: var(--surface);
@@ -670,46 +725,203 @@
       font-size: 0.88rem;
     }
 
-    /* Home cinema */
-    .home-cinema {
-      --home-tile-w: clamp(150px, 14vw, 300px);
+    /* Landing mosaïque */
+    .landing {
+      --landing-tile-w: clamp(160px, 14vw, 280px);
+      --landing-gap: 14px;
       position: relative;
       display: flex;
       align-items: center;
-      min-height: calc(100vh - 138px);
+      min-height: calc(100vh - 60px);
       overflow: hidden;
       background: #eaf1f9;
     }
-    .home-mosaic {
+    .landing-mosaic {
       position: absolute;
-      inset: -6%;
+      inset: -8%;
+      z-index: 0;
       overflow: hidden;
-      pointer-events: none;
     }
-    .home-mosaic-grid {
+    .landing-stage {
       position: absolute;
       left: 50%;
       top: 50%;
-      display: grid;
-      grid-template-columns: repeat(8, var(--home-tile-w));
-      gap: 14px;
-      transform: translate(-50%, -50%) perspective(1500px) rotateX(20deg) rotateZ(-8deg) scale(1.08);
+      width: 0;
+      height: 0;
+      transform: perspective(1500px) rotateX(18deg) rotateZ(-7deg) scale(1.08);
       transform-origin: center;
-      animation: homeMosaicDrift 34s ease-in-out infinite alternate;
     }
-    .home-tile {
+    .landing-loop {
+      display: flex;
+      width: max-content;
+      transform: translate(-25%, -50%);
+      animation: landingLoop 60s linear infinite;
+      will-change: transform;
+    }
+    .landing-mosaic-grid {
+      display: grid;
+      flex: none;
+      grid-template-columns: repeat(7, var(--landing-tile-w));
+      gap: var(--landing-gap);
+      padding-right: var(--landing-gap);
+    }
+    .landing-pan:hover .landing-loop,
+    .landing-pan:focus-within .landing-loop,
+    .landing-pan.landing-dragging .landing-loop {
+      animation-play-state: paused;
+    }
+    .landing-tile {
+      position: relative;
       display: block;
-      width: var(--home-tile-w);
-      aspect-ratio: 460 / 300;
+      width: var(--landing-tile-w);
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.55);
       border-radius: 12px;
-      background-size: cover;
-      background-position: var(--pos, 50% 50%);
-      box-shadow: 0 16px 34px rgba(9, 49, 92, 0.2);
+      background: #dbeafe;
+      color: #ffffff;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 16px 34px rgba(9, 49, 92, 0.22);
       opacity: 0;
-      animation: homeTileIn 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) var(--delay, 0s) forwards;
+      animation: landingTileIn 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) var(--delay, 0s) forwards;
     }
-    @keyframes homeTileIn {
+    .landing-tile:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      z-index: 3;
+    }
+    .landing-media {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .landing-tile:hover .landing-media,
+    .landing-tile:focus-visible .landing-media {
+      transform: scale(1.05);
+    }
+    .landing-caption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 12px;
+      background: linear-gradient(transparent, rgba(9, 49, 92, 0.94));
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      pointer-events: none;
+    }
+    .landing-tile:hover .landing-caption,
+    .landing-tile:focus-visible .landing-caption {
+      opacity: 1;
+      transform: none;
+    }
+    .landing-team {
+      display: block;
+      color: #bfdbfe;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .landing-title {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .landing-shade {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(244, 247, 251, 0.995) 0%, rgba(244, 247, 251, 0.98) 24%, rgba(244, 247, 251, 0.94) 38%, rgba(244, 247, 251, 0.7) 52%, rgba(244, 247, 251, 0.3) 66%, rgba(244, 247, 251, 0.05) 82%, rgba(244, 247, 251, 0) 100%),
+        linear-gradient(0deg, rgba(244, 247, 251, 0.96) 0%, rgba(244, 247, 251, 0) 32%);
+    }
+    .landing-hint {
+      position: absolute;
+      right: clamp(18px, 4vw, 48px);
+      bottom: clamp(18px, 4vh, 40px);
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid rgba(9, 49, 92, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.74);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      color: var(--navy);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      box-shadow: 0 8px 20px rgba(9, 49, 92, 0.12);
+      pointer-events: none;
+    }
+    .landing-hint-icon {
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .landing-content {
+      position: relative;
+      z-index: 2;
+      width: min(470px, 38vw);
+      margin-left: max(28px, 5vw);
+      padding: 28px 0 48px;
+      animation: landingContentIn 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s backwards;
+    }
+    .landing-logo {
+      display: block;
+      width: min(230px, 58%);
+      height: auto;
+      margin-bottom: 18px;
+      filter: drop-shadow(0 10px 24px rgba(9, 49, 92, 0.16));
+    }
+    .landing-kicker {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .landing-content h2 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: clamp(1.45rem, 2.1vw, 1.9rem);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+      text-wrap: balance;
+    }
+    .landing-content > p {
+      margin: 0 0 18px;
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .landing-detail-btn {
+      margin-top: 2px;
+    }
+    .landing-pan {
+      position: absolute;
+      inset: 0;
+      transform: translate3d(var(--pan-x, 0px), var(--pan-y, 0px), 0);
+      will-change: transform;
+      cursor: grab;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    .landing-pan.landing-dragging,
+    .landing-pan.landing-dragging .landing-tile { cursor: grabbing; }
+    @keyframes landingTileIn {
       0% {
         opacity: 0;
         transform: translateY(-46px) translateZ(160px) scale(0.93);
@@ -721,106 +933,31 @@
         filter: blur(0) saturate(0.92) contrast(1.02);
       }
     }
-    @keyframes homeMosaicDrift {
+    @keyframes landingLoop {
       from {
-        transform: translate(-50%, -50%) perspective(1500px) rotateX(20deg) rotateZ(-8deg) scale(1.06) translate3d(-1.2%, -1%, 0);
+        transform: translate(-25%, -50%);
       }
       to {
-        transform: translate(-50%, -50%) perspective(1500px) rotateX(20deg) rotateZ(-8deg) scale(1.12) translate3d(1.2%, 1%, 0);
+        transform: translate(-75%, -50%);
       }
     }
-    .home-shade {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(90deg, rgba(244, 247, 251, 0.99) 0%, rgba(244, 247, 251, 0.97) 34%, rgba(244, 247, 251, 0.9) 52%, rgba(244, 247, 251, 0.55) 68%, rgba(244, 247, 251, 0.12) 88%, rgba(244, 247, 251, 0) 100%),
-        linear-gradient(0deg, rgba(244, 247, 251, 0.96) 0%, rgba(244, 247, 251, 0) 32%);
-    }
-    .home-cinema-content {
-      position: relative;
-      z-index: 2;
-      width: min(680px, 52vw);
-      margin-left: max(28px, 6vw);
-      padding: 32px 0 52px;
-      animation: homeContentIn 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s backwards;
-    }
-    @keyframes homeContentIn {
+    @keyframes landingContentIn {
       from { opacity: 0; transform: translateY(18px); }
       to { opacity: 1; transform: none; }
     }
-    .home-cinema-logo {
-      display: block;
-      width: min(250px, 58%);
-      height: auto;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 10px 24px rgba(9, 49, 92, 0.16));
-    }
-    .home-kicker {
-      margin: 0 0 8px;
-      color: var(--accent);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .home-cinema-content h2 {
-      margin: 0 0 12px;
-      color: var(--navy);
-      font-size: clamp(1.6rem, 2.6vw, 2.25rem);
-      font-weight: 800;
-      line-height: 1.18;
-      letter-spacing: -0.03em;
-      text-wrap: balance;
-    }
-    .home-cinema-content > p {
-      margin: 0 0 20px;
-      max-width: 600px;
-      color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.65;
-    }
-    .home-cinema-content .home-stats {
-      max-width: 680px;
-      margin-bottom: 18px;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-    }
-    .home-cinema-content .stat-pill {
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(8px);
-    }
-    .home-scroll-cue {
-      position: absolute;
-      left: 50%;
-      bottom: 18px;
-      z-index: 2;
-      transform: translateX(-50%);
-      color: var(--muted);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      animation: homeCue 2.4s ease-in-out infinite;
-    }
-    @keyframes homeCue {
-      0%, 100% { transform: translate(-50%, 0); opacity: 0.7; }
-      50% { transform: translate(-50%, 5px); opacity: 1; }
-    }
-    .home-below {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 32px 24px 48px;
+    @media (hover: none) {
+      .landing-caption { opacity: 1; transform: none; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .home-mosaic-grid,
-      .home-tile,
-      .home-cinema-content,
-      .home-scroll-cue {
+      .landing-loop,
+      .landing-tile,
+      .landing-content {
         animation: none !important;
       }
-      .home-tile { opacity: 1; }
+      .landing-tile { opacity: 1; }
+      .landing-media { transition: none; }
     }
+    .home-preview-cta { margin-top: 16px; }
 
     /* Home / Welcome View */
     .home-container {
@@ -1430,28 +1567,6 @@
         flex-shrink: 0;
         padding: 10px 12px;
       }
-      .home-cinema {
-        --home-tile-w: 140px;
-        min-height: 78vh;
-        align-items: flex-end;
-      }
-      .home-cinema-content {
-        width: 100%;
-        margin-left: 0;
-        padding: 32px 18px 54px;
-      }
-      .home-cinema-logo {
-        width: min(250px, 70%);
-        margin-bottom: 18px;
-      }
-      .home-cinema-content .home-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-      .home-shade {
-        background:
-          linear-gradient(0deg, rgba(244, 247, 251, 0.99) 0%, rgba(244, 247, 251, 0.96) 42%, rgba(244, 247, 251, 0.55) 68%, rgba(244, 247, 251, 0.08) 100%);
-      }
-      .home-scroll-cue { display: none; }
       .home-container, .doc-container, .video-container {
         padding: 0 12px 32px 12px;
         margin: 16px auto;
@@ -1478,6 +1593,67 @@
       .brand h1 { font-size: 0.96rem; }
       .header-actions { width: 100%; justify-content: flex-start; flex-wrap: wrap; }
     }
+
+    @media (max-width: 960px) {
+      .list-toggle { display: none; }
+    }
+
+    @media (min-width: 961px) {
+      body.list-collapsed .layout {
+        grid-template-columns: 0 minmax(0, 1fr);
+      }
+      body.jury-mode.list-collapsed .layout {
+        grid-template-columns: 0 minmax(0, 1fr) 400px;
+      }
+      body.list-collapsed #projectList {
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+        visibility: hidden;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .landing {
+        --landing-tile-w: 150px;
+        min-height: 80vh;
+        align-items: flex-end;
+      }
+      .landing-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 32px 18px 54px;
+      }
+      .landing-logo {
+        width: min(230px, 70%);
+        margin-bottom: 18px;
+      }
+      .landing-shade {
+        background:
+          linear-gradient(0deg, rgba(244, 247, 251, 0.99) 0%, rgba(244, 247, 251, 0.96) 42%, rgba(244, 247, 251, 0.55) 68%, rgba(244, 247, 251, 0.08) 100%);
+      }
+      .landing-hint {
+        top: 18px;
+        right: 18px;
+        bottom: auto;
+      }
+    }
+
+    body.mosaic-view .layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    body.mosaic-view .filters-bar { display: none; }
+    body:not(.mosaic-view) .explorer-nav { display: none; }
+    body.mosaic-view .home-nav { display: none; }
+    body.mosaic-view #projectList,
+    body.mosaic-view #projectList.open,
+    body.mosaic-view .jury-panel,
+    body.mosaic-view .jury-panel.open,
+    body.mosaic-view .mobile-drawer-btn,
+    body.mosaic-view .list-toggle,
+    body.mosaic-view .jury-mobile-btn {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -1488,10 +1664,14 @@
         <span class="brand-sep"></span>
         <h1>Hackathon Mobilités 2026 — Explorateur des résultats</h1>
         <span class="badge-count" id="countBadge">15 projets</span>
+        <span class="preview-badge" id="previewBadge" hidden>Preview</span>
       </a>
       <div class="header-actions">
+        <button class="idfm-btn-outline list-toggle" id="listToggle" onclick="toggleProjectList()" aria-pressed="false" title="Afficher ou masquer la liste des projets">« Projets</button>
+        <button class="idfm-btn-outline mosaic-nav" id="mosaicNav" onclick="openMosaicView()" title="Découvrir la mosaïque">✨ Mosaïque</button>
+        <button class="idfm-btn-outline explorer-nav" id="explorerNav" onclick="showHome()">Explorer</button>
         <button class="idfm-btn-outline jury-mobile-btn" id="juryMobileBtn" onclick="toggleJuryPanel(true)">📝 Notes</button>
-        <button class="idfm-btn-outline" style="cursor:pointer;" onclick="showHome()">🏠 Accueil</button>
+        <button class="idfm-btn-outline home-nav" style="cursor:pointer;" onclick="showHome()">🏠 Accueil</button>
         <a class="idfm-btn-outline" href="https://github.com/hackathons-mobilites/hackaviz_2026" target="_blank" rel="noopener">Dépôt GitHub ↗</a>
       </div>
     </div>
@@ -1626,8 +1806,10 @@
         readme: "README.md",
         videoPath: "production/AtouVent-demo.mp4",
         videoNote: "Vidéo de démonstration (1 min 45, sous-titrée en français).",
-        vizType: "iframe",
+        vizType: "external",
+        vizLabel: "🌐 Accès externe",
         vizUrl: "https://atouvent.com",
+        externalNote: "L'application Atouvent s'ouvre dans un nouvel onglet : son éditeur bloque l'affichage intégré.",
         fallbackQuestion: "Quand il fait très chaud, qui renonce à prendre le train en Île-de-France et comment aider chaque voyageur ?"
       },
       {
@@ -1673,8 +1855,10 @@
         folder: "Défi 2 - Les mobilités et l’emploi/defi-2_equipe-9_starway",
         readme: "README.md",
         videoNote: "Pas de fichier .mp4 : le site intègre directement une visite guidée narrée (« Lancer la visite », ~3 min).",
-        vizType: "iframe",
+        vizType: "external",
+        vizLabel: "🌐 Accès externe",
         vizUrl: "https://jolly-cliff-07f518503.5.azurestaticapps.net",
+        externalNote: "L'application Starway s'ouvre dans un nouvel onglet : son éditeur bloque l'affichage intégré.",
         fallbackQuestion: "Comment la commune, l'horaire et le mode changent-ils l'accès aller et retour aux pôles d'emploi ?"
       },
       {
@@ -1686,8 +1870,10 @@
         readme: "README.md",
         videoPath: "pitch/TAMOVIZ_demo.mp4",
         videoNote: "Vidéo de démonstration (2 min) présentant la question, les cartogrammes et le parcours.",
-        vizType: "iframe",
+        vizType: "external",
+        vizLabel: "🌐 Accès externe",
         vizUrl: "http://52.47.51.94/",
+        externalNote: "L'application Tamoviz s'ouvre dans un nouvel onglet : son serveur est en HTTP et ne peut pas être affiché dans une page HTTPS.",
         fallbackQuestion: "Pendant une canicule, où les voyageurs sont-ils les plus exposés, qui renonce et quelle mesure protège le mieux ?"
       },
       {
@@ -1697,9 +1883,10 @@
         tools: "Python, Streamlit, Pandas, GeoPandas, Plotly",
         folder: "Défi 4 - Les mobilités et les inégalités/defi-4_team-datalab",
         readme: "README.md",
-        vizType: "backend",
-        reason: "Application Streamlit locale nécessitant de télécharger les données sources (non incluses dans Git).",
-        runCmd: "cd production\npip install -r requirements.txt\nstreamlit run Codes/app.py",
+        vizType: "iframe",
+        vizLabel: "🌐 Application déployée",
+        vizUrl: "https://user-alihmaou-452487-user.user.lab.sspcloud.fr/?embed=true",
+        fallbackUrl: "https://user-alihmaou-452487-user.user.lab.sspcloud.fr/",
         fallbackQuestion: "Comment identifier les inégalités d'accès au réseau ferroviaire et repérer les écarts offre / fréquentation ?"
       },
       {
@@ -1745,6 +1932,7 @@
         folder: "Défi 1 - Les mobilités et l’adaptation climatique/defi-1_Thermoviz",
         readme: "README.md",
         vizType: "iframe",
+        vizLabel: "🌐 Accès externe",
         vizUrl: "https://app.powerbi.com/links/9r6Pwcn3SN?ctid=7dce31e1-0e64-442b-9c26-4c8cc8af1fb1&pbi_source=linkShare",
         iframeBlocked: true,
         idfmUrl: "https://app.powerbi.com/links/9r6Pwcn3SN?ctid=7dce31e1-0e64-442b-9c26-4c8cc8af1fb1&pbi_source=linkShare",
@@ -1804,55 +1992,218 @@
     const JURY_STORAGE_KEY = "hackaviz-jury-2026-v1";
     const JURY_SESSION_KEY = "hackaviz-jury-team";
     const JURY_PARAM = "jury";
+    const LIST_COLLAPSED_KEY = "hackaviz-list-collapsed";
 
-    const HOME_MOSAIC_GROUPS = [
-      [
-        "atouvent-accueil-1", "atouvent-accueil-2", "atouvent-accueil-3",
-        "atouvent-suivi-1", "atouvent-suivi-2", "atouvent-suivi-3",
-        "atouvent-trajet-1", "atouvent-trajet-2",
-        "atouvent-alertes-1", "atouvent-alertes-2",
-        "atouvent-supervision-1", "atouvent-supervision-2",
-        "atouvent-itineraires-1", "atouvent-itineraires-2"
-      ],
-      [
-        "nuit-intro-1", "nuit-intro-2", "nuit-intro-3",
-        "nuit-poles-1", "nuit-poles-2", "nuit-poles-3",
-        "nuit-travailleurs-1", "nuit-travailleurs-2",
-        "nuit-1-1", "nuit-1-2", "nuit-3-1", "nuit-3-2"
-      ],
-      [
-        "starway-vue-1", "starway-vue-2", "starway-vue-3",
-        "starway-carte-1", "starway-carte-2",
-        "starway-decouvertes-1", "starway-decouvertes-2",
-        "starway-cover-1", "starway-cover-2"
-      ],
-      [
-        "tamoviz-couverture-1", "tamoviz-couverture-2", "tamoviz-couverture-3",
-        "tamoviz-agir-1", "tamoviz-agir-2",
-        "tamoviz-scene-1", "tamoviz-scene-2"
-      ],
-      ["canopee-ombre-1", "canopee-ombre-2", "canopee-ombre-3"],
-      ["rhizome-reseau-1", "rhizome-reseau-2", "rhizome-reseau-3"]
-    ];
+    const HOME_MOSAIC_MANIFEST = "manifest.json";
+    let homeMosaicManifest = null;
+    let homeMosaicManifestPromise = null;
 
-    function renderHomeMosaicTiles() {
-      const groups = HOME_MOSAIC_GROUPS.map(group => group.slice());
-      const files = [];
-      let index = 0;
-      while (files.length < 48 && groups.some(group => group.length)) {
-        const group = groups[index % groups.length];
-        if (group.length) files.push(group.shift());
-        index++;
+    async function loadHomeMosaicManifest() {
+      if (homeMosaicManifest) return homeMosaicManifest;
+      if (!homeMosaicManifestPromise) {
+        homeMosaicManifestPromise = fetch(localFileUrl("assets/home-mosaic", HOME_MOSAIC_MANIFEST))
+          .then(response => {
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return response.json();
+          })
+          .then(data => Array.isArray(data) ? data : [])
+          .catch(error => {
+            console.warn("Mosaïque d'accueil indisponible :", error);
+            return [];
+          });
       }
-      const positions = ["50% 45%", "32% 55%", "68% 42%"];
-      return files.map((file, i) => {
-        const col = i % 8;
-        const row = Math.floor(i / 8);
-        const delay = (row * 0.055 + col * 0.028).toFixed(3);
-        const pos = positions[i % positions.length];
-        const url = localFileUrl("assets/mosaic", `${file}.webp`);
-        return `<span class="home-tile" style="--delay:${delay}s;--pos:${pos};background-image:url('${url}')"></span>`;
+      homeMosaicManifest = await homeMosaicManifestPromise;
+      return homeMosaicManifest;
+    }
+
+    function prefersReducedMotion() {
+      try {
+        return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      } catch (err) {
+        return false;
+      }
+    }
+
+    function mosaicMediaType(entry) {
+      if (entry.type === "video" || entry.type === "gif") return entry.type;
+      if (/\.(mp4|webm|mov|m4v)$/i.test(entry.file || "")) return "video";
+      if (/\.gif$/i.test(entry.file || "")) return "gif";
+      return "image";
+    }
+
+    function mosaicMediaMarkup(entry, decorative = false) {
+      if (!entry.file) {
+        return `<span class="landing-media landing-media-empty" aria-hidden="true"></span>`;
+      }
+      const url = localFileUrl("assets/home-mosaic", entry.file);
+      const focus = escapeHtml(entry.focus || "center");
+      const type = mosaicMediaType(entry);
+
+      if (type === "gif" && (decorative || prefersReducedMotion()) && entry.poster) {
+        const posterUrl = localFileUrl("assets/home-mosaic", entry.poster);
+        return `<img class="landing-media" src="${posterUrl}" alt="" loading="lazy" decoding="async" style="object-position:${focus}">`;
+      }
+
+      if (type === "video") {
+        const poster = entry.poster
+          ? ` poster="${localFileUrl("assets/home-mosaic", entry.poster)}"`
+          : "";
+        const autoplay = decorative || prefersReducedMotion() ? "" : " autoplay";
+        const preload = decorative ? "none" : "metadata";
+        const mime = /\.webm$/i.test(entry.file)
+          ? "video/webm"
+          : /\.mov$/i.test(entry.file)
+            ? "video/quicktime"
+            : "video/mp4";
+        return `<video class="landing-media" muted loop playsinline${autoplay} preload="${preload}"${poster} tabindex="-1" aria-hidden="true" style="object-position:${focus}"><source src="${url}" type="${mime}"></video>`;
+      }
+
+      return `<img class="landing-media" src="${url}" alt="" loading="lazy" decoding="async" style="object-position:${focus}">`;
+    }
+
+    async function renderMosaicTiles(decorative = false) {
+      const entries = await loadHomeMosaicManifest();
+      const visibleEntries = entries.filter(entry => {
+        return entry.file && PROJECTS.some(project => project.teamNum === entry.teamNum);
+      });
+      const seenTeams = new Set();
+
+      return visibleEntries.map((entry, index) => {
+        const team = PROJECTS.find(project => project.teamNum === entry.teamNum);
+        const isDuplicate = seenTeams.has(team.teamNum);
+        const isHidden = decorative || isDuplicate;
+        seenTeams.add(team.teamNum);
+
+        const col = index % 7;
+        const row = Math.floor(index / 7);
+        const delay = Math.min(row * 0.05 + col * 0.025, 0.8).toFixed(3);
+        const caption = `
+          <span class="landing-caption">
+            <span class="landing-team">Équipe ${team.teamNum} · ${escapeHtml(team.teamName)}</span>
+            <span class="landing-title">${escapeHtml(team.title)}</span>
+          </span>
+        `;
+        const label = `Voir la dataviz de l’équipe ${team.teamNum} — ${team.teamName} — ${team.title}`;
+
+        const linkParams = new URLSearchParams({
+          projet: String(team.teamNum),
+          vue: "dataviz"
+        });
+        if (juryMode) linkParams.set("jury", "true");
+        if (previewMode) linkParams.set("preview", "true");
+
+        return `<a class="landing-tile"
+          style="--delay:${delay}s"
+          href="?${linkParams.toString()}"
+          draggable="false"
+          onclick="return handleMosaicClick(event, ${team.teamNum})"
+          aria-label="${escapeHtml(label)}"
+          title="${escapeHtml(label)}"
+          ${isHidden ? 'tabindex="-1" aria-hidden="true"' : ""}>
+          ${mosaicMediaMarkup(entry, decorative)}
+          ${caption}
+        </a>`;
       }).join("");
+    }
+
+    function initLandingPan() {
+      const pan = document.getElementById("landingPan");
+      if (!pan) return;
+      let panX = 0;
+      let panY = 0;
+      let dragging = false;
+      let moved = false;
+      let suppressClick = false;
+      let startX = 0;
+      let startY = 0;
+      let startPanX = 0;
+      let startPanY = 0;
+      const maxX = 280;
+      const maxY = 240;
+
+      const applyPan = () => {
+        pan.style.setProperty("--pan-x", `${panX}px`);
+        pan.style.setProperty("--pan-y", `${panY}px`);
+      };
+      applyPan();
+
+      const onMove = event => {
+        if (!dragging) return;
+        const dx = event.clientX - startX;
+        const dy = event.clientY - startY;
+        if (Math.abs(dx) + Math.abs(dy) > 6) moved = true;
+        panX = Math.max(-maxX, Math.min(maxX, startPanX + dx));
+        panY = Math.max(-maxY, Math.min(maxY, startPanY + dy));
+        applyPan();
+      };
+
+      const onUp = () => {
+        if (!dragging) return;
+        dragging = false;
+        pan.classList.remove("landing-dragging");
+        window.removeEventListener("pointermove", onMove);
+        window.removeEventListener("pointerup", onUp);
+        window.removeEventListener("pointercancel", onUp);
+        if (moved) {
+          suppressClick = true;
+          window.setTimeout(() => { suppressClick = false; }, 350);
+        }
+        moved = false;
+      };
+
+      pan.addEventListener("pointerdown", event => {
+        if (event.button !== 0 || dragging) return;
+        dragging = true;
+        moved = false;
+        startX = event.clientX;
+        startY = event.clientY;
+        startPanX = panX;
+        startPanY = panY;
+        pan.classList.add("landing-dragging");
+        window.addEventListener("pointermove", onMove);
+        window.addEventListener("pointerup", onUp);
+        window.addEventListener("pointercancel", onUp);
+      });
+
+      pan.addEventListener("click", event => {
+        if (!suppressClick) return;
+        suppressClick = false;
+        event.preventDefault();
+        event.stopPropagation();
+      }, true);
+    }
+
+    function renderLandingPage(tiles, duplicateTiles) {
+      return `
+        <div class="landing">
+          <div class="landing-content">
+            <img class="landing-logo" src="assets/logo-hackaviz-2026.svg" alt="Hackaviz 2026 — Hackathon Mobilités" />
+            <p class="landing-kicker">Édition 2026 · Spéciale Dataviz</p>
+            <h2>Exploration des Dataviz des participants du Hackathon Mobilités 2026</h2>
+            <p>
+              Bienvenue sur l'espace de découverte des projets réalisés du 2 au 13 novembre 2026 dans le cadre du
+              <strong>Hackathon Mobilités 2026 spécial Dataviz</strong> organisé par Île-de-France Mobilités.
+              Parcourez la mosaïque et cliquez sur une capture pour ouvrir la dataviz d'un projet.
+            </p>
+            <button class="idfm-btn-primary landing-detail-btn" onclick="showHome()">Voir le détail des projets →</button>
+          </div>
+          <div class="landing-mosaic">
+            <div class="landing-pan" id="landingPan">
+              <div class="landing-stage">
+                <div class="landing-loop">
+                  <div class="landing-mosaic-grid">${tiles}</div>
+                  <div class="landing-mosaic-grid" aria-hidden="true">${duplicateTiles}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="landing-shade" aria-hidden="true"></div>
+          <div class="landing-hint" aria-hidden="true">
+            <span class="landing-hint-icon">👆</span>
+            <span>Glissez pour explorer</span>
+          </div>
+        </div>
+      `;
     }
 
     function loadJuryData() {
@@ -1865,22 +2216,32 @@
       }
     }
 
-    function juryModeFromUrl() {
+    function urlFlag(name) {
       try {
-        const value = (new URLSearchParams(window.location.search).get(JURY_PARAM) || "").toLowerCase();
+        const value = (new URLSearchParams(window.location.search).get(name) || "").toLowerCase();
         return value === "true" || value === "1" || value === "oui";
       } catch (err) {
         return false;
       }
     }
 
+    function juryModeFromUrl() {
+      return urlFlag(JURY_PARAM);
+    }
+
     let juryData = loadJuryData();
     let juryMode = juryModeFromUrl();
+    let previewMode = urlFlag("preview");
     let jurySaveTimer = null;
 
     let activeDefi = "all";
     let searchQuery = "";
     let selectedTeam = null;
+    let showMosaic = false;
+    let listCollapsed = false;
+    try {
+      listCollapsed = localStorage.getItem(LIST_COLLAPSED_KEY) === "1";
+    } catch (err) {}
     try {
       const savedTeam = Number(sessionStorage.getItem(JURY_SESSION_KEY));
       if (savedTeam && PROJECTS.some(p => p.teamNum === savedTeam)) selectedTeam = savedTeam;
@@ -1889,10 +2250,25 @@
     }
     if (juryMode && selectedTeam === null) selectedTeam = PROJECTS[0].teamNum;
     let mode = "doc"; // 'doc' | 'video' | 'viz'
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const deepTeam = Number(params.get("projet"));
+      const deepView = params.get("vue");
+      if (deepTeam && PROJECTS.some(p => p.teamNum === deepTeam)) {
+        selectedTeam = deepTeam;
+      } else if (previewMode && deepView === "mosaique") {
+        selectedTeam = null;
+        showMosaic = true;
+      }
+      if (deepView === "dataviz" || deepView === "viz") mode = "viz";
+      else if (deepView === "doc" || deepView === "video") mode = deepView;
+    } catch (err) {}
     const readmeCache = new Map();
 
     function showHome() {
       selectedTeam = null;
+      showMosaic = false;
+      updateProjectUrl(null);
       try {
         sessionStorage.removeItem(JURY_SESSION_KEY);
       } catch (err) {}
@@ -1908,9 +2284,11 @@
         b.classList.toggle("active", b.dataset.defi === String(defi));
       });
       activeDefi = String(defi);
+      showMosaic = false;
       const items = filteredProjects();
       selectedTeam = items.length ? items[0].teamNum : null;
       if (selectedTeam !== null) {
+        updateProjectUrl(selectedTeam, mode);
         try {
           sessionStorage.setItem(JURY_SESSION_KEY, String(selectedTeam));
         } catch (err) {}
@@ -2199,6 +2577,31 @@
       panel.classList.toggle("open", open);
     }
 
+    function syncPreviewUI() {
+      document.body.classList.toggle("preview", previewMode);
+      const badge = document.getElementById("previewBadge");
+      if (badge) badge.hidden = !previewMode;
+    }
+
+    function syncListToggle() {
+      const collapsed = previewMode && listCollapsed;
+      document.body.classList.toggle("list-collapsed", collapsed);
+      const btn = document.getElementById("listToggle");
+      if (!btn) return;
+      btn.setAttribute("aria-pressed", collapsed ? "true" : "false");
+      btn.textContent = collapsed ? "☰ Projets" : "« Projets";
+      btn.title = collapsed ? "Afficher la liste des projets" : "Masquer la liste des projets";
+    }
+
+    function toggleProjectList() {
+      if (!previewMode) return;
+      listCollapsed = !listCollapsed;
+      try {
+        localStorage.setItem(LIST_COLLAPSED_KEY, listCollapsed ? "1" : "0");
+      } catch (err) {}
+      syncListToggle();
+    }
+
     function juryNavigate(delta) {
       const items = filteredProjects();
       if (!items.length) return;
@@ -2419,12 +2822,15 @@
     function renderList() {
       const items = filteredProjects();
       countBadgeEl.textContent = `${items.length} projet${items.length > 1 ? "s" : ""}`;
+      const listHead = previewMode
+        ? `<div class="project-list-head"><span>Projets</span><button class="project-list-collapse" onclick="toggleProjectList()" title="Replier la liste des projets">« Replier</button></div>`
+        : "";
       if (items.length === 0) {
-        listEl.innerHTML = `<div class="empty-state">Aucun projet pour ce filtre.<br/><br/>(Défi 3 : 0 soumission reçue)</div>`;
+        listEl.innerHTML = `${listHead}<div class="empty-state">Aucun projet pour ce filtre.<br/><br/>(Défi 3 : 0 soumission reçue)</div>`;
         return;
       }
-      listEl.innerHTML = items.map(p => {
-        const vizLabel = p.vizType === "backend" ? "⚙️ Local / Backend" : p.vizType === "local_html" ? "📄 HTML local" : "🌐 En ligne";
+      listEl.innerHTML = listHead + items.map(p => {
+        const vizLabel = p.vizLabel || (p.vizType === "backend" ? "⚙️ Local / Backend" : p.vizType === "local_html" ? "📄 HTML local" : "🌐 En ligne");
         const juryStatus = juryStatusInfo(p.teamNum);
         return `
           <div class="card ${p.teamNum === selectedTeam ? "active" : ""}" onclick="selectProject(${p.teamNum})">
@@ -2487,48 +2893,81 @@
       return doc.body.innerHTML;
     }
 
+    function renderHomeStats() {
+      return `
+        <div class="home-stats">
+          <div class="stat-pill"><strong>15 projets</strong><span>Déposés sur GitHub</span></div>
+          <div class="stat-pill"><strong>5 projets</strong><span>Défi 1 · Adaptation climatique</span></div>
+          <div class="stat-pill"><strong>7 projets</strong><span>Défi 2 · Emploi</span></div>
+          <div class="stat-pill"><strong>3 projets</strong><span>Défi 4 · Inégalités</span></div>
+        </div>
+      `;
+    }
+
+    function renderHomeCta() {
+      return `
+        <div class="btn-row" style="justify-content:flex-start; margin-top:8px;">
+          <button class="idfm-btn-primary" onclick="filterAndShowFirst('1')">Explorer le Défi 1 →</button>
+          <button class="idfm-btn-outline" style="cursor:pointer;" onclick="filterAndShowFirst('2')">Explorer le Défi 2 →</button>
+          <button class="idfm-btn-outline" style="cursor:pointer;" onclick="filterAndShowFirst('4')">Explorer le Défi 4 →</button>
+        </div>
+      `;
+    }
+
+    function renderHomeVideo() {
+      return `
+        <div class="home-video-card">
+          <h3>🎬 Vidéo d'introduction — Consolidation des projets</h3>
+          <video controls preload="metadata" src="assets/intro-hackaviz-2026.mp4">
+            Votre navigateur ne supporte pas la lecture vidéo HTML5.
+          </video>
+        </div>
+      `;
+    }
+
+    function renderHomeStable() {
+      return `
+        <div class="home-container">
+          <div class="home-hero">
+            <img class="home-logo" src="assets/logo-hackaviz-2026.svg" alt="Hackaviz 2026 — Hackathon Mobilités" />
+            <h2>Exploration des Dataviz des participants du Hackathon Mobilités 2026</h2>
+            <p>
+              Bienvenue sur l'espace d'exploration des projets réalisés du 2 au 13 novembre 2026 dans le cadre du
+              <strong>Hackathon Mobilités 2026 spécial Dataviz</strong> organisé par Île-de-France Mobilités.
+              Sélectionnez une équipe dans la liste à gauche pour consulter sa documentation, sa vidéo de démonstration et sa dataviz interactive.
+            </p>
+            ${renderHomeStats()}
+            ${renderHomeCta()}
+            ${previewMode ? `<div class="home-preview-cta"><button class="idfm-btn-primary" onclick="openMosaicView()">✨ Découvrir la mosaïque</button></div>` : ""}
+          </div>
+          ${renderHomeVideo()}
+        </div>
+      `;
+    }
+
     async function renderStage() {
       const viewerBar = document.querySelector(".viewer-bar");
+      const isMosaicView = previewMode && showMosaic && selectedTeam === null;
+      document.body.classList.toggle("mosaic-view", isMosaicView);
+      const mosaicNav = document.getElementById("mosaicNav");
+      if (mosaicNav) {
+        mosaicNav.classList.toggle("active", isMosaicView);
+        mosaicNav.title = isMosaicView ? "Retour à l'accueil" : "Découvrir la mosaïque";
+      }
+
       if (selectedTeam === null) {
         viewerBar.style.display = "none";
-        stageEl.innerHTML = `
-          <div class="home-cinema">
-            <div class="home-mosaic" aria-hidden="true">
-              <div class="home-mosaic-grid">${renderHomeMosaicTiles()}</div>
-            </div>
-            <div class="home-shade" aria-hidden="true"></div>
-            <div class="home-cinema-content">
-              <img class="home-cinema-logo" src="assets/logo-hackaviz-2026.svg" alt="Hackaviz 2026 — Hackathon Mobilités" />
-              <p class="home-kicker">Édition 2026 · Spéciale Dataviz</p>
-              <h2>Exploration des résultats du Hackathon Mobilités 2026</h2>
-              <p>
-                Bienvenue sur l'espace d'exploration des projets réalisés du 2 au 13 novembre 2026 dans le cadre du
-                <strong>Hackathon Mobilités 2026 spécial Dataviz</strong> organisé par Île-de-France Mobilités.
-                Sélectionnez une équipe dans la liste à gauche pour consulter sa documentation, sa vidéo de démonstration et sa dataviz interactive.
-              </p>
-              <div class="home-stats">
-                <div class="stat-pill"><strong>15 projets</strong><span>Déposés sur GitHub</span></div>
-                <div class="stat-pill"><strong>5 projets</strong><span>Défi 1 · Adaptation climatique</span></div>
-                <div class="stat-pill"><strong>7 projets</strong><span>Défi 2 · Emploi</span></div>
-                <div class="stat-pill"><strong>3 projets</strong><span>Défi 4 · Inégalités</span></div>
-              </div>
-              <div class="btn-row" style="justify-content:flex-start; margin-top:8px;">
-                <button class="idfm-btn-primary" onclick="filterAndShowFirst('1')">Explorer le Défi 1 →</button>
-                <button class="idfm-btn-outline" style="cursor:pointer;" onclick="filterAndShowFirst('2')">Explorer le Défi 2 →</button>
-                <button class="idfm-btn-outline" style="cursor:pointer;" onclick="filterAndShowFirst('4')">Explorer le Défi 4 →</button>
-              </div>
-            </div>
-            <div class="home-scroll-cue" aria-hidden="true">Les projets ↓</div>
-          </div>
-          <div class="home-container home-below">
-            <div class="home-video-card">
-              <h3>🎬 Vidéo d'introduction — Consolidation des projets</h3>
-              <video controls preload="metadata" src="assets/intro-hackaviz-2026.mp4">
-                Votre navigateur ne supporte pas la lecture vidéo HTML5.
-              </video>
-            </div>
-          </div>
-        `;
+        if (isMosaicView) {
+          const [mosaicTiles, duplicateTiles] = await Promise.all([
+            renderMosaicTiles(),
+            renderMosaicTiles(true)
+          ]);
+          if (selectedTeam !== null || !showMosaic) return;
+          stageEl.innerHTML = renderLandingPage(mosaicTiles, duplicateTiles);
+          initLandingPan();
+        } else {
+          stageEl.innerHTML = renderHomeStable();
+        }
         return;
       }
 
@@ -2625,13 +3064,27 @@
               <div class="iframe-wrap${p.downloadPath ? " has-download" : ""}">
                 ${renderDownloadPanel(p)}
                 <div class="iframe-notice">
-                  <span>Aperçu intégré — si l'écran reste blanc, le site bloque l'iframe (X-Frame-Options ou HTTP/HTTPS).</span>
+                  <span>${p.iframeNote || "Aperçu intégré — si l'écran reste blanc, le site bloque l'iframe (X-Frame-Options ou HTTP/HTTPS)."}</span>
                   <a href="${openUrl}" target="_blank" rel="noopener">Ouvrir la dataviz dans un nouvel onglet ↗</a>
                 </div>
                 <iframe src="${p.vizUrl}" title="${p.title}" loading="lazy"></iframe>
               </div>
             `;
           }
+        } else if (p.vizType === "external") {
+          const externalUrl = p.externalUrl || p.vizUrl;
+          stageEl.innerHTML = `
+            <div class="placeholder">
+              <div class="icon">🌐</div>
+              <h3>${p.externalTitle || "Dataviz en accès externe"}</h3>
+              <p>${p.externalNote || "Cette dataviz s'ouvre dans un nouvel onglet."}</p>
+              <div class="btn-row">
+                <a class="idfm-btn-primary" href="${externalUrl}" target="_blank" rel="noopener">${p.externalLabel || "Ouvrir la dataviz"} ↗</a>
+                ${p.videoPath ? `<button class="tab-btn active" onclick="setMode('video')">🎬 Voir la vidéo de démo</button>` : ""}
+                <a class="ext-link" href="${ghFolderUrl(p.folder)}" target="_blank" rel="noopener">Voir les fichiers sur GitHub ↗</a>
+              </div>
+            </div>
+          `;
         } else if (p.vizType === "local_html") {
           const lUrl = localFileUrl(p.folder, p.localPath);
           stageEl.innerHTML = `
@@ -2647,7 +3100,7 @@
           stageEl.innerHTML = `
             <div class="placeholder">
               <div class="icon">⚙️</div>
-              <h3>Dataviz nécessitant un backend ou un outil local</h3>
+              <h3>${p.backendTitle || "Dataviz nécessitant un backend ou un outil local"}</h3>
               <p>${p.reason}</p>
               <div class="cmd-box"><pre style="margin:0;">${p.runCmd}</pre></div>
               <div class="btn-row">
@@ -2683,6 +3136,8 @@
 
     function selectProject(num) {
       selectedTeam = num;
+      showMosaic = false;
+      updateProjectUrl(num, mode);
       try {
         sessionStorage.setItem(JURY_SESSION_KEY, String(num));
       } catch (err) {}
@@ -2693,8 +3148,90 @@
       renderJuryPanel();
     }
 
+    function updateProjectUrl(teamNum, viewMode) {
+      try {
+        const url = new URL(window.location.href);
+        if (teamNum === null || teamNum === undefined) {
+          url.searchParams.delete("projet");
+          url.searchParams.delete("vue");
+        } else {
+          url.searchParams.set("projet", String(teamNum));
+          url.searchParams.set("vue", viewMode === "viz" ? "dataviz" : viewMode);
+        }
+        const next = url.pathname + url.search + url.hash;
+        const current = window.location.pathname + window.location.search + window.location.hash;
+        if (next !== current) {
+          history.replaceState(null, "", next);
+        }
+      } catch (err) {}
+    }
+
+    function updateMosaicUrl() {
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.delete("projet");
+        url.searchParams.set("vue", "mosaique");
+        const next = url.pathname + url.search + url.hash;
+        const current = window.location.pathname + window.location.search + window.location.hash;
+        if (next !== current) {
+          history.replaceState(null, "", next);
+        }
+      } catch (err) {}
+    }
+
+    function openMosaicView() {
+      if (!previewMode) return;
+      if (showMosaic) {
+        showHome();
+        return;
+      }
+      selectedTeam = null;
+      showMosaic = true;
+      activeDefi = "all";
+      searchQuery = "";
+      document.querySelectorAll(".pill").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.defi === "all");
+      });
+      const searchInput = document.getElementById("searchInput");
+      if (searchInput) searchInput.value = "";
+      updateMosaicUrl();
+      try {
+        sessionStorage.removeItem(JURY_SESSION_KEY);
+      } catch (err) {}
+      toggleMobileList(false);
+      updateMobileLabel();
+      renderList();
+      renderStage();
+      renderJuryPanel();
+      if (stageEl) stageEl.scrollTop = 0;
+    }
+
+    function handleMosaicClick(event, teamNum) {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return true;
+      openProjectTarget(teamNum, "viz");
+      return false;
+    }
+
+    function openProjectTarget(teamNum, targetMode) {
+      if (!PROJECTS.some(p => p.teamNum === teamNum)) return;
+      selectedTeam = teamNum;
+      showMosaic = false;
+      mode = ["doc", "video", "viz"].includes(targetMode) ? targetMode : "viz";
+      updateProjectUrl(teamNum, mode);
+      try {
+        sessionStorage.setItem(JURY_SESSION_KEY, String(teamNum));
+      } catch (err) {}
+      toggleMobileList(false);
+      updateMobileLabel();
+      renderList();
+      renderStage();
+      renderJuryPanel();
+      if (stageEl) stageEl.scrollTop = 0;
+    }
+
     function setMode(nextMode) {
       mode = nextMode;
+      updateProjectUrl(selectedTeam, mode);
       renderStage();
     }
 
@@ -2704,8 +3241,9 @@
         btn.classList.add("active");
         activeDefi = btn.dataset.defi;
         const items = filteredProjects();
-        if (items.length && !items.some(x => x.teamNum === selectedTeam)) {
+        if (!showMosaic && items.length && !items.some(x => x.teamNum === selectedTeam)) {
           selectedTeam = items[0].teamNum;
+          updateProjectUrl(selectedTeam, mode);
           try {
             sessionStorage.setItem(JURY_SESSION_KEY, String(selectedTeam));
           } catch (err) {}
@@ -2721,6 +3259,7 @@
       searchQuery = e.target.value;
       updateMobileLabel();
       renderList();
+      if (showMosaic) renderStage();
     });
 
     window.addEventListener("beforeunload", () => {
@@ -2747,6 +3286,8 @@
     }
 
     syncJuryModeUI();
+    syncPreviewUI();
+    syncListToggle();
     renderList();
     renderStage();
     renderJuryPanel();
