@@ -21,7 +21,8 @@ Le dossier `Resultats/assets/home-mosaic/` ne contient que les versions optimis�
   "slug": "equipe-17-thermoviz",
   "src": "01-rapport.png",
   "alt": "Thermo Réseau — vue d’ensemble du rapport",
-  "focus": "center"
+  "focus": "center",
+  "fit": "contain"
 }
 ```
 
@@ -35,7 +36,7 @@ python3 scripts/build_home_mosaic.py
 
 Le script :
 
-- recadre les images en 600 × 390 ;
+- recadre (`cover`) ou ajuste (`contain`) les images en 600 × 390 ;
 - les convertit en WebP optimisé ;
 - écrit les fichiers dans `Resultats/assets/home-mosaic/<slug>/` ;
 - régénère `Resultats/assets/home-mosaic/manifest.json`, lu par la page.
@@ -43,6 +44,13 @@ Le script :
 ## Cadrages acceptés
 
 `focus` : `center`, `left`, `right`, `top`, `bottom`.
+
+## Mode d'ajustement
+
+`fit` :
+
+- `cover` (par défaut) : remplit la tuile en recadrant l'image ;
+- `contain` : conserve toute l'image et complète avec la couleur dominante des bords. Utile pour les captures avec des titres ou des légendes près des bords.
 
 ## GIF et vidéos
 
@@ -71,4 +79,4 @@ C’est autorisé et prévu : ajoute simplement plusieurs entrées avec le même
 
 ## État actuel
 
-Les images actuellement présentes dans `Resultats/assets/home-mosaic/` sont des **placeholders** générés à partir de captures existantes. Elles sont destinées à être remplacées par les captures que tu sélectionneras.
+Les images actuelles proviennent des captures fournies le 16 novembre 2026 et couvrent les 15 projets. `assets-src/home-mosaic/` conserve les captures originales ; `Resultats/assets/home-mosaic/` contient les versions optimisées générées.

@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 import shutil
 import sys
+from collections import Counter
 from pathlib import Path
 
 from PIL import Image, ImageOps
@@ -35,6 +36,22 @@ def focus_point(value: object) -> tuple[float, float]:
     if isinstance(value, (list, tuple)) and len(value) == 2:
         return float(value[0]), float(value[1])
     return FOCUS_POINTS.get(str(value or "center").lower(), FOCUS_POINTS["center"])
+
+
+def background_color(image: Image.Image) -> tuple[int, int, int]:
+    """Couleur dominante sur le bord de l'image, pour les bandes de recadrage."""
+    width, height = image.size
+    pixels: list[tuple[int, int, int]] = []
+    step_x = max(1, width // 60)
+    step_y = max(1, height // 60)
+    for x in range(0, width, step_x):
+        pixels.append(image.getpixel((x, 0)))
+        pixels.append(image.getpixel((x, height - 1)))
+    for y in range(0, height, step_y):
+        pixels.append(image.getpixel((0, y)))
+        pixels.append(image.getpixel((width - 1, y)))
+    buckets = Counter((r // 16 * 16, g // 16 * 16, b // 16 * 16) for r, g, b in pixels)
+    return buckets.most_common(1)[0][0]
 
 
 def media_type(entry: dict[str, object], source_name: str) -> str:
@@ -121,12 +138,22 @@ def main() -> int:
         else:
             image = image.convert("RGB")
 
-        thumbnail = ImageOps.fit(
-            image,
-            (WIDTH, HEIGHT),
-            method=Image.LANCZOS,
-            centering=focus_point(entry.get("focus")),
-        )
+        fit = str(entry.get("fit") or "cover").lower()
+        if fit in ("contain", "pad"):
+            thumbnail = ImageOps.pad(
+                image,
+                (WIDTH, HEIGHT),
+                method=Image.LANCZOS,
+                color=background_color(image),
+                centering=focus_point(entry.get("focus")),
+            )
+        else:
+            thumbnail = ImageOps.fit(
+                image,
+                (WIDTH, HEIGHT),
+                method=Image.LANCZOS,
+                centering=focus_point(entry.get("focus")),
+            )
         thumbnail.save(destination, "WEBP", quality=QUALITY, method=6)
 
         output_entries.append(

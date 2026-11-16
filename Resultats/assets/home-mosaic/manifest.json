@@ -1,298 +1,254 @@
 [
   {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-accueil-1.webp",
-    "alt": "Atouvent — capture 1",
-    "focus": "50% 45%"
+    "teamNum": 1,
+    "file": "equipe-01-yssak/01-part-transports-communs.webp",
+    "alt": "YSSAK — 45,1 % de déplacements en transports en commun",
+    "focus": "center"
+  },
+  {
+    "teamNum": 1,
+    "file": "equipe-01-yssak/02-metiers-recrutement.webp",
+    "alt": "YSSAK — métiers les plus recherchés",
+    "focus": "center"
+  },
+  {
+    "teamNum": 1,
+    "file": "equipe-01-yssak/03-carte-emploi-saint-germain.webp",
+    "alt": "YSSAK — personnes venant travailler à Saint-Germain-en-Laye",
+    "focus": "center"
   },
   {
     "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/nuit-intro-1.webp",
-    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 2",
-    "focus": "32% 55%"
+    "file": "equipe-02-ca-travaille-la-nuit/01-carte-reseau-nuit.webp",
+    "alt": "Ça travaille la nuit — réseau de nuit",
+    "focus": "center"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/02-carte-territoires-nuit.webp",
+    "alt": "Ça travaille la nuit — territoires desservis",
+    "focus": "center"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/03-bus-nuit.webp",
+    "alt": "Ça travaille la nuit — bus de nuit",
+    "focus": "center"
+  },
+  {
+    "teamNum": 3,
+    "file": "equipe-03-notorious-farid/01-chaleur-reseau.webp",
+    "alt": "The notorious F.A.R.I.D — chaleur et réseau",
+    "focus": "center"
+  },
+  {
+    "teamNum": 3,
+    "file": "equipe-03-notorious-farid/02-scatter-frequentation.webp",
+    "alt": "The notorious F.A.R.I.D — fréquentation et chaleur",
+    "focus": "center"
+  },
+  {
+    "teamNum": 3,
+    "file": "equipe-03-notorious-farid/03-heatmap-temperature.webp",
+    "alt": "The notorious F.A.R.I.D — températures 2006-2100",
+    "focus": "center"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/01-itineraire-38-min.webp",
+    "alt": "Atouvent — itinéraire recommandé",
+    "focus": "center"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/02-climat-actuel.webp",
+    "alt": "Atouvent — climat actuel et vigilance",
+    "focus": "center"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/03-carte-lieux-frais.webp",
+    "alt": "Atouvent — lieux frais à Paris",
+    "focus": "center"
+  },
+  {
+    "teamNum": 5,
+    "file": "equipe-05-les-isochrones/01-carte-emplois-45-min.webp",
+    "alt": "Les Isochrones — emplois accessibles en 45 min",
+    "focus": "center"
+  },
+  {
+    "teamNum": 5,
+    "file": "equipe-05-les-isochrones/02-passages-heure.webp",
+    "alt": "Les Isochrones — passages aux arrêts par heure",
+    "focus": "center"
+  },
+  {
+    "teamNum": 5,
+    "file": "equipe-05-les-isochrones/03-carte-acces-territoires.webp",
+    "alt": "Les Isochrones — accès aux territoires",
+    "focus": "center"
+  },
+  {
+    "teamNum": 7,
+    "file": "equipe-07-traboule/01-carte-traboule.webp",
+    "alt": "Traboule — carte des mobilités",
+    "focus": "center"
+  },
+  {
+    "teamNum": 8,
+    "file": "equipe-08-noctambulle/01-carte-noctambulle.webp",
+    "alt": "Noctambulle — carte des trajets de nuit",
+    "focus": "center"
+  },
+  {
+    "teamNum": 8,
+    "file": "equipe-08-noctambulle/02-carte-gares-nuit.webp",
+    "alt": "Noctambulle — gares et trajets de nuit",
+    "focus": "center"
   },
   {
     "teamNum": 9,
-    "file": "equipe-09-starway/starway-vue-1.webp",
-    "alt": "Starway — Les constellations de l’emploi — capture 3",
-    "focus": "68% 42%"
+    "file": "equipe-09-starway/01-constellation-emploi.webp",
+    "alt": "Starway — constellations de l'emploi",
+    "focus": "center"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/02-carte-reseau.webp",
+    "alt": "Starway — carte du réseau",
+    "focus": "center"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/03-constellation-detail.webp",
+    "alt": "Starway — accès aux pôles d'emploi",
+    "focus": "center"
   },
   {
     "teamNum": 10,
-    "file": "equipe-10-tamoviz/tamoviz-couverture-1.webp",
-    "alt": "Tamoviz — Une journée sous canicule — capture 4",
-    "focus": "50% 45%"
+    "file": "equipe-10-tamoviz/01-thomas-nanterre.webp",
+    "alt": "Tamoviz — trajet de Thomas depuis Nanterre",
+    "focus": "center"
   },
   {
     "teamNum": 10,
-    "file": "equipe-10-tamoviz/tamoviz-demo.gif",
-    "type": "gif",
-    "alt": "Tamoviz — démonstration animée",
-    "focus": "center",
-    "poster": "equipe-10-tamoviz/tamoviz-couverture-1.webp"
+    "file": "equipe-10-tamoviz/02-carte-frequentation.webp",
+    "alt": "Tamoviz — fréquentation du réseau",
+    "focus": "center"
+  },
+  {
+    "teamNum": 10,
+    "file": "equipe-10-tamoviz/03-panneau-exposition.webp",
+    "alt": "Tamoviz — exposition des voyageurs",
+    "focus": "center"
+  },
+  {
+    "teamNum": 12,
+    "file": "equipe-12-team-datalab/01-offre-population.webp",
+    "alt": "Team Datalab — offre en pointe selon la population",
+    "focus": "center"
+  },
+  {
+    "teamNum": 12,
+    "file": "equipe-12-team-datalab/02-communes-sans-gare.webp",
+    "alt": "Team Datalab — communes dépourvues de gare",
+    "focus": "center"
+  },
+  {
+    "teamNum": 12,
+    "file": "equipe-12-team-datalab/03-carte-frequentation.webp",
+    "alt": "Team Datalab — fréquentation ferroviaire 2025",
+    "focus": "center"
+  },
+  {
+    "teamNum": 14,
+    "file": "equipe-14-correspondances/01-verres-eau.webp",
+    "alt": "Correspondances — accès à l'eau en station",
+    "focus": "center"
+  },
+  {
+    "teamNum": 14,
+    "file": "equipe-14-correspondances/02-carte-qualite-air.webp",
+    "alt": "Correspondances — qualité de l'air sur les quais",
+    "focus": "center"
+  },
+  {
+    "teamNum": 14,
+    "file": "equipe-14-correspondances/03-affiche-respirer.webp",
+    "alt": "Correspondances — affiche Respirer sous terre",
+    "focus": "center"
   },
   {
     "teamNum": 15,
-    "file": "equipe-15-canopee/canopee-ombre-1.webp",
-    "alt": "Canopée — Mobilités douces, ville plus chaude — capture 5",
-    "focus": "32% 55%"
-  },
-  {
-    "teamNum": 16,
-    "file": "equipe-16-rhizome/rhizome-reseau-1.webp",
-    "alt": "Rhizome — EcloWork — capture 6",
-    "focus": "68% 42%"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-accueil-2.webp",
-    "alt": "Atouvent — capture 7",
-    "focus": "50% 45%"
-  },
-  {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/nuit-intro-2.webp",
-    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 8",
-    "focus": "32% 55%"
-  },
-  {
-    "teamNum": 9,
-    "file": "equipe-09-starway/starway-vue-2.webp",
-    "alt": "Starway — Les constellations de l’emploi — capture 9",
-    "focus": "68% 42%"
-  },
-  {
-    "teamNum": 10,
-    "file": "equipe-10-tamoviz/tamoviz-couverture-2.webp",
-    "alt": "Tamoviz — Une journée sous canicule — capture 10",
-    "focus": "50% 45%"
+    "file": "equipe-15-canopee/01-jours-chaleur.webp",
+    "alt": "Canopée — jours au-dessus de 35 °C",
+    "focus": "center"
   },
   {
     "teamNum": 15,
-    "file": "equipe-15-canopee/canopee-ombre-2.webp",
-    "alt": "Canopée — Mobilités douces, ville plus chaude — capture 11",
-    "focus": "32% 55%"
-  },
-  {
-    "teamNum": 16,
-    "file": "equipe-16-rhizome/rhizome-reseau-2.webp",
-    "alt": "Rhizome — EcloWork — capture 12",
-    "focus": "68% 42%"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-accueil-3.webp",
-    "alt": "Atouvent — capture 13",
-    "focus": "50% 45%"
-  },
-  {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/nuit-intro-3.webp",
-    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 14",
-    "focus": "32% 55%"
-  },
-  {
-    "teamNum": 9,
-    "file": "equipe-09-starway/starway-vue-3.webp",
-    "alt": "Starway — Les constellations de l’emploi — capture 15",
-    "focus": "68% 42%"
-  },
-  {
-    "teamNum": 10,
-    "file": "equipe-10-tamoviz/tamoviz-couverture-3.webp",
-    "alt": "Tamoviz — Une journée sous canicule — capture 16",
-    "focus": "50% 45%"
+    "file": "equipe-15-canopee/02-fontaines-proximite.webp",
+    "alt": "Canopée — proximité des fontaines",
+    "focus": "center"
   },
   {
     "teamNum": 15,
-    "file": "equipe-15-canopee/canopee-ombre-3.webp",
-    "alt": "Canopée — Mobilités douces, ville plus chaude — capture 17",
-    "focus": "32% 55%"
+    "file": "equipe-15-canopee/03-temps-marche.webp",
+    "alt": "Canopée — temps de marche à l'ombre",
+    "focus": "center"
   },
   {
     "teamNum": 16,
-    "file": "equipe-16-rhizome/rhizome-reseau-3.webp",
-    "alt": "Rhizome — EcloWork — capture 18",
-    "focus": "68% 42%"
+    "file": "equipe-16-rhizome/01-extension-reseau.webp",
+    "alt": "Rhizome — extension du réseau ferroviaire",
+    "focus": "center"
   },
   {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-suivi-1.webp",
-    "alt": "Atouvent — capture 19",
-    "focus": "50% 45%"
+    "teamNum": 16,
+    "file": "equipe-16-rhizome/02-emploi-territoires.webp",
+    "alt": "Rhizome — évolution de l'emploi",
+    "focus": "center"
   },
   {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/nuit-poles-1.webp",
-    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 20",
-    "focus": "32% 55%"
+    "teamNum": 16,
+    "file": "equipe-16-rhizome/03-fleurs-territoires.webp",
+    "alt": "Rhizome — symboles des territoires",
+    "focus": "center"
   },
   {
-    "teamNum": 9,
-    "file": "equipe-09-starway/starway-carte-1.webp",
-    "alt": "Starway — Les constellations de l’emploi — capture 21",
-    "focus": "68% 42%"
+    "teamNum": 17,
+    "file": "equipe-17-thermoviz/01-chaleur-frequentation.webp",
+    "alt": "Thermoviz — chaleur et fréquentation",
+    "focus": "center"
   },
   {
-    "teamNum": 10,
-    "file": "equipe-10-tamoviz/tamoviz-agir-1.webp",
-    "alt": "Tamoviz — Une journée sous canicule — capture 22",
-    "focus": "50% 45%"
+    "teamNum": 17,
+    "file": "equipe-17-thermoviz/02-gares-exposees.webp",
+    "alt": "Thermoviz — gares exposées aux fortes chaleurs",
+    "focus": "center"
   },
   {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-suivi-2.webp",
-    "alt": "Atouvent — capture 23",
-    "focus": "32% 55%"
+    "teamNum": 17,
+    "file": "equipe-17-thermoviz/03-tableau-bord.webp",
+    "alt": "Thermoviz — tableau de bord Thermo Réseau",
+    "focus": "center"
   },
   {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/nuit-poles-2.webp",
-    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 24",
-    "focus": "68% 42%"
+    "teamNum": 18,
+    "file": "equipe-18-trajemploi/01-carte-emploi.webp",
+    "alt": "Trajemploi — accessibilité de l'emploi",
+    "focus": "center"
   },
   {
-    "teamNum": 9,
-    "file": "equipe-09-starway/starway-carte-2.webp",
-    "alt": "Starway — Les constellations de l’emploi — capture 25",
-    "focus": "50% 45%"
+    "teamNum": 18,
+    "file": "equipe-18-trajemploi/02-modes-deplacement.webp",
+    "alt": "Trajemploi — part des trajets en voiture",
+    "focus": "center"
   },
   {
-    "teamNum": 10,
-    "file": "equipe-10-tamoviz/tamoviz-agir-2.webp",
-    "alt": "Tamoviz — Une journée sous canicule — capture 26",
-    "focus": "32% 55%"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-suivi-3.webp",
-    "alt": "Atouvent — capture 27",
-    "focus": "68% 42%"
-  },
-  {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/nuit-poles-3.webp",
-    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 28",
-    "focus": "50% 45%"
-  },
-  {
-    "teamNum": 9,
-    "file": "equipe-09-starway/starway-decouvertes-1.webp",
-    "alt": "Starway — Les constellations de l’emploi — capture 29",
-    "focus": "32% 55%"
-  },
-  {
-    "teamNum": 10,
-    "file": "equipe-10-tamoviz/tamoviz-scene-1.webp",
-    "alt": "Tamoviz — Une journée sous canicule — capture 30",
-    "focus": "68% 42%"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-trajet-1.webp",
-    "alt": "Atouvent — capture 31",
-    "focus": "50% 45%"
-  },
-  {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/nuit-travailleurs-1.webp",
-    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 32",
-    "focus": "32% 55%"
-  },
-  {
-    "teamNum": 9,
-    "file": "equipe-09-starway/starway-decouvertes-2.webp",
-    "alt": "Starway — Les constellations de l’emploi — capture 33",
-    "focus": "68% 42%"
-  },
-  {
-    "teamNum": 10,
-    "file": "equipe-10-tamoviz/tamoviz-scene-2.webp",
-    "alt": "Tamoviz — Une journée sous canicule — capture 34",
-    "focus": "50% 45%"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-trajet-2.webp",
-    "alt": "Atouvent — capture 35",
-    "focus": "32% 55%"
-  },
-  {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/nuit-travailleurs-2.webp",
-    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 36",
-    "focus": "68% 42%"
-  },
-  {
-    "teamNum": 9,
-    "file": "equipe-09-starway/starway-cover-1.webp",
-    "alt": "Starway — Les constellations de l’emploi — capture 37",
-    "focus": "50% 45%"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-alertes-1.webp",
-    "alt": "Atouvent — capture 38",
-    "focus": "32% 55%"
-  },
-  {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/nuit-1-1.webp",
-    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 39",
-    "focus": "68% 42%"
-  },
-  {
-    "teamNum": 9,
-    "file": "equipe-09-starway/starway-cover-2.webp",
-    "alt": "Starway — Les constellations de l’emploi — capture 40",
-    "focus": "50% 45%"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-alertes-2.webp",
-    "alt": "Atouvent — capture 41",
-    "focus": "32% 55%"
-  },
-  {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/nuit-1-2.webp",
-    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 42",
-    "focus": "68% 42%"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-supervision-1.webp",
-    "alt": "Atouvent — capture 43",
-    "focus": "50% 45%"
-  },
-  {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/nuit-3-1.webp",
-    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 44",
-    "focus": "32% 55%"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-supervision-2.webp",
-    "alt": "Atouvent — capture 45",
-    "focus": "68% 42%"
-  },
-  {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/nuit-3-2.webp",
-    "alt": "Ça travaille la nuit — Voyager la nuit, travailler la nuit — capture 46",
-    "focus": "50% 45%"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-itineraires-1.webp",
-    "alt": "Atouvent — capture 47",
-    "focus": "32% 55%"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/atouvent-itineraires-2.webp",
-    "alt": "Atouvent — capture 48",
-    "focus": "68% 42%"
+    "teamNum": 18,
+    "file": "equipe-18-trajemploi/03-sankey-categories.webp",
+    "alt": "Trajemploi — flux par catégorie socioprofessionnelle",
+    "focus": "center"
   }
 ]
