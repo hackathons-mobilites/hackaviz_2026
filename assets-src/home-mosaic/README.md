@@ -77,6 +77,10 @@ Une entrée peut pointer vers un GIF ou une vidéo :
 
 C’est autorisé et prévu : ajoute simplement plusieurs entrées avec le même `teamNum` et des `src` différents. Chaque tuile garde son propre texte alternatif et sa propre cible.
 
+## Ordre d'affichage
+
+L'ordre du manifeste est volontairement mélangé (round-robin entre équipes) pour éviter les regroupements par projet dans la mosaïque. Si tu ajoutes de nouvelles captures, insère-les à des endroits variés plutôt qu'à la fin du fichier.
+
 ## État actuel
 
-Les images actuelles proviennent des captures fournies le 16 novembre 2026 et couvrent les 15 projets. `assets-src/home-mosaic/` conserve les captures originales ; `Resultats/assets/home-mosaic/` contient les versions optimisées générées.
+Les images actuelles proviennent des captures fournies le 16 novembre 2026 et couvrent les 15 projets. Sept animations GIF issues des vidéos ont aussi été ajoutées. `assets-src/home-mosaic/` conserve les captures originales ; `Resultats/assets/home-mosaic/` contient les versions optimisées générées.
