@@ -254,28 +254,29 @@
     .reopen-projects {
       position: fixed;
       left: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 120px;
       z-index: 40;
       display: none;
       align-items: center;
-      gap: 6px;
-      padding: 10px 12px 10px 10px;
-      border: 1px solid var(--accent);
+      justify-content: center;
+      padding: 8px 9px;
+      border: 1px solid var(--border);
       border-left: 0;
-      border-radius: 0 10px 10px 0;
-      background: var(--accent-soft);
-      color: var(--accent);
+      border-radius: 0 8px 8px 0;
+      background: rgba(255, 255, 255, 0.86);
+      color: var(--muted);
       font-family: inherit;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 800;
+      line-height: 1;
       cursor: pointer;
-      box-shadow: 0 8px 20px rgba(9, 49, 92, 0.16);
-      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(9, 49, 92, 0.1);
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
     }
     .reopen-projects:hover {
       background: var(--accent);
       color: #ffffff;
+      border-color: var(--accent);
     }
     body.list-collapsed:not(.mosaic-view) .reopen-projects {
       display: inline-flex;
@@ -1716,7 +1717,7 @@
     </div>
   </header>
 
-  <button class="reopen-projects" id="reopenProjects" onclick="toggleProjectList()" title="Réafficher la liste des projets" aria-label="Réafficher la liste des projets">☰ Projets</button>
+  <button class="reopen-projects" id="reopenProjects" onclick="toggleProjectList()" title="Réafficher la liste des projets" aria-label="Réafficher la liste des projets">&gt;&gt;</button>
 
   <div class="layout">
     <button class="mobile-drawer-btn" id="mobileDrawerBtn" onclick="toggleMobileList()">
