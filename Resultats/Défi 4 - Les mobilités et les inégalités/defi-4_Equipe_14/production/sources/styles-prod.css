@@ -1,0 +1,338 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Page : fenêtre carte et barre d'outils, centrées */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: #333;
+}
+
+#page {
+  --cote: min(800px, 100vw - 32px, 100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: var(--cote);
+}
+
+/* Fenêtre carte 800 × 800 (réduite en gardant le carré si l'écran est plus petit) */
+#carte {
+  position: relative;
+  width: var(--cote);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+#mapContainer {
+  position: absolute;
+  inset: 0;
+}
+
+/* Menu des couches (haut à droite) : bouton sous les boutons de navigation, panneau ouvert à sa gauche */
+.menu-couches {
+  position: relative;
+}
+
+.menu-couches button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+.menu-couches button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.menu-couches button.actif {
+  color: #0d264b;
+}
+
+.menu-couches-panneau {
+  position: absolute;
+  top: 0;
+  right: calc(100% + 8px);
+  padding: 6px 10px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  font:
+    13px/1.6 system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: #333;
+}
+
+.menu-couches-panneau[hidden] {
+  display: none;
+}
+
+.menu-couches label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Contrôles MapLibre en haut à droite (navigation, menu des couches) : même marge que le cartouche.
+   Préfixe #carte : maplibre-gl.css, importé par le JS, est chargé après ce fichier et l'emporterait à spécificité égale */
+#carte .maplibregl-ctrl-top-right .maplibregl-ctrl {
+  margin: 15px 15px 0 0;
+}
+
+/* Cartouche dans la carte : année affichée et km cumulés (reproduit dans les captures et la vidéo) */
+#cartouche {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 14px 8px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+#cartouche-annee {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* années à venir : projets (mises en service estimées) */
+#cartouche-annee.futur {
+  color: #333;
+}
+
+#cartouche-km {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Graphiques du compteur vélo survolé (bas gauche de la carte, hors captures : dessinés hors du canvas MapLibre) */
+/* Encadrés de graphiques empilés en bas à gauche de la carte */
+#graphiques {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  pointer-events: none; /* la carte reste manipulable entre les encadrés */
+}
+
+#graphiques-velo,
+#graphiques-temperatures,
+#graphiques-validations {
+  display: block;
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  /* survolable : valeur de chaque barre (encadré épinglé par un clic sur un compteur) */
+}
+
+#graphiques-velo[hidden],
+#graphiques-temperatures[hidden],
+#graphiques-validations[hidden] {
+  display: none;
+}
+
+/* Barre d'outils sous la carte */
+#barre-outils {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #f2f2f2; /* gris du fond de page */
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* même ombre que la fenêtre carte */
+  color: #333;
+}
+
+.player-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #3a3a3a;
+  transition:
+    transform 0.15s ease,
+    color 0.15s ease;
+}
+
+.control-button:hover {
+  transform: scale(1.15);
+  color: #0d264b;
+}
+
+#play-icon {
+  font-size: 2rem;
+}
+
+/* Icônes SVG maison (tour Eiffel) : même taille et alignement qu'une icône Bootstrap */
+.icone-svg {
+  display: inline-flex;
+}
+
+.icone-svg svg {
+  width: 1em;
+  height: 1em;
+}
+
+.separateur {
+  width: 1px;
+  height: 24px;
+  margin: 0 4px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.frise {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+#frise-curseur {
+  flex: 1;
+  min-width: 0;
+  accent-color: #0d264b;
+}
+
+/* Recherche d'une ligne (rechercheLignes.js) */
+.recherche-lignes {
+  position: relative;
+  margin-left: auto;
+}
+
+.recherche-lignes input {
+  width: 190px;
+  padding: 4px 8px;
+  font:
+    14px system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: #333;
+  background: #fff;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  outline: none;
+}
+
+.recherche-lignes input:focus {
+  border-color: #0d264b;
+}
+
+.recherche-lignes ul {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin: 0 0 4px;
+  padding: 0;
+  list-style: none;
+  width: 280px;
+  max-height: 360px;
+  overflow-y: auto;
+  z-index: 20;
+  background: #fff;
+  border: 1px solid #bdbdbd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.recherche-lignes ul:empty {
+  display: none;
+}
+
+.recherche-lignes li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.recherche-lignes li.actif,
+.recherche-lignes li:hover {
+  background: #ececec;
+}
+
+.recherche-lignes li.vide {
+  cursor: default;
+  color: #888;
+}
+
+.recherche-lignes .pastille {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.recherche-lignes .detail {
+  margin-left: auto;
+  font-size: 11px;
+  color: #888;
+}
+
+/* Notifications et statut du tournage (hors canvas : absents des images) */
+.notification {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+  max-width: min(640px, 100vw - 32px);
+  padding: 8px 14px;
+  background: rgba(13, 38, 75, 0.95);
+  color: #fff;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+.notification.erreur {
+  background: rgba(165, 0, 52, 0.95);
+}
+
+.statut-tournage {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 2000;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #0f0;
+  font: 12px monospace;
+  border-radius: 4px;
+}

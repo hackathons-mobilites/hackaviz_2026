@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icône d'onglet : chemin relatif, copiée dans chaque build (vite.config.*.js) -> fonctionne dans tout sous-dossier -->
+    <link rel="icon" type="image/png" href="./favicon.ico" />
+    <title>Ligne 7 · eau et air</title>
+    <style>
+      :root {
+        --rose: #fa9aba;
+        --texte: #222;
+        --doux: #666;
+        --fond: #f4f4f2;
+        --carte: #fff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--fond);
+        color: var(--texte);
+        font:
+          14px/1.4 system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+      #page {
+        --cote: min(760px, 100vw - 32px, 100vh - 32px);
+        display: flex;
+        gap: 14px;
+        padding: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      #carte {
+        position: relative;
+        width: var(--cote);
+        aspect-ratio: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      }
+      #mapContainer {
+        position: absolute;
+        inset: 0;
+      }
+      #panneau {
+        width: 300px;
+        height: var(--cote);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .bloc {
+        background: var(--carte);
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        padding: 12px 14px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .pastille {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--rose);
+        color: #000;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .sous-titre {
+        color: var(--texte);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.45;
+        margin-top: 6px;
+      }
+      .commandes {
+        display: flex;
+        gap: 6px;
+        margin-top: 10px;
+      }
+      .commandes button {
+        border: 1px solid #ddd;
+        background: #fff;
+        border-radius: 6px;
+        padding: 4px 9px;
+        font: inherit;
+        font-size: 12px; /* typo des boutons (Pause / Lecture, Relancer, vitesse) */
+        font-variant-emoji: text; /* icônes ⏸ ▶ ⏭ en noir et blanc (pas d'emoji couleur) */
+        cursor: pointer;
+      }
+      .commandes button:hover {
+        background: #f6f6f6;
+      }
+      /* goutte d'eau barrée : pas de fontaine dans la station */
+      .goutte-barree {
+        position: relative;
+        display: inline-block;
+        opacity: 0.55;
+      }
+      .goutte-barree::after {
+        content: "";
+        position: absolute;
+        left: -2px;
+        right: -2px;
+        top: 50%;
+        border-top: 2px solid #c62828;
+        transform: rotate(-45deg);
+      }
+      #courante .nom {
+        font-size: 16px;
+        font-weight: 650;
+      }
+      #courante .ligne {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 6px;
+      }
+      .rond {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        flex: none;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+      }
+      #journal {
+        flex: 1;
+        overflow-y: auto;
+        padding: 6px 0;
+      }
+      #journal ol {
+        list-style: none;
+        margin: 0;
+        padding: 0 14px;
+      }
+      #journal li {
+        display: grid;
+        grid-template-columns: 14px 1fr auto;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 13px;
+      }
+      #journal li.branche {
+        display: block;
+        color: var(--doux);
+        font-size: 12px;
+        font-weight: 600;
+        padding-top: 8px;
+        border: 0;
+      }
+      #journal .eau {
+        font-size: 12px;
+        color: #1f78d1;
+      }
+      /* survol d'une station : les autres stations du journal sont estompées */
+      #journal ol.survol li:not(.actif):not(.branche) {
+        opacity: 0.3;
+      }
+      #journal li[data-cle] {
+        cursor: pointer;
+      }
+      #journal li.actif {
+        background: #fdeef3;
+        font-weight: 650;
+        border-radius: 4px;
+      } /* station survolée sur la carte */
+      .compteurs {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        margin-top: 3px;
+        font-size: 14.5px;
+      }
+      .compteurs > span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .compteurs {
+        font-variant-numeric: tabular-nums; /* chiffres de largeur fixe, non gras */
+      }
+      .legende .entete {
+        font-weight: 700;
+        color: #000;
+      }
+      .legende {
+        font-size: 12px;
+        color: var(--doux);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 14px;
+      }
+      .legende .titre-legende {
+        flex-basis: 100%; /* titre seul sur sa ligne, niveaux sur la ligne suivante */
+      }
+      .legende span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      /* nom de la station à côté de son cercle (halo blanc pour la lisibilité), goutte d'eau après le nom */
+      .ancre-nom {
+        width: 0;
+        height: 0;
+        pointer-events: none;
+      }
+      .nom-station {
+        position: absolute;
+        left: 9px;
+        top: -8px;
+        font-size: 11.5px;
+        line-height: 1.3;
+        font-weight: 400;
+        color: #333;
+        white-space: nowrap;
+        pointer-events: auto;
+        cursor: pointer;
+        text-shadow:
+          0 0 3px #fff,
+          0 0 3px #fff,
+          0 0 2px #fff;
+        animation: apparition 0.4s ease-out;
+      }
+      .nom-station.estompe {
+        opacity: 0.25; /* survol d'une autre station */
+      }
+      .nom-station.gras {
+        font-weight: 700;
+      } /* comme sur le plan RATP : terminus et pôles d'échange */
+      .nom-station .goutte {
+        font-size: 12px;
+      }
+      @keyframes apparition {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .source {
+        font-size: 11px;
+        color: #999;
+      }
+      /* règles ordinateur placées AVANT le bloc mobile : à spécificité égale, la dernière règle l'emporte */
+      #fermer-entete,
+      #ouvrir-entete {
+        display: none; /* mobile seulement */
+      }
+      .source-mobile { display: none; } /* ordinateur : sources dans le bloc de la légende */
+      /* Mobile (≤ 700 px) : carte plein écran, seul le premier cartouche (titre, compteurs, commandes) par-dessus en bas ;
+         station courante, trajet et légende masqués */
+      @media (max-width: 700px) {
+        body { display: block; min-height: 0; }
+        #page { padding: 0; gap: 0; display: block; }
+        #carte { position: fixed; inset: 0; width: 100vw; height: 100dvh; aspect-ratio: auto; border-radius: 0; box-shadow: none; }
+        #panneau { position: fixed; bottom: calc(34px + env(safe-area-inset-bottom)); left: 8px; right: 8px; width: auto; height: auto; display: block; z-index: 2; }
+        /* crédits du fond de carte (DINUM, OpenStreetMap) : en bas de l'écran, sous le cartouche, sur toute la largeur */
+        #carte .maplibregl-ctrl-bottom-right { left: 0; right: 0; bottom: env(safe-area-inset-bottom); display: flex; justify-content: flex-end; }
+        #carte .maplibregl-ctrl-bottom-right .maplibregl-ctrl { margin: 0 8px 4px 0; }
+        #panneau > .bloc:not(#entete) { display: none; }
+        #entete .source-mobile { display: block; margin-top: 8px; font-size: 10.5px; line-height: 1.35; }
+        #entete { position: relative; padding: 10px 12px; background: rgba(255, 255, 255, 0.94); }
+        /* fermeture du cartouche : croix en haut à droite ; cartouche fermé -> pastille « 7 » en bas à gauche */
+        #fermer-entete {
+          display: flex; align-items: center; justify-content: center;
+          position: absolute; top: 4px; right: 4px; width: 30px; height: 30px; padding: 0;
+          border: 0; background: transparent; color: #666; font-size: 22px; line-height: 1; cursor: pointer;
+        }
+        body.entete-ferme #panneau { display: none; }
+        body.entete-ferme #ouvrir-entete {
+          display: flex; align-items: center; justify-content: center;
+          position: fixed; left: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); z-index: 3;
+          width: 40px; height: 40px; padding: 0; border: 2px solid #fff; border-radius: 50%;
+          background: var(--rose); color: #000; font: 700 18px system-ui, sans-serif;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); cursor: pointer;
+        }
+        h1 { font-size: 16px; }
+        .sous-titre { font-size: 13px; margin-top: 4px; }
+        .compteurs { font-size: 13px; }
+        .commandes { margin-top: 8px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <div id="carte"><div id="mapContainer"></div></div>
+      <!-- mobile, cartouche fermé : pastille « 7 » qui le rouvre -->
+      <button id="ouvrir-entete" type="button" title="Afficher le cartouche" aria-label="Afficher le cartouche">7</button>
+      <aside id="panneau">
+        <div class="bloc" id="entete">
+          <!-- mobile : fermer le cartouche (la pastille « 7 » flottante le rouvre) -->
+          <button id="fermer-entete" type="button" title="Masquer le cartouche" aria-label="Masquer le cartouche">×</button>
+          <h1><span class="pastille">7</span> Ligne 7</h1>
+          <!-- compteurs au fil du trajet (stations déjà atteintes par la rame) -->
+          <div class="sous-titre">Qualité de l'air sur le quai</div>
+          <div class="compteurs">
+            <span><i class="rond" style="background: #3a9a4a"></i><span id="n-faible">0</span></span>
+            <span><i class="rond" style="background: #f0a030"></i><span id="n-moyenne">0</span></span>
+            <span><i class="rond" style="background: #c62828"></i><span id="n-elevee">0</span></span>
+          </div>
+          <div class="sous-titre">Fontaine à eau dans la station</div>
+          <div class="compteurs">
+            <span>💧 <span><span id="n-eau">0</span> station<span id="pl-eau">s</span> équipée<span id="pl-eau2">s</span> sur <span id="n-stations">0</span> station<span id="pl-st">s</span></span></span>
+          </div>
+          <div class="commandes">
+            <button id="lecture" type="button">⏸︎ Pause</button>
+            <button id="fin" type="button" title="Aller à la fin du trajet" aria-label="Aller à la fin du trajet">⏭︎</button>
+            <button id="recommencer" type="button">↺ Relancer</button>
+            <button id="vitesse" type="button" title="Vitesse de la rame">× 2</button>
+          </div>
+          <!-- sources : affichées ici sur mobile seulement (la légende, qui les porte sur ordinateur, y est masquée) -->
+          <div class="source source-mobile">
+            Sources : IDFM (tracé, gares), RATP (fontaines), IDFM × Airparif 2024 (qualité de l'air aux particules)
+          </div>
+        </div>
+        <div class="bloc" id="courante">
+          <div class="nom">—</div>
+          <div class="ligne" id="courante-eau"></div>
+          <div class="ligne" id="courante-air"></div>
+        </div>
+        <div class="bloc" id="journal"><ol></ol></div>
+        <div class="bloc">
+          <div class="legende">
+            <span class="titre-legende entete">Légende</span>
+            <span class="titre-legende">Pollution aux particules fines dans l'air :</span>
+            <span><i class="rond" style="background: #3a9a4a"></i>faible</span>
+            <span><i class="rond" style="background: #f0a030"></i>moyenne</span>
+            <span><i class="rond" style="background: #c62828"></i>élevée</span>
+            <span class="titre-legende">Présence d'une fontaine :</span>
+            <span>💧 fontaine à eau dans la station</span>
+          </div>
+          <div class="source" style="margin-top: 6px">
+            Sources : IDFM (tracé, gares), RATP (fontaines), IDFM × Airparif 2024 (qualité de l'air aux particules)
+          </div>
+        </div>
+      </aside>
+    </div>
+    <script type="module" src="/src/main-l7.js"></script>
+  </body>
+</html>

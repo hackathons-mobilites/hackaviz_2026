@@ -1,4 +1,4 @@
-# Équipe 14 – Métro, RER, tramway : violences, eau, air et accessibilité
+# Correspondances – Métro, RER, tramway : violences, eau, air et accessibilité
 
 A bord d’une rame en pleine canicule, dans une station où l’on cherche une fontaine, devant un escalier sans ascenseur, Franciliennes et Franciliens ne voyagent pas à égalité. Ces écarts sont mesurés dans les données ouvertes.
 
@@ -15,13 +15,15 @@ Le projet couvre quatre thèmes issus des défis 4 et 1:
 - **Air :** quel air respire-t-on sur les quais ? Quelle ligne est la plus éttoufante ?
 - **Accessibilité :** à quelles stations peut-on accéder en fauteuil roulant ?
 
-**Lien vers la publication :** https://www.visualdataflow.com/IDFM/
+- **Publication intégrée :** [`production/publication/index.html`](production/publication/index.html)
+- **Version en ligne :** https://www.visualdataflow.com/IDFM/
+- **Sources :** [`production/sources/`](production/sources/) (HTML, JavaScript, styles et configurations Vite)
 
 ## Présentation du projet
 
 Ce projet a été développé dans le cadre du Hackaviz Mobilités 2026 spécial dataviz, organisé par Île-de-France Mobilités du 2 au 13 novembre 2026. Pour en savoir plus, voici le [Guide des participants et participantes](https://github.com/hackathons-mobilites/hackaviz_2026/blob/main/README.md).
 
-**Équipe :** Noa Tendero Jovaní et Daniel Breton (Equipe 14).
+**Équipe :** Noa Tendero Jovaní et Daniel Breton (équipe 14 « Correspondances »).
 
 ### Le problème et la proposition de valeur
 
@@ -45,7 +47,7 @@ Le réseau est aussi un lieu d’insecurité. Les violences sexistes et sexuelle
 
 ### La solution
 
-La solution associe **un jeu d'affiches** et **un jeu de cartes interactives ou animées** pour chaque thème. Une page sommaire rassemble l'ensemble : https://www.visualdataflow.com/IDFM/
+La solution associe **un jeu d'affiches** et **un jeu de cartes interactives ou animées** pour chaque thème. Une page sommaire rassemble l'ensemble : [publication intégrée](production/publication/index.html) · [version en ligne](https://www.visualdataflow.com/IDFM/).
 
 |                                  |                                                                                                                                                                                                                            |
 | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -127,7 +129,7 @@ La solution associe **un jeu d'affiches** et **un jeu de cartes interactives ou 
 
 ### Comment citer ce projet
 
-> Noa Tendero Jovaní et Daniel Breton, _Métro, RER, tramway : violences, eau, air et accessibilité_, Hackaviz Mobilités 2026 – Île-de-France Mobilités, novembre 2026. Licence CC BY 4.0 (éléments visuels) et MIT (code).
+> Noa Tendero Jovaní et Daniel Breton, _Correspondances — Métro, RER, tramway : violences, eau, air et accessibilité_, Hackaviz Mobilités 2026 – Île-de-France Mobilités, novembre 2026. Licence CC BY 4.0 (éléments visuels) et MIT (code).
 
 ### Licences des données
 

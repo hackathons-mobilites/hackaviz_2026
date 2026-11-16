@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icône d'onglet : chemin relatif, copiée dans chaque build (vite.config.*.js) -> fonctionne dans tout sous-dossier -->
+    <link rel="icon" type="image/png" href="./favicon.ico" />
+    <title>Qualité de l'air</title>
+    <style>
+      :root {
+        --bleu: #1f5fa8; /* fontaine dans la station */
+        --bleu-clair: #8fc3ea; /* point d'eau à proximité */
+        --texte: #222;
+        --doux: #666;
+        --fond: #f4f4f2;
+        --carte: #fff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--fond);
+        color: var(--texte);
+        font:
+          14px/1.4 system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+      #page {
+        --cote: min(760px, 100vw - 32px, 100vh - 32px);
+        display: flex;
+        gap: 14px;
+        padding: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      #carte {
+        position: relative;
+        width: var(--cote);
+        aspect-ratio: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      }
+      #mapContainer {
+        position: absolute;
+        inset: 0;
+      }
+      #panneau {
+        width: 300px;
+        height: var(--cote);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .bloc {
+        background: var(--carte);
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        padding: 12px 14px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .pastille {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: #cfe8d3;
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .sous-titre {
+        color: var(--texte);
+        font-size: 14px;
+        line-height: 1.4;
+        margin-top: 6px;
+      }
+      .compteurs {
+        margin-top: 4px;
+        font-size: 13px;
+        color: var(--doux);
+        font-variant-numeric: tabular-nums;
+      }
+      /* aide à l'accueil, encart sur la carte (en bas au milieu, au-dessus des crédits) : « ? » entouré, les deux consignes, × pour fermer */
+      .aide {
+        position: absolute;
+        left: 50%;
+        bottom: 34px; /* au-dessus des crédits du fond de carte, qui restent lisibles */
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        align-items: flex-start; /* « ? » au niveau de la première ligne */
+        gap: 8px;
+        padding: 10px 36px 10px 12px;
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        font-size: 12.5px;
+        line-height: 1.5;
+        color: var(--texte);
+        white-space: nowrap; /* une ligne par phrase */
+        transition: opacity 0.6s;
+      }
+      .aide.disparait {
+        opacity: 0;
+      }
+      .aide .texte-mobile {
+        display: none;
+      }
+      .fermer-aide {
+        position: absolute;
+        top: 4px;
+        right: 6px;
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: var(--doux);
+        font-size: 18px;
+        line-height: 1;
+        cursor: pointer;
+      }
+      .aide-icone {
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        margin-top: 1.5px; /* centré sur la hauteur de la première ligne */
+        border: 1.5px solid currentColor;
+        border-radius: 50%;
+        font-size: 10px;
+        font-weight: 700;
+      }
+      /* pastille d'une ligne : couleur officielle ; métro = cercle, RER = carré arrondi, tram = « T… » entre deux barres */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 24px;
+        font-weight: 700;
+        font-size: 12.5px;
+        white-space: nowrap;
+        justify-self: start;
+      }
+      .badge.metro {
+        width: 24px;
+        border-radius: 50%;
+      }
+      .badge.metro.long {
+        font-size: 9.5px; /* 3bis, 7bis */
+        letter-spacing: -0.02em;
+      }
+      .badge.rer {
+        width: 24px;
+        border-radius: 6px;
+      }
+      /* tram, comme sur le plan RATP : « T3a » noir sur blanc entre deux barres de la couleur de la ligne */
+      .badge.tram {
+        min-width: 30px;
+        height: 22px;
+        padding: 0 3px;
+        background: #fff;
+        color: #000;
+        border-top: 3px solid;
+        border-bottom: 3px solid;
+        border-radius: 0;
+        line-height: 1;
+      }
+      /* barre du score : part « fontaine » (bleu) puis part « proximité » (bleu clair), sur 100 */
+      .barre {
+        display: flex;
+        height: 8px;
+        background: #eee;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      /* en-tête du détail sur une seule ligne, même à 100 / 100 : pastille et score fixes, le texte du mode se réduit
+         (police un peu plus petite, puis points de suspension si la place manque) */
+      #courante .tete {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+      }
+      #courante .tete .badge {
+        flex: none;
+      }
+      /* mode de la ligne (Métro, RER, Tramway) en noir, plus gros, suivi du nombre de stations */
+      #courante .mode-titre {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 15px;
+        font-weight: 700;
+        color: #000;
+      }
+      #courante .nb-stations {
+        font-weight: 400;
+      }
+      #courante .mode {
+        color: var(--doux);
+        font-size: 13px;
+      }
+      #courante .score {
+        flex: none;
+        margin-left: auto;
+        font-size: 20px;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+      #courante .score small {
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--doux);
+      }
+      #courante .barre {
+        margin: 8px 0 6px;
+      }
+      #courante .detail {
+        font-size: 13px;
+        display: grid;
+        gap: 2px;
+      }
+      #courante .detail span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .rond {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        flex: none;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+      }
+      #classement {
+        position: relative; /* repère des positions des lignes pour le déroulé (offsetTop) */
+        flex: 1;
+        overflow-y: auto;
+        padding: 6px 0;
+      }
+      /* titre du bloc de classement, fixé en haut pendant le défilement de la liste */
+      #classement .titre-bloc {
+        position: sticky;
+        top: -6px;
+        z-index: 1;
+        padding: 2px 14px 6px;
+        background: var(--carte);
+        font-size: 14px;
+        font-weight: 700;
+        color: #000;
+      }
+      #classement ol {
+        list-style: none;
+        margin: 0;
+        padding: 0 14px;
+      }
+      #classement li {
+        display: grid;
+        grid-template-columns: 22px 44px 1fr 28px;
+        align-items: center;
+        gap: 6px;
+        padding: 3px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 12px;
+        cursor: pointer;
+        animation: apparition 0.4s ease-out;
+      }
+      #classement .rang {
+        color: var(--doux);
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+      }
+      #classement .valeur {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+      #classement ol.survol li:not(.actif) {
+        opacity: 0.3; /* survol d'une ligne : les autres sont estompées */
+      }
+      #classement li.actif {
+        background: #eef5fc;
+        border-radius: 4px;
+        font-weight: 650;
+      }
+      @keyframes apparition {
+        from {
+          opacity: 0;
+          transform: translateY(-4px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .legende {
+        font-size: 12px;
+        color: var(--doux);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 14px;
+      }
+      .legende .note {
+        margin: 0; /* paragraphe : titre en gras puis texte */
+      }
+      .legende .entete {
+        font-weight: 700;
+        color: #000;
+      }
+      .legende .titre-legende {
+        flex-basis: 100%;
+      }
+      .legende span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .point-eau {
+        width: 5px;
+        height: 5px;
+        margin: 0 3.5px;
+        border-radius: 50%;
+        background: #1597c9;
+        flex: none;
+      }
+      .source {
+        font-size: 9.5px; /* sources en petit */
+        line-height: 1.35;
+        color: #999;
+      }
+      /* étiquettes des cercles de 100, 200 et 300 m autour d'une station cliquée */
+      .etiquette-cercle {
+        font-size: 10.5px;
+        font-weight: 600;
+        color: #0b5a7a;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 3px;
+        padding: 0 3px;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      /* nom de la station cliquée (halo blanc), puis goutte dans une pastille blanche : 💧 fontaine dans la station, goutte
+         grise barrée de rouge sinon (même principe que la page ligne 7, en plus lisible sur la carte) */
+      .nom-station {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12.5px;
+        font-weight: 650;
+        color: #222;
+        white-space: nowrap;
+        pointer-events: none;
+        text-shadow:
+          0 0 3px #fff,
+          0 0 3px #fff,
+          0 0 2px #fff;
+      }
+      .goutte {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+        font-size: 15px;
+        line-height: 1;
+        text-shadow: none;
+      }
+      .goutte.barree .icone {
+        filter: grayscale(1); /* goutte grise : pas de fontaine (filtre sur la goutte seule, pas sur la barre rouge) */
+      }
+      .goutte.barree::after {
+        content: "";
+        position: absolute;
+        left: -1px;
+        right: -1px;
+        top: 50%;
+        height: 3px;
+        margin-top: -1.5px;
+        background: #d32f2f;
+        border-radius: 2px;
+        box-shadow: 0 0 0 1px #fff; /* liseré blanc : barre visible sur tous les fonds */
+        transform: rotate(-45deg);
+      }
+      .rond.grand {
+        width: 16px;
+        height: 16px;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+      }
+      /* bulle de survol d'une station */
+      .maplibregl-popup-content {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+      /* règles ordinateur placées AVANT le bloc mobile : à spécificité égale, la dernière règle l'emporte */
+      #fermer-entete,
+      #fermer-courante,
+      #ouvrir-entete {
+        display: none; /* mobile seulement */
+      }
+      .source-mobile {
+        display: none; /* ordinateur : sources dans le bloc de la légende */
+      }
+      /* Mobile (≤ 700 px) : carte plein écran, seul le premier cartouche par-dessus en bas (refermable) */
+      @media (max-width: 700px) {
+        body { display: block; min-height: 0; }
+        #page { padding: 0; gap: 0; display: block; }
+        #carte { position: fixed; inset: 0; width: 100vw; height: 100dvh; aspect-ratio: auto; border-radius: 0; box-shadow: none; }
+        #panneau { position: fixed; bottom: calc(34px + env(safe-area-inset-bottom)); left: 8px; right: 8px; width: auto; height: auto; display: block; z-index: 2; }
+        #carte .maplibregl-ctrl-bottom-right { left: 0; right: 0; bottom: env(safe-area-inset-bottom); display: flex; justify-content: flex-end; }
+        #carte .maplibregl-ctrl-bottom-right .maplibregl-ctrl { margin: 0 8px 4px 0; }
+        #panneau > .bloc:not(#entete) { display: none; }
+        /* mobile : aide mise en avant à l'arrivée — en haut de l'écran, plus grande, liseré et ombre marqués ; consignes
+           tactiles (le bas de l'écran est occupé par le cartouche) */
+        .aide {
+          top: calc(16px + env(safe-area-inset-top)); bottom: auto; transform: translateX(-50%);
+          width: calc(100vw - 40px); max-width: 360px; white-space: normal;
+          padding: 16px 40px 16px 16px; gap: 10px;
+          font-size: 14px; line-height: 1.55;
+          border: 2px solid #1f5fa8; border-radius: 12px;
+          box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+          animation: aide-arrivee 0.5s ease-out;
+        }
+        .aide .aide-icone { width: 20px; height: 20px; font-size: 12px; margin-top: 1px; color: #1f5fa8; }
+        .aide .texte-ordinateur { display: none; }
+        .aide .texte-mobile { display: block; }
+        .fermer-aide { top: 6px; right: 8px; width: 30px; height: 30px; font-size: 22px; }
+        @keyframes aide-arrivee { from { opacity: 0; transform: translate(-50%, -10px); } to { opacity: 1; transform: translateX(-50%); } }
+        #entete .source-mobile { display: block; margin-top: 8px; font-size: 9.5px; line-height: 1.35; }
+        #entete { position: relative; padding: 10px 12px; background: rgba(255, 255, 255, 0.94); cursor: pointer; } /* toucher : toute la ligne */
+        /* mode ligne (ligne sélectionnée ou zoom avant) : le cartouche du bas devient celui de la ligne (détail du score) */
+        body.mode-ligne #entete { display: none; }
+        body.mode-ligne #panneau > #courante { display: block; position: relative; padding: 10px 12px; background: rgba(255, 255, 255, 0.94); cursor: pointer; }
+        #fermer-entete,
+        #fermer-courante {
+          display: flex; align-items: center; justify-content: center;
+          position: absolute; top: 4px; right: 4px; width: 30px; height: 30px; padding: 0;
+          border: 0; background: transparent; color: #666; font-size: 22px; line-height: 1; cursor: pointer;
+        }
+        body.entete-ferme #panneau { display: none; }
+        body.entete-ferme #ouvrir-entete {
+          display: flex; align-items: center; justify-content: center;
+          position: fixed; left: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); z-index: 3;
+          width: 40px; height: 40px; padding: 0; border: 2px solid #fff; border-radius: 50%;
+          background: var(--bleu-clair); font-size: 18px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); cursor: pointer;
+        }
+        /* mobile : ligne en cours résumée dans le cartouche */
+        #entete-courante { display: flex; }
+        h1 { font-size: 16px; }
+        .sous-titre { font-size: 13px; margin-top: 4px; }
+      }
+      #entete-courante {
+        display: none; /* mobile seulement */
+        align-items: center;
+        gap: 8px;
+        margin-top: 6px;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <div id="carte">
+        <div id="mapContainer"></div>
+        <!-- aide à l'accueil, posée sur la carte : refermable, masquée d'elle-même après le premier clic ou les premiers survols -->
+        <div id="aide-carte" class="aide" role="note">
+          <span class="aide-icone" aria-hidden="true">?</span>
+          <div class="texte-ordinateur">Vous pouvez survoler ou cliquer sur les lignes.<br />Vous pouvez zoomer, puis cliquer sur une station.<br />Cliquez sur le fond de carte pour réinitialiser.</div>
+          <div class="texte-mobile">Touchez une ligne pour l'afficher.<br />Zoomez, puis touchez une station.<br />Touchez le fond de carte pour réinitialiser.</div>
+          <button class="fermer-aide" type="button" title="Fermer l'aide" aria-label="Fermer l'aide">×</button>
+        </div>
+      </div>
+      <!-- mobile, cartouche fermé : pastille qui le rouvre -->
+      <button id="ouvrir-entete" type="button" title="Afficher le cartouche" aria-label="Afficher le cartouche">≋</button>
+      <aside id="panneau">
+        <div class="bloc" id="entete">
+          <button id="fermer-entete" type="button" title="Masquer le cartouche" aria-label="Masquer le cartouche">×</button>
+          <h1><span class="pastille">≋</span> Qualité de l'air</h1>
+          <div class="sous-titre">Métro, RER, tramway : <strong>pollution aux particules fines sur les quais</strong>, de la ligne la moins polluée à la plus polluée</div>
+          <!-- mobile : ligne en cours -->
+          <div id="entete-courante"></div>
+          <div class="source source-mobile">Sources : IDFM (tracés, gares), IDFM × Airparif 2024 (qualité de l'air aux particules sur les quais)</div>
+        </div>
+        <div class="bloc" id="courante">
+          <!-- mobile : retour à la carte complète (cartouche du titre) -->
+          <button id="fermer-courante" type="button" title="Revenir à la carte complète" aria-label="Revenir à la carte complète">×</button>
+          <div id="courante-contenu"></div>
+        </div>
+        <div class="bloc" id="classement">
+          <div class="titre-bloc">Classement des lignes</div>
+          <ol></ol>
+        </div>
+        <div class="bloc">
+          <div class="legende">
+            <p class="note"><strong class="entete">Note : calcul du score de qualité de l'air</strong><br />1 point pour une station aérienne, 0,9 point pour une pollution faible sur le quai, 0,5 point pour une pollution moyenne, 0 point pour une pollution élevée.<br />Moyenne pour la ligne.</p>
+          </div>
+          <div class="source" style="margin-top: 6px">Sources : IDFM (tracés, gares), IDFM × Airparif 2024 (qualité de l'air aux particules sur les quais)</div>
+        </div>
+      </aside>
+    </div>
+    <script type="module" src="/src/main-air.js"></script>
+  </body>
+</html>

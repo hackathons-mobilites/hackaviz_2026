@@ -1,0 +1,50 @@
+{
+  "name": "@visual-data-flow/template-maplibre-mobilites",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Carte MapLibre IDF Mobilités (style natif)",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:l7": "vite build --config vite.config.l7.js",
+    "build:eau": "vite build --config vite.config.eau.js",
+    "build:air": "vite build --config vite.config.air.js",
+    "build:fauteuils": "vite build --config vite.config.fauteuils.js",
+    "build:sommaire": "vite build --config vite.config.sommaire.js",
+    "preview": "vite preview",
+    "data:01": "node scripts/data/01-recuperation.mjs",
+    "data:02": "node scripts/data/02-lignes.mjs",
+    "data:03": "node scripts/data/03-gares.mjs",
+    "data:04": "node scripts/data/04-reseau.mjs",
+    "data:05": "node scripts/data/05-stations.mjs",
+    "data:06": "node scripts/data/06-parcours.mjs",
+    "data:07": "node scripts/data/07-frequentation.mjs",
+    "data:08": "node scripts/data/08-schema.mjs",
+    "data:09": "node scripts/data/09-velo-compteurs.mjs",
+    "data:10": "node scripts/data/10-velo-comptages.mjs",
+    "data:11": "node scripts/data/11-multimodal-sites.mjs",
+    "data:12": "node scripts/data/12-temperatures.mjs",
+    "data:13": "node scripts/data/13-validations.mjs",
+    "data:14": "node scripts/data/14-qualite-air.mjs",
+    "data:15": "node scripts/data/15-fontaines.mjs",
+    "data:16": "node scripts/data/16-accessibilite-gares.mjs",
+    "data:17": "node scripts/data/17-ascenseurs.mjs",
+    "data:18": "node scripts/data/18-accessibilite-metro.mjs",
+    "data:19": "node scripts/data/19-points-eau.mjs",
+    "data:20": "node scripts/data/20-ligne7.mjs",
+    "data:21": "node scripts/data/21-eau-lignes.mjs",
+    "data:22": "node scripts/data/22-air-lignes.mjs",
+    "data:23": "node scripts/data/23-fauteuil-lignes.mjs",
+    "data:all": "node scripts/data/run-all.mjs"
+  },
+  "dependencies": {
+    "@turf/turf": "^6.5.0",
+    "@visual-data-flow/shared": "workspace:*",
+    "d3": "^7.9.0",
+    "maplibre-gl": "^2.4.0"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icône d'onglet : chemin relatif, copiée dans le build (vite.config.sommaire.js) -->
+    <link rel="icon" type="image/png" href="./favicon.ico" />
+    <title>Métro, RER, tramway : eau, air, accessibilité</title>
+    <meta
+      name="description"
+      content="Cartes interactives du réseau ferré d'Île-de-France : accès à l'eau, qualité de l'air sur les quais, accessibilité en fauteuil roulant."
+    />
+    <style>
+      :root {
+        --texte: #222;
+        --doux: #666;
+        --fond: #f4f4f2;
+        --carte: #fff;
+        --trait: #e6e6e3;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--fond);
+        color: var(--texte);
+        font:
+          15px/1.55 system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px 56px;
+      }
+      header {
+        width: 100%; /* même largeur que les colonnes affiches / cartes : bloc centré dans la page */
+      }
+      .surtitre {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--doux);
+      }
+      h1 {
+        margin: 6px 0 12px;
+        font-size: clamp(26px, 4vw, 36px);
+        line-height: 1.2;
+      }
+      .chapeau {
+        margin: 0;
+        font-size: 17px;
+        color: #333;
+      }
+      .chapeau p {
+        margin: 0;
+      }
+      /* les 4 thèmes en liste à puces */
+      .themes {
+        margin: 6px 0 0;
+        padding-left: 22px;
+      }
+      .themes li {
+        margin: 3px 0;
+      }
+      h2 {
+        margin: 44px 0 14px;
+        font-size: 20px;
+      }
+      /* cartes de présentation des 4 cartes interactives */
+      /* concept, puis texte d'introduction après un espace */
+      .concept {
+        margin: 0 0 18px;
+        font-size: 17px;
+        color: #333;
+      }
+      /* rangées : affiche (gauche) en regard de sa carte interactive (droite) */
+      #cartes {
+        display: grid;
+        /* autant de place pour les affiches que pour les cartes ; minmax(0, 1fr) : une colonne ne s'élargit jamais au-delà de la
+           page à cause de son contenu (images de 2204 px), sinon débordement à droite et page décalée */
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 18px 24px;
+        margin-top: 32px;
+        align-items: stretch; /* affiche et carte d'une rangée : même hauteur, alignées en haut */
+        grid-template-rows: auto; /* en-tête des colonnes */
+        grid-auto-rows: 1fr; /* rangées de même hauteur, celle des fiches de carte (l'affiche s'y ajuste) */
+      }
+      .entete-colonnes {
+        display: contents;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--doux);
+      }
+      /* affiche présentée comme une fiche (même cartouche que les cartes) : titre, image, « Voir l'affiche » en bas */
+      .affiche {
+        min-width: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 18px;
+        background: var(--carte);
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      }
+      .affiche figcaption {
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+      .affiche .lien {
+        margin-top: auto;
+        font-size: 14px;
+        font-weight: 650;
+        color: #1f5fa8;
+        text-decoration: none;
+      }
+      .affiche .lien:hover {
+        text-decoration: underline;
+      }
+      /* cadre au format affiche (portrait A, 1 : 1,414) ; vide tant que l'image manque */
+      .affiche .cadre {
+        flex: 1 1 0; /* hauteur imposée par la fiche en regard, pas par l'image */
+        min-height: 0;
+        overflow: hidden;
+        border-radius: 6px;
+        border: 1px solid var(--trait);
+        background: repeating-linear-gradient(45deg, #f2f2ef, #f2f2ef 8px, #ebebe7 8px, #ebebe7 16px);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      }
+      .affiche .cadre img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #fff;
+      }
+      .fiche {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 18px;
+        background: var(--carte);
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        color: inherit;
+        text-decoration: none;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+      .fiche:hover,
+      .fiche:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+      }
+      .fiche .tete {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .pastille {
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .fiche h3 {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.25;
+      }
+      /* capture d'écran de la page d'accueil de la carte (cadre vide tant que l'image manque) */
+      /* cadre au format des captures (2204 × 1564 px) : image entière, sans recadrage */
+      .fiche .capture {
+        aspect-ratio: 2204 / 1564;
+        overflow: hidden;
+        border-radius: 6px;
+        border: 1px solid var(--trait);
+        background: repeating-linear-gradient(45deg, #f2f2ef, #f2f2ef 8px, #ebebe7 8px, #ebebe7 16px);
+      }
+      img {
+        max-width: 100%;
+      }
+      .fiche .capture img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #f4f4f2;
+      }
+      /* texte d'accompagnement, sous la capture */
+      .fiche .texte {
+        margin: 0;
+        font-size: 14px;
+        color: #333;
+      }
+      .fiche .lien {
+        margin-top: auto;
+        font-size: 14px;
+        font-weight: 650;
+        color: #1f5fa8;
+      }
+      /* méthode et sources */
+      .colonnes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+      }
+      .bloc {
+        padding: 16px 18px;
+        background: var(--carte);
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        font-size: 14px;
+      }
+      .bloc h3 {
+        margin: 0 0 6px;
+        font-size: 15px;
+      }
+      .bloc p {
+        margin: 0;
+        color: #333;
+      }
+      .sources {
+        margin: 0;
+        padding-left: 18px;
+        font-size: 13.5px;
+        color: #333;
+      }
+      .sources li {
+        margin: 4px 0;
+      }
+      .sources a {
+        color: #1f5fa8;
+      }
+      footer {
+        margin-top: 48px;
+        padding-top: 16px;
+        border-top: 1px solid var(--trait);
+        font-size: 12.5px;
+        color: var(--doux);
+      }
+      @media (max-width: 700px) {
+        #cartes {
+          grid-template-columns: minmax(0, 1fr); /* mobile : affiche puis sa carte, l'une sous l'autre */
+        }
+        .entete-colonnes {
+          display: none;
+        }
+        .affiche .cadre {
+          flex: none;
+          aspect-ratio: 1 / 1.414; /* mobile (une colonne) : format portrait de l'affiche */
+          max-width: 260px;
+        }
+        #cartes {
+          grid-auto-rows: auto;
+        }
+        main {
+          padding: 28px 16px 40px;
+        }
+        .chapeau {
+          font-size: 16px;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-sommaire-DlUMUPit.js"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="surtitre">Île-de-France · réseau ferré</div>
+        <h1>Métro, RER, tramway : violences, eau, air et accessibilité, en Île-de-France, une exploration de quatre thèmes.</h1>
+        <p class="concept">
+          <strong>Le concept :</strong> une affiche dans les stations pour interpeller les usagers, associée à une carte sur son mobile ou portable pour
+          explorer les données sur différents thèmes.
+        </p>
+        <div class="chapeau">
+          <p>Quatre thèmes explorés :</p>
+          <ul class="themes">
+            <li><strong>Qui subit le plus de violences</strong> sur le réseau ?</li>
+            <li>Peut-on <strong>boire de l'eau</strong> en station ?</li>
+            <li><strong>Quel air respire-t-on</strong> sur les quais ?</li>
+            <li>A quelles stations peut-on accéder en <strong>fauteuil roulant</strong> ?</li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- fiches générées par main-sommaire.js (liens adaptés au local et à la publication) -->
+      <!-- affiches (colonne de gauche) et cartes interactives en regard (colonne de droite), générées par main-sommaire.js -->
+      <section id="cartes" aria-label="Affiches et cartes">
+        <div class="entete-colonnes" aria-hidden="true"><span>Affiches</span><span>Cartes interactives et animation</span></div>
+      </section>
+
+      <h2>Comment lire les cartes</h2>
+      <div class="colonnes">
+        <div class="bloc">
+          <h3>Un score par ligne</h3>
+          <p>
+            Chaque station reçoit des points selon l'indicateur ; le score de la ligne est la moyenne de ses stations, ramenée sur 100. Dans les trois cartes,
+            100 est le meilleur score.
+          </p>
+        </div>
+        <div class="bloc">
+          <h3>Une couleur par portion</h3>
+          <p>Chaque station colore la portion de sa ligne jusqu'à mi-chemin des stations voisines : on voit d'un coup d'œil les tronçons bien ou mal servis.</p>
+        </div>
+        <div class="bloc">
+          <h3>Explorer</h3>
+          <p>
+            Survolez ou cliquez une ligne pour l'afficher en entier et lire son détail ; zoomez, puis cliquez une station. Le classement des lignes est à droite
+            (en bas sur mobile).
+          </p>
+        </div>
+      </div>
+
+      <h2>Sources</h2>
+      <ul class="sources">
+        <li>
+          Île-de-France Mobilités : tracés du réseau, gares et stations, référentiel des lignes et des arrêts, accessibilité en gare, validations —
+          <a href="https://data.iledefrance-mobilites.fr" target="_blank" rel="noopener">data.iledefrance-mobilites.fr</a>
+        </li>
+        <li>RATP : fontaines à eau et toilettes du réseau — <a href="https://data.ratp.fr" target="_blank" rel="noopener">data.ratp.fr</a></li>
+        <li>IDFM × Airparif : qualité de l'air aux particules sur les quais (évaluation 2024)</li>
+        <li>OpenStreetMap : points d'eau potable et toilettes — © les contributeurs d'OpenStreetMap, licence ODbL</li>
+        <li>Fond de carte : © DINUM (data.gouv.fr), © OpenMapTiles, © contributeurs OpenStreetMap</li>
+      </ul>
+
+      <footer>Conception Noa Tendero Jovaní et Daniel Breton – novembre 2026, dans le cadre du hackathon Île-de-France Mobilités.</footer>
+    </main>
+  </body>
+</html>

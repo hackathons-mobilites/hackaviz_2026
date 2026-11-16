@@ -1890,14 +1890,16 @@
         fallbackQuestion: "Comment identifier les inégalités d'accès au réseau ferroviaire et repérer les écarts offre / fréquentation ?"
       },
       {
-        teamNum: 14, defi: 4, teamName: "Équipe 14",
-        title: "Correspondances — Métro, RER, tramway : violences, eau, air et accessibilité",
+        teamNum: 14, defi: 4, teamName: "Correspondances",
+        title: "Métro, RER, tramway : violences, eau, air et accessibilité",
         participants: "Noa Tendero Jovaní, Daniel Breton",
         tools: "Cartes interactives web + affiches",
         folder: "Défi 4 - Les mobilités et les inégalités/defi-4_Equipe_14",
         readme: "README.md",
-        vizType: "iframe",
-        vizUrl: "https://www.visualdataflow.com/IDFM/",
+        vizType: "local_html",
+        vizLabel: "📄 Publication intégrée",
+        localPath: "production/publication/index.html",
+        localNote: "Publication intégrée — page sommaire et cartes interactives.",
         fallbackQuestion: "Violences, eau, air, accessibilité : quelles inégalités vécues en station ?"
       },
       {
@@ -3090,7 +3092,7 @@
           stageEl.innerHTML = `
             <div class="iframe-wrap">
               <div class="iframe-notice">
-                <span>Fichier HTML local (<code>${p.localPath}</code>) — servi via HTTP local.</span>
+                <span>${p.localNote || `Fichier HTML local (<code>${p.localPath}</code>) — servi via HTTP local.`}</span>
                 <a href="${lUrl}" target="_blank" rel="noopener">Ouvrir le fichier HTML ↗</a>
               </div>
               <iframe src="${lUrl}" title="${p.title}"></iframe>
