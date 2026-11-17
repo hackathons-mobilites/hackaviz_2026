@@ -1,38 +1,56 @@
 [
   {
-    "teamNum": 12,
-    "file": "equipe-12-team-datalab/01-offre-population.webp",
-    "alt": "Team Datalab — offre en pointe selon la population",
+    "teamNum": 14,
+    "file": "equipe-14-correspondances/02-carte-qualite-air.webp",
+    "alt": "Correspondances — qualité de l'air sur les quais",
     "focus": "center"
   },
   {
     "teamNum": 15,
-    "file": "equipe-15-canopee/01-jours-chaleur.webp",
-    "alt": "Canopée — jours au-dessus de 35 °C",
+    "file": "equipe-15-canopee/03-temps-marche.webp",
+    "alt": "Canopée — temps de marche à l'ombre",
     "focus": "center"
   },
   {
-    "teamNum": 17,
-    "file": "equipe-17-thermoviz/02-gares-exposees.webp",
-    "alt": "Thermoviz — gares exposées aux fortes chaleurs",
+    "teamNum": 8,
+    "file": "equipe-08-noctambulle/01-carte-noctambulle.webp",
+    "alt": "Noctambulle — carte des trajets de nuit",
+    "focus": "center"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/02-climat-actuel.webp",
+    "alt": "Atouvent — climat actuel et vigilance",
+    "focus": "center"
+  },
+  {
+    "teamNum": 18,
+    "file": "equipe-18-trajemploi/01-carte-emploi.webp",
+    "alt": "Trajemploi — accessibilité de l'emploi",
+    "focus": "center"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/01-constellation-emploi.webp",
+    "alt": "Starway — constellations de l'emploi",
+    "focus": "center"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/01-carte-reseau-nuit.webp",
+    "alt": "Ça travaille la nuit — réseau de nuit",
+    "focus": "center"
+  },
+  {
+    "teamNum": 12,
+    "file": "equipe-12-team-datalab/02-communes-sans-gare.webp",
+    "alt": "Team Datalab — communes dépourvues de gare",
     "focus": "center"
   },
   {
     "teamNum": 3,
     "file": "equipe-03-notorious-farid/01-chaleur-reseau.webp",
     "alt": "The notorious F.A.R.I.D — chaleur et réseau",
-    "focus": "center"
-  },
-  {
-    "teamNum": 9,
-    "file": "equipe-09-starway/03-constellation-detail.webp",
-    "alt": "Starway — accès aux pôles d'emploi",
-    "focus": "center"
-  },
-  {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/02-carte-territoires-nuit.webp",
-    "alt": "Ça travaille la nuit — territoires desservis",
     "focus": "center"
   },
   {
@@ -48,9 +66,21 @@
     "focus": "center"
   },
   {
+    "teamNum": 17,
+    "file": "equipe-17-thermoviz/03-tableau-bord.webp",
+    "alt": "Thermoviz — tableau de bord Thermo Réseau",
+    "focus": "center"
+  },
+  {
     "teamNum": 16,
-    "file": "equipe-16-rhizome/01-extension-reseau.webp",
-    "alt": "Rhizome — extension du réseau ferroviaire",
+    "file": "equipe-16-rhizome/02-emploi-territoires.webp",
+    "alt": "Rhizome — évolution de l'emploi",
+    "focus": "center"
+  },
+  {
+    "teamNum": 7,
+    "file": "equipe-07-traboule/01-carte-traboule.webp",
+    "alt": "Traboule — carte des mobilités",
     "focus": "center"
   },
   {
@@ -62,109 +92,9 @@
     "poster": "equipe-10-tamoviz/01-thomas-nanterre.webp"
   },
   {
-    "teamNum": 7,
-    "file": "equipe-07-traboule/02-animation-carte.gif",
-    "alt": "Traboule — animation de la carte",
-    "focus": "center",
-    "type": "gif",
-    "poster": "equipe-07-traboule/01-carte-traboule.webp"
-  },
-  {
-    "teamNum": 8,
-    "file": "equipe-08-noctambulle/02-carte-gares-nuit.webp",
-    "alt": "Noctambulle — gares et trajets de nuit",
-    "focus": "center"
-  },
-  {
-    "teamNum": 14,
-    "file": "equipe-14-correspondances/03-affiche-respirer.webp",
-    "alt": "Correspondances — affiche Respirer sous terre",
-    "focus": "center"
-  },
-  {
-    "teamNum": 18,
-    "file": "equipe-18-trajemploi/02-modes-deplacement.webp",
-    "alt": "Trajemploi — part des trajets en voiture",
-    "focus": "center"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/03-carte-lieux-frais.webp",
-    "alt": "Atouvent — lieux frais à Paris",
-    "focus": "center"
-  },
-  {
-    "teamNum": 12,
-    "file": "equipe-12-team-datalab/02-communes-sans-gare.webp",
-    "alt": "Team Datalab — communes dépourvues de gare",
-    "focus": "center"
-  },
-  {
-    "teamNum": 15,
-    "file": "equipe-15-canopee/02-fontaines-proximite.webp",
-    "alt": "Canopée — proximité des fontaines",
-    "focus": "center"
-  },
-  {
-    "teamNum": 17,
-    "file": "equipe-17-thermoviz/01-chaleur-frequentation.webp",
-    "alt": "Thermoviz — chaleur et fréquentation",
-    "focus": "center"
-  },
-  {
-    "teamNum": 3,
-    "file": "equipe-03-notorious-farid/04-animation-rame.gif",
-    "alt": "The notorious F.A.R.I.D — animation de la rame",
-    "focus": "center",
-    "type": "gif",
-    "poster": "equipe-03-notorious-farid/01-chaleur-reseau.webp"
-  },
-  {
-    "teamNum": 9,
-    "file": "equipe-09-starway/01-constellation-emploi.webp",
-    "alt": "Starway — constellations de l'emploi",
-    "focus": "center"
-  },
-  {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/03-bus-nuit.webp",
-    "alt": "Ça travaille la nuit — bus de nuit",
-    "focus": "center"
-  },
-  {
-    "teamNum": 5,
-    "file": "equipe-05-les-isochrones/03-carte-acces-territoires.webp",
-    "alt": "Les Isochrones — accès aux territoires",
-    "focus": "center"
-  },
-  {
-    "teamNum": 1,
-    "file": "equipe-01-yssak/03-carte-emploi-saint-germain.webp",
-    "alt": "YSSAK — personnes venant travailler à Saint-Germain-en-Laye",
-    "focus": "center"
-  },
-  {
-    "teamNum": 16,
-    "file": "equipe-16-rhizome/03-fleurs-territoires.webp",
-    "alt": "Rhizome — symboles des territoires",
-    "focus": "center"
-  },
-  {
     "teamNum": 10,
-    "file": "equipe-10-tamoviz/03-panneau-exposition.webp",
-    "alt": "Tamoviz — exposition des voyageurs",
-    "focus": "center"
-  },
-  {
-    "teamNum": 7,
-    "file": "equipe-07-traboule/01-carte-traboule.webp",
-    "alt": "Traboule — carte des mobilités",
-    "focus": "center"
-  },
-  {
-    "teamNum": 8,
-    "file": "equipe-08-noctambulle/01-carte-noctambulle.webp",
-    "alt": "Noctambulle — carte des trajets de nuit",
+    "file": "equipe-10-tamoviz/01-thomas-nanterre.webp",
+    "alt": "Tamoviz — trajet de Thomas depuis Nanterre",
     "focus": "center"
   },
   {
@@ -174,21 +104,23 @@
     "focus": "center"
   },
   {
-    "teamNum": 18,
-    "file": "equipe-18-trajemploi/03-sankey-categories.webp",
-    "alt": "Trajemploi — flux par catégorie socioprofessionnelle",
+    "teamNum": 7,
+    "file": "equipe-07-traboule/02-animation-carte.gif",
+    "alt": "Traboule — animation de la carte",
+    "focus": "center",
+    "type": "gif",
+    "poster": "equipe-07-traboule/01-carte-traboule.webp"
+  },
+  {
+    "teamNum": 15,
+    "file": "equipe-15-canopee/02-fontaines-proximite.webp",
+    "alt": "Canopée — proximité des fontaines",
     "focus": "center"
   },
   {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/02-climat-actuel.webp",
-    "alt": "Atouvent — climat actuel et vigilance",
-    "focus": "center"
-  },
-  {
-    "teamNum": 12,
-    "file": "equipe-12-team-datalab/03-carte-frequentation.webp",
-    "alt": "Team Datalab — fréquentation ferroviaire 2025",
+    "teamNum": 8,
+    "file": "equipe-08-noctambulle/02-carte-gares-nuit.webp",
+    "alt": "Noctambulle — gares et trajets de nuit",
     "focus": "center"
   },
   {
@@ -200,16 +132,24 @@
     "poster": "equipe-15-canopee/01-jours-chaleur.webp"
   },
   {
-    "teamNum": 17,
-    "file": "equipe-17-thermoviz/03-tableau-bord.webp",
-    "alt": "Thermoviz — tableau de bord Thermo Réseau",
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/01-itineraire-38-min.webp",
+    "alt": "Atouvent — itinéraire recommandé",
     "focus": "center"
   },
   {
-    "teamNum": 3,
-    "file": "equipe-03-notorious-farid/03-heatmap-temperature.webp",
-    "alt": "The notorious F.A.R.I.D — températures 2006-2100",
+    "teamNum": 18,
+    "file": "equipe-18-trajemploi/02-modes-deplacement.webp",
+    "alt": "Trajemploi — part des trajets en voiture",
     "focus": "center"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/04-animation-nuit.gif",
+    "alt": "Ça travaille la nuit — animation du réseau de nuit",
+    "focus": "center",
+    "type": "gif",
+    "poster": "equipe-02-ca-travaille-la-nuit/01-carte-reseau-nuit.webp"
   },
   {
     "teamNum": 9,
@@ -219,32 +159,8 @@
   },
   {
     "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/01-carte-reseau-nuit.webp",
-    "alt": "Ça travaille la nuit — réseau de nuit",
-    "focus": "center"
-  },
-  {
-    "teamNum": 5,
-    "file": "equipe-05-les-isochrones/01-carte-emplois-45-min.webp",
-    "alt": "Les Isochrones — emplois accessibles en 45 min",
-    "focus": "center"
-  },
-  {
-    "teamNum": 1,
-    "file": "equipe-01-yssak/01-part-transports-communs.webp",
-    "alt": "YSSAK — 45,1 % de déplacements en transports en commun",
-    "focus": "center"
-  },
-  {
-    "teamNum": 16,
-    "file": "equipe-16-rhizome/02-emploi-territoires.webp",
-    "alt": "Rhizome — évolution de l'emploi",
-    "focus": "center"
-  },
-  {
-    "teamNum": 10,
-    "file": "equipe-10-tamoviz/01-thomas-nanterre.webp",
-    "alt": "Tamoviz — trajet de Thomas depuis Nanterre",
+    "file": "equipe-02-ca-travaille-la-nuit/03-bus-nuit.webp",
+    "alt": "Ça travaille la nuit — bus de nuit",
     "focus": "center"
   },
   {
@@ -256,27 +172,9 @@
     "poster": "equipe-08-noctambulle/01-carte-noctambulle.webp"
   },
   {
-    "teamNum": 14,
-    "file": "equipe-14-correspondances/02-carte-qualite-air.webp",
-    "alt": "Correspondances — qualité de l'air sur les quais",
-    "focus": "center"
-  },
-  {
-    "teamNum": 18,
-    "file": "equipe-18-trajemploi/01-carte-emploi.webp",
-    "alt": "Trajemploi — accessibilité de l'emploi",
-    "focus": "center"
-  },
-  {
-    "teamNum": 4,
-    "file": "equipe-04-atouvent/01-itineraire-38-min.webp",
-    "alt": "Atouvent — itinéraire recommandé",
-    "focus": "center"
-  },
-  {
-    "teamNum": 15,
-    "file": "equipe-15-canopee/03-temps-marche.webp",
-    "alt": "Canopée — temps de marche à l'ombre",
+    "teamNum": 12,
+    "file": "equipe-12-team-datalab/03-carte-frequentation.webp",
+    "alt": "Team Datalab — fréquentation ferroviaire 2025",
     "focus": "center"
   },
   {
@@ -294,17 +192,119 @@
     "poster": "equipe-09-starway/01-constellation-emploi.webp"
   },
   {
-    "teamNum": 2,
-    "file": "equipe-02-ca-travaille-la-nuit/04-animation-nuit.gif",
-    "alt": "Ça travaille la nuit — animation du réseau de nuit",
+    "teamNum": 5,
+    "file": "equipe-05-les-isochrones/01-carte-emplois-45-min.webp",
+    "alt": "Les Isochrones — emplois accessibles en 45 min",
+    "focus": "center"
+  },
+  {
+    "teamNum": 1,
+    "file": "equipe-01-yssak/01-part-transports-communs.webp",
+    "alt": "YSSAK — 45,1 % de déplacements en transports en commun",
+    "focus": "center"
+  },
+  {
+    "teamNum": 3,
+    "file": "equipe-03-notorious-farid/04-animation-rame.gif",
+    "alt": "The notorious F.A.R.I.D — animation de la rame",
     "focus": "center",
     "type": "gif",
-    "poster": "equipe-02-ca-travaille-la-nuit/01-carte-reseau-nuit.webp"
+    "poster": "equipe-03-notorious-farid/01-chaleur-reseau.webp"
+  },
+  {
+    "teamNum": 17,
+    "file": "equipe-17-thermoviz/01-chaleur-frequentation.webp",
+    "alt": "Thermoviz — chaleur et fréquentation",
+    "focus": "center"
+  },
+  {
+    "teamNum": 16,
+    "file": "equipe-16-rhizome/03-fleurs-territoires.webp",
+    "alt": "Rhizome — symboles des territoires",
+    "focus": "center"
   },
   {
     "teamNum": 10,
     "file": "equipe-10-tamoviz/02-carte-frequentation.webp",
     "alt": "Tamoviz — fréquentation du réseau",
+    "focus": "center"
+  },
+  {
+    "teamNum": 14,
+    "file": "equipe-14-correspondances/03-affiche-respirer.webp",
+    "alt": "Correspondances — affiche Respirer sous terre",
+    "focus": "center"
+  },
+  {
+    "teamNum": 15,
+    "file": "equipe-15-canopee/01-jours-chaleur.webp",
+    "alt": "Canopée — jours au-dessus de 35 °C",
+    "focus": "center"
+  },
+  {
+    "teamNum": 4,
+    "file": "equipe-04-atouvent/03-carte-lieux-frais.webp",
+    "alt": "Atouvent — lieux frais à Paris",
+    "focus": "center"
+  },
+  {
+    "teamNum": 18,
+    "file": "equipe-18-trajemploi/03-sankey-categories.webp",
+    "alt": "Trajemploi — flux par catégorie socioprofessionnelle",
+    "focus": "center"
+  },
+  {
+    "teamNum": 9,
+    "file": "equipe-09-starway/03-constellation-detail.webp",
+    "alt": "Starway — accès aux pôles d'emploi",
+    "focus": "center"
+  },
+  {
+    "teamNum": 2,
+    "file": "equipe-02-ca-travaille-la-nuit/02-carte-territoires-nuit.webp",
+    "alt": "Ça travaille la nuit — territoires desservis",
+    "focus": "center"
+  },
+  {
+    "teamNum": 12,
+    "file": "equipe-12-team-datalab/01-offre-population.webp",
+    "alt": "Team Datalab — offre en pointe selon la population",
+    "focus": "center"
+  },
+  {
+    "teamNum": 3,
+    "file": "equipe-03-notorious-farid/03-heatmap-temperature.webp",
+    "alt": "The notorious F.A.R.I.D — températures 2006-2100",
+    "focus": "center"
+  },
+  {
+    "teamNum": 5,
+    "file": "equipe-05-les-isochrones/03-carte-acces-territoires.webp",
+    "alt": "Les Isochrones — accès aux territoires",
+    "focus": "center"
+  },
+  {
+    "teamNum": 1,
+    "file": "equipe-01-yssak/03-carte-emploi-saint-germain.webp",
+    "alt": "YSSAK — personnes venant travailler à Saint-Germain-en-Laye",
+    "focus": "center"
+  },
+  {
+    "teamNum": 17,
+    "file": "equipe-17-thermoviz/02-gares-exposees.webp",
+    "alt": "Thermoviz — gares exposées aux fortes chaleurs",
+    "focus": "center"
+  },
+  {
+    "teamNum": 16,
+    "file": "equipe-16-rhizome/01-extension-reseau.webp",
+    "alt": "Rhizome — extension du réseau ferroviaire",
+    "focus": "center"
+  },
+  {
+    "teamNum": 10,
+    "file": "equipe-10-tamoviz/03-panneau-exposition.webp",
+    "alt": "Tamoviz — exposition des voyageurs",
     "focus": "center"
   }
 ]

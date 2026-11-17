@@ -522,6 +522,56 @@
       color: var(--navy);
       font-weight: 500;
     }
+    .project-documents {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding: 14px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+    }
+    .project-documents-label {
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .project-documents-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .project-doc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 12px;
+      border: 1.5px solid var(--accent);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: all 0.15s ease;
+    }
+    .project-doc-link small {
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+    .project-doc-link:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+    .project-doc-link:hover small { color: #dbeafe; }
+    .mobile-dataviz-note { display: none; }
 
     .markdown-body {
       background: var(--surface);
@@ -935,6 +985,7 @@
       font-size: 0.92rem;
       line-height: 1.6;
     }
+    .landing-mobile-note { display: none; }
     .landing-detail-btn {
       margin-top: 2px;
     }
@@ -1596,6 +1647,20 @@
         flex-shrink: 0;
         padding: 10px 12px;
       }
+      .mobile-dataviz-note {
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+        margin: 12px 16px;
+        padding: 10px 12px;
+        border: 1px solid #f0d49b;
+        border-radius: 10px;
+        background: #fff8e8;
+        color: #8a4b00;
+        font-size: 0.82rem;
+        font-weight: 600;
+        line-height: 1.45;
+      }
       .home-container, .doc-container, .video-container {
         padding: 0 12px 32px 12px;
         margin: 16px auto;
@@ -1662,6 +1727,19 @@
         border-radius: 14px;
         background: rgba(255, 255, 255, 0.94);
         box-shadow: 0 10px 26px rgba(9, 49, 92, 0.16);
+      }
+      .landing-intro { display: none; }
+      .landing-content > p.landing-mobile-note {
+        display: block;
+        margin: 0 0 14px;
+        padding: 11px 12px;
+        border: 1px solid #f0d49b;
+        border-radius: 10px;
+        background: #fff8e8;
+        color: #8a4b00;
+        font-size: 0.82rem;
+        font-weight: 600;
+        line-height: 1.45;
       }
       .landing-shade {
         background:
@@ -1806,6 +1884,13 @@
         tools: "Python, DuckDB, dbt, Observable Framework, D3, GitHub Pages",
         folder: "Défi 2 - Les mobilités et l’emploi/defi-2_YSSAK",
         readme: "README.md",
+        documents: [
+          {
+            label: "Démarche technique — Équipe 1 YSSAK",
+            path: "Equipe 1 - YSSAK - Aller travailler en Île-de-France — la démarche technique.pdf",
+            note: "PDF — démarche technique"
+          }
+        ],
         vizType: "iframe",
         vizUrl: "https://tourbiriad26-hub.github.io/hakathon_mobilite/",
         fallbackQuestion: "Comment les habitants d'Île-de-France se rendent-ils au travail, et l'accès à l'emploi est-il le même partout ?"
@@ -2078,7 +2163,7 @@
       const focus = escapeHtml(entry.focus || "center");
       const type = mosaicMediaType(entry);
 
-      if (type === "gif" && (decorative || prefersReducedMotion()) && entry.poster) {
+      if (type === "gif" && prefersReducedMotion() && entry.poster) {
         const posterUrl = localFileUrl("assets/home-mosaic", entry.poster);
         return `<img class="landing-media" src="${posterUrl}" alt="" loading="lazy" decoding="async" style="object-position:${focus}">`;
       }
@@ -2219,11 +2304,12 @@
             <img class="landing-logo" src="assets/logo-hackaviz-2026.svg" alt="Hackaviz 2026 — Hackathon Mobilités" />
             <p class="landing-kicker">Édition 2026 · Spéciale Dataviz</p>
             <h2>Exploration des Dataviz des participants du Hackathon Mobilités 2026</h2>
-            <p>
+            <p class="landing-intro">
               Bienvenue sur l'espace de découverte des projets réalisés du 2 au 13 novembre 2026 dans le cadre du
               <strong>Hackathon Mobilités 2026 spécial Dataviz</strong> organisé par Île-de-France Mobilités.
               Parcourez la mosaïque et cliquez sur une capture pour ouvrir la dataviz d'un projet.
             </p>
+            <p class="landing-mobile-note">Rendez-vous sur un plus grand écran pour pouvoir voir les créations plus confortablement.</p>
             <button class="idfm-btn-primary landing-detail-btn" onclick="showHome()">Voir le détail des projets →</button>
           </div>
           <div class="landing-mosaic">
@@ -2818,6 +2904,24 @@
       modal.setAttribute("aria-hidden", "true");
     }
 
+    function renderProjectDocuments(p) {
+      const documents = Array.isArray(p.documents) ? p.documents : [];
+      if (!documents.length) return "";
+      return `
+        <div class="project-documents">
+          <div class="project-documents-label">Document complémentaire</div>
+          <div class="project-documents-list">
+            ${documents.map(document => `
+              <a class="project-doc-link" href="${localFileUrl(p.folder, document.path)}" target="_blank" rel="noopener">
+                📄 <span>${escapeHtml(document.label)}</span>
+                ${document.note ? `<small>${escapeHtml(document.note)}</small>` : ""}
+              </a>
+            `).join("")}
+          </div>
+        </div>
+      `;
+    }
+
     function renderDownloadPanel(p) {
       if (!p.downloadPath) return "";
       const downloadUrl = localFileUrl(p.folder, p.downloadPath);
@@ -3032,6 +3136,7 @@
               <div class="summary-card"><label>Défi</label><span>Défi ${p.defi}</span></div>
               <div class="summary-card"><label>Outils</label><span>${p.tools}</span></div>
             </div>
+            ${renderProjectDocuments(p)}
             <div class="markdown-body" id="readmeTarget">Chargement du README…</div>
           </div>
         `;
@@ -3150,6 +3255,13 @@
             </div>
           `;
         }
+      }
+
+      if (mode === "viz" && typeof stageEl.insertAdjacentHTML === "function") {
+        stageEl.insertAdjacentHTML(
+          "afterbegin",
+          `<div class="mobile-dataviz-note">Rendez-vous sur un plus grand écran pour pouvoir voir les créations plus confortablement.</div>`
+        );
       }
     }
 
