@@ -144,55 +144,6 @@
       color: var(--accent);
     }
 
-    .filters-bar {
-      padding: 10px 28px;
-      background: var(--surface-2);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-    }
-    .pill {
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--muted);
-      padding: 7px 14px;
-      border-radius: 999px;
-      font-size: 0.81rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .pill:hover { color: var(--navy); border-color: var(--accent); }
-    .pill.active {
-      background: var(--navy);
-      color: #ffffff;
-      border-color: var(--navy);
-    }
-    .search {
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      color: var(--text);
-      padding: 7px 14px;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      width: 240px;
-      outline: none;
-      font-family: inherit;
-      transition: border-color 0.15s, box-shadow 0.15s;
-    }
-    .search:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(25, 114, 210, 0.12);
-    }
-
     /* Main Grid */
     .layout {
       flex: 1;
@@ -214,7 +165,7 @@
     }
     .project-list-head {
       position: sticky;
-      top: 0;
+      top: -16px;
       z-index: 5;
       display: flex;
       align-items: center;
@@ -254,7 +205,7 @@
     .reopen-projects {
       position: fixed;
       left: 0;
-      top: 120px;
+      top: 72px;
       z-index: 40;
       display: none;
       align-items: center;
@@ -334,6 +285,8 @@
       border-radius: 999px;
       font-weight: 700;
       font-size: 0.69rem;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .d1 { background: var(--d1-bg); color: var(--d1-fg); }
     .d2 { background: var(--d2-bg); color: var(--d2-fg); }
@@ -1620,22 +1573,6 @@
         flex-wrap: wrap;
         gap: 10px;
       }
-      .filters-bar {
-        padding: 10px 16px;
-      }
-      .filters {
-        width: 100%;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 4px;
-        -webkit-overflow-scrolling: touch;
-      }
-      .pill {
-        flex-shrink: 0;
-      }
-      .search {
-        width: 100%;
-      }
       .viewer-bar {
         padding: 12px 16px 0 16px;
       }
@@ -1753,7 +1690,6 @@
     body.mosaic-view .layout {
       grid-template-columns: minmax(0, 1fr);
     }
-    body.mosaic-view .filters-bar { display: none; }
     body:not(.mosaic-view) .explorer-nav { display: none; }
     body.mosaic-view .home-nav { display: none; }
     body.mosaic-view #projectList,
@@ -1785,16 +1721,6 @@
         <button class="idfm-btn-outline home-nav" style="cursor:pointer;" onclick="showHome()">🏠 Accueil</button>
         <a class="idfm-btn-outline" href="https://github.com/hackathons-mobilites/hackaviz_2026" target="_blank" rel="noopener">Dépôt GitHub ↗</a>
       </div>
-    </div>
-    <div class="filters-bar">
-      <div class="filters">
-        <button class="pill active" data-defi="all">Tous (15)</button>
-        <button class="pill" data-defi="1">Défi 1 · Climat (5)</button>
-        <button class="pill" data-defi="2">Défi 2 · Emploi (7)</button>
-        <button class="pill" data-defi="3">Défi 3 · Territoire (0)</button>
-        <button class="pill" data-defi="4">Défi 4 · Inégalités (3)</button>
-      </div>
-      <input class="search" id="searchInput" type="search" placeholder="Rechercher équipe, outil..." />
     </div>
   </header>
 
@@ -2081,6 +2007,13 @@
       }
     ];
 
+    const DEFI_LABELS = {
+      1: "Climat",
+      2: "Emplois",
+      3: "Territoires",
+      4: "Inégalités"
+    };
+
     const JURY_CRITERIA = [
       {
         key: "pertinence",
@@ -2359,8 +2292,6 @@
     let previewMode = urlFlag("preview");
     let jurySaveTimer = null;
 
-    let activeDefi = "all";
-    let searchQuery = "";
     let selectedTeam = null;
     let showMosaic = false;
     let listCollapsed = false;
@@ -2405,19 +2336,14 @@
     }
 
     function filterAndShowFirst(defi) {
-      document.querySelectorAll(".pill").forEach(b => {
-        b.classList.toggle("active", b.dataset.defi === String(defi));
-      });
-      activeDefi = String(defi);
       showMosaic = false;
-      const items = filteredProjects();
-      selectedTeam = items.length ? items[0].teamNum : null;
-      if (selectedTeam !== null) {
-        updateProjectUrl(selectedTeam, mode);
-        try {
-          sessionStorage.setItem(JURY_SESSION_KEY, String(selectedTeam));
-        } catch (err) {}
-      }
+      const target = PROJECTS.find(project => String(project.defi) === String(defi));
+      if (!target) return;
+      selectedTeam = target.teamNum;
+      updateProjectUrl(selectedTeam, mode);
+      try {
+        sessionStorage.setItem(JURY_SESSION_KEY, String(selectedTeam));
+      } catch (err) {}
       toggleMobileList(false);
       updateMobileLabel();
       renderList();
@@ -2953,13 +2879,7 @@
     }
 
     function filteredProjects() {
-      return PROJECTS.filter(p => {
-        const matchDefi = activeDefi === "all" || String(p.defi) === activeDefi;
-        const q = searchQuery.trim().toLowerCase();
-        const matchQ = !q || [p.teamName, p.title, p.participants, p.tools, String(p.teamNum)]
-          .join(" ").toLowerCase().includes(q);
-        return matchDefi && matchQ;
-      });
+      return PROJECTS.slice();
     }
 
     function renderList() {
@@ -2968,10 +2888,6 @@
       const listHead = previewMode
         ? `<div class="project-list-head"><span>Projets</span><button class="project-list-collapse" onclick="toggleProjectList()" title="Replier la liste des projets">« Replier</button></div>`
         : "";
-      if (items.length === 0) {
-        listEl.innerHTML = `${listHead}<div class="empty-state">Aucun projet pour ce filtre.<br/><br/>(Défi 3 : 0 soumission reçue)</div>`;
-        return;
-      }
       listEl.innerHTML = listHead + items.map(p => {
         const vizLabel = p.vizLabel || (p.vizType === "backend" ? "⚙️ Local / Backend" : p.vizType === "local_html" ? "📄 HTML local" : "🌐 En ligne");
         const juryStatus = juryStatusInfo(p.teamNum);
@@ -2980,7 +2896,7 @@
             <div class="card-body">
               <div class="card-top">
                 <span class="team-num">Équipe ${String(p.teamNum).padStart(2, "0")} · ${p.teamName}</span>
-                <span class="defi-tag d${p.defi}">Défi ${p.defi}</span>
+                <span class="defi-tag d${p.defi}">${DEFI_LABELS[p.defi] ? `Défi ${p.defi} - ${DEFI_LABELS[p.defi]}` : `Défi ${p.defi}`}</span>
               </div>
               <div class="card-title">${p.title}</div>
               <div class="card-meta">
@@ -3338,13 +3254,6 @@
       }
       selectedTeam = null;
       showMosaic = true;
-      activeDefi = "all";
-      searchQuery = "";
-      document.querySelectorAll(".pill").forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.defi === "all");
-      });
-      const searchInput = document.getElementById("searchInput");
-      if (searchInput) searchInput.value = "";
       updateMosaicUrl();
       try {
         sessionStorage.removeItem(JURY_SESSION_KEY);
@@ -3385,33 +3294,6 @@
       updateProjectUrl(selectedTeam, mode);
       renderStage();
     }
-
-    document.querySelectorAll(".pill").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".pill").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        activeDefi = btn.dataset.defi;
-        const items = filteredProjects();
-        if (!showMosaic && items.length && !items.some(x => x.teamNum === selectedTeam)) {
-          selectedTeam = items[0].teamNum;
-          updateProjectUrl(selectedTeam, mode);
-          try {
-            sessionStorage.setItem(JURY_SESSION_KEY, String(selectedTeam));
-          } catch (err) {}
-        }
-        updateMobileLabel();
-        renderList();
-        renderStage();
-        renderJuryPanel();
-      });
-    });
-
-    document.getElementById("searchInput").addEventListener("input", e => {
-      searchQuery = e.target.value;
-      updateMobileLabel();
-      renderList();
-      if (showMosaic) renderStage();
-    });
 
     window.addEventListener("beforeunload", () => {
       if (jurySaveTimer) saveJuryData();
